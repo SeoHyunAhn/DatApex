@@ -1,0 +1,1 @@
+{"ast":null,"code":"var nextRoutes = require('next-routes');\n\nvar routes = module.exports = nextRoutes();\nroutes.add('preproc', '/preproc/:path');\nroutes.add('about', '/about-us/:foo(bar|baz)');","map":null,"metadata":{},"sourceType":"script"}

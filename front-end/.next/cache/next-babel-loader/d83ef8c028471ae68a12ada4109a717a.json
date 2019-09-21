@@ -1,0 +1,1 @@
+{"ast":null,"code":"import React from \"react\";\nvar __jsx = React.createElement;\nimport { withRouter } from 'next/router';\n\nvar About = function About(_ref) {\n  var router = _ref.router;\n  return __jsx(\"h1\", null, \"About foo \", router.query.foo);\n};\n\nexport default withRouter(About);","map":null,"metadata":{},"sourceType":"module"}

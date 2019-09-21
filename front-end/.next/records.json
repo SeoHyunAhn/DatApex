@@ -1,0 +1,109 @@
+{
+  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/antd/lib/card/style/index.css": [
+    {
+      "modules": {
+        "byIdentifier": {},
+        "usedIds": {}
+      },
+      "chunks": {
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ],
+  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/antd/lib/style/index.css": [
+    {
+      "modules": {
+        "byIdentifier": {},
+        "usedIds": {}
+      },
+      "chunks": {
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ],
+  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/antd/lib/grid/style/index.css": [
+    {
+      "modules": {
+        "byIdentifier": {},
+        "usedIds": {}
+      },
+      "chunks": {
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ],
+  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/antd/lib/tabs/style/index.css": [
+    {
+      "modules": {
+        "byIdentifier": {},
+        "usedIds": {}
+      },
+      "chunks": {
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ],
+  "modules": {
+    "byIdentifier": {
+      "css node_modules/css-loader/index.js??ref--5-1!node_modules/antd/lib/style/index.css 0": 0,
+      "css node_modules/css-loader/index.js??ref--5-1!node_modules/antd/lib/grid/style/index.css 0": 1,
+      "css node_modules/css-loader/index.js??ref--5-1!node_modules/antd/lib/card/style/index.css 0": 2,
+      "css node_modules/css-loader/index.js??ref--5-1!node_modules/antd/lib/tabs/style/index.css 0": 3
+    },
+    "usedIds": {
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3
+    }
+  },
+  "chunks": {
+    "byName": {
+      "commons": 0,
+      "static/runtime/webpack.js": 1,
+      "static/runtime/main.js": 2,
+      "static/wVlvQO9Wb7MVkq8kksIbu/pages/_app.js": 3,
+      "static/wVlvQO9Wb7MVkq8kksIbu/pages/_error.js": 4,
+      "static/wVlvQO9Wb7MVkq8kksIbu/pages/about.js": 5,
+      "static/wVlvQO9Wb7MVkq8kksIbu/pages/index.js": 6,
+      "static/wVlvQO9Wb7MVkq8kksIbu/pages/preproc.js": 7,
+      "styles": 8
+    },
+    "bySource": {},
+    "usedIds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  }
+}
