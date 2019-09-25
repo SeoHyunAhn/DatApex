@@ -12,44 +12,17 @@ import {
 
 export default () => (
   <div>
-    <Row>
-      <Col span={8}>
-        <Link route='preproc' params={{ path: 'labsel' }}>
-          <Card title="Labsel Encoding">
-            <p>Card content</p>
-          </Card>
-        </Link>
-      </Col>
-      <Col span={8}>
-        <Link route='preproc' params={{ path: 'one-hot' }}>
-          <Card title="One-hot Encoding">
-            <p>Card content</p>
-          </Card>
-        </Link>
-      </Col>
-      <Col span={8}>
-        <Link route='preproc' params={{ path: 'delete-rc' }}>
-          <Card title="Delete Row/Column">
-            <p>Card content</p>
-          </Card>
-        </Link>
-      </Col>
-      <Col span={8}>
-        <Link route='preproc' params={{ path: 'replaceW' }}>
-          <Card title="Replace W">
-            <p>Card content</p>
-          </Card>
-        </Link>
-      </Col>
-      <Col span={8}>
-        <Link route='preproc' params={{ path: 'certain' }}>
-          <Card title="Select Certain">
-            <p>Card content</p>
-          </Card>
-        </Link>
-      </Col>
-
-    </Row>
+    <Link route='procOptions'>
+      <Button type="primary" block>
+        Pre process Data
+      </Button>
+    </Link>
+    <p></p>
+    <Link route='algoOptions'>
+      <Button type="primary" block>
+      ML algorithm
+      </Button>
+    </Link>
   </div>
 
 )

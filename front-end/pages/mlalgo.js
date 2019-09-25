@@ -1,11 +1,11 @@
 import React from 'react'
 
 const posts = [
-  { path: 'labsel', title: 'Label Encoding' },
-  { path: 'one-hot', title: 'One-Hot Encoding' },
-  { path: 'delete-rc', title: 'Delete Row/Column' },
-  { path: 'replaceW', title: 'Replace W' },
-  { path: 'certain', title: 'Select Certain' },
+    { path: 'nba', title: 'Naive Bayes algorithm' },
+    { path: 'lra', title: 'Logistic Regression algorithm' },
+    { path: 'svm', title: 'Support Vector Machine algorithm' },
+    { path: 'bag', title: 'Bagging algorithm' },
+    { path: 'clus', title: 'Clustering algorithm' },
 ]
 
 export default class extends React.Component {
