@@ -88,10 +88,21 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "./node_modules/antd/lib/button/style/css.js":
+/*!***************************************************!*\
+  !*** ./node_modules/antd/lib/button/style/css.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
 
 /***/ "./node_modules/antd/lib/card/style/css.js":
 /*!*************************************************!*\
@@ -108,6 +119,39 @@ module.exports =
 /*!************************************************!*\
   !*** ./node_modules/antd/lib/col/style/css.js ***!
   \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./node_modules/antd/lib/dropdown/style/css.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/antd/lib/dropdown/style/css.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./node_modules/antd/lib/layout/style/css.js":
+/*!***************************************************!*\
+  !*** ./node_modules/antd/lib/layout/style/css.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./node_modules/antd/lib/menu/style/css.js":
+/*!*************************************************!*\
+  !*** ./node_modules/antd/lib/menu/style/css.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -151,6 +195,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../routes */ "./routes.js");
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./header */ "./pages/header.js");
 
 
 
@@ -161,23 +206,30 @@ var _jsxFileName = "/Users/seohyun/dataPex/front-end/pages/algoOptions.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
+
 /* harmony default export */ __webpack_exports__["default"] = (() => __jsx("div", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 14
+    lineNumber: 15
   },
   __self: undefined
-}, __jsx(antd_lib_row__WEBPACK_IMPORTED_MODULE_1___default.a, {
+}, __jsx(_header__WEBPACK_IMPORTED_MODULE_8__["default"], {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 15
+    lineNumber: 16
+  },
+  __self: undefined
+}), __jsx(antd_lib_row__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 17
   },
   __self: undefined
 }, __jsx(antd_lib_col__WEBPACK_IMPORTED_MODULE_3___default.a, {
   span: 8,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 16
+    lineNumber: 18
   },
   __self: undefined
 }, __jsx(_routes__WEBPACK_IMPORTED_MODULE_7__["Link"], {
@@ -187,27 +239,27 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
   },
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 17
+    lineNumber: 19
   },
   __self: undefined
 }, __jsx(antd_lib_card__WEBPACK_IMPORTED_MODULE_5___default.a, {
   title: "Naive Bayes algorithm",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 18
+    lineNumber: 20
   },
   __self: undefined
 }, __jsx("p", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 19
+    lineNumber: 21
   },
   __self: undefined
 }, "Probabilistic classifier that makes classifications using the Maximum A Posteriori decision rule in a Bayesian setting")))), __jsx(antd_lib_col__WEBPACK_IMPORTED_MODULE_3___default.a, {
   span: 8,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 24
+    lineNumber: 26
   },
   __self: undefined
 }, __jsx(_routes__WEBPACK_IMPORTED_MODULE_7__["Link"], {
@@ -217,27 +269,27 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
   },
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 25
+    lineNumber: 27
   },
   __self: undefined
 }, __jsx(antd_lib_card__WEBPACK_IMPORTED_MODULE_5___default.a, {
   title: "Logistic Regression algorithm",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 26
+    lineNumber: 28
   },
   __self: undefined
 }, __jsx("p", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 27
+    lineNumber: 29
   },
   __self: undefined
 }, "Predictive analysis algorithm and based on the concept of probability")))), __jsx(antd_lib_col__WEBPACK_IMPORTED_MODULE_3___default.a, {
   span: 8,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 31
+    lineNumber: 33
   },
   __self: undefined
 }, __jsx(_routes__WEBPACK_IMPORTED_MODULE_7__["Link"], {
@@ -247,27 +299,27 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
   },
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 32
+    lineNumber: 34
   },
   __self: undefined
 }, __jsx(antd_lib_card__WEBPACK_IMPORTED_MODULE_5___default.a, {
   title: "Support Vector Machine algorithm",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 33
+    lineNumber: 35
   },
   __self: undefined
 }, __jsx("p", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 34
+    lineNumber: 36
   },
   __self: undefined
 }, "Find a hyperplane in an N-dimensional space that distinctly classifies the data points.")))), __jsx(antd_lib_col__WEBPACK_IMPORTED_MODULE_3___default.a, {
   span: 8,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 39
+    lineNumber: 41
   },
   __self: undefined
 }, __jsx(_routes__WEBPACK_IMPORTED_MODULE_7__["Link"], {
@@ -277,33 +329,33 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
   },
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 40
+    lineNumber: 42
   },
   __self: undefined
 }, __jsx(antd_lib_card__WEBPACK_IMPORTED_MODULE_5___default.a, {
   title: "Bagging algorithm",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 41
+    lineNumber: 43
   },
   __self: undefined
 }, __jsx("p", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 42
+    lineNumber: 44
   },
   __self: undefined
 }, "aka. Bootstrap aggregating"), __jsx("p", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 43
+    lineNumber: 45
   },
   __self: undefined
 }, "Improve the stability and accuracy of machine learning algorithms used in statistical classification and regression.")))), __jsx(antd_lib_col__WEBPACK_IMPORTED_MODULE_3___default.a, {
   span: 8,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 48
+    lineNumber: 50
   },
   __self: undefined
 }, __jsx(_routes__WEBPACK_IMPORTED_MODULE_7__["Link"], {
@@ -313,23 +365,313 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
   },
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 49
+    lineNumber: 51
   },
   __self: undefined
 }, __jsx(antd_lib_card__WEBPACK_IMPORTED_MODULE_5___default.a, {
   title: "Clustering algorithm",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 50
+    lineNumber: 52
   },
   __self: undefined
 }, __jsx("p", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 51
+    lineNumber: 53
   },
   __self: undefined
 }, "Grouping a set of objects in a way that objects in the same group are more similar to each other than to those in other groups")))))));
+
+/***/ }),
+
+/***/ "./pages/header.js":
+/*!*************************!*\
+  !*** ./pages/header.js ***!
+  \*************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var antd_lib_dropdown_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! antd/lib/dropdown/style/css */ "./node_modules/antd/lib/dropdown/style/css.js");
+/* harmony import */ var antd_lib_dropdown_style_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(antd_lib_dropdown_style_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var antd_lib_dropdown__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! antd/lib/dropdown */ "antd/lib/dropdown");
+/* harmony import */ var antd_lib_dropdown__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(antd_lib_dropdown__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var antd_lib_button_style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! antd/lib/button/style/css */ "./node_modules/antd/lib/button/style/css.js");
+/* harmony import */ var antd_lib_button_style_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(antd_lib_button_style_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var antd_lib_button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! antd/lib/button */ "antd/lib/button");
+/* harmony import */ var antd_lib_button__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(antd_lib_button__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var antd_lib_layout_style_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! antd/lib/layout/style/css */ "./node_modules/antd/lib/layout/style/css.js");
+/* harmony import */ var antd_lib_layout_style_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(antd_lib_layout_style_css__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var antd_lib_layout__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! antd/lib/layout */ "antd/lib/layout");
+/* harmony import */ var antd_lib_layout__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(antd_lib_layout__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var antd_lib_menu_style_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! antd/lib/menu/style/css */ "./node_modules/antd/lib/menu/style/css.js");
+/* harmony import */ var antd_lib_menu_style_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(antd_lib_menu_style_css__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var antd_lib_menu__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! antd/lib/menu */ "antd/lib/menu");
+/* harmony import */ var antd_lib_menu__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(antd_lib_menu__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../routes */ "./routes.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_9__);
+
+
+
+
+
+
+
+
+var _jsxFileName = "/Users/seohyun/dataPex/front-end/pages/header.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
+
+const MenuItem = antd_lib_menu__WEBPACK_IMPORTED_MODULE_7___default.a.Item;
+const {
+  Header,
+  Content,
+  Footer
+} = antd_lib_layout__WEBPACK_IMPORTED_MODULE_5___default.a;
+
+const preProcMenu = __jsx(antd_lib_menu__WEBPACK_IMPORTED_MODULE_7___default.a, {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 11
+  },
+  __self: undefined
+}, __jsx(antd_lib_menu__WEBPACK_IMPORTED_MODULE_7___default.a.Item, {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 12
+  },
+  __self: undefined
+}, __jsx(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
+  route: "preproc",
+  params: {
+    path: 'labsel'
+  },
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 13
+  },
+  __self: undefined
+}, "Label")), __jsx(antd_lib_menu__WEBPACK_IMPORTED_MODULE_7___default.a.Item, {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 17
+  },
+  __self: undefined
+}, __jsx(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
+  route: "preproc",
+  params: {
+    path: 'one-hot'
+  },
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 18
+  },
+  __self: undefined
+}, "One-hot Encoding")), __jsx(antd_lib_menu__WEBPACK_IMPORTED_MODULE_7___default.a.Item, {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 22
+  },
+  __self: undefined
+}, __jsx(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
+  route: "preproc",
+  params: {
+    path: 'delete-rc'
+  },
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 23
+  },
+  __self: undefined
+}, "Delete Row/Column")), __jsx(antd_lib_menu__WEBPACK_IMPORTED_MODULE_7___default.a.Item, {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 27
+  },
+  __self: undefined
+}, __jsx(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
+  route: "preproc",
+  params: {
+    path: 'replaceW'
+  },
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 28
+  },
+  __self: undefined
+}, "Replace W")), __jsx(antd_lib_menu__WEBPACK_IMPORTED_MODULE_7___default.a.Item, {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 32
+  },
+  __self: undefined
+}, __jsx(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
+  route: "preproc",
+  params: {
+    path: 'certain'
+  },
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 33
+  },
+  __self: undefined
+}, "Select Certain")));
+
+const algoMenu = __jsx(antd_lib_menu__WEBPACK_IMPORTED_MODULE_7___default.a, {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 41
+  },
+  __self: undefined
+}, __jsx(antd_lib_menu__WEBPACK_IMPORTED_MODULE_7___default.a.Item, {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 42
+  },
+  __self: undefined
+}, __jsx(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
+  route: "mlalgo",
+  params: {
+    path: 'nba'
+  },
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 43
+  },
+  __self: undefined
+}, "Naive Bayes algorithm")), __jsx(antd_lib_menu__WEBPACK_IMPORTED_MODULE_7___default.a.Item, {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 47
+  },
+  __self: undefined
+}, __jsx(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
+  route: "mlalgo",
+  params: {
+    path: 'lra'
+  },
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 48
+  },
+  __self: undefined
+}, "Logistic Regression algorithm")), __jsx(antd_lib_menu__WEBPACK_IMPORTED_MODULE_7___default.a.Item, {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 52
+  },
+  __self: undefined
+}, __jsx(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
+  route: "mlalgo",
+  params: {
+    path: 'svm'
+  },
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 53
+  },
+  __self: undefined
+}, "Support Vector Machine")), __jsx(antd_lib_menu__WEBPACK_IMPORTED_MODULE_7___default.a.Item, {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 57
+  },
+  __self: undefined
+}, __jsx(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
+  route: "mlalgo",
+  params: {
+    path: 'bag'
+  },
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 58
+  },
+  __self: undefined
+}, "Bagging algorithm")), __jsx(antd_lib_menu__WEBPACK_IMPORTED_MODULE_7___default.a.Item, {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 62
+  },
+  __self: undefined
+}, __jsx(_routes__WEBPACK_IMPORTED_MODULE_9__["Link"], {
+  route: "mlalgo",
+  params: {
+    path: 'clus'
+  },
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 63
+  },
+  __self: undefined
+}, "Clustering algorith")));
+
+const Head = () => __jsx("div", {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 71
+  },
+  __self: undefined
+}, __jsx(antd_lib_layout__WEBPACK_IMPORTED_MODULE_5___default.a, {
+  className: "layout",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 72
+  },
+  __self: undefined
+}, __jsx(Header, {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 73
+  },
+  __self: undefined
+}, __jsx(antd_lib_dropdown__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  overlay: preProcMenu,
+  placement: "topLeft",
+  theme: "dark",
+  mode: "horizontal",
+  defaultSelectedKeys: ['2'],
+  style: {
+    lineHeight: '64px'
+  },
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 74
+  },
+  __self: undefined
+}, __jsx(antd_lib_button__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 78
+  },
+  __self: undefined
+}, "Pre Processing")), __jsx(antd_lib_dropdown__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  overlay: algoMenu,
+  placement: "topLeft",
+  theme: "dark",
+  mode: "horizontal",
+  defaultSelectedKeys: ['2'],
+  id: "dropdown",
+  style: {
+    lineHeight: '64px'
+  },
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 80
+  },
+  __self: undefined
+}, __jsx(antd_lib_button__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 84
+  },
+  __self: undefined
+}, "Algorithms")))));
+
+/* harmony default export */ __webpack_exports__["default"] = (Head);
 
 /***/ }),
 
@@ -351,7 +693,7 @@ routes.add('about', '/about-us/:foo(bar|baz)');
 
 /***/ }),
 
-/***/ 3:
+/***/ 8:
 /*!************************************!*\
   !*** multi ./pages/algoOptions.js ***!
   \************************************/
@@ -360,6 +702,17 @@ routes.add('about', '/about-us/:foo(bar|baz)');
 
 module.exports = __webpack_require__(/*! /Users/seohyun/dataPex/front-end/pages/algoOptions.js */"./pages/algoOptions.js");
 
+
+/***/ }),
+
+/***/ "antd/lib/button":
+/*!**********************************!*\
+  !*** external "antd/lib/button" ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/button");
 
 /***/ }),
 
@@ -382,6 +735,39 @@ module.exports = require("antd/lib/card");
 /***/ (function(module, exports) {
 
 module.exports = require("antd/lib/col");
+
+/***/ }),
+
+/***/ "antd/lib/dropdown":
+/*!************************************!*\
+  !*** external "antd/lib/dropdown" ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/dropdown");
+
+/***/ }),
+
+/***/ "antd/lib/layout":
+/*!**********************************!*\
+  !*** external "antd/lib/layout" ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/layout");
+
+/***/ }),
+
+/***/ "antd/lib/menu":
+/*!********************************!*\
+  !*** external "antd/lib/menu" ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/menu");
 
 /***/ }),
 

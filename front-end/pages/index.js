@@ -9,9 +9,11 @@ import {
   Button,
   Card, Row, Col
 } from 'antd'
+import Head from "./header"
 
 export default () => (
   <div>
+    <Head />
     <Link route='procOptions'>
       <Button type="primary" block>
         Pre process Data
@@ -20,9 +22,8 @@ export default () => (
     <p></p>
     <Link route='algoOptions'>
       <Button type="primary" block>
-      ML algorithm
+        ML algorithm
       </Button>
     </Link>
   </div>
-
 )

@@ -9,9 +9,11 @@ import {
   Button,
   Card, Row, Col
 } from 'antd'
+import Head from "./header"
 
 export default () => (
   <div>
+    <Head />
     <Row>
       <Col span={8}>
         <Link route='preproc' params={{ path: 'labsel' }}>

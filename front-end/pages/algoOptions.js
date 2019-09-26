@@ -9,14 +9,16 @@ import {
   Button,
   Card, Row, Col
 } from 'antd'
+import Head from "./header"
 
 export default () => (
   <div>
+    <Head />
     <Row>
       <Col span={8}>
         <Link route='mlalgo' params={{ path: 'nba' }}>
           <Card title="Naive Bayes algorithm">
-            <p>Probabilistic classifier that makes classifications using the 
+            <p>Probabilistic classifier that makes classifications using the
                 Maximum A Posteriori decision rule in a Bayesian setting</p>
           </Card>
         </Link>
@@ -39,8 +41,8 @@ export default () => (
       <Col span={8}>
         <Link route='mlalgo' params={{ path: 'bag' }}>
           <Card title="Bagging algorithm">
-              <p>aka. Bootstrap aggregating</p>
-            <p>Improve the stability and accuracy of machine learning 
+            <p>aka. Bootstrap aggregating</p>
+            <p>Improve the stability and accuracy of machine learning
                 algorithms used in statistical classification and regression.</p>
           </Card>
         </Link>

@@ -7,9 +7,10 @@ const posts = [
   { path: 'replaceW', title: 'Replace W' },
   { path: 'certain', title: 'Select Certain' },
 ]
+import Head from "./header"
 
 export default class extends React.Component {
-  static async getInitialProps ({ query, res }) {
+  static async getInitialProps({ query, res }) {
     const post = posts.find(post => post.path === query.path)
 
     if (!post && res) {
@@ -19,11 +20,21 @@ export default class extends React.Component {
     return { post }
   }
 
-  render () {
+  render() {
     const { post } = this.props
 
-    if (!post) return <h1>Post not found</h1>
+    if (!post) return (
+      <div>
+        <Head />
+        <h1>Post not found</h1>
+      </div>
+    )
 
-    return <h1>{post.title}</h1>
+    return (
+      <div>
+        <Head />
+        <h1>{post.title}</h1>
+      </div>
+    )
   }
 }

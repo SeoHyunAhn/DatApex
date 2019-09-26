@@ -7,6 +7,7 @@ const posts = [
     { path: 'bag', title: 'Bagging algorithm' },
     { path: 'clus', title: 'Clustering algorithm' },
 ]
+import Head from "./header"
 
 export default class extends React.Component {
   static async getInitialProps ({ query, res }) {
@@ -22,8 +23,18 @@ export default class extends React.Component {
   render () {
     const { post } = this.props
 
-    if (!post) return <h1>Post not found</h1>
+    if (!post) return (
+      <div>
+        <Head />
+        <h1>Post not found</h1>
+      </div>
+    )
 
-    return <h1>{post.title}</h1>
+    return (
+      <div>
+        <Head />
+        <h1>{post.title}</h1>
+      </div>
+    )
   }
 }
