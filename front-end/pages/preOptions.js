@@ -10,7 +10,7 @@ class PreOptions extends Component {
     
     render() {
         return (
-            <>
+            <Layout>
                 <h1>PreOptions</h1>
                 <hr></hr>
                 <div className="container-fluid">
@@ -77,7 +77,7 @@ class PreOptions extends Component {
                         </div>
                     </div>
                 </div>
-            </>
+            </Layout>
         );
     }
 }

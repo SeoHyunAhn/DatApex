@@ -5,7 +5,6 @@ import Layout from '../components/layout';
 import Login from '../components/login';
 import Main from './main';
 
-
 class Index extends Component {
   constructor() {
     super();
@@ -34,7 +33,18 @@ class Index extends Component {
   render() {
     return (
       <div>
-        <div>{ this.state.user ? ( <Layout user={ this.state.user }> <Main /> </Layout>) : ( <Login /> )}</div>
+        <div>
+          { this.state.user ? 
+            ( <>
+                <Layout user={ this.state.user } /> 
+                <Main /> 
+              </>
+            ) : ( <>
+                    <Login />
+                  </> 
+                )
+          }
+        </div>
       </div>
     );
   }

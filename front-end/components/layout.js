@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import User from "../common/user";
 import firebase from '../common/firebase';
+import Main from '../pages/main';
 
 const styleTextWhite = {
     color: 'white',
@@ -32,7 +33,7 @@ class Layout extends React.Component {
 
     render() {
         return (
-            <React.Fragment>
+            <>
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                     <a className="navbar-brand" href="/">
                         DatApex
@@ -60,15 +61,21 @@ class Layout extends React.Component {
                     <div className="form-inline my-2 my-lg-0" style={ styleTextWhite }>
                         { this.state.user !== null && (
                             <>
-                                <span style={ styleName }> Hi { this.state.user.displayName } </span>
+                                {/* <span style={ styleName }> Hi { this.state.user.displayName } </span> */}
                                 <button className="btn btn-secondary" onClick={ this.logout }> Logout </button>
                             </>
                         )}
                     </div>
                 </div>
                 </nav>
-                <div className="container mt-4">{this.props.children}</div>
-            </React.Fragment>
+                <div className="container mt-4">
+                    <div className="row">
+                        <div className="col-12">
+                            { this.props.children }
+                        </div>
+                    </div>
+                </div>
+            </>
         );
     }
 }

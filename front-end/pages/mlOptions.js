@@ -10,7 +10,7 @@ class MlOptions extends Component {
     
     render() {
         return (
-            <>
+            <Layout>
                 <h1>MLOptions</h1>
                 <hr></hr>
                 <div className="container-fluid">
@@ -82,7 +82,7 @@ class MlOptions extends Component {
                         </div>
                     </div>
                 </div>
-            </>
+            </Layout>
         );
     }
 }

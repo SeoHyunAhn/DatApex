@@ -158,9 +158,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _common_user__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../common/user */ "./common/user.js");
 /* harmony import */ var _common_firebase__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../common/firebase */ "./common/firebase.js");
+/* harmony import */ var _pages_main__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../pages/main */ "./pages/main.js");
 
 var _jsxFileName = "/Users/youngjoon/Desktop/CS407/DatApex/front-end/components/layout.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
 
 
 
@@ -189,17 +191,11 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
   }
 
   render() {
-    return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 35
-      },
-      __self: this
-    }, __jsx("nav", {
+    return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx("nav", {
       className: "navbar navbar-expand-lg navbar-dark bg-dark",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36
+        lineNumber: 37
       },
       __self: this
     }, __jsx("a", {
@@ -207,7 +203,7 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       href: "/",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 37
+        lineNumber: 38
       },
       __self: this
     }, "DatApex"), __jsx("button", {
@@ -220,14 +216,14 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       "aria-label": "Toggle navigation",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40
+        lineNumber: 41
       },
       __self: this
     }, __jsx("span", {
       className: "navbar-toggler-icon",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 49
+        lineNumber: 50
       },
       __self: this
     })), __jsx("div", {
@@ -235,14 +231,14 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       id: "navbarSupportedContent",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 52
+        lineNumber: 53
       },
       __self: this
     }, __jsx("ul", {
       className: "navbar-nav mr-auto",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 53
+        lineNumber: 54
       },
       __self: this
     }), __jsx("div", {
@@ -250,32 +246,39 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       style: styleTextWhite,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 60
+        lineNumber: 61
       },
       __self: this
-    }, this.state.user !== null && __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx("span", {
-      style: styleName,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 63
-      },
-      __self: this
-    }, " Hi ", this.state.user.displayName, " "), __jsx("button", {
+    }, this.state.user !== null && __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx("button", {
       className: "btn btn-secondary",
       onClick: this.logout,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 64
+        lineNumber: 65
       },
       __self: this
     }, " Logout "))))), __jsx("div", {
       className: "container mt-4",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 70
+        lineNumber: 71
       },
       __self: this
-    }, this.props.children));
+    }, __jsx("div", {
+      className: "row",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 72
+      },
+      __self: this
+    }, __jsx("div", {
+      className: "col-12",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 73
+      },
+      __self: this
+    }, this.props.children))));
   }
 
 }
@@ -2288,6 +2291,105 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./pages/main.js":
+/*!***********************!*\
+  !*** ./pages/main.js ***!
+  \***********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/Users/youngjoon/Desktop/CS407/DatApex/front-end/pages/main.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+class Main extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  render() {
+    return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("h1", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 10
+      },
+      __self: this
+    }, "Main"), __jsx("hr", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 11
+      },
+      __self: this
+    }), __jsx("div", {
+      className: "container-fluid",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 12
+      },
+      __self: this
+    }, __jsx("div", {
+      className: "row",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 13
+      },
+      __self: this
+    }, __jsx("div", {
+      className: "col-6",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 14
+      },
+      __self: this
+    }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      href: "/preOptions",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 15
+      },
+      __self: this
+    }, __jsx("a", {
+      className: "btn btn-primary btn-lg btn-block",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 16
+      },
+      __self: this
+    }, "Pre Process Data"))), __jsx("div", {
+      className: "col-6",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 19
+      },
+      __self: this
+    }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      href: "/mlOptions",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20
+      },
+      __self: this
+    }, __jsx("a", {
+      className: "btn btn-primary btn-lg btn-block",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21
+      },
+      __self: this
+    }, " ML algorithm "))))));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Main);
+
+/***/ }),
+
 /***/ "./pages/mlOptions.js":
 /*!****************************!*\
   !*** ./pages/mlOptions.js ***!
@@ -2313,7 +2415,13 @@ const styleCard = {
 
 class MlOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   render() {
-    return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("h1", {
+    return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 13
+      },
+      __self: this
+    }, __jsx("h1", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 14
