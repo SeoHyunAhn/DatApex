@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2402,11 +2402,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../routes */ "./routes.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "/Users/seohyun/dataPex/front-end/pages/mlOptions.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
+ // import Link from 'next/link';
 
 
 const styleCard = {
@@ -2418,91 +2419,100 @@ class MlOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 13
+        lineNumber: 14
       },
       __self: this
     }, __jsx("h1", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 14
+        lineNumber: 15
       },
       __self: this
     }, "MLOptions"), __jsx("hr", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15
+        lineNumber: 16
       },
       __self: this
     }), __jsx("div", {
       className: "container-fluid",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16
+        lineNumber: 17
       },
       __self: this
     }, __jsx("div", {
       className: "row",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "col-6",
-      __source: {
-        fileName: _jsxFileName,
         lineNumber: 18
       },
       __self: this
     }, __jsx("div", {
-      className: "card",
-      style: styleCard,
+      className: "col-6",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 19
       },
       __self: this
     }, __jsx("div", {
-      className: "card-header",
+      className: "card",
+      style: styleCard,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 20
+      },
+      __self: this
+    }, __jsx("div", {
+      className: "card-header",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21
       },
       __self: this
     }, "Naive Bayes algorithm"), __jsx("div", {
       className: "card-body",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23
+        lineNumber: 24
       },
       __self: this
     }, __jsx("h5", {
       className: "card-title",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24
+        lineNumber: 25
       },
       __self: this
     }, "Explanation: "), __jsx("p", {
       className: "card-text",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25
+        lineNumber: 26
       },
       __self: this
-    }, "Probabilistic classifier that makes classifications using the Maximum A Posteriori decision rule in a Bayesian setting"), __jsx("a", {
-      href: "#",
+    }, "Probabilistic classifier that makes classifications using the Maximum A Posteriori decision rule in a Bayesian setting"), __jsx(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+      route: "mlalgo",
+      params: {
+        path: 'nba'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 29
+      },
+      __self: this
+    }, __jsx("a", {
       className: "btn btn-primary",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 28
+        lineNumber: 30
       },
       __self: this
-    }, "Go somewhere")))), __jsx("div", {
+    }, "Go somewhere"))))), __jsx("div", {
       className: "col-6",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 32
+        lineNumber: 35
       },
       __self: this
     }, __jsx("div", {
@@ -2510,50 +2520,59 @@ class MlOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       style: styleCard,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 33
+        lineNumber: 36
       },
       __self: this
     }, __jsx("div", {
       className: "card-header",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 34
+        lineNumber: 37
       },
       __self: this
     }, "Logistic Regression algorithm"), __jsx("div", {
       className: "card-body",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 37
+        lineNumber: 40
       },
       __self: this
     }, __jsx("h5", {
       className: "card-title",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38
+        lineNumber: 41
       },
       __self: this
     }, "Explanation: "), __jsx("p", {
       className: "card-text",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 39
+        lineNumber: 42
       },
       __self: this
-    }, "Predictive analysis algorithm and based on the concept of probability"), __jsx("a", {
-      href: "#",
+    }, "Predictive analysis algorithm and based on the concept of probability"), __jsx(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+      route: "mlalgo",
+      params: {
+        path: 'lra'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 43
+      },
+      __self: this
+    }, __jsx("a", {
       className: "btn btn-primary",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40
+        lineNumber: 44
       },
       __self: this
-    }, "Go somewhere")))), __jsx("div", {
+    }, "Go somewhere"))))), __jsx("div", {
       className: "col-6",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 44
+        lineNumber: 49
       },
       __self: this
     }, __jsx("div", {
@@ -2561,50 +2580,59 @@ class MlOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       style: styleCard,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45
+        lineNumber: 50
       },
       __self: this
     }, __jsx("div", {
       className: "card-header",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 46
+        lineNumber: 51
       },
       __self: this
     }, "Support Vector Machine algorithm"), __jsx("div", {
       className: "card-body",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 49
+        lineNumber: 54
       },
       __self: this
     }, __jsx("h5", {
       className: "card-title",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 50
+        lineNumber: 55
       },
       __self: this
     }, "Explanation: "), __jsx("p", {
       className: "card-text",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51
+        lineNumber: 56
       },
       __self: this
-    }, "Find a hyperplane in an N-dimensional space that distinctly classifies the data points."), __jsx("a", {
-      href: "#",
+    }, "Find a hyperplane in an N-dimensional space that distinctly classifies the data points."), __jsx(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+      route: "mlalgo",
+      params: {
+        path: 'svm'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 57
+      },
+      __self: this
+    }, __jsx("a", {
       className: "btn btn-primary",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 52
+        lineNumber: 58
       },
       __self: this
-    }, "Go somewhere")))), __jsx("div", {
+    }, "Go somewhere"))))), __jsx("div", {
       className: "col-6",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 56
+        lineNumber: 63
       },
       __self: this
     }, __jsx("div", {
@@ -2612,56 +2640,65 @@ class MlOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       style: styleCard,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57
+        lineNumber: 64
       },
       __self: this
     }, __jsx("div", {
       className: "card-header",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 58
+        lineNumber: 65
       },
       __self: this
     }, "Bagging algorithm"), __jsx("div", {
       className: "card-body",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 61
+        lineNumber: 68
       },
       __self: this
     }, __jsx("h5", {
       className: "card-title",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 62
+        lineNumber: 69
       },
       __self: this
     }, "Explanation: "), __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 63
+        lineNumber: 70
       },
       __self: this
     }, "aka. Bootstrap aggregating"), __jsx("p", {
       className: "card-text",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 64
+        lineNumber: 71
       },
       __self: this
-    }, "Improve the stability and accuracy of machine learning algorithms used in statistical classification and regression."), __jsx("a", {
-      href: "#",
+    }, "Improve the stability and accuracy of machine learning algorithms used in statistical classification and regression."), __jsx(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+      route: "mlalgo",
+      params: {
+        path: 'bag'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 72
+      },
+      __self: this
+    }, __jsx("a", {
       className: "btn btn-primary",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 65
+        lineNumber: 73
       },
       __self: this
-    }, "Go somewhere")))), __jsx("div", {
+    }, "Go somewhere"))))), __jsx("div", {
       className: "col-6",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 69
+        lineNumber: 78
       },
       __self: this
     }, __jsx("div", {
@@ -2669,46 +2706,55 @@ class MlOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       style: styleCard,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 70
+        lineNumber: 79
       },
       __self: this
     }, __jsx("div", {
       className: "card-header",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 71
+        lineNumber: 80
       },
       __self: this
     }, "Clustering algorithm"), __jsx("div", {
       className: "card-body",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 74
+        lineNumber: 83
       },
       __self: this
     }, __jsx("h5", {
       className: "card-title",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 75
+        lineNumber: 84
       },
       __self: this
     }, "Explanation: "), __jsx("p", {
       className: "card-text",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 76
+        lineNumber: 85
       },
       __self: this
-    }, "Grouping a set of objects in a way that objects in the same group are more similar to each other than to those in other group"), __jsx("a", {
-      href: "#",
+    }, "Grouping a set of objects in a way that objects in the same group are more similar to each other than to those in other group"), __jsx(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+      route: "mlalgo",
+      params: {
+        path: 'clus'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 88
+      },
+      __self: this
+    }, __jsx("a", {
       className: "btn btn-primary",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 79
+        lineNumber: 89
       },
       __self: this
-    }, "Go somewhere")))))));
+    }, "Go somewhere"))))))));
   }
 
 }
@@ -2717,7 +2763,24 @@ class MlOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 /***/ }),
 
-/***/ 5:
+/***/ "./routes.js":
+/*!*******************!*\
+  !*** ./routes.js ***!
+  \*******************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+const nextRoutes = __webpack_require__(/*! next-routes */ "next-routes");
+
+const routes = module.exports = nextRoutes();
+routes.add('preproc', '/preproc/:path');
+routes.add('mlalgo', '/mlalgo/:path');
+routes.add('procOptions', '/procOptions');
+routes.add('algoOptions', '/algoOptions');
+
+/***/ }),
+
+/***/ 3:
 /*!**********************************!*\
   !*** multi ./pages/mlOptions.js ***!
   \**********************************/
@@ -2814,6 +2877,17 @@ module.exports = require("core-js/library/fn/promise");
 /***/ (function(module, exports) {
 
 module.exports = require("firebase");
+
+/***/ }),
+
+/***/ "next-routes":
+/*!******************************!*\
+  !*** external "next-routes" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next-routes");
 
 /***/ }),
 

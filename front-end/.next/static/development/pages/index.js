@@ -61444,7 +61444,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 0:
+/***/ 3:
 /*!****************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fseohyun%2FdataPex%2Ffront-end%2Fpages%2Findex.js ***!
   \****************************************************************************************************************************/
@@ -61467,5 +61467,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js"]]]);
+},[[3,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

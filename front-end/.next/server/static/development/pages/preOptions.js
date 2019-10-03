@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2402,8 +2402,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../routes */ "./routes.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "/Users/seohyun/dataPex/front-end/pages/preOptions.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -2490,19 +2490,28 @@ class PreOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         lineNumber: 25
       },
       __self: this
-    }, "Converting the labels into numeric form so as to convert it into the machine-readable form"), __jsx("a", {
-      href: "#",
-      className: "btn btn-primary",
+    }, "Converting the labels into numeric form so as to convert it into the machine-readable form"), __jsx(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+      route: "preproc",
+      params: {
+        path: 'labsel'
+      },
       __source: {
         fileName: _jsxFileName,
         lineNumber: 26
       },
       __self: this
-    }, "Go somewhere")))), __jsx("div", {
+    }, __jsx("a", {
+      className: "btn btn-primary",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 27
+      },
+      __self: this
+    }, "Go somewhere"))))), __jsx("div", {
       className: "col-6",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 30
+        lineNumber: 32
       },
       __self: this
     }, __jsx("div", {
@@ -2510,50 +2519,59 @@ class PreOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       style: styleCard,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31
+        lineNumber: 33
       },
       __self: this
     }, __jsx("div", {
       className: "card-header",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 32
+        lineNumber: 34
       },
       __self: this
     }, "One-hot Encoding"), __jsx("div", {
       className: "card-body",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35
+        lineNumber: 37
       },
       __self: this
     }, __jsx("h5", {
       className: "card-title",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36
+        lineNumber: 38
       },
       __self: this
     }, "Explanation: "), __jsx("p", {
       className: "card-text",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 37
+        lineNumber: 39
       },
       __self: this
-    }, "Converting into a form that could be provided to ML algorithms to do a better job in prediction"), __jsx("a", {
-      href: "#",
+    }, "Converting into a form that could be provided to ML algorithms to do a better job in prediction"), __jsx(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+      route: "preproc",
+      params: {
+        path: 'one-hot'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 40
+      },
+      __self: this
+    }, __jsx("a", {
       className: "btn btn-primary",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38
+        lineNumber: 41
       },
       __self: this
-    }, "Go somewhere")))), __jsx("div", {
+    }, "Go somewhere"))))), __jsx("div", {
       className: "col-6",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42
+        lineNumber: 46
       },
       __self: this
     }, __jsx("div", {
@@ -2561,50 +2579,59 @@ class PreOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       style: styleCard,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43
+        lineNumber: 47
       },
       __self: this
     }, __jsx("div", {
       className: "card-header",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 44
+        lineNumber: 48
       },
       __self: this
     }, "Delete Row/Column"), __jsx("div", {
       className: "card-body",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 47
+        lineNumber: 51
       },
       __self: this
     }, __jsx("h5", {
       className: "card-title",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 48
+        lineNumber: 52
       },
       __self: this
     }, "Explanation: "), __jsx("p", {
       className: "card-text",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 49
+        lineNumber: 53
       },
       __self: this
-    }, "Remove some information from row/column that is not needed for ML"), __jsx("a", {
-      href: "#",
-      className: "btn btn-primary",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 50
+    }, "Remove some information from row/column that is not needed for ML"), __jsx(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+      route: "preproc",
+      params: {
+        path: 'delete-rc'
       },
-      __self: this
-    }, "Go somewhere")))), __jsx("div", {
-      className: "col-6",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 54
+      },
+      __self: this
+    }, __jsx("a", {
+      className: "btn btn-primary",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 55
+      },
+      __self: this
+    }, "Go somewhere"))))), __jsx("div", {
+      className: "col-6",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 60
       },
       __self: this
     }, __jsx("div", {
@@ -2612,50 +2639,59 @@ class PreOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       style: styleCard,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 55
+        lineNumber: 61
       },
       __self: this
     }, __jsx("div", {
       className: "card-header",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 56
+        lineNumber: 62
       },
       __self: this
     }, "Replace W"), __jsx("div", {
       className: "card-body",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 59
+        lineNumber: 65
       },
       __self: this
     }, __jsx("h5", {
       className: "card-title",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 60
+        lineNumber: 66
       },
       __self: this
     }, "Explanation: "), __jsx("p", {
       className: "card-text",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 61
+        lineNumber: 67
       },
       __self: this
-    }, "Remove white spaces for better processing of ML"), __jsx("a", {
-      href: "#",
+    }, "Remove white spaces for better processing of ML"), __jsx(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+      route: "preproc",
+      params: {
+        path: 'replaceW'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 68
+      },
+      __self: this
+    }, __jsx("a", {
       className: "btn btn-primary",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 62
+        lineNumber: 69
       },
       __self: this
-    }, "Go somewhere")))), __jsx("div", {
+    }, "Go somewhere"))))), __jsx("div", {
       className: "col-6",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 66
+        lineNumber: 74
       },
       __self: this
     }, __jsx("div", {
@@ -2663,46 +2699,55 @@ class PreOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       style: styleCard,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 67
+        lineNumber: 75
       },
       __self: this
     }, __jsx("div", {
       className: "card-header",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 68
+        lineNumber: 76
       },
       __self: this
     }, "Select Certain"), __jsx("div", {
       className: "card-body",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 71
+        lineNumber: 79
       },
       __self: this
     }, __jsx("h5", {
       className: "card-title",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 72
+        lineNumber: 80
       },
       __self: this
     }, "Explanation: "), __jsx("p", {
       className: "card-text",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73
+        lineNumber: 81
       },
       __self: this
-    }, "Select some information from the provided data"), __jsx("a", {
-      href: "#",
+    }, "Select some information from the provided data"), __jsx(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+      route: "preproc",
+      params: {
+        path: 'certain'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 82
+      },
+      __self: this
+    }, __jsx("a", {
       className: "btn btn-primary",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 74
+        lineNumber: 83
       },
       __self: this
-    }, "Go somewhere")))))));
+    }, "Go somewhere"))))))));
   }
 
 }
@@ -2711,7 +2756,24 @@ class PreOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 /***/ }),
 
-/***/ 4:
+/***/ "./routes.js":
+/*!*******************!*\
+  !*** ./routes.js ***!
+  \*******************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+const nextRoutes = __webpack_require__(/*! next-routes */ "next-routes");
+
+const routes = module.exports = nextRoutes();
+routes.add('preproc', '/preproc/:path');
+routes.add('mlalgo', '/mlalgo/:path');
+routes.add('procOptions', '/procOptions');
+routes.add('algoOptions', '/algoOptions');
+
+/***/ }),
+
+/***/ 7:
 /*!***********************************!*\
   !*** multi ./pages/preOptions.js ***!
   \***********************************/
@@ -2808,6 +2870,17 @@ module.exports = require("core-js/library/fn/promise");
 /***/ (function(module, exports) {
 
 module.exports = require("firebase");
+
+/***/ }),
+
+/***/ "next-routes":
+/*!******************************!*\
+  !*** external "next-routes" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next-routes");
 
 /***/ }),
 
