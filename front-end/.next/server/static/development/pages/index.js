@@ -154,14 +154,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _common_user__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../common/user */ "./common/user.js");
-/* harmony import */ var _common_firebase__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../common/firebase */ "./common/firebase.js");
-/* harmony import */ var _pages_main__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../pages/main */ "./pages/main.js");
+/* harmony import */ var _common_user__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../common/user */ "./common/user.js");
+/* harmony import */ var _common_firebase__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../common/firebase */ "./common/firebase.js");
+/* harmony import */ var _pages_main__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pages/main */ "./pages/main.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../routes */ "./routes.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_5__);
 
 var _jsxFileName = "/Users/seohyun/dataPex/front-end/components/layout.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+ // import Link from "next/link";
 
 
 
@@ -179,7 +180,7 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
     super(props);
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "logout", () => {
-      _common_firebase__WEBPACK_IMPORTED_MODULE_4__["default"].auth().signOut();
+      _common_firebase__WEBPACK_IMPORTED_MODULE_3__["default"].auth().signOut();
       window.location = 'http://localhost:3000/';
     });
 
@@ -195,7 +196,7 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       className: "navbar navbar-expand-lg navbar-dark bg-dark",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 37
+        lineNumber: 38
       },
       __self: this
     }, __jsx("a", {
@@ -203,7 +204,7 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       href: "/",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38
+        lineNumber: 39
       },
       __self: this
     }, "DatApex"), __jsx("button", {
@@ -216,14 +217,14 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       "aria-label": "Toggle navigation",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41
+        lineNumber: 42
       },
       __self: this
     }, __jsx("span", {
       className: "navbar-toggler-icon",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 50
+        lineNumber: 51
       },
       __self: this
     })), __jsx("div", {
@@ -231,22 +232,249 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       id: "navbarSupportedContent",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 53
+        lineNumber: 54
       },
       __self: this
     }, __jsx("ul", {
       className: "navbar-nav mr-auto",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 54
+        lineNumber: 55
       },
       __self: this
-    }), __jsx("div", {
+    }, __jsx("li", {
+      className: "nav-item dropdown",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 57
+      },
+      __self: this
+    }, __jsx("a", {
+      className: "nav-link dropdown-toggle",
+      href: "#",
+      id: "navbarDropdown",
+      role: "button",
+      "data-toggle": "dropdown",
+      "aria-haspopup": "true",
+      "aria-expanded": "false",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 58
+      },
+      __self: this
+    }, "Pre Process Data"), __jsx("div", {
+      className: "dropdown-menu",
+      "aria-labelledby": "navbarDropdown",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 68
+      },
+      __self: this
+    }, __jsx(_routes__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+      route: "preproc",
+      params: {
+        path: 'labsel'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 69
+      },
+      __self: this
+    }, __jsx("a", {
+      className: "dropdown-item",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 70
+      },
+      __self: this
+    }, "Labsel Encoding")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+      route: "preproc",
+      params: {
+        path: 'one-hot'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 72
+      },
+      __self: this
+    }, __jsx("a", {
+      className: "dropdown-item",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 73
+      },
+      __self: this
+    }, "One-hot Encoding")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+      route: "preproc",
+      params: {
+        path: 'delete-rc'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 76
+      },
+      __self: this
+    }, __jsx("a", {
+      className: "dropdown-item",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 77
+      },
+      __self: this
+    }, "Delete Row/Column")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+      route: "preproc",
+      params: {
+        path: 'replaceW'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 79
+      },
+      __self: this
+    }, __jsx("a", {
+      className: "dropdown-item",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 80
+      },
+      __self: this
+    }, "Replace W")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+      route: "preproc",
+      params: {
+        path: 'certain'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 82
+      },
+      __self: this
+    }, __jsx("a", {
+      className: "dropdown-item",
+      href: "#",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 83
+      },
+      __self: this
+    }, "Select Certain")))), __jsx("li", {
+      className: "nav-item dropdown",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 87
+      },
+      __self: this
+    }, __jsx("a", {
+      className: "nav-link dropdown-toggle",
+      href: "#",
+      id: "navbarDropdown",
+      role: "button",
+      "data-toggle": "dropdown",
+      "aria-haspopup": "true",
+      "aria-expanded": "false",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 88
+      },
+      __self: this
+    }, "ML Algorithm"), __jsx("div", {
+      className: "dropdown-menu",
+      "aria-labelledby": "navbarDropdown",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 98
+      },
+      __self: this
+    }, __jsx(_routes__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+      route: "mlalgo",
+      params: {
+        path: 'nba'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 99
+      },
+      __self: this
+    }, __jsx("a", {
+      className: "dropdown-item",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 100
+      },
+      __self: this
+    }, "Naive Bayes algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+      route: "mlalgo",
+      params: {
+        path: 'lra'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 102
+      },
+      __self: this
+    }, __jsx("a", {
+      className: "dropdown-item",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 103
+      },
+      __self: this
+    }, "Logistic Regression algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+      route: "mlalgo",
+      params: {
+        path: 'svm'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 106
+      },
+      __self: this
+    }, __jsx("a", {
+      className: "dropdown-item",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 107
+      },
+      __self: this
+    }, "Support Vector Machine algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+      route: "mlalgo",
+      params: {
+        path: 'bag'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 109
+      },
+      __self: this
+    }, __jsx("a", {
+      className: "dropdown-item",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 110
+      },
+      __self: this
+    }, "Bagging algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+      route: "mlalgo",
+      params: {
+        path: 'clus'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 112
+      },
+      __self: this
+    }, __jsx("a", {
+      className: "dropdown-item",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 113
+      },
+      __self: this
+    }, "Clustering algorithm"))))), __jsx("div", {
       className: "form-inline my-2 my-lg-0",
       style: styleTextWhite,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 61
+        lineNumber: 118
       },
       __self: this
     }, this.state.user !== null && __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx("button", {
@@ -254,28 +482,28 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       onClick: this.logout,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 65
+        lineNumber: 122
       },
       __self: this
     }, " Logout "))))), __jsx("div", {
       className: "container mt-4",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 71
+        lineNumber: 128
       },
       __self: this
     }, __jsx("div", {
       className: "row",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 72
+        lineNumber: 129
       },
       __self: this
     }, __jsx("div", {
       className: "col-12",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73
+        lineNumber: 130
       },
       __self: this
     }, this.props.children))));
@@ -310,6 +538,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
+const styleLogo = {
+  height: '500px',
+  width: '700px'
+};
 
 class Login extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
   constructor(...args) {
@@ -348,33 +580,51 @@ class Login extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
       className: "container-fluid",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45
+        lineNumber: 50
       },
       __self: this
     }, __jsx("div", {
       className: "row",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 46
+        lineNumber: 51
       },
       __self: this
     }, __jsx("div", {
       className: "col-12 text-center",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 47
+        lineNumber: 52
       },
       __self: this
-    }, __jsx("h1", {
+    }, __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 48
+        lineNumber: 55
       },
       __self: this
-    }, "Log In"), __jsx("hr", {
+    }), __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 49
+        lineNumber: 56
+      },
+      __self: this
+    }), __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 57
+      },
+      __self: this
+    }), __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 58
+      },
+      __self: this
+    }), __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 59
       },
       __self: this
     }), __jsx("img", {
@@ -382,13 +632,13 @@ class Login extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
       alt: "logo",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 50
+        lineNumber: 62
       },
       __self: this
     }), __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51
+        lineNumber: 63
       },
       __self: this
     }), __jsx("button", {
@@ -396,7 +646,7 @@ class Login extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
       onClick: this.login,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57
+        lineNumber: 69
       },
       __self: this
     }, "Sign In with Google Account"))));
@@ -1139,9 +1389,7 @@ function withRouter(ComposedComponent) {
   WithRouteWrapper.contextTypes = {
     router: _propTypes.default.object
   };
-  WithRouteWrapper.getInitialProps = ComposedComponent.getInitialProps // This is needed to allow checking for custom getInitialProps in _app
-  ;
-  WithRouteWrapper.origGetInitialProps = ComposedComponent.origGetInitialProps;
+  WithRouteWrapper.getInitialProps = ComposedComponent.getInitialProps;
 
   if (true) {
     const name = ComposedComponent.displayName || ComposedComponent.name || 'Unknown';
@@ -1840,20 +2088,30 @@ class Router {
     if ( // @ts-ignore workaround for dead-code elimination
     (self.__HAS_SPR || "development" !== 'production') && Component.__NEXT_SPR) {
       let status;
-      const {
-        pathname
-      } = url_1.parse(ctx.asPath || ctx.pathname);
-      props = await fetch(`/_next/data${pathname}.json`).then(res => {
+      const url = ctx.asPath ? ctx.asPath : url_1.format({
+        pathname: ctx.pathname,
+        query: ctx.query
+      });
+      props = await fetch(url, {
+        headers: {
+          'content-type': 'application/json'
+        }
+      }).then(res => {
         if (!res.ok) {
           status = res.status;
           throw new Error('failed to load prerender data');
         }
 
         return res.json();
+      }).then(pageProps => {
+        return {
+          pageProps
+        };
       }).catch(err => {
-        console.error(`Failed to load data`, status, err);
-        window.location.href = pathname;
-        return new _Promise(() => {});
+        return {
+          error: err.message,
+          status
+        };
       });
     } else {
       const AppTree = this._wrapApp(App);
@@ -2474,16 +2732,16 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         lineNumber: 39
       },
       __self: this
-    }), __jsx(_main__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    }, __jsx(_main__WEBPACK_IMPORTED_MODULE_4__["default"], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 40
       },
       __self: this
-    })) : __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_components_login__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    }))) : __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_components_login__WEBPACK_IMPORTED_MODULE_3__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43
+        lineNumber: 44
       },
       __self: this
     }))));
@@ -2554,35 +2812,35 @@ class Main extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       href: "/preOptions",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15
+        lineNumber: 19
       },
       __self: this
     }, __jsx("a", {
       className: "btn btn-primary btn-lg btn-block",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16
+        lineNumber: 20
       },
       __self: this
     }, "Pre Process Data"))), __jsx("div", {
       className: "col-6",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19
+        lineNumber: 23
       },
       __self: this
     }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
       href: "/mlOptions",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20
+        lineNumber: 28
       },
       __self: this
     }, __jsx("a", {
       className: "btn btn-primary btn-lg btn-block",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 29
       },
       __self: this
     }, " ML algorithm "))))));
@@ -2591,6 +2849,23 @@ class Main extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Main);
+
+/***/ }),
+
+/***/ "./routes.js":
+/*!*******************!*\
+  !*** ./routes.js ***!
+  \*******************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+const nextRoutes = __webpack_require__(/*! next-routes */ "next-routes");
+
+const routes = module.exports = nextRoutes();
+routes.add('preproc', '/preproc/:path');
+routes.add('mlalgo', '/mlalgo/:path');
+routes.add('procOptions', '/procOptions');
+routes.add('algoOptions', '/algoOptions');
 
 /***/ }),
 
@@ -2691,6 +2966,17 @@ module.exports = require("core-js/library/fn/promise");
 /***/ (function(module, exports) {
 
 module.exports = require("firebase");
+
+/***/ }),
+
+/***/ "next-routes":
+/*!******************************!*\
+  !*** external "next-routes" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next-routes");
 
 /***/ }),
 
