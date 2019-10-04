@@ -11908,7 +11908,7 @@ module.exports = (__webpack_require__(/*! dll-reference dll_129a35c7ec57967eb265
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.10.1
+/** @license React v16.10.2
  * react-is.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.

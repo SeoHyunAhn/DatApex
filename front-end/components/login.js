@@ -3,6 +3,11 @@ import Link from 'next/link';
 import User from '../common/user';
 import firebase from '../common/firebase';
 
+const styleLogo = {
+    height: '500px',
+    width: '700px',
+};
+
 class Login extends Component {
     login = () => {
         const provider = new firebase.auth.GoogleAuthProvider();
@@ -45,8 +50,15 @@ class Login extends Component {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-12 text-center">
-                        <h1>Log In</h1>
-                        <hr></hr>
+                        {/* <h1>Log In</h1>
+                        <hr></hr> */}
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+
+                        {/* <img src="../static/Logo.png" alt="logo" style={ styleLogo }/> */}
                         <img src="../static/Logo.png" alt="logo" />
                         <br />
                         {/* <Link href="/main">

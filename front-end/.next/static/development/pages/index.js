@@ -68,11 +68,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _common_user__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../common/user */ "./common/user.js");
-/* harmony import */ var _common_firebase__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../common/firebase */ "./common/firebase.js");
-/* harmony import */ var _pages_main__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../pages/main */ "./pages/main.js");
+/* harmony import */ var _common_user__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../common/user */ "./common/user.js");
+/* harmony import */ var _common_firebase__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../common/firebase */ "./common/firebase.js");
+/* harmony import */ var _pages_main__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../pages/main */ "./pages/main.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../routes */ "./routes.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_11__);
 
 
 
@@ -82,6 +82,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/Users/youngjoon/Desktop/CS407/DatApex/front-end/components/layout.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
+ // import Link from "next/link";
 
 
 
@@ -107,7 +108,7 @@ function (_React$Component) {
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Layout).call(this, props));
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "logout", function () {
-      _common_firebase__WEBPACK_IMPORTED_MODULE_10__["default"].auth().signOut();
+      _common_firebase__WEBPACK_IMPORTED_MODULE_9__["default"].auth().signOut();
       window.location = 'http://localhost:3000/';
     });
 
@@ -126,7 +127,7 @@ function (_React$Component) {
         className: "navbar navbar-expand-lg navbar-dark bg-dark",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
+          lineNumber: 38
         },
         __self: this
       }, __jsx("a", {
@@ -134,7 +135,7 @@ function (_React$Component) {
         href: "/",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 38
+          lineNumber: 39
         },
         __self: this
       }, "DatApex"), __jsx("button", {
@@ -147,14 +148,14 @@ function (_React$Component) {
         "aria-label": "Toggle navigation",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 41
+          lineNumber: 42
         },
         __self: this
       }, __jsx("span", {
         className: "navbar-toggler-icon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50
+          lineNumber: 51
         },
         __self: this
       })), __jsx("div", {
@@ -162,22 +163,249 @@ function (_React$Component) {
         id: "navbarSupportedContent",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 54
         },
         __self: this
       }, __jsx("ul", {
         className: "navbar-nav mr-auto",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 55
         },
         __self: this
-      }), __jsx("div", {
+      }, __jsx("li", {
+        className: "nav-item dropdown",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 57
+        },
+        __self: this
+      }, __jsx("a", {
+        className: "nav-link dropdown-toggle",
+        href: "#",
+        id: "navbarDropdown",
+        role: "button",
+        "data-toggle": "dropdown",
+        "aria-haspopup": "true",
+        "aria-expanded": "false",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 58
+        },
+        __self: this
+      }, "Pre Process Data"), __jsx("div", {
+        className: "dropdown-menu",
+        "aria-labelledby": "navbarDropdown",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 68
+        },
+        __self: this
+      }, __jsx(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
+        route: "preproc",
+        params: {
+          path: 'labsel'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 69
+        },
+        __self: this
+      }, __jsx("a", {
+        className: "dropdown-item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 70
+        },
+        __self: this
+      }, "Labsel Encoding")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
+        route: "preproc",
+        params: {
+          path: 'one-hot'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 72
+        },
+        __self: this
+      }, __jsx("a", {
+        className: "dropdown-item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 73
+        },
+        __self: this
+      }, "One-hot Encoding")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
+        route: "preproc",
+        params: {
+          path: 'delete-rc'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 76
+        },
+        __self: this
+      }, __jsx("a", {
+        className: "dropdown-item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 77
+        },
+        __self: this
+      }, "Delete Row/Column")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
+        route: "preproc",
+        params: {
+          path: 'replaceW'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 79
+        },
+        __self: this
+      }, __jsx("a", {
+        className: "dropdown-item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 80
+        },
+        __self: this
+      }, "Replace W")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
+        route: "preproc",
+        params: {
+          path: 'certain'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 82
+        },
+        __self: this
+      }, __jsx("a", {
+        className: "dropdown-item",
+        href: "#",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 83
+        },
+        __self: this
+      }, "Select Certain")))), __jsx("li", {
+        className: "nav-item dropdown",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 87
+        },
+        __self: this
+      }, __jsx("a", {
+        className: "nav-link dropdown-toggle",
+        href: "#",
+        id: "navbarDropdown",
+        role: "button",
+        "data-toggle": "dropdown",
+        "aria-haspopup": "true",
+        "aria-expanded": "false",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 88
+        },
+        __self: this
+      }, "ML Algorithm"), __jsx("div", {
+        className: "dropdown-menu",
+        "aria-labelledby": "navbarDropdown",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 98
+        },
+        __self: this
+      }, __jsx(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
+        route: "mlalgo",
+        params: {
+          path: 'nba'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 99
+        },
+        __self: this
+      }, __jsx("a", {
+        className: "dropdown-item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 100
+        },
+        __self: this
+      }, "Naive Bayes algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
+        route: "mlalgo",
+        params: {
+          path: 'lra'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 102
+        },
+        __self: this
+      }, __jsx("a", {
+        className: "dropdown-item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 103
+        },
+        __self: this
+      }, "Logistic Regression algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
+        route: "mlalgo",
+        params: {
+          path: 'svm'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 106
+        },
+        __self: this
+      }, __jsx("a", {
+        className: "dropdown-item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 107
+        },
+        __self: this
+      }, "Support Vector Machine algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
+        route: "mlalgo",
+        params: {
+          path: 'bag'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 109
+        },
+        __self: this
+      }, __jsx("a", {
+        className: "dropdown-item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 110
+        },
+        __self: this
+      }, "Bagging algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
+        route: "mlalgo",
+        params: {
+          path: 'clus'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 112
+        },
+        __self: this
+      }, __jsx("a", {
+        className: "dropdown-item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 113
+        },
+        __self: this
+      }, "Clustering algorithm"))))), __jsx("div", {
         className: "form-inline my-2 my-lg-0",
         style: styleTextWhite,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61
+          lineNumber: 118
         },
         __self: this
       }, this.state.user !== null && __jsx(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, __jsx("button", {
@@ -185,28 +413,28 @@ function (_React$Component) {
         onClick: this.logout,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65
+          lineNumber: 122
         },
         __self: this
       }, " Logout "))))), __jsx("div", {
         className: "container mt-4",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 71
+          lineNumber: 128
         },
         __self: this
       }, __jsx("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 72
+          lineNumber: 129
         },
         __self: this
       }, __jsx("div", {
         className: "col-12",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 73
+          lineNumber: 130
         },
         __self: this
       }, this.props.children))));
@@ -255,6 +483,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
 
 
 
+var styleLogo = {
+  height: '500px',
+  width: '700px'
+};
 
 var Login =
 /*#__PURE__*/
@@ -311,33 +543,51 @@ function (_Component) {
         className: "container-fluid",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 50
         },
         __self: this
       }, __jsx("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 51
         },
         __self: this
       }, __jsx("div", {
         className: "col-12 text-center",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47
+          lineNumber: 52
         },
         __self: this
-      }, __jsx("h1", {
+      }, __jsx("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 48
+          lineNumber: 55
         },
         __self: this
-      }, "Log In"), __jsx("hr", {
+      }), __jsx("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 56
+        },
+        __self: this
+      }), __jsx("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 57
+        },
+        __self: this
+      }), __jsx("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 58
+        },
+        __self: this
+      }), __jsx("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 59
         },
         __self: this
       }), __jsx("img", {
@@ -345,13 +595,13 @@ function (_Component) {
         alt: "logo",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50
+          lineNumber: 62
         },
         __self: this
       }), __jsx("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51
+          lineNumber: 63
         },
         __self: this
       }), __jsx("button", {
@@ -359,7 +609,7 @@ function (_Component) {
         onClick: this.login,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 69
         },
         __self: this
       }, "Sign In with Google Account"))));
@@ -2003,6 +2253,558 @@ try {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/@babel/runtime-corejs2/node_modules/regenerator-runtime/runtime.js");
+
+
+/***/ }),
+
+/***/ "./node_modules/@firebase/analytics/dist/index.esm.js":
+/*!************************************************************!*\
+  !*** ./node_modules/@firebase/analytics/dist/index.esm.js ***!
+  \************************************************************/
+/*! exports provided: factory, registerAnalytics, resetGlobalVars, settings */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "factory", function() { return factory; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "registerAnalytics", function() { return registerAnalytics; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "resetGlobalVars", function() { return resetGlobalVars; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "settings", function() { return settings; });
+/* harmony import */ var _firebase_app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @firebase/app */ "./node_modules/@firebase/app/dist/index.cjs.js");
+/* harmony import */ var _firebase_app__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_firebase_app__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _firebase_installations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @firebase/installations */ "./node_modules/@firebase/installations/dist/index.esm.js");
+/* harmony import */ var _firebase_util__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @firebase/util */ "./node_modules/@firebase/util/dist/index.cjs.js");
+/* harmony import */ var _firebase_util__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_firebase_util__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+
+/**
+ * @license
+ * Copyright 2019 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+var ANALYTICS_ID_FIELD = 'measurementId';
+// Key to attach FID to in gtag params.
+var GA_FID_KEY = 'firebase_id';
+var ORIGIN_KEY = 'origin';
+var GtagCommand;
+(function (GtagCommand) {
+    GtagCommand["EVENT"] = "event";
+    GtagCommand["SET"] = "set";
+    GtagCommand["CONFIG"] = "config";
+})(GtagCommand || (GtagCommand = {}));
+/*
+ * Officially recommended event names for gtag.js
+ * Any other string is also allowed.
+ */
+var EventName;
+(function (EventName) {
+    EventName["ADD_PAYMENT_INFO"] = "add_payment_info";
+    EventName["ADD_TO_CART"] = "add_to_cart";
+    EventName["ADD_TO_WISHLIST"] = "add_to_wishlist";
+    EventName["BEGIN_CHECKOUT"] = "begin_checkout";
+    EventName["CHECKOUT_PROGRESS"] = "checkout_progress";
+    EventName["EXCEPTION"] = "exception";
+    EventName["GENERATE_LEAD"] = "generate_lead";
+    EventName["LOGIN"] = "login";
+    EventName["PAGE_VIEW"] = "page_view";
+    EventName["PURCHASE"] = "purchase";
+    EventName["REFUND"] = "refund";
+    EventName["REMOVE_FROM_CART"] = "remove_from_cart";
+    EventName["SCREEN_VIEW"] = "screen_view";
+    EventName["SEARCH"] = "search";
+    EventName["SELECT_CONTENT"] = "select_content";
+    EventName["SET_CHECKOUT_OPTION"] = "set_checkout_option";
+    EventName["SHARE"] = "share";
+    EventName["SIGN_UP"] = "sign_up";
+    EventName["TIMING_COMPLETE"] = "timing_complete";
+    EventName["VIEW_ITEM"] = "view_item";
+    EventName["VIEW_ITEM_LIST"] = "view_item_list";
+    EventName["VIEW_PROMOTION"] = "view_promotion";
+    EventName["VIEW_SEARCH_RESULTS"] = "view_search_results";
+})(EventName || (EventName = {}));
+
+/**
+ * @license
+ * Copyright 2019 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Logs an analytics event through the Firebase SDK.
+ *
+ * @param gtagFunction Wrapped gtag function that waits for fid to be set before sending an event
+ * @param eventName Google Analytics event name, choose from standard list or use a custom string.
+ * @param eventParams Analytics event parameters.
+ */
+function logEvent(gtagFunction, analyticsId, eventName, eventParams, options) {
+    var params = eventParams || {};
+    if (!options || !options.global) {
+        params = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, eventParams, { 'send_to': analyticsId });
+    }
+    // Workaround for http://b/141370449 - third argument cannot be undefined.
+    gtagFunction(GtagCommand.EVENT, eventName, params || {});
+}
+// TODO: Brad is going to add `screen_name` to GA Gold config parameter schema
+/**
+ * Set screen_name parameter for this Google Analytics ID.
+ *
+ * @param gtagFunction Wrapped gtag function that waits for fid to be set before sending an event
+ * @param screenName Screen name string to set.
+ */
+function setCurrentScreen(gtagFunction, analyticsId, screenName, options) {
+    if (options && options.global) {
+        gtagFunction(GtagCommand.SET, { 'screen_name': screenName });
+    }
+    else {
+        gtagFunction(GtagCommand.CONFIG, analyticsId, {
+            update: true,
+            'screen_name': screenName
+        });
+    }
+}
+/**
+ * Set user_id parameter for this Google Analytics ID.
+ *
+ * @param gtagFunction Wrapped gtag function that waits for fid to be set before sending an event
+ * @param id User ID string to set
+ */
+function setUserId(gtagFunction, analyticsId, id, options) {
+    if (options && options.global) {
+        gtagFunction(GtagCommand.SET, { 'user_id': id });
+    }
+    else {
+        gtagFunction(GtagCommand.CONFIG, analyticsId, {
+            update: true,
+            'user_id': id
+        });
+    }
+}
+/**
+ * Set all other user properties other than user_id and screen_name.
+ *
+ * @param gtagFunction Wrapped gtag function that waits for fid to be set before sending an event
+ * @param properties Map of user properties to set
+ */
+function setUserProperties(gtagFunction, analyticsId, properties, options) {
+    if (options && options.global) {
+        var flatProperties = {};
+        for (var _i = 0, _a = Object.keys(properties); _i < _a.length; _i++) {
+            var key = _a[_i];
+            // use dot notation for merge behavior in gtag.js
+            flatProperties["user_properties." + key] = properties[key];
+        }
+        gtagFunction(GtagCommand.SET, flatProperties);
+    }
+    else {
+        gtagFunction(GtagCommand.CONFIG, analyticsId, {
+            update: true,
+            'user_properties': properties
+        });
+    }
+}
+/**
+ * Set whether collection is enabled for this ID.
+ *
+ * @param enabled If true, collection is enabled for this ID.
+ */
+function setAnalyticsCollectionEnabled(analyticsId, enabled) {
+    window["ga-disable-" + analyticsId] = !enabled;
+}
+
+/**
+ * @license
+ * Copyright 2019 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Initialize the analytics instance in gtag.js by calling config command with fid.
+ *
+ * NOTE: We combine analytics initialization and setting fid together because we want fid to be
+ * part of the `page_view` event that's sent during the initialization
+ * @param app Firebase app
+ * @param gtagCore The gtag function that's not wrapped.
+ */
+function initializeGAId(app, gtagCore) {
+    return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__awaiter"])(this, void 0, void 0, function () {
+        var fid;
+        var _a;
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__generator"])(this, function (_b) {
+            switch (_b.label) {
+                case 0: return [4 /*yield*/, app.installations().getId()];
+                case 1:
+                    fid = _b.sent();
+                    // This command initializes gtag.js and only needs to be called once for the entire web app,
+                    // but since it is idempotent, we can call it multiple times.
+                    // We keep it together with other initialization logic for better code structure.
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    gtagCore('js', new Date());
+                    // It should be the first config command called on this GA-ID
+                    // Initialize this GA-ID and set FID on it using the gtag config API.
+                    gtagCore(GtagCommand.CONFIG, app.options[ANALYTICS_ID_FIELD], (_a = {},
+                        _a[GA_FID_KEY] = fid,
+                        // guard against developers accidentally setting properties with prefix `firebase_`
+                        _a[ORIGIN_KEY] = 'firebase',
+                        _a.update = true,
+                        _a));
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+function hasDataLayer(dataLayerName) {
+    return Array.isArray(window[dataLayerName]);
+}
+function insertScriptTag(dataLayerName) {
+    var script = document.createElement('script');
+    // We are not providing an analyticsId in the URL because it would trigger a `page_view`
+    // without fid. We will initialize ga-id using gtag (config) command together with fid.
+    script.src = "https://www.googletagmanager.com/gtag/js?l=" + dataLayerName;
+    script.async = true;
+    document.head.appendChild(script);
+}
+/** Get reference to, or create, global datalayer.
+ * @param dataLayerName Name of datalayer (most often the default, "_dataLayer")
+ */
+function getOrCreateDataLayer(dataLayerName) {
+    // Check for existing dataLayer and create if needed.
+    var dataLayer = [];
+    if (hasDataLayer(dataLayerName)) {
+        dataLayer = window[dataLayerName];
+    }
+    else {
+        dataLayer = window[dataLayerName] = [];
+    }
+    return dataLayer;
+}
+/**
+ * Wraps a standard gtag function with extra code to wait for completion of
+ * relevant initialization promises before sending requests.
+ *
+ * @param gtagCore Basic gtag function that just appends to dataLayer
+ * @param initializedIdPromisesMap Map of gaIds to their initialization promises
+ */
+function wrapGtag(gtagCore, initializedIdPromisesMap) {
+    return function (command, idOrNameOrParams, gtagParams) {
+        // If event, check that relevant initialization promises have completed.
+        if (command === GtagCommand.EVENT) {
+            var initializationPromisesToWaitFor = [];
+            // If there's a 'send_to' param, check if any ID specified matches
+            // a FID we have begun a fetch on.
+            if (gtagParams && gtagParams['send_to']) {
+                var gaSendToList = gtagParams['send_to'];
+                // Make it an array if is isn't, so it can be dealt with the same way.
+                if (!Array.isArray(gaSendToList)) {
+                    gaSendToList = [gaSendToList];
+                }
+                for (var _i = 0, gaSendToList_1 = gaSendToList; _i < gaSendToList_1.length; _i++) {
+                    var sendToId = gaSendToList_1[_i];
+                    var initializationPromise = initializedIdPromisesMap[sendToId];
+                    // Groups will not be in the map.
+                    if (initializationPromise) {
+                        initializationPromisesToWaitFor.push(initializationPromise);
+                    }
+                    else {
+                        // There is an item in 'send_to' that is not associated
+                        // directly with an FID, possibly a group.  Empty this array
+                        // and let it get populated below.
+                        initializationPromisesToWaitFor = [];
+                        break;
+                    }
+                }
+            }
+            // This will be unpopulated if there was no 'send_to' field , or
+            // if not all entries in the 'send_to' field could be mapped to
+            // a FID. In these cases, wait on all pending initialization promises.
+            if (initializationPromisesToWaitFor.length === 0) {
+                for (var _a = 0, _b = Object.values(initializedIdPromisesMap); _a < _b.length; _a++) {
+                    var idPromise = _b[_a];
+                    initializationPromisesToWaitFor.push(idPromise);
+                }
+            }
+            // Run core gtag function with args after all relevant initialization
+            // promises have been resolved.
+            Promise.all(initializationPromisesToWaitFor)
+                // Workaround for http://b/141370449 - third argument cannot be undefined.
+                .then(function () {
+                return gtagCore(GtagCommand.EVENT, idOrNameOrParams, gtagParams || {});
+            })
+                .catch(function (e) { return console.error(e); });
+        }
+        else if (command === GtagCommand.CONFIG) {
+            var initializationPromiseToWait = initializedIdPromisesMap[idOrNameOrParams] ||
+                Promise.resolve();
+            initializationPromiseToWait
+                .then(function () {
+                gtagCore(GtagCommand.CONFIG, idOrNameOrParams, gtagParams);
+            })
+                .catch(function (e) { return console.error(e); });
+        }
+        else {
+            // SET command.
+            // Splitting calls for CONFIG and SET to make it clear which signature
+            // Typescript is checking.
+            gtagCore(GtagCommand.SET, idOrNameOrParams);
+        }
+    };
+}
+/**
+ * Creates global gtag function or wraps existing one if found.
+ * This wrapped function attaches Firebase instance ID (FID) to gtag 'config' and
+ * 'event' calls that belong to the GAID associated with this Firebase instance.
+ *
+ * @param initializedIdPromisesMap Map of gaId to initialization promises.
+ * @param dataLayerName Name of global GA datalayer array.
+ * @param gtagFunctionName Name of global gtag function ("gtag" if not user-specified)
+ */
+function wrapOrCreateGtag(initializedIdPromisesMap, dataLayerName, gtagFunctionName) {
+    // Create a basic core gtag function
+    var gtagCore = function () {
+        var _args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            _args[_i] = arguments[_i];
+        }
+        // Must push IArguments object, not an array.
+        window[dataLayerName].push(arguments);
+    };
+    // Replace it with existing one if found
+    if (window[gtagFunctionName] &&
+        typeof window[gtagFunctionName] === 'function') {
+        // @ts-ignore
+        gtagCore = window[gtagFunctionName];
+    }
+    window[gtagFunctionName] = wrapGtag(gtagCore, initializedIdPromisesMap);
+    return {
+        gtagCore: gtagCore,
+        wrappedGtag: window[gtagFunctionName]
+    };
+}
+
+/**
+ * @license
+ * Copyright 2019 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+var _a;
+var ERRORS = (_a = {},
+    _a["no-ga-id" /* NO_GA_ID */] = "\"" + ANALYTICS_ID_FIELD + "\" field is empty in " +
+        'Firebase config. Firebase Analytics ' +
+        'requires this field to contain a valid measurement ID.',
+    _a["already-exists" /* ALREADY_EXISTS */] = 'A Firebase Analytics instance with the measurement ID ${id} ' +
+        ' already exists. ' +
+        'Only one Firebase Analytics instance can be created for each measurement ID.',
+    _a["already-initialized" /* ALREADY_INITIALIZED */] = 'Firebase Analytics has already been initialized.' +
+        'settings() must be called before initializing any Analytics instance' +
+        'or it will have no effect.',
+    _a);
+var ERROR_FACTORY = new _firebase_util__WEBPACK_IMPORTED_MODULE_3__["ErrorFactory"]('analytics', 'Analytics', ERRORS);
+
+/**
+ * @license
+ * Copyright 2019 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Maps gaId to FID fetch promises.
+ */
+var initializedIdPromisesMap = {};
+/**
+ * Name for window global data layer array used by GA: defaults to 'dataLayer'.
+ */
+var dataLayerName = 'dataLayer';
+/**
+ * Name for window global gtag function used by GA: defaults to 'gtag'.
+ */
+var gtagName = 'gtag';
+/**
+ * Reproduction of standard gtag function or reference to existing
+ * gtag function on window object.
+ */
+var gtagCoreFunction;
+/**
+ * Wrapper around gtag function that ensures FID is sent with all
+ * relevant event and config calls.
+ */
+var wrappedGtagFunction;
+/**
+ * Flag to ensure page initialization steps (creation or wrapping of
+ * dataLayer and gtag script) are only run once per page load.
+ */
+var globalInitDone = false;
+/**
+ * For testing
+ */
+function resetGlobalVars(newGlobalInitDone, newGaInitializedPromise) {
+    if (newGlobalInitDone === void 0) { newGlobalInitDone = false; }
+    if (newGaInitializedPromise === void 0) { newGaInitializedPromise = {}; }
+    globalInitDone = newGlobalInitDone;
+    initializedIdPromisesMap = newGaInitializedPromise;
+    dataLayerName = 'dataLayer';
+    gtagName = 'gtag';
+}
+/**
+ * This must be run before calling firebase.analytics() or it won't
+ * have any effect.
+ * @param options Custom gtag and dataLayer names.
+ */
+function settings(options) {
+    if (globalInitDone) {
+        throw ERROR_FACTORY.create("already-initialized" /* ALREADY_INITIALIZED */);
+    }
+    if (options.dataLayerName) {
+        dataLayerName = options.dataLayerName;
+    }
+    if (options.gtagName) {
+        gtagName = options.gtagName;
+    }
+}
+function factory(app, 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+extendApp) {
+    if (!app.options[ANALYTICS_ID_FIELD]) {
+        throw ERROR_FACTORY.create("no-ga-id" /* NO_GA_ID */);
+    }
+    var analyticsId = app.options[ANALYTICS_ID_FIELD];
+    if (initializedIdPromisesMap[analyticsId] != null) {
+        throw ERROR_FACTORY.create("already-exists" /* ALREADY_EXISTS */, {
+            id: analyticsId
+        });
+    }
+    if (!globalInitDone) {
+        // Steps here should only be done once per page: creation or wrapping
+        // of dataLayer and global gtag function.
+        // Presence of previously existing dataLayer used to detect if user has
+        // already put the gtag snippet on this page.
+        if (!hasDataLayer(dataLayerName)) {
+            insertScriptTag(dataLayerName);
+        }
+        getOrCreateDataLayer(dataLayerName);
+        var _a = wrapOrCreateGtag(initializedIdPromisesMap, dataLayerName, gtagName), wrappedGtag = _a.wrappedGtag, gtagCore = _a.gtagCore;
+        wrappedGtagFunction = wrappedGtag;
+        gtagCoreFunction = gtagCore;
+        globalInitDone = true;
+    }
+    // Async but non-blocking.
+    initializedIdPromisesMap[analyticsId] = initializeGAId(app, gtagCoreFunction);
+    var analyticsInstance = {
+        app: app,
+        logEvent: function (eventName, eventParams, options) {
+            return logEvent(wrappedGtagFunction, analyticsId, eventName, eventParams, options);
+        },
+        setCurrentScreen: function (screenName, options) {
+            return setCurrentScreen(wrappedGtagFunction, analyticsId, screenName, options);
+        },
+        setUserId: function (id, options) {
+            return setUserId(wrappedGtagFunction, analyticsId, id, options);
+        },
+        setUserProperties: function (properties, options) {
+            return setUserProperties(wrappedGtagFunction, analyticsId, properties, options);
+        },
+        setAnalyticsCollectionEnabled: function (enabled) {
+            return setAnalyticsCollectionEnabled(app.options[ANALYTICS_ID_FIELD], enabled);
+        }
+    };
+    extendApp({
+        INTERNAL: {
+            analytics: {
+                logEvent: analyticsInstance.logEvent
+            }
+        }
+    });
+    return analyticsInstance;
+}
+
+/**
+ * @license
+ * Copyright 2019 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Type constant for Firebase Analytics.
+ */
+var ANALYTICS_TYPE = 'analytics';
+function registerAnalytics(instance) {
+    instance.INTERNAL.registerService(ANALYTICS_TYPE, factory, {
+        settings: settings,
+        EventName: EventName
+    }, 
+    // We don't need to wait on any AppHooks.
+    undefined, 
+    // Allow multiple analytics instances per app.
+    false);
+}
+registerAnalytics(_firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a);
+
+
+//# sourceMappingURL=index.esm.js.map
 
 
 /***/ }),
@@ -3651,7 +4453,7 @@ var errorForServerCode = function (code, query) {
  * @type {RegExp}
  * @private
  */
-var INTEGER_REGEXP_ = new RegExp('^-?\\d{1,10}$');
+var INTEGER_REGEXP_ = new RegExp('^-?(0*)\\d{1,10}$');
 /**
  * If the string contains a 32-bit integer, return it.  Else return null.
  * @param {!string} str
@@ -23875,7 +24677,7 @@ var Document = /** @class */ (function (_super) {
         var _this = this;
         if (!this.objectValue) {
             var result_1 = ObjectValue.EMPTY;
-            forEach(this.proto.fields, function (key, value) {
+            forEach(this.proto.fields || {}, function (key, value) {
                 result_1 = result_1.set(new FieldPath([key]), _this.converter(value));
             });
             this.objectValue = result_1;
@@ -23914,9 +24716,11 @@ var Document = /** @class */ (function (_super) {
      */
     Document.prototype.getProtoField = function (path) {
         assert(this.proto !== undefined, 'Can only call getProtoField() when proto is defined');
-        var protoValue = this.proto.fields[path.firstSegment()];
+        var protoValue = this.proto.fields
+            ? this.proto.fields[path.firstSegment()]
+            : undefined;
         for (var i = 1; i < path.length; ++i) {
-            if (!protoValue || !protoValue.mapValue) {
+            if (!protoValue || !protoValue.mapValue || !protoValue.mapValue.fields) {
                 return undefined;
             }
             protoValue = protoValue.mapValue.fields[path.get(i)];
@@ -38737,7 +39541,7 @@ var Firestore = /** @class */ (function () {
         this.ensureClientConfigured();
         return this._firestoreClient.waitForPendingWrites();
     };
-    Firestore.prototype._onSnapshotsInSync = function (arg) {
+    Firestore.prototype.onSnapshotsInSync = function (arg) {
         this.ensureClientConfigured();
         if (isPartialObserver(arg)) {
             return this.onSnapshotsInSyncInternal(arg);
@@ -40417,7 +41221,12 @@ var WebChannelConnection = /** @class */ (function () {
                     debug(LOG_TAG$d, 'RPC "' + rpcName + '" completed.');
                 }
             });
-            var requestString = JSON.stringify(request);
+            // The database field is already encoded in URL. Specifying it again in
+            // the body is not necessary in production, and will cause duplicate field
+            // errors in the Firestore Emulator. Let's remove it.
+            var jsonObj = tslib_1.__assign({}, request);
+            delete jsonObj.database;
+            var requestString = JSON.stringify(jsonObj);
             debug(LOG_TAG$d, 'XHR sending: ', url + ' ' + requestString);
             // Content-Type: text/plain will avoid preflight requests which might
             // mess with CORS and redirects by proxies. If we add custom headers
@@ -46196,6 +47005,1251 @@ exports.registerPerformance = registerPerformance;
 
 /***/ }),
 
+/***/ "./node_modules/@firebase/remote-config/dist/index.cjs.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@firebase/remote-config/dist/index.cjs.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+
+var firebase = _interopDefault(__webpack_require__(/*! @firebase/app */ "./node_modules/@firebase/app/dist/index.cjs.js"));
+__webpack_require__(/*! @firebase/installations */ "./node_modules/@firebase/installations/dist/index.esm.js");
+var tslib_1 = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+var util = __webpack_require__(/*! @firebase/util */ "./node_modules/@firebase/util/dist/index.cjs.js");
+var logger = __webpack_require__(/*! @firebase/logger */ "./node_modules/@firebase/logger/dist/index.esm.js");
+
+/**
+ * @license
+ * Copyright 2019 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Implements the {@link RemoteConfigClient} abstraction with success response caching.
+ *
+ * <p>Comparable to the browser's Cache API for responses, but the Cache API requires a Service
+ * Worker, which requires HTTPS, which would significantly complicate SDK installation. Also, the
+ * Cache API doesn't support matching entries by time.
+ */
+var CachingClient = /** @class */ (function () {
+    function CachingClient(client, storage, storageCache, logger) {
+        this.client = client;
+        this.storage = storage;
+        this.storageCache = storageCache;
+        this.logger = logger;
+    }
+    /**
+     * Returns true if the age of the cached fetched configs is less than or equal to
+     * {@link Settings#minimumFetchIntervalInSeconds}.
+     *
+     * <p>This is comparable to passing `headers = { 'Cache-Control': max-age <maxAge> }` to the
+     * native Fetch API.
+     *
+     * <p>Visible for testing.
+     */
+    CachingClient.prototype.isCachedDataFresh = function (cacheMaxAgeMillis, lastSuccessfulFetchTimestampMillis) {
+        // Cache can only be fresh if it's populated.
+        if (!lastSuccessfulFetchTimestampMillis) {
+            this.logger.debug('Config fetch cache check. Cache unpopulated.');
+            return false;
+        }
+        // Calculates age of cache entry.
+        var cacheAgeMillis = Date.now() - lastSuccessfulFetchTimestampMillis;
+        var isCachedDataFresh = cacheAgeMillis <= cacheMaxAgeMillis;
+        this.logger.debug('Config fetch cache check.' +
+            (" Cache age millis: " + cacheAgeMillis + ".") +
+            (" Cache max age millis (minimumFetchIntervalMillis setting): " + cacheMaxAgeMillis + ".") +
+            (" Is cache hit: " + isCachedDataFresh + "."));
+        return isCachedDataFresh;
+    };
+    CachingClient.prototype.fetch = function (request) {
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            var _a, lastSuccessfulFetchTimestampMillis, lastSuccessfulFetchResponse, response, storageOperations;
+            return tslib_1.__generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, Promise.all([
+                            this.storage.getLastSuccessfulFetchTimestampMillis(),
+                            this.storage.getLastSuccessfulFetchResponse()
+                        ])];
+                    case 1:
+                        _a = _b.sent(), lastSuccessfulFetchTimestampMillis = _a[0], lastSuccessfulFetchResponse = _a[1];
+                        // Exits early on cache hit.
+                        if (lastSuccessfulFetchResponse &&
+                            this.isCachedDataFresh(request.cacheMaxAgeMillis, lastSuccessfulFetchTimestampMillis)) {
+                            return [2 /*return*/, lastSuccessfulFetchResponse];
+                        }
+                        // Deviates from pure decorator by not honoring a passed ETag since we don't have a public API
+                        // that allows the caller to pass an ETag.
+                        request.eTag =
+                            lastSuccessfulFetchResponse && lastSuccessfulFetchResponse.eTag;
+                        return [4 /*yield*/, this.client.fetch(request)];
+                    case 2:
+                        response = _b.sent();
+                        storageOperations = [
+                            // Uses write-through cache for consistency with synchronous public API.
+                            this.storageCache.setLastSuccessfulFetchTimestampMillis(Date.now())
+                        ];
+                        if (response.status === 200) {
+                            // Caches response only if it has changed, ie non-304 responses.
+                            storageOperations.push(this.storage.setLastSuccessfulFetchResponse(response));
+                        }
+                        return [4 /*yield*/, Promise.all(storageOperations)];
+                    case 3:
+                        _b.sent();
+                        return [2 /*return*/, response];
+                }
+            });
+        });
+    };
+    return CachingClient;
+}());
+
+/**
+ * @license
+ * Copyright 2019 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+var _a;
+var ERROR_DESCRIPTION_MAP = (_a = {},
+    _a["registration-window" /* REGISTRATION_WINDOW */] = 'Undefined window object. This SDK only supports usage in a browser environment.',
+    _a["registration-project-id" /* REGISTRATION_PROJECT_ID */] = 'Undefined project identifier. Check Firebase app initialization.',
+    _a["registration-api-key" /* REGISTRATION_API_KEY */] = 'Undefined API key. Check Firebase app initialization.',
+    _a["registration-app-id" /* REGISTRATION_APP_ID */] = 'Undefined app identifier. Check Firebase app initialization.',
+    _a["storage-open" /* STORAGE_OPEN */] = 'Error thrown when opening storage. Original error: {$originalErrorMessage}.',
+    _a["storage-get" /* STORAGE_GET */] = 'Error thrown when reading from storage. Original error: {$originalErrorMessage}.',
+    _a["storage-set" /* STORAGE_SET */] = 'Error thrown when writing to storage. Original error: {$originalErrorMessage}.',
+    _a["storage-delete" /* STORAGE_DELETE */] = 'Error thrown when deleting from storage. Original error: {$originalErrorMessage}.',
+    _a["fetch-client-network" /* FETCH_NETWORK */] = 'Fetch client failed to connect to a network. Check Internet connection.' +
+        ' Original error: {$originalErrorMessage}.',
+    _a["fetch-timeout" /* FETCH_TIMEOUT */] = 'The config fetch request timed out. ' +
+        ' Configure timeout using "fetchTimeoutMillis" SDK setting.',
+    _a["fetch-throttle" /* FETCH_THROTTLE */] = 'The config fetch request timed out while in an exponential backoff state.' +
+        ' Configure timeout using "fetchTimeoutMillis" SDK setting.' +
+        ' Unix timestamp in milliseconds when fetch request throttling ends: {$throttleEndTimeMillis}.',
+    _a["fetch-client-parse" /* FETCH_PARSE */] = 'Fetch client could not parse response.' +
+        ' Original error: {$originalErrorMessage}.',
+    _a["fetch-status" /* FETCH_STATUS */] = 'Fetch server returned an HTTP error status. HTTP status: {$httpStatus}.',
+    _a);
+var ERROR_FACTORY = new util.ErrorFactory('remoteconfig' /* service */, 'Remote Config' /* service name */, ERROR_DESCRIPTION_MAP);
+// Note how this is like typeof/instanceof, but for ErrorCode.
+function hasErrorCode(e, errorCode) {
+    return e instanceof util.FirebaseError && e.code.indexOf(errorCode) !== -1;
+}
+
+/**
+ * @license
+ * Copyright 2019 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Attempts to get the most accurate browser language setting.
+ *
+ * <p>Adapted from getUserLanguage in packages/auth/src/utils.js for TypeScript.
+ *
+ * <p>Defers default language specification to server logic for consistency.
+ *
+ * @param navigatorLanguage Enables tests to override read-only {@link NavigatorLanguage}.
+ */
+function getUserLanguage(navigatorLanguage) {
+    if (navigatorLanguage === void 0) { navigatorLanguage = navigator; }
+    return (
+    // Most reliable, but only supported in Chrome/Firefox.
+    (navigatorLanguage.languages && navigatorLanguage.languages[0]) ||
+        // Supported in most browsers, but returns the language of the browser
+        // UI, not the language set in browser settings.
+        navigatorLanguage.language
+    // Polyfill otherwise.
+    );
+}
+
+/**
+ * @license
+ * Copyright 2019 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Implements the Client abstraction for the Remote Config REST API.
+ */
+var RestClient = /** @class */ (function () {
+    function RestClient(firebaseInstallations, sdkVersion, namespace, projectId, apiKey, appId) {
+        this.firebaseInstallations = firebaseInstallations;
+        this.sdkVersion = sdkVersion;
+        this.namespace = namespace;
+        this.projectId = projectId;
+        this.apiKey = apiKey;
+        this.appId = appId;
+    }
+    /**
+     * Fetches from the Remote Config REST API.
+     *
+     * @throws a {@link ErrorCode.FETCH_NETWORK} error if {@link GlobalFetch#fetch} can't
+     * connect to the network.
+     * @throws a {@link ErrorCode.FETCH_PARSE} error if {@link Response#json} can't parse the
+     * fetch response.
+     * @throws a {@link ErrorCode.FETCH_STATUS} error if the service returns an HTTP error status.
+     */
+    RestClient.prototype.fetch = function (request) {
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            var _a, installationId, installationToken, urlBase, url, headers, requestBody, options, fetchPromise, timeoutPromise, response, originalError_1, errorCode, status, responseEtag, config, state, responseBody, originalError_2;
+            return tslib_1.__generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, Promise.all([
+                            this.firebaseInstallations.getId(),
+                            this.firebaseInstallations.getToken()
+                        ])];
+                    case 1:
+                        _a = _b.sent(), installationId = _a[0], installationToken = _a[1];
+                        urlBase = window.FIREBASE_REMOTE_CONFIG_URL_BASE ||
+                            'https://firebaseremoteconfig.googleapis.com';
+                        url = urlBase + "/v1/projects/" + this.projectId + "/namespaces/" + this.namespace + ":fetch?key=" + this.apiKey;
+                        headers = {
+                            'Content-Type': 'application/json',
+                            'Content-Encoding': 'gzip',
+                            // Deviates from pure decorator by not passing max-age header since we don't currently have
+                            // service behavior using that header.
+                            'If-None-Match': request.eTag || '*'
+                        };
+                        requestBody = {
+                            /* eslint-disable camelcase */
+                            sdk_version: this.sdkVersion,
+                            app_instance_id: installationId,
+                            app_instance_id_token: installationToken,
+                            app_id: this.appId,
+                            language_code: getUserLanguage()
+                            /* eslint-enable camelcase */
+                        };
+                        options = {
+                            method: 'POST',
+                            headers: headers,
+                            body: JSON.stringify(requestBody)
+                        };
+                        fetchPromise = fetch(url, options);
+                        timeoutPromise = new Promise(function (_resolve, reject) {
+                            // Maps async event listener to Promise API.
+                            request.signal.addEventListener(function () {
+                                // Emulates https://heycam.github.io/webidl/#aborterror
+                                var error = new Error('The operation was aborted.');
+                                error.name = 'AbortError';
+                                reject(error);
+                            });
+                        });
+                        _b.label = 2;
+                    case 2:
+                        _b.trys.push([2, 5, , 6]);
+                        return [4 /*yield*/, Promise.race([fetchPromise, timeoutPromise])];
+                    case 3:
+                        _b.sent();
+                        return [4 /*yield*/, fetchPromise];
+                    case 4:
+                        response = _b.sent();
+                        return [3 /*break*/, 6];
+                    case 5:
+                        originalError_1 = _b.sent();
+                        errorCode = "fetch-client-network" /* FETCH_NETWORK */;
+                        if (originalError_1.name === 'AbortError') {
+                            errorCode = "fetch-timeout" /* FETCH_TIMEOUT */;
+                        }
+                        throw ERROR_FACTORY.create(errorCode, {
+                            originalErrorMessage: originalError_1.message
+                        });
+                    case 6:
+                        status = response.status;
+                        responseEtag = response.headers.get('ETag') || undefined;
+                        if (!(response.status === 200)) return [3 /*break*/, 11];
+                        responseBody = void 0;
+                        _b.label = 7;
+                    case 7:
+                        _b.trys.push([7, 9, , 10]);
+                        return [4 /*yield*/, response.json()];
+                    case 8:
+                        responseBody = _b.sent();
+                        return [3 /*break*/, 10];
+                    case 9:
+                        originalError_2 = _b.sent();
+                        throw ERROR_FACTORY.create("fetch-client-parse" /* FETCH_PARSE */, {
+                            originalErrorMessage: originalError_2.message
+                        });
+                    case 10:
+                        config = responseBody['entries'];
+                        state = responseBody['state'];
+                        _b.label = 11;
+                    case 11:
+                        // Normalizes based on legacy state.
+                        if (state === 'INSTANCE_STATE_UNSPECIFIED') {
+                            status = 500;
+                        }
+                        else if (state === 'NO_CHANGE') {
+                            status = 304;
+                        }
+                        else if (state === 'NO_TEMPLATE' || state === 'EMPTY_CONFIG') {
+                            // These cases can be fixed remotely, so normalize to safe value.
+                            config = {};
+                        }
+                        // Normalize to exception-based control flow for non-success cases.
+                        // Encapsulates HTTP specifics in this class as much as possible. Status is still the best for
+                        // differentiating success states (200 from 304; the state body param is undefined in a
+                        // standard 304).
+                        if (status !== 304 && status !== 200) {
+                            throw ERROR_FACTORY.create("fetch-status" /* FETCH_STATUS */, {
+                                httpStatus: status
+                            });
+                        }
+                        return [2 /*return*/, { status: status, eTag: responseEtag, config: config }];
+                }
+            });
+        });
+    };
+    return RestClient;
+}());
+
+/**
+ * @license
+ * Copyright 2019 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Shims a minimal AbortSignal.
+ *
+ * <p>AbortController's AbortSignal conveniently decouples fetch timeout logic from other aspects
+ * of networking, such as retries. Firebase doesn't use AbortController enough to justify a
+ * polyfill recommendation, like we do with the Fetch API, but this minimal shim can easily be
+ * swapped out if/when we do.
+ */
+var RemoteConfigAbortSignal = /** @class */ (function () {
+    function RemoteConfigAbortSignal() {
+        this.listeners = [];
+    }
+    RemoteConfigAbortSignal.prototype.addEventListener = function (listener) {
+        this.listeners.push(listener);
+    };
+    RemoteConfigAbortSignal.prototype.abort = function () {
+        this.listeners.forEach(function (listener) { return listener(); });
+    };
+    return RemoteConfigAbortSignal;
+}());
+
+/**
+ * @license
+ * Copyright 2019 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+var DEFAULT_VALUE_FOR_BOOLEAN = false;
+var DEFAULT_VALUE_FOR_STRING = '';
+var DEFAULT_VALUE_FOR_NUMBER = 0;
+var BOOLEAN_TRUTHY_VALUES = ['1', 'true', 't', 'yes', 'y', 'on'];
+var Value = /** @class */ (function () {
+    function Value(_source, _value) {
+        if (_value === void 0) { _value = DEFAULT_VALUE_FOR_STRING; }
+        this._source = _source;
+        this._value = _value;
+    }
+    Value.prototype.asString = function () {
+        return this._value;
+    };
+    Value.prototype.asBoolean = function () {
+        if (this._source === 'static') {
+            return DEFAULT_VALUE_FOR_BOOLEAN;
+        }
+        return BOOLEAN_TRUTHY_VALUES.indexOf(this._value.toLowerCase()) >= 0;
+    };
+    Value.prototype.asNumber = function () {
+        if (this._source === 'static') {
+            return DEFAULT_VALUE_FOR_NUMBER;
+        }
+        var num = Number(this._value);
+        if (isNaN(num)) {
+            num = DEFAULT_VALUE_FOR_NUMBER;
+        }
+        return num;
+    };
+    Value.prototype.getSource = function () {
+        return this._source;
+    };
+    return Value;
+}());
+
+/**
+ * @license
+ * Copyright 2019 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+var DEFAULT_FETCH_TIMEOUT_MILLIS = 60 * 1000; // One minute
+var DEFAULT_CACHE_MAX_AGE_MILLIS = 12 * 60 * 60 * 1000; // Twelve hours.
+/**
+ * Encapsulates business logic mapping network and storage dependencies to the public SDK API.
+ *
+ * See {@link https://github.com/FirebasePrivate/firebase-js-sdk/blob/master/packages/firebase/index.d.ts|interface documentation} for method descriptions.
+ */
+var RemoteConfig = /** @class */ (function () {
+    function RemoteConfig(
+    // Required by FirebaseServiceFactory interface.
+    app, 
+    // JS doesn't support private yet
+    // (https://github.com/tc39/proposal-class-fields#private-fields), so we hint using an
+    // underscore prefix.
+    _client, _storageCache, _storage, _logger) {
+        this.app = app;
+        this._client = _client;
+        this._storageCache = _storageCache;
+        this._storage = _storage;
+        this._logger = _logger;
+        // Tracks completion of initialization promise.
+        this._isInitializationComplete = false;
+        this.settings = {
+            fetchTimeoutMillis: DEFAULT_FETCH_TIMEOUT_MILLIS,
+            minimumFetchIntervalMillis: DEFAULT_CACHE_MAX_AGE_MILLIS
+        };
+        this.defaultConfig = {};
+    }
+    // Based on packages/firestore/src/util/log.ts but not static because we need per-instance levels
+    // to differentiate 2p and 3p use-cases.
+    RemoteConfig.prototype.setLogLevel = function (logLevel) {
+        switch (logLevel) {
+            case 'debug':
+                this._logger.logLevel = logger.LogLevel.DEBUG;
+                break;
+            case 'silent':
+                this._logger.logLevel = logger.LogLevel.SILENT;
+                break;
+            default:
+                this._logger.logLevel = logger.LogLevel.ERROR;
+        }
+    };
+    Object.defineProperty(RemoteConfig.prototype, "fetchTimeMillis", {
+        get: function () {
+            return this._storageCache.getLastSuccessfulFetchTimestampMillis() || -1;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(RemoteConfig.prototype, "lastFetchStatus", {
+        get: function () {
+            return this._storageCache.getLastFetchStatus() || 'no-fetch-yet';
+        },
+        enumerable: true,
+        configurable: true
+    });
+    RemoteConfig.prototype.activate = function () {
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            var _a, lastSuccessfulFetchResponse, activeConfigEtag;
+            return tslib_1.__generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, Promise.all([
+                            this._storage.getLastSuccessfulFetchResponse(),
+                            this._storage.getActiveConfigEtag()
+                        ])];
+                    case 1:
+                        _a = _b.sent(), lastSuccessfulFetchResponse = _a[0], activeConfigEtag = _a[1];
+                        if (!lastSuccessfulFetchResponse ||
+                            !lastSuccessfulFetchResponse.config ||
+                            !lastSuccessfulFetchResponse.eTag ||
+                            lastSuccessfulFetchResponse.eTag === activeConfigEtag) {
+                            // Either there is no successful fetched config, or is the same as current active
+                            // config.
+                            return [2 /*return*/, false];
+                        }
+                        return [4 /*yield*/, Promise.all([
+                                this._storageCache.setActiveConfig(lastSuccessfulFetchResponse.config),
+                                this._storage.setActiveConfigEtag(lastSuccessfulFetchResponse.eTag)
+                            ])];
+                    case 2:
+                        _b.sent();
+                        return [2 /*return*/, true];
+                }
+            });
+        });
+    };
+    RemoteConfig.prototype.ensureInitialized = function () {
+        var _this = this;
+        if (!this._initializePromise) {
+            this._initializePromise = this._storageCache
+                .loadFromStorage()
+                .then(function () {
+                _this._isInitializationComplete = true;
+            });
+        }
+        return this._initializePromise;
+    };
+    /**
+     * @throws a {@link ErrorCode.FETCH_CLIENT_TIMEOUT} if the request takes longer than
+     * {@link Settings.fetchTimeoutInSeconds} or
+     * {@link DEFAULT_FETCH_TIMEOUT_SECONDS}.
+     */
+    RemoteConfig.prototype.fetch = function () {
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return tslib_1.__generator(this, function (_a) {
+                return [2 /*return*/, new Promise(function (resolve, reject) { return tslib_1.__awaiter(_this, void 0, void 0, function () {
+                        var abortSignal, e_1, lastFetchStatus;
+                        var _this = this;
+                        return tslib_1.__generator(this, function (_a) {
+                            switch (_a.label) {
+                                case 0:
+                                    abortSignal = new RemoteConfigAbortSignal();
+                                    setTimeout(function () { return tslib_1.__awaiter(_this, void 0, void 0, function () {
+                                        return tslib_1.__generator(this, function (_a) {
+                                            // Note a very low delay, eg < 10ms, can elapse before listeners are initialized.
+                                            abortSignal.abort();
+                                            return [2 /*return*/];
+                                        });
+                                    }); }, this.settings.fetchTimeoutMillis);
+                                    _a.label = 1;
+                                case 1:
+                                    _a.trys.push([1, 4, , 6]);
+                                    return [4 /*yield*/, this._client.fetch({
+                                            cacheMaxAgeMillis: this.settings.minimumFetchIntervalMillis,
+                                            signal: abortSignal
+                                        })];
+                                case 2:
+                                    _a.sent();
+                                    return [4 /*yield*/, this._storageCache.setLastFetchStatus('success')];
+                                case 3:
+                                    _a.sent();
+                                    resolve();
+                                    return [3 /*break*/, 6];
+                                case 4:
+                                    e_1 = _a.sent();
+                                    lastFetchStatus = hasErrorCode(e_1, "fetch-throttle" /* FETCH_THROTTLE */)
+                                        ? 'throttle'
+                                        : 'failure';
+                                    return [4 /*yield*/, this._storageCache.setLastFetchStatus(lastFetchStatus)];
+                                case 5:
+                                    _a.sent();
+                                    reject(e_1);
+                                    return [3 /*break*/, 6];
+                                case 6: return [2 /*return*/];
+                            }
+                        });
+                    }); })];
+            });
+        });
+    };
+    RemoteConfig.prototype.fetchAndActivate = function () {
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            return tslib_1.__generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.fetch()];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/, this.activate()];
+                }
+            });
+        });
+    };
+    RemoteConfig.prototype.getAll = function () {
+        var _this = this;
+        return getAllKeys(this._storageCache.getActiveConfig(), this.defaultConfig).reduce(function (allConfigs, key) {
+            allConfigs[key] = _this.getValue(key);
+            return allConfigs;
+        }, {});
+    };
+    RemoteConfig.prototype.getBoolean = function (key) {
+        return this.getValue(key).asBoolean();
+    };
+    RemoteConfig.prototype.getNumber = function (key) {
+        return this.getValue(key).asNumber();
+    };
+    RemoteConfig.prototype.getString = function (key) {
+        return this.getValue(key).asString();
+    };
+    RemoteConfig.prototype.getValue = function (key) {
+        if (!this._isInitializationComplete) {
+            this._logger.debug("A value was requested for key \"" + key + "\" before SDK initialization completed." +
+                ' Await on ensureInitialized if the intent was to get a previously activated value.');
+        }
+        var activeConfig = this._storageCache.getActiveConfig();
+        if (activeConfig && activeConfig[key] !== undefined) {
+            return new Value('remote', activeConfig[key]);
+        }
+        else if (this.defaultConfig && this.defaultConfig[key] !== undefined) {
+            return new Value('default', String(this.defaultConfig[key]));
+        }
+        this._logger.debug("Returning static value for key \"" + key + "\"." +
+            ' Define a default or remote value if this is unintentional.');
+        return new Value('static');
+    };
+    return RemoteConfig;
+}());
+/**
+ * Dedupes and returns an array of all the keys of the received objects.
+ */
+function getAllKeys(obj1, obj2) {
+    if (obj1 === void 0) { obj1 = {}; }
+    if (obj2 === void 0) { obj2 = {}; }
+    return Object.keys(tslib_1.__assign({}, obj1, obj2));
+}
+
+/**
+ * @license
+ * Copyright 2019 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Converts an error event associated with a {@link IDBRequest} to a {@link FirebaseError}.
+ */
+function toFirebaseError(event, errorCode) {
+    var originalError = event.target.error || undefined;
+    return ERROR_FACTORY.create(errorCode, {
+        originalErrorMessage: originalError && originalError.message
+    });
+}
+/**
+ * A general-purpose store keyed by app + namespace + {@link
+ * ProjectNamespaceKeyFieldValue}.
+ *
+ * <p>The Remote Config SDK can be used with multiple app installations, and each app can interact
+ * with multiple namespaces, so this store uses app (ID + name) and namespace as common parent keys
+ * for a set of key-value pairs. See {@link Storage#createCompositeKey}.
+ *
+ * <p>Visible for testing.
+ */
+var APP_NAMESPACE_STORE = 'app_namespace_store';
+var DB_NAME = 'firebase_remote_config';
+var DB_VERSION = 1;
+// Visible for testing.
+function openDatabase() {
+    return new Promise(function (resolve, reject) {
+        var request = indexedDB.open(DB_NAME, DB_VERSION);
+        request.onerror = function (event) {
+            reject(toFirebaseError(event, "storage-open" /* STORAGE_OPEN */));
+        };
+        request.onsuccess = function (event) {
+            resolve(event.target.result);
+        };
+        request.onupgradeneeded = function (event) {
+            var db = event.target.result;
+            // We don't use 'break' in this switch statement, the fall-through
+            // behavior is what we want, because if there are multiple versions between
+            // the old version and the current version, we want ALL the migrations
+            // that correspond to those versions to run, not only the last one.
+            // eslint-disable-next-line default-case
+            switch (event.oldVersion) {
+                case 0:
+                    db.createObjectStore(APP_NAMESPACE_STORE, {
+                        keyPath: 'compositeKey'
+                    });
+            }
+        };
+    });
+}
+/**
+ * Abstracts data persistence.
+ */
+var Storage = /** @class */ (function () {
+    /**
+     * @param appId enables storage segmentation by app (ID + name).
+     * @param appName enables storage segmentation by app (ID + name).
+     * @param namespace enables storage segmentation by namespace.
+     */
+    function Storage(appId, appName, namespace, openDbPromise) {
+        if (openDbPromise === void 0) { openDbPromise = openDatabase(); }
+        this.appId = appId;
+        this.appName = appName;
+        this.namespace = namespace;
+        this.openDbPromise = openDbPromise;
+    }
+    Storage.prototype.getLastFetchStatus = function () {
+        return this.get('last_fetch_status');
+    };
+    Storage.prototype.setLastFetchStatus = function (status) {
+        return this.set('last_fetch_status', status);
+    };
+    // This is comparable to a cache entry timestamp. If we need to expire other data, we could
+    // consider adding timestamp to all storage records and an optional max age arg to getters.
+    Storage.prototype.getLastSuccessfulFetchTimestampMillis = function () {
+        return this.get('last_successful_fetch_timestamp_millis');
+    };
+    Storage.prototype.setLastSuccessfulFetchTimestampMillis = function (timestamp) {
+        return this.set('last_successful_fetch_timestamp_millis', timestamp);
+    };
+    Storage.prototype.getLastSuccessfulFetchResponse = function () {
+        return this.get('last_successful_fetch_response');
+    };
+    Storage.prototype.setLastSuccessfulFetchResponse = function (response) {
+        return this.set('last_successful_fetch_response', response);
+    };
+    Storage.prototype.getActiveConfig = function () {
+        return this.get('active_config');
+    };
+    Storage.prototype.setActiveConfig = function (config) {
+        return this.set('active_config', config);
+    };
+    Storage.prototype.getActiveConfigEtag = function () {
+        return this.get('active_config_etag');
+    };
+    Storage.prototype.setActiveConfigEtag = function (etag) {
+        return this.set('active_config_etag', etag);
+    };
+    Storage.prototype.getThrottleMetadata = function () {
+        return this.get('throttle_metadata');
+    };
+    Storage.prototype.setThrottleMetadata = function (metadata) {
+        return this.set('throttle_metadata', metadata);
+    };
+    Storage.prototype.deleteThrottleMetadata = function () {
+        return this.delete('throttle_metadata');
+    };
+    Storage.prototype.get = function (key) {
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            var db;
+            var _this = this;
+            return tslib_1.__generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.openDbPromise];
+                    case 1:
+                        db = _a.sent();
+                        return [2 /*return*/, new Promise(function (resolve, reject) {
+                                var transaction = db.transaction([APP_NAMESPACE_STORE], 'readonly');
+                                var objectStore = transaction.objectStore(APP_NAMESPACE_STORE);
+                                var compositeKey = _this.createCompositeKey(key);
+                                try {
+                                    var request = objectStore.get(compositeKey);
+                                    request.onerror = function (event) {
+                                        reject(toFirebaseError(event, "storage-get" /* STORAGE_GET */));
+                                    };
+                                    request.onsuccess = function (event) {
+                                        var result = event.target.result;
+                                        if (result) {
+                                            resolve(result.value);
+                                        }
+                                        else {
+                                            resolve(undefined);
+                                        }
+                                    };
+                                }
+                                catch (e) {
+                                    reject(ERROR_FACTORY.create("storage-get" /* STORAGE_GET */, {
+                                        originalErrorMessage: e && e.message
+                                    }));
+                                }
+                            })];
+                }
+            });
+        });
+    };
+    Storage.prototype.set = function (key, value) {
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            var db;
+            var _this = this;
+            return tslib_1.__generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.openDbPromise];
+                    case 1:
+                        db = _a.sent();
+                        return [2 /*return*/, new Promise(function (resolve, reject) {
+                                var transaction = db.transaction([APP_NAMESPACE_STORE], 'readwrite');
+                                var objectStore = transaction.objectStore(APP_NAMESPACE_STORE);
+                                var compositeKey = _this.createCompositeKey(key);
+                                try {
+                                    var request = objectStore.put({
+                                        compositeKey: compositeKey,
+                                        value: value
+                                    });
+                                    request.onerror = function (event) {
+                                        reject(toFirebaseError(event, "storage-set" /* STORAGE_SET */));
+                                    };
+                                    request.onsuccess = function () {
+                                        resolve();
+                                    };
+                                }
+                                catch (e) {
+                                    reject(ERROR_FACTORY.create("storage-set" /* STORAGE_SET */, {
+                                        originalErrorMessage: e && e.message
+                                    }));
+                                }
+                            })];
+                }
+            });
+        });
+    };
+    Storage.prototype.delete = function (key) {
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            var db;
+            var _this = this;
+            return tslib_1.__generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.openDbPromise];
+                    case 1:
+                        db = _a.sent();
+                        return [2 /*return*/, new Promise(function (resolve, reject) {
+                                var transaction = db.transaction([APP_NAMESPACE_STORE], 'readwrite');
+                                var objectStore = transaction.objectStore(APP_NAMESPACE_STORE);
+                                var compositeKey = _this.createCompositeKey(key);
+                                try {
+                                    var request = objectStore.delete(compositeKey);
+                                    request.onerror = function (event) {
+                                        reject(toFirebaseError(event, "storage-delete" /* STORAGE_DELETE */));
+                                    };
+                                    request.onsuccess = function () {
+                                        resolve();
+                                    };
+                                }
+                                catch (e) {
+                                    reject(ERROR_FACTORY.create("storage-delete" /* STORAGE_DELETE */, {
+                                        originalErrorMessage: e && e.message
+                                    }));
+                                }
+                            })];
+                }
+            });
+        });
+    };
+    // Facilitates composite key functionality (which is unsupported in IE).
+    Storage.prototype.createCompositeKey = function (key) {
+        return [this.appId, this.appName, this.namespace, key].join();
+    };
+    return Storage;
+}());
+
+/**
+ * @license
+ * Copyright 2019 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * A memory cache layer over storage to support the SDK's synchronous read requirements.
+ */
+var StorageCache = /** @class */ (function () {
+    function StorageCache(storage) {
+        this.storage = storage;
+    }
+    /**
+     * Memory-only getters
+     */
+    StorageCache.prototype.getLastFetchStatus = function () {
+        return this.lastFetchStatus;
+    };
+    StorageCache.prototype.getLastSuccessfulFetchTimestampMillis = function () {
+        return this.lastSuccessfulFetchTimestampMillis;
+    };
+    StorageCache.prototype.getActiveConfig = function () {
+        return this.activeConfig;
+    };
+    /**
+     * Read-ahead getter
+     */
+    StorageCache.prototype.loadFromStorage = function () {
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            var lastFetchStatusPromise, lastSuccessfulFetchTimestampMillisPromise, activeConfigPromise, lastFetchStatus, lastSuccessfulFetchTimestampMillis, activeConfig;
+            return tslib_1.__generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        lastFetchStatusPromise = this.storage.getLastFetchStatus();
+                        lastSuccessfulFetchTimestampMillisPromise = this.storage.getLastSuccessfulFetchTimestampMillis();
+                        activeConfigPromise = this.storage.getActiveConfig();
+                        return [4 /*yield*/, lastFetchStatusPromise];
+                    case 1:
+                        lastFetchStatus = _a.sent();
+                        if (lastFetchStatus) {
+                            this.lastFetchStatus = lastFetchStatus;
+                        }
+                        return [4 /*yield*/, lastSuccessfulFetchTimestampMillisPromise];
+                    case 2:
+                        lastSuccessfulFetchTimestampMillis = _a.sent();
+                        if (lastSuccessfulFetchTimestampMillis) {
+                            this.lastSuccessfulFetchTimestampMillis = lastSuccessfulFetchTimestampMillis;
+                        }
+                        return [4 /*yield*/, activeConfigPromise];
+                    case 3:
+                        activeConfig = _a.sent();
+                        if (activeConfig) {
+                            this.activeConfig = activeConfig;
+                        }
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * Write-through setters
+     */
+    StorageCache.prototype.setLastFetchStatus = function (status) {
+        this.lastFetchStatus = status;
+        return this.storage.setLastFetchStatus(status);
+    };
+    StorageCache.prototype.setLastSuccessfulFetchTimestampMillis = function (timestampMillis) {
+        this.lastSuccessfulFetchTimestampMillis = timestampMillis;
+        return this.storage.setLastSuccessfulFetchTimestampMillis(timestampMillis);
+    };
+    StorageCache.prototype.setActiveConfig = function (activeConfig) {
+        this.activeConfig = activeConfig;
+        return this.storage.setActiveConfig(activeConfig);
+    };
+    return StorageCache;
+}());
+
+/**
+ * @license
+ * Copyright 2019 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * The amount of milliseconds to exponentially increase.
+ */
+var INTERVAL_MILLIS = 1000;
+/**
+ * The factor to backoff by.
+ * Should be a number greater than 1.
+ */
+var BACKOFF_FACTOR = 2;
+/**
+ * The maximum milliseconds to increase to.
+ *
+ * <p>Visible for testing
+ */
+var MAX_VALUE_MILLIS = 4 * 60 * 60 * 1000; // Four hours, like iOS and Android.
+/**
+ * The percentage of backoff time to randomize by.
+ * See
+ * http://go/safe-client-behavior#step-1-determine-the-appropriate-retry-interval-to-handle-spike-traffic
+ * for context.
+ *
+ * <p>Visible for testing
+ */
+var RANDOM_FACTOR = 0.5;
+/**
+ * Based on the backoff method from
+ * https://github.com/google/closure-library/blob/master/closure/goog/math/exponentialbackoff.js.
+ * Extracted here so we don't need to pass metadata and a stateful ExponentialBackoff object around.
+ */
+function calculateBackoffMillis(backoffCount) {
+    // Calculates an exponentially increasing value.
+    // Deviation: calculates value from count and a constant interval, so we only need to save value
+    // and count to restore state.
+    var currBaseValue = INTERVAL_MILLIS * Math.pow(BACKOFF_FACTOR, backoffCount);
+    // A random "fuzz" to avoid waves of retries.
+    // Deviation: randomFactor is required.
+    var randomWait = Math.round(
+    // A fraction of the backoff value to add/subtract.
+    // Deviation: changes multiplication order to improve readability.
+    RANDOM_FACTOR *
+        currBaseValue *
+        // A random float (rounded to int by Math.round above) in the range [-1, 1]. Determines
+        // if we add or subtract.
+        (Math.random() - 0.5) *
+        2);
+    // Limits backoff to max to avoid effectively permanent backoff.
+    return Math.min(MAX_VALUE_MILLIS, currBaseValue + randomWait);
+}
+
+/**
+ * @license
+ * Copyright 2019 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Supports waiting on a backoff by:
+ *
+ * <ul>
+ *   <li>Promisifying setTimeout, so we can set a timeout in our Promise chain</li>
+ *   <li>Listening on a signal bus for abort events, just like the Fetch API</li>
+ *   <li>Failing in the same way the Fetch API fails, so timing out a live request and a throttled
+ *       request appear the same.</li>
+ * </ul>
+ *
+ * <p>Visible for testing.
+ */
+function setAbortableTimeout(signal, throttleEndTimeMillis) {
+    return new Promise(function (resolve, reject) {
+        // Derives backoff from given end time, normalizing negative numbers to zero.
+        var backoffMillis = Math.max(throttleEndTimeMillis - Date.now(), 0);
+        var timeout = setTimeout(resolve, backoffMillis);
+        // Adds listener, rather than sets onabort, because signal is a shared object.
+        signal.addEventListener(function () {
+            clearTimeout(timeout);
+            // If the request completes before this timeout, the rejection has no effect.
+            reject(ERROR_FACTORY.create("fetch-throttle" /* FETCH_THROTTLE */, {
+                throttleEndTimeMillis: throttleEndTimeMillis
+            }));
+        });
+    });
+}
+/**
+ * Returns true if the {@link Error} indicates a fetch request may succeed later.
+ */
+function isRetriableError(e) {
+    if (!(e instanceof util.FirebaseError)) {
+        return false;
+    }
+    // Uses string index defined by ErrorData, which FirebaseError implements.
+    var httpStatus = Number(e['httpStatus']);
+    return (httpStatus === 429 ||
+        httpStatus === 500 ||
+        httpStatus === 503 ||
+        httpStatus === 504);
+}
+/**
+ * Decorates a Client with retry logic.
+ *
+ * <p>Comparable to CachingClient, but uses backoff logic instead of cache max age and doesn't cache
+ * responses (because the SDK has no use for error responses).
+ */
+var RetryingClient = /** @class */ (function () {
+    function RetryingClient(client, storage) {
+        this.client = client;
+        this.storage = storage;
+    }
+    RetryingClient.prototype.fetch = function (request) {
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            var throttleMetadata;
+            return tslib_1.__generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.storage.getThrottleMetadata()];
+                    case 1:
+                        throttleMetadata = (_a.sent()) || {
+                            backoffCount: 0,
+                            throttleEndTimeMillis: Date.now()
+                        };
+                        return [2 /*return*/, this.attemptFetch(request, throttleMetadata)];
+                }
+            });
+        });
+    };
+    /**
+     * A recursive helper for attempting a fetch request repeatedly.
+     *
+     * @throws any non-retriable errors.
+     */
+    RetryingClient.prototype.attemptFetch = function (request, _a) {
+        var throttleEndTimeMillis = _a.throttleEndTimeMillis, backoffCount = _a.backoffCount;
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            var response, e_1, throttleMetadata;
+            return tslib_1.__generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: 
+                    // Starts with a (potentially zero) timeout to support resumption from stored state.
+                    // Ensures the throttle end time is honored if the last attempt timed out.
+                    // Note the SDK will never make a request if the fetch timeout expires at this point.
+                    return [4 /*yield*/, setAbortableTimeout(request.signal, throttleEndTimeMillis)];
+                    case 1:
+                        // Starts with a (potentially zero) timeout to support resumption from stored state.
+                        // Ensures the throttle end time is honored if the last attempt timed out.
+                        // Note the SDK will never make a request if the fetch timeout expires at this point.
+                        _b.sent();
+                        _b.label = 2;
+                    case 2:
+                        _b.trys.push([2, 5, , 7]);
+                        return [4 /*yield*/, this.client.fetch(request)];
+                    case 3:
+                        response = _b.sent();
+                        // Note the SDK only clears throttle state if response is success or non-retriable.
+                        return [4 /*yield*/, this.storage.deleteThrottleMetadata()];
+                    case 4:
+                        // Note the SDK only clears throttle state if response is success or non-retriable.
+                        _b.sent();
+                        return [2 /*return*/, response];
+                    case 5:
+                        e_1 = _b.sent();
+                        if (!isRetriableError(e_1)) {
+                            throw e_1;
+                        }
+                        throttleMetadata = {
+                            throttleEndTimeMillis: Date.now() + calculateBackoffMillis(backoffCount),
+                            backoffCount: backoffCount + 1
+                        };
+                        // Persists state.
+                        return [4 /*yield*/, this.storage.setThrottleMetadata(throttleMetadata)];
+                    case 6:
+                        // Persists state.
+                        _b.sent();
+                        return [2 /*return*/, this.attemptFetch(request, throttleMetadata)];
+                    case 7: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    return RetryingClient;
+}());
+
+var name = "@firebase/remote-config";
+
+/**
+ * @license
+ * Copyright 2019 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+function registerRemoteConfig(firebaseInstance) {
+    firebaseInstance.INTERNAL.registerService('remoteConfig', function (app, _, namespace) {
+        // Guards against the SDK being used in non-browser environments.
+        if (typeof window === 'undefined') {
+            throw ERROR_FACTORY.create("registration-window" /* REGISTRATION_WINDOW */);
+        }
+        // Normalizes optional inputs.
+        var _a = app.options, projectId = _a.projectId, apiKey = _a.apiKey, appId = _a.appId;
+        if (!projectId) {
+            throw ERROR_FACTORY.create("registration-project-id" /* REGISTRATION_PROJECT_ID */);
+        }
+        if (!apiKey) {
+            throw ERROR_FACTORY.create("registration-api-key" /* REGISTRATION_API_KEY */);
+        }
+        if (!appId) {
+            throw ERROR_FACTORY.create("registration-app-id" /* REGISTRATION_APP_ID */);
+        }
+        namespace = namespace || 'firebase';
+        var storage = new Storage(appId, app.name, namespace);
+        var storageCache = new StorageCache(storage);
+        var logger$1 = new logger.Logger(name);
+        // Sets ERROR as the default log level.
+        // See RemoteConfig#setLogLevel for corresponding normalization to ERROR log level.
+        logger$1.logLevel = logger.LogLevel.ERROR;
+        var restClient = new RestClient(app.installations(), 
+        // Uses the JS SDK version, by which the RC package version can be deduced, if necessary.
+        firebaseInstance.SDK_VERSION, namespace, projectId, apiKey, appId);
+        var retryingClient = new RetryingClient(restClient, storage);
+        var cachingClient = new CachingClient(retryingClient, storage, storageCache, logger$1);
+        var remoteConfigInstance = new RemoteConfig(app, cachingClient, storageCache, storage, logger$1);
+        // Starts warming cache.
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
+        remoteConfigInstance.ensureInitialized();
+        return remoteConfigInstance;
+    }, undefined, undefined, true /* allowMultipleInstances */);
+}
+registerRemoteConfig(firebase);
+
+exports.registerRemoteConfig = registerRemoteConfig;
+//# sourceMappingURL=index.cjs.js.map
+
+
+/***/ }),
+
 /***/ "./node_modules/@firebase/storage/dist/index.esm.js":
 /*!**********************************************************!*\
   !*** ./node_modules/@firebase/storage/dist/index.esm.js ***!
@@ -46250,7 +48304,7 @@ var DEFAULT_MAX_OPERATION_RETRY_TIME = 2 * 60 * 1000;
  *
  * The timeout for upload.
  */
-var DEFAULT_MAX_UPLOAD_RETRY_TIME = 10 * 60 * 100;
+var DEFAULT_MAX_UPLOAD_RETRY_TIME = 10 * 60 * 1000;
 /**
  * This is the value of Number.MIN_SAFE_INTEGER, which is not well supported
  * enough for us to use it directly.
@@ -55200,6 +57254,8 @@ __webpack_require__(/*! @firebase/functions */ "./node_modules/@firebase/functio
 __webpack_require__(/*! @firebase/messaging */ "./node_modules/@firebase/messaging/dist/index.esm.js");
 __webpack_require__(/*! @firebase/storage */ "./node_modules/@firebase/storage/dist/index.esm.js");
 __webpack_require__(/*! @firebase/performance */ "./node_modules/@firebase/performance/dist/index.cjs.js");
+__webpack_require__(/*! @firebase/analytics */ "./node_modules/@firebase/analytics/dist/index.esm.js");
+__webpack_require__(/*! @firebase/remote-config */ "./node_modules/@firebase/remote-config/dist/index.cjs.js");
 
 /**
  * @license
@@ -55700,6 +57756,321 @@ module.exports = bind.call(Function.call, Object.prototype.hasOwnProperty);
 
 }));
 
+
+/***/ }),
+
+/***/ "./node_modules/next-routes/dist/index.js":
+/*!************************************************!*\
+  !*** ./node_modules/next-routes/dist/index.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _pathToRegexp = _interopRequireDefault(__webpack_require__(/*! path-to-regexp */ "./node_modules/path-to-regexp/index.js"));
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _url = __webpack_require__(/*! url */ "./node_modules/url/url.js");
+
+var _link = _interopRequireDefault(__webpack_require__(/*! next/link */ "./node_modules/next/link.js"));
+
+var _router = _interopRequireDefault(__webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+module.exports = function (opts) {
+  return new Routes(opts);
+};
+
+var Routes =
+/*#__PURE__*/
+function () {
+  function Routes() {
+    var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+        _ref$Link = _ref.Link,
+        Link = _ref$Link === void 0 ? _link.default : _ref$Link,
+        _ref$Router = _ref.Router,
+        Router = _ref$Router === void 0 ? _router.default : _ref$Router;
+
+    _classCallCheck(this, Routes);
+
+    this.routes = [];
+    this.Link = this.getLink(Link);
+    this.Router = this.getRouter(Router);
+  }
+
+  _createClass(Routes, [{
+    key: "add",
+    value: function add(name, pattern, page) {
+      var options;
+
+      if (name instanceof Object) {
+        options = name;
+        name = options.name;
+      } else {
+        if (name[0] === '/') {
+          page = pattern;
+          pattern = name;
+          name = null;
+        }
+
+        options = {
+          name: name,
+          pattern: pattern,
+          page: page
+        };
+      }
+
+      if (this.findByName(name)) {
+        throw new Error("Route \"".concat(name, "\" already exists"));
+      }
+
+      this.routes.push(new Route(options));
+      return this;
+    }
+  }, {
+    key: "findByName",
+    value: function findByName(name) {
+      if (name) {
+        return this.routes.filter(function (route) {
+          return route.name === name;
+        })[0];
+      }
+    }
+  }, {
+    key: "match",
+    value: function match(url) {
+      var parsedUrl = (0, _url.parse)(url, true);
+      var pathname = parsedUrl.pathname,
+          query = parsedUrl.query;
+      return this.routes.reduce(function (result, route) {
+        if (result.route) return result;
+        var params = route.match(pathname);
+        if (!params) return result;
+        return _objectSpread({}, result, {
+          route: route,
+          params: params,
+          query: _objectSpread({}, query, params)
+        });
+      }, {
+        query: query,
+        parsedUrl: parsedUrl
+      });
+    }
+  }, {
+    key: "findAndGetUrls",
+    value: function findAndGetUrls(nameOrUrl, params) {
+      var route = this.findByName(nameOrUrl);
+
+      if (route) {
+        return {
+          route: route,
+          urls: route.getUrls(params),
+          byName: true
+        };
+      } else {
+        var _this$match = this.match(nameOrUrl),
+            _route = _this$match.route,
+            query = _this$match.query;
+
+        var href = _route ? _route.getHref(query) : nameOrUrl;
+        var urls = {
+          href: href,
+          as: nameOrUrl
+        };
+        return {
+          route: _route,
+          urls: urls
+        };
+      }
+    }
+  }, {
+    key: "getRequestHandler",
+    value: function getRequestHandler(app, customHandler) {
+      var _this = this;
+
+      var nextHandler = app.getRequestHandler();
+      return function (req, res) {
+        var _this$match2 = _this.match(req.url),
+            route = _this$match2.route,
+            query = _this$match2.query,
+            parsedUrl = _this$match2.parsedUrl;
+
+        if (route) {
+          if (customHandler) {
+            customHandler({
+              req: req,
+              res: res,
+              route: route,
+              query: query
+            });
+          } else {
+            app.render(req, res, route.page, query);
+          }
+        } else {
+          nextHandler(req, res, parsedUrl);
+        }
+      };
+    }
+  }, {
+    key: "getLink",
+    value: function getLink(Link) {
+      var _this2 = this;
+
+      var LinkRoutes = function LinkRoutes(props) {
+        var route = props.route,
+            params = props.params,
+            to = props.to,
+            newProps = _objectWithoutProperties(props, ["route", "params", "to"]);
+
+        var nameOrUrl = route || to;
+
+        if (nameOrUrl) {
+          Object.assign(newProps, _this2.findAndGetUrls(nameOrUrl, params).urls);
+        }
+
+        return _react.default.createElement(Link, newProps);
+      };
+
+      return LinkRoutes;
+    }
+  }, {
+    key: "getRouter",
+    value: function getRouter(Router) {
+      var _this3 = this;
+
+      var wrap = function wrap(method) {
+        return function (route, params, options) {
+          var _this3$findAndGetUrls = _this3.findAndGetUrls(route, params),
+              byName = _this3$findAndGetUrls.byName,
+              _this3$findAndGetUrls2 = _this3$findAndGetUrls.urls,
+              as = _this3$findAndGetUrls2.as,
+              href = _this3$findAndGetUrls2.href;
+
+          return Router[method](href, as, byName ? options : params);
+        };
+      };
+
+      Router.pushRoute = wrap('push');
+      Router.replaceRoute = wrap('replace');
+      Router.prefetchRoute = wrap('prefetch');
+      return Router;
+    }
+  }]);
+
+  return Routes;
+}();
+
+var Route =
+/*#__PURE__*/
+function () {
+  function Route(_ref2) {
+    var name = _ref2.name,
+        pattern = _ref2.pattern,
+        _ref2$page = _ref2.page,
+        page = _ref2$page === void 0 ? name : _ref2$page;
+
+    _classCallCheck(this, Route);
+
+    if (!name && !page) {
+      throw new Error("Missing page to render for route \"".concat(pattern, "\""));
+    }
+
+    this.name = name;
+    this.pattern = pattern || "/".concat(name);
+    this.page = page.replace(/(^|\/)index$/, '').replace(/^\/?/, '/');
+    this.regex = (0, _pathToRegexp.default)(this.pattern, this.keys = []);
+    this.keyNames = this.keys.map(function (key) {
+      return key.name;
+    });
+    this.toPath = _pathToRegexp.default.compile(this.pattern);
+  }
+
+  _createClass(Route, [{
+    key: "match",
+    value: function match(path) {
+      var values = this.regex.exec(path);
+
+      if (values) {
+        return this.valuesToParams(values.slice(1));
+      }
+    }
+  }, {
+    key: "valuesToParams",
+    value: function valuesToParams(values) {
+      var _this4 = this;
+
+      return values.reduce(function (params, val, i) {
+        if (val === undefined) return params;
+        return Object.assign(params, _defineProperty({}, _this4.keys[i].name, decodeURIComponent(val)));
+      }, {});
+    }
+  }, {
+    key: "getHref",
+    value: function getHref() {
+      var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      return "".concat(this.page, "?").concat(toQuerystring(params));
+    }
+  }, {
+    key: "getAs",
+    value: function getAs() {
+      var _this5 = this;
+
+      var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var as = this.toPath(params) || '/';
+      var keys = Object.keys(params);
+      var qsKeys = keys.filter(function (key) {
+        return _this5.keyNames.indexOf(key) === -1;
+      });
+      if (!qsKeys.length) return as;
+      var qsParams = qsKeys.reduce(function (qs, key) {
+        return Object.assign(qs, _defineProperty({}, key, params[key]));
+      }, {});
+      return "".concat(as, "?").concat(toQuerystring(qsParams));
+    }
+  }, {
+    key: "getUrls",
+    value: function getUrls(params) {
+      var as = this.getAs(params);
+      var href = this.getHref(params);
+      return {
+        as: as,
+        href: href
+      };
+    }
+  }]);
+
+  return Route;
+}();
+
+var toQuerystring = function toQuerystring(obj) {
+  return Object.keys(obj).filter(function (key) {
+    return obj[key] !== null && obj[key] !== undefined;
+  }).map(function (key) {
+    var value = obj[key];
+
+    if (Array.isArray(value)) {
+      value = value.join('/');
+    }
+
+    return [encodeURIComponent(key), encodeURIComponent(value)].join('=');
+  }).join('&');
+};
 
 /***/ }),
 
@@ -58716,6 +61087,388 @@ module.exports = function shimAssign() {
 
 /***/ }),
 
+/***/ "./node_modules/path-to-regexp/index.js":
+/*!**********************************************!*\
+  !*** ./node_modules/path-to-regexp/index.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Expose `pathToRegexp`.
+ */
+module.exports = pathToRegexp
+module.exports.parse = parse
+module.exports.compile = compile
+module.exports.tokensToFunction = tokensToFunction
+module.exports.tokensToRegExp = tokensToRegExp
+
+/**
+ * Default configs.
+ */
+var DEFAULT_DELIMITER = '/'
+var DEFAULT_DELIMITERS = './'
+
+/**
+ * The main path matching regexp utility.
+ *
+ * @type {RegExp}
+ */
+var PATH_REGEXP = new RegExp([
+  // Match escaped characters that would otherwise appear in future matches.
+  // This allows the user to escape special characters that won't transform.
+  '(\\\\.)',
+  // Match Express-style parameters and un-named parameters with a prefix
+  // and optional suffixes. Matches appear as:
+  //
+  // "/:test(\\d+)?" => ["/", "test", "\d+", undefined, "?"]
+  // "/route(\\d+)"  => [undefined, undefined, undefined, "\d+", undefined]
+  '(?:\\:(\\w+)(?:\\(((?:\\\\.|[^\\\\()])+)\\))?|\\(((?:\\\\.|[^\\\\()])+)\\))([+*?])?'
+].join('|'), 'g')
+
+/**
+ * Parse a string for the raw tokens.
+ *
+ * @param  {string}  str
+ * @param  {Object=} options
+ * @return {!Array}
+ */
+function parse (str, options) {
+  var tokens = []
+  var key = 0
+  var index = 0
+  var path = ''
+  var defaultDelimiter = (options && options.delimiter) || DEFAULT_DELIMITER
+  var delimiters = (options && options.delimiters) || DEFAULT_DELIMITERS
+  var pathEscaped = false
+  var res
+
+  while ((res = PATH_REGEXP.exec(str)) !== null) {
+    var m = res[0]
+    var escaped = res[1]
+    var offset = res.index
+    path += str.slice(index, offset)
+    index = offset + m.length
+
+    // Ignore already escaped sequences.
+    if (escaped) {
+      path += escaped[1]
+      pathEscaped = true
+      continue
+    }
+
+    var prev = ''
+    var next = str[index]
+    var name = res[2]
+    var capture = res[3]
+    var group = res[4]
+    var modifier = res[5]
+
+    if (!pathEscaped && path.length) {
+      var k = path.length - 1
+
+      if (delimiters.indexOf(path[k]) > -1) {
+        prev = path[k]
+        path = path.slice(0, k)
+      }
+    }
+
+    // Push the current path onto the tokens.
+    if (path) {
+      tokens.push(path)
+      path = ''
+      pathEscaped = false
+    }
+
+    var partial = prev !== '' && next !== undefined && next !== prev
+    var repeat = modifier === '+' || modifier === '*'
+    var optional = modifier === '?' || modifier === '*'
+    var delimiter = prev || defaultDelimiter
+    var pattern = capture || group
+
+    tokens.push({
+      name: name || key++,
+      prefix: prev,
+      delimiter: delimiter,
+      optional: optional,
+      repeat: repeat,
+      partial: partial,
+      pattern: pattern ? escapeGroup(pattern) : '[^' + escapeString(delimiter) + ']+?'
+    })
+  }
+
+  // Push any remaining characters.
+  if (path || index < str.length) {
+    tokens.push(path + str.substr(index))
+  }
+
+  return tokens
+}
+
+/**
+ * Compile a string to a template function for the path.
+ *
+ * @param  {string}             str
+ * @param  {Object=}            options
+ * @return {!function(Object=, Object=)}
+ */
+function compile (str, options) {
+  return tokensToFunction(parse(str, options))
+}
+
+/**
+ * Expose a method for transforming tokens into the path function.
+ */
+function tokensToFunction (tokens) {
+  // Compile all the tokens into regexps.
+  var matches = new Array(tokens.length)
+
+  // Compile all the patterns before compilation.
+  for (var i = 0; i < tokens.length; i++) {
+    if (typeof tokens[i] === 'object') {
+      matches[i] = new RegExp('^(?:' + tokens[i].pattern + ')$')
+    }
+  }
+
+  return function (data, options) {
+    var path = ''
+    var encode = (options && options.encode) || encodeURIComponent
+
+    for (var i = 0; i < tokens.length; i++) {
+      var token = tokens[i]
+
+      if (typeof token === 'string') {
+        path += token
+        continue
+      }
+
+      var value = data ? data[token.name] : undefined
+      var segment
+
+      if (Array.isArray(value)) {
+        if (!token.repeat) {
+          throw new TypeError('Expected "' + token.name + '" to not repeat, but got array')
+        }
+
+        if (value.length === 0) {
+          if (token.optional) continue
+
+          throw new TypeError('Expected "' + token.name + '" to not be empty')
+        }
+
+        for (var j = 0; j < value.length; j++) {
+          segment = encode(value[j])
+
+          if (!matches[i].test(segment)) {
+            throw new TypeError('Expected all "' + token.name + '" to match "' + token.pattern + '"')
+          }
+
+          path += (j === 0 ? token.prefix : token.delimiter) + segment
+        }
+
+        continue
+      }
+
+      if (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean') {
+        segment = encode(String(value))
+
+        if (!matches[i].test(segment)) {
+          throw new TypeError('Expected "' + token.name + '" to match "' + token.pattern + '", but got "' + segment + '"')
+        }
+
+        path += token.prefix + segment
+        continue
+      }
+
+      if (token.optional) {
+        // Prepend partial segment prefixes.
+        if (token.partial) path += token.prefix
+
+        continue
+      }
+
+      throw new TypeError('Expected "' + token.name + '" to be ' + (token.repeat ? 'an array' : 'a string'))
+    }
+
+    return path
+  }
+}
+
+/**
+ * Escape a regular expression string.
+ *
+ * @param  {string} str
+ * @return {string}
+ */
+function escapeString (str) {
+  return str.replace(/([.+*?=^!:${}()[\]|/\\])/g, '\\$1')
+}
+
+/**
+ * Escape the capturing group by escaping special characters and meaning.
+ *
+ * @param  {string} group
+ * @return {string}
+ */
+function escapeGroup (group) {
+  return group.replace(/([=!:$/()])/g, '\\$1')
+}
+
+/**
+ * Get the flags for a regexp from the options.
+ *
+ * @param  {Object} options
+ * @return {string}
+ */
+function flags (options) {
+  return options && options.sensitive ? '' : 'i'
+}
+
+/**
+ * Pull out keys from a regexp.
+ *
+ * @param  {!RegExp} path
+ * @param  {Array=}  keys
+ * @return {!RegExp}
+ */
+function regexpToRegexp (path, keys) {
+  if (!keys) return path
+
+  // Use a negative lookahead to match only capturing groups.
+  var groups = path.source.match(/\((?!\?)/g)
+
+  if (groups) {
+    for (var i = 0; i < groups.length; i++) {
+      keys.push({
+        name: i,
+        prefix: null,
+        delimiter: null,
+        optional: false,
+        repeat: false,
+        partial: false,
+        pattern: null
+      })
+    }
+  }
+
+  return path
+}
+
+/**
+ * Transform an array into a regexp.
+ *
+ * @param  {!Array}  path
+ * @param  {Array=}  keys
+ * @param  {Object=} options
+ * @return {!RegExp}
+ */
+function arrayToRegexp (path, keys, options) {
+  var parts = []
+
+  for (var i = 0; i < path.length; i++) {
+    parts.push(pathToRegexp(path[i], keys, options).source)
+  }
+
+  return new RegExp('(?:' + parts.join('|') + ')', flags(options))
+}
+
+/**
+ * Create a path regexp from string input.
+ *
+ * @param  {string}  path
+ * @param  {Array=}  keys
+ * @param  {Object=} options
+ * @return {!RegExp}
+ */
+function stringToRegexp (path, keys, options) {
+  return tokensToRegExp(parse(path, options), keys, options)
+}
+
+/**
+ * Expose a function for taking tokens and returning a RegExp.
+ *
+ * @param  {!Array}  tokens
+ * @param  {Array=}  keys
+ * @param  {Object=} options
+ * @return {!RegExp}
+ */
+function tokensToRegExp (tokens, keys, options) {
+  options = options || {}
+
+  var strict = options.strict
+  var end = options.end !== false
+  var delimiter = escapeString(options.delimiter || DEFAULT_DELIMITER)
+  var delimiters = options.delimiters || DEFAULT_DELIMITERS
+  var endsWith = [].concat(options.endsWith || []).map(escapeString).concat('$').join('|')
+  var route = ''
+  var isEndDelimited = false
+
+  // Iterate over the tokens and create our regexp string.
+  for (var i = 0; i < tokens.length; i++) {
+    var token = tokens[i]
+
+    if (typeof token === 'string') {
+      route += escapeString(token)
+      isEndDelimited = i === tokens.length - 1 && delimiters.indexOf(token[token.length - 1]) > -1
+    } else {
+      var prefix = escapeString(token.prefix)
+      var capture = token.repeat
+        ? '(?:' + token.pattern + ')(?:' + prefix + '(?:' + token.pattern + '))*'
+        : token.pattern
+
+      if (keys) keys.push(token)
+
+      if (token.optional) {
+        if (token.partial) {
+          route += prefix + '(' + capture + ')?'
+        } else {
+          route += '(?:' + prefix + '(' + capture + '))?'
+        }
+      } else {
+        route += prefix + '(' + capture + ')'
+      }
+    }
+  }
+
+  if (end) {
+    if (!strict) route += '(?:' + delimiter + ')?'
+
+    route += endsWith === '$' ? '$' : '(?=' + endsWith + ')'
+  } else {
+    if (!strict) route += '(?:' + delimiter + '(?=' + endsWith + '))?'
+    if (!isEndDelimited) route += '(?=' + delimiter + '|' + endsWith + ')'
+  }
+
+  return new RegExp('^' + route, flags(options))
+}
+
+/**
+ * Normalize the given path string, returning a regular expression.
+ *
+ * An empty array can be passed in for the keys, which will hold the
+ * placeholder key descriptions. For example, using `/user/:id`, `keys` will
+ * contain `[{ name: 'id', delimiter: '/', optional: false, repeat: false }]`.
+ *
+ * @param  {(string|RegExp|Array)} path
+ * @param  {Array=}                keys
+ * @param  {Object=}               options
+ * @return {!RegExp}
+ */
+function pathToRegexp (path, keys, options) {
+  if (path instanceof RegExp) {
+    return regexpToRegexp(path, keys)
+  }
+
+  if (Array.isArray(path)) {
+    return arrayToRegexp(/** @type {!Array} */ (path), keys, options)
+  }
+
+  return stringToRegexp(/** @type {string} */ (path), keys, options)
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/process/browser.js":
 /*!*****************************************!*\
   !*** ./node_modules/process/browser.js ***!
@@ -59868,7 +62621,7 @@ exports.encode = exports.stringify = __webpack_require__(/*! ./encode */ "./node
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.10.1
+/** @license React v16.10.2
  * react-is.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -61298,16 +64051,16 @@ function (_Component) {
           lineNumber: 39
         },
         __self: this
-      }), __jsx(_main__WEBPACK_IMPORTED_MODULE_10__["default"], {
+      }, __jsx(_main__WEBPACK_IMPORTED_MODULE_10__["default"], {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 40
         },
         __self: this
-      })) : __jsx(react__WEBPACK_IMPORTED_MODULE_6___default.a.Fragment, null, __jsx(_components_login__WEBPACK_IMPORTED_MODULE_9__["default"], {
+      }))) : __jsx(react__WEBPACK_IMPORTED_MODULE_6___default.a.Fragment, null, __jsx(_components_login__WEBPACK_IMPORTED_MODULE_9__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 44
         },
         __self: this
       }))));
@@ -61402,35 +64155,35 @@ function (_Component) {
         href: "/preOptions",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 15
+          lineNumber: 19
         },
         __self: this
       }, __jsx("a", {
         className: "btn btn-primary btn-lg btn-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 16
+          lineNumber: 20
         },
         __self: this
       }, "Pre Process Data"))), __jsx("div", {
         className: "col-6",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 19
+          lineNumber: 23
         },
         __self: this
       }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
         href: "/mlOptions",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20
+          lineNumber: 28
         },
         __self: this
       }, __jsx("a", {
         className: "btn btn-primary btn-lg btn-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21
+          lineNumber: 29
         },
         __self: this
       }, " ML algorithm "))))));
@@ -61441,6 +64194,23 @@ function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_5__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (Main);
+
+/***/ }),
+
+/***/ "./routes.js":
+/*!*******************!*\
+  !*** ./routes.js ***!
+  \*******************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var nextRoutes = __webpack_require__(/*! next-routes */ "./node_modules/next-routes/dist/index.js");
+
+var routes = module.exports = nextRoutes();
+routes.add('preproc', '/preproc/:path');
+routes.add('mlalgo', '/mlalgo/:path');
+routes.add('procOptions', '/procOptions');
+routes.add('algoOptions', '/algoOptions');
 
 /***/ }),
 

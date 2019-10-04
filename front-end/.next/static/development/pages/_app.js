@@ -7951,7 +7951,7 @@ exports.encode = exports.stringify = __webpack_require__(/*! ./encode */ "./node
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.10.1
+/** @license React v16.10.2
  * react-is.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
