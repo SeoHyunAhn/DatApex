@@ -160,7 +160,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _common_firebase__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../common/firebase */ "./common/firebase.js");
 /* harmony import */ var _pages_main__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../pages/main */ "./pages/main.js");
 
-var _jsxFileName = "/Users/youngjoon/Desktop/CS407/DatApex/front-end/components/layout.js";
+var _jsxFileName = "/Users/seohyun/dataPex/front-end/components/layout.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
@@ -304,7 +304,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _common_user__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../common/user */ "./common/user.js");
 /* harmony import */ var _common_firebase__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../common/firebase */ "./common/firebase.js");
 
-var _jsxFileName = "/Users/youngjoon/Desktop/CS407/DatApex/front-end/components/login.js";
+var _jsxFileName = "/Users/seohyun/dataPex/front-end/components/login.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
@@ -1139,7 +1139,9 @@ function withRouter(ComposedComponent) {
   WithRouteWrapper.contextTypes = {
     router: _propTypes.default.object
   };
-  WithRouteWrapper.getInitialProps = ComposedComponent.getInitialProps;
+  WithRouteWrapper.getInitialProps = ComposedComponent.getInitialProps // This is needed to allow checking for custom getInitialProps in _app
+  ;
+  WithRouteWrapper.origGetInitialProps = ComposedComponent.origGetInitialProps;
 
   if (true) {
     const name = ComposedComponent.displayName || ComposedComponent.name || 'Unknown';
@@ -1838,30 +1840,20 @@ class Router {
     if ( // @ts-ignore workaround for dead-code elimination
     (self.__HAS_SPR || "development" !== 'production') && Component.__NEXT_SPR) {
       let status;
-      const url = ctx.asPath ? ctx.asPath : url_1.format({
-        pathname: ctx.pathname,
-        query: ctx.query
-      });
-      props = await fetch(url, {
-        headers: {
-          'content-type': 'application/json'
-        }
-      }).then(res => {
+      const {
+        pathname
+      } = url_1.parse(ctx.asPath || ctx.pathname);
+      props = await fetch(`/_next/data${pathname}.json`).then(res => {
         if (!res.ok) {
           status = res.status;
           throw new Error('failed to load prerender data');
         }
 
         return res.json();
-      }).then(pageProps => {
-        return {
-          pageProps
-        };
       }).catch(err => {
-        return {
-          error: err.message,
-          status
-        };
+        console.error(`Failed to load data`, status, err);
+        window.location.href = pathname;
+        return new _Promise(() => {});
       });
     } else {
       const AppTree = this._wrapApp(App);
@@ -2427,7 +2419,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
 /* harmony import */ var _components_login__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/login */ "./components/login.js");
 /* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./main */ "./pages/main.js");
-var _jsxFileName = "/Users/youngjoon/Desktop/CS407/DatApex/front-end/pages/index.js";
+var _jsxFileName = "/Users/seohyun/dataPex/front-end/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -2517,7 +2509,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/youngjoon/Desktop/CS407/DatApex/front-end/pages/main.js";
+var _jsxFileName = "/Users/seohyun/dataPex/front-end/pages/main.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -2609,7 +2601,7 @@ class Main extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/youngjoon/Desktop/CS407/DatApex/front-end/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /Users/seohyun/dataPex/front-end/pages/index.js */"./pages/index.js");
 
 
 /***/ }),
