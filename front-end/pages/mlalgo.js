@@ -33,6 +33,7 @@ export default class extends React.Component {
     return (
       <Layout>
         <h1>{post.title}</h1>
+        <hr></hr>
       </Layout>
     )
   }

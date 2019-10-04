@@ -43,7 +43,7 @@ __webpack_require__.r(__webpack_exports__);
 var User = function User() {
   Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, User);
 
-  Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(this, "user", null);
+  Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(this, "user", {});
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (new User());
@@ -115,7 +115,6 @@ function (_React$Component) {
     _this.state = {
       user: _this.props.user
     };
-    console.log(_this.props.user);
     _this.logout = _this.logout.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
     return _this;
   }
@@ -127,7 +126,7 @@ function (_React$Component) {
         className: "navbar navbar-expand-lg navbar-dark bg-dark",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 38
+          lineNumber: 36
         },
         __self: this
       }, __jsx("a", {
@@ -135,7 +134,7 @@ function (_React$Component) {
         href: "/",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 39
+          lineNumber: 37
         },
         __self: this
       }, "DatApex"), __jsx("button", {
@@ -148,14 +147,14 @@ function (_React$Component) {
         "aria-label": "Toggle navigation",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 42
+          lineNumber: 40
         },
         __self: this
       }, __jsx("span", {
         className: "navbar-toggler-icon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51
+          lineNumber: 49
         },
         __self: this
       })), __jsx("div", {
@@ -163,21 +162,21 @@ function (_React$Component) {
         id: "navbarSupportedContent",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 52
         },
         __self: this
       }, __jsx("ul", {
         className: "navbar-nav mr-auto",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55
+          lineNumber: 53
         },
         __self: this
       }, __jsx("li", {
         className: "nav-item dropdown",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 55
         },
         __self: this
       }, __jsx("a", {
@@ -190,7 +189,7 @@ function (_React$Component) {
         "aria-expanded": "false",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 56
         },
         __self: this
       }, "Pre Process Data"), __jsx("div", {
@@ -198,7 +197,7 @@ function (_React$Component) {
         "aria-labelledby": "navbarDropdown",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 68
+          lineNumber: 66
         },
         __self: this
       }, __jsx(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
@@ -208,14 +207,14 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69
+          lineNumber: 67
         },
         __self: this
       }, __jsx("a", {
         className: "dropdown-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 70
+          lineNumber: 68
         },
         __self: this
       }, "Labsel Encoding")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
@@ -225,14 +224,14 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 72
+          lineNumber: 70
         },
         __self: this
       }, __jsx("a", {
         className: "dropdown-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 73
+          lineNumber: 71
         },
         __self: this
       }, "One-hot Encoding")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
@@ -242,14 +241,14 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 76
+          lineNumber: 74
         },
         __self: this
       }, __jsx("a", {
         className: "dropdown-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 77
+          lineNumber: 75
         },
         __self: this
       }, "Delete Row/Column")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
@@ -259,14 +258,14 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 79
+          lineNumber: 77
         },
         __self: this
       }, __jsx("a", {
         className: "dropdown-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 80
+          lineNumber: 78
         },
         __self: this
       }, "Replace W")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
@@ -276,7 +275,7 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 82
+          lineNumber: 80
         },
         __self: this
       }, __jsx("a", {
@@ -284,14 +283,14 @@ function (_React$Component) {
         href: "#",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 83
+          lineNumber: 81
         },
         __self: this
       }, "Select Certain")))), __jsx("li", {
         className: "nav-item dropdown",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 87
+          lineNumber: 85
         },
         __self: this
       }, __jsx("a", {
@@ -304,7 +303,7 @@ function (_React$Component) {
         "aria-expanded": "false",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88
+          lineNumber: 86
         },
         __self: this
       }, "ML Algorithm"), __jsx("div", {
@@ -312,7 +311,7 @@ function (_React$Component) {
         "aria-labelledby": "navbarDropdown",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 98
+          lineNumber: 96
         },
         __self: this
       }, __jsx(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
@@ -322,14 +321,14 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 99
+          lineNumber: 97
         },
         __self: this
       }, __jsx("a", {
         className: "dropdown-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 100
+          lineNumber: 98
         },
         __self: this
       }, "Naive Bayes algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
@@ -339,14 +338,14 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 102
+          lineNumber: 100
         },
         __self: this
       }, __jsx("a", {
         className: "dropdown-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 103
+          lineNumber: 101
         },
         __self: this
       }, "Logistic Regression algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
@@ -356,14 +355,14 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 106
+          lineNumber: 104
         },
         __self: this
       }, __jsx("a", {
         className: "dropdown-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 107
+          lineNumber: 105
         },
         __self: this
       }, "Support Vector Machine algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
@@ -373,14 +372,14 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 109
+          lineNumber: 107
         },
         __self: this
       }, __jsx("a", {
         className: "dropdown-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 110
+          lineNumber: 108
         },
         __self: this
       }, "Bagging algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
@@ -390,14 +389,14 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 112
+          lineNumber: 110
         },
         __self: this
       }, __jsx("a", {
         className: "dropdown-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 113
+          lineNumber: 111
         },
         __self: this
       }, "Clustering algorithm"))))), __jsx("div", {
@@ -405,7 +404,7 @@ function (_React$Component) {
         style: styleTextWhite,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 118
+          lineNumber: 116
         },
         __self: this
       }, this.state.user !== null && __jsx(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, __jsx("button", {
@@ -413,28 +412,28 @@ function (_React$Component) {
         onClick: this.logout,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 122
+          lineNumber: 120
         },
         __self: this
       }, " Logout "))))), __jsx("div", {
         className: "container mt-4",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 128
+          lineNumber: 126
         },
         __self: this
       }, __jsx("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 129
+          lineNumber: 127
         },
         __self: this
       }, __jsx("div", {
         className: "col-12",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 130
+          lineNumber: 128
         },
         __self: this
       }, this.props.children))));
@@ -527,6 +526,7 @@ function (_Component) {
           email: email,
           avatar: avatar
         };
+        console.log(_common_user__WEBPACK_IMPORTED_MODULE_9__["default"].user);
       })["catch"](function (err) {
         alert('login failed : ', err.message);
         console.log(err);
@@ -543,30 +543,24 @@ function (_Component) {
         className: "container-fluid",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50
+          lineNumber: 51
         },
         __self: this
       }, __jsx("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51
+          lineNumber: 52
         },
         __self: this
       }, __jsx("div", {
         className: "col-12 text-center",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 53
         },
         __self: this
       }, __jsx("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 55
-        },
-        __self: this
-      }), __jsx("br", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 56
@@ -590,18 +584,24 @@ function (_Component) {
           lineNumber: 59
         },
         __self: this
+      }), __jsx("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 60
+        },
+        __self: this
       }), __jsx("img", {
         src: "../static/Logo.png",
         alt: "logo",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 63
         },
         __self: this
       }), __jsx("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 63
+          lineNumber: 64
         },
         __self: this
       }), __jsx("button", {
@@ -609,7 +609,7 @@ function (_Component) {
         onClick: this.login,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69
+          lineNumber: 70
         },
         __self: this
       }, "Sign In with Google Account"))));
@@ -63975,6 +63975,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
 /* harmony import */ var _components_login__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/login */ "./components/login.js");
 /* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./main */ "./pages/main.js");
+/* harmony import */ var _common_user__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../common/user */ "./common/user.js");
 
 
 
@@ -63983,6 +63984,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/Users/youngjoon/Desktop/CS407/DatApex/front-end/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
+
 
 
 
@@ -64035,32 +64037,32 @@ function (_Component) {
       return __jsx("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 35
+          lineNumber: 37
         },
         __self: this
       }, __jsx("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 36
+          lineNumber: 38
         },
         __self: this
       }, this.state.user ? __jsx(react__WEBPACK_IMPORTED_MODULE_6___default.a.Fragment, null, __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_8__["default"], {
         user: this.state.user,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 39
+          lineNumber: 41
         },
         __self: this
       }, __jsx(_main__WEBPACK_IMPORTED_MODULE_10__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40
+          lineNumber: 42
         },
         __self: this
       }))) : __jsx(react__WEBPACK_IMPORTED_MODULE_6___default.a.Fragment, null, __jsx(_components_login__WEBPACK_IMPORTED_MODULE_9__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44
+          lineNumber: 46
         },
         __self: this
       }))));

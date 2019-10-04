@@ -36,6 +36,7 @@ class Login extends Component {
                     avatar,
                 };
 
+                console.log(User.user);
             })
             .catch( err => {
                 alert('login failed : ' , err.message );

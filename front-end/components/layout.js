@@ -22,8 +22,6 @@ class Layout extends React.Component {
             user: this.props.user,
         });
 
-        console.log(this.props.user)
-
         this.logout = this.logout.bind(this);
     }
 
@@ -118,7 +116,7 @@ class Layout extends React.Component {
                         <div className="form-inline my-2 my-lg-0" style={ styleTextWhite }>
                             { this.state.user !== null && (
                                 <>
-                                    {/* <span style={ styleName }> Hi { this.state.user.displayName } </span> */}
+                                    {/* <span style={ styleName }> Hi { User.user.displayName } </span> */}
                                     <button className="btn btn-secondary" onClick={ this.logout }> Logout </button>
                                 </>
                             )}

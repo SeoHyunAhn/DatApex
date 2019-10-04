@@ -5,6 +5,8 @@ import Layout from '../components/layout';
 import Login from '../components/login';
 import Main from './main';
 
+import User from '../common/user';
+
 class Index extends Component {
   constructor() {
     super();

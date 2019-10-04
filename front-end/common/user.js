@@ -1,6 +1,6 @@
 
 class User {
-    user = null;
+    user = {};
 }
 
 export default new User();
