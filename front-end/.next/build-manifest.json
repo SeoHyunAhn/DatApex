@@ -20,11 +20,11 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/preOptions": [
+    "/mlOptions": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/preproc": [
+    "/mlalgo": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
