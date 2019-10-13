@@ -160,7 +160,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_3__);
 
 
-var _jsxFileName = "/Users/seohyun/temp2/front-end/components/Modal.js";
+var _jsxFileName = "/Users/seohyun/dataPex/front-end/components/Modal.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 // frontend/src/components/Modal.js
 
@@ -336,7 +336,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../routes */ "./routes.js");
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_5__);
 
-var _jsxFileName = "/Users/seohyun/temp2/front-end/components/layout.js";
+var _jsxFileName = "/Users/seohyun/dataPex/front-end/components/layout.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
  // import Link from "next/link";
 
@@ -2763,7 +2763,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/seohyun/temp2/front-end/pages/main.js";
+var _jsxFileName = "/Users/seohyun/dataPex/front-end/pages/main.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -2863,28 +2863,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_Modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Modal */ "./components/Modal.js");
-/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! reactstrap */ "reactstrap");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
 
-var _jsxFileName = "/Users/seohyun/temp2/front-end/pages/mlalgo.js";
+var _jsxFileName = "/Users/seohyun/dataPex/front-end/pages/mlalgo.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
+
 const posts = [{
-  path: 'nba',
-  title: 'Naive Bayes algorithm'
+  path: "nba",
+  title: "Naive Bayes algorithm"
 }, {
-  path: 'lra',
-  title: 'Logistic Regression algorithm'
+  path: "lra",
+  title: "Logistic Regression algorithm"
 }, {
-  path: 'svm',
-  title: 'Support Vector Machine algorithm'
+  path: "svm",
+  title: "Support Vector Machine algorithm"
 }, {
-  path: 'bag',
-  title: 'Bagging algorithm'
+  path: "bag",
+  title: "Bagging algorithm"
 }, {
-  path: 'clus',
-  title: 'Clustering algorithm'
+  path: "clus",
+  title: "Clustering algorithm"
 }];
 
 /* harmony default export */ __webpack_exports__["default"] = (class extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
@@ -2895,112 +2898,6 @@ const posts = [{
       axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://localhost:8000/api/todos/").then(res => this.setState({
         todoList: res.data
       })).catch(err => console.log(err));
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "displayCompleted", status => {
-      if (status) {
-        return this.setState({
-          viewCompleted: true
-        });
-      }
-
-      return this.setState({
-        viewCompleted: false
-      });
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "renderTabList", () => {
-      return __jsx("div", {
-        className: "my-5 tab-list",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 45
-        },
-        __self: this
-      }, __jsx("span", {
-        onClick: () => this.displayCompleted(true),
-        className: this.state.viewCompleted ? "active" : "",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 46
-        },
-        __self: this
-      }, "complete"), __jsx("span", {
-        onClick: () => this.displayCompleted(false),
-        className: this.state.viewCompleted ? "" : "active",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 52
-        },
-        __self: this
-      }, "Incomplete"));
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "renderItems", () => {
-      const {
-        viewCompleted
-      } = this.state;
-      const newItems = this.state.todoList.filter(item => item.completed === viewCompleted);
-      return newItems.map(item => __jsx("li", {
-        key: item.id,
-        className: "list-group-item d-flex justify-content-between align-items-center",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 67
-        },
-        __self: this
-      }, __jsx("span", {
-        className: `todo-title mr-2 ${this.state.viewCompleted ? "completed-todo" : ""}`,
-        title: item.description,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 71
-        },
-        __self: this
-      }, item.title), __jsx("span", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 79
-        },
-        __self: this
-      }, __jsx("button", {
-        onClick: () => this.editItem(item),
-        className: "btn btn-secondary mr-2",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 80
-        },
-        __self: this
-      }, " ", "Edit", " "), __jsx("button", {
-        onClick: () => this.handleDelete(item),
-        className: "btn btn-danger",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 87
-        },
-        __self: this
-      }, "Delete", " "))));
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "toggle", () => {
-      this.setState({
-        modal: !this.state.modal
-      });
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "handleSubmit", item => {
-      this.toggle();
-
-      if (item.id) {
-        axios__WEBPACK_IMPORTED_MODULE_2___default.a.put(`http://localhost:8000/api/todos/${item.id}/`, item).then(res => this.refreshList());
-        return;
-      }
-
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("http://localhost:8000/api/todos/", item).then(res => this.refreshList());
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "handleDelete", item => {
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a.delete(`http://localhost:8000/api/todos/${item.id}`).then(res => this.refreshList());
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "createItem", () => {
@@ -3022,95 +2919,102 @@ const posts = [{
       });
     });
 
-    this.state = {
-      viewCompleted: false,
-      activeItem: {
-        title: "",
-        description: "",
-        completed: false
-      },
-      todoList: []
-    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.fileInput = react__WEBPACK_IMPORTED_MODULE_1___default.a.createRef();
   }
 
-  componentDidMount() {
-    this.refreshList();
+  handleSubmit(event) {
+    // this.toggle();
+    event.preventDefault();
+    console.log("handling submit");
+    console.log(this.fileInput.current.files); // if (item.id) {
+    //   axios
+    //     .put(`http://localhost:8000/api/todos/${item.id}/`, item)
+    //     .then(res => this.refreshList());
+    //   return;
+    // }
+
+    axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("http://localhost:8000/upload/csv/", this.fileInput.current.files); // .then(res => this.refreshList());
   }
 
   render() {
-    return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_5__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 126
+        lineNumber: 60
       },
       __self: this
     }, __jsx("main", {
       className: "content",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 127
+        lineNumber: 61
       },
       __self: this
     }, __jsx("h1", {
       className: "text-white text-uppercase text-center my-4",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 128
+        lineNumber: 62
       },
       __self: this
-    }, "Todo app"), __jsx("div", {
-      className: "row ",
+    }, "Todo app"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_4__["Form"], {
+      enctype: "multipart/form-data",
+      onSubmit: this.handleSubmit,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 129
+        lineNumber: 65
+      },
+      __self: this
+    }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_4__["FormGroup"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 66
       },
       __self: this
     }, __jsx("div", {
-      className: "col-md-6 col-sm-10 mx-auto p-0",
+      class: "form-group",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 130
+        lineNumber: 67
       },
       __self: this
-    }, __jsx("div", {
-      className: "card p-3",
+    }, __jsx("label", {
+      for: "name" // class="col-md-3 col-sm-3 col-xs-12 control-label"
+      ,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 131
+        lineNumber: 68
       },
       __self: this
-    }, __jsx("div", {
-      className: "",
+    }, "File:", " "), __jsx("div", {
+      class: "col-md-8",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 132
+        lineNumber: 74
       },
       __self: this
-    }, __jsx("button", {
-      onClick: this.createItem,
-      className: "btn btn-primary",
+    }, __jsx("input", {
+      type: "file",
+      name: "csv_file",
+      id: "csv_file",
+      required: "True",
+      class: "form-control",
+      ref: this.fileInput,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 133
+        lineNumber: 75
       },
       __self: this
-    }, "Add task")), this.renderTabList(), __jsx("ul", {
-      className: "list-group list-group-flush",
+    }))), __jsx("input", {
+      type: "submit",
+      value: "Submit",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 138
+        lineNumber: 86
       },
       __self: this
-    }, this.renderItems())))), this.state.modal ? __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      activeItem: this.state.activeItem,
-      toggle: this.toggle,
-      onSave: this.handleSubmit,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 145
-      },
-      __self: this
-    }) : null));
+    })))));
   }
 
 });
@@ -3141,7 +3045,7 @@ routes.add('algoOptions', '/algoOptions');
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/seohyun/temp2/front-end/pages/mlalgo.js */"./pages/mlalgo.js");
+module.exports = __webpack_require__(/*! /Users/seohyun/dataPex/front-end/pages/mlalgo.js */"./pages/mlalgo.js");
 
 
 /***/ }),

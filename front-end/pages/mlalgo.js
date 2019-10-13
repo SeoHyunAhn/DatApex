@@ -1,32 +1,31 @@
-import React from 'react'
-import axios from 'axios';
-import Modal  from '../components/Modal';
+import React from "react";
+import axios from "axios";
+import Modal from "../components/Modal";
+import {
+  Button,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Form,
+  FormGroup,
+  Input,
+  Label
+} from "reactstrap";
 
 const posts = [
-    { path: 'nba', title: 'Naive Bayes algorithm' },
-    { path: 'lra', title: 'Logistic Regression algorithm' },
-    { path: 'svm', title: 'Support Vector Machine algorithm' },
-    { path: 'bag', title: 'Bagging algorithm' },
-    { path: 'clus', title: 'Clustering algorithm' },
-]
-import Layout from '../components/layout';
-
+  { path: "nba", title: "Naive Bayes algorithm" },
+  { path: "lra", title: "Logistic Regression algorithm" },
+  { path: "svm", title: "Support Vector Machine algorithm" },
+  { path: "bag", title: "Bagging algorithm" },
+  { path: "clus", title: "Clustering algorithm" }
+];
+import Layout from "../components/layout";
 
 export default class extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      viewCompleted: false,
-      activeItem: {
-        title: "",
-        description: "",
-        completed: false
-      },
-      todoList: []
-    };
-  }
-  componentDidMount() {
-    this.refreshList();
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.fileInput = React.createRef();
   }
   refreshList = () => {
     axios
@@ -34,85 +33,20 @@ export default class extends React.Component {
       .then(res => this.setState({ todoList: res.data }))
       .catch(err => console.log(err));
   };
-  displayCompleted = status => {
-    if (status) {
-      return this.setState({ viewCompleted: true });
-    }
-    return this.setState({ viewCompleted: false });
-  };
-  renderTabList = () => {
-    return (
-      <div className="my-5 tab-list">
-        <span
-          onClick={() => this.displayCompleted(true)}
-          className={this.state.viewCompleted ? "active" : ""}
-        >
-          complete
-        </span>
-        <span
-          onClick={() => this.displayCompleted(false)}
-          className={this.state.viewCompleted ? "" : "active"}
-        >
-          Incomplete
-        </span>
-      </div>
-    );
-  };
-  renderItems = () => {
-    const { viewCompleted } = this.state;
-    const newItems = this.state.todoList.filter(
-      item => item.completed === viewCompleted
-    );
-    return newItems.map(item => (
-      <li
-        key={item.id}
-        className="list-group-item d-flex justify-content-between align-items-center"
-      >
-        <span
-          className={`todo-title mr-2 ${
-            this.state.viewCompleted ? "completed-todo" : ""
-          }`}
-          title={item.description}
-        >
-          {item.title}
-        </span>
-        <span>
-          <button
-            onClick={() => this.editItem(item)}
-            className="btn btn-secondary mr-2"
-          >
-            {" "}
-            Edit{" "}
-          </button>
-          <button
-            onClick={() => this.handleDelete(item)}
-            className="btn btn-danger"
-          >
-            Delete{" "}
-          </button>
-        </span>
-      </li>
-    ));
-  };
-  toggle = () => {
-    this.setState({ modal: !this.state.modal });
-  };
-  handleSubmit = item => {
-    this.toggle();
-    if (item.id) {
-      axios
-        .put(`http://localhost:8000/api/todos/${item.id}/`, item)
-        .then(res => this.refreshList());
-      return;
-    }
+  handleSubmit (event){
+    // this.toggle();
+    event.preventDefault();
+    console.log("handling submit");
+    console.log(this.fileInput.current.files);
+    // if (item.id) {
+    //   axios
+    //     .put(`http://localhost:8000/api/todos/${item.id}/`, item)
+    //     .then(res => this.refreshList());
+    //   return;
+    // }
     axios
-      .post("http://localhost:8000/api/todos/", item)
-      .then(res => this.refreshList());
-  };
-  handleDelete = item => {
-    axios
-      .delete(`http://localhost:8000/api/todos/${item.id}`)
-      .then(res => this.refreshList());
+      .post("http://localhost:8000/upload/csv/", this.fileInput.current.files)
+      // .then(res => this.refreshList());
   };
   createItem = () => {
     const item = { title: "", description: "", completed: false };
@@ -124,31 +58,36 @@ export default class extends React.Component {
   render() {
     return (
       <Layout>
-      <main className="content">
-        <h1 className="text-white text-uppercase text-center my-4">Todo app</h1>
-        <div className="row ">
-          <div className="col-md-6 col-sm-10 mx-auto p-0">
-            <div className="card p-3">
-              <div className="">
-                <button onClick={this.createItem} className="btn btn-primary">
-                  Add task
-                </button>
+        <main className="content">
+          <h1 className="text-white text-uppercase text-center my-4">
+            Todo app
+          </h1>
+          <Form enctype="multipart/form-data" onSubmit={this.handleSubmit}>
+            <FormGroup>
+              <div class="form-group">
+                <label
+                  for="name"
+                  // class="col-md-3 col-sm-3 col-xs-12 control-label"
+                >
+                  File:{" "}
+                </label>
+                <div class="col-md-8">
+                  <input
+                    type="file"
+                    name="csv_file"
+                    id="csv_file"
+                    required="True"
+                    class="form-control"
+                    ref={this.fileInput}
+                  />
+                  
+                </div>
               </div>
-              {this.renderTabList()}
-              <ul className="list-group list-group-flush">
-                {this.renderItems()}
-              </ul>
-            </div>
-          </div>
-        </div>
-        {this.state.modal ? (
-          <Modal
-            activeItem={this.state.activeItem}
-            toggle={this.toggle}
-            onSave={this.handleSubmit}
-          />
-        ) : null}
-      </main>
+              <input type="submit" value="Submit" />
+            </FormGroup>
+            
+          </Form>
+        </main>
       </Layout>
     );
   }
