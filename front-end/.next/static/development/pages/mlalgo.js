@@ -80660,14 +80660,24 @@ function (_React$Component) {
       // this.toggle();
       event.preventDefault();
       console.log("handling submit");
-      console.log(this.fileInput.current.files); // if (item.id) {
+      console.log(this.fileInput.current.files);
+      var formData = new FormData(); // var imagefile = this.fileInput.current.files;
+
+      console.log(this.fileInput.current.files[0]);
+      formData.append("file", this.fileInput.current.files[0]);
+      axios__WEBPACK_IMPORTED_MODULE_8___default.a.post('http://localhost:8000/upload/csv/', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }); // if (item.id) {
       //   axios
       //     .put(`http://localhost:8000/api/todos/${item.id}/`, item)
       //     .then(res => this.refreshList());
       //   return;
       // }
-
-      axios__WEBPACK_IMPORTED_MODULE_8___default.a.post("http://localhost:8000/upload/csv/", this.fileInput.current.files); // .then(res => this.refreshList());
+      // axios
+      // .post("http://localhost:8000/upload/csv/", this.fileInput.current.files)
+      // .then(res => this.refreshList());
     }
   }, {
     key: "render",
@@ -80675,21 +80685,21 @@ function (_React$Component) {
       return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_11__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 60
+          lineNumber: 69
         },
         __self: this
       }, __jsx("main", {
         className: "content",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61
+          lineNumber: 70
         },
         __self: this
       }, __jsx("h1", {
         className: "text-white text-uppercase text-center my-4",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 71
         },
         __self: this
       }, "Todo app"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_10__["Form"], {
@@ -80697,20 +80707,20 @@ function (_React$Component) {
         onSubmit: this.handleSubmit,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65
+          lineNumber: 74
         },
         __self: this
       }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_10__["FormGroup"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 75
         },
         __self: this
       }, __jsx("div", {
         "class": "form-group",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 67
+          lineNumber: 76
         },
         __self: this
       }, __jsx("label", {
@@ -80718,14 +80728,14 @@ function (_React$Component) {
         ,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 68
+          lineNumber: 77
         },
         __self: this
       }, "File:", " "), __jsx("div", {
         "class": "col-md-8",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74
+          lineNumber: 83
         },
         __self: this
       }, __jsx("input", {
@@ -80737,7 +80747,7 @@ function (_React$Component) {
         ref: this.fileInput,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 75
+          lineNumber: 84
         },
         __self: this
       }))), __jsx("input", {
@@ -80745,7 +80755,7 @@ function (_React$Component) {
         value: "Submit",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 86
+          lineNumber: 95
         },
         __self: this
       })))));

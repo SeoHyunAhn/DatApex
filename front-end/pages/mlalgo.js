@@ -38,14 +38,23 @@ export default class extends React.Component {
     event.preventDefault();
     console.log("handling submit");
     console.log(this.fileInput.current.files);
+    var formData = new FormData();
+    // var imagefile = this.fileInput.current.files;
+    console.log(this.fileInput.current.files[0])
+    formData.append("file", this.fileInput.current.files[0]);
+    axios.post('http://localhost:8000/upload/csv/', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    })
     // if (item.id) {
     //   axios
     //     .put(`http://localhost:8000/api/todos/${item.id}/`, item)
     //     .then(res => this.refreshList());
     //   return;
     // }
-    axios
-      .post("http://localhost:8000/upload/csv/", this.fileInput.current.files)
+    // axios
+      // .post("http://localhost:8000/upload/csv/", this.fileInput.current.files)
       // .then(res => this.refreshList());
   };
   createItem = () => {
