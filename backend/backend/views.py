@@ -2,21 +2,24 @@ from django.shortcuts import render
 from rest_framework import viewsets          # add this
 from django.views.decorators.csrf import csrf_exempt
 from . import exploration
+import os
+from backend.settings import BASE_DIR
 
 @csrf_exempt
 def upload_csv(request):
     print("inside upload!!!!!!!!!!!!!!!!!!")
+
     print(request)
     print(request.FILES)
 
     print("\n\n\n\n\n\n\n",request.FILES['file'])
-    if request.method == 'POST' and request.FILES['file']:
+    if request.method == 'GET' and request.FILES['file']:
         myfile = request.FILES['file']
         print(myfile)
 
-        exploration.prob2("/Users/harsha.valluri/Desktop/cs407/DatApex/backend/backend/digits-embedding.csv")
+        file_path = os.path.join(BASE_DIR, 'backend/digits-embedding.csv') 
+        exploration.prob2(file_path)
 
-        # harsha's part of implementing myeongsu's code PLZ
     return render(request, 'core/simple_upload.html')
 
 # def dataMining_SVM(request):
