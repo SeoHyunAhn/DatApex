@@ -80,7 +80,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/seohyun/dataPex/front-end/components/layout.js";
+var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/components/layout.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
  // import Link from "next/link";
 
@@ -58124,10 +58124,10 @@ var toQuerystring = function toQuerystring(obj) {
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2FmlOptions&absolutePagePath=%2FUsers%2Fseohyun%2FdataPex%2Ffront-end%2Fpages%2FmlOptions.js!./":
-/*!*************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2FmlOptions&absolutePagePath=%2FUsers%2Fseohyun%2FdataPex%2Ffront-end%2Fpages%2FmlOptions.js ***!
-  \*************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2FmlOptions&absolutePagePath=%2FUsers%2Fharsha.valluri%2FDesktop%2Fcs407%2FDatApex%2Ffront-end%2Fpages%2FmlOptions.js!./":
+/*!**************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2FmlOptions&absolutePagePath=%2FUsers%2Fharsha.valluri%2FDesktop%2Fcs407%2FDatApex%2Ffront-end%2Fpages%2FmlOptions.js ***!
+  \**************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -64028,7 +64028,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/seohyun/dataPex/front-end/pages/main.js";
+var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/pages/main.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 
 
@@ -64151,7 +64151,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/seohyun/dataPex/front-end/pages/mlOptions.js";
+var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/pages/mlOptions.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 
  // import Link from 'next/link';
@@ -64542,13 +64542,13 @@ routes.add('algoOptions', '/algoOptions');
 /***/ }),
 
 /***/ 2:
-/*!*****************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2FmlOptions&absolutePagePath=%2FUsers%2Fseohyun%2FdataPex%2Ffront-end%2Fpages%2FmlOptions.js ***!
-  \*****************************************************************************************************************************************/
+/*!******************************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2FmlOptions&absolutePagePath=%2FUsers%2Fharsha.valluri%2FDesktop%2Fcs407%2FDatApex%2Ffront-end%2Fpages%2FmlOptions.js ***!
+  \******************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2FmlOptions&absolutePagePath=%2FUsers%2Fseohyun%2FdataPex%2Ffront-end%2Fpages%2FmlOptions.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2FmlOptions&absolutePagePath=%2FUsers%2Fseohyun%2FdataPex%2Ffront-end%2Fpages%2FmlOptions.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2FmlOptions&absolutePagePath=%2FUsers%2Fharsha.valluri%2FDesktop%2Fcs407%2FDatApex%2Ffront-end%2Fpages%2FmlOptions.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2FmlOptions&absolutePagePath=%2FUsers%2Fharsha.valluri%2FDesktop%2Fcs407%2FDatApex%2Ffront-end%2Fpages%2FmlOptions.js!./");
 
 
 /***/ }),
