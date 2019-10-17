@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2857,18 +2857,16 @@ class Main extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_Modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Modal */ "./components/Modal.js");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! reactstrap */ "reactstrap");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
-
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_Modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Modal */ "./components/Modal.js");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! reactstrap */ "reactstrap");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
 var _jsxFileName = "/Users/seohyun/dataPex/front-end/pages/mlalgo.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
@@ -2890,150 +2888,90 @@ const posts = [{
   title: "Clustering algorithm"
 }];
 
-/* harmony default export */ __webpack_exports__["default"] = (class extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
+/* harmony default export */ __webpack_exports__["default"] = (class extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   constructor(props) {
     super(props);
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "refreshList", () => {
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://localhost:8000/api/todos/").then(res => this.setState({
-        todoList: res.data
-      })).catch(err => console.log(err));
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "createItem", () => {
-      const item = {
-        title: "",
-        description: "",
-        completed: false
-      };
-      this.setState({
-        activeItem: item,
-        modal: !this.state.modal
-      });
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "editItem", item => {
-      this.setState({
-        activeItem: item,
-        modal: !this.state.modal
-      });
-    });
-
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.fileInput = react__WEBPACK_IMPORTED_MODULE_1___default.a.createRef();
+    this.fileInput = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
     this.state = {
       imgSrc: ""
     };
-  } // hexToBase64(str) {
-  //   return 
-  // }
-
+  }
 
   handleSubmit(event) {
-    // this.toggle();
     event.preventDefault();
     console.log("handling submit");
     console.log(this.fileInput.current.files);
-    var formData = new FormData(); // var imagefile = this.fileInput.current.files;
-
+    var formData = new FormData();
     console.log(this.fileInput.current.files[0]);
     formData.append("file", this.fileInput.current.files[0]);
-    var display = document.querySelector(".image-display");
-    var output = document.getElementById("image-output"); // var imageOupput;
-
-    axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("http://localhost:8000/upload/csv/", formData, {
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("http://localhost:8000/upload/csv/", formData, {
       headers: {
         "Content-Type": "multipart/form-data"
       }
-    }).then(res => this.setState({
-      imgSrc: res.data
-    })) // .then(function(e) {
-    //   console.log(e);
-    //   // var data = [];
-    //   // data.push(e.data)
-    //   self.setState({imgSrc: e.data});
-    //   // display.innerHTML = e.data.forms[0].name;
-    //   // output.src = "{require('"+e.data+"')}";
-    //   // console.log(e.data);
-    //   // var img = new Image();
-    //   // img.onload = function() {
-    //   //   myCanvasContext.drawImage(img, 0, 0);
-    //   // };
-    //   // img.src = e.data;
-    //   // imageOupput = "data:image/png;base64, " + e.data;
-    //   // console.log(img);
-    //   // var node = document.createElement("img");
-    //   // // var t = btoa(String.fromCharCode.apply(null, e.data.replace(/\r|\n/g, "").replace(/([\da-fA-F]{2}) ?/g, "0x$1 ").replace(/ +$/, "").split(" ")));
-    //   // // node.src = 'data:image/jpeg;base64,' + t;
-    //   // node.src = Buffer.from(e.data, 'binary').toString('base64');
-    //   // document.getElementById("image").appendChild(node);
-    // })
-    .then(e => console.log(this.state.imgSrc)).catch(err => console.log(err)); // if (item.id) {
-    //   axios
-    //     .put(`http://localhost:8000/api/todos/${item.id}/`, item)
-    //     .then(res => this.refreshList());
-    //   return;
-    // }
-    // axios
-    // .post("http://localhost:8000/upload/csv/", this.fileInput.current.files)
-    // .then(res => this.refreshList());
+    }).then(e => {
+      console.log(e);
+      var imageOupput = "data:image/png;base64," + e.data;
+      this.setState({
+        imgSrc: imageOupput
+      });
+    }).catch(err => console.log(err));
   }
 
   render() {
-    return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 109
+        lineNumber: 53
       },
       __self: this
     }, __jsx("main", {
       className: "content",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 110
+        lineNumber: 54
       },
       __self: this
     }, __jsx("h1", {
       className: "text-white text-uppercase text-center my-4",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 111
+        lineNumber: 55
       },
       __self: this
-    }, "Todo app"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_4__["Form"], {
+    }, "Todo app"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Form"], {
       enctype: "multipart/form-data",
       onSubmit: this.handleSubmit,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 114
+        lineNumber: 58
       },
       __self: this
-    }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_4__["FormGroup"], {
+    }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 115
+        lineNumber: 59
       },
       __self: this
     }, __jsx("div", {
       class: "form-group",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 116
+        lineNumber: 60
       },
       __self: this
     }, __jsx("label", {
-      for: "name" // class="col-md-3 col-sm-3 col-xs-12 control-label"
-      ,
+      for: "name",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 117
+        lineNumber: 61
       },
       __self: this
     }, "File:", " "), __jsx("div", {
       class: "col-md-8",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 123
+        lineNumber: 66
       },
       __self: this
     }, __jsx("input", {
@@ -3045,7 +2983,7 @@ const posts = [{
       ref: this.fileInput,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 124
+        lineNumber: 67
       },
       __self: this
     }))), __jsx("input", {
@@ -3053,23 +2991,22 @@ const posts = [{
       value: "Submit",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 134
+        lineNumber: 77
       },
       __self: this
     }))), __jsx("div", {
       id: "image-display",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 137
+        lineNumber: 80
       },
       __self: this
     }, __jsx("img", {
       id: "image-output",
-      onLoad: this.handleImageLoaded.bind(this),
-      src: this.state.imagesrc,
+      src: this.state.imgSrc,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 138
+        lineNumber: 81
       },
       __self: this
     }))));
@@ -3096,7 +3033,7 @@ routes.add('algoOptions', '/algoOptions');
 
 /***/ }),
 
-/***/ 5:
+/***/ 6:
 /*!*******************************!*\
   !*** multi ./pages/mlalgo.js ***!
   \*******************************/

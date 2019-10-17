@@ -80568,15 +80568,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _components_Modal__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/Modal */ "./components/Modal.js");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
-/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
-
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _components_Modal__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Modal */ "./components/Modal.js");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
+/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
 
 
 
@@ -80584,7 +80582,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _jsxFileName = "/Users/seohyun/dataPex/front-end/pages/mlalgo.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
 
 
@@ -80618,164 +80616,96 @@ function (_React$Component) {
     Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, _default);
 
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(_default).call(this, props));
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "refreshList", function () {
-      axios__WEBPACK_IMPORTED_MODULE_8___default.a.get("http://localhost:8000/api/todos/").then(function (res) {
-        return _this.setState({
-          todoList: res.data
-        });
-      })["catch"](function (err) {
-        return console.log(err);
-      });
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "createItem", function () {
-      var item = {
-        title: "",
-        description: "",
-        completed: false
-      };
-
-      _this.setState({
-        activeItem: item,
-        modal: !_this.state.modal
-      });
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "editItem", function (item) {
-      _this.setState({
-        activeItem: item,
-        modal: !_this.state.modal
-      });
-    });
-
     _this.handleSubmit = _this.handleSubmit.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
-    _this.fileInput = react__WEBPACK_IMPORTED_MODULE_7___default.a.createRef();
+    _this.fileInput = react__WEBPACK_IMPORTED_MODULE_6___default.a.createRef();
     _this.state = {
       imgSrc: ""
     };
     return _this;
-  } // hexToBase64(str) {
-  //   return 
-  // }
-
+  }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(_default, [{
     key: "handleSubmit",
     value: function handleSubmit(event) {
       var _this2 = this;
 
-      // this.toggle();
       event.preventDefault();
       console.log("handling submit");
       console.log(this.fileInput.current.files);
-      var formData = new FormData(); // var imagefile = this.fileInput.current.files;
-
+      var formData = new FormData();
       console.log(this.fileInput.current.files[0]);
       formData.append("file", this.fileInput.current.files[0]);
-      var display = document.querySelector(".image-display");
-      var output = document.getElementById("image-output"); // var imageOupput;
-
-      axios__WEBPACK_IMPORTED_MODULE_8___default.a.post("http://localhost:8000/upload/csv/", formData, {
+      axios__WEBPACK_IMPORTED_MODULE_7___default.a.post("http://localhost:8000/upload/csv/", formData, {
         headers: {
           "Content-Type": "multipart/form-data"
         }
-      }).then(function (res) {
-        return _this2.setState({
-          imgSrc: res.data
+      }).then(function (e) {
+        console.log(e);
+        var imageOupput = "data:image/png;base64," + e.data;
+
+        _this2.setState({
+          imgSrc: imageOupput
         });
-      }) // .then(function(e) {
-      //   console.log(e);
-      //   // var data = [];
-      //   // data.push(e.data)
-      //   self.setState({imgSrc: e.data});
-      //   // display.innerHTML = e.data.forms[0].name;
-      //   // output.src = "{require('"+e.data+"')}";
-      //   // console.log(e.data);
-      //   // var img = new Image();
-      //   // img.onload = function() {
-      //   //   myCanvasContext.drawImage(img, 0, 0);
-      //   // };
-      //   // img.src = e.data;
-      //   // imageOupput = "data:image/png;base64, " + e.data;
-      //   // console.log(img);
-      //   // var node = document.createElement("img");
-      //   // // var t = btoa(String.fromCharCode.apply(null, e.data.replace(/\r|\n/g, "").replace(/([\da-fA-F]{2}) ?/g, "0x$1 ").replace(/ +$/, "").split(" ")));
-      //   // // node.src = 'data:image/jpeg;base64,' + t;
-      //   // node.src = Buffer.from(e.data, 'binary').toString('base64');
-      //   // document.getElementById("image").appendChild(node);
-      // })
-      .then(function (e) {
-        return console.log(_this2.state.imgSrc);
       })["catch"](function (err) {
         return console.log(err);
-      }); // if (item.id) {
-      //   axios
-      //     .put(`http://localhost:8000/api/todos/${item.id}/`, item)
-      //     .then(res => this.refreshList());
-      //   return;
-      // }
-      // axios
-      // .post("http://localhost:8000/upload/csv/", this.fileInput.current.files)
-      // .then(res => this.refreshList());
+      });
     }
   }, {
     key: "render",
     value: function render() {
-      return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_11__["default"], {
+      return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_10__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 109
+          lineNumber: 53
         },
         __self: this
       }, __jsx("main", {
         className: "content",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 110
+          lineNumber: 54
         },
         __self: this
       }, __jsx("h1", {
         className: "text-white text-uppercase text-center my-4",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 111
+          lineNumber: 55
         },
         __self: this
-      }, "Todo app"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_10__["Form"], {
+      }, "Todo app"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_9__["Form"], {
         enctype: "multipart/form-data",
         onSubmit: this.handleSubmit,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 114
+          lineNumber: 58
         },
         __self: this
-      }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_10__["FormGroup"], {
+      }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_9__["FormGroup"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 115
+          lineNumber: 59
         },
         __self: this
       }, __jsx("div", {
         "class": "form-group",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 116
+          lineNumber: 60
         },
         __self: this
       }, __jsx("label", {
-        "for": "name" // class="col-md-3 col-sm-3 col-xs-12 control-label"
-        ,
+        "for": "name",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 117
+          lineNumber: 61
         },
         __self: this
       }, "File:", " "), __jsx("div", {
         "class": "col-md-8",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 123
+          lineNumber: 66
         },
         __self: this
       }, __jsx("input", {
@@ -80787,7 +80717,7 @@ function (_React$Component) {
         ref: this.fileInput,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 124
+          lineNumber: 67
         },
         __self: this
       }))), __jsx("input", {
@@ -80795,23 +80725,22 @@ function (_React$Component) {
         value: "Submit",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 134
+          lineNumber: 77
         },
         __self: this
       }))), __jsx("div", {
         id: "image-display",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 137
+          lineNumber: 80
         },
         __self: this
       }, __jsx("img", {
         id: "image-output",
-        onLoad: this.handleImageLoaded.bind(this),
-        src: this.state.imagesrc,
+        src: this.state.imgSrc,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 138
+          lineNumber: 81
         },
         __self: this
       }))));
@@ -80819,7 +80748,7 @@ function (_React$Component) {
   }]);
 
   return _default;
-}(react__WEBPACK_IMPORTED_MODULE_7___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_6___default.a.Component);
 
 
 
@@ -80842,7 +80771,7 @@ routes.add('algoOptions', '/algoOptions');
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /*!***********************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fmlalgo&absolutePagePath=%2FUsers%2Fseohyun%2FdataPex%2Ffront-end%2Fpages%2Fmlalgo.js ***!
   \***********************************************************************************************************************************/
@@ -80865,5 +80794,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[3,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=mlalgo.js.map

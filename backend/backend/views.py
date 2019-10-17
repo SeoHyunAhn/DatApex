@@ -5,6 +5,7 @@ from . import exploration
 import os
 from backend.settings import BASE_DIR
 from django.http import HttpResponse
+import base64
 
 @csrf_exempt
 def upload_csv(request):
@@ -23,9 +24,10 @@ def upload_csv(request):
     save_path = os.path.join(BASE_DIR, 'backend/result_testing.png') 
     print(save_path)
     image_data = open(save_path, "rb").read()
-
-    return HttpResponse(save_path, content_type="text")
-    # return HttpResponse(image_data, content_type="image/png")
+    with open(save_path, "rb") as image_data:
+        str = base64.b64encode(image_data.read())
+    # return HttpResponse(save_path, content_type="text")
+    return HttpResponse(str, content_type="image/png")
 
 # def dataMining_SVM(request):
 #     if request.method == 'POST' and request.FILES['myfile']:
