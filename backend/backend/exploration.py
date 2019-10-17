@@ -1,6 +1,9 @@
 import pandas as pd
 import numpy as np
 import random
+import os
+from backend.settings import BASE_DIR
+
 
 #from scipy.misc import toimage  #for part 1
 import matplotlib as mpl        #for part 2
@@ -62,7 +65,7 @@ def getXY(data, label, idxList):
 
 
 def prob2(fileName):
-    
+    print("file name in exploartion",fileName)
     digitsEmb = pd.read_csv(fileName)
     digitsEmb_Keys = list(digitsEmb.keys())
     
@@ -91,7 +94,10 @@ def prob2(fileName):
     cb.set_label('Colors of classes')
     ax.set_title('testingGUI')
     print("point11111111111111")
-    plt.savefig("/Users/harsha.valluri/Desktop/cs407/DatApex/backend/backend/result_testing.png")
+    save_path = os.path.join(BASE_DIR, 'backend/result_testing.png') 
+
+    # plt.savefig("/Users/harsha.valluri/Desktop/cs407/DatApex/backend/backend/result_testing.png")
+    plt.savefig(save_path)
     print("point22222222222222")
 
 if __name__ == '__main__':

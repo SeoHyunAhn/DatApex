@@ -15,7 +15,7 @@ urlpatterns = [
     # path('todo/', views.TodoView.as_view()),   
     path('admin/', admin.site.urls),           
     path('api/', include(router.urls)),                # add this
-    url(r'^upload/csv/$', views.upload_csv, name='upload_csv'),
+    # url(r'^upload/csv/$', views.upload_csv, name='upload_csv'),
     path('upload/csv/', views.upload_csv, name='upload_csv'),
     # path('dataMining/run/SVM', views.dataMining_SVM),
     # path('dataMining/run/NaiveBayes', views.dataMining_NaiveBayes),
