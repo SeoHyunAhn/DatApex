@@ -50,209 +50,6 @@ var User = function User() {
 
 /***/ }),
 
-/***/ "./components/Modal.js":
-/*!*****************************!*\
-  !*** ./components/Modal.js ***!
-  \*****************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return CustomModal; });
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
-
-
-
-
-
-
-
-
-var _jsxFileName = "/Users/seohyun/dataPex/front-end/components/Modal.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
-// frontend/src/components/Modal.js
-
-
-
-var CustomModal =
-/*#__PURE__*/
-function (_Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__["default"])(CustomModal, _Component);
-
-  function CustomModal(props) {
-    var _this;
-
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, CustomModal);
-
-    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(CustomModal).call(this, props));
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this), "handleChange", function (e) {
-      var _e$target = e.target,
-          name = _e$target.name,
-          value = _e$target.value;
-
-      if (e.target.type === "checkbox") {
-        value = e.target.checked;
-      }
-
-      var activeItem = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, _this.state.activeItem, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])({}, name, value));
-
-      _this.setState({
-        activeItem: activeItem
-      });
-    });
-
-    _this.state = {
-      activeItem: _this.props.activeItem
-    };
-    return _this;
-  }
-
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(CustomModal, [{
-    key: "render",
-    value: function render() {
-      var _this2 = this;
-
-      var _this$props = this.props,
-          toggle = _this$props.toggle,
-          onSave = _this$props.onSave;
-      return __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_9__["Modal"], {
-        isOpen: true,
-        toggle: toggle,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 36
-        },
-        __self: this
-      }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_9__["ModalHeader"], {
-        toggle: toggle,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 37
-        },
-        __self: this
-      }, " Todo Item "), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_9__["ModalBody"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 38
-        },
-        __self: this
-      }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_9__["Form"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 39
-        },
-        __self: this
-      }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_9__["FormGroup"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 40
-        },
-        __self: this
-      }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_9__["Label"], {
-        "for": "title",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 41
-        },
-        __self: this
-      }, "Title"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_9__["Input"], {
-        type: "text",
-        name: "title",
-        value: this.state.activeItem.title,
-        onChange: this.handleChange,
-        placeholder: "Enter Todo Title",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 42
-        },
-        __self: this
-      })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_9__["FormGroup"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 50
-        },
-        __self: this
-      }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_9__["Label"], {
-        "for": "description",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 51
-        },
-        __self: this
-      }, "Description"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_9__["Input"], {
-        type: "text",
-        name: "description",
-        value: this.state.activeItem.description,
-        onChange: this.handleChange,
-        placeholder: "Enter Todo description",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 52
-        },
-        __self: this
-      })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_9__["FormGroup"], {
-        check: true,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 60
-        },
-        __self: this
-      }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_9__["Label"], {
-        "for": "completed",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 61
-        },
-        __self: this
-      }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_9__["Input"], {
-        type: "checkbox",
-        name: "completed",
-        checked: this.state.activeItem.completed,
-        onChange: this.handleChange,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 62
-        },
-        __self: this
-      }), "Completed")))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_9__["ModalFooter"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 73
-        },
-        __self: this
-      }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_9__["Button"], {
-        color: "success",
-        onClick: function onClick() {
-          return onSave(_this2.state.activeItem);
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 74
-        },
-        __self: this
-      }, "Save")));
-    }
-  }]);
-
-  return CustomModal;
-}(react__WEBPACK_IMPORTED_MODULE_8__["Component"]);
-
-
-
-/***/ }),
-
 /***/ "./components/layout.js":
 /*!******************************!*\
   !*** ./components/layout.js ***!
@@ -750,17 +547,6 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/get-own-prope
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js":
-/*!****************************************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js ***!
-  \****************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js/library/fn/object/get-own-property-symbols */ "./node_modules/core-js/library/fn/object/get-own-property-symbols.js");
-
-/***/ }),
-
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/object/get-prototype-of.js":
 /*!********************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/object/get-prototype-of.js ***!
@@ -1169,49 +955,6 @@ function _inherits(subClass, superClass) {
     }
   });
   if (superClass) Object(_setPrototypeOf__WEBPACK_IMPORTED_MODULE_1__["default"])(subClass, superClass);
-}
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js":
-/*!*************************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js ***!
-  \*************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _objectSpread; });
-/* harmony import */ var _core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/get-own-property-descriptor */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js");
-/* harmony import */ var _core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../core-js/object/get-own-property-symbols */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js");
-/* harmony import */ var _core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _core_js_object_keys__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
-/* harmony import */ var _core_js_object_keys__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_keys__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _defineProperty__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-
-
-
-
-function _objectSpread(target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i] != null ? arguments[i] : {};
-
-    var ownKeys = _core_js_object_keys__WEBPACK_IMPORTED_MODULE_2___default()(source);
-
-    if (typeof _core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1___default.a === 'function') {
-      ownKeys = ownKeys.concat(_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1___default()(source).filter(function (sym) {
-        return _core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_0___default()(source, sym).enumerable;
-      }));
-    }
-
-    ownKeys.forEach(function (key) {
-      Object(_defineProperty__WEBPACK_IMPORTED_MODULE_3__["default"])(target, key, source[key]);
-    });
-  }
-
-  return target;
 }
 
 /***/ }),
@@ -56118,19 +55861,6 @@ module.exports = function getOwnPropertyDescriptor(it, key) {
 
 /***/ }),
 
-/***/ "./node_modules/core-js/library/fn/object/get-own-property-symbols.js":
-/*!****************************************************************************!*\
-  !*** ./node_modules/core-js/library/fn/object/get-own-property-symbols.js ***!
-  \****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ../../modules/es6.symbol */ "./node_modules/core-js/library/modules/es6.symbol.js");
-module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/core-js/library/modules/_core.js").Object.getOwnPropertySymbols;
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js/library/fn/object/get-prototype-of.js":
 /*!********************************************************************!*\
   !*** ./node_modules/core-js/library/fn/object/get-prototype-of.js ***!
@@ -80572,9 +80302,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _components_Modal__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Modal */ "./components/Modal.js");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
-/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
+/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
 
 
 
@@ -80583,7 +80312,6 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/Users/seohyun/dataPex/front-end/pages/mlalgo.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
-
 
 
 
@@ -80635,77 +80363,83 @@ function (_React$Component) {
       var formData = new FormData();
       console.log(this.fileInput.current.files[0]);
       formData.append("file", this.fileInput.current.files[0]);
+      var div = document.getElementById("image-display");
+      div.innerHTML = "<Spinner animation='border' role='status'> <span className='sr-only'>Loading...</span></Spinner>";
       axios__WEBPACK_IMPORTED_MODULE_7___default.a.post("http://localhost:8000/upload/csv/", formData, {
         headers: {
           "Content-Type": "multipart/form-data"
         }
       }).then(function (e) {
         console.log(e);
+        var div = document.getElementById("image-display");
+        div.innerText = "";
         var imageOupput = "data:image/png;base64," + e.data;
 
         _this2.setState({
           imgSrc: imageOupput
         });
       })["catch"](function (err) {
-        return console.log(err);
+        console.log(err);
+        var div = document.getElementById("image-display");
+        div.innerText = "Please provide a valid csv file";
       });
     }
   }, {
     key: "render",
     value: function render() {
-      return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_10__["default"], {
+      return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_9__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 62
         },
         __self: this
       }, __jsx("main", {
         className: "content",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 63
         },
         __self: this
       }, __jsx("h1", {
         className: "text-white text-uppercase text-center my-4",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55
+          lineNumber: 64
         },
         __self: this
-      }, "Todo app"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_9__["Form"], {
+      }, "Todo app"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_8__["Form"], {
         enctype: "multipart/form-data",
         onSubmit: this.handleSubmit,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 67
         },
         __self: this
-      }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_9__["FormGroup"], {
+      }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_8__["FormGroup"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 59
+          lineNumber: 68
         },
         __self: this
       }, __jsx("div", {
         "class": "form-group",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 60
+          lineNumber: 69
         },
         __self: this
       }, __jsx("label", {
         "for": "name",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61
+          lineNumber: 70
         },
         __self: this
       }, "File:", " "), __jsx("div", {
         "class": "col-md-8",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 75
         },
         __self: this
       }, __jsx("input", {
@@ -80717,7 +80451,7 @@ function (_React$Component) {
         ref: this.fileInput,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 67
+          lineNumber: 76
         },
         __self: this
       }))), __jsx("input", {
@@ -80725,25 +80459,25 @@ function (_React$Component) {
         value: "Submit",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 77
+          lineNumber: 86
         },
         __self: this
       }))), __jsx("div", {
         id: "image-display",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 80
+          lineNumber: 89
         },
         __self: this
-      }, __jsx("img", {
+      }), __jsx("img", {
         id: "image-output",
         src: this.state.imgSrc,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 81
+          lineNumber: 91
         },
         __self: this
-      }))));
+      })));
     }
   }]);
 
@@ -80771,7 +80505,7 @@ routes.add('algoOptions', '/algoOptions');
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /*!***********************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fmlalgo&absolutePagePath=%2FUsers%2Fseohyun%2FdataPex%2Ffront-end%2Fpages%2Fmlalgo.js ***!
   \***********************************************************************************************************************************/
@@ -80794,5 +80528,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=mlalgo.js.map

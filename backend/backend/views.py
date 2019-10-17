@@ -19,7 +19,7 @@ def upload_csv(request):
         myfile = request.FILES['file']
         # print(myfile)
 
-        file_path = os.path.join(BASE_DIR, 'backend/digits-embedding.csv') 
+        # file_path = os.path.join(BASE_DIR, 'backend/digits-embedding.csv') 
         exploration.prob2(myfile)
     save_path = os.path.join(BASE_DIR, 'backend/result_testing.png') 
     print(save_path)

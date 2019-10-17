@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import Modal from "../components/Modal";
 import {
   Button,
   ModalHeader,
@@ -35,6 +34,8 @@ export default class extends React.Component {
     var formData = new FormData();
     console.log(this.fileInput.current.files[0]);
     formData.append("file", this.fileInput.current.files[0]);
+    var div = document.getElementById("image-display");
+    div.innerHTML = "<Spinner animation='border' role='status'> <span className='sr-only'>Loading...</span></Spinner>"
     axios
       .post("http://localhost:8000/upload/csv/", formData, {
         headers: {
@@ -43,10 +44,18 @@ export default class extends React.Component {
       })
       .then((e) => {
         console.log(e);
+
+        var div = document.getElementById("image-display");
+        div.innerText = ""
         var imageOupput = "data:image/png;base64," + e.data ;
         this.setState({imgSrc: imageOupput});
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        console.log(err)
+
+        var div = document.getElementById("image-display");
+        div.innerText = "Please provide a valid csv file"
+      });
   }
   render() {
     return (
@@ -78,9 +87,9 @@ export default class extends React.Component {
             </FormGroup>
           </Form>
           <div id="image-display">
+          </div>
             <img id= "image-output"
              src={this.state.imgSrc}></img>
-          </div>
         </main>
       </Layout>
     );
