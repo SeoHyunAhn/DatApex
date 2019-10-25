@@ -13,7 +13,7 @@ urlpatterns = [
     # url(r'^upload/csv/$', views.upload_csv, name='upload_csv'),
     path('upload/csv/', views.upload_csv, name='upload_csv'),
     # path('preProc/delCol/<int:d_cols>/', views.prePrcoess_DeleteCol),
-    # path('preProc/delRow/<int:d_rows>/', views.prePrcoess_DeleteRow),
+    path('preProc/delRow/<str:d_rows>', views.prePrcoess_DeleteRow, name='delete_row'),
 
     # path('dataMining/run/SVM', views.dataMining_SVM),
     # path('dataMining/run/NaiveBayes', views.dataMining_NaiveBayes),

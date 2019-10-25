@@ -10,7 +10,7 @@ import {
   Input,
   Label
 } from "reactstrap";
-
+import UploadCSV from "../components/Modal";
 const posts = [
   { path: "nba", title: "Naive Bayes algorithm" },
   { path: "lra", title: "Logistic Regression algorithm" },
@@ -24,17 +24,15 @@ export default class extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.fileInput = React.createRef();
+    // this.fileInput = React.createRef();
     this.state = { imgSrc: "" };
     this.path = "";
   }
-  handleSubmit(event) {
-    event.preventDefault();
+  handleSubmit(filename) {
     console.log("handling submit");
-    // console.log(this.fileInput.current.files);
     var formData = new FormData();
     // console.log(this.fileInput.current.files[0]);
-    formData.append("file", this.fileInput.current.files[0]);
+    formData.append("file", filename);
     var div = document.getElementById("image-display");
     div.innerHTML =
       "<Spinner animation='border' role='status'> <span className='sr-only'>Loading...</span></Spinner>";
@@ -77,24 +75,7 @@ export default class extends React.Component {
     return (
       <Layout>
         <main className="content">
-          <Form enctype="multipart/form-data" onSubmit={this.handleSubmit}>
-            <FormGroup>
-              <div class="form-group">
-                <label for="name">File: </label>
-                <div class="col-md-8">
-                  <input
-                    type="file"
-                    name="csv_file"
-                    id="csv_file"
-                    required="True"
-                    class="form-control"
-                    ref={this.fileInput}
-                  />
-                </div>
-              </div>
-              <input type="submit" value="Submit" />
-            </FormGroup>
-          </Form>
+          <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
           <div id="image-display"></div>
           <img id="image-output" src={this.state.imgSrc}></img>
         </main>

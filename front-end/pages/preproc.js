@@ -11,6 +11,7 @@ import {
   Label
 } from "reactstrap";
 import { CSVLink, CSVDownload } from "react-csv";
+import UploadCSV from "../components/Modal";
 
 const posts = [
   { path: "label", title: "Label Encoding" },
@@ -25,29 +26,29 @@ export default class extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.csvLink = React.createRef();
-    this.state = { outputCsv: "", paramter: [] };
+    this.handleOptionChange = this.handleOptionChange.bind(this);
+    // this.csvLink = React.createRef();
+    this.state = { outputCsv: "", selectedOption: "", paramNum: "" };
     this.path = "";
   }
-  handleSubmit(event) {
+  handleSubmit(filename) {
     event.preventDefault();
-    // console.log("handling submit");
-    // console.log(this.fileInput.current.files);
     var formData = new FormData();
     // console.log(this.fileInput.current.files[0]);
-    formData.append("file", this.fileInput.current.files[0]);
-    var div = document.getElementById("image-display");
+    formData.append("file", filename);
+    var div = document.getElementById("result-display");
     div.innerHTML =
       "<Spinner animation='border' role='status'> <span className='sr-only'>Loading...</span></Spinner>";
 
     var link = "";
+    console.log(this.state.selectedOption);
     if (this.path == "label") {
       //  selected params of each on of them
     } else if (this.path == "one-hot") {
       // selected  params of each on of them
     } else if (this.path == "delete-rc") {
       // selected  params of each on of them
-      link = "preProc/delCol/";
+      link = "preProc/delRow/"+this.state.paramNum;
     } else if (this.path == "replaceW") {
       // selected params of each on of them
     } else if (this.path == "certain") {
@@ -70,13 +71,26 @@ export default class extends React.Component {
       .catch(err => {
         console.log(err);
 
-        var div = document.getElementById("download-csv");
+        var div = document.getElementById("result-display");
         div.innerText = "Please provide a valid csv file";
       });
   }
+
+  handleOptionChange(changeEvent) {
+    console.log(changeEvent.target);
+    this.setState({
+      selectedOption: changeEvent.target.value
+    });
+  }
+  onChange(event){
+    console.log(event.target)
+    this.setState({paramNum: event.target.value});
+  }
+
   render() {
     // console.log(this.props.url.asPath.substring(9));
     this.path = this.props.url.asPath.substring(9);
+    const params = [];
     if (this.path == "label") {
       // List the params of each on of them
     } else if (this.path == "one-hot") {
@@ -91,28 +105,25 @@ export default class extends React.Component {
     return (
       <Layout>
         <main className="content">
-          <h1 className="text-white text-uppercase text-center my-4">
-            Todo app
-          </h1>
-          <Form enctype="multipart/form-data" onSubmit={this.handleSubmit}>
-            <FormGroup>
-              <div class="form-group">
-                <label for="name">File: </label>
-                <div class="col-md-8">
-                  <input
-                    type="file"
-                    name="csv_file"
-                    id="csv_file"
-                    required="True"
-                    class="form-control"
-                    ref={this.fileInput}
-                  />
-                </div>
-              </div>
-              <input type="submit" value="Submit" />
-            </FormGroup>
-          </Form>
-          <div id="download-csv" style="visibility: hidden">
+          <div className="radio">
+            <label>
+              <input
+                type="radio"
+                value="row"
+                checked={this.state.selectedOption === "row"}
+                onChange={this.handleOptionChange}
+              />
+              row
+            </label>
+
+            <label>
+              number of rows:
+              <input type="text" name="numRow" pattern="[0-9]*" onChange={this.onChange.bind(this)}/>
+            </label>
+          </div>
+          <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
+          <div id="result-display"></div>
+          {/* <div id="download-csv" >
             <button onClick={this.fetchData}>Download CSV</button>
 
             <CSVLink
@@ -122,7 +133,7 @@ export default class extends React.Component {
               ref={this.csvLink}
               target="_blank"
             />
-          </div>
+          </div> */}
         </main>
       </Layout>
     );

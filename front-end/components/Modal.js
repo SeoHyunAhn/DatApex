@@ -13,9 +13,10 @@ import {
   Label
 } from "reactstrap";
 
-export default class CustomModal extends Component {
+export default class UploadCSV extends Component {
   constructor(props) {
     super(props);
+    console.log(props)
     this.handleSubmit = this.handleSubmit.bind(this);
     this.fileInput = React.createRef();
     // this.state = {
@@ -23,17 +24,19 @@ export default class CustomModal extends Component {
     // };
   }
 
-  handleSubmit = e => {
-    e.preventDefault();
+  handleSubmit(event) {
+    event.preventDefault();
+    // e.preventDefault();
     console.log("handling submit2222222");
     console.log(this.fileInput.current.files);
+    // this.props.fileInput = this.fileInput.current.files[0]
     this.props.onSubmit(this.fileInput.current.files[0]);
   };
 
   render() {
-    const { onSubmit } = this.props;
+    // const { onSubmit } = this.props;
     return (
-      <Form enctype="multipart/form-data" onSubmit={() => this.handleSubmit}>
+      <Form enctype="multipart/form-data" onSubmit={this.handleSubmit}>
             <FormGroup>
               <div class="form-group">
                 <label

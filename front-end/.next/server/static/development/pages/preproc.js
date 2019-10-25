@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -139,6 +139,112 @@ class User {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (new User());
+
+/***/ }),
+
+/***/ "./components/Modal.js":
+/*!*****************************!*\
+  !*** ./components/Modal.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return UploadCSV; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "reactstrap");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/seohyun/dataPex/front-end/components/Modal.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+// frontend/src/components/Modal.js
+
+
+class UploadCSV extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(props) {
+    super(props);
+    console.log(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.fileInput = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef(); // this.state = {
+    //   activeItem: this.props.activeItem
+    // };
+  }
+
+  handleSubmit(event) {
+    event.preventDefault(); // e.preventDefault();
+
+    console.log("handling submit2222222");
+    console.log(this.fileInput.current.files); // this.props.fileInput = this.fileInput.current.files[0]
+
+    this.props.onSubmit(this.fileInput.current.files[0]);
+  }
+
+  render() {
+    // const { onSubmit } = this.props;
+    return __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Form"], {
+      enctype: "multipart/form-data",
+      onSubmit: this.handleSubmit,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 39
+      },
+      __self: this
+    }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["FormGroup"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 40
+      },
+      __self: this
+    }, __jsx("div", {
+      class: "form-group",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 41
+      },
+      __self: this
+    }, __jsx("label", {
+      for: "name",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 42
+      },
+      __self: this
+    }, "File:", " "), __jsx("div", {
+      class: "col-md-8",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 47
+      },
+      __self: this
+    }, __jsx("input", {
+      type: "file",
+      name: "csv_file",
+      id: "csv_file",
+      required: "True",
+      class: "form-control",
+      ref: this.fileInput,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 48
+      },
+      __self: this
+    }))), __jsx("input", {
+      type: "submit",
+      value: "Submit",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 58
+      },
+      __self: this
+    })))
+    /* <Button color="success" onClick={() => onSave(this.state.activeItem)}>
+      Save
+    </Button> */
+    ;
+  }
+
+}
 
 /***/ }),
 
@@ -2633,9 +2739,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! reactstrap */ "reactstrap");
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
+/* harmony import */ var react_csv__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-csv */ "react-csv");
+/* harmony import */ var react_csv__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_csv__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_Modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Modal */ "./components/Modal.js");
+/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
 var _jsxFileName = "/Users/seohyun/dataPex/front-end/pages/preproc.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
 
 
 
@@ -2660,23 +2771,36 @@ const posts = [{
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.csvLink = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
+    this.handleOptionChange = this.handleOptionChange.bind(this); // this.csvLink = React.createRef();
+
     this.state = {
       outputCsv: "",
-      paramter: []
+      selectedOption: "",
+      paramNum: ""
     };
+    this.path = "";
   }
 
-  handleSubmit(event) {
-    event.preventDefault(); // console.log("handling submit");
-    // console.log(this.fileInput.current.files);
-
+  handleSubmit(filename) {
+    event.preventDefault();
     var formData = new FormData(); // console.log(this.fileInput.current.files[0]);
 
-    formData.append("file", this.fileInput.current.files[0]);
-    var div = document.getElementById("image-display");
+    formData.append("file", filename);
+    var div = document.getElementById("result-display");
     div.innerHTML = "<Spinner animation='border' role='status'> <span className='sr-only'>Loading...</span></Spinner>";
-    axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("http://localhost:8000/upload/csv/", formData, {
+    var link = "";
+    console.log(this.state.selectedOption);
+
+    if (this.path == "label") {//  selected params of each on of them
+    } else if (this.path == "one-hot") {// selected  params of each on of them
+    } else if (this.path == "delete-rc") {
+      // selected  params of each on of them
+      link = "preProc/delRow/" + this.state.paramNum;
+    } else if (this.path == "replaceW") {// selected params of each on of them
+    } else if (this.path == "certain") {// selected params of each on of them
+    }
+
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("http://localhost:8000/" + link, formData, {
       headers: {
         "Content-Type": "multipart/form-data"
       }
@@ -2690,14 +2814,29 @@ const posts = [{
       div.style = "visibility: visible;";
     }).catch(err => {
       console.log(err);
-      var div = document.getElementById("download-csv");
+      var div = document.getElementById("result-display");
       div.innerText = "Please provide a valid csv file";
     });
   }
 
+  handleOptionChange(changeEvent) {
+    console.log(changeEvent.target);
+    this.setState({
+      selectedOption: changeEvent.target.value
+    });
+  }
+
+  onChange(event) {
+    console.log(event.target);
+    this.setState({
+      paramNum: event.target.value
+    });
+  }
+
   render() {
-    console.log(this.props.url.asPath.substring(8));
-    this.path = this.props.url.asPath.substring(8);
+    // console.log(this.props.url.asPath.substring(9));
+    this.path = this.props.url.asPath.substring(9);
+    const params = [];
 
     if (this.path == "label") {// List the params of each on of them
     } else if (this.path == "one-hot") {// List the params of each on of them
@@ -2706,108 +2845,73 @@ const posts = [{
     } else if (this.path == "certain") {// List the params of each on of them
     }
 
-    return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_5__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 76
+        lineNumber: 106
       },
       __self: this
     }, __jsx("main", {
       className: "content",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 77
-      },
-      __self: this
-    }, __jsx("h1", {
-      className: "text-white text-uppercase text-center my-4",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 78
-      },
-      __self: this
-    }, "Todo app"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Form"], {
-      enctype: "multipart/form-data",
-      onSubmit: this.handleSubmit,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 81
-      },
-      __self: this
-    }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["FormGroup"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 82
+        lineNumber: 107
       },
       __self: this
     }, __jsx("div", {
-      class: "form-group",
+      className: "radio",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 83
+        lineNumber: 108
       },
       __self: this
     }, __jsx("label", {
-      for: "name",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 84
-      },
-      __self: this
-    }, "File: "), __jsx("div", {
-      class: "col-md-8",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 85
+        lineNumber: 109
       },
       __self: this
     }, __jsx("input", {
-      type: "file",
-      name: "csv_file",
-      id: "csv_file",
-      required: "True",
-      class: "form-control",
-      ref: this.fileInput,
+      type: "radio",
+      value: "row",
+      checked: this.state.selectedOption === "row",
+      onChange: this.handleOptionChange,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 86
+        lineNumber: 110
       },
       __self: this
-    }))), __jsx("input", {
-      type: "submit",
-      value: "Submit",
+    }), "row"), __jsx("label", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 96
+        lineNumber: 119
       },
       __self: this
-    }))), __jsx("div", {
-      id: "download-csv",
-      style: "visibility: hidden",
+    }, "number of rows:", __jsx("input", {
+      type: "text",
+      name: "numRow",
+      pattern: "[0-9]*",
+      onChange: this.onChange.bind(this),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 99
+        lineNumber: 121
       },
       __self: this
-    }, __jsx("button", {
-      onClick: this.fetchData,
+    }))), __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      onSubmit: this.handleSubmit,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 100
+        lineNumber: 124
       },
       __self: this
-    }, "Download CSV"), __jsx(CSVLink, {
-      data: this.state.data,
-      filename: "data.csv",
-      className: "hidden",
-      ref: this.csvLink,
-      target: "_blank",
+    }), __jsx("div", {
+      id: "result-display",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 102
+        lineNumber: 125
       },
       __self: this
-    }))));
+    })));
   }
 
 });
@@ -2831,7 +2935,7 @@ routes.add('algoOptions', '/algoOptions');
 
 /***/ }),
 
-/***/ 7:
+/***/ 5:
 /*!********************************!*\
   !*** multi ./pages/preproc.js ***!
   \********************************/
@@ -2983,6 +3087,17 @@ module.exports = require("prop-types-exact");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-csv":
+/*!****************************!*\
+  !*** external "react-csv" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-csv");
 
 /***/ }),
 

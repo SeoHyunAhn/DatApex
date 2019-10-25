@@ -50,6 +50,141 @@ var User = function User() {
 
 /***/ }),
 
+/***/ "./components/Modal.js":
+/*!*****************************!*\
+  !*** ./components/Modal.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return UploadCSV; });
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
+
+
+
+
+
+
+var _jsxFileName = "/Users/seohyun/dataPex/front-end/components/Modal.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
+// frontend/src/components/Modal.js
+
+
+
+var UploadCSV =
+/*#__PURE__*/
+function (_Component) {
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(UploadCSV, _Component);
+
+  function UploadCSV(props) {
+    var _this;
+
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, UploadCSV);
+
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(UploadCSV).call(this, props));
+    console.log(props);
+    _this.handleSubmit = _this.handleSubmit.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
+    _this.fileInput = react__WEBPACK_IMPORTED_MODULE_6___default.a.createRef(); // this.state = {
+    //   activeItem: this.props.activeItem
+    // };
+
+    return _this;
+  }
+
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(UploadCSV, [{
+    key: "handleSubmit",
+    value: function handleSubmit(event) {
+      event.preventDefault(); // e.preventDefault();
+
+      console.log("handling submit2222222");
+      console.log(this.fileInput.current.files); // this.props.fileInput = this.fileInput.current.files[0]
+
+      this.props.onSubmit(this.fileInput.current.files[0]);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      // const { onSubmit } = this.props;
+      return __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_7__["Form"], {
+        enctype: "multipart/form-data",
+        onSubmit: this.handleSubmit,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 39
+        },
+        __self: this
+      }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_7__["FormGroup"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 40
+        },
+        __self: this
+      }, __jsx("div", {
+        "class": "form-group",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 41
+        },
+        __self: this
+      }, __jsx("label", {
+        "for": "name",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 42
+        },
+        __self: this
+      }, "File:", " "), __jsx("div", {
+        "class": "col-md-8",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 47
+        },
+        __self: this
+      }, __jsx("input", {
+        type: "file",
+        name: "csv_file",
+        id: "csv_file",
+        required: "True",
+        "class": "form-control",
+        ref: this.fileInput,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 48
+        },
+        __self: this
+      }))), __jsx("input", {
+        type: "submit",
+        value: "Submit",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 58
+        },
+        __self: this
+      })))
+      /* <Button color="success" onClick={() => onSave(this.state.activeItem)}>
+        Save
+      </Button> */
+      ;
+    }
+  }]);
+
+  return UploadCSV;
+}(react__WEBPACK_IMPORTED_MODULE_6__["Component"]);
+
+
+
+/***/ }),
+
 /***/ "./components/layout.js":
 /*!******************************!*\
   !*** ./components/layout.js ***!
@@ -68109,6 +68244,491 @@ exports.encode = exports.stringify = __webpack_require__(/*! ./encode */ "./node
 
 /***/ }),
 
+/***/ "./node_modules/react-csv/index.js":
+/*!*****************************************!*\
+  !*** ./node_modules/react-csv/index.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! ./lib/index.js */ "./node_modules/react-csv/lib/index.js");
+
+
+/***/ }),
+
+/***/ "./node_modules/react-csv/lib/components/Download.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/react-csv/lib/components/Download.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _core = __webpack_require__(/*! ../core */ "./node_modules/react-csv/lib/core.js");
+
+var _metaProps = __webpack_require__(/*! ../metaProps */ "./node_modules/react-csv/lib/metaProps.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var defaultProps = {
+  target: '_blank'
+};
+
+var CSVDownload = function (_React$Component) {
+  _inherits(CSVDownload, _React$Component);
+
+  function CSVDownload(props) {
+    _classCallCheck(this, CSVDownload);
+
+    var _this = _possibleConstructorReturn(this, (CSVDownload.__proto__ || Object.getPrototypeOf(CSVDownload)).call(this, props));
+
+    _this.state = {};
+    return _this;
+  }
+
+  _createClass(CSVDownload, [{
+    key: 'buildURI',
+    value: function buildURI() {
+      return _core.buildURI.apply(undefined, arguments);
+    }
+  }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _props = this.props,
+          data = _props.data,
+          headers = _props.headers,
+          separator = _props.separator,
+          enclosingCharacter = _props.enclosingCharacter,
+          uFEFF = _props.uFEFF,
+          target = _props.target,
+          specs = _props.specs,
+          replace = _props.replace;
+
+      this.state.page = window.open(this.buildURI(data, uFEFF, headers, separator, enclosingCharacter), target, specs, replace);
+    }
+  }, {
+    key: 'getWindow',
+    value: function getWindow() {
+      return this.state.page;
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return null;
+    }
+  }]);
+
+  return CSVDownload;
+}(_react2.default.Component);
+
+CSVDownload.defaultProps = Object.assign(_metaProps.defaultProps, defaultProps);
+CSVDownload.propTypes = _metaProps.propTypes;
+exports.default = CSVDownload;
+
+/***/ }),
+
+/***/ "./node_modules/react-csv/lib/components/Link.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/react-csv/lib/components/Link.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _core = __webpack_require__(/*! ../core */ "./node_modules/react-csv/lib/core.js");
+
+var _metaProps = __webpack_require__(/*! ../metaProps */ "./node_modules/react-csv/lib/metaProps.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var CSVLink = function (_React$Component) {
+  _inherits(CSVLink, _React$Component);
+
+  function CSVLink(props) {
+    _classCallCheck(this, CSVLink);
+
+    var _this = _possibleConstructorReturn(this, (CSVLink.__proto__ || Object.getPrototypeOf(CSVLink)).call(this, props));
+
+    _this.buildURI = _this.buildURI.bind(_this);
+    _this.state = { href: '' };
+    return _this;
+  }
+
+  _createClass(CSVLink, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _props = this.props,
+          data = _props.data,
+          headers = _props.headers,
+          separator = _props.separator,
+          uFEFF = _props.uFEFF,
+          enclosingCharacter = _props.enclosingCharacter;
+
+      this.setState({ href: this.buildURI(data, uFEFF, headers, separator, enclosingCharacter) });
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      var data = nextProps.data,
+          headers = nextProps.headers,
+          separator = nextProps.separator,
+          uFEFF = nextProps.uFEFF;
+
+      this.setState({ href: this.buildURI(data, uFEFF, headers, separator) });
+    }
+  }, {
+    key: 'buildURI',
+    value: function buildURI() {
+      return _core.buildURI.apply(undefined, arguments);
+    }
+  }, {
+    key: 'handleLegacy',
+    value: function handleLegacy(event, data, headers, separator, filename, enclosingCharacter) {
+      if (window.navigator.msSaveOrOpenBlob) {
+        event.preventDefault();
+
+        var blob = new Blob([(0, _core.toCSV)(data, headers, separator, enclosingCharacter)]);
+        window.navigator.msSaveBlob(blob, filename);
+
+        return false;
+      }
+    }
+  }, {
+    key: 'handleAsyncClick',
+    value: function handleAsyncClick(event) {
+      var _this2 = this;
+
+      for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+        args[_key - 1] = arguments[_key];
+      }
+
+      var done = function done(proceed) {
+        if (proceed === false) {
+          event.preventDefault();
+          return;
+        }
+        _this2.handleLegacy.apply(_this2, [event].concat(args));
+      };
+
+      this.props.onClick(event, done);
+    }
+  }, {
+    key: 'handleSyncClick',
+    value: function handleSyncClick(event) {
+      var stopEvent = this.props.onClick(event) === false;
+      if (stopEvent) {
+        event.preventDefault();
+        return;
+      }
+
+      for (var _len2 = arguments.length, args = Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+        args[_key2 - 1] = arguments[_key2];
+      }
+
+      this.handleLegacy.apply(this, [event].concat(args));
+    }
+  }, {
+    key: 'handleClick',
+    value: function handleClick() {
+      var _this3 = this;
+
+      for (var _len3 = arguments.length, args = Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+        args[_key3] = arguments[_key3];
+      }
+
+      return function (event) {
+        if (typeof _this3.props.onClick === 'function') {
+          return _this3.props.asyncOnClick ? _this3.handleAsyncClick.apply(_this3, [event].concat(args)) : _this3.handleSyncClick.apply(_this3, [event].concat(args));
+        }
+        _this3.handleLegacy.apply(_this3, [event].concat(args));
+      };
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this4 = this;
+
+      var _props2 = this.props,
+          data = _props2.data,
+          headers = _props2.headers,
+          separator = _props2.separator,
+          filename = _props2.filename,
+          uFEFF = _props2.uFEFF,
+          children = _props2.children,
+          onClick = _props2.onClick,
+          asyncOnClick = _props2.asyncOnClick,
+          enclosingCharacter = _props2.enclosingCharacter,
+          rest = _objectWithoutProperties(_props2, ['data', 'headers', 'separator', 'filename', 'uFEFF', 'children', 'onClick', 'asyncOnClick', 'enclosingCharacter']);
+
+      return _react2.default.createElement(
+        'a',
+        _extends({
+          download: filename
+        }, rest, {
+          ref: function ref(link) {
+            return _this4.link = link;
+          },
+          target: '_self',
+          href: this.state.href,
+          onClick: this.handleClick(data, headers, separator, filename, enclosingCharacter)
+        }),
+        children
+      );
+    }
+  }]);
+
+  return CSVLink;
+}(_react2.default.Component);
+
+CSVLink.defaultProps = _metaProps.defaultProps;
+CSVLink.propTypes = _metaProps.propTypes;
+exports.default = CSVLink;
+
+/***/ }),
+
+/***/ "./node_modules/react-csv/lib/core.js":
+/*!********************************************!*\
+  !*** ./node_modules/react-csv/lib/core.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+var isSafari = exports.isSafari = function isSafari() {
+  return (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)
+  );
+};
+
+var isJsons = exports.isJsons = function isJsons(array) {
+  return Array.isArray(array) && array.every(function (row) {
+    return (typeof row === "undefined" ? "undefined" : _typeof(row)) === 'object' && !(row instanceof Array);
+  });
+};
+
+var isArrays = exports.isArrays = function isArrays(array) {
+  return Array.isArray(array) && array.every(function (row) {
+    return Array.isArray(row);
+  });
+};
+
+var jsonsHeaders = exports.jsonsHeaders = function jsonsHeaders(array) {
+  return Array.from(array.map(function (json) {
+    return Object.keys(json);
+  }).reduce(function (a, b) {
+    return new Set([].concat(_toConsumableArray(a), _toConsumableArray(b)));
+  }, []));
+};
+
+var jsons2arrays = exports.jsons2arrays = function jsons2arrays(jsons, headers) {
+  headers = headers || jsonsHeaders(jsons);
+
+  var headerLabels = headers;
+  var headerKeys = headers;
+  if (isJsons(headers)) {
+    headerLabels = headers.map(function (header) {
+      return header.label;
+    });
+    headerKeys = headers.map(function (header) {
+      return header.key;
+    });
+  }
+
+  var data = jsons.map(function (object) {
+    return headerKeys.map(function (header) {
+      return getHeaderValue(header, object);
+    });
+  });
+  return [headerLabels].concat(_toConsumableArray(data));
+};
+
+var getHeaderValue = exports.getHeaderValue = function getHeaderValue(property, obj) {
+  var foundValue = property.replace(/\[([^\]]+)]/g, ".$1").split(".").reduce(function (o, p, i, arr) {
+    if (o[p] === undefined) {
+      arr.splice(1);
+    } else {
+      return o[p];
+    }
+  }, obj);
+
+  return foundValue === undefined ? '' : foundValue;
+};
+
+var elementOrEmpty = exports.elementOrEmpty = function elementOrEmpty(element) {
+  return element || element === 0 ? element : '';
+};
+
+var joiner = exports.joiner = function joiner(data) {
+  var separator = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ',';
+  var enclosingCharacter = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '"';
+
+  return data.filter(function (e) {
+    return e;
+  }).map(function (row) {
+    return row.map(function (element) {
+      return elementOrEmpty(element);
+    }).map(function (column) {
+      return "" + enclosingCharacter + column + enclosingCharacter;
+    }).join(separator);
+  }).join("\n");
+};
+
+var arrays2csv = exports.arrays2csv = function arrays2csv(data, headers, separator, enclosingCharacter) {
+  return joiner(headers ? [headers].concat(_toConsumableArray(data)) : data, separator, enclosingCharacter);
+};
+
+var jsons2csv = exports.jsons2csv = function jsons2csv(data, headers, separator, enclosingCharacter) {
+  return joiner(jsons2arrays(data, headers), separator, enclosingCharacter);
+};
+
+var string2csv = exports.string2csv = function string2csv(data, headers, separator, enclosingCharacter) {
+  return headers ? headers.join(separator) + "\n" + data : data;
+};
+
+var toCSV = exports.toCSV = function toCSV(data, headers, separator, enclosingCharacter) {
+  if (isJsons(data)) return jsons2csv(data, headers, separator, enclosingCharacter);
+  if (isArrays(data)) return arrays2csv(data, headers, separator, enclosingCharacter);
+  if (typeof data === 'string') return string2csv(data, headers, separator);
+  throw new TypeError("Data should be a \"String\", \"Array of arrays\" OR \"Array of objects\" ");
+};
+
+var buildURI = exports.buildURI = function buildURI(data, uFEFF, headers, separator, enclosingCharacter) {
+  var csv = toCSV(data, headers, separator, enclosingCharacter);
+  var type = isSafari() ? 'application/csv' : 'text/csv';
+  var blob = new Blob([uFEFF ? "\uFEFF" : '', csv], { type: type });
+  var dataURI = "data:" + type + ";charset=utf-8," + (uFEFF ? "\uFEFF" : '') + csv;
+
+  var URL = window.URL || window.webkitURL;
+
+  return typeof URL.createObjectURL === 'undefined' ? dataURI : URL.createObjectURL(blob);
+};
+
+/***/ }),
+
+/***/ "./node_modules/react-csv/lib/index.js":
+/*!*********************************************!*\
+  !*** ./node_modules/react-csv/lib/index.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.CSVLink = exports.CSVDownload = undefined;
+
+var _Download = __webpack_require__(/*! ./components/Download */ "./node_modules/react-csv/lib/components/Download.js");
+
+var _Download2 = _interopRequireDefault(_Download);
+
+var _Link = __webpack_require__(/*! ./components/Link */ "./node_modules/react-csv/lib/components/Link.js");
+
+var _Link2 = _interopRequireDefault(_Link);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var CSVDownload = exports.CSVDownload = _Download2.default;
+var CSVLink = exports.CSVLink = _Link2.default;
+
+/***/ }),
+
+/***/ "./node_modules/react-csv/lib/metaProps.js":
+/*!*************************************************!*\
+  !*** ./node_modules/react-csv/lib/metaProps.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.PropsNotForwarded = exports.defaultProps = exports.propTypes = undefined;
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var propTypes = exports.propTypes = {
+  data: (0, _propTypes.oneOfType)([_propTypes.string, _propTypes.array]).isRequired,
+  headers: _propTypes.array,
+  target: _propTypes.string,
+  separator: _propTypes.string,
+  filename: _propTypes.string,
+  uFEFF: _propTypes.bool,
+  onClick: _propTypes.func,
+  asyncOnClick: _propTypes.bool
+};
+
+var defaultProps = exports.defaultProps = {
+  separator: ',',
+  filename: 'generatedBy_react-csv.csv',
+  uFEFF: true,
+  asyncOnClick: false
+};
+
+var PropsNotForwarded = exports.PropsNotForwarded = ['data', 'headers'];
+
+/***/ }),
+
 /***/ "./node_modules/react-dom/index.js":
 /*!***********************************************************************************************!*\
   !*** delegated ./node_modules/react-dom/index.js from dll-reference dll_01f9a3fa864a7b7414d8 ***!
@@ -80303,7 +80923,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
-/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
+/* harmony import */ var react_csv__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-csv */ "./node_modules/react-csv/index.js");
+/* harmony import */ var react_csv__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react_csv__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _components_Modal__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/Modal */ "./components/Modal.js");
+/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
 
 
 
@@ -80312,6 +80935,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/Users/seohyun/dataPex/front-end/pages/preproc.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
+
+
 
 
 
@@ -80345,28 +80970,41 @@ function (_React$Component) {
 
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(_default).call(this, props));
     _this.handleSubmit = _this.handleSubmit.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
-    _this.csvLink = react__WEBPACK_IMPORTED_MODULE_6___default.a.createRef();
+    _this.handleOptionChange = _this.handleOptionChange.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this)); // this.csvLink = React.createRef();
+
     _this.state = {
       outputCsv: "",
-      paramter: []
+      selectedOption: "",
+      paramNum: ""
     };
+    _this.path = "";
     return _this;
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(_default, [{
     key: "handleSubmit",
-    value: function handleSubmit(event) {
+    value: function handleSubmit(filename) {
       var _this2 = this;
 
-      event.preventDefault(); // console.log("handling submit");
-      // console.log(this.fileInput.current.files);
-
+      event.preventDefault();
       var formData = new FormData(); // console.log(this.fileInput.current.files[0]);
 
-      formData.append("file", this.fileInput.current.files[0]);
-      var div = document.getElementById("image-display");
+      formData.append("file", filename);
+      var div = document.getElementById("result-display");
       div.innerHTML = "<Spinner animation='border' role='status'> <span className='sr-only'>Loading...</span></Spinner>";
-      axios__WEBPACK_IMPORTED_MODULE_7___default.a.post("http://localhost:8000/upload/csv/", formData, {
+      var link = "";
+      console.log(this.state.selectedOption);
+
+      if (this.path == "label") {//  selected params of each on of them
+      } else if (this.path == "one-hot") {// selected  params of each on of them
+      } else if (this.path == "delete-rc") {
+        // selected  params of each on of them
+        link = "preProc/delRow/" + this.state.paramNum;
+      } else if (this.path == "replaceW") {// selected params of each on of them
+      } else if (this.path == "certain") {// selected params of each on of them
+      }
+
+      axios__WEBPACK_IMPORTED_MODULE_7___default.a.post("http://localhost:8000/" + link, formData, {
         headers: {
           "Content-Type": "multipart/form-data"
         }
@@ -80381,15 +81019,32 @@ function (_React$Component) {
         div.style = "visibility: visible;";
       })["catch"](function (err) {
         console.log(err);
-        var div = document.getElementById("download-csv");
+        var div = document.getElementById("result-display");
         div.innerText = "Please provide a valid csv file";
+      });
+    }
+  }, {
+    key: "handleOptionChange",
+    value: function handleOptionChange(changeEvent) {
+      console.log(changeEvent.target);
+      this.setState({
+        selectedOption: changeEvent.target.value
+      });
+    }
+  }, {
+    key: "onChange",
+    value: function onChange(event) {
+      console.log(event.target);
+      this.setState({
+        paramNum: event.target.value
       });
     }
   }, {
     key: "render",
     value: function render() {
-      console.log(this.props.url.asPath.substring(8));
-      this.path = this.props.url.asPath.substring(8);
+      // console.log(this.props.url.asPath.substring(9));
+      this.path = this.props.url.asPath.substring(9);
+      var params = [];
 
       if (this.path == "label") {// List the params of each on of them
       } else if (this.path == "one-hot") {// List the params of each on of them
@@ -80398,108 +81053,73 @@ function (_React$Component) {
       } else if (this.path == "certain") {// List the params of each on of them
       }
 
-      return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_9__["default"], {
+      return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_11__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 76
+          lineNumber: 106
         },
         __self: this
       }, __jsx("main", {
         className: "content",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 77
-        },
-        __self: this
-      }, __jsx("h1", {
-        className: "text-white text-uppercase text-center my-4",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 78
-        },
-        __self: this
-      }, "Todo app"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_8__["Form"], {
-        enctype: "multipart/form-data",
-        onSubmit: this.handleSubmit,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 81
-        },
-        __self: this
-      }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_8__["FormGroup"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 82
+          lineNumber: 107
         },
         __self: this
       }, __jsx("div", {
-        "class": "form-group",
+        className: "radio",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 83
+          lineNumber: 108
         },
         __self: this
       }, __jsx("label", {
-        "for": "name",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 84
-        },
-        __self: this
-      }, "File: "), __jsx("div", {
-        "class": "col-md-8",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 85
+          lineNumber: 109
         },
         __self: this
       }, __jsx("input", {
-        type: "file",
-        name: "csv_file",
-        id: "csv_file",
-        required: "True",
-        "class": "form-control",
-        ref: this.fileInput,
+        type: "radio",
+        value: "row",
+        checked: this.state.selectedOption === "row",
+        onChange: this.handleOptionChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 86
+          lineNumber: 110
         },
         __self: this
-      }))), __jsx("input", {
-        type: "submit",
-        value: "Submit",
+      }), "row"), __jsx("label", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 96
+          lineNumber: 119
         },
         __self: this
-      }))), __jsx("div", {
-        id: "download-csv",
-        style: "visibility: hidden",
+      }, "number of rows:", __jsx("input", {
+        type: "text",
+        name: "numRow",
+        pattern: "[0-9]*",
+        onChange: this.onChange.bind(this),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 99
+          lineNumber: 121
         },
         __self: this
-      }, __jsx("button", {
-        onClick: this.fetchData,
+      }))), __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_10__["default"], {
+        onSubmit: this.handleSubmit,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 100
+          lineNumber: 124
         },
         __self: this
-      }, "Download CSV"), __jsx(CSVLink, {
-        data: this.state.data,
-        filename: "data.csv",
-        className: "hidden",
-        ref: this.csvLink,
-        target: "_blank",
+      }), __jsx("div", {
+        id: "result-display",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 102
+          lineNumber: 125
         },
         __self: this
-      }))));
+      })));
     }
   }]);
 
@@ -80527,7 +81147,7 @@ routes.add('algoOptions', '/algoOptions');
 
 /***/ }),
 
-/***/ 4:
+/***/ 2:
 /*!*************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fpreproc&absolutePagePath=%2FUsers%2Fseohyun%2FdataPex%2Ffront-end%2Fpages%2Fpreproc.js ***!
   \*************************************************************************************************************************************/
@@ -80550,5 +81170,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[4,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=preproc.js.map

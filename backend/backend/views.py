@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from rest_framework import viewsets          # add this
 from django.views.decorators.csrf import csrf_exempt
-from . import exploration
+from . import exploration, Delete_Row
 import os
+import csv
 from backend.settings import BASE_DIR
 from django.http import HttpResponse
 import base64
@@ -28,6 +29,20 @@ def upload_csv(request):
         str = base64.b64encode(image_data.read())
     # return HttpResponse(save_path, content_type="text")
     return HttpResponse(str, content_type="image/png")
+
+@csrf_exempt
+def prePrcoess_DeleteRow(request, d_rows):
+    print("inside delete!!!!!!!!!!!!!!!!!!")
+    if request.method == 'POST' and request.FILES['file']:
+        myfile = request.FILES['file']
+        print(d_rows)
+        Delete_Row.deleteRow2(d_rows, myfile)
+    
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="backend/result_testing.csv"'
+
+    # writer = csv.writer(response)
+    return response
 
 # def dataMining_SVM(request):
 #     if request.method == 'POST' and request.FILES['myfile']:
