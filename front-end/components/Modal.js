@@ -16,66 +16,48 @@ import {
 export default class CustomModal extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      activeItem: this.props.activeItem
-    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.fileInput = React.createRef();
+    // this.state = {
+    //   activeItem: this.props.activeItem
+    // };
   }
 
-  handleChange = e => {
-    let { name, value } = e.target;
-    if (e.target.type === "checkbox") {
-      value = e.target.checked;
-    }
-    const activeItem = { ...this.state.activeItem, [name]: value };
-    this.setState({ activeItem });
+  handleSubmit = e => {
+    e.preventDefault();
+    console.log("handling submit2222222");
+    console.log(this.fileInput.current.files);
+    this.props.onSubmit(this.fileInput.current.files[0]);
   };
 
   render() {
-    const { toggle, onSave } = this.props;
+    const { onSubmit } = this.props;
     return (
-      <Modal isOpen={true} toggle={toggle}>
-        <ModalHeader toggle={toggle}> Todo Item </ModalHeader>
-        <ModalBody>
-          <Form>
+      <Form enctype="multipart/form-data" onSubmit={() => this.handleSubmit}>
             <FormGroup>
-              <Label for="title">Title</Label>
-              <Input
-                type="text"
-                name="title"
-                value={this.state.activeItem.title}
-                onChange={this.handleChange}
-                placeholder="Enter Todo Title"
-              />
-            </FormGroup>
-            <FormGroup>
-              <Label for="description">Description</Label>
-              <Input
-                type="text"
-                name="description"
-                value={this.state.activeItem.description}
-                onChange={this.handleChange}
-                placeholder="Enter Todo description"
-              />
-            </FormGroup>
-            <FormGroup check>
-              <Label for="completed">
-                <Input
-                  type="checkbox"
-                  name="completed"
-                  checked={this.state.activeItem.completed}
-                  onChange={this.handleChange}
-                />
-                Completed
-              </Label>
+              <div class="form-group">
+                <label
+                  for="name"
+                >
+                  File:{" "}
+                </label>
+                <div class="col-md-8">
+                  <input
+                    type="file"
+                    name="csv_file"
+                    id="csv_file"
+                    required="True"
+                    class="form-control"
+                    ref={this.fileInput}
+                  />
+                </div>
+              </div>
+              <input type="submit" value="Submit" />
             </FormGroup>
           </Form>
-        </ModalBody>
-        <ModalFooter>
-          <Button color="success" onClick={() => onSave(this.state.activeItem)}>
+          /* <Button color="success" onClick={() => onSave(this.state.activeItem)}>
             Save
-          </Button>
-        </ModalFooter>
-      </Modal>
+          </Button> */
     );
   }
 }
