@@ -80939,6 +80939,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
 
 
+ // import { Components } from "@reactioncommerce/reaction-components";
 
 var posts = [{
   path: "label",
@@ -80975,7 +80976,8 @@ function (_React$Component) {
     _this.state = {
       outputCsv: "",
       selectedOption: "",
-      paramNum: ""
+      paramNum: "",
+      showResults: false
     };
     _this.path = "";
     return _this;
@@ -81008,15 +81010,16 @@ function (_React$Component) {
         headers: {
           "Content-Type": "multipart/form-data"
         }
-      }).then(function (data) {
+      }).then(function (e) {
+        console.log(e);
+        console.log(e.data);
+
         _this2.setState({
-          data: data
-        }, function () {
-          // click the CSVLink component to trigger the CSV download
-          _this2.csvLink.current.link.click();
+          outputCsv: e.data,
+          showResults: true
         });
 
-        div.style = "visibility: visible;";
+        div.innerHTML = "";
       })["catch"](function (err) {
         console.log(err);
         var div = document.getElementById("result-display");
@@ -81056,27 +81059,27 @@ function (_React$Component) {
       return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_11__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 106
+          lineNumber: 111
         },
         __self: this
       }, __jsx("main", {
         className: "content",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 107
+          lineNumber: 112
         },
         __self: this
       }, __jsx("div", {
         className: "radio",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 108
+          lineNumber: 113
         },
         __self: this
       }, __jsx("label", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 109
+          lineNumber: 114
         },
         __self: this
       }, __jsx("input", {
@@ -81086,13 +81089,19 @@ function (_React$Component) {
         onChange: this.handleOptionChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 110
+          lineNumber: 115
         },
         __self: this
-      }), "row"), __jsx("label", {
+      }), "row"), __jsx("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 119
+          lineNumber: 123
+        },
+        __self: this
+      }), __jsx("label", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 124
         },
         __self: this
       }, "number of rows:", __jsx("input", {
@@ -81102,24 +81111,41 @@ function (_React$Component) {
         onChange: this.onChange.bind(this),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 121
+          lineNumber: 126
         },
         __self: this
       }))), __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_10__["default"], {
         onSubmit: this.handleSubmit,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 124
+          lineNumber: 135
         },
         __self: this
       }), __jsx("div", {
         id: "result-display",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 125
+          lineNumber: 136
         },
         __self: this
-      })));
+      }), this.state.showResults ? __jsx("div", {
+        id: "download-csv",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 138
+        },
+        __self: this
+      }, __jsx(react_csv__WEBPACK_IMPORTED_MODULE_9__["CSVLink"], {
+        data: this.state.outputCsv,
+        filename: "data.csv",
+        className: "hidden",
+        target: "_blank",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 139
+        },
+        __self: this
+      }, "download me")) : null));
     }
   }]);
 

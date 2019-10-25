@@ -12,6 +12,7 @@ import {
 } from "reactstrap";
 import { CSVLink, CSVDownload } from "react-csv";
 import UploadCSV from "../components/Modal";
+// import { Components } from "@reactioncommerce/reaction-components";
 
 const posts = [
   { path: "label", title: "Label Encoding" },
@@ -28,7 +29,12 @@ export default class extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleOptionChange = this.handleOptionChange.bind(this);
     // this.csvLink = React.createRef();
-    this.state = { outputCsv: "", selectedOption: "", paramNum: "" };
+    this.state = {
+      outputCsv: "",
+      selectedOption: "",
+      paramNum: "",
+      showResults: false
+    };
     this.path = "";
   }
   handleSubmit(filename) {
@@ -48,7 +54,7 @@ export default class extends React.Component {
       // selected  params of each on of them
     } else if (this.path == "delete-rc") {
       // selected  params of each on of them
-      link = "preProc/delRow/"+this.state.paramNum;
+      link = "preProc/delRow/" + this.state.paramNum;
     } else if (this.path == "replaceW") {
       // selected params of each on of them
     } else if (this.path == "certain") {
@@ -61,12 +67,11 @@ export default class extends React.Component {
           "Content-Type": "multipart/form-data"
         }
       })
-      .then(data => {
-        this.setState({ data }, () => {
-          // click the CSVLink component to trigger the CSV download
-          this.csvLink.current.link.click();
-        });
-        div.style = "visibility: visible;";
+      .then(e => {
+        console.log(e);
+        console.log(e.data);
+        this.setState({ outputCsv: e.data, showResults: true });
+        div.innerHTML = "";
       })
       .catch(err => {
         console.log(err);
@@ -82,9 +87,9 @@ export default class extends React.Component {
       selectedOption: changeEvent.target.value
     });
   }
-  onChange(event){
-    console.log(event.target)
-    this.setState({paramNum: event.target.value});
+  onChange(event) {
+    console.log(event.target);
+    this.setState({ paramNum: event.target.value });
   }
 
   render() {
@@ -115,25 +120,32 @@ export default class extends React.Component {
               />
               row
             </label>
-
+            <br></br>
             <label>
               number of rows:
-              <input type="text" name="numRow" pattern="[0-9]*" onChange={this.onChange.bind(this)}/>
+              <input
+                type="text"
+                name="numRow"
+                pattern="[0-9]*"
+                onChange={this.onChange.bind(this)}
+              />
             </label>
           </div>
+
           <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
           <div id="result-display"></div>
-          {/* <div id="download-csv" >
-            <button onClick={this.fetchData}>Download CSV</button>
-
-            <CSVLink
-              data={this.state.data}
-              filename="data.csv"
-              className="hidden"
-              ref={this.csvLink}
-              target="_blank"
-            />
-          </div> */}
+          {this.state.showResults ? (
+            <div id="download-csv">
+              <CSVLink
+                data={this.state.outputCsv}
+                filename="data.csv"
+                className="hidden"
+                target="_blank"
+              >
+                download me
+              </CSVLink>
+            </div>
+          ) : null}
         </main>
       </Layout>
     );
