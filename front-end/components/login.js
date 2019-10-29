@@ -9,7 +9,8 @@ const styleLogo = {
 };
 
 class Login extends Component {
-    login = () => {
+    
+    loginWithGoogle = () => {
         const provider = new firebase.auth.GoogleAuthProvider();
 
         firebase.auth().signInWithPopup( provider )
@@ -39,13 +40,12 @@ class Login extends Component {
                 console.log(User.user);
             })
             .catch( err => {
-                alert('login failed : ' , err.message );
-                console.log(err)
+                alert('Login failed : ' , err.message );
+                console.log(err);
             })
-        
-        
     };
-    
+
+
     render() {
         return (
             <div className="container-fluid">
@@ -59,17 +59,27 @@ class Login extends Component {
                         <br />
                         <br />
 
-                        {/* <img src="../static/Logo.png" alt="logo" style={ styleLogo }/> */}
                         <img src="../static/Logo.png" alt="logo" />
                         <br />
-                        {/* <Link href="/main">
-                            <button className="btn btn-primary" onClick={ this.login }>
-                                Sign In with Google Account
-                            </button>
-                        </Link> */}
-                        <button className="btn btn-primary" onClick={ this.login }>
+                        
+                        <Link href="/signIn">
+                            <a className="btn btn-primary">Sign In with Personal Account</a>
+                        </Link>
+
+                        <br />
+                        <br />
+
+                        <button className="btn btn-primary" onClick={ this.loginWithGoogle }>
                             Sign In with Google Account
                         </button>
+
+                        <br />
+                        <br />
+
+                        <Link href="/signUp">
+                            <a className="btn btn-primary">Sign Up</a>
+                        </Link>
+
                     </div>
                 </div>
             </div>

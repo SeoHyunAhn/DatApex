@@ -5,7 +5,11 @@ import Layout from '../components/layout';
 import Login from '../components/login';
 import Main from './main';
 
+import { withRouter } from 'next/router'
+
 import User from '../common/user';
+import { Link, Router } from '../routes';
+
 
 class Index extends Component {
   constructor() {
@@ -39,7 +43,7 @@ class Index extends Component {
           { this.state.user ? 
             ( <>
                 <Layout user={ this.state.user }> 
-                  <Main /> 
+                  <Main />
                 </Layout>
               </>
             ) : ( <>

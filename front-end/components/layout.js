@@ -14,7 +14,9 @@ const styleName = {
 }
 
 class Layout extends React.Component {
-    
+
+    user = {};
+
     constructor(props) {
         super(props);
 
@@ -22,8 +24,13 @@ class Layout extends React.Component {
             user: this.props.user,
         });
 
+        this.user = this.state.user;
+        console.log(this.user);
         this.logout = this.logout.bind(this);
     }
+
+
+
 
     logout = () => {
         firebase.auth().signOut();
