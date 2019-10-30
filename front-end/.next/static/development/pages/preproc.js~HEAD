@@ -75,7 +75,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/components/Modal.js";
+var _jsxFileName = "/Users/seohyun/dataPex/front-end/components/Modal.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 // frontend/src/components/Modal.js
 
@@ -116,7 +116,7 @@ function (_Component) {
     value: function render() {
       // const { onSubmit } = this.props;
       return __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_7__["Form"], {
-        encType: "multipart/form-data",
+        enctype: "multipart/form-data",
         onSubmit: this.handleSubmit,
         __source: {
           fileName: _jsxFileName,
@@ -137,14 +137,14 @@ function (_Component) {
         },
         __self: this
       }, __jsx("label", {
-        htmlFor: "name",
+        "for": "name",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 42
         },
         __self: this
       }, "File:", " "), __jsx("div", {
-        className: "col-md-8",
+        className: "col-12",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 47
@@ -162,15 +162,35 @@ function (_Component) {
           lineNumber: 48
         },
         __self: this
-      }))), __jsx("input", {
-        type: "submit",
-        value: "Submit",
+      }))), __jsx("br", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 58
         },
         __self: this
-      })))
+      }), __jsx("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 59
+        },
+        __self: this
+      }), __jsx("div", {
+        className: "text-center",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 60
+        },
+        __self: this
+      }, __jsx("input", {
+        className: "btn btn-success btn-block",
+        type: "submit",
+        value: "Submit",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 61
+        },
+        __self: this
+      }))))
       /* <Button color="success" onClick={() => onSave(this.state.activeItem)}>
         Save
       </Button> */
@@ -215,7 +235,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/components/layout.js";
+var _jsxFileName = "/Users/seohyun/dataPex/front-end/components/layout.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
  // import Link from "next/link";
 
@@ -60903,17 +60923,10 @@ var toQuerystring = function toQuerystring(obj) {
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fpreproc&absolutePagePath=%2FUsers%2Fharsha.valluri%2FDesktop%2Fcs407%2FDatApex%2Ffront-end%2Fpages%2Fpreproc.js!./":
-/*!**********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fpreproc&absolutePagePath=%2FUsers%2Fharsha.valluri%2FDesktop%2Fcs407%2FDatApex%2Ffront-end%2Fpages%2Fpreproc.js ***!
-  \**********************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
 
 
     (window.__NEXT_P=window.__NEXT_P||[]).push(["/preproc", function() {
       var mod = __webpack_require__(/*! ./pages/preproc.js */ "./pages/preproc.js")
-      if(true) {
         module.hot.accept(/*! ./pages/preproc.js */ "./pages/preproc.js", function() {
           if(!next.router.components["/preproc"]) return
           var updatedPage = __webpack_require__(/*! ./pages/preproc.js */ "./pages/preproc.js")
@@ -80810,7 +80823,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/pages/main.js";
+var _jsxFileName = "/Users/seohyun/dataPex/front-end/pages/main.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 
 
@@ -80836,7 +80849,7 @@ function (_Component) {
           lineNumber: 10
         },
         __self: this
-      }, "What would you like to run?"), __jsx("hr", {
+      }, "Main"), __jsx("hr", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 11
@@ -80877,7 +80890,7 @@ function (_Component) {
           lineNumber: 20
         },
         __self: this
-      }, "Pre-processing Algorithms"))), __jsx("div", {
+      }, "Pre Process Data"))), __jsx("div", {
         className: "col-6",
         __source: {
           fileName: _jsxFileName,
@@ -80898,7 +80911,7 @@ function (_Component) {
           lineNumber: 29
         },
         __self: this
-      }, "Machine Learning Algorithms"))))));
+      }, " ML algorithm "))))));
     }
   }]);
 
@@ -80937,11 +80950,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-
-var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/pages/preproc.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
 
 
@@ -81005,18 +81013,11 @@ function (_React$Component) {
       console.log(this.state.selectedOption);
 
       if (this.path == "label") {//  selected params of each on of them
-      } else if (this.path == "one-hot") {// selected  params of each on of them
-      } else if (this.path == "delete-rc") {
-        // selected  params of each on of them
-        link = "preProc/delRow/" + this.state.paramNum;
-      } else if (this.path == "replaceW") {// selected params of each on of them
       } else if (this.path == "certain") {// selected params of each on of them
       }
 
       axios__WEBPACK_IMPORTED_MODULE_7___default.a.post("http://localhost:8000/" + link, formData, {
-        headers: {
           "Content-Type": "multipart/form-data"
-        }
       }).then(function (e) {
         console.log(e);
         console.log(e.data);
@@ -81057,102 +81058,201 @@ function (_React$Component) {
       var params = [];
 
       if (this.path == "label") {// List the params of each on of them
-      } else if (this.path == "one-hot") {// List the params of each on of them
-      } else if (this.path == "delete-rc") {// List the params of each on of them
-      } else if (this.path == "replaceW") {// List the params of each on of them
+      } else if (this.path == "one-hot") {
+        // List the params of each on of them
+        return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_11__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 108
+          },
+          __self: this
+        }, __jsx("main", {
+          className: "content",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 109
+          },
+          __self: this
+        }, __jsx("div", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 110
+          },
+          __self: this
+        }, __jsx("label", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 111
+          },
+          __self: this
+        }, "name of Column:", __jsx("input", {
+          type: "text",
+          name: "numCol",
+          onChange: this.onChange.bind(this),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 113
+          },
+          __self: this
+        }))), __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_10__["default"], {
+          onSubmit: this.handleSubmit,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 121
+          },
+          __self: this
+        }), __jsx("div", {
+          id: "result-display",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 122
+          },
+          __self: this
+        }), this.state.showResults ? __jsx("div", {
+          id: "download-csv",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 124
+          },
+          __self: this
+        }, __jsx(react_csv__WEBPACK_IMPORTED_MODULE_9__["CSVLink"], {
+          data: this.state.outputCsv,
+          filename: "data.csv",
+          className: "hidden",
+          target: "_blank",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 125
+          },
+          __self: this
+        }, "download me")) : null));
+      } else if (this.path == "delete-rc" || this.path == "replaceW") {
+        // List the params of each on of them
+        return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_11__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 141
+          },
+          __self: this
+        }, __jsx("main", {
+          className: "content",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 142
+          },
+          __self: this
+        }, __jsx("div", {
+          className: "radio",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 143
+          },
+          __self: this
+        }, __jsx("label", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 144
+          },
+          __self: this
+        }, __jsx("input", {
+          type: "radio",
+          value: "row",
+          checked: this.state.selectedOption === "row",
+          onChange: this.handleOptionChange,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 145
+          },
+          __self: this
+        }), "row"), __jsx("label", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 153
+          },
+          __self: this
+        }, __jsx("input", {
+          type: "radio",
+          value: "col",
+          checked: this.state.selectedOption === "col",
+          onChange: this.handleOptionChange,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 154
+          },
+          __self: this
+        }), "col"), __jsx("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 162
+          },
+          __self: this
+        }), __jsx("label", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 163
+          },
+          __self: this
+        }, "number of rows:", __jsx("input", {
+          type: "text",
+          name: "numRow",
+          pattern: "[0-9],*",
+          onChange: this.onChange.bind(this),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 165
+          },
+          __self: this
+        })), __jsx("label", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 172
+          },
+          __self: this
+        }, "number of col:", __jsx("input", {
+          type: "text",
+          name: "numCol",
+          pattern: "[0-9],*",
+          onChange: this.onChange.bind(this),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 174
+          },
+          __self: this
+        }))), __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_10__["default"], {
+          onSubmit: this.handleSubmit,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 183
+          },
+          __self: this
+        }), __jsx("div", {
+          id: "result-display",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 184
+          },
+          __self: this
+        }), this.state.showResults ? __jsx("div", {
+          id: "download-csv",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 186
+          },
+          __self: this
+        }, __jsx(react_csv__WEBPACK_IMPORTED_MODULE_9__["CSVLink"], {
+          data: this.state.outputCsv,
+          filename: "data.csv",
+          className: "hidden",
+          target: "_blank",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 187
+          },
+          __self: this
+        }, "download me")) : null)); // } else if (this.path == "replaceW") {
+        // List the params of each on of them
       } else if (this.path == "certain") {// List the params of each on of them
       }
-
-      return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_11__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 111
-        },
-        __self: this
-      }, __jsx("main", {
-        className: "content",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 112
-        },
-        __self: this
-      }, __jsx("div", {
-        className: "radio",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 113
-        },
-        __self: this
-      }, __jsx("label", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 114
-        },
-        __self: this
-      }, __jsx("input", {
-        type: "radio",
-        value: "row",
-        checked: this.state.selectedOption === "row",
-        onChange: this.handleOptionChange,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 115
-        },
-        __self: this
-      }), "row"), __jsx("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 123
-        },
-        __self: this
-      }), __jsx("label", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 124
-        },
-        __self: this
-      }, "number of rows:", __jsx("input", {
-        type: "text",
-        name: "numRow",
-        pattern: "[0-9]*",
-        onChange: this.onChange.bind(this),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 126
-        },
-        __self: this
-      }))), __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_10__["default"], {
-        onSubmit: this.handleSubmit,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 135
-        },
-        __self: this
-      }), __jsx("div", {
-        id: "result-display",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 136
-        },
-        __self: this
-      }), this.state.showResults ? __jsx("div", {
-        id: "download-csv",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 138
-        },
-        __self: this
-      }, __jsx(react_csv__WEBPACK_IMPORTED_MODULE_9__["CSVLink"], {
-        data: this.state.outputCsv,
-        filename: "data.csv",
-        className: "hidden",
-        target: "_blank",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 139
-        },
-        __self: this
-      }, "download me")) : null));
     }
   }]);
 
@@ -81181,14 +81281,14 @@ routes.add('algoOptions', '/algoOptions');
 
 /***/ }),
 
-/***/ 5:
-/*!**************************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fpreproc&absolutePagePath=%2FUsers%2Fharsha.valluri%2FDesktop%2Fcs407%2FDatApex%2Ffront-end%2Fpages%2Fpreproc.js ***!
-  \**************************************************************************************************************************************************************/
+/***/ 2:
+/*!*************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fpreproc&absolutePagePath=%2FUsers%2Fseohyun%2FdataPex%2Ffront-end%2Fpages%2Fpreproc.js ***!
+  \*************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fpreproc&absolutePagePath=%2FUsers%2Fharsha.valluri%2FDesktop%2Fcs407%2FDatApex%2Ffront-end%2Fpages%2Fpreproc.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fpreproc&absolutePagePath=%2FUsers%2Fharsha.valluri%2FDesktop%2Fcs407%2FDatApex%2Ffront-end%2Fpages%2Fpreproc.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fpreproc&absolutePagePath=%2FUsers%2Fseohyun%2FdataPex%2Ffront-end%2Fpages%2Fpreproc.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fpreproc&absolutePagePath=%2FUsers%2Fseohyun%2FdataPex%2Ffront-end%2Fpages%2Fpreproc.js!./");
 
 
 /***/ }),
@@ -81204,5 +81304,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[5,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=preproc.js.map

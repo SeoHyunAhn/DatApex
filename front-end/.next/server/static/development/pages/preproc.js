@@ -211,7 +211,7 @@ class UploadCSV extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       },
       __self: this
     }, "File:", " "), __jsx("div", {
-      className: "col-md-8",
+      className: "col-12",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 47
@@ -229,15 +229,35 @@ class UploadCSV extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         lineNumber: 48
       },
       __self: this
-    }))), __jsx("input", {
-      type: "submit",
-      value: "Submit",
+    }))), __jsx("br", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 58
       },
       __self: this
-    })))
+    }), __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 59
+      },
+      __self: this
+    }), __jsx("div", {
+      className: "text-center",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 60
+      },
+      __self: this
+    }, __jsx("input", {
+      className: "btn btn-success btn-block",
+      type: "submit",
+      value: "Submit",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 61
+      },
+      __self: this
+    }))))
     /* <Button color="success" onClick={() => onSave(this.state.activeItem)}>
       Save
     </Button> */
