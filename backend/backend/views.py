@@ -24,24 +24,27 @@ def upload_csv(request):
 
 @csrf_exempt
 def prePrcoess_DeleteRow(request, d_rows):
-    print("inside delete!!!!!!!!!!!!!!!!!!")
     if request.method == 'POST' and request.FILES['file']:
         myfile = request.FILES['file']
-        print(d_rows)
         Delete_Row.deleteRow2(d_rows, myfile)
-    
-    # response = HttpResponse(content_type='text/csv')
-    # response['Content-Disposition'] = 'attachment; filename="backend/result_testing.csv"'
     save_path = os.path.join(BASE_DIR, 'backend/result_testing.csv') 
     with open(save_path, 'rb') as fh:
         response = HttpResponse(fh.read(), content_type="text/csv")
         response['Content-Disposition'] = 'inline; filename=' + os.path.basename(save_path)
         return response
-    # response = HttpResponse(content_type='application/force-download') # mimetype is replaced by content_type for django 1.7
-    # response['Content-Disposition'] = 'attachment; filename=%s' % smart_str("result_testing.csv")
-    # response['X-Sendfile'] = smart_str(save_path)
     return Http404
 
+@csrf_exempt
+def prePrcoess_DeleteCol(request, d_cols):
+    if request.method == 'POST' and request.FILES['file']:
+        myfile = request.FILES['file']
+        Delete_Col.deleteCol(d_cols, myfile)
+    save_path = os.path.join(BASE_DIR, 'backend/result_testing.csv') 
+    with open(save_path, 'rb') as fh:
+        response = HttpResponse(fh.read(), content_type="text/csv")
+        response['Content-Disposition'] = 'inline; filename=' + os.path.basename(save_path)
+        return response
+    return Http404
 # def dataMining_SVM(request):
 #     if request.method == 'POST' and request.FILES['file']:
 #         training_file = request.FILES['training_file']
