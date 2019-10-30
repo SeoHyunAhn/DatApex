@@ -21,5 +21,8 @@ urlpatterns = [
     # path('dataMining/Clustering', views.dataMining_Clustering),
     # path('dataMining/Bagging', views.dataMining_Bagging),
     # path('dataMining/DecisionTree', views.dataMining_DecisionTree),
+    # path('preProc/LabelEncoding', views.preProcess_LabelEncoding),
+    # path('preProc/OneHotEncoding', views.preProcess_OneHotEncoding),
+    # path('preProc/ReplaceW', views.prePrcoess_ReplaceW),
     # path('test/', views.test_url),
 ]

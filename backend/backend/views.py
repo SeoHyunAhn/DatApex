@@ -112,3 +112,8 @@ def prePrcoess_DeleteRow(request, d_rows):
 #     if request.method == 'POST' and request.FILES['myfile']:
 #         myfile = request.FILES['myfile']
 
+# def prePrcoess_LabelEncoding(request):
+
+# def prePrcoess_OneHotEncoding(request):
+
+# def preProcess_ReplaceW(request):
