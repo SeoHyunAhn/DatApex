@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -160,7 +160,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../routes */ "./routes.js");
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_5__);
 
-var _jsxFileName = "/Users/youngjoon/Desktop/CS407/DatApex/front-end/components/layout.js";
+var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/components/layout.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
  // import Link from "next/link";
 
@@ -2536,7 +2536,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/youngjoon/Desktop/CS407/DatApex/front-end/pages/main.js";
+var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/pages/main.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -2550,7 +2550,7 @@ class Main extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         lineNumber: 10
       },
       __self: this
-    }, "Main"), __jsx("hr", {
+    }, "What would you like to run?"), __jsx("hr", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 11
@@ -2591,7 +2591,7 @@ class Main extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         lineNumber: 20
       },
       __self: this
-    }, "Pre Process Data"))), __jsx("div", {
+    }, "Pre-processing Algorithms"))), __jsx("div", {
       className: "col-6",
       __source: {
         fileName: _jsxFileName,
@@ -2612,7 +2612,7 @@ class Main extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         lineNumber: 29
       },
       __self: this
-    }, " ML algorithm "))))));
+    }, "Machine Learning Algorithms"))))));
   }
 
 }
@@ -2635,7 +2635,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../routes */ "./routes.js");
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/youngjoon/Desktop/CS407/DatApex/front-end/pages/mlOptions.js";
+var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/pages/mlOptions.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
  // import Link from 'next/link';
@@ -3012,14 +3012,14 @@ routes.add('algoOptions', '/algoOptions');
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!**********************************!*\
   !*** multi ./pages/mlOptions.js ***!
   \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/youngjoon/Desktop/CS407/DatApex/front-end/pages/mlOptions.js */"./pages/mlOptions.js");
+module.exports = __webpack_require__(/*! /Users/harsha.valluri/Desktop/cs407/DatApex/front-end/pages/mlOptions.js */"./pages/mlOptions.js");
 
 
 /***/ }),

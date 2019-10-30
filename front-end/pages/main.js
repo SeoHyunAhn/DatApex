@@ -7,7 +7,7 @@ class Main extends Component {
     render() {
         return (
             <>
-                <h1>Main</h1>
+                <h1>What would you like to run?</h1>
                 <hr></hr>
                 <div className="container-fluid">
                     <div className="row">
@@ -17,7 +17,7 @@ class Main extends Component {
                             <br /> */}
 
                             <Link href="/preOptions">
-                                <a className="btn btn-primary btn-lg btn-block">Pre Process Data</a>
+                                <a className="btn btn-primary btn-lg btn-block">Pre-processing Algorithms</a>
                             </Link>
                         </div>
                         <div className="col-6">
@@ -26,7 +26,7 @@ class Main extends Component {
                             <br /> */}
                             
                             <Link href="/mlOptions">
-                                <a className="btn btn-primary btn-lg btn-block"> ML algorithm </a>
+                                <a className="btn btn-primary btn-lg btn-block">Machine Learning Algorithms</a>
                             </Link>
                         </div>
                     </div>

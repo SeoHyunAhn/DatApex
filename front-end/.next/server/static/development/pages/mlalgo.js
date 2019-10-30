@@ -156,7 +156,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "reactstrap");
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/youngjoon/Desktop/CS407/DatApex/front-end/components/Modal.js";
+var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/components/Modal.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 // frontend/src/components/Modal.js
 
@@ -183,7 +183,7 @@ class UploadCSV extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   render() {
     // const { onSubmit } = this.props;
     return __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Form"], {
-      enctype: "multipart/form-data",
+      encType: "multipart/form-data",
       onSubmit: this.handleSubmit,
       __source: {
         fileName: _jsxFileName,
@@ -197,21 +197,21 @@ class UploadCSV extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       },
       __self: this
     }, __jsx("div", {
-      class: "form-group",
+      className: "form-group",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 41
       },
       __self: this
     }, __jsx("label", {
-      for: "name",
+      htmlFor: "name",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 42
       },
       __self: this
     }, "File:", " "), __jsx("div", {
-      class: "col-md-8",
+      className: "col-md-8",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 47
@@ -222,7 +222,7 @@ class UploadCSV extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       name: "csv_file",
       id: "csv_file",
       required: "True",
-      class: "form-control",
+      className: "form-control",
       ref: this.fileInput,
       __source: {
         fileName: _jsxFileName,
@@ -266,7 +266,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../routes */ "./routes.js");
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_5__);
 
-var _jsxFileName = "/Users/youngjoon/Desktop/CS407/DatApex/front-end/components/layout.js";
+var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/components/layout.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
  // import Link from "next/link";
 
@@ -2642,7 +2642,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/youngjoon/Desktop/CS407/DatApex/front-end/pages/main.js";
+var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/pages/main.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -2656,7 +2656,7 @@ class Main extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         lineNumber: 10
       },
       __self: this
-    }, "Main"), __jsx("hr", {
+    }, "What would you like to run?"), __jsx("hr", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 11
@@ -2697,7 +2697,7 @@ class Main extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         lineNumber: 20
       },
       __self: this
-    }, "Pre Process Data"))), __jsx("div", {
+    }, "Pre-processing Algorithms"))), __jsx("div", {
       className: "col-6",
       __source: {
         fileName: _jsxFileName,
@@ -2718,7 +2718,7 @@ class Main extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         lineNumber: 29
       },
       __self: this
-    }, " ML algorithm "))))));
+    }, "Machine Learning Algorithms"))))));
   }
 
 }
@@ -2744,7 +2744,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_Modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Modal */ "./components/Modal.js");
 /* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
-var _jsxFileName = "/Users/youngjoon/Desktop/CS407/DatApex/front-end/pages/mlalgo.js";
+var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/pages/mlalgo.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -2882,7 +2882,7 @@ routes.add('algoOptions', '/algoOptions');
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/youngjoon/Desktop/CS407/DatApex/front-end/pages/mlalgo.js */"./pages/mlalgo.js");
+module.exports = __webpack_require__(/*! /Users/harsha.valluri/Desktop/cs407/DatApex/front-end/pages/mlalgo.js */"./pages/mlalgo.js");
 
 
 /***/ }),

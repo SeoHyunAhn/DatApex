@@ -75,7 +75,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/youngjoon/Desktop/CS407/DatApex/front-end/components/Modal.js";
+var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/components/Modal.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 // frontend/src/components/Modal.js
 
@@ -116,7 +116,7 @@ function (_Component) {
     value: function render() {
       // const { onSubmit } = this.props;
       return __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_7__["Form"], {
-        enctype: "multipart/form-data",
+        encType: "multipart/form-data",
         onSubmit: this.handleSubmit,
         __source: {
           fileName: _jsxFileName,
@@ -130,21 +130,21 @@ function (_Component) {
         },
         __self: this
       }, __jsx("div", {
-        "class": "form-group",
+        className: "form-group",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 41
         },
         __self: this
       }, __jsx("label", {
-        "for": "name",
+        htmlFor: "name",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 42
         },
         __self: this
       }, "File:", " "), __jsx("div", {
-        "class": "col-md-8",
+        className: "col-md-8",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 47
@@ -155,7 +155,7 @@ function (_Component) {
         name: "csv_file",
         id: "csv_file",
         required: "True",
-        "class": "form-control",
+        className: "form-control",
         ref: this.fileInput,
         __source: {
           fileName: _jsxFileName,
@@ -215,7 +215,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/youngjoon/Desktop/CS407/DatApex/front-end/components/layout.js";
+var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/components/layout.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
  // import Link from "next/link";
 
@@ -60903,10 +60903,10 @@ var toQuerystring = function toQuerystring(obj) {
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fmlalgo&absolutePagePath=%2FUsers%2Fyoungjoon%2FDesktop%2FCS407%2FDatApex%2Ffront-end%2Fpages%2Fmlalgo.js!./":
-/*!***************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fmlalgo&absolutePagePath=%2FUsers%2Fyoungjoon%2FDesktop%2FCS407%2FDatApex%2Ffront-end%2Fpages%2Fmlalgo.js ***!
-  \***************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fmlalgo&absolutePagePath=%2FUsers%2Fharsha.valluri%2FDesktop%2Fcs407%2FDatApex%2Ffront-end%2Fpages%2Fmlalgo.js!./":
+/*!********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fmlalgo&absolutePagePath=%2FUsers%2Fharsha.valluri%2FDesktop%2Fcs407%2FDatApex%2Ffront-end%2Fpages%2Fmlalgo.js ***!
+  \********************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -63529,12 +63529,12 @@ if (false) {} else {
 
 /***/ "./node_modules/object-assign/index.js":
 /*!***************************************************************************************************!*\
-  !*** delegated ./node_modules/object-assign/index.js from dll-reference dll_129a35c7ec57967eb265 ***!
+  !*** delegated ./node_modules/object-assign/index.js from dll-reference dll_01f9a3fa864a7b7414d8 ***!
   \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_129a35c7ec57967eb265 */ "dll-reference dll_129a35c7ec57967eb265"))("./node_modules/object-assign/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_01f9a3fa864a7b7414d8 */ "dll-reference dll_01f9a3fa864a7b7414d8"))("./node_modules/object-assign/index.js");
 
 /***/ }),
 
@@ -67214,12 +67214,12 @@ module.exports = exports['default'];
 
 /***/ "./node_modules/prop-types/checkPropTypes.js":
 /*!*********************************************************************************************************!*\
-  !*** delegated ./node_modules/prop-types/checkPropTypes.js from dll-reference dll_129a35c7ec57967eb265 ***!
+  !*** delegated ./node_modules/prop-types/checkPropTypes.js from dll-reference dll_01f9a3fa864a7b7414d8 ***!
   \*********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_129a35c7ec57967eb265 */ "dll-reference dll_129a35c7ec57967eb265"))("./node_modules/prop-types/checkPropTypes.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_01f9a3fa864a7b7414d8 */ "dll-reference dll_01f9a3fa864a7b7414d8"))("./node_modules/prop-types/checkPropTypes.js");
 
 /***/ }),
 
@@ -67854,12 +67854,12 @@ if (true) {
 
 /***/ "./node_modules/prop-types/lib/ReactPropTypesSecret.js":
 /*!*******************************************************************************************************************!*\
-  !*** delegated ./node_modules/prop-types/lib/ReactPropTypesSecret.js from dll-reference dll_129a35c7ec57967eb265 ***!
+  !*** delegated ./node_modules/prop-types/lib/ReactPropTypesSecret.js from dll-reference dll_01f9a3fa864a7b7414d8 ***!
   \*******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_129a35c7ec57967eb265 */ "dll-reference dll_129a35c7ec57967eb265"))("./node_modules/prop-types/lib/ReactPropTypesSecret.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_01f9a3fa864a7b7414d8 */ "dll-reference dll_01f9a3fa864a7b7414d8"))("./node_modules/prop-types/lib/ReactPropTypesSecret.js");
 
 /***/ }),
 
@@ -68074,12 +68074,12 @@ exports.encode = exports.stringify = __webpack_require__(/*! ./encode */ "./node
 
 /***/ "./node_modules/react-dom/index.js":
 /*!***********************************************************************************************!*\
-  !*** delegated ./node_modules/react-dom/index.js from dll-reference dll_129a35c7ec57967eb265 ***!
+  !*** delegated ./node_modules/react-dom/index.js from dll-reference dll_01f9a3fa864a7b7414d8 ***!
   \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_129a35c7ec57967eb265 */ "dll-reference dll_129a35c7ec57967eb265"))("./node_modules/react-dom/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_01f9a3fa864a7b7414d8 */ "dll-reference dll_01f9a3fa864a7b7414d8"))("./node_modules/react-dom/index.js");
 
 /***/ }),
 
@@ -68974,12 +68974,12 @@ var safeInvoke = function safeInvoke(fn) {
 
 /***/ "./node_modules/react/index.js":
 /*!*******************************************************************************************!*\
-  !*** delegated ./node_modules/react/index.js from dll-reference dll_129a35c7ec57967eb265 ***!
+  !*** delegated ./node_modules/react/index.js from dll-reference dll_01f9a3fa864a7b7414d8 ***!
   \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_129a35c7ec57967eb265 */ "dll-reference dll_129a35c7ec57967eb265"))("./node_modules/react/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_01f9a3fa864a7b7414d8 */ "dll-reference dll_01f9a3fa864a7b7414d8"))("./node_modules/react/index.js");
 
 /***/ }),
 
@@ -80329,7 +80329,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/youngjoon/Desktop/CS407/DatApex/front-end/pages/main.js";
+var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/pages/main.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 
 
@@ -80355,7 +80355,7 @@ function (_Component) {
           lineNumber: 10
         },
         __self: this
-      }, "Main"), __jsx("hr", {
+      }, "What would you like to run?"), __jsx("hr", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 11
@@ -80396,7 +80396,7 @@ function (_Component) {
           lineNumber: 20
         },
         __self: this
-      }, "Pre Process Data"))), __jsx("div", {
+      }, "Pre-processing Algorithms"))), __jsx("div", {
         className: "col-6",
         __source: {
           fileName: _jsxFileName,
@@ -80417,7 +80417,7 @@ function (_Component) {
           lineNumber: 29
         },
         __self: this
-      }, " ML algorithm "))))));
+      }, "Machine Learning Algorithms"))))));
     }
   }]);
 
@@ -80457,7 +80457,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/youngjoon/Desktop/CS407/DatApex/front-end/pages/mlalgo.js";
+var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/pages/mlalgo.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
 
@@ -80609,25 +80609,25 @@ routes.add('algoOptions', '/algoOptions');
 /***/ }),
 
 /***/ 2:
-/*!*******************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fmlalgo&absolutePagePath=%2FUsers%2Fyoungjoon%2FDesktop%2FCS407%2FDatApex%2Ffront-end%2Fpages%2Fmlalgo.js ***!
-  \*******************************************************************************************************************************************************/
+/*!************************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fmlalgo&absolutePagePath=%2FUsers%2Fharsha.valluri%2FDesktop%2Fcs407%2FDatApex%2Ffront-end%2Fpages%2Fmlalgo.js ***!
+  \************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fmlalgo&absolutePagePath=%2FUsers%2Fyoungjoon%2FDesktop%2FCS407%2FDatApex%2Ffront-end%2Fpages%2Fmlalgo.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fmlalgo&absolutePagePath=%2FUsers%2Fyoungjoon%2FDesktop%2FCS407%2FDatApex%2Ffront-end%2Fpages%2Fmlalgo.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fmlalgo&absolutePagePath=%2FUsers%2Fharsha.valluri%2FDesktop%2Fcs407%2FDatApex%2Ffront-end%2Fpages%2Fmlalgo.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fmlalgo&absolutePagePath=%2FUsers%2Fharsha.valluri%2FDesktop%2Fcs407%2FDatApex%2Ffront-end%2Fpages%2Fmlalgo.js!./");
 
 
 /***/ }),
 
-/***/ "dll-reference dll_129a35c7ec57967eb265":
+/***/ "dll-reference dll_01f9a3fa864a7b7414d8":
 /*!*******************************************!*\
-  !*** external "dll_129a35c7ec57967eb265" ***!
+  !*** external "dll_01f9a3fa864a7b7414d8" ***!
   \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = dll_129a35c7ec57967eb265;
+module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 

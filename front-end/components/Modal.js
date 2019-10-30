@@ -36,21 +36,21 @@ export default class UploadCSV extends Component {
   render() {
     // const { onSubmit } = this.props;
     return (
-      <Form enctype="multipart/form-data" onSubmit={this.handleSubmit}>
+      <Form encType="multipart/form-data" onSubmit={this.handleSubmit}>
             <FormGroup>
-              <div class="form-group">
+              <div className="form-group">
                 <label
-                  for="name"
+                  htmlFor="name"
                 >
                   File:{" "}
                 </label>
-                <div class="col-md-8">
+                <div className="col-md-8">
                   <input
                     type="file"
                     name="csv_file"
                     id="csv_file"
                     required="True"
-                    class="form-control"
+                    className="form-control"
                     ref={this.fileInput}
                   />
                 </div>
