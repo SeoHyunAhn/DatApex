@@ -18,7 +18,7 @@ def makeList(d_cols):
         
     return deleteList
 
-def deleteCol(d_cols, inputPath, outputPath):
+def deleteCol(d_cols, inputPath):
     
     print("Start deleting cols!")
     

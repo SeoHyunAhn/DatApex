@@ -51,7 +51,6 @@ export default class extends React.Component {
     if (this.path == "label") {
       //  selected params of each on of them
     } else if (this.path == "one-hot") {
-      // selected  params of each on of them
       link = "preProc/OneHotEncoding/" + this.state.paramNum;
     } else if (this.path == "delete-rc") {
       console.log(this.state.selectedOption)
@@ -60,10 +59,8 @@ export default class extends React.Component {
       }else if(this.state.selectedOption=="col"){
         link = "preProc/delCol/" + this.state.paramNum;
       }
-
     } else if (this.path == "replaceW") {
       link = "preProc/ReplaceW" + this.state.paramNum;
-      // selected params of each on of them
     } else if (this.path == "certain") {
       // selected params of each on of them
     }

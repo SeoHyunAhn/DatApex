@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -139,6 +139,112 @@ class User {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (new User());
+
+/***/ }),
+
+/***/ "./components/Modal.js":
+/*!*****************************!*\
+  !*** ./components/Modal.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return UploadCSV; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "reactstrap");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/seohyun/dataPex/front-end/components/Modal.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+// frontend/src/components/Modal.js
+
+
+class UploadCSV extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(props) {
+    super(props);
+    console.log(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.fileInput = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef(); // this.state = {
+    //   activeItem: this.props.activeItem
+    // };
+  }
+
+  handleSubmit(event) {
+    event.preventDefault(); // e.preventDefault();
+
+    console.log("handling submit2222222");
+    console.log(this.fileInput.current.files); // this.props.fileInput = this.fileInput.current.files[0]
+
+    this.props.onSubmit(this.fileInput.current.files[0]);
+  }
+
+  render() {
+    // const { onSubmit } = this.props;
+    return __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Form"], {
+      enctype: "multipart/form-data",
+      onSubmit: this.handleSubmit,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 39
+      },
+      __self: this
+    }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["FormGroup"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 40
+      },
+      __self: this
+    }, __jsx("div", {
+      class: "form-group",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 41
+      },
+      __self: this
+    }, __jsx("label", {
+      for: "name",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 42
+      },
+      __self: this
+    }, "File:", " "), __jsx("div", {
+      class: "col-md-8",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 47
+      },
+      __self: this
+    }, __jsx("input", {
+      type: "file",
+      name: "csv_file",
+      id: "csv_file",
+      required: "True",
+      class: "form-control",
+      ref: this.fileInput,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 48
+      },
+      __self: this
+    }))), __jsx("input", {
+      type: "submit",
+      value: "Submit",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 58
+      },
+      __self: this
+    })))
+    /* <Button color="success" onClick={() => onSave(this.state.activeItem)}>
+      Save
+    </Button> */
+    ;
+  }
+
+}
 
 /***/ }),
 
@@ -2621,10 +2727,10 @@ class Main extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 /***/ }),
 
-/***/ "./pages/preOptions.js":
-/*!*****************************!*\
-  !*** ./pages/preOptions.js ***!
-  \*****************************/
+/***/ "./pages/preproc.js":
+/*!**************************!*\
+  !*** ./pages/preproc.js ***!
+  \**************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2632,379 +2738,317 @@ class Main extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../routes */ "./routes.js");
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/seohyun/dataPex/front-end/pages/preOptions.js";
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! reactstrap */ "reactstrap");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_csv__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-csv */ "react-csv");
+/* harmony import */ var react_csv__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_csv__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_Modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Modal */ "./components/Modal.js");
+/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
+var _jsxFileName = "/Users/seohyun/dataPex/front-end/pages/preproc.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const styleCard = {
-  marginBottom: "10px"
-};
 
-class PreOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
-  render() {
-    return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 12
-      },
-      __self: this
-    }, __jsx("h1", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 13
-      },
-      __self: this
-    }, "PreOptions"), __jsx("hr", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 14
-      },
-      __self: this
-    }), __jsx("div", {
-      className: "container-fluid",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 15
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "row",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 16
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "col-6",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 17
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "card",
-      style: styleCard,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 18
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "card-header",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 19
-      },
-      __self: this
-    }, "Label Encoding"), __jsx("div", {
-      className: "card-body",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 20
-      },
-      __self: this
-    }, __jsx("h5", {
-      className: "card-title",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 21
-      },
-      __self: this
-    }, "Explanation: "), __jsx("p", {
-      className: "card-text",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 22
-      },
-      __self: this
-    }, "In machine learning, we usually deal with datasets which contain multiple labels in one or more than one of the columns. Label Encoding converts the labels into numeric form so as it make them into a machine-readable form. Machine learning algorithms can then decide in a better way on how those labels must be operated. Furthermore, label encoding is easily reversible. ", __jsx("br", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 29
-      },
-      __self: this
-    }), " ", __jsx("br", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 29
-      },
-      __self: this
-    }), "Label Encoding converts the data into machine-readable form, but it assigns a unique number to each class of data. This may potentially lead to the generation of a priority issue in training of datasets, i.e. a label with a higher label might be seen as having a higher priority while this may not actually be the case."), __jsx(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-      route: "preproc",
-      params: {
-        path: "label"
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 37
-      },
-      __self: this
-    }, __jsx("a", {
-      className: "btn btn-primary",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 38
-      },
-      __self: this
-    }, "Go somewhere"))))), __jsx("div", {
-      className: "col-6",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 43
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "card",
-      style: styleCard,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 44
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "card-header",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 45
-      },
-      __self: this
-    }, "One-hot Encoding"), __jsx("div", {
-      className: "card-body",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 46
-      },
-      __self: this
-    }, __jsx("img", {
-      className: "card-img",
-      variant: "top",
-      src: "../static/one-hot.png",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 47
-      },
-      __self: this
-    }), __jsx("h5", {
-      className: "card-title",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 52
-      },
-      __self: this
-    }, "Explanation: "), __jsx("p", {
-      className: "card-text",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 53
-      },
-      __self: this
-    }, "For categorical variables where no ordinal relationship exists, label encoding alone falls short because it may assume a natural ordering among the different categories, resulting in poor performance or unexpected results. In such cases, one-hot encoding can be applied to the integer representation: the integer encoded variable is removed & a new binary variable is added for each unique integer value."), __jsx(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-      route: "preproc",
-      params: {
-        path: "one-hot"
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 62
-      },
-      __self: this
-    }, __jsx("a", {
-      className: "btn btn-primary",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 63
-      },
-      __self: this
-    }, "Go somewhere"))))), __jsx("div", {
-      className: "col-6",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 68
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "card",
-      style: styleCard,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 69
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "card-header",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 70
-      },
-      __self: this
-    }, "Delete Row/Column"), __jsx("div", {
-      className: "card-body",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 71
-      },
-      __self: this
-    }, __jsx("h5", {
-      className: "card-title",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 72
-      },
-      __self: this
-    }, "Explanation: "), __jsx("p", {
-      className: "card-text",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 73
-      },
-      __self: this
-    }, "Remove some information from row/column that is not needed for ML"), __jsx(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-      route: "preproc",
-      params: {
-        path: "delete-rc"
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 77
-      },
-      __self: this
-    }, __jsx("a", {
-      className: "btn btn-primary",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 78
-      },
-      __self: this
-    }, "Go somewhere"))))), __jsx("div", {
-      className: "col-6",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 83
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "card",
-      style: styleCard,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 84
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "card-header",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 85
-      },
-      __self: this
-    }, "Replace W"), __jsx("div", {
-      className: "card-body",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 86
-      },
-      __self: this
-    }, __jsx("h5", {
-      className: "card-title",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 87
-      },
-      __self: this
-    }, "Explanation: "), __jsx("p", {
-      className: "card-text",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 88
-      },
-      __self: this
-    }, "Remove white spaces for better processing of ML"), __jsx(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-      route: "preproc",
-      params: {
-        path: "replaceW"
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 91
-      },
-      __self: this
-    }, __jsx("a", {
-      className: "btn btn-primary",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 92
-      },
-      __self: this
-    }, "Go somewhere"))))), __jsx("div", {
-      className: "col-6",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 97
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "card",
-      style: styleCard,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 98
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "card-header",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 99
-      },
-      __self: this
-    }, "Select Certain"), __jsx("div", {
-      className: "card-body",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 100
-      },
-      __self: this
-    }, __jsx("h5", {
-      className: "card-title",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 101
-      },
-      __self: this
-    }, "Explanation: "), __jsx("p", {
-      className: "card-text",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 102
-      },
-      __self: this
-    }, "Select some information from the provided data"), __jsx(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-      route: "preproc",
-      params: {
-        path: "certain"
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 105
-      },
-      __self: this
-    }, __jsx("a", {
-      className: "btn btn-primary",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 106
-      },
-      __self: this
-    }, "Go somewhere"))))))));
+ // import { Components } from "@reactioncommerce/reaction-components";
+
+const posts = [{
+  path: "label",
+  title: "Label Encoding"
+}, {
+  path: "one-hot",
+  title: "One-Hot Encoding"
+}, {
+  path: "delete-rc",
+  title: "Delete Row/Column"
+}, {
+  path: "replaceW",
+  title: "Replace W"
+}, {
+  path: "certain",
+  title: "Select Certain"
+}];
+
+/* harmony default export */ __webpack_exports__["default"] = (class extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleOptionChange = this.handleOptionChange.bind(this); // this.csvLink = React.createRef();
+
+    this.state = {
+      outputCsv: "",
+      selectedOption: "",
+      paramNum: "",
+      showResults: false
+    };
+    this.path = "";
   }
 
-}
+  handleSubmit(filename) {
+    event.preventDefault();
+    var formData = new FormData(); // console.log(this.fileInput.current.files[0]);
 
-/* harmony default export */ __webpack_exports__["default"] = (PreOptions);
+    formData.append("file", filename);
+    var div = document.getElementById("result-display");
+    div.innerHTML = "<Spinner animation='border' role='status'> <span className='sr-only'>Loading...</span></Spinner>";
+    var link = "";
+    console.log(this.state.selectedOption);
+
+    if (this.path == "label") {//  selected params of each on of them
+    } else if (this.path == "one-hot") {
+      link = "preProc/OneHotEncoding/" + this.state.paramNum;
+    } else if (this.path == "delete-rc") {
+      console.log(this.state.selectedOption);
+
+      if (this.state.selectedOption == "row") {
+        link = "preProc/delRow/" + this.state.paramNum;
+      } else if (this.state.selectedOption == "col") {
+        link = "preProc/delCol/" + this.state.paramNum;
+      }
+    } else if (this.path == "replaceW") {
+      link = "preProc/ReplaceW" + this.state.paramNum;
+    } else if (this.path == "certain") {// selected params of each on of them
+    }
+
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("http://localhost:8000/" + link, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data"
+      }
+    }).then(e => {
+      console.log(e);
+      console.log(e.data);
+      this.setState({
+        outputCsv: e.data,
+        showResults: true
+      });
+      div.innerHTML = "";
+    }).catch(err => {
+      console.log(err);
+      var div = document.getElementById("result-display");
+      div.innerText = "Please provide a valid csv file";
+    });
+  }
+
+  handleOptionChange(changeEvent) {
+    console.log(changeEvent.target);
+    this.setState({
+      selectedOption: changeEvent.target.value
+    });
+  }
+
+  onChange(event) {
+    console.log(event.target);
+    this.setState({
+      paramNum: event.target.value
+    });
+  }
+
+  render() {
+    // console.log(this.props.url.asPath.substring(9));
+    this.path = this.props.url.asPath.substring(9);
+    const params = [];
+
+    if (this.path == "label") {// List the params of each on of them
+    } else if (this.path == "one-hot") {
+      // List the params of each on of them
+      return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 108
+        },
+        __self: this
+      }, __jsx("main", {
+        className: "content",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 109
+        },
+        __self: this
+      }, __jsx("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 110
+        },
+        __self: this
+      }, __jsx("label", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 111
+        },
+        __self: this
+      }, "name of Column:", __jsx("input", {
+        type: "text",
+        name: "numCol",
+        onChange: this.onChange.bind(this),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 113
+        },
+        __self: this
+      }))), __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        onSubmit: this.handleSubmit,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 121
+        },
+        __self: this
+      }), __jsx("div", {
+        id: "result-display",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 122
+        },
+        __self: this
+      }), this.state.showResults ? __jsx("div", {
+        id: "download-csv",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 124
+        },
+        __self: this
+      }, __jsx(react_csv__WEBPACK_IMPORTED_MODULE_3__["CSVLink"], {
+        data: this.state.outputCsv,
+        filename: "data.csv",
+        className: "hidden",
+        target: "_blank",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 125
+        },
+        __self: this
+      }, "download me")) : null));
+    } else if (this.path == "delete-rc" || this.path == "replaceW") {
+      // List the params of each on of them
+      return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 141
+        },
+        __self: this
+      }, __jsx("main", {
+        className: "content",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 142
+        },
+        __self: this
+      }, __jsx("div", {
+        className: "radio",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 143
+        },
+        __self: this
+      }, __jsx("label", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 144
+        },
+        __self: this
+      }, __jsx("input", {
+        type: "radio",
+        value: "row",
+        checked: this.state.selectedOption === "row",
+        onChange: this.handleOptionChange,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 145
+        },
+        __self: this
+      }), "row"), __jsx("label", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 153
+        },
+        __self: this
+      }, __jsx("input", {
+        type: "radio",
+        value: "col",
+        checked: this.state.selectedOption === "col",
+        onChange: this.handleOptionChange,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 154
+        },
+        __self: this
+      }), "col"), __jsx("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 162
+        },
+        __self: this
+      }), __jsx("label", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 163
+        },
+        __self: this
+      }, "number of rows:", __jsx("input", {
+        type: "text",
+        name: "numRow",
+        pattern: "[0-9],*",
+        onChange: this.onChange.bind(this),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 165
+        },
+        __self: this
+      })), __jsx("label", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 172
+        },
+        __self: this
+      }, "number of col:", __jsx("input", {
+        type: "text",
+        name: "numCol",
+        pattern: "[0-9],*",
+        onChange: this.onChange.bind(this),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 174
+        },
+        __self: this
+      }))), __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        onSubmit: this.handleSubmit,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 183
+        },
+        __self: this
+      }), __jsx("div", {
+        id: "result-display",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 184
+        },
+        __self: this
+      }), this.state.showResults ? __jsx("div", {
+        id: "download-csv",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 186
+        },
+        __self: this
+      }, __jsx(react_csv__WEBPACK_IMPORTED_MODULE_3__["CSVLink"], {
+        data: this.state.outputCsv,
+        filename: "data.csv",
+        className: "hidden",
+        target: "_blank",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 187
+        },
+        __self: this
+      }, "download me")) : null)); // } else if (this.path == "replaceW") {
+      // List the params of each on of them
+    } else if (this.path == "certain") {// List the params of each on of them
+    }
+  }
+
+});
 
 /***/ }),
 
@@ -3026,15 +3070,26 @@ routes.add('algoOptions', '/algoOptions');
 
 /***/ }),
 
-/***/ 3:
-/*!***********************************!*\
-  !*** multi ./pages/preOptions.js ***!
-  \***********************************/
+/***/ 5:
+/*!********************************!*\
+  !*** multi ./pages/preproc.js ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/seohyun/dataPex/front-end/pages/preOptions.js */"./pages/preOptions.js");
+module.exports = __webpack_require__(/*! /Users/seohyun/dataPex/front-end/pages/preproc.js */"./pages/preproc.js");
 
+
+/***/ }),
+
+/***/ "axios":
+/*!************************!*\
+  !*** external "axios" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("axios");
 
 /***/ }),
 
@@ -3170,6 +3225,28 @@ module.exports = require("react");
 
 /***/ }),
 
+/***/ "react-csv":
+/*!****************************!*\
+  !*** external "react-csv" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-csv");
+
+/***/ }),
+
+/***/ "reactstrap":
+/*!*****************************!*\
+  !*** external "reactstrap" ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("reactstrap");
+
+/***/ }),
+
 /***/ "url":
 /*!**********************!*\
   !*** external "url" ***!
@@ -3182,4 +3259,4 @@ module.exports = require("url");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=preOptions.js.map
+//# sourceMappingURL=preproc.js.map

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets          # add this
 from django.views.decorators.csrf import csrf_exempt
-from . import exploration, Delete_Row, clustering, lr_svm, nbc, One_Hot
+from . import exploration, Delete_Row,Delete_Col, clustering, lr_svm, nbc, One_Hot
 import os
 import csv
 from backend.settings import BASE_DIR
