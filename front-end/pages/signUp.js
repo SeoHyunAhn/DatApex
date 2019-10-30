@@ -54,7 +54,7 @@ class SignUpForm extends Component {
         this.input = c;
     };
 
-    onChangeInputEmail  = (e) => {
+    onChangeInputEmail = (e) => {
         this.setState({
             email : e.target.value
         });
