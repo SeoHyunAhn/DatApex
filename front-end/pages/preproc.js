@@ -109,6 +109,67 @@ export default class extends React.Component {
     }
     return (
       <Layout>
+        <h1>Delete Row and Col</h1>
+        <hr></hr>
+
+        <div className="row">
+          <div className="col-6">
+            <form>
+              <div className="form-check">
+                <label className="form-check-label">
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    value="row"
+                    checked={this.state.selectedOption === "row"}
+                    onChange={this.handleOptionChange}
+                  />
+                  Row
+                </label>
+              </div>
+              <br />
+              <div className="form-group">
+                <label>
+                  Number of Rows:
+                  <br />
+                  <input
+                    className="form-control"
+                    placeholder="1,2,3"
+                    type="text"
+                    name="numRow"
+                    pattern="[0-9]*"
+                    onChange={this.onChange.bind(this)}
+                  />
+                </label>
+              </div>
+
+              <UploadCSV onSubmit={ this.handleSubmit }></UploadCSV>
+            </form>
+          </div>
+          <div className="col-6">
+            <div id="result-display"></div>
+              { this.state.showResults ? (
+                  <div id="download-csv">
+                    <CSVLink
+                      data={this.state.outputCsv}
+                      filename="data.csv"
+                      className="hidden"
+                      target="_blank"
+                    >
+                    
+                    <div className="text-center">
+                      <button className="btn btn-info btn-lg">
+                        Download me
+                      </button>
+                    </div>
+                    </CSVLink>
+                  </div>
+                ) : null
+              }
+          </div>
+        </div>
+
+{/* 
         <main className="content">
           <div className="radio">
             <label>
@@ -146,7 +207,7 @@ export default class extends React.Component {
               </CSVLink>
             </div>
           ) : null}
-        </main>
+        </main> */}
       </Layout>
     );
   }

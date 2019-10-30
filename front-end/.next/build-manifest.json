@@ -24,15 +24,7 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/mlalgo": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/signIn": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/signUp": [
+    "/preproc": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

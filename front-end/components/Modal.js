@@ -38,24 +38,28 @@ export default class UploadCSV extends Component {
     return (
       <Form enctype="multipart/form-data" onSubmit={this.handleSubmit}>
             <FormGroup>
-              <div class="form-group">
+              <div className="form-group">
                 <label
                   for="name"
                 >
                   File:{" "}
                 </label>
-                <div class="col-md-8">
+                <div className="col-12">
                   <input
                     type="file"
                     name="csv_file"
                     id="csv_file"
                     required="True"
-                    class="form-control"
-                    ref={this.fileInput}
+                    className="form-control"
+                    ref={ this.fileInput }
                   />
                 </div>
               </div>
-              <input type="submit" value="Submit" />
+              <br />
+              <br />
+              <div className="text-center">
+                <input className="btn btn-success btn-block" type="submit" value="Submit" />
+              </div>
             </FormGroup>
           </Form>
           /* <Button color="success" onClick={() => onSave(this.state.activeItem)}>
