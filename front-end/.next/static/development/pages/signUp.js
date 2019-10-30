@@ -462,7 +462,7 @@ var EventName;
 function logEvent(gtagFunction, analyticsId, eventName, eventParams, options) {
     var params = eventParams || {};
     if (!options || !options.global) {
-        params = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, eventParams, { 'send_to': analyticsId });
+        params = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, eventParams), { 'send_to': analyticsId });
     }
     // Workaround for http://b/141370449 - third argument cannot be undefined.
     gtagFunction(GtagCommand.EVENT, eventName, params || {});
@@ -919,7 +919,7 @@ registerAnalytics(_firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a);
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var tslib_1 = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+var tslib = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 var util = __webpack_require__(/*! @firebase/util */ "./node_modules/@firebase/util/dist/index.cjs.js");
 var logger$1 = __webpack_require__(/*! @firebase/logger */ "./node_modules/@firebase/logger/dist/index.esm.js");
 
@@ -995,11 +995,10 @@ var FirebaseAppImpl = /** @class */ (function () {
         this.firebase_ = firebase_;
         this.isDeleted_ = false;
         this.services_ = {};
-        // An array to capture listeners before the true auth functions
-        // exist
+        // An array to capture listeners before the true auth functions exist
         this.tokenListeners_ = [];
-        // An array to capture requests to send events before analytics component loads.
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any, use any here to make using function.apply easier
+        // An array to capture requests to send events before analytics component loads. Use type any to make using function.apply easier
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         this.analyticsEventRequests_ = [];
         this.name_ = config.name;
         this.automaticDataCollectionEnabled_ =
@@ -1179,7 +1178,7 @@ var FirebaseAppImpl = /** @class */ (function () {
     FirebaseAppImpl.prototype.delete ||
     console.log('dc');
 
-var version = "7.0.0";
+var version = "7.2.2";
 
 /**
  * @license
@@ -1426,7 +1425,7 @@ function createFirebaseNamespaceCore(firebaseAppImpl) {
  */
 function createFirebaseNamespace() {
     var namespace = createFirebaseNamespaceCore(FirebaseAppImpl);
-    namespace.INTERNAL = tslib_1.__assign({}, namespace.INTERNAL, { createFirebaseNamespace: createFirebaseNamespace,
+    namespace.INTERNAL = tslib.__assign(tslib.__assign({}, namespace.INTERNAL), { createFirebaseNamespace: createFirebaseNamespace,
         extendNamespace: extendNamespace,
         createSubscribe: util.createSubscribe,
         ErrorFactory: util.ErrorFactory,
@@ -1899,7 +1898,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
 var firebase = _interopDefault(__webpack_require__(/*! @firebase/app */ "./node_modules/@firebase/app/dist/index.cjs.js"));
-var tslib_1 = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+var tslib = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 var util = __webpack_require__(/*! @firebase/util */ "./node_modules/@firebase/util/dist/index.cjs.js");
 var logger$1 = __webpack_require__(/*! @firebase/logger */ "./node_modules/@firebase/logger/dist/index.esm.js");
 
@@ -2214,7 +2213,7 @@ var logWrapper = function (prefix) {
         for (var _i = 0; _i < arguments.length; _i++) {
             var_args[_i] = arguments[_i];
         }
-        log.apply(void 0, tslib_1.__spread([prefix], var_args));
+        log.apply(void 0, tslib.__spread([prefix], var_args));
     };
 };
 /**
@@ -2225,7 +2224,7 @@ var error = function () {
     for (var _i = 0; _i < arguments.length; _i++) {
         var_args[_i] = arguments[_i];
     }
-    var message = 'FIREBASE INTERNAL ERROR: ' + buildLogMessage_.apply(void 0, tslib_1.__spread(var_args));
+    var message = 'FIREBASE INTERNAL ERROR: ' + buildLogMessage_.apply(void 0, tslib.__spread(var_args));
     logClient.error(message);
 };
 /**
@@ -2236,7 +2235,7 @@ var fatal = function () {
     for (var _i = 0; _i < arguments.length; _i++) {
         var_args[_i] = arguments[_i];
     }
-    var message = "FIREBASE FATAL ERROR: " + buildLogMessage_.apply(void 0, tslib_1.__spread(var_args));
+    var message = "FIREBASE FATAL ERROR: " + buildLogMessage_.apply(void 0, tslib.__spread(var_args));
     logClient.error(message);
     throw new Error(message);
 };
@@ -2248,7 +2247,7 @@ var warn = function () {
     for (var _i = 0; _i < arguments.length; _i++) {
         var_args[_i] = arguments[_i];
     }
-    var message = 'FIREBASE WARNING: ' + buildLogMessage_.apply(void 0, tslib_1.__spread(var_args));
+    var message = 'FIREBASE WARNING: ' + buildLogMessage_.apply(void 0, tslib.__spread(var_args));
     logClient.warn(message);
 };
 /**
@@ -3131,7 +3130,7 @@ function decodeQuery(queryString) {
         queryString = queryString.substring(1);
     }
     try {
-        for (var _b = tslib_1.__values(queryString.split('&')), _c = _b.next(); !_c.done; _c = _b.next()) {
+        for (var _b = tslib.__values(queryString.split('&')), _c = _b.next(); !_c.done; _c = _b.next()) {
             var segment = _c.value;
             if (segment.length === 0) {
                 continue;
@@ -3897,7 +3896,7 @@ var Index = /** @class */ (function () {
  */
 var __EMPTY_NODE;
 var KeyIndex = /** @class */ (function (_super) {
-    tslib_1.__extends(KeyIndex, _super);
+    tslib.__extends(KeyIndex, _super);
     function KeyIndex() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -4306,7 +4305,7 @@ function setMaxNode$1(val) {
  * @private
  */
 var PriorityIndex = /** @class */ (function (_super) {
-    tslib_1.__extends(PriorityIndex, _super);
+    tslib.__extends(PriorityIndex, _super);
     function PriorityIndex() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -5218,9 +5217,9 @@ var IndexMap = /** @class */ (function () {
             newIndex = fallbackObject;
         }
         var indexName = indexDefinition.toString();
-        var newIndexSet = tslib_1.__assign({}, this.indexSet_);
+        var newIndexSet = tslib.__assign({}, this.indexSet_);
         newIndexSet[indexName] = indexDefinition;
-        var newIndexes = tslib_1.__assign({}, this.indexes_);
+        var newIndexes = tslib.__assign({}, this.indexes_);
         newIndexes[indexName] = newIndex;
         return new IndexMap(newIndexes, newIndexSet);
     };
@@ -5743,7 +5742,7 @@ var ChildrenNode = /** @class */ (function () {
  * @private
  */
 var MaxNode = /** @class */ (function (_super) {
-    tslib_1.__extends(MaxNode, _super);
+    tslib.__extends(MaxNode, _super);
     function MaxNode() {
         return _super.call(this, new SortedMap(NAME_COMPARATOR), ChildrenNode.EMPTY_NODE, IndexMap.Default) || this;
     }
@@ -5902,7 +5901,7 @@ setNodeFromJSON(nodeFromJSON$1);
  * @private
  */
 var ValueIndex = /** @class */ (function (_super) {
-    tslib_1.__extends(ValueIndex, _super);
+    tslib.__extends(ValueIndex, _super);
     function ValueIndex() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -5983,7 +5982,7 @@ var VALUE_INDEX = new ValueIndex();
  * @extends {Index}
  */
 var PathIndex = /** @class */ (function (_super) {
-    tslib_1.__extends(PathIndex, _super);
+    tslib.__extends(PathIndex, _super);
     function PathIndex(indexPath_) {
         var _this = _super.call(this) || this;
         _this.indexPath_ = indexPath_;
@@ -9396,7 +9395,7 @@ var SyncPoint = /** @class */ (function () {
         else {
             var events = [];
             try {
-                for (var _b = tslib_1.__values(this.views.values()), _c = _b.next(); !_c.done; _c = _b.next()) {
+                for (var _b = tslib.__values(this.views.values()), _c = _b.next(); !_c.done; _c = _b.next()) {
                     var view = _c.value;
                     events = events.concat(view.applyOperation(operation, writesCache, optCompleteServerCache));
                 }
@@ -9469,8 +9468,8 @@ var SyncPoint = /** @class */ (function () {
         if (queryId === 'default') {
             try {
                 // When you do ref.off(...), we search all views for the registration to remove.
-                for (var _b = tslib_1.__values(this.views.entries()), _c = _b.next(); !_c.done; _c = _b.next()) {
-                    var _d = tslib_1.__read(_c.value, 2), viewQueryId = _d[0], view = _d[1];
+                for (var _b = tslib.__values(this.views.entries()), _c = _b.next(); !_c.done; _c = _b.next()) {
+                    var _d = tslib.__read(_c.value, 2), viewQueryId = _d[0], view = _d[1];
                     cancelEvents = cancelEvents.concat(view.removeEventRegistration(eventRegistration, cancelError));
                     if (view.isEmpty()) {
                         this.views.delete(viewQueryId);
@@ -9519,7 +9518,7 @@ var SyncPoint = /** @class */ (function () {
         var e_3, _a;
         var result = [];
         try {
-            for (var _b = tslib_1.__values(this.views.values()), _c = _b.next(); !_c.done; _c = _b.next()) {
+            for (var _b = tslib.__values(this.views.values()), _c = _b.next(); !_c.done; _c = _b.next()) {
                 var view = _c.value;
                 if (!view
                     .getQuery()
@@ -9546,7 +9545,7 @@ var SyncPoint = /** @class */ (function () {
         var e_4, _a;
         var serverCache = null;
         try {
-            for (var _b = tslib_1.__values(this.views.values()), _c = _b.next(); !_c.done; _c = _b.next()) {
+            for (var _b = tslib.__values(this.views.values()), _c = _b.next(); !_c.done; _c = _b.next()) {
                 var view = _c.value;
                 serverCache = serverCache || view.getCompleteServerCache(path);
             }
@@ -9579,7 +9578,7 @@ var SyncPoint = /** @class */ (function () {
     SyncPoint.prototype.getCompleteView = function () {
         var e_5, _a;
         try {
-            for (var _b = tslib_1.__values(this.views.values()), _c = _b.next(); !_c.done; _c = _b.next()) {
+            for (var _b = tslib.__values(this.views.values()), _c = _b.next(); !_c.done; _c = _b.next()) {
                 var view = _c.value;
                 if (view
                     .getQuery()
@@ -11227,7 +11226,7 @@ var StatsListener = /** @class */ (function () {
     }
     StatsListener.prototype.get = function () {
         var newStats = this.collection_.get();
-        var delta = tslib_1.__assign({}, newStats);
+        var delta = tslib.__assign({}, newStats);
         if (this.last_) {
             each(this.last_, function (stat, value) {
                 delta[stat] = delta[stat] - value;
@@ -11509,7 +11508,7 @@ var EventEmitter = /** @class */ (function () {
         }
         if (Array.isArray(this.listeners_[eventType])) {
             // Clone the list, since callbacks could add/remove listeners.
-            var listeners = tslib_1.__spread(this.listeners_[eventType]);
+            var listeners = tslib.__spread(this.listeners_[eventType]);
             for (var i = 0; i < listeners.length; i++) {
                 listeners[i].callback.apply(listeners[i].context, var_args);
             }
@@ -11563,7 +11562,7 @@ var EventEmitter = /** @class */ (function () {
  * @extends {EventEmitter}
  */
 var VisibilityMonitor = /** @class */ (function (_super) {
-    tslib_1.__extends(VisibilityMonitor, _super);
+    tslib.__extends(VisibilityMonitor, _super);
     function VisibilityMonitor() {
         var _this = _super.call(this, ['visible']) || this;
         var hidden;
@@ -11644,7 +11643,7 @@ var VisibilityMonitor = /** @class */ (function (_super) {
  * @extends {EventEmitter}
  */
 var OnlineMonitor = /** @class */ (function (_super) {
-    tslib_1.__extends(OnlineMonitor, _super);
+    tslib.__extends(OnlineMonitor, _super);
     function OnlineMonitor() {
         var _this = _super.call(this, ['online']) || this;
         _this.online_ = true;
@@ -11877,7 +11876,7 @@ var BrowserPollConnection = /** @class */ (function () {
                 for (var _i = 0; _i < arguments.length; _i++) {
                     args[_i] = arguments[_i];
                 }
-                var _a = tslib_1.__read(args, 5), command = _a[0], arg1 = _a[1], arg2 = _a[2], arg3 = _a[3], arg4 = _a[4];
+                var _a = tslib.__read(args, 5), command = _a[0], arg1 = _a[1], arg2 = _a[2], arg3 = _a[3], arg4 = _a[4];
                 _this.incrementIncomingBytes_(args);
                 if (!_this.scriptTagHolder)
                     return; // we closed the connection.
@@ -11914,7 +11913,7 @@ var BrowserPollConnection = /** @class */ (function () {
                 for (var _i = 0; _i < arguments.length; _i++) {
                     args[_i] = arguments[_i];
                 }
-                var _a = tslib_1.__read(args, 2), pN = _a[0], data = _a[1];
+                var _a = tslib.__read(args, 2), pN = _a[0], data = _a[1];
                 _this.incrementIncomingBytes_(args);
                 _this.myPacketOrderer.handleResponse(pN, data);
             }, function () {
@@ -12802,7 +12801,7 @@ var TransportManager = /** @class */ (function () {
         else {
             var transports = (this.transports_ = []);
             try {
-                for (var _b = tslib_1.__values(TransportManager.ALL_TRANSPORTS), _c = _b.next(); !_c.done; _c = _b.next()) {
+                for (var _b = tslib.__values(TransportManager.ALL_TRANSPORTS), _c = _b.next(); !_c.done; _c = _b.next()) {
                     var transport = _c.value;
                     if (transport && transport['isAvailable']()) {
                         transports.push(transport);
@@ -13430,7 +13429,7 @@ var INVALID_AUTH_TOKEN_THRESHOLD = 3;
  * in quotes to make sure the closure compiler does not minify them.
  */
 var PersistentConnection = /** @class */ (function (_super) {
-    tslib_1.__extends(PersistentConnection, _super);
+    tslib.__extends(PersistentConnection, _super);
     /**
      * @implements {ServerActions}
      * @param repoInfo_ Data about the namespace we are connecting to
@@ -14072,10 +14071,10 @@ var PersistentConnection = /** @class */ (function (_super) {
         try {
             // Puts depend on having received the corresponding data update from the server before they complete, so we must
             // make sure to send listens before puts.
-            for (var _c = tslib_1.__values(this.listens.values()), _d = _c.next(); !_d.done; _d = _c.next()) {
+            for (var _c = tslib.__values(this.listens.values()), _d = _c.next(); !_d.done; _d = _c.next()) {
                 var queries = _d.value;
                 try {
-                    for (var _e = (e_2 = void 0, tslib_1.__values(queries.values())), _f = _e.next(); !_f.done; _f = _e.next()) {
+                    for (var _e = (e_2 = void 0, tslib.__values(queries.values())), _f = _e.next(); !_f.done; _f = _e.next()) {
                         var listenSpec = _f.value;
                         this.sendListen_(listenSpec);
                     }
@@ -14160,7 +14159,7 @@ var PersistentConnection = /** @class */ (function (_super) {
  * persistent connection (using WebSockets or long-polling)
  */
 var ReadonlyRestClient = /** @class */ (function (_super) {
-    tslib_1.__extends(ReadonlyRestClient, _super);
+    tslib.__extends(ReadonlyRestClient, _super);
     /**
      * @param {!RepoInfo} repoInfo_ Data about the namespace we are connecting to
      * @param {function(string, *, boolean, ?number)} onDataUpdate_ A callback for new data from the server
@@ -14711,7 +14710,7 @@ var Repo = /** @class */ (function () {
         if (this.persistentConnection_) {
             prefix = this.persistentConnection_.id + ':';
         }
-        log.apply(void 0, tslib_1.__spread([prefix], var_args));
+        log.apply(void 0, tslib.__spread([prefix], var_args));
     };
     Repo.prototype.callOnCompleteCallback = function (callback, status, errorReason) {
         if (callback) {
@@ -15538,7 +15537,7 @@ var QueryParams = /** @class */ (function () {
  * limitations under the License.
  */
 var Reference = /** @class */ (function (_super) {
-    tslib_1.__extends(Reference, _super);
+    tslib.__extends(Reference, _super);
     /**
      * Call options:
      *   new Reference(Repo, Path) or
@@ -16813,8 +16812,8 @@ var DatabaseInternals = /** @class */ (function () {
     }
     /** @return {Promise<void>} */
     DatabaseInternals.prototype.delete = function () {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
-            return tslib_1.__generator(this, function (_a) {
+        return tslib.__awaiter(this, void 0, void 0, function () {
+            return tslib.__generator(this, function (_a) {
                 this.database.checkDeleted_('delete');
                 RepoManager.getInstance().deleteRepo(this.database.repo_);
                 this.database.repo_ = null;
@@ -16879,6 +16878,7 @@ var interceptServerData = function (ref, callback) {
 };
 
 var INTERNAL = /*#__PURE__*/Object.freeze({
+  __proto__: null,
   forceLongPolling: forceLongPolling,
   forceWebSockets: forceWebSockets,
   isWebSocketsAvailable: isWebSocketsAvailable,
@@ -16959,6 +16959,7 @@ var forceRestClient = function (forceRestClient) {
 };
 
 var TEST_ACCESS = /*#__PURE__*/Object.freeze({
+  __proto__: null,
   DataConnection: DataConnection,
   RealTimeConnection: RealTimeConnection,
   hijackHash: hijackHash,
@@ -17035,8 +17036,8 @@ Object.defineProperty(exports, '__esModule', { value: true });
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
 var firebase = _interopDefault(__webpack_require__(/*! @firebase/app */ "./node_modules/@firebase/app/dist/index.cjs.js"));
+var tslib = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 var logger = __webpack_require__(/*! @firebase/logger */ "./node_modules/@firebase/logger/dist/index.esm.js");
-var tslib_1 = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 var util = __webpack_require__(/*! @firebase/util */ "./node_modules/@firebase/util/dist/index.cjs.js");
 var webchannelWrapper = __webpack_require__(/*! @firebase/webchannel-wrapper */ "./node_modules/@firebase/webchannel-wrapper/dist/index.esm.js");
 
@@ -17119,7 +17120,7 @@ function debug(tag, msg) {
     }
     if (logClient.logLevel <= logger.LogLevel.DEBUG) {
         var args = obj.map(argToString);
-        logClient.debug.apply(logClient, ["Firestore (" + SDK_VERSION + ") [" + tag + "]: " + msg].concat(args));
+        logClient.debug.apply(logClient, tslib.__spreadArrays(["Firestore (" + SDK_VERSION + ") [" + tag + "]: " + msg], args));
     }
 }
 function error(msg) {
@@ -17129,7 +17130,7 @@ function error(msg) {
     }
     if (logClient.logLevel <= logger.LogLevel.ERROR) {
         var args = obj.map(argToString);
-        logClient.error.apply(logClient, ["Firestore (" + SDK_VERSION + "): " + msg].concat(args));
+        logClient.error.apply(logClient, tslib.__spreadArrays(["Firestore (" + SDK_VERSION + "): " + msg], args));
     }
 }
 /**
@@ -17375,7 +17376,7 @@ var Code = {
  * and compatible `code` and `message` fields.)
  */
 var FirestoreError = /** @class */ (function (_super) {
-    tslib_1.__extends(FirestoreError, _super);
+    tslib.__extends(FirestoreError, _super);
     function FirestoreError(code, message) {
         var _this = _super.call(this, message) || this;
         _this.code = code;
@@ -18249,7 +18250,7 @@ var BasePath = /** @class */ (function () {
  * within Firestore.
  */
 var ResourcePath = /** @class */ (function (_super) {
-    tslib_1.__extends(ResourcePath, _super);
+    tslib.__extends(ResourcePath, _super);
     function ResourcePath() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -18286,7 +18287,7 @@ var ResourcePath = /** @class */ (function (_super) {
 var identifierRegExp = /^[_a-zA-Z][_a-zA-Z0-9]*$/;
 /** A dot-separated path for navigating sub-objects within a document. */
 var FieldPath = /** @class */ (function (_super) {
-    tslib_1.__extends(FieldPath, _super);
+    tslib.__extends(FieldPath, _super);
     function FieldPath() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -18683,8 +18684,8 @@ var AsyncQueue = /** @class */ (function () {
      * is through `enqueueAndForgetEvenAfterShutdown`.
      */
     AsyncQueue.prototype.enqueueAndInitiateShutdown = function (op) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
-            return tslib_1.__generator(this, function (_a) {
+        return tslib.__awaiter(this, void 0, void 0, function () {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         this.verifyNotFailed();
@@ -19481,7 +19482,8 @@ var LLRBNode = /** @class */ (function () {
             return blackDepth + (this.isRed() ? 0 : 1);
         }
     };
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any, Empty node is shared between all LLRB trees.
+    // Empty node is shared between all LLRB trees.
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     LLRBNode.EMPTY = null;
     LLRBNode.RED = true;
     LLRBNode.BLACK = false;
@@ -20083,7 +20085,8 @@ var PersistencePromise = /** @class */ (function () {
         });
     };
     PersistencePromise.waitFor = function (
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any, Accept all Promise types in waitFor().
+    // Accept all Promise types in waitFor().
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     all) {
         return new PersistencePromise(function (resolve, reject) {
             var expectedCount = 0;
@@ -20155,541 +20158,12 @@ var PersistencePromise = /** @class */ (function () {
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/** A mutation queue for a specific user, backed by IndexedDB. */
-var IndexedDbMutationQueue = /** @class */ (function () {
-    function IndexedDbMutationQueue(
-    /**
-     * The normalized userId (e.g. null UID => "" userId) used to store /
-     * retrieve mutations.
-     */
-    userId, serializer, indexManager, referenceDelegate) {
-        this.userId = userId;
-        this.serializer = serializer;
-        this.indexManager = indexManager;
-        this.referenceDelegate = referenceDelegate;
-        /**
-         * Caches the document keys for pending mutation batches. If the mutation
-         * has been removed from IndexedDb, the cached value may continue to
-         * be used to retrieve the batch's document keys. To remove a cached value
-         * locally, `removeCachedMutationKeys()` should be invoked either directly
-         * or through `removeMutationBatches()`.
-         *
-         * With multi-tab, when the primary client acknowledges or rejects a mutation,
-         * this cache is used by secondary clients to invalidate the local
-         * view of the documents that were previously affected by the mutation.
-         */
-        // PORTING NOTE: Multi-tab only.
-        this.documentKeysByBatchId = {};
-    }
-    /**
-     * Creates a new mutation queue for the given user.
-     * @param user The user for which to create a mutation queue.
-     * @param serializer The serializer to use when persisting to IndexedDb.
-     */
-    IndexedDbMutationQueue.forUser = function (user, serializer, indexManager, referenceDelegate) {
-        // TODO(mcg): Figure out what constraints there are on userIDs
-        // In particular, are there any reserved characters? are empty ids allowed?
-        // For the moment store these together in the same mutations table assuming
-        // that empty userIDs aren't allowed.
-        assert(user.uid !== '', 'UserID must not be an empty string.');
-        var userId = user.isAuthenticated() ? user.uid : '';
-        return new IndexedDbMutationQueue(userId, serializer, indexManager, referenceDelegate);
-    };
-    IndexedDbMutationQueue.prototype.checkEmpty = function (transaction) {
-        var empty = true;
-        var range = IDBKeyRange.bound([this.userId, Number.NEGATIVE_INFINITY], [this.userId, Number.POSITIVE_INFINITY]);
-        return mutationsStore(transaction)
-            .iterate({ index: DbMutationBatch.userMutationsIndex, range: range }, function (key, value, control) {
-            empty = false;
-            control.done();
-        })
-            .next(function () { return empty; });
-    };
-    IndexedDbMutationQueue.prototype.acknowledgeBatch = function (transaction, batch, streamToken) {
-        return this.getMutationQueueMetadata(transaction).next(function (metadata) {
-            metadata.lastStreamToken = convertStreamToken(streamToken);
-            return mutationQueuesStore(transaction).put(metadata);
-        });
-    };
-    IndexedDbMutationQueue.prototype.getLastStreamToken = function (transaction) {
-        return this.getMutationQueueMetadata(transaction).next(function (metadata) { return metadata.lastStreamToken; });
-    };
-    IndexedDbMutationQueue.prototype.setLastStreamToken = function (transaction, streamToken) {
-        return this.getMutationQueueMetadata(transaction).next(function (metadata) {
-            metadata.lastStreamToken = convertStreamToken(streamToken);
-            return mutationQueuesStore(transaction).put(metadata);
-        });
-    };
-    IndexedDbMutationQueue.prototype.addMutationBatch = function (transaction, localWriteTime, baseMutations, mutations) {
-        var _this = this;
-        var documentStore = documentMutationsStore(transaction);
-        var mutationStore = mutationsStore(transaction);
-        // The IndexedDb implementation in Chrome (and Firefox) does not handle
-        // compound indices that include auto-generated keys correctly. To ensure
-        // that the index entry is added correctly in all browsers, we perform two
-        // writes: The first write is used to retrieve the next auto-generated Batch
-        // ID, and the second write populates the index and stores the actual
-        // mutation batch.
-        // See: https://bugs.chromium.org/p/chromium/issues/detail?id=701972
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any, We write an empty object to obtain key
-        return mutationStore.add({}).next(function (batchId) {
-            assert(typeof batchId === 'number', 'Auto-generated key is not a number');
-            var batch = new MutationBatch(batchId, localWriteTime, baseMutations, mutations);
-            var dbBatch = _this.serializer.toDbMutationBatch(_this.userId, batch);
-            _this.documentKeysByBatchId[batchId] = batch.keys();
-            var promises = [];
-            for (var _i = 0, mutations_1 = mutations; _i < mutations_1.length; _i++) {
-                var mutation = mutations_1[_i];
-                var indexKey = DbDocumentMutation.key(_this.userId, mutation.key.path, batchId);
-                promises.push(mutationStore.put(dbBatch));
-                promises.push(documentStore.put(indexKey, DbDocumentMutation.PLACEHOLDER));
-                promises.push(_this.indexManager.addToCollectionParentIndex(transaction, mutation.key.path.popLast()));
-            }
-            return PersistencePromise.waitFor(promises).next(function () { return batch; });
-        });
-    };
-    IndexedDbMutationQueue.prototype.lookupMutationBatch = function (transaction, batchId) {
-        var _this = this;
-        return mutationsStore(transaction)
-            .get(batchId)
-            .next(function (dbBatch) {
-            if (dbBatch) {
-                assert(dbBatch.userId === _this.userId, "Unexpected user '" + dbBatch.userId + "' for mutation batch " + batchId);
-                return _this.serializer.fromDbMutationBatch(dbBatch);
-            }
-            return null;
-        });
-    };
-    IndexedDbMutationQueue.prototype.lookupMutationKeys = function (transaction, batchId) {
-        var _this = this;
-        if (this.documentKeysByBatchId[batchId]) {
-            return PersistencePromise.resolve(this.documentKeysByBatchId[batchId]);
-        }
-        else {
-            return this.lookupMutationBatch(transaction, batchId).next(function (batch) {
-                if (batch) {
-                    var keys = batch.keys();
-                    _this.documentKeysByBatchId[batchId] = keys;
-                    return keys;
-                }
-                else {
-                    return null;
-                }
-            });
-        }
-    };
-    IndexedDbMutationQueue.prototype.getNextMutationBatchAfterBatchId = function (transaction, batchId) {
-        var _this = this;
-        var nextBatchId = batchId + 1;
-        var range = IDBKeyRange.lowerBound([this.userId, nextBatchId]);
-        var foundBatch = null;
-        return mutationsStore(transaction)
-            .iterate({ index: DbMutationBatch.userMutationsIndex, range: range }, function (key, dbBatch, control) {
-            if (dbBatch.userId === _this.userId) {
-                assert(dbBatch.batchId >= nextBatchId, 'Should have found mutation after ' + nextBatchId);
-                foundBatch = _this.serializer.fromDbMutationBatch(dbBatch);
-            }
-            control.done();
-        })
-            .next(function () { return foundBatch; });
-    };
-    IndexedDbMutationQueue.prototype.getHighestUnacknowledgedBatchId = function (transaction) {
-        var range = IDBKeyRange.upperBound([
-            this.userId,
-            Number.POSITIVE_INFINITY
-        ]);
-        var batchId = BATCHID_UNKNOWN;
-        return mutationsStore(transaction)
-            .iterate({ index: DbMutationBatch.userMutationsIndex, range: range, reverse: true }, function (key, dbBatch, control) {
-            batchId = dbBatch.batchId;
-            control.done();
-        })
-            .next(function () { return batchId; });
-    };
-    IndexedDbMutationQueue.prototype.getAllMutationBatches = function (transaction) {
-        var _this = this;
-        var range = IDBKeyRange.bound([this.userId, BATCHID_UNKNOWN], [this.userId, Number.POSITIVE_INFINITY]);
-        return mutationsStore(transaction)
-            .loadAll(DbMutationBatch.userMutationsIndex, range)
-            .next(function (dbBatches) {
-            return dbBatches.map(function (dbBatch) { return _this.serializer.fromDbMutationBatch(dbBatch); });
-        });
-    };
-    IndexedDbMutationQueue.prototype.getAllMutationBatchesAffectingDocumentKey = function (transaction, documentKey) {
-        var _this = this;
-        // Scan the document-mutation index starting with a prefix starting with
-        // the given documentKey.
-        var indexPrefix = DbDocumentMutation.prefixForPath(this.userId, documentKey.path);
-        var indexStart = IDBKeyRange.lowerBound(indexPrefix);
-        var results = [];
-        return documentMutationsStore(transaction)
-            .iterate({ range: indexStart }, function (indexKey, _, control) {
-            var userID = indexKey[0], encodedPath = indexKey[1], batchId = indexKey[2];
-            // Only consider rows matching exactly the specific key of
-            // interest. Note that because we order by path first, and we
-            // order terminators before path separators, we'll encounter all
-            // the index rows for documentKey contiguously. In particular, all
-            // the rows for documentKey will occur before any rows for
-            // documents nested in a subcollection beneath documentKey so we
-            // can stop as soon as we hit any such row.
-            var path = decode(encodedPath);
-            if (userID !== _this.userId || !documentKey.path.isEqual(path)) {
-                control.done();
-                return;
-            }
-            // Look up the mutation batch in the store.
-            return mutationsStore(transaction)
-                .get(batchId)
-                .next(function (mutation) {
-                if (!mutation) {
-                    throw fail('Dangling document-mutation reference found: ' +
-                        indexKey +
-                        ' which points to ' +
-                        batchId);
-                }
-                assert(mutation.userId === _this.userId, "Unexpected user '" + mutation.userId + "' for mutation batch " + batchId);
-                results.push(_this.serializer.fromDbMutationBatch(mutation));
-            });
-        })
-            .next(function () { return results; });
-    };
-    IndexedDbMutationQueue.prototype.getAllMutationBatchesAffectingDocumentKeys = function (transaction, documentKeys) {
-        var _this = this;
-        var uniqueBatchIDs = new SortedSet(primitiveComparator);
-        var promises = [];
-        documentKeys.forEach(function (documentKey) {
-            var indexStart = DbDocumentMutation.prefixForPath(_this.userId, documentKey.path);
-            var range = IDBKeyRange.lowerBound(indexStart);
-            var promise = documentMutationsStore(transaction).iterate({ range: range }, function (indexKey, _, control) {
-                var userID = indexKey[0], encodedPath = indexKey[1], batchID = indexKey[2];
-                // Only consider rows matching exactly the specific key of
-                // interest. Note that because we order by path first, and we
-                // order terminators before path separators, we'll encounter all
-                // the index rows for documentKey contiguously. In particular, all
-                // the rows for documentKey will occur before any rows for
-                // documents nested in a subcollection beneath documentKey so we
-                // can stop as soon as we hit any such row.
-                var path = decode(encodedPath);
-                if (userID !== _this.userId || !documentKey.path.isEqual(path)) {
-                    control.done();
-                    return;
-                }
-                uniqueBatchIDs = uniqueBatchIDs.add(batchID);
-            });
-            promises.push(promise);
-        });
-        return PersistencePromise.waitFor(promises).next(function () {
-            return _this.lookupMutationBatches(transaction, uniqueBatchIDs);
-        });
-    };
-    IndexedDbMutationQueue.prototype.getAllMutationBatchesAffectingQuery = function (transaction, query) {
-        var _this = this;
-        assert(!query.isDocumentQuery(), "Document queries shouldn't go down this path");
-        assert(!query.isCollectionGroupQuery(), 'CollectionGroup queries should be handled in LocalDocumentsView');
-        var queryPath = query.path;
-        var immediateChildrenLength = queryPath.length + 1;
-        // TODO(mcg): Actually implement a single-collection query
-        //
-        // This is actually executing an ancestor query, traversing the whole
-        // subtree below the collection which can be horrifically inefficient for
-        // some structures. The right way to solve this is to implement the full
-        // value index, but that's not in the cards in the near future so this is
-        // the best we can do for the moment.
-        //
-        // Since we don't yet index the actual properties in the mutations, our
-        // current approach is to just return all mutation batches that affect
-        // documents in the collection being queried.
-        var indexPrefix = DbDocumentMutation.prefixForPath(this.userId, queryPath);
-        var indexStart = IDBKeyRange.lowerBound(indexPrefix);
-        // Collect up unique batchIDs encountered during a scan of the index. Use a
-        // SortedSet to accumulate batch IDs so they can be traversed in order in a
-        // scan of the main table.
-        var uniqueBatchIDs = new SortedSet(primitiveComparator);
-        return documentMutationsStore(transaction)
-            .iterate({ range: indexStart }, function (indexKey, _, control) {
-            var userID = indexKey[0], encodedPath = indexKey[1], batchID = indexKey[2];
-            var path = decode(encodedPath);
-            if (userID !== _this.userId || !queryPath.isPrefixOf(path)) {
-                control.done();
-                return;
-            }
-            // Rows with document keys more than one segment longer than the
-            // query path can't be matches. For example, a query on 'rooms'
-            // can't match the document /rooms/abc/messages/xyx.
-            // TODO(mcg): we'll need a different scanner when we implement
-            // ancestor queries.
-            if (path.length !== immediateChildrenLength) {
-                return;
-            }
-            uniqueBatchIDs = uniqueBatchIDs.add(batchID);
-        })
-            .next(function () { return _this.lookupMutationBatches(transaction, uniqueBatchIDs); });
-    };
-    IndexedDbMutationQueue.prototype.lookupMutationBatches = function (transaction, batchIDs) {
-        var _this = this;
-        var results = [];
-        var promises = [];
-        // TODO(rockwood): Implement this using iterate.
-        batchIDs.forEach(function (batchId) {
-            promises.push(mutationsStore(transaction)
-                .get(batchId)
-                .next(function (mutation) {
-                if (mutation === null) {
-                    throw fail('Dangling document-mutation reference found, ' +
-                        'which points to ' +
-                        batchId);
-                }
-                assert(mutation.userId === _this.userId, "Unexpected user '" + mutation.userId + "' for mutation batch " + batchId);
-                results.push(_this.serializer.fromDbMutationBatch(mutation));
-            }));
-        });
-        return PersistencePromise.waitFor(promises).next(function () { return results; });
-    };
-    IndexedDbMutationQueue.prototype.removeMutationBatch = function (transaction, batch) {
-        var _this = this;
-        return removeMutationBatch(transaction.simpleDbTransaction, this.userId, batch).next(function (removedDocuments) {
-            _this.removeCachedMutationKeys(batch.batchId);
-            return PersistencePromise.forEach(removedDocuments, function (key) {
-                return _this.referenceDelegate.removeMutationReference(transaction, key);
-            });
-        });
-    };
-    IndexedDbMutationQueue.prototype.removeCachedMutationKeys = function (batchId) {
-        delete this.documentKeysByBatchId[batchId];
-    };
-    IndexedDbMutationQueue.prototype.performConsistencyCheck = function (txn) {
-        var _this = this;
-        return this.checkEmpty(txn).next(function (empty) {
-            if (!empty) {
-                return PersistencePromise.resolve();
-            }
-            // Verify that there are no entries in the documentMutations index if
-            // the queue is empty.
-            var startRange = IDBKeyRange.lowerBound(DbDocumentMutation.prefixForUser(_this.userId));
-            var danglingMutationReferences = [];
-            return documentMutationsStore(txn)
-                .iterate({ range: startRange }, function (key, _, control) {
-                var userID = key[0];
-                if (userID !== _this.userId) {
-                    control.done();
-                    return;
-                }
-                else {
-                    var path = decode(key[1]);
-                    danglingMutationReferences.push(path);
-                }
-            })
-                .next(function () {
-                assert(danglingMutationReferences.length === 0, 'Document leak -- detected dangling mutation references when queue is empty. ' +
-                    'Dangling keys: ' +
-                    danglingMutationReferences.map(function (p) { return p.canonicalString(); }));
-            });
-        });
-    };
-    IndexedDbMutationQueue.prototype.containsKey = function (txn, key) {
-        return mutationQueueContainsKey(txn, this.userId, key);
-    };
-    // PORTING NOTE: Multi-tab only (state is held in memory in other clients).
-    /** Returns the mutation queue's metadata from IndexedDb. */
-    IndexedDbMutationQueue.prototype.getMutationQueueMetadata = function (transaction) {
-        var _this = this;
-        return mutationQueuesStore(transaction)
-            .get(this.userId)
-            .next(function (metadata) {
-            return (metadata ||
-                new DbMutationQueue(_this.userId, BATCHID_UNKNOWN, 
-                /*lastStreamToken=*/ ''));
-        });
-    };
-    return IndexedDbMutationQueue;
-}());
-/**
- * @return true if the mutation queue for the given user contains a pending
- *         mutation for the given key.
- */
-function mutationQueueContainsKey(txn, userId, key) {
-    var indexKey = DbDocumentMutation.prefixForPath(userId, key.path);
-    var encodedPath = indexKey[1];
-    var startRange = IDBKeyRange.lowerBound(indexKey);
-    var containsKey = false;
-    return documentMutationsStore(txn)
-        .iterate({ range: startRange, keysOnly: true }, function (key, value, control) {
-        var userID = key[0], keyPath = key[1], /*batchID*/ _ = key[2];
-        if (userID === userId && keyPath === encodedPath) {
-            containsKey = true;
-        }
-        control.done();
-    })
-        .next(function () { return containsKey; });
-}
-/** Returns true if any mutation queue contains the given document. */
-function mutationQueuesContainKey(txn, docKey) {
-    var found = false;
-    return mutationQueuesStore(txn)
-        .iterateSerial(function (userId) {
-        return mutationQueueContainsKey(txn, userId, docKey).next(function (containsKey) {
-            if (containsKey) {
-                found = true;
-            }
-            return PersistencePromise.resolve(!containsKey);
-        });
-    })
-        .next(function () { return found; });
-}
-/**
- * Delete a mutation batch and the associated document mutations.
- * @return A PersistencePromise of the document mutations that were removed.
- */
-function removeMutationBatch(txn, userId, batch) {
-    var mutationStore = txn.store(DbMutationBatch.store);
-    var indexTxn = txn.store(DbDocumentMutation.store);
-    var promises = [];
-    var range = IDBKeyRange.only(batch.batchId);
-    var numDeleted = 0;
-    var removePromise = mutationStore.iterate({ range: range }, function (key, value, control) {
-        numDeleted++;
-        return control.delete();
-    });
-    promises.push(removePromise.next(function () {
-        assert(numDeleted === 1, 'Dangling document-mutation reference found: Missing batch ' +
-            batch.batchId);
-    }));
-    var removedDocuments = [];
-    for (var _i = 0, _a = batch.mutations; _i < _a.length; _i++) {
-        var mutation = _a[_i];
-        var indexKey = DbDocumentMutation.key(userId, mutation.key.path, batch.batchId);
-        promises.push(indexTxn.delete(indexKey));
-        removedDocuments.push(mutation.key);
-    }
-    return PersistencePromise.waitFor(promises).next(function () { return removedDocuments; });
-}
-function convertStreamToken(token) {
-    if (token instanceof Uint8Array) {
-        // TODO(b/78771403): Convert tokens to strings during deserialization
-        assert(process.env.USE_MOCK_PERSISTENCE === 'YES', 'Persisting non-string stream tokens is only supported with mock persistence.');
-        return token.toString();
-    }
-    else {
-        return token;
-    }
-}
-/**
- * Helper to get a typed SimpleDbStore for the mutations object store.
- */
-function mutationsStore(txn) {
-    return IndexedDbPersistence.getStore(txn, DbMutationBatch.store);
-}
-/**
- * Helper to get a typed SimpleDbStore for the mutationQueues object store.
- */
-function documentMutationsStore(txn) {
-    return IndexedDbPersistence.getStore(txn, DbDocumentMutation.store);
-}
-/**
- * Helper to get a typed SimpleDbStore for the mutationQueues object store.
- */
-function mutationQueuesStore(txn) {
-    return IndexedDbPersistence.getStore(txn, DbMutationQueue.store);
-}
-
-/**
- * @license
- * Copyright 2017 Google Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-var RESERVED_BITS = 1;
-var GeneratorIds;
-(function (GeneratorIds) {
-    GeneratorIds[GeneratorIds["QueryCache"] = 0] = "QueryCache";
-    GeneratorIds[GeneratorIds["SyncEngine"] = 1] = "SyncEngine"; // The target IDs for limbo detection are odd (end in 1).
-})(GeneratorIds || (GeneratorIds = {}));
-/**
- * Generates monotonically increasing target IDs for sending targets to the
- * watch stream.
- *
- * The client constructs two generators, one for the query cache (via
- * forQueryCache()), and one for limbo documents (via forSyncEngine()). These
- * two generators produce non-overlapping IDs (by using even and odd IDs
- * respectively).
- *
- * By separating the target ID space, the query cache can generate target IDs
- * that persist across client restarts, while sync engine can independently
- * generate in-memory target IDs that are transient and can be reused after a
- * restart.
- */
-// TODO(mrschmidt): Explore removing this class in favor of generating these IDs
-// directly in SyncEngine and LocalStore.
-var TargetIdGenerator = /** @class */ (function () {
-    /**
-     * Instantiates a new TargetIdGenerator. If a seed is provided, the generator
-     * will use the seed value as the next target ID.
-     */
-    function TargetIdGenerator(generatorId, seed) {
-        this.generatorId = generatorId;
-        assert((generatorId & RESERVED_BITS) === generatorId, "Generator ID " + generatorId + " contains more than " + RESERVED_BITS + " reserved bits");
-        this.seek(seed !== undefined ? seed : this.generatorId);
-    }
-    TargetIdGenerator.prototype.next = function () {
-        var nextId = this.nextId;
-        this.nextId += 1 << RESERVED_BITS;
-        return nextId;
-    };
-    /**
-     * Returns the ID that follows the given ID. Subsequent calls to `next()`
-     * use the newly returned target ID as their base.
-     */
-    // PORTING NOTE: Multi-tab only.
-    TargetIdGenerator.prototype.after = function (targetId) {
-        this.seek(targetId + (1 << RESERVED_BITS));
-        return this.next();
-    };
-    TargetIdGenerator.prototype.seek = function (targetId) {
-        assert((targetId & RESERVED_BITS) === this.generatorId, 'Cannot supply target ID from different generator ID');
-        this.nextId = targetId;
-    };
-    TargetIdGenerator.forQueryCache = function () {
-        // We seed the query cache generator to return '2' as its first ID, as there
-        // is no differentiation in the protocol layer between an unset number and
-        // the number '0'. If we were to sent a target with target ID '0', the
-        // backend would consider it unset and replace it with its own ID.
-        var targetIdGenerator = new TargetIdGenerator(GeneratorIds.QueryCache, 2);
-        return targetIdGenerator;
-    };
-    TargetIdGenerator.forSyncEngine = function () {
-        // Sync engine assigns target IDs for limbo document detection.
-        return new TargetIdGenerator(GeneratorIds.SyncEngine);
-    };
-    return TargetIdGenerator;
-}());
-
-/**
- * @license
- * Copyright 2017 Google Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 var LOG_TAG = 'SimpleDb';
+/**
+ * The maximum number of retry attempts for an IndexedDb transaction that fails
+ * with a DOMException.
+ */
+var TRANSACTION_RETRY_COUNT = 3;
 /**
  * Provides a wrapper around IndexedDb with a simplified interface that uses
  * Promise-like return values to chain operations. Real promises cannot be used
@@ -20754,12 +20228,8 @@ var SimpleDb = /** @class */ (function () {
             request.onupgradeneeded = function (event) {
                 debug(LOG_TAG, 'Database "' + name + '" requires upgrade from version:', event.oldVersion);
                 var db = event.target.result;
-                // We are provided a version upgrade transaction from the request, so
-                // we wrap that in a SimpleDbTransaction to allow use of our friendlier
-                // API for schema migration operations.
-                var txn = new SimpleDbTransaction(request.transaction);
                 schemaConverter
-                    .createOrUpgrade(db, txn, event.oldVersion, SCHEMA_VERSION)
+                    .createOrUpgrade(db, request.transaction, event.oldVersion, SCHEMA_VERSION)
                     .next(function () {
                     debug(LOG_TAG, 'Database upgrade to version ' + SCHEMA_VERSION + ' complete');
                 });
@@ -20776,18 +20246,21 @@ var SimpleDb = /** @class */ (function () {
         if (typeof window === 'undefined' || window.indexedDB == null) {
             return false;
         }
+        if (SimpleDb.isMockPersistence()) {
+            return true;
+        }
+        // In some Node environments, `window` is defined, but `window.navigator` is
+        // not. We don't support IndexedDB persistence in Node if the
+        // isMockPersistence() check above returns false.
+        if (window.navigator === undefined) {
+            return false;
+        }
         // We extensively use indexed array values and compound keys,
         // which IE and Edge do not support. However, they still have indexedDB
         // defined on the window, so we need to check for them here and make sure
         // to return that persistence is not enabled for those browsers.
         // For tracking support of this feature, see here:
         // https://developer.microsoft.com/en-us/microsoft-edge/platform/status/indexeddbarraysandmultientrysupport/
-        // If we are running in Node using the IndexedDBShim, `window` is defined,
-        // but `window.navigator` is not. In this case, we support IndexedDB and
-        // return `true`.
-        if (window.navigator === undefined) {
-            return process.env.USE_MOCK_PERSISTENCE === 'YES';
-        }
         // Check the UA string to find out the browser.
         var ua = util.getUA();
         // IE 10
@@ -20813,6 +20286,14 @@ var SimpleDb = /** @class */ (function () {
         else {
             return true;
         }
+    };
+    /**
+     * Returns true if the backing IndexedDB store is the Node IndexedDBShim
+     * (see https://github.com/axemclion/IndexedDBShim).
+     */
+    SimpleDb.isMockPersistence = function () {
+        return (typeof process !== 'undefined' &&
+            process.env.USE_MOCK_PERSISTENCE === 'YES');
     };
     /** Helper to get a typed SimpleDbStore from a transaction. */
     SimpleDb.getStore = function (txn, store) {
@@ -20848,25 +20329,75 @@ var SimpleDb = /** @class */ (function () {
         };
     };
     SimpleDb.prototype.runTransaction = function (mode, objectStores, transactionFn) {
-        var transaction = SimpleDbTransaction.open(this.db, mode, objectStores);
-        var transactionFnResult = transactionFn(transaction)
-            .catch(function (error) {
-            // Abort the transaction if there was an error.
-            transaction.abort(error);
-            // We cannot actually recover, and calling `abort()` will cause the transaction's
-            // completion promise to be rejected. This in turn means that we won't use
-            // `transactionFnResult` below. We return a rejection here so that we don't add the
-            // possibility of returning `void` to the type of `transactionFnResult`.
-            return PersistencePromise.reject(error);
-        })
-            .toPromise();
-        // As noted above, errors are propagated by aborting the transaction. So
-        // we swallow any error here to avoid the browser logging it as unhandled.
-        transactionFnResult.catch(function () { });
-        // Wait for the transaction to complete (i.e. IndexedDb's onsuccess event to
-        // fire), but still return the original transactionFnResult back to the
-        // caller.
-        return transaction.completionPromise.then(function () { return transactionFnResult; });
+        return tslib.__awaiter(this, void 0, void 0, function () {
+            var readonly, idempotent, attemptNumber, _loop_1, this_1, state_1;
+            return tslib.__generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        readonly = mode.startsWith('readonly');
+                        idempotent = mode.endsWith('idempotent');
+                        attemptNumber = 0;
+                        _loop_1 = function () {
+                            var transaction, transactionFnResult, error_1, retryable;
+                            return tslib.__generator(this, function (_a) {
+                                switch (_a.label) {
+                                    case 0:
+                                        ++attemptNumber;
+                                        transaction = SimpleDbTransaction.open(this_1.db, readonly ? 'readonly' : 'readwrite', objectStores);
+                                        _a.label = 1;
+                                    case 1:
+                                        _a.trys.push([1, 3, , 4]);
+                                        transactionFnResult = transactionFn(transaction)
+                                            .catch(function (error) {
+                                            // Abort the transaction if there was an error.
+                                            transaction.abort(error);
+                                            // We cannot actually recover, and calling `abort()` will cause the transaction's
+                                            // completion promise to be rejected. This in turn means that we won't use
+                                            // `transactionFnResult` below. We return a rejection here so that we don't add the
+                                            // possibility of returning `void` to the type of `transactionFnResult`.
+                                            return PersistencePromise.reject(error);
+                                        })
+                                            .toPromise();
+                                        // As noted above, errors are propagated by aborting the transaction. So
+                                        // we swallow any error here to avoid the browser logging it as unhandled.
+                                        transactionFnResult.catch(function () { });
+                                        // Wait for the transaction to complete (i.e. IndexedDb's onsuccess event to
+                                        // fire), but still return the original transactionFnResult back to the
+                                        // caller.
+                                        return [4 /*yield*/, transaction.completionPromise];
+                                    case 2:
+                                        // Wait for the transaction to complete (i.e. IndexedDb's onsuccess event to
+                                        // fire), but still return the original transactionFnResult back to the
+                                        // caller.
+                                        _a.sent();
+                                        return [2 /*return*/, { value: transactionFnResult }];
+                                    case 3:
+                                        error_1 = _a.sent();
+                                        retryable = idempotent &&
+                                            error_1.name !== 'FirebaseError' &&
+                                            attemptNumber < TRANSACTION_RETRY_COUNT;
+                                        debug(LOG_TAG, 'Transaction failed with error: %s. Retrying: %s.', error_1.message, retryable);
+                                        if (!retryable) {
+                                            return [2 /*return*/, { value: Promise.reject(error_1) }];
+                                        }
+                                        return [3 /*break*/, 4];
+                                    case 4: return [2 /*return*/];
+                                }
+                            });
+                        };
+                        this_1 = this;
+                        _a.label = 1;
+                    case 1:
+                        return [5 /*yield**/, _loop_1()];
+                    case 2:
+                        state_1 = _a.sent();
+                        if (typeof state_1 === "object")
+                            return [2 /*return*/, state_1.value];
+                        return [3 /*break*/, 1];
+                    case 3: return [2 /*return*/];
+                }
+            });
+        });
     };
     SimpleDb.prototype.close = function () {
         this.db.close();
@@ -21041,7 +20572,8 @@ var SimpleDbStore = /** @class */ (function () {
     SimpleDbStore.prototype.get = function (key) {
         var _this = this;
         var request = this.store.get(key);
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any, We're doing an unsafe cast to ValueType.
+        // We're doing an unsafe cast to ValueType.
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         return wrapRequest(request).next(function (result) {
             // Normalize nonexistence to null.
             if (result === undefined) {
@@ -21260,6 +20792,551 @@ function checkForAndReportiOSError(error) {
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/** A mutation queue for a specific user, backed by IndexedDB. */
+var IndexedDbMutationQueue = /** @class */ (function () {
+    function IndexedDbMutationQueue(
+    /**
+     * The normalized userId (e.g. null UID => "" userId) used to store /
+     * retrieve mutations.
+     */
+    userId, serializer, indexManager, referenceDelegate) {
+        this.userId = userId;
+        this.serializer = serializer;
+        this.indexManager = indexManager;
+        this.referenceDelegate = referenceDelegate;
+        /**
+         * Caches the document keys for pending mutation batches. If the mutation
+         * has been removed from IndexedDb, the cached value may continue to
+         * be used to retrieve the batch's document keys. To remove a cached value
+         * locally, `removeCachedMutationKeys()` should be invoked either directly
+         * or through `removeMutationBatches()`.
+         *
+         * With multi-tab, when the primary client acknowledges or rejects a mutation,
+         * this cache is used by secondary clients to invalidate the local
+         * view of the documents that were previously affected by the mutation.
+         */
+        // PORTING NOTE: Multi-tab only.
+        this.documentKeysByBatchId = {};
+    }
+    /**
+     * Creates a new mutation queue for the given user.
+     * @param user The user for which to create a mutation queue.
+     * @param serializer The serializer to use when persisting to IndexedDb.
+     */
+    IndexedDbMutationQueue.forUser = function (user, serializer, indexManager, referenceDelegate) {
+        // TODO(mcg): Figure out what constraints there are on userIDs
+        // In particular, are there any reserved characters? are empty ids allowed?
+        // For the moment store these together in the same mutations table assuming
+        // that empty userIDs aren't allowed.
+        assert(user.uid !== '', 'UserID must not be an empty string.');
+        var userId = user.isAuthenticated() ? user.uid : '';
+        return new IndexedDbMutationQueue(userId, serializer, indexManager, referenceDelegate);
+    };
+    IndexedDbMutationQueue.prototype.checkEmpty = function (transaction) {
+        var empty = true;
+        var range = IDBKeyRange.bound([this.userId, Number.NEGATIVE_INFINITY], [this.userId, Number.POSITIVE_INFINITY]);
+        return mutationsStore(transaction)
+            .iterate({ index: DbMutationBatch.userMutationsIndex, range: range }, function (key, value, control) {
+            empty = false;
+            control.done();
+        })
+            .next(function () { return empty; });
+    };
+    IndexedDbMutationQueue.prototype.acknowledgeBatch = function (transaction, batch, streamToken) {
+        return this.getMutationQueueMetadata(transaction).next(function (metadata) {
+            metadata.lastStreamToken = convertStreamToken(streamToken);
+            return mutationQueuesStore(transaction).put(metadata);
+        });
+    };
+    IndexedDbMutationQueue.prototype.getLastStreamToken = function (transaction) {
+        return this.getMutationQueueMetadata(transaction).next(function (metadata) { return metadata.lastStreamToken; });
+    };
+    IndexedDbMutationQueue.prototype.setLastStreamToken = function (transaction, streamToken) {
+        return this.getMutationQueueMetadata(transaction).next(function (metadata) {
+            metadata.lastStreamToken = convertStreamToken(streamToken);
+            return mutationQueuesStore(transaction).put(metadata);
+        });
+    };
+    IndexedDbMutationQueue.prototype.addMutationBatch = function (transaction, localWriteTime, baseMutations, mutations) {
+        var _this = this;
+        var documentStore = documentMutationsStore(transaction);
+        var mutationStore = mutationsStore(transaction);
+        // The IndexedDb implementation in Chrome (and Firefox) does not handle
+        // compound indices that include auto-generated keys correctly. To ensure
+        // that the index entry is added correctly in all browsers, we perform two
+        // writes: The first write is used to retrieve the next auto-generated Batch
+        // ID, and the second write populates the index and stores the actual
+        // mutation batch.
+        // See: https://bugs.chromium.org/p/chromium/issues/detail?id=701972
+        // We write an empty object to obtain key
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        return mutationStore.add({}).next(function (batchId) {
+            assert(typeof batchId === 'number', 'Auto-generated key is not a number');
+            var batch = new MutationBatch(batchId, localWriteTime, baseMutations, mutations);
+            var dbBatch = _this.serializer.toDbMutationBatch(_this.userId, batch);
+            var promises = [];
+            var collectionParents = new SortedSet(function (l, r) {
+                return primitiveComparator(l.canonicalString(), r.canonicalString());
+            });
+            for (var _i = 0, mutations_1 = mutations; _i < mutations_1.length; _i++) {
+                var mutation = mutations_1[_i];
+                var indexKey = DbDocumentMutation.key(_this.userId, mutation.key.path, batchId);
+                collectionParents = collectionParents.add(mutation.key.path.popLast());
+                promises.push(mutationStore.put(dbBatch));
+                promises.push(documentStore.put(indexKey, DbDocumentMutation.PLACEHOLDER));
+            }
+            collectionParents.forEach(function (parent) {
+                promises.push(_this.indexManager.addToCollectionParentIndex(transaction, parent));
+            });
+            transaction.addOnCommittedListener(function () {
+                _this.documentKeysByBatchId[batchId] = batch.keys();
+            });
+            return PersistencePromise.waitFor(promises).next(function () { return batch; });
+        });
+    };
+    IndexedDbMutationQueue.prototype.lookupMutationBatch = function (transaction, batchId) {
+        var _this = this;
+        return mutationsStore(transaction)
+            .get(batchId)
+            .next(function (dbBatch) {
+            if (dbBatch) {
+                assert(dbBatch.userId === _this.userId, "Unexpected user '" + dbBatch.userId + "' for mutation batch " + batchId);
+                return _this.serializer.fromDbMutationBatch(dbBatch);
+            }
+            return null;
+        });
+    };
+    IndexedDbMutationQueue.prototype.lookupMutationKeys = function (transaction, batchId) {
+        var _this = this;
+        if (this.documentKeysByBatchId[batchId]) {
+            return PersistencePromise.resolve(this.documentKeysByBatchId[batchId]);
+        }
+        else {
+            return this.lookupMutationBatch(transaction, batchId).next(function (batch) {
+                if (batch) {
+                    var keys = batch.keys();
+                    _this.documentKeysByBatchId[batchId] = keys;
+                    return keys;
+                }
+                else {
+                    return null;
+                }
+            });
+        }
+    };
+    IndexedDbMutationQueue.prototype.getNextMutationBatchAfterBatchId = function (transaction, batchId) {
+        var _this = this;
+        var nextBatchId = batchId + 1;
+        var range = IDBKeyRange.lowerBound([this.userId, nextBatchId]);
+        var foundBatch = null;
+        return mutationsStore(transaction)
+            .iterate({ index: DbMutationBatch.userMutationsIndex, range: range }, function (key, dbBatch, control) {
+            if (dbBatch.userId === _this.userId) {
+                assert(dbBatch.batchId >= nextBatchId, 'Should have found mutation after ' + nextBatchId);
+                foundBatch = _this.serializer.fromDbMutationBatch(dbBatch);
+            }
+            control.done();
+        })
+            .next(function () { return foundBatch; });
+    };
+    IndexedDbMutationQueue.prototype.getHighestUnacknowledgedBatchId = function (transaction) {
+        var range = IDBKeyRange.upperBound([
+            this.userId,
+            Number.POSITIVE_INFINITY
+        ]);
+        var batchId = BATCHID_UNKNOWN;
+        return mutationsStore(transaction)
+            .iterate({ index: DbMutationBatch.userMutationsIndex, range: range, reverse: true }, function (key, dbBatch, control) {
+            batchId = dbBatch.batchId;
+            control.done();
+        })
+            .next(function () { return batchId; });
+    };
+    IndexedDbMutationQueue.prototype.getAllMutationBatches = function (transaction) {
+        var _this = this;
+        var range = IDBKeyRange.bound([this.userId, BATCHID_UNKNOWN], [this.userId, Number.POSITIVE_INFINITY]);
+        return mutationsStore(transaction)
+            .loadAll(DbMutationBatch.userMutationsIndex, range)
+            .next(function (dbBatches) {
+            return dbBatches.map(function (dbBatch) { return _this.serializer.fromDbMutationBatch(dbBatch); });
+        });
+    };
+    IndexedDbMutationQueue.prototype.getAllMutationBatchesAffectingDocumentKey = function (transaction, documentKey) {
+        var _this = this;
+        // Scan the document-mutation index starting with a prefix starting with
+        // the given documentKey.
+        var indexPrefix = DbDocumentMutation.prefixForPath(this.userId, documentKey.path);
+        var indexStart = IDBKeyRange.lowerBound(indexPrefix);
+        var results = [];
+        return documentMutationsStore(transaction)
+            .iterate({ range: indexStart }, function (indexKey, _, control) {
+            var userID = indexKey[0], encodedPath = indexKey[1], batchId = indexKey[2];
+            // Only consider rows matching exactly the specific key of
+            // interest. Note that because we order by path first, and we
+            // order terminators before path separators, we'll encounter all
+            // the index rows for documentKey contiguously. In particular, all
+            // the rows for documentKey will occur before any rows for
+            // documents nested in a subcollection beneath documentKey so we
+            // can stop as soon as we hit any such row.
+            var path = decode(encodedPath);
+            if (userID !== _this.userId || !documentKey.path.isEqual(path)) {
+                control.done();
+                return;
+            }
+            // Look up the mutation batch in the store.
+            return mutationsStore(transaction)
+                .get(batchId)
+                .next(function (mutation) {
+                if (!mutation) {
+                    throw fail('Dangling document-mutation reference found: ' +
+                        indexKey +
+                        ' which points to ' +
+                        batchId);
+                }
+                assert(mutation.userId === _this.userId, "Unexpected user '" + mutation.userId + "' for mutation batch " + batchId);
+                results.push(_this.serializer.fromDbMutationBatch(mutation));
+            });
+        })
+            .next(function () { return results; });
+    };
+    IndexedDbMutationQueue.prototype.getAllMutationBatchesAffectingDocumentKeys = function (transaction, documentKeys) {
+        var _this = this;
+        var uniqueBatchIDs = new SortedSet(primitiveComparator);
+        var promises = [];
+        documentKeys.forEach(function (documentKey) {
+            var indexStart = DbDocumentMutation.prefixForPath(_this.userId, documentKey.path);
+            var range = IDBKeyRange.lowerBound(indexStart);
+            var promise = documentMutationsStore(transaction).iterate({ range: range }, function (indexKey, _, control) {
+                var userID = indexKey[0], encodedPath = indexKey[1], batchID = indexKey[2];
+                // Only consider rows matching exactly the specific key of
+                // interest. Note that because we order by path first, and we
+                // order terminators before path separators, we'll encounter all
+                // the index rows for documentKey contiguously. In particular, all
+                // the rows for documentKey will occur before any rows for
+                // documents nested in a subcollection beneath documentKey so we
+                // can stop as soon as we hit any such row.
+                var path = decode(encodedPath);
+                if (userID !== _this.userId || !documentKey.path.isEqual(path)) {
+                    control.done();
+                    return;
+                }
+                uniqueBatchIDs = uniqueBatchIDs.add(batchID);
+            });
+            promises.push(promise);
+        });
+        return PersistencePromise.waitFor(promises).next(function () {
+            return _this.lookupMutationBatches(transaction, uniqueBatchIDs);
+        });
+    };
+    IndexedDbMutationQueue.prototype.getAllMutationBatchesAffectingQuery = function (transaction, query) {
+        var _this = this;
+        assert(!query.isDocumentQuery(), "Document queries shouldn't go down this path");
+        assert(!query.isCollectionGroupQuery(), 'CollectionGroup queries should be handled in LocalDocumentsView');
+        var queryPath = query.path;
+        var immediateChildrenLength = queryPath.length + 1;
+        // TODO(mcg): Actually implement a single-collection query
+        //
+        // This is actually executing an ancestor query, traversing the whole
+        // subtree below the collection which can be horrifically inefficient for
+        // some structures. The right way to solve this is to implement the full
+        // value index, but that's not in the cards in the near future so this is
+        // the best we can do for the moment.
+        //
+        // Since we don't yet index the actual properties in the mutations, our
+        // current approach is to just return all mutation batches that affect
+        // documents in the collection being queried.
+        var indexPrefix = DbDocumentMutation.prefixForPath(this.userId, queryPath);
+        var indexStart = IDBKeyRange.lowerBound(indexPrefix);
+        // Collect up unique batchIDs encountered during a scan of the index. Use a
+        // SortedSet to accumulate batch IDs so they can be traversed in order in a
+        // scan of the main table.
+        var uniqueBatchIDs = new SortedSet(primitiveComparator);
+        return documentMutationsStore(transaction)
+            .iterate({ range: indexStart }, function (indexKey, _, control) {
+            var userID = indexKey[0], encodedPath = indexKey[1], batchID = indexKey[2];
+            var path = decode(encodedPath);
+            if (userID !== _this.userId || !queryPath.isPrefixOf(path)) {
+                control.done();
+                return;
+            }
+            // Rows with document keys more than one segment longer than the
+            // query path can't be matches. For example, a query on 'rooms'
+            // can't match the document /rooms/abc/messages/xyx.
+            // TODO(mcg): we'll need a different scanner when we implement
+            // ancestor queries.
+            if (path.length !== immediateChildrenLength) {
+                return;
+            }
+            uniqueBatchIDs = uniqueBatchIDs.add(batchID);
+        })
+            .next(function () { return _this.lookupMutationBatches(transaction, uniqueBatchIDs); });
+    };
+    IndexedDbMutationQueue.prototype.lookupMutationBatches = function (transaction, batchIDs) {
+        var _this = this;
+        var results = [];
+        var promises = [];
+        // TODO(rockwood): Implement this using iterate.
+        batchIDs.forEach(function (batchId) {
+            promises.push(mutationsStore(transaction)
+                .get(batchId)
+                .next(function (mutation) {
+                if (mutation === null) {
+                    throw fail('Dangling document-mutation reference found, ' +
+                        'which points to ' +
+                        batchId);
+                }
+                assert(mutation.userId === _this.userId, "Unexpected user '" + mutation.userId + "' for mutation batch " + batchId);
+                results.push(_this.serializer.fromDbMutationBatch(mutation));
+            }));
+        });
+        return PersistencePromise.waitFor(promises).next(function () { return results; });
+    };
+    IndexedDbMutationQueue.prototype.removeMutationBatch = function (transaction, batch) {
+        var _this = this;
+        return removeMutationBatch(transaction.simpleDbTransaction, this.userId, batch).next(function (removedDocuments) {
+            transaction.addOnCommittedListener(function () {
+                _this.removeCachedMutationKeys(batch.batchId);
+            });
+            return PersistencePromise.forEach(removedDocuments, function (key) {
+                return _this.referenceDelegate.removeMutationReference(transaction, key);
+            });
+        });
+    };
+    IndexedDbMutationQueue.prototype.removeCachedMutationKeys = function (batchId) {
+        delete this.documentKeysByBatchId[batchId];
+    };
+    IndexedDbMutationQueue.prototype.performConsistencyCheck = function (txn) {
+        var _this = this;
+        return this.checkEmpty(txn).next(function (empty) {
+            if (!empty) {
+                return PersistencePromise.resolve();
+            }
+            // Verify that there are no entries in the documentMutations index if
+            // the queue is empty.
+            var startRange = IDBKeyRange.lowerBound(DbDocumentMutation.prefixForUser(_this.userId));
+            var danglingMutationReferences = [];
+            return documentMutationsStore(txn)
+                .iterate({ range: startRange }, function (key, _, control) {
+                var userID = key[0];
+                if (userID !== _this.userId) {
+                    control.done();
+                    return;
+                }
+                else {
+                    var path = decode(key[1]);
+                    danglingMutationReferences.push(path);
+                }
+            })
+                .next(function () {
+                assert(danglingMutationReferences.length === 0, 'Document leak -- detected dangling mutation references when queue is empty. ' +
+                    'Dangling keys: ' +
+                    danglingMutationReferences.map(function (p) { return p.canonicalString(); }));
+            });
+        });
+    };
+    IndexedDbMutationQueue.prototype.containsKey = function (txn, key) {
+        return mutationQueueContainsKey(txn, this.userId, key);
+    };
+    // PORTING NOTE: Multi-tab only (state is held in memory in other clients).
+    /** Returns the mutation queue's metadata from IndexedDb. */
+    IndexedDbMutationQueue.prototype.getMutationQueueMetadata = function (transaction) {
+        var _this = this;
+        return mutationQueuesStore(transaction)
+            .get(this.userId)
+            .next(function (metadata) {
+            return (metadata ||
+                new DbMutationQueue(_this.userId, BATCHID_UNKNOWN, 
+                /*lastStreamToken=*/ ''));
+        });
+    };
+    return IndexedDbMutationQueue;
+}());
+/**
+ * @return true if the mutation queue for the given user contains a pending
+ *         mutation for the given key.
+ */
+function mutationQueueContainsKey(txn, userId, key) {
+    var indexKey = DbDocumentMutation.prefixForPath(userId, key.path);
+    var encodedPath = indexKey[1];
+    var startRange = IDBKeyRange.lowerBound(indexKey);
+    var containsKey = false;
+    return documentMutationsStore(txn)
+        .iterate({ range: startRange, keysOnly: true }, function (key, value, control) {
+        var userID = key[0], keyPath = key[1], /*batchID*/ _ = key[2];
+        if (userID === userId && keyPath === encodedPath) {
+            containsKey = true;
+        }
+        control.done();
+    })
+        .next(function () { return containsKey; });
+}
+/** Returns true if any mutation queue contains the given document. */
+function mutationQueuesContainKey(txn, docKey) {
+    var found = false;
+    return mutationQueuesStore(txn)
+        .iterateSerial(function (userId) {
+        return mutationQueueContainsKey(txn, userId, docKey).next(function (containsKey) {
+            if (containsKey) {
+                found = true;
+            }
+            return PersistencePromise.resolve(!containsKey);
+        });
+    })
+        .next(function () { return found; });
+}
+/**
+ * Delete a mutation batch and the associated document mutations.
+ * @return A PersistencePromise of the document mutations that were removed.
+ */
+function removeMutationBatch(txn, userId, batch) {
+    var mutationStore = txn.store(DbMutationBatch.store);
+    var indexTxn = txn.store(DbDocumentMutation.store);
+    var promises = [];
+    var range = IDBKeyRange.only(batch.batchId);
+    var numDeleted = 0;
+    var removePromise = mutationStore.iterate({ range: range }, function (key, value, control) {
+        numDeleted++;
+        return control.delete();
+    });
+    promises.push(removePromise.next(function () {
+        assert(numDeleted === 1, 'Dangling document-mutation reference found: Missing batch ' +
+            batch.batchId);
+    }));
+    var removedDocuments = [];
+    for (var _i = 0, _a = batch.mutations; _i < _a.length; _i++) {
+        var mutation = _a[_i];
+        var indexKey = DbDocumentMutation.key(userId, mutation.key.path, batch.batchId);
+        promises.push(indexTxn.delete(indexKey));
+        removedDocuments.push(mutation.key);
+    }
+    return PersistencePromise.waitFor(promises).next(function () { return removedDocuments; });
+}
+function convertStreamToken(token) {
+    if (token instanceof Uint8Array) {
+        // TODO(b/78771403): Convert tokens to strings during deserialization
+        assert(SimpleDb.isMockPersistence(), 'Persisting non-string stream tokens is only supported with mock persistence.');
+        return token.toString();
+    }
+    else {
+        return token;
+    }
+}
+/**
+ * Helper to get a typed SimpleDbStore for the mutations object store.
+ */
+function mutationsStore(txn) {
+    return IndexedDbPersistence.getStore(txn, DbMutationBatch.store);
+}
+/**
+ * Helper to get a typed SimpleDbStore for the mutationQueues object store.
+ */
+function documentMutationsStore(txn) {
+    return IndexedDbPersistence.getStore(txn, DbDocumentMutation.store);
+}
+/**
+ * Helper to get a typed SimpleDbStore for the mutationQueues object store.
+ */
+function mutationQueuesStore(txn) {
+    return IndexedDbPersistence.getStore(txn, DbMutationQueue.store);
+}
+
+/**
+ * @license
+ * Copyright 2017 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+var RESERVED_BITS = 1;
+var GeneratorIds;
+(function (GeneratorIds) {
+    GeneratorIds[GeneratorIds["QueryCache"] = 0] = "QueryCache";
+    GeneratorIds[GeneratorIds["SyncEngine"] = 1] = "SyncEngine"; // The target IDs for limbo detection are odd (end in 1).
+})(GeneratorIds || (GeneratorIds = {}));
+/**
+ * Generates monotonically increasing target IDs for sending targets to the
+ * watch stream.
+ *
+ * The client constructs two generators, one for the query cache (via
+ * forQueryCache()), and one for limbo documents (via forSyncEngine()). These
+ * two generators produce non-overlapping IDs (by using even and odd IDs
+ * respectively).
+ *
+ * By separating the target ID space, the query cache can generate target IDs
+ * that persist across client restarts, while sync engine can independently
+ * generate in-memory target IDs that are transient and can be reused after a
+ * restart.
+ */
+// TODO(mrschmidt): Explore removing this class in favor of generating these IDs
+// directly in SyncEngine and LocalStore.
+var TargetIdGenerator = /** @class */ (function () {
+    /**
+     * Instantiates a new TargetIdGenerator. If a seed is provided, the generator
+     * will use the seed value as the next target ID.
+     */
+    function TargetIdGenerator(generatorId, seed) {
+        this.generatorId = generatorId;
+        assert((generatorId & RESERVED_BITS) === generatorId, "Generator ID " + generatorId + " contains more than " + RESERVED_BITS + " reserved bits");
+        this.seek(seed !== undefined ? seed : this.generatorId);
+    }
+    TargetIdGenerator.prototype.next = function () {
+        var nextId = this.nextId;
+        this.nextId += 1 << RESERVED_BITS;
+        return nextId;
+    };
+    /**
+     * Returns the ID that follows the given ID. Subsequent calls to `next()`
+     * use the newly returned target ID as their base.
+     */
+    // PORTING NOTE: Multi-tab only.
+    TargetIdGenerator.prototype.after = function (targetId) {
+        this.seek(targetId + (1 << RESERVED_BITS));
+        return this.next();
+    };
+    TargetIdGenerator.prototype.seek = function (targetId) {
+        assert((targetId & RESERVED_BITS) === this.generatorId, 'Cannot supply target ID from different generator ID');
+        this.nextId = targetId;
+    };
+    TargetIdGenerator.forQueryCache = function () {
+        // We seed the query cache generator to return '2' as its first ID, as there
+        // is no differentiation in the protocol layer between an unset number and
+        // the number '0'. If we were to sent a target with target ID '0', the
+        // backend would consider it unset and replace it with its own ID.
+        var targetIdGenerator = new TargetIdGenerator(GeneratorIds.QueryCache, 2);
+        return targetIdGenerator;
+    };
+    TargetIdGenerator.forSyncEngine = function () {
+        // Sync engine assigns target IDs for limbo document detection.
+        return new TargetIdGenerator(GeneratorIds.SyncEngine);
+    };
+    return TargetIdGenerator;
+}());
+
+/**
+ * @license
+ * Copyright 2017 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 var IndexedDbQueryCache = /** @class */ (function () {
     function IndexedDbQueryCache(referenceDelegate, serializer) {
         this.referenceDelegate = referenceDelegate;
@@ -21337,7 +21414,7 @@ var IndexedDbQueryCache = /** @class */ (function () {
             .iterate(function (key, value) {
             var queryData = _this.serializer.fromDbTarget(value);
             if (queryData.sequenceNumber <= upperBound &&
-                activeTargetIds[queryData.targetId] === undefined) {
+                activeTargetIds.get(queryData.targetId) === null) {
                 count++;
                 promises.push(_this.removeQueryData(txn, queryData));
             }
@@ -21751,7 +21828,7 @@ var Mutation = /** @class */ (function () {
  * object value contents.
  */
 var SetMutation = /** @class */ (function (_super) {
-    tslib_1.__extends(SetMutation, _super);
+    tslib.__extends(SetMutation, _super);
     function SetMutation(key, value, precondition) {
         var _this = _super.call(this) || this;
         _this.key = key;
@@ -21806,7 +21883,7 @@ var SetMutation = /** @class */ (function (_super) {
  *    ignored.
  */
 var PatchMutation = /** @class */ (function (_super) {
-    tslib_1.__extends(PatchMutation, _super);
+    tslib.__extends(PatchMutation, _super);
     function PatchMutation(key, data, fieldMask, precondition) {
         var _this = _super.call(this) || this;
         _this.key = key;
@@ -21893,7 +21970,7 @@ var PatchMutation = /** @class */ (function (_super) {
  * Mutation for rationale).
  */
 var TransformMutation = /** @class */ (function (_super) {
-    tslib_1.__extends(TransformMutation, _super);
+    tslib.__extends(TransformMutation, _super);
     function TransformMutation(key, fieldTransforms) {
         var _this = _super.call(this) || this;
         _this.key = key;
@@ -22041,7 +22118,7 @@ var TransformMutation = /** @class */ (function (_super) {
 }(Mutation));
 /** A mutation that deletes the document at the given key. */
 var DeleteMutation = /** @class */ (function (_super) {
-    tslib_1.__extends(DeleteMutation, _super);
+    tslib.__extends(DeleteMutation, _super);
     function DeleteMutation(key, precondition) {
         var _this = _super.call(this) || this;
         _this.key = key;
@@ -22156,7 +22233,7 @@ var FieldValue = /** @class */ (function () {
     return FieldValue;
 }());
 var NullValue = /** @class */ (function (_super) {
-    tslib_1.__extends(NullValue, _super);
+    tslib.__extends(NullValue, _super);
     function NullValue() {
         var _this = _super.call(this) || this;
         _this.typeOrder = TypeOrder.NullValue;
@@ -22181,7 +22258,7 @@ var NullValue = /** @class */ (function (_super) {
     return NullValue;
 }(FieldValue));
 var BooleanValue = /** @class */ (function (_super) {
-    tslib_1.__extends(BooleanValue, _super);
+    tslib.__extends(BooleanValue, _super);
     function BooleanValue(internalValue) {
         var _this = _super.call(this) || this;
         _this.internalValue = internalValue;
@@ -22210,7 +22287,7 @@ var BooleanValue = /** @class */ (function (_super) {
 }(FieldValue));
 /** Base class for IntegerValue and DoubleValue. */
 var NumberValue = /** @class */ (function (_super) {
-    tslib_1.__extends(NumberValue, _super);
+    tslib.__extends(NumberValue, _super);
     function NumberValue(internalValue) {
         var _this = _super.call(this) || this;
         _this.internalValue = internalValue;
@@ -22266,7 +22343,7 @@ function numericEquals(left, right) {
     }
 }
 var IntegerValue = /** @class */ (function (_super) {
-    tslib_1.__extends(IntegerValue, _super);
+    tslib.__extends(IntegerValue, _super);
     function IntegerValue() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -22283,7 +22360,7 @@ var IntegerValue = /** @class */ (function (_super) {
     return IntegerValue;
 }(NumberValue));
 var DoubleValue = /** @class */ (function (_super) {
-    tslib_1.__extends(DoubleValue, _super);
+    tslib.__extends(DoubleValue, _super);
     function DoubleValue() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -22304,7 +22381,7 @@ var DoubleValue = /** @class */ (function (_super) {
 }(NumberValue));
 // TODO(b/37267885): Add truncation support
 var StringValue = /** @class */ (function (_super) {
-    tslib_1.__extends(StringValue, _super);
+    tslib.__extends(StringValue, _super);
     function StringValue(internalValue) {
         var _this = _super.call(this) || this;
         _this.internalValue = internalValue;
@@ -22326,7 +22403,7 @@ var StringValue = /** @class */ (function (_super) {
     return StringValue;
 }(FieldValue));
 var TimestampValue = /** @class */ (function (_super) {
-    tslib_1.__extends(TimestampValue, _super);
+    tslib.__extends(TimestampValue, _super);
     function TimestampValue(internalValue) {
         var _this = _super.call(this) || this;
         _this.internalValue = internalValue;
@@ -22374,7 +22451,7 @@ var TimestampValue = /** @class */ (function (_super) {
  *   localWriteTime.
  */
 var ServerTimestampValue = /** @class */ (function (_super) {
-    tslib_1.__extends(ServerTimestampValue, _super);
+    tslib.__extends(ServerTimestampValue, _super);
     function ServerTimestampValue(localWriteTime, previousValue) {
         var _this = _super.call(this) || this;
         _this.localWriteTime = localWriteTime;
@@ -22417,7 +22494,7 @@ var ServerTimestampValue = /** @class */ (function (_super) {
     return ServerTimestampValue;
 }(FieldValue));
 var BlobValue = /** @class */ (function (_super) {
-    tslib_1.__extends(BlobValue, _super);
+    tslib.__extends(BlobValue, _super);
     function BlobValue(internalValue) {
         var _this = _super.call(this) || this;
         _this.internalValue = internalValue;
@@ -22440,7 +22517,7 @@ var BlobValue = /** @class */ (function (_super) {
     return BlobValue;
 }(FieldValue));
 var RefValue = /** @class */ (function (_super) {
-    tslib_1.__extends(RefValue, _super);
+    tslib.__extends(RefValue, _super);
     function RefValue(databaseId, key) {
         var _this = _super.call(this) || this;
         _this.databaseId = databaseId;
@@ -22469,7 +22546,7 @@ var RefValue = /** @class */ (function (_super) {
     return RefValue;
 }(FieldValue));
 var GeoPointValue = /** @class */ (function (_super) {
-    tslib_1.__extends(GeoPointValue, _super);
+    tslib.__extends(GeoPointValue, _super);
     function GeoPointValue(internalValue) {
         var _this = _super.call(this) || this;
         _this.internalValue = internalValue;
@@ -22492,7 +22569,7 @@ var GeoPointValue = /** @class */ (function (_super) {
     return GeoPointValue;
 }(FieldValue));
 var ObjectValue = /** @class */ (function (_super) {
-    tslib_1.__extends(ObjectValue, _super);
+    tslib.__extends(ObjectValue, _super);
     function ObjectValue(internalValue) {
         var _this = _super.call(this) || this;
         _this.internalValue = internalValue;
@@ -22634,7 +22711,7 @@ var ObjectValue = /** @class */ (function (_super) {
     return ObjectValue;
 }(FieldValue));
 var ArrayValue = /** @class */ (function (_super) {
-    tslib_1.__extends(ArrayValue, _super);
+    tslib.__extends(ArrayValue, _super);
     function ArrayValue(internalValue) {
         var _this = _super.call(this) || this;
         _this.internalValue = internalValue;
@@ -22730,7 +22807,7 @@ var MaybeDocument = /** @class */ (function () {
  * data has local mutations applied to it.
  */
 var Document = /** @class */ (function (_super) {
-    tslib_1.__extends(Document, _super);
+    tslib.__extends(Document, _super);
     function Document(key, version, options, objectValue, proto, converter) {
         var _this = _super.call(this, key, version) || this;
         _this.objectValue = objectValue;
@@ -22843,7 +22920,7 @@ var Document = /** @class */ (function (_super) {
  * denotes time we know it didn't exist at.
  */
 var NoDocument = /** @class */ (function (_super) {
-    tslib_1.__extends(NoDocument, _super);
+    tslib.__extends(NoDocument, _super);
     function NoDocument(key, version, options) {
         var _this = _super.call(this, key, version) || this;
         _this.hasCommittedMutations = !!(options && options.hasCommittedMutations);
@@ -22872,7 +22949,7 @@ var NoDocument = /** @class */ (function (_super) {
  * document that was updated without a known base document).
  */
 var UnknownDocument = /** @class */ (function (_super) {
-    tslib_1.__extends(UnknownDocument, _super);
+    tslib.__extends(UnknownDocument, _super);
     function UnknownDocument() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -23034,14 +23111,30 @@ var RemoteDocumentChangeBuffer = /** @class */ (function () {
         this.changes = new ObjectMap(function (key) { return key.toString(); });
         this.changesApplied = false;
     }
+    Object.defineProperty(RemoteDocumentChangeBuffer.prototype, "readTime", {
+        get: function () {
+            assert(this._readTime !== undefined, 'Read time is not set. All removeEntry() calls must include a readTime if `trackRemovals` is used.');
+            return this._readTime;
+        },
+        set: function (value) {
+            // Right now (for simplicity) we just track a single readTime for all the
+            // added entries since we expect them to all be the same, but we could
+            // rework to store per-entry readTimes if necessary.
+            assert(this._readTime === undefined || this._readTime.isEqual(value), 'All changes in a RemoteDocumentChangeBuffer must have the same read time');
+            this._readTime = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
     /**
      * Buffers a `RemoteDocumentCache.addEntry()` call.
      *
      * You can only modify documents that have already been retrieved via
      * `getEntry()/getEntries()` (enforced via IndexedDbs `apply()`).
      */
-    RemoteDocumentChangeBuffer.prototype.addEntry = function (maybeDocument) {
+    RemoteDocumentChangeBuffer.prototype.addEntry = function (maybeDocument, readTime) {
         this.assertNotApplied();
+        this.readTime = readTime;
         this.changes.set(maybeDocument.key, maybeDocument);
     };
     /**
@@ -23050,8 +23143,11 @@ var RemoteDocumentChangeBuffer = /** @class */ (function () {
      * You can only remove documents that have already been retrieved via
      * `getEntry()/getEntries()` (enforced via IndexedDbs `apply()`).
      */
-    RemoteDocumentChangeBuffer.prototype.removeEntry = function (key) {
+    RemoteDocumentChangeBuffer.prototype.removeEntry = function (key, readTime) {
         this.assertNotApplied();
+        if (readTime) {
+            this.readTime = readTime;
+        }
         this.changes.set(key, null);
     };
     /**
@@ -23121,43 +23217,15 @@ var RemoteDocumentChangeBuffer = /** @class */ (function () {
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-var REMOTE_DOCUMENT_CHANGE_MISSING_ERR_MSG = 'The remote document changelog no longer contains all changes for all ' +
-    'local query views. It may be necessary to rebuild these views.';
 var IndexedDbRemoteDocumentCache = /** @class */ (function () {
     /**
      * @param {LocalSerializer} serializer The document serializer.
      * @param {IndexManager} indexManager The query indexes that need to be maintained.
-     * @param keepDocumentChangeLog Whether to keep a document change log in
-     * IndexedDb. This change log is required for Multi-Tab synchronization, but
-     * not needed in clients that don't share access to their remote document
-     * cache.
      */
-    function IndexedDbRemoteDocumentCache(serializer, indexManager, keepDocumentChangeLog) {
+    function IndexedDbRemoteDocumentCache(serializer, indexManager) {
         this.serializer = serializer;
         this.indexManager = indexManager;
-        this.keepDocumentChangeLog = keepDocumentChangeLog;
-        /** The last id read by `getNewDocumentChanges()`. */
-        this._lastProcessedDocumentChangeId = 0;
     }
-    Object.defineProperty(IndexedDbRemoteDocumentCache.prototype, "lastProcessedDocumentChangeId", {
-        get: function () {
-            return this._lastProcessedDocumentChangeId;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    /**
-     * Starts up the remote document cache.
-     *
-     * Reads the ID of the last  document change from the documentChanges store.
-     * Existing changes will not be returned as part of
-     * `getNewDocumentChanges()`.
-     */
-    // PORTING NOTE: This is only used for multi-tab synchronization.
-    IndexedDbRemoteDocumentCache.prototype.start = function (transaction) {
-        var store = SimpleDb.getStore(transaction, DbRemoteDocumentChanges.store);
-        return this.synchronizeLastDocumentChangeId(store);
-    };
     /**
      * Adds the supplied entries to the cache.
      *
@@ -23165,11 +23233,8 @@ var IndexedDbRemoteDocumentCache = /** @class */ (function () {
      * returned by `newChangeBuffer()` to ensure proper accounting of metadata.
      */
     IndexedDbRemoteDocumentCache.prototype.addEntry = function (transaction, key, doc) {
-        var _this = this;
         var documentStore = remoteDocumentsStore(transaction);
-        return documentStore.put(dbKey(key), doc).next(function () {
-            _this.indexManager.addToCollectionParentIndex(transaction, key.path.popLast());
-        });
+        return documentStore.put(dbKey(key), doc);
     };
     /**
      * Removes a document from the cache.
@@ -23183,21 +23248,16 @@ var IndexedDbRemoteDocumentCache = /** @class */ (function () {
         return store.delete(key);
     };
     /**
-     * Updates the document change log and adds the given delta to the cached current size.
+     * Updates the current cache size.
+     *
      * Callers to `addEntry()` and `removeEntry()` *must* call this afterwards to update the
      * cache's metadata.
      */
-    IndexedDbRemoteDocumentCache.prototype.updateMetadata = function (transaction, changedKeys, sizeDelta) {
+    IndexedDbRemoteDocumentCache.prototype.updateMetadata = function (transaction, sizeDelta) {
         var _this = this;
         return this.getMetadata(transaction).next(function (metadata) {
             metadata.byteSize += sizeDelta;
-            return _this.setMetadata(transaction, metadata).next(function () {
-                if (_this.keepDocumentChangeLog) {
-                    return documentChangesStore(transaction).put({
-                        changes: _this.serializer.toDbResourcePaths(changedKeys)
-                    });
-                }
-            });
+            return _this.setMetadata(transaction, metadata);
         });
     };
     IndexedDbRemoteDocumentCache.prototype.getEntry = function (transaction, documentKey) {
@@ -23205,9 +23265,7 @@ var IndexedDbRemoteDocumentCache = /** @class */ (function () {
         return remoteDocumentsStore(transaction)
             .get(dbKey(documentKey))
             .next(function (dbRemoteDoc) {
-            return dbRemoteDoc
-                ? _this.serializer.fromDbRemoteDocument(dbRemoteDoc)
-                : null;
+            return _this.maybeDecodeDocument(dbRemoteDoc);
         });
     };
     /**
@@ -23221,9 +23279,10 @@ var IndexedDbRemoteDocumentCache = /** @class */ (function () {
         return remoteDocumentsStore(transaction)
             .get(dbKey(documentKey))
             .next(function (dbRemoteDoc) {
-            return dbRemoteDoc
+            var doc = _this.maybeDecodeDocument(dbRemoteDoc);
+            return doc
                 ? {
-                    maybeDocument: _this.serializer.fromDbRemoteDocument(dbRemoteDoc),
+                    maybeDocument: doc,
                     size: dbDocumentSize(dbRemoteDoc)
                 }
                 : null;
@@ -23233,12 +23292,8 @@ var IndexedDbRemoteDocumentCache = /** @class */ (function () {
         var _this = this;
         var results = nullableMaybeDocumentMap();
         return this.forEachDbEntry(transaction, documentKeys, function (key, dbRemoteDoc) {
-            if (dbRemoteDoc) {
-                results = results.insert(key, _this.serializer.fromDbRemoteDocument(dbRemoteDoc));
-            }
-            else {
-                results = results.insert(key, null);
-            }
+            var doc = _this.maybeDecodeDocument(dbRemoteDoc);
+            results = results.insert(key, doc);
         }).next(function () { return results; });
     };
     /**
@@ -23254,8 +23309,9 @@ var IndexedDbRemoteDocumentCache = /** @class */ (function () {
         var results = nullableMaybeDocumentMap();
         var sizeMap = new SortedMap(DocumentKey.comparator);
         return this.forEachDbEntry(transaction, documentKeys, function (key, dbRemoteDoc) {
-            if (dbRemoteDoc) {
-                results = results.insert(key, _this.serializer.fromDbRemoteDocument(dbRemoteDoc));
+            var doc = _this.maybeDecodeDocument(dbRemoteDoc);
+            if (doc) {
+                results = results.insert(key, doc);
                 sizeMap = sizeMap.insert(key, dbDocumentSize(dbRemoteDoc));
             }
             else {
@@ -23303,17 +23359,30 @@ var IndexedDbRemoteDocumentCache = /** @class */ (function () {
             }
         });
     };
-    IndexedDbRemoteDocumentCache.prototype.getDocumentsMatchingQuery = function (transaction, query) {
+    IndexedDbRemoteDocumentCache.prototype.getDocumentsMatchingQuery = function (transaction, query, sinceReadTime) {
         var _this = this;
         assert(!query.isCollectionGroupQuery(), 'CollectionGroup queries should be handled in LocalDocumentsView');
         var results = documentMap();
         var immediateChildrenPathLength = query.path.length + 1;
-        // Documents are ordered by key, so we can use a prefix scan to narrow down
-        // the documents we need to match the query against.
-        var startKey = query.path.toArray();
-        var range = IDBKeyRange.lowerBound(startKey);
+        var iterationOptions = {};
+        if (sinceReadTime.isEqual(SnapshotVersion.MIN)) {
+            // Documents are ordered by key, so we can use a prefix scan to narrow
+            // down the documents we need to match the query against.
+            var startKey = query.path.toArray();
+            iterationOptions.range = IDBKeyRange.lowerBound(startKey);
+        }
+        else {
+            // Execute an index-free query and filter by read time. This is safe
+            // since all document changes to queries that have a
+            // lastLimboFreeSnapshotVersion (`sinceReadTime`) have a read time set.
+            var collectionKey = query.path.toArray();
+            var readTimeKey = this.serializer.toDbTimestampKey(sinceReadTime);
+            iterationOptions.range = IDBKeyRange.lowerBound([collectionKey, readTimeKey], 
+            /* open= */ true);
+            iterationOptions.index = DbRemoteDocument.collectionReadTimeIndex;
+        }
         return remoteDocumentsStore(transaction)
-            .iterate({ range: range }, function (key, dbRemoteDoc, control) {
+            .iterate(iterationOptions, function (key, dbRemoteDoc, control) {
             // The query is actually returning any path that starts with the query
             // path prefix which may include documents in subcollections. For
             // example, a query on 'rooms' will return rooms/abc/messages/xyx but we
@@ -23332,65 +23401,57 @@ var IndexedDbRemoteDocumentCache = /** @class */ (function () {
         })
             .next(function () { return results; });
     };
-    IndexedDbRemoteDocumentCache.prototype.getNewDocumentChanges = function (transaction) {
+    /**
+     * Returns the set of documents that have been updated since the specified read
+     * time.
+     */
+    // PORTING NOTE: This is only used for multi-tab synchronization.
+    IndexedDbRemoteDocumentCache.prototype.getNewDocumentChanges = function (transaction, sinceReadTime) {
         var _this = this;
-        assert(this.keepDocumentChangeLog, 'Can only call getNewDocumentChanges() when document change log is enabled');
-        var changedKeys = documentKeySet();
         var changedDocs = maybeDocumentMap();
-        var range = IDBKeyRange.lowerBound(this._lastProcessedDocumentChangeId + 1);
-        var firstIteration = true;
-        var changesStore = documentChangesStore(transaction);
-        return changesStore
-            .iterate({ range: range }, function (_, documentChange) {
-            if (firstIteration) {
-                firstIteration = false;
-                // If our client was throttled for more than 30 minutes, another
-                // client may have garbage collected the remote document changelog.
-                if (_this._lastProcessedDocumentChangeId + 1 !== documentChange.id) {
-                    // Reset the `lastProcessedDocumentChangeId` to allow further
-                    // invocations to successfully return the changes after this
-                    // rejection.
-                    return _this.synchronizeLastDocumentChangeId(changesStore).next(function () {
-                        return PersistencePromise.reject(new FirestoreError(Code.DATA_LOSS, REMOTE_DOCUMENT_CHANGE_MISSING_ERR_MSG));
-                    });
-                }
-            }
-            changedKeys = changedKeys.unionWith(_this.serializer.fromDbResourcePaths(documentChange.changes));
-            _this._lastProcessedDocumentChangeId = documentChange.id;
+        var lastReadTime = this.serializer.toDbTimestampKey(sinceReadTime);
+        var documentsStore = remoteDocumentsStore(transaction);
+        var range = IDBKeyRange.lowerBound(lastReadTime, true);
+        return documentsStore
+            .iterate({ index: DbRemoteDocument.readTimeIndex, range: range }, function (_, dbRemoteDoc) {
+            // Unlike `getEntry()` and others, `getNewDocumentChanges()` parses
+            // the documents directly since we want to keep sentinel deletes.
+            var doc = _this.serializer.fromDbRemoteDocument(dbRemoteDoc);
+            changedDocs = changedDocs.insert(doc.key, doc);
+            lastReadTime = dbRemoteDoc.readTime;
         })
             .next(function () {
-            var documentPromises = [];
-            changedKeys.forEach(function (key) {
-                documentPromises.push(_this.getEntry(transaction, key).next(function (maybeDocument) {
-                    var doc = maybeDocument ||
-                        new NoDocument(key, SnapshotVersion.forDeletedDoc());
-                    changedDocs = changedDocs.insert(key, doc);
-                }));
-            });
-            return PersistencePromise.waitFor(documentPromises);
-        })
-            .next(function () { return changedDocs; });
-    };
-    /**
-     * Removes all changes in the remote document changelog through `changeId`
-     * (inclusive).
-     */
-    IndexedDbRemoteDocumentCache.prototype.removeDocumentChangesThroughChangeId = function (transaction, changeId) {
-        var range = IDBKeyRange.upperBound(changeId);
-        return documentChangesStore(transaction).delete(range);
-    };
-    IndexedDbRemoteDocumentCache.prototype.synchronizeLastDocumentChangeId = function (documentChangesStore) {
-        var _this = this;
-        // If there are no existing changes, we set `lastProcessedDocumentChangeId`
-        // to 0 since IndexedDb's auto-generated keys start at 1.
-        this._lastProcessedDocumentChangeId = 0;
-        return documentChangesStore.iterate({ keysOnly: true, reverse: true }, function (key, value, control) {
-            _this._lastProcessedDocumentChangeId = key;
-            control.done();
+            return {
+                changedDocs: changedDocs,
+                readTime: _this.serializer.fromDbTimestampKey(lastReadTime)
+            };
         });
     };
-    IndexedDbRemoteDocumentCache.prototype.newChangeBuffer = function () {
-        return new IndexedDbRemoteDocumentCache.RemoteDocumentChangeBuffer(this);
+    /**
+     * Returns the last document that has changed, as well as the read time of the
+     * last change. If no document has changed, returns SnapshotVersion.MIN.
+     */
+    // PORTING NOTE: This is only used for multi-tab synchronization.
+    IndexedDbRemoteDocumentCache.prototype.getLastDocumentChange = function (transaction) {
+        var _this = this;
+        var documentsStore = remoteDocumentsStore(transaction);
+        // If there are no existing entries, we return SnapshotVersion.MIN.
+        var readTime = SnapshotVersion.MIN;
+        var changedDoc;
+        return documentsStore
+            .iterate({ index: DbRemoteDocument.readTimeIndex, reverse: true }, function (key, dbRemoteDoc, control) {
+            changedDoc = _this.serializer.fromDbRemoteDocument(dbRemoteDoc);
+            if (dbRemoteDoc.readTime) {
+                readTime = _this.serializer.fromDbTimestampKey(dbRemoteDoc.readTime);
+            }
+            control.done();
+        })
+            .next(function () {
+            return { changedDoc: changedDoc, readTime: readTime };
+        });
+    };
+    IndexedDbRemoteDocumentCache.prototype.newChangeBuffer = function (options) {
+        return new IndexedDbRemoteDocumentCache.RemoteDocumentChangeBuffer(this, !!options && options.trackRemovals);
     };
     IndexedDbRemoteDocumentCache.prototype.getSize = function (txn) {
         return this.getMetadata(txn).next(function (metadata) { return metadata.byteSize; });
@@ -23407,6 +23468,23 @@ var IndexedDbRemoteDocumentCache = /** @class */ (function () {
         return documentGlobalStore(txn).put(DbRemoteDocumentGlobal.key, metadata);
     };
     /**
+     * Decodes `remoteDoc` and returns the document (or null, if the document
+     * corresponds to the format used for sentinel deletes).
+     */
+    IndexedDbRemoteDocumentCache.prototype.maybeDecodeDocument = function (dbRemoteDoc) {
+        if (dbRemoteDoc) {
+            var doc = this.serializer.fromDbRemoteDocument(dbRemoteDoc);
+            if (doc instanceof NoDocument &&
+                doc.version.isEqual(SnapshotVersion.forDeletedDoc())) {
+                // The document is a sentinel removal and should only be used in the
+                // `getNewDocumentChanges()`.
+                return null;
+            }
+            return doc;
+        }
+        return null;
+    };
+    /**
      * Handles the details of adding and updating documents in the IndexedDbRemoteDocumentCache.
      *
      * Unlike the MemoryRemoteDocumentChangeBuffer, the IndexedDb implementation computes the size
@@ -23414,10 +23492,16 @@ var IndexedDbRemoteDocumentCache = /** @class */ (function () {
      * when we apply the changes.
      */
     IndexedDbRemoteDocumentCache.RemoteDocumentChangeBuffer = /** @class */ (function (_super) {
-        tslib_1.__extends(class_1, _super);
-        function class_1(documentCache) {
+        tslib.__extends(class_1, _super);
+        /**
+         * @param documentCache The IndexedDbRemoteDocumentCache to apply the changes to.
+         * @param trackRemovals Whether to create sentinel deletes that can be tracked by
+         * `getNewDocumentChanges()`.
+         */
+        function class_1(documentCache, trackRemovals) {
             var _this = _super.call(this) || this;
             _this.documentCache = documentCache;
+            _this.trackRemovals = trackRemovals;
             // A map of document sizes prior to applying the changes in this buffer.
             _this.documentSizes = new ObjectMap(function (key) { return key.toString(); });
             return _this;
@@ -23426,23 +23510,39 @@ var IndexedDbRemoteDocumentCache = /** @class */ (function () {
             var _this = this;
             var promises = [];
             var sizeDelta = 0;
-            var changedKeys = documentKeySet();
+            var collectionParents = new SortedSet(function (l, r) {
+                return primitiveComparator(l.canonicalString(), r.canonicalString());
+            });
             this.changes.forEach(function (key, maybeDocument) {
                 var previousSize = _this.documentSizes.get(key);
                 assert(previousSize !== undefined, "Cannot modify a document that wasn't read (for " + key + ")");
                 if (maybeDocument) {
-                    var doc = _this.documentCache.serializer.toDbRemoteDocument(maybeDocument);
+                    assert(!_this.readTime.isEqual(SnapshotVersion.MIN), 'Cannot add a document with a read time of zero');
+                    var doc = _this.documentCache.serializer.toDbRemoteDocument(maybeDocument, _this.readTime);
+                    collectionParents = collectionParents.add(key.path.popLast());
                     var size = dbDocumentSize(doc);
                     sizeDelta += size - previousSize;
                     promises.push(_this.documentCache.addEntry(transaction, key, doc));
                 }
                 else {
                     sizeDelta -= previousSize;
-                    promises.push(_this.documentCache.removeEntry(transaction, key));
+                    if (_this.trackRemovals) {
+                        // In order to track removals, we store a "sentinel delete" in the
+                        // RemoteDocumentCache. This entry is represented by a NoDocument
+                        // with a version of 0 and ignored by `maybeDecodeDocument()` but
+                        // preserved in `getNewDocumentChanges()`.
+                        var deletedDoc = _this.documentCache.serializer.toDbRemoteDocument(new NoDocument(key, SnapshotVersion.forDeletedDoc()), _this.readTime);
+                        promises.push(_this.documentCache.addEntry(transaction, key, deletedDoc));
+                    }
+                    else {
+                        promises.push(_this.documentCache.removeEntry(transaction, key));
+                    }
                 }
-                changedKeys = changedKeys.add(key);
             });
-            promises.push(this.documentCache.updateMetadata(transaction, changedKeys, sizeDelta));
+            collectionParents.forEach(function (parent) {
+                promises.push(_this.documentCache.indexManager.addToCollectionParentIndex(transaction, parent));
+            });
+            promises.push(this.documentCache.updateMetadata(transaction, sizeDelta));
             return PersistencePromise.waitFor(promises);
         };
         class_1.prototype.getFromCache = function (transaction, documentKey) {
@@ -23485,22 +23585,11 @@ var IndexedDbRemoteDocumentCache = /** @class */ (function () {
 function documentGlobalStore(txn) {
     return IndexedDbPersistence.getStore(txn, DbRemoteDocumentGlobal.store);
 }
-function isDocumentChangeMissingError(err) {
-    return (err.code === Code.DATA_LOSS &&
-        err.message === REMOTE_DOCUMENT_CHANGE_MISSING_ERR_MSG);
-}
 /**
  * Helper to get a typed SimpleDbStore for the remoteDocuments object store.
  */
 function remoteDocumentsStore(txn) {
     return IndexedDbPersistence.getStore(txn, DbRemoteDocument.store);
-}
-/**
- * Helper to get a typed SimpleDbStore for the remoteDocumentChanges object
- * store.
- */
-function documentChangesStore(txn) {
-    return IndexedDbPersistence.getStore(txn, DbRemoteDocumentChanges.store);
 }
 function dbKey(docKey) {
     return docKey.path.toArray();
@@ -23577,6 +23666,12 @@ var MemoryCollectionParentIndex = /** @class */ (function () {
         this.index[collectionId] = existingParents.add(parentPath);
         return added;
     };
+    MemoryCollectionParentIndex.prototype.has = function (collectionPath) {
+        var collectionId = collectionPath.lastSegment();
+        var parentPath = collectionPath.popLast();
+        var existingParents = this.index[collectionId];
+        return existingParents && existingParents.has(parentPath);
+    };
     MemoryCollectionParentIndex.prototype.getEntries = function (collectionId) {
         var parentPaths = this.index[collectionId] ||
             new SortedSet(ResourcePath.comparator);
@@ -23615,8 +23710,10 @@ var MemoryCollectionParentIndex = /** @class */ (function () {
  * 6. Create document global for tracking document cache size.
  * 7. Ensure every cached document has a sentinel row with a sequence number.
  * 8. Add collection-parent index for Collection Group queries.
+ * 9. Change RemoteDocumentChanges store to be keyed by readTime rather than
+ *    an auto-incrementing ID. This is required for Index-Free queries.
  */
-var SCHEMA_VERSION = 8;
+var SCHEMA_VERSION = 9;
 /** Performs database creation and schema upgrades. */
 var SchemaConverter = /** @class */ (function () {
     function SchemaConverter(serializer) {
@@ -23634,6 +23731,7 @@ var SchemaConverter = /** @class */ (function () {
         assert(fromVersion < toVersion &&
             fromVersion >= 0 &&
             toVersion <= SCHEMA_VERSION, "Unexpected schema upgrade from v" + fromVersion + " to v{toVersion}.");
+        var simpleDbTransaction = new SimpleDbTransaction(txn);
         if (fromVersion < 1 && toVersion >= 1) {
             createPrimaryClientStore(db);
             createMutationQueue(db);
@@ -23650,7 +23748,7 @@ var SchemaConverter = /** @class */ (function () {
                 dropQueryCache(db);
                 createQueryCache(db);
             }
-            p = p.next(function () { return writeEmptyTargetGlobalEntry(txn); });
+            p = p.next(function () { return writeEmptyTargetGlobalEntry(simpleDbTransaction); });
         }
         if (fromVersion < 4 && toVersion >= 4) {
             if (fromVersion !== 0) {
@@ -23660,27 +23758,39 @@ var SchemaConverter = /** @class */ (function () {
                 // and write them back out. We preserve the existing batch IDs to guarantee
                 // consistency with other object stores. Any further mutation batch IDs will
                 // be auto-generated.
-                p = p.next(function () { return upgradeMutationBatchSchemaAndMigrateData(db, txn); });
+                p = p.next(function () {
+                    return upgradeMutationBatchSchemaAndMigrateData(db, simpleDbTransaction);
+                });
             }
             p = p.next(function () {
                 createClientMetadataStore(db);
-                createRemoteDocumentChangesStore(db);
             });
         }
         if (fromVersion < 5 && toVersion >= 5) {
-            p = p.next(function () { return _this.removeAcknowledgedMutations(txn); });
+            p = p.next(function () { return _this.removeAcknowledgedMutations(simpleDbTransaction); });
         }
         if (fromVersion < 6 && toVersion >= 6) {
             p = p.next(function () {
                 createDocumentGlobalStore(db);
-                return _this.addDocumentGlobal(txn);
+                return _this.addDocumentGlobal(simpleDbTransaction);
             });
         }
         if (fromVersion < 7 && toVersion >= 7) {
-            p = p.next(function () { return _this.ensureSequenceNumbers(txn); });
+            p = p.next(function () { return _this.ensureSequenceNumbers(simpleDbTransaction); });
         }
         if (fromVersion < 8 && toVersion >= 8) {
-            p = p.next(function () { return _this.createCollectionParentIndex(db, txn); });
+            p = p.next(function () {
+                return _this.createCollectionParentIndex(db, simpleDbTransaction);
+            });
+        }
+        if (fromVersion < 9 && toVersion >= 9) {
+            p = p.next(function () {
+                // Multi-Tab used to manage its own changelog, but this has been moved
+                // to the DbRemoteDocument object store itself. Since the previous change
+                // log only contained transient data, we can drop its object store.
+                dropRemoteDocumentChangesStore(db);
+                createRemoteDocumentReadTimeIndex(txn);
+            });
         }
         return p;
     };
@@ -24040,6 +24150,11 @@ var DbUnknownDocument = /** @class */ (function () {
  * be made more general if necessary.
  */
 var DbRemoteDocument = /** @class */ (function () {
+    // TODO: We are currently storing full document keys almost three times
+    // (once as part of the primary key, once - partly - as `parentPath` and once
+    // inside the encoded documents). During our next migration, we should
+    // rewrite the primary key as parentPath + document ID which would allow us
+    // to drop one value.
     function DbRemoteDocument(
     /**
      * Set to an instance of DbUnknownDocument if the data for a document is
@@ -24063,13 +24178,42 @@ var DbRemoteDocument = /** @class */ (function () {
      * documents are potentially inconsistent with the backend's copy and use
      * the write's commit version as their document version.
      */
-    hasCommittedMutations) {
+    hasCommittedMutations, 
+    /**
+     * When the document was read from the backend. Undefined for data written
+     * prior to schema version 9.
+     */
+    readTime, 
+    /**
+     * The path of the collection this document is part of. Undefined for data
+     * written prior to schema version 9.
+     */
+    parentPath) {
         this.unknownDocument = unknownDocument;
         this.noDocument = noDocument;
         this.document = document;
         this.hasCommittedMutations = hasCommittedMutations;
+        this.readTime = readTime;
+        this.parentPath = parentPath;
     }
     DbRemoteDocument.store = 'remoteDocuments';
+    /**
+     * An index that provides access to all entries sorted by read time (which
+     * corresponds to the last modification time of each row).
+     *
+     * This index is used to provide a changelog for Multi-Tab.
+     */
+    DbRemoteDocument.readTimeIndex = 'readTimeIndex';
+    DbRemoteDocument.readTimeIndexPath = 'readTime';
+    /**
+     * An index that provides access to documents in a collection sorted by read
+     * time.
+     *
+     * This index is used to allow the RemoteDocumentCache to fetch newly changed
+     * documents in a collection.
+     */
+    DbRemoteDocument.collectionReadTimeIndex = 'collectionReadTimeIndex';
+    DbRemoteDocument.collectionReadTimeIndexPath = ['parentPath', 'readTime'];
     return DbRemoteDocument;
 }());
 /**
@@ -24154,6 +24298,12 @@ var DbTarget = /** @class */ (function () {
      */
     lastListenSequenceNumber, 
     /**
+     * Denotes the maximum snapshot version at which the associated query view
+     * contained no limbo documents.  Undefined for data written prior to
+     * schema version 9.
+     */
+    lastLimboFreeSnapshotVersion, 
+    /**
      * The query for this target.
      *
      * Because canonical ids are not unique we must store the actual query. We
@@ -24166,6 +24316,7 @@ var DbTarget = /** @class */ (function () {
         this.readTime = readTime;
         this.resumeToken = resumeToken;
         this.lastListenSequenceNumber = lastListenSequenceNumber;
+        this.lastLimboFreeSnapshotVersion = lastLimboFreeSnapshotVersion;
         this.query = query;
     }
     DbTarget.store = 'targets';
@@ -24311,6 +24462,11 @@ function dropQueryCache(db) {
     db.deleteObjectStore(DbTarget.store);
     db.deleteObjectStore(DbTargetGlobal.store);
 }
+function dropRemoteDocumentChangesStore(db) {
+    if (db.objectStoreNames.contains('remoteDocumentChanges')) {
+        db.deleteObjectStore('remoteDocumentChanges');
+    }
+}
 /**
  * Creates the target global singleton row.
  *
@@ -24325,29 +24481,13 @@ function writeEmptyTargetGlobalEntry(txn) {
     return globalStore.put(DbTargetGlobal.key, metadata);
 }
 /**
- * An object store to store the keys of changed documents. This is used to
- * facilitate storing document changelogs in the Remote Document Cache.
- *
- * PORTING NOTE: This is used for change propagation during multi-tab syncing
- * and not needed on iOS and Android.
+ * Creates indices on the RemoteDocuments store used for both multi-tab
+ * and Index-Free queries.
  */
-var DbRemoteDocumentChanges = /** @class */ (function () {
-    function DbRemoteDocumentChanges(
-    /** The keys of the changed documents. */
-    changes) {
-        this.changes = changes;
-    }
-    /** Name of the IndexedDb object store.  */
-    DbRemoteDocumentChanges.store = 'remoteDocumentChanges';
-    /** Keys are auto-generated via the `id` property. */
-    DbRemoteDocumentChanges.keyPath = 'id';
-    return DbRemoteDocumentChanges;
-}());
-function createRemoteDocumentChangesStore(db) {
-    db.createObjectStore(DbRemoteDocumentChanges.store, {
-        keyPath: 'id',
-        autoIncrement: true
-    });
+function createRemoteDocumentReadTimeIndex(txn) {
+    var remoteDocumentStore = txn.objectStore(DbRemoteDocument.store);
+    remoteDocumentStore.createIndex(DbRemoteDocument.readTimeIndex, DbRemoteDocument.readTimeIndexPath, { unique: false });
+    remoteDocumentStore.createIndex(DbRemoteDocument.collectionReadTimeIndex, DbRemoteDocument.collectionReadTimeIndexPath, { unique: false });
 }
 /**
  * A record of the metadata state of each client.
@@ -24357,6 +24497,8 @@ function createRemoteDocumentChangesStore(db) {
  */
 var DbClientMetadata = /** @class */ (function () {
     function DbClientMetadata(
+    // Note: Previous schema versions included a field
+    // "lastProcessedDocumentChangeId". Don't use anymore.
     /** The auto-generated client id assigned at client startup. */
     clientId, 
     /** The last time this state was updated. */
@@ -24364,17 +24506,11 @@ var DbClientMetadata = /** @class */ (function () {
     /** Whether the client's network connection is enabled. */
     networkEnabled, 
     /** Whether this client is running in a foreground tab. */
-    inForeground, 
-    /**
-     * The last change read from the DbRemoteDocumentChanges store.
-     * Can be undefined for backwards compatibility.
-     */
-    lastProcessedDocumentChangeId) {
+    inForeground) {
         this.clientId = clientId;
         this.updateTimeMs = updateTimeMs;
         this.networkEnabled = networkEnabled;
         this.inForeground = inForeground;
-        this.lastProcessedDocumentChangeId = lastProcessedDocumentChangeId;
     }
     /** Name of the IndexedDb object store. */
     DbClientMetadata.store = 'clientMetadata';
@@ -24402,14 +24538,13 @@ var V1_STORES = [
 // Visible for testing
 var V3_STORES = V1_STORES;
 // Visible for testing
-var V4_STORES = V3_STORES.concat([
-    DbClientMetadata.store,
-    DbRemoteDocumentChanges.store
-]);
+// Note: DbRemoteDocumentChanges is no longer used and dropped with v9.
+var V4_STORES = tslib.__spreadArrays(V3_STORES, [DbClientMetadata.store]);
 // V5 does not change the set of stores.
-var V6_STORES = V4_STORES.concat([DbRemoteDocumentGlobal.store]);
+var V6_STORES = tslib.__spreadArrays(V4_STORES, [DbRemoteDocumentGlobal.store]);
 // V7 does not change the set of stores.
-var V8_STORES = V6_STORES.concat([DbCollectionParent.store]);
+var V8_STORES = tslib.__spreadArrays(V6_STORES, [DbCollectionParent.store]);
+// V9 does not change the set of stores.
 /**
  * The list of all default IndexedDB stores used throughout the SDK. This is
  * used when creating transactions so that access across all stores is done
@@ -24447,12 +24582,24 @@ var IndexedDbIndexManager = /** @class */ (function () {
          */
         this.collectionParentsCache = new MemoryCollectionParentIndex();
     }
+    /**
+     * Adds a new entry to the collection parent index.
+     *
+     * Repeated calls for the same collectionPath should be avoided within a
+     * transaction as IndexedDbIndexManager only caches writes once a transaction
+     * has been committed.
+     */
     IndexedDbIndexManager.prototype.addToCollectionParentIndex = function (transaction, collectionPath) {
+        var _this = this;
         assert(collectionPath.length % 2 === 1, 'Expected a collection path.');
-        if (this.collectionParentsCache.add(collectionPath)) {
-            assert(collectionPath.length >= 1, 'Invalid collection path.');
+        if (!this.collectionParentsCache.has(collectionPath)) {
             var collectionId = collectionPath.lastSegment();
             var parentPath = collectionPath.popLast();
+            transaction.addOnCommittedListener(function () {
+                // Add the collection to the in memory cache only if the transaction was
+                // successfully committed.
+                _this.collectionParentsCache.add(collectionPath);
+            });
             return collectionParentsStore(transaction).put({
                 collectionId: collectionId,
                 parent: encode(parentPath)
@@ -24534,10 +24681,18 @@ var QueryData = /** @class */ (function () {
     targetId, 
     /** The purpose of the query. */
     purpose, 
-    /** The sequence number of the last transaction during which this query data was modified */
+    /**
+     * The sequence number of the last transaction during which this query data
+     * was modified.
+     */
     sequenceNumber, 
     /** The latest snapshot version seen for this target. */
     snapshotVersion, 
+    /**
+     * The maximum snapshot version at which the associated query view
+     * contained no limbo documents.
+     */
+    lastLimboFreeSnapshotVersion, 
     /**
      * An opaque, server-assigned token that allows watching a query to be
      * resumed after disconnecting without retransmitting all the data that
@@ -24546,30 +24701,40 @@ var QueryData = /** @class */ (function () {
      */
     resumeToken) {
         if (snapshotVersion === void 0) { snapshotVersion = SnapshotVersion.MIN; }
+        if (lastLimboFreeSnapshotVersion === void 0) { lastLimboFreeSnapshotVersion = SnapshotVersion.MIN; }
         if (resumeToken === void 0) { resumeToken = emptyByteString(); }
         this.query = query;
         this.targetId = targetId;
         this.purpose = purpose;
         this.sequenceNumber = sequenceNumber;
         this.snapshotVersion = snapshotVersion;
+        this.lastLimboFreeSnapshotVersion = lastLimboFreeSnapshotVersion;
         this.resumeToken = resumeToken;
     }
     /** Creates a new query data instance with an updated sequence number. */
     QueryData.prototype.withSequenceNumber = function (sequenceNumber) {
-        return new QueryData(this.query, this.targetId, this.purpose, sequenceNumber, this.snapshotVersion, this.resumeToken);
+        return new QueryData(this.query, this.targetId, this.purpose, sequenceNumber, this.snapshotVersion, this.lastLimboFreeSnapshotVersion, this.resumeToken);
     };
     /**
      * Creates a new query data instance with an updated resume token and
      * snapshot version.
      */
     QueryData.prototype.withResumeToken = function (resumeToken, snapshotVersion) {
-        return new QueryData(this.query, this.targetId, this.purpose, this.sequenceNumber, snapshotVersion, resumeToken);
+        return new QueryData(this.query, this.targetId, this.purpose, this.sequenceNumber, snapshotVersion, this.lastLimboFreeSnapshotVersion, resumeToken);
+    };
+    /**
+     * Creates a new query data instance with an updated last limbo free
+     * snapshot version number.
+     */
+    QueryData.prototype.withLastLimboFreeSnapshotVersion = function (lastLimboFreeSnapshotVersion) {
+        return new QueryData(this.query, this.targetId, this.purpose, this.sequenceNumber, this.snapshotVersion, lastLimboFreeSnapshotVersion, this.resumeToken);
     };
     QueryData.prototype.isEqual = function (other) {
         return (this.targetId === other.targetId &&
             this.purpose === other.purpose &&
             this.sequenceNumber === other.sequenceNumber &&
             this.snapshotVersion.isEqual(other.snapshotVersion) &&
+            this.lastLimboFreeSnapshotVersion.isEqual(other.lastLimboFreeSnapshotVersion) &&
             this.resumeToken === other.resumeToken &&
             this.query.isEqual(other.query));
     };
@@ -24619,7 +24784,9 @@ var LocalSerializer = /** @class */ (function () {
         }
     };
     /** Encodes a document for storage locally. */
-    LocalSerializer.prototype.toDbRemoteDocument = function (maybeDoc) {
+    LocalSerializer.prototype.toDbRemoteDocument = function (maybeDoc, readTime) {
+        var dbReadTime = this.toDbTimestampKey(readTime);
+        var parentPath = maybeDoc.key.path.popLast().toArray();
         if (maybeDoc instanceof Document) {
             var doc = maybeDoc.proto
                 ? maybeDoc.proto
@@ -24627,27 +24794,35 @@ var LocalSerializer = /** @class */ (function () {
             var hasCommittedMutations = maybeDoc.hasCommittedMutations;
             return new DbRemoteDocument(
             /* unknownDocument= */ null, 
-            /* noDocument= */ null, doc, hasCommittedMutations);
+            /* noDocument= */ null, doc, hasCommittedMutations, dbReadTime, parentPath);
         }
         else if (maybeDoc instanceof NoDocument) {
             var path = maybeDoc.key.path.toArray();
-            var readTime = this.toDbTimestamp(maybeDoc.version);
+            var readTime_1 = this.toDbTimestamp(maybeDoc.version);
             var hasCommittedMutations = maybeDoc.hasCommittedMutations;
             return new DbRemoteDocument(
-            /* unknownDocument= */ null, new DbNoDocument(path, readTime), 
-            /* document= */ null, hasCommittedMutations);
+            /* unknownDocument= */ null, new DbNoDocument(path, readTime_1), 
+            /* document= */ null, hasCommittedMutations, dbReadTime, parentPath);
         }
         else if (maybeDoc instanceof UnknownDocument) {
             var path = maybeDoc.key.path.toArray();
-            var readTime = this.toDbTimestamp(maybeDoc.version);
-            return new DbRemoteDocument(new DbUnknownDocument(path, readTime), 
+            var readTime_2 = this.toDbTimestamp(maybeDoc.version);
+            return new DbRemoteDocument(new DbUnknownDocument(path, readTime_2), 
             /* noDocument= */ null, 
             /* document= */ null, 
-            /* hasCommittedMutations= */ true);
+            /* hasCommittedMutations= */ true, dbReadTime, parentPath);
         }
         else {
-            return fail('Unexpected MaybeDocumment');
+            return fail('Unexpected MaybeDocument');
         }
+    };
+    LocalSerializer.prototype.toDbTimestampKey = function (snapshotVersion) {
+        var timestamp = snapshotVersion.toTimestamp();
+        return [timestamp.seconds, timestamp.nanoseconds];
+    };
+    LocalSerializer.prototype.fromDbTimestampKey = function (dbTimestampKey) {
+        var timestamp = new Timestamp(dbTimestampKey[0], dbTimestampKey[1]);
+        return SnapshotVersion.fromTimestamp(timestamp);
     };
     LocalSerializer.prototype.toDbTimestamp = function (snapshotVersion) {
         var timestamp = snapshotVersion.toTimestamp();
@@ -24702,6 +24877,11 @@ var LocalSerializer = /** @class */ (function () {
     /** Decodes a DbTarget into QueryData */
     LocalSerializer.prototype.fromDbTarget = function (dbTarget) {
         var version = this.fromDbTimestamp(dbTarget.readTime);
+        var lastLimboFreeSnapshotVersion = dbTarget.lastLimboFreeSnapshotVersion !== undefined
+            ? this.fromDbTimestamp(dbTarget.lastLimboFreeSnapshotVersion)
+            : SnapshotVersion.MIN;
+        // TODO(b/140573486): Convert to platform representation
+        var resumeToken = dbTarget.resumeToken;
         var query;
         if (isDocumentQuery(dbTarget.query)) {
             query = this.remoteSerializer.fromDocumentsTarget(dbTarget.query);
@@ -24709,7 +24889,7 @@ var LocalSerializer = /** @class */ (function () {
         else {
             query = this.remoteSerializer.fromQueryTarget(dbTarget.query);
         }
-        return new QueryData(query, dbTarget.targetId, QueryPurpose.Listen, dbTarget.lastListenSequenceNumber, version, dbTarget.resumeToken);
+        return new QueryData(query, dbTarget.targetId, QueryPurpose.Listen, dbTarget.lastListenSequenceNumber, version, lastLimboFreeSnapshotVersion, resumeToken);
     };
     /** Encodes QueryData into a DbTarget for storage locally. */
     LocalSerializer.prototype.toDbTarget = function (queryData) {
@@ -24718,6 +24898,7 @@ var LocalSerializer = /** @class */ (function () {
             ' may be stored, got ' +
             queryData.purpose);
         var dbTimestamp = this.toDbTimestamp(queryData.snapshotVersion);
+        var dbLastLimboFreeTimestamp = this.toDbTimestamp(queryData.lastLimboFreeSnapshotVersion);
         var queryProto;
         if (queryData.query.isDocumentQuery()) {
             queryProto = this.remoteSerializer.toDocumentsTarget(queryData.query);
@@ -24728,14 +24909,14 @@ var LocalSerializer = /** @class */ (function () {
         var resumeToken;
         if (queryData.resumeToken instanceof Uint8Array) {
             // TODO(b/78771403): Convert tokens to strings during deserialization
-            assert(process.env.USE_MOCK_PERSISTENCE === 'YES', 'Persisting non-string stream tokens is only supported with mock persistence .');
+            assert(SimpleDb.isMockPersistence(), 'Persisting non-string stream tokens is only supported with mock persistence .');
             resumeToken = queryData.resumeToken.toString();
         }
         else {
             resumeToken = queryData.resumeToken;
         }
         // lastListenSequenceNumber is always 0 until we do real GC.
-        return new DbTarget(queryData.targetId, queryData.query.canonicalId(), dbTimestamp, resumeToken, queryData.sequenceNumber, queryProto);
+        return new DbTarget(queryData.targetId, queryData.query.canonicalId(), dbTimestamp, resumeToken, queryData.sequenceNumber, dbLastLimboFreeTimestamp, queryProto);
     };
     return LocalSerializer;
 }());
@@ -25035,7 +25216,8 @@ var LruGarbageCollector = /** @class */ (function () {
  * limitations under the License.
  */
 /**
- * Opaque interface representing a persistence transaction.
+ * A base class representing a persistence transaction, encapsulating both the
+ * transaction's sequence numbers as well as a list of onCommitted listeners.
  *
  * When you call Persistence.runTransaction(), it will create a transaction and
  * pass it to your callback. You then pass it to any method that operates
@@ -25043,7 +25225,14 @@ var LruGarbageCollector = /** @class */ (function () {
  */
 var PersistenceTransaction = /** @class */ (function () {
     function PersistenceTransaction() {
+        this.onCommittedListeners = [];
     }
+    PersistenceTransaction.prototype.addOnCommittedListener = function (listener) {
+        this.onCommittedListeners.push(listener);
+    };
+    PersistenceTransaction.prototype.raiseOnCommittedEvent = function () {
+        this.onCommittedListeners.forEach(function (listener) { return listener(); });
+    };
     return PersistenceTransaction;
 }());
 
@@ -25066,8 +25255,7 @@ var PersistenceTransaction = /** @class */ (function () {
 var LOG_TAG$1 = 'IndexedDbPersistence';
 /**
  * Oldest acceptable age in milliseconds for client metadata before the client
- * is considered inactive and its associated data (such as the remote document
- * cache changelog) is garbage collected.
+ * is considered inactive and its associated data is garbage collected.
  */
 var MAX_CLIENT_AGE_MS = 30 * 60 * 1000; // 30 minutes
 /**
@@ -25098,7 +25286,7 @@ var UNSUPPORTED_PLATFORM_ERROR_MSG = 'This platform is either missing' +
 //     firestore_zombie_<persistence_prefix>_<instance_key>
 var ZOMBIED_CLIENTS_KEY_PREFIX = 'firestore_zombie';
 var IndexedDbTransaction = /** @class */ (function (_super) {
-    tslib_1.__extends(IndexedDbTransaction, _super);
+    tslib.__extends(IndexedDbTransaction, _super);
     function IndexedDbTransaction(simpleDbTransaction, currentSequenceNumber) {
         var _this = _super.call(this) || this;
         _this.simpleDbTransaction = simpleDbTransaction;
@@ -25170,7 +25358,7 @@ var IndexedDbPersistence = /** @class */ (function () {
         this.documentVisibilityHandler = null;
         /** The client metadata refresh task. */
         this.clientMetadataRefresher = null;
-        /** The last time we garbage collected the Remote Document Changelog. */
+        /** The last time we garbage collected the client metadata object store. */
         this.lastGarbageCollectionTime = Number.NEGATIVE_INFINITY;
         /** A listener to notify on primary state changes. */
         this.primaryStateListener = function (_) { return Promise.resolve(); };
@@ -25180,8 +25368,7 @@ var IndexedDbPersistence = /** @class */ (function () {
         this.document = platform.document;
         this.queryCache = new IndexedDbQueryCache(this.referenceDelegate, this.serializer);
         this.indexManager = new IndexedDbIndexManager();
-        this.remoteDocumentCache = new IndexedDbRemoteDocumentCache(this.serializer, this.indexManager, 
-        /*keepDocumentChangeLog=*/ this.allowTabSynchronization);
+        this.remoteDocumentCache = new IndexedDbRemoteDocumentCache(this.serializer, this.indexManager);
         if (platform.window && platform.window.localStorage) {
             this.window = platform.window;
             this.webStorage = this.window.localStorage;
@@ -25199,9 +25386,9 @@ var IndexedDbPersistence = /** @class */ (function () {
         }
     };
     IndexedDbPersistence.createIndexedDbPersistence = function (options) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var persistence;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         if (!IndexedDbPersistence.isAvailable()) {
@@ -25236,14 +25423,10 @@ var IndexedDbPersistence = /** @class */ (function () {
             _this.attachVisibilityHandler();
             _this.attachWindowUnloadHook();
             _this.scheduleClientMetadataAndPrimaryLeaseRefreshes();
-            return _this.startRemoteDocumentCache();
+            return _this.simpleDb.runTransaction('readonly-idempotent', [DbTargetGlobal.store], function (txn) { return getHighestListenSequenceNumber(txn); });
         })
-            .then(function () {
-            return _this.simpleDb.runTransaction('readonly', [DbTargetGlobal.store], function (txn) {
-                return getHighestListenSequenceNumber(txn).next(function (highestListenSequenceNumber) {
-                    _this.listenSequence = new ListenSequence(highestListenSequenceNumber, _this.sequenceNumberSyncer);
-                });
-            });
+            .then(function (highestListenSequenceNumber) {
+            _this.listenSequence = new ListenSequence(highestListenSequenceNumber, _this.sequenceNumberSyncer);
         })
             .then(function () {
             _this._started = true;
@@ -25253,16 +25436,10 @@ var IndexedDbPersistence = /** @class */ (function () {
             return Promise.reject(reason);
         });
     };
-    IndexedDbPersistence.prototype.startRemoteDocumentCache = function () {
-        var _this = this;
-        return this.simpleDb.runTransaction('readonly', ALL_STORES, function (txn) {
-            return _this.remoteDocumentCache.start(txn);
-        });
-    };
     IndexedDbPersistence.prototype.setPrimaryStateListener = function (primaryStateListener) {
         var _this = this;
-        this.primaryStateListener = function (primaryState) { return tslib_1.__awaiter(_this, void 0, void 0, function () {
-            return tslib_1.__generator(this, function (_a) {
+        this.primaryStateListener = function (primaryState) { return tslib.__awaiter(_this, void 0, void 0, function () {
+            return tslib.__generator(this, function (_a) {
                 if (this.started) {
                     return [2 /*return*/, primaryStateListener(primaryState)];
                 }
@@ -25273,8 +25450,8 @@ var IndexedDbPersistence = /** @class */ (function () {
     };
     IndexedDbPersistence.prototype.setDatabaseDeletedListener = function (databaseDeletedListener) {
         var _this = this;
-        this.simpleDb.setVersionChangeListener(function (event) { return tslib_1.__awaiter(_this, void 0, void 0, function () {
-            return tslib_1.__generator(this, function (_a) {
+        this.simpleDb.setVersionChangeListener(function (event) { return tslib.__awaiter(_this, void 0, void 0, function () {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         if (!(event.newVersion === null)) return [3 /*break*/, 2];
@@ -25293,8 +25470,8 @@ var IndexedDbPersistence = /** @class */ (function () {
             this.networkEnabled = networkEnabled;
             // Schedule a primary lease refresh for immediate execution. The eventual
             // lease update will be propagated via `primaryStateListener`.
-            this.queue.enqueueAndForget(function () { return tslib_1.__awaiter(_this, void 0, void 0, function () {
-                return tslib_1.__generator(this, function (_a) {
+            this.queue.enqueueAndForget(function () { return tslib.__awaiter(_this, void 0, void 0, function () {
+                return tslib.__generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
                             if (!this.started) return [3 /*break*/, 2];
@@ -25319,7 +25496,7 @@ var IndexedDbPersistence = /** @class */ (function () {
         return this.simpleDb.runTransaction('readwrite', ALL_STORES, function (txn) {
             var metadataStore = clientMetadataStore(txn);
             return metadataStore
-                .put(new DbClientMetadata(_this.clientId, Date.now(), _this.networkEnabled, _this.inForeground, _this.remoteDocumentCache.lastProcessedDocumentChangeId))
+                .put(new DbClientMetadata(_this.clientId, Date.now(), _this.networkEnabled, _this.inForeground))
                 .next(function () {
                 if (_this.isPrimary) {
                     return _this.verifyPrimaryLease(txn).next(function (success) {
@@ -25367,51 +25544,34 @@ var IndexedDbPersistence = /** @class */ (function () {
      * time of all clients.
      */
     IndexedDbPersistence.prototype.maybeGarbageCollectMultiClientState = function () {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
-            var activeClients_1, inactiveClients_1;
+        return tslib.__awaiter(this, void 0, void 0, function () {
+            var inactiveClients;
             var _this = this;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         if (!(this.isPrimary &&
                             !this.isWithinAge(this.lastGarbageCollectionTime, MAX_CLIENT_AGE_MS))) return [3 /*break*/, 2];
                         this.lastGarbageCollectionTime = Date.now();
-                        inactiveClients_1 = [];
-                        return [4 /*yield*/, this.runTransaction('maybeGarbageCollectMultiClientState', 'readwrite-primary', function (txn) {
+                        return [4 /*yield*/, this.runTransaction('maybeGarbageCollectMultiClientState', 'readwrite-primary-idempotent', function (txn) {
                                 var metadataStore = IndexedDbPersistence.getStore(txn, DbClientMetadata.store);
-                                return metadataStore
-                                    .loadAll()
-                                    .next(function (existingClients) {
-                                    activeClients_1 = _this.filterActiveClients(existingClients, MAX_CLIENT_AGE_MS);
-                                    inactiveClients_1 = existingClients.filter(function (client) { return activeClients_1.indexOf(client) === -1; });
-                                })
-                                    .next(function () {
+                                return metadataStore.loadAll().next(function (existingClients) {
+                                    var active = _this.filterActiveClients(existingClients, MAX_CLIENT_AGE_MS);
+                                    var inactive = existingClients.filter(function (client) { return active.indexOf(client) === -1; });
                                     // Delete metadata for clients that are no longer considered active.
-                                    return PersistencePromise.forEach(inactiveClients_1, function (inactiveClient) {
+                                    return PersistencePromise.forEach(inactive, function (inactiveClient) {
                                         return metadataStore.delete(inactiveClient.clientId);
-                                    });
-                                })
-                                    .next(function () {
-                                    // Retrieve the minimum change ID from the set of active clients.
-                                    // The primary client doesn't read from the document change log,
-                                    // and hence we exclude it when we determine the minimum
-                                    // `lastProcessedDocumentChangeId`.
-                                    activeClients_1 = activeClients_1.filter(function (client) { return client.clientId !== _this.clientId; });
-                                    if (activeClients_1.length > 0) {
-                                        var processedChangeIds = activeClients_1.map(function (client) { return client.lastProcessedDocumentChangeId || 0; });
-                                        var oldestChangeId = Math.min.apply(Math, processedChangeIds);
-                                        return _this.remoteDocumentCache.removeDocumentChangesThroughChangeId(txn, oldestChangeId);
-                                    }
+                                    }).next(function () { return inactive; });
                                 });
                             })];
                     case 1:
-                        _a.sent();
+                        inactiveClients = _a.sent();
                         // Delete potential leftover entries that may continue to mark the
                         // inactive clients as zombied in LocalStorage.
                         // Ideally we'd delete the IndexedDb and LocalStorage zombie entries for
                         // the client atomically, but we can't. So we opt to delete the IndexedDb
                         // entries first to avoid potentially reviving a zombied client.
-                        inactiveClients_1.forEach(function (inactiveClient) {
+                        inactiveClients.forEach(function (inactiveClient) {
                             _this.window.localStorage.removeItem(_this.zombiedClientLocalStorageKey(inactiveClient.clientId));
                         });
                         _a.label = 2;
@@ -25515,9 +25675,9 @@ var IndexedDbPersistence = /** @class */ (function () {
         });
     };
     IndexedDbPersistence.prototype.shutdown = function () {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var _this = this;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         // The shutdown() operations are idempotent and can be called even when
@@ -25530,7 +25690,7 @@ var IndexedDbPersistence = /** @class */ (function () {
                         }
                         this.detachVisibilityHandler();
                         this.detachWindowUnloadHook();
-                        return [4 /*yield*/, this.simpleDb.runTransaction('readwrite', [DbPrimaryClient.store, DbClientMetadata.store], function (txn) {
+                        return [4 /*yield*/, this.simpleDb.runTransaction('readwrite-idempotent', [DbPrimaryClient.store, DbClientMetadata.store], function (txn) {
                                 return _this.releasePrimaryLeaseIfHeld(txn).next(function () {
                                     return _this.removeClientMetadata(txn);
                                 });
@@ -25559,7 +25719,7 @@ var IndexedDbPersistence = /** @class */ (function () {
     };
     IndexedDbPersistence.prototype.getActiveClients = function () {
         var _this = this;
-        return this.simpleDb.runTransaction('readonly', [DbClientMetadata.store], function (txn) {
+        return this.simpleDb.runTransaction('readonly-idempotent', [DbClientMetadata.store], function (txn) {
             return clientMetadataStore(txn)
                 .loadAll()
                 .next(function (clients) {
@@ -25568,9 +25728,9 @@ var IndexedDbPersistence = /** @class */ (function () {
         });
     };
     IndexedDbPersistence.clearPersistence = function (persistenceKey) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var dbName;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         if (!IndexedDbPersistence.isAvailable()) {
@@ -25611,10 +25771,24 @@ var IndexedDbPersistence = /** @class */ (function () {
     IndexedDbPersistence.prototype.runTransaction = function (action, mode, transactionOperation) {
         var _this = this;
         debug(LOG_TAG$1, 'Starting transaction:', action);
+        // TODO(schmidt-sebastian): Simplify once all transactions are idempotent.
+        var idempotent = mode.endsWith('idempotent');
+        var readonly = mode.startsWith('readonly');
+        var simpleDbMode = readonly
+            ? idempotent
+                ? 'readonly-idempotent'
+                : 'readonly'
+            : idempotent
+                ? 'readwrite-idempotent'
+                : 'readwrite';
+        var persistenceTransaction;
         // Do all transactions as readwrite against all object stores, since we
         // are the only reader/writer.
-        return this.simpleDb.runTransaction(mode === 'readonly' ? 'readonly' : 'readwrite', ALL_STORES, function (simpleDbTxn) {
-            if (mode === 'readwrite-primary') {
+        return this.simpleDb
+            .runTransaction(simpleDbMode, ALL_STORES, function (simpleDbTxn) {
+            persistenceTransaction = new IndexedDbTransaction(simpleDbTxn, _this.listenSequence.next());
+            if (mode === 'readwrite-primary' ||
+                mode === 'readwrite-primary-idempotent') {
                 // While we merely verify that we have (or can acquire) the lease
                 // immediately, we wait to extend the primary lease until after
                 // executing transactionOperation(). This ensures that even if the
@@ -25630,7 +25804,7 @@ var IndexedDbPersistence = /** @class */ (function () {
                         });
                         throw new FirestoreError(Code.FAILED_PRECONDITION, PRIMARY_LEASE_LOST_ERROR_MSG);
                     }
-                    return transactionOperation(new IndexedDbTransaction(simpleDbTxn, _this.listenSequence.next()));
+                    return transactionOperation(persistenceTransaction);
                 })
                     .next(function (result) {
                     return _this.acquireOrExtendPrimaryLease(simpleDbTxn).next(function () { return result; });
@@ -25638,9 +25812,13 @@ var IndexedDbPersistence = /** @class */ (function () {
             }
             else {
                 return _this.verifyAllowTabSynchronization(simpleDbTxn).next(function () {
-                    return transactionOperation(new IndexedDbTransaction(simpleDbTxn, _this.listenSequence.next()));
+                    return transactionOperation(persistenceTransaction);
                 });
             }
+        })
+            .then(function (result) {
+            persistenceTransaction.raiseOnCommittedEvent();
+            return result;
         });
     };
     /**
@@ -25841,8 +26019,8 @@ function isPrimaryLeaseLostError(err) {
  * @return A Promise that resolves after we recovered, or the original error.
  */
 function ignoreIfPrimaryLeaseLoss(err) {
-    return tslib_1.__awaiter(this, void 0, void 0, function () {
-        return tslib_1.__generator(this, function (_a) {
+    return tslib.__awaiter(this, void 0, void 0, function () {
+        return tslib.__generator(this, function (_a) {
             if (isPrimaryLeaseLostError(err)) {
                 debug(LOG_TAG$1, 'Unexpectedly lost primary lease');
             }
@@ -26117,16 +26295,23 @@ var LocalDocumentsView = /** @class */ (function () {
             return results;
         });
     };
-    /** Performs a query against the local view of all documents. */
-    LocalDocumentsView.prototype.getDocumentsMatchingQuery = function (transaction, query) {
+    /**
+     * Performs a query against the local view of all documents.
+     *
+     * @param transaction The persistence transaction.
+     * @param query The query to match documents against.
+     * @param sinceReadTime If not set to SnapshotVersion.MIN, return only
+     *     documents that have been read since this snapshot version (exclusive).
+     */
+    LocalDocumentsView.prototype.getDocumentsMatchingQuery = function (transaction, query, sinceReadTime) {
         if (query.isDocumentQuery()) {
             return this.getDocumentsMatchingDocumentQuery(transaction, query.path);
         }
         else if (query.isCollectionGroupQuery()) {
-            return this.getDocumentsMatchingCollectionGroupQuery(transaction, query);
+            return this.getDocumentsMatchingCollectionGroupQuery(transaction, query, sinceReadTime);
         }
         else {
-            return this.getDocumentsMatchingCollectionQuery(transaction, query);
+            return this.getDocumentsMatchingCollectionQuery(transaction, query, sinceReadTime);
         }
     };
     LocalDocumentsView.prototype.getDocumentsMatchingDocumentQuery = function (transaction, docPath) {
@@ -26139,7 +26324,7 @@ var LocalDocumentsView = /** @class */ (function () {
             return result;
         });
     };
-    LocalDocumentsView.prototype.getDocumentsMatchingCollectionGroupQuery = function (transaction, query) {
+    LocalDocumentsView.prototype.getDocumentsMatchingCollectionGroupQuery = function (transaction, query, sinceReadTime) {
         var _this = this;
         assert(query.path.isEmpty(), 'Currently we only support collection group queries at the root.');
         var collectionId = query.collectionGroup;
@@ -26151,7 +26336,7 @@ var LocalDocumentsView = /** @class */ (function () {
             // collectionId and aggregate the results.
             return PersistencePromise.forEach(parents, function (parent) {
                 var collectionQuery = query.asCollectionQueryAtPath(parent.child(collectionId));
-                return _this.getDocumentsMatchingCollectionQuery(transaction, collectionQuery).next(function (r) {
+                return _this.getDocumentsMatchingCollectionQuery(transaction, collectionQuery, sinceReadTime).next(function (r) {
                     r.forEach(function (key, doc) {
                         results = results.insert(key, doc);
                     });
@@ -26159,13 +26344,13 @@ var LocalDocumentsView = /** @class */ (function () {
             }).next(function () { return results; });
         });
     };
-    LocalDocumentsView.prototype.getDocumentsMatchingCollectionQuery = function (transaction, query) {
+    LocalDocumentsView.prototype.getDocumentsMatchingCollectionQuery = function (transaction, query, sinceReadTime) {
         var _this = this;
         // Query the remote documents and overlay mutations.
         var results;
         var mutationBatches;
         return this.remoteDocumentCache
-            .getDocumentsMatchingQuery(transaction, query)
+            .getDocumentsMatchingQuery(transaction, query, sinceReadTime)
             .next(function (queryResults) {
             results = queryResults;
             return _this.mutationQueue.getAllMutationBatchesAffectingQuery(transaction, query);
@@ -26429,21 +26614,42 @@ var LOG_TAG$2 = 'LocalStore';
 var LocalStore = /** @class */ (function () {
     function LocalStore(
     /** Manages our in-memory or durable persistence. */
-    persistence, initialUser) {
+    persistence, queryEngine, initialUser) {
         this.persistence = persistence;
+        this.queryEngine = queryEngine;
         /**
          * The set of document references maintained by any local views.
          */
         this.localViewReferences = new ReferenceSet();
-        /** Maps a targetID to data about its query. */
-        this.queryDataByTarget = {};
+        /**
+         * Maps a targetID to data about its query.
+         *
+         * PORTING NOTE: We are using an immutable data structure on Web to make re-runs
+         * of `applyRemoteEvent()` idempotent.
+         */
+        this.queryDataByTarget = new SortedMap(primitiveComparator);
+        /** Maps a query to its targetID. */
+        this.targetIdByQuery = new ObjectMap(function (q) {
+            return q.canonicalId();
+        });
+        /**
+         * The read time of the last entry processed by `getNewDocumentChanges()`.
+         *
+         * PORTING NOTE: This is only used for multi-tab synchronization.
+         */
+        this.lastDocumentChangeReadTime = SnapshotVersion.MIN;
         assert(persistence.started, 'LocalStore was passed an unstarted persistence implementation');
         this.persistence.referenceDelegate.setInMemoryPins(this.localViewReferences);
         this.mutationQueue = persistence.getMutationQueue(initialUser);
         this.remoteDocuments = persistence.getRemoteDocumentCache();
         this.queryCache = persistence.getQueryCache();
         this.localDocuments = new LocalDocumentsView(this.remoteDocuments, this.mutationQueue, this.persistence.getIndexManager());
+        this.queryEngine.setLocalDocumentsView(this.localDocuments);
     }
+    /** Starts the LocalStore. */
+    LocalStore.prototype.start = function () {
+        return this.synchronizeLastDocumentChangeReadTime();
+    };
     /**
      * Tells the LocalStore that the currently authenticated user has changed.
      *
@@ -26453,53 +26659,69 @@ var LocalStore = /** @class */ (function () {
     // PORTING NOTE: Android and iOS only return the documents affected by the
     // change.
     LocalStore.prototype.handleUserChange = function (user) {
-        var _this = this;
-        return this.persistence.runTransaction('Handle user change', 'readonly', function (txn) {
-            // Swap out the mutation queue, grabbing the pending mutation batches
-            // before and after.
-            var oldBatches;
-            return _this.mutationQueue
-                .getAllMutationBatches(txn)
-                .next(function (promisedOldBatches) {
-                oldBatches = promisedOldBatches;
-                _this.mutationQueue = _this.persistence.getMutationQueue(user);
-                // Recreate our LocalDocumentsView using the new
-                // MutationQueue.
-                _this.localDocuments = new LocalDocumentsView(_this.remoteDocuments, _this.mutationQueue, _this.persistence.getIndexManager());
-                return _this.mutationQueue.getAllMutationBatches(txn);
-            })
-                .next(function (newBatches) {
-                var removedBatchIds = [];
-                var addedBatchIds = [];
-                // Union the old/new changed keys.
-                var changedKeys = documentKeySet();
-                for (var _i = 0, oldBatches_1 = oldBatches; _i < oldBatches_1.length; _i++) {
-                    var batch = oldBatches_1[_i];
-                    removedBatchIds.push(batch.batchId);
-                    for (var _a = 0, _b = batch.mutations; _a < _b.length; _a++) {
-                        var mutation = _b[_a];
-                        changedKeys = changedKeys.add(mutation.key);
-                    }
+        return tslib.__awaiter(this, void 0, void 0, function () {
+            var newMutationQueue, newLocalDocuments, result;
+            var _this = this;
+            return tslib.__generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        newMutationQueue = this.mutationQueue;
+                        newLocalDocuments = this.localDocuments;
+                        return [4 /*yield*/, this.persistence.runTransaction('Handle user change', 'readonly-idempotent', function (txn) {
+                                // Swap out the mutation queue, grabbing the pending mutation batches
+                                // before and after.
+                                var oldBatches;
+                                return _this.mutationQueue
+                                    .getAllMutationBatches(txn)
+                                    .next(function (promisedOldBatches) {
+                                    oldBatches = promisedOldBatches;
+                                    newMutationQueue = _this.persistence.getMutationQueue(user);
+                                    // Recreate our LocalDocumentsView using the new
+                                    // MutationQueue.
+                                    newLocalDocuments = new LocalDocumentsView(_this.remoteDocuments, newMutationQueue, _this.persistence.getIndexManager());
+                                    return newMutationQueue.getAllMutationBatches(txn);
+                                })
+                                    .next(function (newBatches) {
+                                    var removedBatchIds = [];
+                                    var addedBatchIds = [];
+                                    // Union the old/new changed keys.
+                                    var changedKeys = documentKeySet();
+                                    for (var _i = 0, oldBatches_1 = oldBatches; _i < oldBatches_1.length; _i++) {
+                                        var batch = oldBatches_1[_i];
+                                        removedBatchIds.push(batch.batchId);
+                                        for (var _a = 0, _b = batch.mutations; _a < _b.length; _a++) {
+                                            var mutation = _b[_a];
+                                            changedKeys = changedKeys.add(mutation.key);
+                                        }
+                                    }
+                                    for (var _c = 0, newBatches_1 = newBatches; _c < newBatches_1.length; _c++) {
+                                        var batch = newBatches_1[_c];
+                                        addedBatchIds.push(batch.batchId);
+                                        for (var _d = 0, _e = batch.mutations; _d < _e.length; _d++) {
+                                            var mutation = _e[_d];
+                                            changedKeys = changedKeys.add(mutation.key);
+                                        }
+                                    }
+                                    // Return the set of all (potentially) changed documents and the list
+                                    // of mutation batch IDs that were affected by change.
+                                    return newLocalDocuments
+                                        .getDocuments(txn, changedKeys)
+                                        .next(function (affectedDocuments) {
+                                        return {
+                                            affectedDocuments: affectedDocuments,
+                                            removedBatchIds: removedBatchIds,
+                                            addedBatchIds: addedBatchIds
+                                        };
+                                    });
+                                });
+                            })];
+                    case 1:
+                        result = _a.sent();
+                        this.mutationQueue = newMutationQueue;
+                        this.localDocuments = newLocalDocuments;
+                        this.queryEngine.setLocalDocumentsView(this.localDocuments);
+                        return [2 /*return*/, result];
                 }
-                for (var _c = 0, newBatches_1 = newBatches; _c < newBatches_1.length; _c++) {
-                    var batch = newBatches_1[_c];
-                    addedBatchIds.push(batch.batchId);
-                    for (var _d = 0, _e = batch.mutations; _d < _e.length; _d++) {
-                        var mutation = _e[_d];
-                        changedKeys = changedKeys.add(mutation.key);
-                    }
-                }
-                // Return the set of all (potentially) changed documents and the list
-                // of mutation batch IDs that were affected by change.
-                return _this.localDocuments
-                    .getDocuments(txn, changedKeys)
-                    .next(function (affectedDocuments) {
-                    return {
-                        affectedDocuments: affectedDocuments,
-                        removedBatchIds: removedBatchIds,
-                        addedBatchIds: addedBatchIds
-                    };
-                });
             });
         });
     };
@@ -26508,13 +26730,14 @@ var LocalStore = /** @class */ (function () {
         var _this = this;
         var localWriteTime = Timestamp.now();
         var keys = mutations.reduce(function (keys, m) { return keys.add(m.key); }, documentKeySet());
-        return this.persistence.runTransaction('Locally write mutations', 'readwrite', function (txn) {
+        var existingDocs;
+        return this.persistence
+            .runTransaction('Locally write mutations', 'readwrite-idempotent', function (txn) {
             // Load and apply all existing mutations. This lets us compute the
             // current base state for all non-idempotent transforms before applying
             // any additional user-provided writes.
-            return _this.localDocuments
-                .getDocuments(txn, keys)
-                .next(function (existingDocs) {
+            return _this.localDocuments.getDocuments(txn, keys).next(function (docs) {
+                existingDocs = docs;
                 // For non-idempotent mutations (such as `FieldValue.increment()`),
                 // we record the base state in a separate patch mutation. This is
                 // later used to guarantee consistent values and prevents flicker
@@ -26531,20 +26754,19 @@ var LocalStore = /** @class */ (function () {
                         baseMutations.push(new PatchMutation(mutation.key, baseValue, baseValue.fieldMask(), Precondition.exists(true)));
                     }
                 }
-                return _this.mutationQueue
-                    .addMutationBatch(txn, localWriteTime, baseMutations, mutations)
-                    .next(function (batch) {
-                    var changes = batch.applyToLocalDocumentSet(existingDocs);
-                    return { batchId: batch.batchId, changes: changes };
-                });
+                return _this.mutationQueue.addMutationBatch(txn, localWriteTime, baseMutations, mutations);
             });
+        })
+            .then(function (batch) {
+            var changes = batch.applyToLocalDocumentSet(existingDocs);
+            return { batchId: batch.batchId, changes: changes };
         });
     };
     /** Returns the local view of the documents affected by a mutation batch. */
     // PORTING NOTE: Multi-tab only.
     LocalStore.prototype.lookupMutationDocuments = function (batchId) {
         var _this = this;
-        return this.persistence.runTransaction('Lookup mutation documents', 'readonly', function (txn) {
+        return this.persistence.runTransaction('Lookup mutation documents', 'readonly-idempotent', function (txn) {
             return _this.mutationQueue
                 .lookupMutationKeys(txn, batchId)
                 .next(function (keys) {
@@ -26573,9 +26795,11 @@ var LocalStore = /** @class */ (function () {
      */
     LocalStore.prototype.acknowledgeBatch = function (batchResult) {
         var _this = this;
-        return this.persistence.runTransaction('Acknowledge batch', 'readwrite-primary', function (txn) {
+        return this.persistence.runTransaction('Acknowledge batch', 'readwrite-primary-idempotent', function (txn) {
             var affected = batchResult.batch.keys();
-            var documentBuffer = _this.remoteDocuments.newChangeBuffer();
+            var documentBuffer = _this.remoteDocuments.newChangeBuffer({
+                trackRemovals: true // Make sure document removals show up in `getNewDocumentChanges()`
+            });
             return _this.mutationQueue
                 .acknowledgeBatch(txn, batchResult.batch, batchResult.streamToken)
                 .next(function () {
@@ -26594,7 +26818,7 @@ var LocalStore = /** @class */ (function () {
      */
     LocalStore.prototype.rejectBatch = function (batchId) {
         var _this = this;
-        return this.persistence.runTransaction('Reject batch', 'readwrite-primary', function (txn) {
+        return this.persistence.runTransaction('Reject batch', 'readwrite-primary-idempotent', function (txn) {
             var affectedKeys;
             return _this.mutationQueue
                 .lookupMutationBatch(txn, batchId)
@@ -26617,14 +26841,14 @@ var LocalStore = /** @class */ (function () {
      */
     LocalStore.prototype.getHighestUnacknowledgedBatchId = function () {
         var _this = this;
-        return this.persistence.runTransaction('Get highest unacknowledged batch id', 'readonly', function (txn) {
+        return this.persistence.runTransaction('Get highest unacknowledged batch id', 'readonly-idempotent', function (txn) {
             return _this.mutationQueue.getHighestUnacknowledgedBatchId(txn);
         });
     };
     /** Returns the last recorded stream token for the current user. */
     LocalStore.prototype.getLastStreamToken = function () {
         var _this = this;
-        return this.persistence.runTransaction('Get last stream token', 'readonly', function (txn) {
+        return this.persistence.runTransaction('Get last stream token', 'readonly-idempotent', function (txn) {
             return _this.mutationQueue.getLastStreamToken(txn);
         });
     };
@@ -26635,7 +26859,7 @@ var LocalStore = /** @class */ (function () {
      */
     LocalStore.prototype.setLastStreamToken = function (streamToken) {
         var _this = this;
-        return this.persistence.runTransaction('Set last stream token', 'readwrite-primary', function (txn) {
+        return this.persistence.runTransaction('Set last stream token', 'readwrite-primary-idempotent', function (txn) {
             return _this.mutationQueue.setLastStreamToken(txn, streamToken);
         });
     };
@@ -26645,7 +26869,7 @@ var LocalStore = /** @class */ (function () {
      */
     LocalStore.prototype.getLastRemoteSnapshotVersion = function () {
         var _this = this;
-        return this.persistence.runTransaction('Get last remote snapshot version', 'readonly', function (txn) { return _this.queryCache.getLastRemoteSnapshotVersion(txn); });
+        return this.persistence.runTransaction('Get last remote snapshot version', 'readonly-idempotent', function (txn) { return _this.queryCache.getLastRemoteSnapshotVersion(txn); });
     };
     /**
      * Update the "ground-state" (remote) documents. We assume that the remote
@@ -26657,12 +26881,18 @@ var LocalStore = /** @class */ (function () {
      */
     LocalStore.prototype.applyRemoteEvent = function (remoteEvent) {
         var _this = this;
-        var documentBuffer = this.remoteDocuments.newChangeBuffer();
-        var snapshotVersion = remoteEvent.snapshotVersion;
-        return this.persistence.runTransaction('Apply remote event', 'readwrite-primary', function (txn) {
+        var remoteVersion = remoteEvent.snapshotVersion;
+        var newQueryDataByTargetMap = this.queryDataByTarget;
+        return this.persistence
+            .runTransaction('Apply remote event', 'readwrite-primary-idempotent', function (txn) {
+            var documentBuffer = _this.remoteDocuments.newChangeBuffer({
+                trackRemovals: true // Make sure document removals show up in `getNewDocumentChanges()`
+            });
+            // Reset newQueryDataByTargetMap in case this transaction gets re-run.
+            newQueryDataByTargetMap = _this.queryDataByTarget;
             var promises = [];
             forEachNumber(remoteEvent.targetChanges, function (targetId, change) {
-                var oldQueryData = _this.queryDataByTarget[targetId];
+                var oldQueryData = newQueryDataByTargetMap.get(targetId);
                 if (!oldQueryData) {
                     return;
                 }
@@ -26677,8 +26907,10 @@ var LocalStore = /** @class */ (function () {
                 var resumeToken = change.resumeToken;
                 // Update the resume token if the change includes one.
                 if (resumeToken.length > 0) {
-                    var newQueryData = oldQueryData.withResumeToken(resumeToken, snapshotVersion);
-                    _this.queryDataByTarget[targetId] = newQueryData;
+                    var newQueryData = oldQueryData
+                        .withResumeToken(resumeToken, remoteVersion)
+                        .withSequenceNumber(txn.currentSequenceNumber);
+                    newQueryDataByTargetMap = newQueryDataByTargetMap.insert(targetId, newQueryData);
                     // Update the query data if there are target changes (or if
                     // sufficient time has passed since the last update).
                     if (LocalStore.shouldPersistQueryData(oldQueryData, newQueryData, change)) {
@@ -26705,7 +26937,7 @@ var LocalStore = /** @class */ (function () {
                         // NoDocuments with SnapshotVersion.MIN are used in manufactured
                         // events. We remove these documents from cache since we lost
                         // access.
-                        documentBuffer.removeEntry(key);
+                        documentBuffer.removeEntry(key, remoteVersion);
                         changedDocs = changedDocs.insert(key, doc);
                     }
                     else if (existingDoc == null ||
@@ -26714,10 +26946,10 @@ var LocalStore = /** @class */ (function () {
                             existingDoc.hasPendingWrites)) {
                         // TODO(index-free): Make this an assert when we enable
                         // Index-Free queries
-                        if (SnapshotVersion.MIN.isEqual(remoteEvent.snapshotVersion)) {
+                        if (SnapshotVersion.MIN.isEqual(remoteVersion)) {
                             error(LOG_TAG$2, 'Cannot add a document when the remote version is zero');
                         }
-                        documentBuffer.addEntry(doc);
+                        documentBuffer.addEntry(doc, remoteVersion);
                         changedDocs = changedDocs.insert(key, doc);
                     }
                     else {
@@ -26732,15 +26964,15 @@ var LocalStore = /** @class */ (function () {
             // can synthesize remote events when we get permission denied errors while
             // trying to resolve the state of a locally cached document that is in
             // limbo.
-            if (!snapshotVersion.isEqual(SnapshotVersion.MIN)) {
+            if (!remoteVersion.isEqual(SnapshotVersion.MIN)) {
                 var updateRemoteVersion = _this.queryCache
                     .getLastRemoteSnapshotVersion(txn)
                     .next(function (lastRemoteSnapshotVersion) {
-                    assert(snapshotVersion.compareTo(lastRemoteSnapshotVersion) >= 0, 'Watch stream reverted to previous snapshot?? ' +
-                        snapshotVersion +
+                    assert(remoteVersion.compareTo(lastRemoteSnapshotVersion) >= 0, 'Watch stream reverted to previous snapshot?? ' +
+                        remoteVersion +
                         ' < ' +
                         lastRemoteSnapshotVersion);
-                    return _this.queryCache.setTargetsMetadata(txn, txn.currentSequenceNumber, snapshotVersion);
+                    return _this.queryCache.setTargetsMetadata(txn, txn.currentSequenceNumber, remoteVersion);
                 });
                 promises.push(updateRemoteVersion);
             }
@@ -26749,6 +26981,10 @@ var LocalStore = /** @class */ (function () {
                 .next(function () {
                 return _this.localDocuments.getLocalViewOfDocuments(txn, changedDocs);
             });
+        })
+            .then(function (changedDocs) {
+            _this.queryDataByTarget = newQueryDataByTargetMap;
+            return changedDocs;
         });
     };
     /**
@@ -26793,10 +27029,22 @@ var LocalStore = /** @class */ (function () {
      */
     LocalStore.prototype.notifyLocalViewChanges = function (viewChanges) {
         var _this = this;
-        return this.persistence.runTransaction('notifyLocalViewChanges', 'readwrite', function (txn) {
+        for (var _i = 0, viewChanges_1 = viewChanges; _i < viewChanges_1.length; _i++) {
+            var viewChange = viewChanges_1[_i];
+            var targetId = viewChange.targetId;
+            this.localViewReferences.addReferences(viewChange.addedKeys, targetId);
+            this.localViewReferences.removeReferences(viewChange.removedKeys, targetId);
+            if (!viewChange.fromCache) {
+                var queryData = this.queryDataByTarget.get(targetId);
+                assert(queryData !== null, "Can't set limbo-free snapshot version for unknown target: " + targetId);
+                // Advance the last limbo free snapshot version
+                var lastLimboFreeSnapshotVersion = queryData.snapshotVersion;
+                var updatedQueryData = queryData.withLastLimboFreeSnapshotVersion(lastLimboFreeSnapshotVersion);
+                this.queryDataByTarget = this.queryDataByTarget.insert(targetId, updatedQueryData);
+            }
+        }
+        return this.persistence.runTransaction('notifyLocalViewChanges', 'readwrite-idempotent', function (txn) {
             return PersistencePromise.forEach(viewChanges, function (viewChange) {
-                _this.localViewReferences.addReferences(viewChange.addedKeys, viewChange.targetId);
-                _this.localViewReferences.removeReferences(viewChange.removedKeys, viewChange.targetId);
                 return PersistencePromise.forEach(viewChange.removedKeys, function (key) {
                     return _this.persistence.referenceDelegate.removeReference(txn, key);
                 });
@@ -26811,7 +27059,7 @@ var LocalStore = /** @class */ (function () {
      */
     LocalStore.prototype.nextMutationBatch = function (afterBatchId) {
         var _this = this;
-        return this.persistence.runTransaction('Get next mutation batch', 'readonly', function (txn) {
+        return this.persistence.runTransaction('Get next mutation batch', 'readonly-idempotent', function (txn) {
             if (afterBatchId === undefined) {
                 afterBatchId = BATCHID_UNKNOWN;
             }
@@ -26824,7 +27072,7 @@ var LocalStore = /** @class */ (function () {
      */
     LocalStore.prototype.readDocument = function (key) {
         var _this = this;
-        return this.persistence.runTransaction('read document', 'readonly', function (txn) {
+        return this.persistence.runTransaction('read document', 'readonly-idempotent', function (txn) {
             return _this.localDocuments.getDocument(txn, key);
         });
     };
@@ -26835,7 +27083,8 @@ var LocalStore = /** @class */ (function () {
      */
     LocalStore.prototype.allocateQuery = function (query) {
         var _this = this;
-        return this.persistence.runTransaction('Allocate query', 'readwrite', function (txn) {
+        return this.persistence
+            .runTransaction('Allocate query', 'readwrite-idempotent', function (txn) {
             var queryData;
             return _this.queryCache
                 .getQueryData(txn, query)
@@ -26845,21 +27094,38 @@ var LocalStore = /** @class */ (function () {
                     // previous targetID.
                     // TODO(mcg): freshen last accessed date?
                     queryData = cached;
-                    return PersistencePromise.resolve();
+                    return PersistencePromise.resolve(queryData);
                 }
                 else {
                     return _this.queryCache.allocateTargetId(txn).next(function (targetId) {
                         queryData = new QueryData(query, targetId, QueryPurpose.Listen, txn.currentSequenceNumber);
-                        return _this.queryCache.addQueryData(txn, queryData);
+                        return _this.queryCache
+                            .addQueryData(txn, queryData)
+                            .next(function () { return queryData; });
                     });
                 }
-            })
-                .next(function () {
-                assert(!_this.queryDataByTarget[queryData.targetId], 'Tried to allocate an already allocated query: ' + query);
-                _this.queryDataByTarget[queryData.targetId] = queryData;
-                return queryData;
             });
+        })
+            .then(function (queryData) {
+            assert(_this.queryDataByTarget.get(queryData.targetId) === null, 'Tried to allocate an already allocated query: ' + query);
+            _this.queryDataByTarget = _this.queryDataByTarget.insert(queryData.targetId, queryData);
+            _this.targetIdByQuery.set(query, queryData.targetId);
+            return queryData;
         });
+    };
+    /**
+     * Returns the QueryData as seen by the LocalStore, including updates that may
+     * have not yet been persisted to the QueryCache.
+     */
+    // Visible for testing.
+    LocalStore.prototype.getQueryData = function (transaction, query) {
+        var targetId = this.targetIdByQuery.get(query);
+        if (targetId !== undefined) {
+            return PersistencePromise.resolve(this.queryDataByTarget.get(targetId));
+        }
+        else {
+            return this.queryCache.getQueryData(transaction, query);
+        }
     };
     /**
      * Unpin all the documents associated with the given query. If
@@ -26869,41 +27135,76 @@ var LocalStore = /** @class */ (function () {
     // PORTING NOTE: `keepPersistedQueryData` is multi-tab only.
     LocalStore.prototype.releaseQuery = function (query, keepPersistedQueryData) {
         var _this = this;
-        var mode = keepPersistedQueryData ? 'readwrite' : 'readwrite-primary';
-        return this.persistence.runTransaction('Release query', mode, function (txn) {
-            return _this.queryCache
-                .getQueryData(txn, query)
-                .next(function (queryData) {
-                assert(queryData != null, 'Tried to release nonexistent query: ' + query);
-                var targetId = queryData.targetId;
-                var cachedQueryData = _this.queryDataByTarget[targetId];
-                // References for documents sent via Watch are automatically removed when we delete a
-                // query's target data from the reference delegate. Since this does not remove references
-                // for locally mutated documents, we have to remove the target associations for these
-                // documents manually.
-                var removed = _this.localViewReferences.removeReferencesForId(targetId);
-                delete _this.queryDataByTarget[targetId];
-                if (!keepPersistedQueryData) {
-                    return PersistencePromise.forEach(removed, function (key) {
-                        return _this.persistence.referenceDelegate.removeReference(txn, key);
-                    }).next(function () {
-                        return _this.persistence.referenceDelegate.removeTarget(txn, cachedQueryData);
-                    });
-                }
-                else {
-                    return PersistencePromise.resolve();
-                }
-            });
+        var targetId;
+        var mode = keepPersistedQueryData
+            ? 'readwrite-idempotent'
+            : 'readwrite-primary-idempotent';
+        return this.persistence
+            .runTransaction('Release query', mode, function (txn) {
+            var cachedTargetId = _this.targetIdByQuery.get(query);
+            assert(cachedTargetId !== undefined, 'Tried to release nonexistent query: ' + query);
+            targetId = cachedTargetId;
+            var queryData = _this.queryDataByTarget.get(targetId);
+            // References for documents sent via Watch are automatically removed
+            // when we delete a query's target data from the reference delegate.
+            // Since this does not remove references for locally mutated documents,
+            // we have to remove the target associations for these documents
+            // manually.
+            // This operation needs to be run inside the transaction since EagerGC
+            // uses the local view references during the transaction's commit.
+            // Fortunately, the operation is safe to be re-run in case the
+            // transaction fails since there are no side effects if the target has
+            // already been removed.
+            var removed = _this.localViewReferences.removeReferencesForId(targetId);
+            if (!keepPersistedQueryData) {
+                return PersistencePromise.forEach(removed, function (key) {
+                    return _this.persistence.referenceDelegate.removeReference(txn, key);
+                }).next(function () {
+                    _this.persistence.referenceDelegate.removeTarget(txn, queryData);
+                });
+            }
+            else {
+                return PersistencePromise.resolve();
+            }
+        })
+            .then(function () {
+            _this.queryDataByTarget = _this.queryDataByTarget.remove(targetId);
+            _this.targetIdByQuery.delete(query);
         });
     };
     /**
-     * Runs the specified query against all the documents in the local store and
-     * returns the results.
+     * Runs the specified query against the local store and returns the results,
+     * potentially taking advantage of query data from previous executions (such
+     * as the set of remote keys).
+     *
+     * @param usePreviousResults Whether results from previous executions can
+     * be used to optimize this query execution.
      */
-    LocalStore.prototype.executeQuery = function (query) {
+    LocalStore.prototype.executeQuery = function (query, usePreviousResults) {
         var _this = this;
-        return this.persistence.runTransaction('Execute query', 'readonly', function (txn) {
-            return _this.localDocuments.getDocumentsMatchingQuery(txn, query);
+        var lastLimboFreeSnapshotVersion = SnapshotVersion.MIN;
+        var remoteKeys = documentKeySet();
+        return this.persistence.runTransaction('Execute query', 'readonly-idempotent', function (txn) {
+            return _this.getQueryData(txn, query)
+                .next(function (queryData) {
+                if (queryData) {
+                    lastLimboFreeSnapshotVersion =
+                        queryData.lastLimboFreeSnapshotVersion;
+                    return _this.queryCache
+                        .getMatchingKeysForTargetId(txn, queryData.targetId)
+                        .next(function (result) {
+                        remoteKeys = result;
+                    });
+                }
+            })
+                .next(function () {
+                return _this.queryEngine.getDocumentsMatchingQuery(txn, query, usePreviousResults
+                    ? lastLimboFreeSnapshotVersion
+                    : SnapshotVersion.MIN, usePreviousResults ? remoteKeys : documentKeySet());
+            })
+                .next(function (documents) {
+                return { documents: documents, remoteKeys: remoteKeys };
+            });
         });
     };
     /**
@@ -26912,7 +27213,7 @@ var LocalStore = /** @class */ (function () {
      */
     LocalStore.prototype.remoteDocumentKeys = function (targetId) {
         var _this = this;
-        return this.persistence.runTransaction('Remote document keys', 'readonly', function (txn) {
+        return this.persistence.runTransaction('Remote document keys', 'readonly-idempotent', function (txn) {
             return _this.queryCache.getMatchingKeysForTargetId(txn, targetId);
         });
     };
@@ -26952,7 +27253,10 @@ var LocalStore = /** @class */ (function () {
                             ' resulted in null');
                     }
                     else {
-                        documentBuffer.addEntry(doc);
+                        // We use the commitVersion as the readTime rather than the
+                        // document's updateTime since the updateTime is not advanced
+                        // for updates that do not modify the underlying document.
+                        documentBuffer.addEntry(doc, batchResult.commitVersion);
                     }
                 }
             });
@@ -26963,27 +27267,64 @@ var LocalStore = /** @class */ (function () {
     };
     LocalStore.prototype.collectGarbage = function (garbageCollector) {
         var _this = this;
-        return this.persistence.runTransaction('Collect garbage', 'readwrite-primary', function (txn) { return garbageCollector.collect(txn, _this.queryDataByTarget); });
+        return this.persistence.runTransaction('Collect garbage', 'readwrite-primary-idempotent', function (txn) { return garbageCollector.collect(txn, _this.queryDataByTarget); });
     };
     // PORTING NOTE: Multi-tab only.
     LocalStore.prototype.getQueryForTarget = function (targetId) {
         var _this = this;
-        if (this.queryDataByTarget[targetId]) {
-            return Promise.resolve(this.queryDataByTarget[targetId].query);
+        var cachedQueryData = this.queryDataByTarget.get(targetId);
+        if (cachedQueryData) {
+            return Promise.resolve(cachedQueryData.query);
         }
         else {
-            return this.persistence.runTransaction('Get query data', 'readonly', function (txn) {
+            return this.persistence.runTransaction('Get query data', 'readonly-idempotent', function (txn) {
                 return _this.queryCache
                     .getQueryDataForTarget(txn, targetId)
                     .next(function (queryData) { return (queryData ? queryData.query : null); });
             });
         }
     };
+    /**
+     * Returns the set of documents that have been updated since the last call.
+     * If this is the first call, returns the set of changes since client
+     * initialization. Further invocations will return document changes since
+     * the point of rejection.
+     */
     // PORTING NOTE: Multi-tab only.
     LocalStore.prototype.getNewDocumentChanges = function () {
         var _this = this;
-        return this.persistence.runTransaction('Get new document changes', 'readonly', function (txn) {
-            return _this.remoteDocuments.getNewDocumentChanges(txn);
+        return this.persistence
+            .runTransaction('Get new document changes', 'readonly-idempotent', function (txn) {
+            return _this.remoteDocuments.getNewDocumentChanges(txn, _this.lastDocumentChangeReadTime);
+        })
+            .then(function (_a) {
+            var changedDocs = _a.changedDocs, readTime = _a.readTime;
+            _this.lastDocumentChangeReadTime = readTime;
+            return changedDocs;
+        });
+    };
+    /**
+     * Reads the newest document change from persistence and forwards the internal
+     * synchronization marker so that calls to `getNewDocumentChanges()`
+     * only return changes that happened after client initialization.
+     */
+    // PORTING NOTE: Multi-tab only.
+    LocalStore.prototype.synchronizeLastDocumentChangeReadTime = function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
+            var remoteDocumentCache_1;
+            var _this = this;
+            return tslib.__generator(this, function (_a) {
+                if (this.remoteDocuments instanceof IndexedDbRemoteDocumentCache) {
+                    remoteDocumentCache_1 = this.remoteDocuments;
+                    return [2 /*return*/, this.persistence
+                            .runTransaction('Synchronize last document change read time', 'readonly-idempotent', function (txn) { return remoteDocumentCache_1.getLastDocumentChange(txn); })
+                            .then(function (_a) {
+                            var readTime = _a.readTime;
+                            _this.lastDocumentChangeReadTime = readTime;
+                        })];
+                }
+                return [2 /*return*/];
+            });
         });
     };
     /**
@@ -27350,7 +27691,7 @@ var MemoryQueryCache = /** @class */ (function () {
         var removals = [];
         this.queries.forEach(function (key, queryData) {
             if (queryData.sequenceNumber <= upperBound &&
-                !activeTargetIds[queryData.targetId]) {
+                activeTargetIds.get(queryData.targetId) === null) {
                 _this.queries.delete(key);
                 removals.push(_this.removeMatchingKeysForTargetId(transaction, queryData.targetId));
                 count++;
@@ -27422,7 +27763,7 @@ var MemoryQueryCache = /** @class */ (function () {
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-function documentSizeMap() {
+function documentEntryMap() {
     return new SortedMap(DocumentKey.comparator);
 }
 var MemoryRemoteDocumentCache = /** @class */ (function () {
@@ -27433,8 +27774,9 @@ var MemoryRemoteDocumentCache = /** @class */ (function () {
     function MemoryRemoteDocumentCache(indexManager, sizer) {
         this.indexManager = indexManager;
         this.sizer = sizer;
-        this.docs = documentSizeMap();
-        this.newDocumentChanges = documentKeySet();
+        /** Underlying cache of documents and their read times. */
+        this.docs = documentEntryMap();
+        /** Size of all cached documents. */
         this.size = 0;
     }
     /**
@@ -27443,16 +27785,17 @@ var MemoryRemoteDocumentCache = /** @class */ (function () {
      * All calls of `addEntry`  are required to go through the RemoteDocumentChangeBuffer
      * returned by `newChangeBuffer()`.
      */
-    MemoryRemoteDocumentCache.prototype.addEntry = function (transaction, doc) {
+    MemoryRemoteDocumentCache.prototype.addEntry = function (transaction, doc, readTime) {
+        assert(!readTime.isEqual(SnapshotVersion.MIN), 'Cannot add a document with a read time of zero');
         var key = doc.key;
         var entry = this.docs.get(key);
         var previousSize = entry ? entry.size : 0;
         var currentSize = this.sizer(doc);
         this.docs = this.docs.insert(key, {
             maybeDocument: doc,
-            size: currentSize
+            size: currentSize,
+            readTime: readTime
         });
-        this.newDocumentChanges = this.newDocumentChanges.add(key);
         this.size += currentSize - previousSize;
         return this.indexManager.addToCollectionParentIndex(transaction, key.path.popLast());
     };
@@ -27482,7 +27825,7 @@ var MemoryRemoteDocumentCache = /** @class */ (function () {
         });
         return PersistencePromise.resolve(results);
     };
-    MemoryRemoteDocumentCache.prototype.getDocumentsMatchingQuery = function (transaction, query) {
+    MemoryRemoteDocumentCache.prototype.getDocumentsMatchingQuery = function (transaction, query, sinceReadTime) {
         assert(!query.isCollectionGroupQuery(), 'CollectionGroup queries should be handled in LocalDocumentsView');
         var results = documentMap();
         // Documents are ordered by key, so we can use a prefix scan to narrow down
@@ -27490,9 +27833,12 @@ var MemoryRemoteDocumentCache = /** @class */ (function () {
         var prefix = new DocumentKey(query.path.child(''));
         var iterator = this.docs.getIteratorFrom(prefix);
         while (iterator.hasNext()) {
-            var _a = iterator.getNext(), key = _a.key, maybeDocument = _a.value.maybeDocument;
+            var _a = iterator.getNext(), key = _a.key, _b = _a.value, maybeDocument = _b.maybeDocument, readTime = _b.readTime;
             if (!query.path.isPrefixOf(key.path)) {
                 break;
+            }
+            if (readTime.compareTo(sinceReadTime) <= 0) {
+                continue;
             }
             if (maybeDocument instanceof Document && query.matches(maybeDocument)) {
                 results = results.insert(maybeDocument.key, maybeDocument);
@@ -27503,20 +27849,12 @@ var MemoryRemoteDocumentCache = /** @class */ (function () {
     MemoryRemoteDocumentCache.prototype.forEachDocumentKey = function (transaction, f) {
         return PersistencePromise.forEach(this.docs, function (key) { return f(key); });
     };
-    MemoryRemoteDocumentCache.prototype.getNewDocumentChanges = function (transaction) {
-        var _this = this;
-        var changedDocs = maybeDocumentMap();
-        this.newDocumentChanges.forEach(function (key) {
-            var entry = _this.docs.get(key);
-            var changedDoc = entry
-                ? entry.maybeDocument
-                : new NoDocument(key, SnapshotVersion.forDeletedDoc());
-            changedDocs = changedDocs.insert(key, changedDoc);
-        });
-        this.newDocumentChanges = documentKeySet();
-        return PersistencePromise.resolve(changedDocs);
+    MemoryRemoteDocumentCache.prototype.getNewDocumentChanges = function (transaction, sinceReadTime) {
+        throw new Error('getNewDocumentChanges() is not supported with MemoryPersistence');
     };
-    MemoryRemoteDocumentCache.prototype.newChangeBuffer = function () {
+    MemoryRemoteDocumentCache.prototype.newChangeBuffer = function (options) {
+        // `trackRemovals` is ignores since the MemoryRemoteDocumentCache keeps
+        // a separate changelog and does not need special handling for removals.
         return new MemoryRemoteDocumentCache.RemoteDocumentChangeBuffer(this);
     };
     MemoryRemoteDocumentCache.prototype.getSize = function (txn) {
@@ -27526,7 +27864,7 @@ var MemoryRemoteDocumentCache = /** @class */ (function () {
      * Handles the details of adding and updating documents in the MemoryRemoteDocumentCache.
      */
     MemoryRemoteDocumentCache.RemoteDocumentChangeBuffer = /** @class */ (function (_super) {
-        tslib_1.__extends(class_1, _super);
+        tslib.__extends(class_1, _super);
         function class_1(documentCache) {
             var _this = _super.call(this) || this;
             _this.documentCache = documentCache;
@@ -27537,7 +27875,7 @@ var MemoryRemoteDocumentCache = /** @class */ (function () {
             var promises = [];
             this.changes.forEach(function (key, doc) {
                 if (doc) {
-                    promises.push(_this.documentCache.addEntry(transaction, doc));
+                    promises.push(_this.documentCache.addEntry(transaction, doc, _this.readTime));
                 }
                 else {
                     _this.documentCache.removeEntry(key);
@@ -27624,8 +27962,8 @@ var MemoryPersistence = /** @class */ (function () {
         configurable: true
     });
     MemoryPersistence.prototype.getActiveClients = function () {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
-            return tslib_1.__generator(this, function (_a) {
+        return tslib.__awaiter(this, void 0, void 0, function () {
+            return tslib.__generator(this, function (_a) {
                 return [2 /*return*/, [this.clientId]];
             });
         });
@@ -27668,7 +28006,11 @@ var MemoryPersistence = /** @class */ (function () {
                 .onTransactionCommitted(txn)
                 .next(function () { return result; });
         })
-            .toPromise();
+            .toPromise()
+            .then(function (result) {
+            txn.raiseOnCommittedEvent();
+            return result;
+        });
     };
     MemoryPersistence.prototype.mutationQueuesContainKey = function (transaction, key) {
         return PersistencePromise.or(values(this.mutationQueues)
@@ -27680,12 +28022,15 @@ var MemoryPersistence = /** @class */ (function () {
  * Memory persistence is not actually transactional, but future implementations
  * may have transaction-scoped state.
  */
-var MemoryTransaction = /** @class */ (function () {
+var MemoryTransaction = /** @class */ (function (_super) {
+    tslib.__extends(MemoryTransaction, _super);
     function MemoryTransaction(currentSequenceNumber) {
-        this.currentSequenceNumber = currentSequenceNumber;
+        var _this = _super.call(this) || this;
+        _this.currentSequenceNumber = currentSequenceNumber;
+        return _this;
     }
     return MemoryTransaction;
-}());
+}(PersistenceTransaction));
 var MemoryEagerDelegate = /** @class */ (function () {
     function MemoryEagerDelegate(persistence) {
         this.persistence = persistence;
@@ -27734,6 +28079,7 @@ var MemoryEagerDelegate = /** @class */ (function () {
     };
     MemoryEagerDelegate.prototype.onTransactionCommitted = function (txn) {
         var _this = this;
+        // Remove newly orphaned documents.
         var cache = this.persistence.getRemoteDocumentCache();
         var changeBuffer = cache.newChangeBuffer();
         return PersistencePromise.forEach(this.orphanedDocuments, function (key) {
@@ -27863,7 +28209,7 @@ var MemoryLruDelegate = /** @class */ (function () {
         return PersistencePromise.resolve();
     };
     MemoryLruDelegate.prototype.documentSize = function (maybeDoc) {
-        var remoteDocument = this.serializer.toDbRemoteDocument(maybeDoc);
+        var remoteDocument = this.serializer.toDbRemoteDocument(maybeDoc, maybeDoc.version);
         var value;
         if (remoteDocument.document) {
             value = remoteDocument.document;
@@ -27895,6 +28241,42 @@ var MemoryLruDelegate = /** @class */ (function () {
         return this.persistence.getRemoteDocumentCache().getSize(txn);
     };
     return MemoryLruDelegate;
+}());
+
+/**
+ * @license
+ * Copyright 2019 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * A naive implementation of QueryEngine that just loads all the documents in
+ * the queried collection and then filters them in memory.
+ */
+var SimpleQueryEngine = /** @class */ (function () {
+    function SimpleQueryEngine() {
+    }
+    SimpleQueryEngine.prototype.setLocalDocumentsView = function (localDocuments) {
+        this.localDocumentsView = localDocuments;
+    };
+    /** Returns all local documents matching the specified query. */
+    SimpleQueryEngine.prototype.getDocumentsMatchingQuery = function (transaction, query, lastLimboFreeSnapshotVersion, remoteKeys) {
+        assert(this.localDocumentsView !== undefined, 'setLocalDocumentsView() not called');
+        // TODO: Once LocalDocumentsView provides a getCollectionDocuments()
+        // method, we should call that here and then filter the results.
+        return this.localDocumentsView.getDocumentsMatchingQuery(transaction, query, SnapshotVersion.MIN);
+    };
+    return SimpleQueryEngine;
 }());
 
 /**
@@ -28255,8 +28637,8 @@ var PersistentStream = /** @class */ (function () {
      * When stop returns, isStarted() and isOpen() will both return false.
      */
     PersistentStream.prototype.stop = function () {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
-            return tslib_1.__generator(this, function (_a) {
+        return tslib.__awaiter(this, void 0, void 0, function () {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         if (!this.isStarted()) return [3 /*break*/, 2];
@@ -28307,8 +28689,8 @@ var PersistentStream = /** @class */ (function () {
     };
     /** Called by the idle timer when the stream should close due to inactivity. */
     PersistentStream.prototype.handleIdleCloseTimer = function () {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
-            return tslib_1.__generator(this, function (_a) {
+        return tslib.__awaiter(this, void 0, void 0, function () {
+            return tslib.__generator(this, function (_a) {
                 if (this.isOpen()) {
                     // When timing out an idle stream there's no reason to force the stream into backoff when
                     // it restarts so set the stream state to Initial instead of Error.
@@ -28339,8 +28721,8 @@ var PersistentStream = /** @class */ (function () {
      * @param error the error the connection was closed with.
      */
     PersistentStream.prototype.close = function (finalState, error$1) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
-            return tslib_1.__generator(this, function (_a) {
+        return tslib.__awaiter(this, void 0, void 0, function () {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         assert(this.isStarted(), 'Only started streams should be closed.');
@@ -28442,8 +28824,8 @@ var PersistentStream = /** @class */ (function () {
         var _this = this;
         assert(this.state === PersistentStreamState.Error, 'Should only perform backoff when in Error state');
         this.state = PersistentStreamState.Backoff;
-        this.backoff.backoffAndRun(function () { return tslib_1.__awaiter(_this, void 0, void 0, function () {
-            return tslib_1.__generator(this, function (_a) {
+        this.backoff.backoffAndRun(function () { return tslib.__awaiter(_this, void 0, void 0, function () {
+            return tslib.__generator(this, function (_a) {
                 assert(this.state === PersistentStreamState.Backoff, 'Backoff elapsed but state is now: ' + this.state);
                 this.state = PersistentStreamState.Initial;
                 this.start();
@@ -28493,7 +28875,7 @@ var PersistentStream = /** @class */ (function () {
  * sent from the server for ListenResponses.
  */
 var PersistentListenStream = /** @class */ (function (_super) {
-    tslib_1.__extends(PersistentListenStream, _super);
+    tslib.__extends(PersistentListenStream, _super);
     function PersistentListenStream(queue, connection, credentials, serializer, listener) {
         var _this = _super.call(this, queue, TimerId.ListenStreamConnectionBackoff, TimerId.ListenStreamIdle, connection, credentials, listener) || this;
         _this.serializer = serializer;
@@ -28555,7 +28937,7 @@ var PersistentListenStream = /** @class */ (function (_super) {
  * TODO(b/33271235): Use proto types
  */
 var PersistentWriteStream = /** @class */ (function (_super) {
-    tslib_1.__extends(PersistentWriteStream, _super);
+    tslib.__extends(PersistentWriteStream, _super);
     function PersistentWriteStream(queue, connection, credentials, serializer, listener) {
         var _this = _super.call(this, queue, TimerId.WriteStreamConnectionBackoff, TimerId.WriteStreamIdle, connection, credentials, listener) || this;
         _this.serializer = serializer;
@@ -28785,10 +29167,10 @@ var Transaction = /** @class */ (function () {
         this.writtenDocs = new Set();
     }
     Transaction.prototype.lookup = function (keys) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var docs;
             var _this = this;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         this.ensureCommitNotCalled();
@@ -28829,9 +29211,9 @@ var Transaction = /** @class */ (function () {
         this.writtenDocs.add(key);
     };
     Transaction.prototype.commit = function () {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var unwritten;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         this.ensureCommitNotCalled();
@@ -29245,7 +29627,8 @@ function isPermanentWriteError(code) {
  *     there is no match.
  */
 function mapCodeFromRpcStatus(status) {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any, lookup by string
+    // lookup by string
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     var code = RpcCode[status];
     if (code === undefined) {
         return undefined;
@@ -29632,7 +30015,9 @@ var ViewSnapshot = /** @class */ (function () {
         documents.forEach(function (doc) {
             changes.push({ type: ChangeType.Added, doc: doc });
         });
-        return new ViewSnapshot(query, documents, DocumentSet.emptySet(documents), changes, mutatedKeys, fromCache, true, false);
+        return new ViewSnapshot(query, documents, DocumentSet.emptySet(documents), changes, mutatedKeys, fromCache, 
+        /* syncStateChanged= */ true, 
+        /* excludesMetadataChanges= */ false);
     };
     Object.defineProperty(ViewSnapshot.prototype, "hasPendingWrites", {
         get: function () {
@@ -30422,8 +30807,8 @@ var RemoteStore = /** @class */ (function () {
         this.isPrimary = false;
         this.connectivityMonitor = connectivityMonitor;
         this.connectivityMonitor.addCallback(function (status) {
-            asyncQueue.enqueueAndForget(function () { return tslib_1.__awaiter(_this, void 0, void 0, function () {
-                return tslib_1.__generator(this, function (_a) {
+            asyncQueue.enqueueAndForget(function () { return tslib.__awaiter(_this, void 0, void 0, function () {
+                return tslib.__generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
                             if (!this.canUseNetwork()) return [3 /*break*/, 2];
@@ -30460,9 +30845,9 @@ var RemoteStore = /** @class */ (function () {
     };
     /** Re-enables the network. Idempotent. */
     RemoteStore.prototype.enableNetwork = function () {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var _a;
-            return tslib_1.__generator(this, function (_b) {
+            return tslib.__generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
                         this.networkEnabled = true;
@@ -30493,8 +30878,8 @@ var RemoteStore = /** @class */ (function () {
      * enableNetwork().
      */
     RemoteStore.prototype.disableNetwork = function () {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
-            return tslib_1.__generator(this, function (_a) {
+        return tslib.__awaiter(this, void 0, void 0, function () {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         this.networkEnabled = false;
@@ -30509,8 +30894,8 @@ var RemoteStore = /** @class */ (function () {
         });
     };
     RemoteStore.prototype.disableNetworkInternal = function () {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
-            return tslib_1.__generator(this, function (_a) {
+        return tslib.__awaiter(this, void 0, void 0, function () {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.writeStream.stop()];
                     case 1:
@@ -30529,8 +30914,8 @@ var RemoteStore = /** @class */ (function () {
         });
     };
     RemoteStore.prototype.shutdown = function () {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
-            return tslib_1.__generator(this, function (_a) {
+        return tslib.__awaiter(this, void 0, void 0, function () {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         debug(LOG_TAG$8, 'RemoteStore shutting down.');
@@ -30626,9 +31011,9 @@ var RemoteStore = /** @class */ (function () {
         this.watchChangeAggregator = null;
     };
     RemoteStore.prototype.onWatchStreamOpen = function () {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var _this = this;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 forEachNumber(this.listenTargets, function (targetId, queryData) {
                     _this.sendWatchRequest(queryData);
                 });
@@ -30637,8 +31022,8 @@ var RemoteStore = /** @class */ (function () {
         });
     };
     RemoteStore.prototype.onWatchStreamClose = function (error) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
-            return tslib_1.__generator(this, function (_a) {
+        return tslib.__awaiter(this, void 0, void 0, function () {
+            return tslib.__generator(this, function (_a) {
                 if (error === undefined) {
                     // Graceful stop (due to stop() or idle timeout). Make sure that's
                     // desirable.
@@ -30661,9 +31046,9 @@ var RemoteStore = /** @class */ (function () {
         });
     };
     RemoteStore.prototype.onWatchStreamChange = function (watchChange, snapshotVersion) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var lastRemoteSnapshotVersion;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         // Mark the client as online since we got a message from the server
@@ -30754,8 +31139,8 @@ var RemoteStore = /** @class */ (function () {
         var error = watchChange.cause;
         var promiseChain = Promise.resolve();
         watchChange.targetIds.forEach(function (targetId) {
-            promiseChain = promiseChain.then(function () { return tslib_1.__awaiter(_this, void 0, void 0, function () {
-                return tslib_1.__generator(this, function (_a) {
+            promiseChain = promiseChain.then(function () { return tslib.__awaiter(_this, void 0, void 0, function () {
+                return tslib.__generator(this, function (_a) {
                     // A watched target might have been removed already.
                     if (contains(this.listenTargets, targetId)) {
                         delete this.listenTargets[targetId];
@@ -30777,9 +31162,9 @@ var RemoteStore = /** @class */ (function () {
      * Starts the write stream if necessary.
      */
     RemoteStore.prototype.fillWritePipeline = function () {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var lastBatchIdRetrieved, batch;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         if (!this.canAddToWritePipeline()) return [3 /*break*/, 4];
@@ -30841,8 +31226,8 @@ var RemoteStore = /** @class */ (function () {
         this.writeStream.start();
     };
     RemoteStore.prototype.onWriteStreamOpen = function () {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
-            return tslib_1.__generator(this, function (_a) {
+        return tslib.__awaiter(this, void 0, void 0, function () {
+            return tslib.__generator(this, function (_a) {
                 this.writeStream.writeHandshake();
                 return [2 /*return*/];
             });
@@ -30876,10 +31261,10 @@ var RemoteStore = /** @class */ (function () {
         });
     };
     RemoteStore.prototype.onWriteStreamClose = function (error) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var errorHandling;
             var _this = this;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 if (error === undefined) {
                     // Graceful stop (due to stop() or idle timeout). Make sure that's
                     // desirable.
@@ -30912,8 +31297,8 @@ var RemoteStore = /** @class */ (function () {
         });
     };
     RemoteStore.prototype.handleHandshakeError = function (error) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
-            return tslib_1.__generator(this, function (_a) {
+        return tslib.__awaiter(this, void 0, void 0, function () {
+            return tslib.__generator(this, function (_a) {
                 // Reset the token if it's a permanent error, signaling the write stream is
                 // no longer valid. Note that the handshake does not count as a write: see
                 // comments on isPermanentWriteError for details.
@@ -30929,10 +31314,10 @@ var RemoteStore = /** @class */ (function () {
         });
     };
     RemoteStore.prototype.handleWriteError = function (error) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var batch;
             var _this = this;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 // Only handle permanent errors here. If it's transient, just let the retry
                 // logic kick in.
                 if (isPermanentWriteError(error.code)) {
@@ -30957,8 +31342,8 @@ var RemoteStore = /** @class */ (function () {
         return new Transaction(this.datastore);
     };
     RemoteStore.prototype.restartNetwork = function () {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
-            return tslib_1.__generator(this, function (_a) {
+        return tslib.__awaiter(this, void 0, void 0, function () {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         this.networkEnabled = false;
@@ -30975,8 +31360,8 @@ var RemoteStore = /** @class */ (function () {
         });
     };
     RemoteStore.prototype.handleCredentialChange = function () {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
-            return tslib_1.__generator(this, function (_a) {
+        return tslib.__awaiter(this, void 0, void 0, function () {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         if (!this.canUseNetwork()) return [3 /*break*/, 2];
@@ -30997,8 +31382,8 @@ var RemoteStore = /** @class */ (function () {
      * Toggles the network state when the client gains or loses its primary lease.
      */
     RemoteStore.prototype.applyPrimaryState = function (isPrimary) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
-            return tslib_1.__generator(this, function (_a) {
+        return tslib.__awaiter(this, void 0, void 0, function () {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         this.isPrimary = isPrimary;
@@ -31219,6 +31604,19 @@ var Query = /** @class */ (function () {
     Query.prototype.asCollectionQueryAtPath = function (path) {
         return new Query(path, 
         /*collectionGroup=*/ null, this.explicitOrderBy.slice(), this.filters.slice(), this.limit, this.startAt, this.endAt);
+    };
+    /**
+     * Returns true if this query does not specify any query constraints that
+     * could remove results.
+     */
+    Query.prototype.matchesAllDocuments = function () {
+        return (this.filters.length === 0 &&
+            this.limit === null &&
+            this.startAt == null &&
+            this.endAt == null &&
+            (this.explicitOrderBy.length === 0 ||
+                (this.explicitOrderBy.length === 1 &&
+                    this.explicitOrderBy[0].field.isKeyField())));
     };
     // TODO(b/29183165): This is used to get a unique string from a query to, for
     // example, use as a dictionary key, but the implementation is subject to
@@ -31478,7 +31876,7 @@ var Operator = /** @class */ (function () {
     return Operator;
 }());
 var FieldFilter = /** @class */ (function (_super) {
-    tslib_1.__extends(FieldFilter, _super);
+    tslib.__extends(FieldFilter, _super);
     function FieldFilter(field, op, value) {
         var _this = _super.call(this) || this;
         _this.field = field;
@@ -31585,7 +31983,7 @@ var FieldFilter = /** @class */ (function (_super) {
 }(Filter));
 /** Filter that matches on key fields (i.e. '__name__'). */
 var KeyFieldFilter = /** @class */ (function (_super) {
-    tslib_1.__extends(KeyFieldFilter, _super);
+    tslib.__extends(KeyFieldFilter, _super);
     function KeyFieldFilter() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -31598,7 +31996,7 @@ var KeyFieldFilter = /** @class */ (function (_super) {
 }(FieldFilter));
 /** Filter that matches on key fields within an array. */
 var KeyFieldInFilter = /** @class */ (function (_super) {
-    tslib_1.__extends(KeyFieldInFilter, _super);
+    tslib.__extends(KeyFieldInFilter, _super);
     function KeyFieldInFilter(field, value) {
         var _this = _super.call(this, field, Operator.IN, value) || this;
         _this.value = value;
@@ -31614,7 +32012,7 @@ var KeyFieldInFilter = /** @class */ (function (_super) {
 }(FieldFilter));
 /** A Filter that implements the array-contains operator. */
 var ArrayContainsFilter = /** @class */ (function (_super) {
-    tslib_1.__extends(ArrayContainsFilter, _super);
+    tslib.__extends(ArrayContainsFilter, _super);
     function ArrayContainsFilter(field, value) {
         return _super.call(this, field, Operator.ARRAY_CONTAINS, value) || this;
     }
@@ -31626,7 +32024,7 @@ var ArrayContainsFilter = /** @class */ (function (_super) {
 }(FieldFilter));
 /** A Filter that implements the IN operator. */
 var InFilter = /** @class */ (function (_super) {
-    tslib_1.__extends(InFilter, _super);
+    tslib.__extends(InFilter, _super);
     function InFilter(field, value) {
         var _this = _super.call(this, field, Operator.IN, value) || this;
         _this.value = value;
@@ -31641,7 +32039,7 @@ var InFilter = /** @class */ (function (_super) {
 }(FieldFilter));
 /** A Filter that implements the array-contains-any operator. */
 var ArrayContainsAnyFilter = /** @class */ (function (_super) {
-    tslib_1.__extends(ArrayContainsAnyFilter, _super);
+    tslib.__extends(ArrayContainsAnyFilter, _super);
     function ArrayContainsAnyFilter(field, value) {
         var _this = _super.call(this, field, Operator.ARRAY_CONTAINS_ANY, value) || this;
         _this.value = value;
@@ -32056,7 +32454,7 @@ var JsonProtoSerializer = /** @class */ (function () {
         return new FirestoreError(code, status.message || '');
     };
     /**
-     * Returns a value for a number (or undefined) that's appropriate to put into
+     * Returns a value for a number (or null) that's appropriate to put into
      * a google.protobuf.Int32Value proto.
      * DO NOT USE THIS FOR ANYTHING ELSE.
      * This method cheats. It's typed as returning "number" because that's what
@@ -32064,12 +32462,14 @@ var JsonProtoSerializer = /** @class */ (function () {
      * expects a { value: <number> } struct.
      */
     JsonProtoSerializer.prototype.toInt32Value = function (val) {
-        if (!isNullOrUndefined(val)) {
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any, We need to match generated Proto types.
-            return { value: val };
+        if (this.options.useProto3Json || isNullOrUndefined(val)) {
+            return val;
         }
         else {
-            return undefined;
+            // ProtobufJS requires that we wrap Int32Values.
+            // Use any because we need to match generated Proto types.
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            return { value: val };
         }
     };
     /**
@@ -32082,7 +32482,8 @@ var JsonProtoSerializer = /** @class */ (function () {
     JsonProtoSerializer.prototype.fromInt32Value = function (val) {
         var result;
         if (typeof val === 'object') {
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any, We need to match generated Proto types.
+            // Use any because we need to match generated Proto types.
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             result = val.value;
         }
         else {
@@ -32100,11 +32501,24 @@ var JsonProtoSerializer = /** @class */ (function () {
      * to actually return a Timestamp proto.
      */
     JsonProtoSerializer.prototype.toTimestamp = function (timestamp) {
-        return {
-            seconds: '' + timestamp.seconds,
-            nanos: timestamp.nanoseconds
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        };
+        if (this.options.useProto3Json) {
+            // Serialize to ISO-8601 date format, but with full nano resolution.
+            // Since JS Date has only millis, let's only use it for the seconds and
+            // then manually add the fractions to the end.
+            var jsDateStr = new Date(timestamp.seconds * 1000).toISOString();
+            // Remove .xxx frac part and Z in the end.
+            var strUntilSeconds = jsDateStr.replace(/\.\d*/, '').replace('Z', '');
+            // Pad the fraction out to 9 digits (nanos).
+            var nanoStr = ('000000000' + timestamp.nanoseconds).slice(-9);
+            return strUntilSeconds + "." + nanoStr + "Z";
+        }
+        else {
+            return {
+                seconds: '' + timestamp.seconds,
+                nanos: timestamp.nanoseconds
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            };
+        }
     };
     JsonProtoSerializer.prototype.fromTimestamp = function (date) {
         // The json interface (for the browser) will return an iso timestamp string,
@@ -32736,6 +33150,14 @@ var JsonProtoSerializer = /** @class */ (function () {
         var version = proto.updateTime
             ? this.fromVersion(proto.updateTime)
             : this.fromVersion(commitTime);
+        if (version.isEqual(SnapshotVersion.MIN)) {
+            // The Firestore Emulator currently returns an update time of 0 for
+            // deletes of non-existing documents (rather than null). This breaks the
+            // test "get deleted doc while offline with source=cache" as NoDocuments
+            // with version 0 are filtered by IndexedDb's RemoteDocumentCache.
+            // TODO(#2149): Remove this when Emulator is fixed
+            version = this.fromVersion(commitTime);
+        }
         var transformResults = null;
         if (proto.transformResults && proto.transformResults.length > 0) {
             transformResults = proto.transformResults.map(function (result) {
@@ -32852,7 +33274,7 @@ var JsonProtoSerializer = /** @class */ (function () {
             result.structuredQuery.orderBy = orderBy;
         }
         var limit = this.toInt32Value(query.limit);
-        if (limit !== undefined) {
+        if (limit !== null) {
             result.structuredQuery.limit = limit;
         }
         if (query.startAt) {
@@ -33194,9 +33616,9 @@ var EventManager = /** @class */ (function () {
         }
     };
     EventManager.prototype.unlisten = function (listener) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var query, lastListen, queryInfo, i;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 query = listener.query;
                 lastListen = false;
                 queryInfo = this.queries.get(query);
@@ -33414,8 +33836,9 @@ var QueryListener = /** @class */ (function () {
  * the SyncEngine) and are used to pin / unpin documents as appropriate.
  */
 var LocalViewChanges = /** @class */ (function () {
-    function LocalViewChanges(targetId, addedKeys, removedKeys) {
+    function LocalViewChanges(targetId, fromCache, addedKeys, removedKeys) {
         this.targetId = targetId;
+        this.fromCache = fromCache;
         this.addedKeys = addedKeys;
         this.removedKeys = removedKeys;
     }
@@ -33431,11 +33854,10 @@ var LocalViewChanges = /** @class */ (function () {
                 case ChangeType.Removed:
                     removedKeys = removedKeys.add(docChange.doc.key);
                     break;
-                default:
                 // do nothing
             }
         }
-        return new LocalViewChanges(targetId, addedKeys, removedKeys);
+        return new LocalViewChanges(targetId, viewSnapshot.fromCache, addedKeys, removedKeys);
     };
     return LocalViewChanges;
 }());
@@ -33787,18 +34209,18 @@ var View = /** @class */ (function () {
      *   of `syncedDocuments` since secondary clients update their query views
      *   based purely on synthesized RemoteEvents.
      *
-     * @param localDocs - The documents that match the query according to the
-     * LocalStore.
-     * @param remoteKeys - The keys of the documents that match the query
-     * according to the backend.
+     * @param queryResult.documents - The documents that match the query according
+     * to the LocalStore.
+     * @param queryResult.remoteKeys - The keys of the documents that match the
+     * query according to the backend.
      *
      * @return The ViewChange that resulted from this synchronization.
      */
     // PORTING NOTE: Multi-tab only.
-    View.prototype.synchronizeWithPersistedState = function (localDocs, remoteKeys) {
-        this._syncedDocuments = remoteKeys;
+    View.prototype.synchronizeWithPersistedState = function (queryResult) {
+        this._syncedDocuments = queryResult.remoteKeys;
         this.limboDocuments = documentKeySet();
-        var docChanges = this.computeDocChanges(localDocs);
+        var docChanges = this.computeDocChanges(queryResult.documents);
         return this.applyChanges(docChanges, /*updateLimboDocuments=*/ true);
     };
     /**
@@ -33869,10 +34291,10 @@ var TransactionRunner = /** @class */ (function () {
     };
     TransactionRunner.prototype.runWithBackOff = function () {
         var _this = this;
-        this.backoff.backoffAndRun(function () { return tslib_1.__awaiter(_this, void 0, void 0, function () {
+        this.backoff.backoffAndRun(function () { return tslib.__awaiter(_this, void 0, void 0, function () {
             var transaction, userPromise;
             var _this = this;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 transaction = this.remoteStore.createTransaction();
                 userPromise = this.tryRunUpdateFunction(transaction);
                 if (userPromise) {
@@ -34061,9 +34483,9 @@ var SyncEngine = /** @class */ (function () {
      * subscribed handlers. Returns the targetId of the query.
      */
     SyncEngine.prototype.listen = function (query) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var targetId, viewSnapshot, queryView, queryData, status_1;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         this.assertSubscribed('listen()');
@@ -34103,20 +34525,18 @@ var SyncEngine = /** @class */ (function () {
      * snapshot.
      */
     SyncEngine.prototype.initializeViewAndComputeSnapshot = function (queryData, current) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
-            var query, docs, remoteKeys, view, viewDocChanges, synthesizedTargetChange, viewChange, data;
-            return tslib_1.__generator(this, function (_a) {
+        return tslib.__awaiter(this, void 0, void 0, function () {
+            var query, queryResult, view, viewDocChanges, synthesizedTargetChange, viewChange, data;
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         query = queryData.query;
-                        return [4 /*yield*/, this.localStore.executeQuery(query)];
+                        return [4 /*yield*/, this.localStore.executeQuery(query, 
+                            /* usePreviousResults= */ true)];
                     case 1:
-                        docs = _a.sent();
-                        return [4 /*yield*/, this.localStore.remoteDocumentKeys(queryData.targetId)];
-                    case 2:
-                        remoteKeys = _a.sent();
-                        view = new View(query, remoteKeys);
-                        viewDocChanges = view.computeDocChanges(docs);
+                        queryResult = _a.sent();
+                        view = new View(query, queryResult.remoteKeys);
+                        viewDocChanges = view.computeDocChanges(queryResult.documents);
                         synthesizedTargetChange = TargetChange.createSynthesizedTargetChangeForCurrentChange(queryData.targetId, current && this.onlineState !== OnlineState.Offline);
                         viewChange = view.applyChanges(viewDocChanges, 
                         /* updateLimboDocuments= */ this.isPrimary === true, synthesizedTargetChange);
@@ -34136,17 +34556,15 @@ var SyncEngine = /** @class */ (function () {
      */
     // PORTING NOTE: Multi-tab only.
     SyncEngine.prototype.synchronizeViewAndComputeSnapshot = function (queryView) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
-            var docs, remoteKeys, viewSnapshot;
-            return tslib_1.__generator(this, function (_a) {
+        return tslib.__awaiter(this, void 0, void 0, function () {
+            var queryResult, viewSnapshot;
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.localStore.executeQuery(queryView.query)];
+                    case 0: return [4 /*yield*/, this.localStore.executeQuery(queryView.query, 
+                        /* usePreviousResults= */ true)];
                     case 1:
-                        docs = _a.sent();
-                        return [4 /*yield*/, this.localStore.remoteDocumentKeys(queryView.targetId)];
-                    case 2:
-                        remoteKeys = _a.sent();
-                        viewSnapshot = queryView.view.synchronizeWithPersistedState(docs, remoteKeys);
+                        queryResult = _a.sent();
+                        viewSnapshot = queryView.view.synchronizeWithPersistedState(queryResult);
                         if (this.isPrimary) {
                             this.updateTrackedLimbos(queryView.targetId, viewSnapshot.limboChanges);
                         }
@@ -34157,10 +34575,10 @@ var SyncEngine = /** @class */ (function () {
     };
     /** Stops listening to the query. */
     SyncEngine.prototype.unlisten = function (query) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var queryView, targetRemainsActive;
             var _this = this;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         this.assertSubscribed('unlisten()');
@@ -34207,9 +34625,9 @@ var SyncEngine = /** @class */ (function () {
      * backend (or failed locally for any other reason).
      */
     SyncEngine.prototype.write = function (batch, userCallback) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var result;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         this.assertSubscribed('write()');
@@ -34250,10 +34668,10 @@ var SyncEngine = /** @class */ (function () {
         new TransactionRunner(asyncQueue, this.remoteStore, updateFunction, deferred).run();
     };
     SyncEngine.prototype.applyRemoteEvent = function (remoteEvent) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var changes, error_1;
             var _this = this;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         this.assertSubscribed('applyRemoteEvent()');
@@ -34329,10 +34747,10 @@ var SyncEngine = /** @class */ (function () {
         }
     };
     SyncEngine.prototype.rejectListen = function (targetId, err) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var limboResolution, limboKey, documentUpdates, resolvedLimboDocuments, event_1, queryView_1;
             var _this = this;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         this.assertSubscribed('rejectListens()');
@@ -34370,9 +34788,9 @@ var SyncEngine = /** @class */ (function () {
     };
     // PORTING NOTE: Multi-tab only
     SyncEngine.prototype.applyBatchState = function (batchId, batchState, error) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var documents;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         this.assertSubscribed('applyBatchState()');
@@ -34421,9 +34839,9 @@ var SyncEngine = /** @class */ (function () {
         });
     };
     SyncEngine.prototype.applySuccessfulWrite = function (mutationBatchResult) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var batchId, changes, error_2;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         this.assertSubscribed('applySuccessfulWrite()');
@@ -34457,9 +34875,9 @@ var SyncEngine = /** @class */ (function () {
         });
     };
     SyncEngine.prototype.rejectFailedWrite = function (batchId, error) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var changes, error_3;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         this.assertSubscribed('rejectFailedWrite()');
@@ -34496,9 +34914,9 @@ var SyncEngine = /** @class */ (function () {
      * are acknowledged .
      */
     SyncEngine.prototype.registerPendingWritesCallback = function (callback) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var highestBatchId, callbacks;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         if (!this.remoteStore.canUseNetwork()) {
@@ -34637,10 +35055,10 @@ var SyncEngine = /** @class */ (function () {
         return this.limboTargetsByKey;
     };
     SyncEngine.prototype.emitNewSnapsAndNotifyLocalStore = function (changes, remoteEvent) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var newSnaps, docChangesInAllViews, queriesProcessed;
             var _this = this;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         newSnaps = [];
@@ -34656,8 +35074,11 @@ var SyncEngine = /** @class */ (function () {
                                 // The query has a limit and some docs were removed, so we need
                                 // to re-run the query against the local store to make sure we
                                 // didn't lose any good docs that had been past the limit.
-                                return _this.localStore.executeQuery(queryView.query).then(function (docs) {
-                                    return queryView.view.computeDocChanges(docs, viewDocChanges);
+                                return _this.localStore
+                                    .executeQuery(queryView.query, /* usePreviousResults= */ false)
+                                    .then(function (_a) {
+                                    var documents = _a.documents;
+                                    return queryView.view.computeDocChanges(documents, viewDocChanges);
                                 });
                             })
                                 .then(function (viewDocChanges) {
@@ -34691,9 +35112,9 @@ var SyncEngine = /** @class */ (function () {
         assert(this.syncEngineListener !== null, 'Trying to call ' + fnName + ' before calling subscribe().');
     };
     SyncEngine.prototype.handleCredentialChange = function (user) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var userChanged, result;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         userChanged = !this.currentUser.isEqual(user);
@@ -34720,10 +35141,10 @@ var SyncEngine = /** @class */ (function () {
     };
     // PORTING NOTE: Multi-tab only
     SyncEngine.prototype.applyPrimaryState = function (isPrimary) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var activeTargets, activeQueries, _i, activeQueries_1, queryData, activeTargets_1, p_1;
             var _this = this;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         if (!(isPrimary === true && this.isPrimary !== true)) return [3 /*break*/, 3];
@@ -34787,9 +35208,9 @@ var SyncEngine = /** @class */ (function () {
      */
     // PORTING NOTE: Multi-tab only.
     SyncEngine.prototype.synchronizeQueryViewsAndRaiseSnapshots = function (targets) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var activeQueries, newViewSnapshots, _i, targets_1, targetId, queryData, queryView, viewChange, query;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         activeQueries = [];
@@ -34857,9 +35278,9 @@ var SyncEngine = /** @class */ (function () {
     };
     // PORTING NOTE: Multi-tab only
     SyncEngine.prototype.applyTargetState = function (targetId, state, error) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
-            var _a, changes, synthesizedRemoteEvent, error_4, activeTargets_2, queryView;
-            return tslib_1.__generator(this, function (_b) {
+        return tslib.__awaiter(this, void 0, void 0, function () {
+            var _a, changes, synthesizedRemoteEvent, queryView;
+            return tslib.__generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
                         if (this.isPrimary) {
@@ -34868,60 +35289,45 @@ var SyncEngine = /** @class */ (function () {
                             debug(LOG_TAG$9, 'Ignoring unexpected query state notification.');
                             return [2 /*return*/];
                         }
-                        if (!this.queryViewsByTarget[targetId]) return [3 /*break*/, 11];
+                        if (!this.queryViewsByTarget[targetId]) return [3 /*break*/, 7];
                         _a = state;
                         switch (_a) {
                             case 'current': return [3 /*break*/, 1];
                             case 'not-current': return [3 /*break*/, 1];
-                            case 'rejected': return [3 /*break*/, 8];
+                            case 'rejected': return [3 /*break*/, 4];
                         }
-                        return [3 /*break*/, 10];
-                    case 1:
-                        _b.trys.push([1, 4, , 8]);
-                        return [4 /*yield*/, this.localStore.getNewDocumentChanges()];
+                        return [3 /*break*/, 6];
+                    case 1: return [4 /*yield*/, this.localStore.getNewDocumentChanges()];
                     case 2:
                         changes = _b.sent();
                         synthesizedRemoteEvent = RemoteEvent.createSynthesizedRemoteEventForCurrentChange(targetId, state === 'current');
                         return [4 /*yield*/, this.emitNewSnapsAndNotifyLocalStore(changes, synthesizedRemoteEvent)];
                     case 3:
                         _b.sent();
-                        return [3 /*break*/, 11];
-                    case 4:
-                        error_4 = _b.sent();
-                        if (!isDocumentChangeMissingError(error_4)) return [3 /*break*/, 6];
-                        activeTargets_2 = [];
-                        forEachNumber(this.queryViewsByTarget, function (target) {
-                            return activeTargets_2.push(target);
-                        });
-                        return [4 /*yield*/, this.synchronizeQueryViewsAndRaiseSnapshots(activeTargets_2)];
-                    case 5:
-                        _b.sent();
                         return [3 /*break*/, 7];
-                    case 6: throw error_4;
-                    case 7: return [3 /*break*/, 8];
-                    case 8:
+                    case 4:
                         queryView = this.queryViewsByTarget[targetId];
                         this.removeAndCleanupQuery(queryView);
                         return [4 /*yield*/, this.localStore.releaseQuery(queryView.query, 
                             /*keepPersistedQueryData=*/ true)];
-                    case 9:
+                    case 5:
                         _b.sent();
                         this.syncEngineListener.onWatchError(queryView.query, error);
-                        return [3 /*break*/, 11];
-                    case 10:
+                        return [3 /*break*/, 7];
+                    case 6:
                         fail('Unexpected target state: ' + state);
-                        _b.label = 11;
-                    case 11: return [2 /*return*/];
+                        _b.label = 7;
+                    case 7: return [2 /*return*/];
                 }
             });
         });
     };
     // PORTING NOTE: Multi-tab only
     SyncEngine.prototype.applyActiveTargetsChange = function (added, removed) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var _i, added_1, targetId, query, queryData, _loop_1, this_1, _a, removed_1, targetId;
             var _this = this;
-            return tslib_1.__generator(this, function (_b) {
+            return tslib.__generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
                         if (!this.isPrimary) {
@@ -34952,7 +35358,7 @@ var SyncEngine = /** @class */ (function () {
                     case 6:
                         _loop_1 = function (targetId) {
                             var queryView;
-                            return tslib_1.__generator(this, function (_a) {
+                            return tslib.__generator(this, function (_a) {
                                 switch (_a.label) {
                                     case 0:
                                         queryView = this_1.queryViewsByTarget[targetId];
@@ -35361,10 +35767,10 @@ var WebStorageSharedClientState = /** @class */ (function () {
         return !!(platform.window && platform.window.localStorage != null);
     };
     WebStorageSharedClientState.prototype.start = function () {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var existingClients, _i, existingClients_1, clientId, storageItem, clientState, onlineStateJSON, onlineState, _a, _b, event_1;
             var _this = this;
-            return tslib_1.__generator(this, function (_c) {
+            return tslib.__generator(this, function (_c) {
                 switch (_c.label) {
                     case 0:
                         assert(!this.started, 'WebStorageSharedClientState already started');
@@ -35512,9 +35918,9 @@ var WebStorageSharedClientState = /** @class */ (function () {
                     'garbage-collected our state');
                 return;
             }
-            this.queue.enqueueAndForget(function () { return tslib_1.__awaiter(_this, void 0, void 0, function () {
+            this.queue.enqueueAndForget(function () { return tslib.__awaiter(_this, void 0, void 0, function () {
                 var clientState, clientId, mutationMetadata, queryTargetMetadata, onlineState, sequenceNumber;
-                return tslib_1.__generator(this, function (_a) {
+                return tslib.__generator(this, function (_a) {
                     if (!this.started) {
                         this.earlyEvents.push(event);
                         return [2 /*return*/];
@@ -35664,8 +36070,8 @@ var WebStorageSharedClientState = /** @class */ (function () {
         return SharedOnlineState.fromWebStorageEntry(value);
     };
     WebStorageSharedClientState.prototype.handleMutationBatchEvent = function (mutationBatch) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
-            return tslib_1.__generator(this, function (_a) {
+        return tslib.__awaiter(this, void 0, void 0, function () {
+            return tslib.__generator(this, function (_a) {
                 if (mutationBatch.user.uid !== this.currentUser.uid) {
                     debug(LOG_TAG$a, "Ignoring mutation for non-active user " + mutationBatch.user.uid);
                     return [2 /*return*/];
@@ -35689,16 +36095,16 @@ var WebStorageSharedClientState = /** @class */ (function () {
         var newTargets = this.getAllActiveQueryTargets();
         var addedTargets = [];
         var removedTargets = [];
-        newTargets.forEach(function (targetId) { return tslib_1.__awaiter(_this, void 0, void 0, function () {
-            return tslib_1.__generator(this, function (_a) {
+        newTargets.forEach(function (targetId) { return tslib.__awaiter(_this, void 0, void 0, function () {
+            return tslib.__generator(this, function (_a) {
                 if (!existingTargets.has(targetId)) {
                     addedTargets.push(targetId);
                 }
                 return [2 /*return*/];
             });
         }); });
-        existingTargets.forEach(function (targetId) { return tslib_1.__awaiter(_this, void 0, void 0, function () {
-            return tslib_1.__generator(this, function (_a) {
+        existingTargets.forEach(function (targetId) { return tslib.__awaiter(_this, void 0, void 0, function () {
+            return tslib.__generator(this, function (_a) {
                 if (!newTargets.has(targetId)) {
                     removedTargets.push(targetId);
                 }
@@ -36032,9 +36438,9 @@ var FirestoreClient = /** @class */ (function () {
         var serializer = new JsonProtoSerializer(this.databaseInfo.databaseId, {
             useProto3Json: true
         });
-        return Promise.resolve().then(function () { return tslib_1.__awaiter(_this, void 0, void 0, function () {
+        return Promise.resolve().then(function () { return tslib.__awaiter(_this, void 0, void 0, function () {
             var lruParams, persistence;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         if (settings.synchronizeTabs &&
@@ -36083,13 +36489,17 @@ var FirestoreClient = /** @class */ (function () {
         debug(LOG_TAG$b, 'Initializing. user=', user.uid);
         return this.platform
             .loadConnection(this.databaseInfo)
-            .then(function (connection) { return tslib_1.__awaiter(_this, void 0, void 0, function () {
-            var connectivityMonitor, serializer, datastore, remoteStoreOnlineStateChangedHandler, sharedClientStateOnlineStateChangedHandler;
+            .then(function (connection) { return tslib.__awaiter(_this, void 0, void 0, function () {
+            var queryEngine, connectivityMonitor, serializer, datastore, remoteStoreOnlineStateChangedHandler, sharedClientStateOnlineStateChangedHandler;
             var _this = this;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        this.localStore = new LocalStore(this.persistence, user);
+                        queryEngine = new SimpleQueryEngine();
+                        this.localStore = new LocalStore(this.persistence, queryEngine, user);
+                        return [4 /*yield*/, this.localStore.start()];
+                    case 1:
+                        _a.sent();
                         if (maybeLruGc) {
                             // We're running LRU Garbage collection. Set up the scheduler.
                             this.lruScheduler = new LruScheduler(maybeLruGc, this.asyncQueue, this.localStore);
@@ -36112,16 +36522,16 @@ var FirestoreClient = /** @class */ (function () {
                         this.eventMgr = new EventManager(this.syncEngine);
                         // PORTING NOTE: LocalStore doesn't need an explicit start() on the Web.
                         return [4 /*yield*/, this.sharedClientState.start()];
-                    case 1:
+                    case 2:
                         // PORTING NOTE: LocalStore doesn't need an explicit start() on the Web.
                         _a.sent();
                         return [4 /*yield*/, this.remoteStore.start()];
-                    case 2:
+                    case 3:
                         _a.sent();
                         // NOTE: This will immediately call the listener, so we make sure to
                         // set it after localStore / remoteStore are started.
-                        return [4 /*yield*/, this.persistence.setPrimaryStateListener(function (isPrimary) { return tslib_1.__awaiter(_this, void 0, void 0, function () {
-                                return tslib_1.__generator(this, function (_a) {
+                        return [4 /*yield*/, this.persistence.setPrimaryStateListener(function (isPrimary) { return tslib.__awaiter(_this, void 0, void 0, function () {
+                                return tslib.__generator(this, function (_a) {
                                     switch (_a.label) {
                                         case 0: return [4 /*yield*/, this.syncEngine.applyPrimaryState(isPrimary)];
                                         case 1:
@@ -36138,14 +36548,14 @@ var FirestoreClient = /** @class */ (function () {
                                     }
                                 });
                             }); })];
-                    case 3:
+                    case 4:
                         // NOTE: This will immediately call the listener, so we make sure to
                         // set it after localStore / remoteStore are started.
                         _a.sent();
                         // When a user calls clearPersistence() in one client, all other clients
                         // need to be terminated to allow the delete to succeed.
-                        return [4 /*yield*/, this.persistence.setDatabaseDeletedListener(function () { return tslib_1.__awaiter(_this, void 0, void 0, function () {
-                                return tslib_1.__generator(this, function (_a) {
+                        return [4 /*yield*/, this.persistence.setDatabaseDeletedListener(function () { return tslib.__awaiter(_this, void 0, void 0, function () {
+                                return tslib.__generator(this, function (_a) {
                                     switch (_a.label) {
                                         case 0: return [4 /*yield*/, this.terminate()];
                                         case 1:
@@ -36154,7 +36564,7 @@ var FirestoreClient = /** @class */ (function () {
                                     }
                                 });
                             }); })];
-                    case 4:
+                    case 5:
                         // When a user calls clearPersistence() in one client, all other clients
                         // need to be terminated to allow the delete to succeed.
                         _a.sent();
@@ -36178,8 +36588,8 @@ var FirestoreClient = /** @class */ (function () {
     };
     FirestoreClient.prototype.terminate = function () {
         var _this = this;
-        return this.asyncQueue.enqueueAndInitiateShutdown(function () { return tslib_1.__awaiter(_this, void 0, void 0, function () {
-            return tslib_1.__generator(this, function (_a) {
+        return this.asyncQueue.enqueueAndInitiateShutdown(function () { return tslib.__awaiter(_this, void 0, void 0, function () {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         // PORTING NOTE: LocalStore does not need an explicit shutdown on web.
@@ -36263,17 +36673,21 @@ var FirestoreClient = /** @class */ (function () {
     FirestoreClient.prototype.getDocumentsFromLocalCache = function (query) {
         var _this = this;
         this.verifyNotTerminated();
-        return this.asyncQueue
-            .enqueue(function () {
-            return _this.localStore.executeQuery(query);
-        })
-            .then(function (docs) {
-            var remoteKeys = documentKeySet();
-            var view = new View(query, remoteKeys);
-            var viewDocChanges = view.computeDocChanges(docs);
-            return view.applyChanges(viewDocChanges, 
-            /* updateLimboDocuments= */ false).snapshot;
-        });
+        return this.asyncQueue.enqueue(function () { return tslib.__awaiter(_this, void 0, void 0, function () {
+            var queryResult, view, viewDocChanges;
+            return tslib.__generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.localStore.executeQuery(query, 
+                        /* usePreviousResults= */ true)];
+                    case 1:
+                        queryResult = _a.sent();
+                        view = new View(query, queryResult.remoteKeys);
+                        viewDocChanges = view.computeDocChanges(queryResult.documents);
+                        return [2 /*return*/, view.applyChanges(viewDocChanges, 
+                            /* updateLimboDocuments= */ false).snapshot];
+                }
+            });
+        }); });
     };
     FirestoreClient.prototype.write = function (mutations) {
         var _this = this;
@@ -36456,7 +36870,7 @@ function fromDotSeparatedString(path) {
             "'~', '*', '/', '[', or ']'");
     }
     try {
-        return new (FieldPath$1.bind.apply(FieldPath$1, [void 0].concat(path.split('.'))))();
+        return new (FieldPath$1.bind.apply(FieldPath$1, tslib.__spreadArrays([void 0], path.split('.'))))();
     }
     catch (e) {
         throw new FirestoreError(Code.INVALID_ARGUMENT, "Invalid field path (" + path + "). Paths must not be empty, " +
@@ -36770,7 +37184,7 @@ var FieldValueImpl = /** @class */ (function () {
     return FieldValueImpl;
 }());
 var DeleteFieldValueImpl = /** @class */ (function (_super) {
-    tslib_1.__extends(DeleteFieldValueImpl, _super);
+    tslib.__extends(DeleteFieldValueImpl, _super);
     function DeleteFieldValueImpl() {
         return _super.call(this, 'FieldValue.delete') || this;
     }
@@ -36779,7 +37193,7 @@ var DeleteFieldValueImpl = /** @class */ (function (_super) {
     return DeleteFieldValueImpl;
 }(FieldValueImpl));
 var ServerTimestampFieldValueImpl = /** @class */ (function (_super) {
-    tslib_1.__extends(ServerTimestampFieldValueImpl, _super);
+    tslib.__extends(ServerTimestampFieldValueImpl, _super);
     function ServerTimestampFieldValueImpl() {
         return _super.call(this, 'FieldValue.serverTimestamp') || this;
     }
@@ -36788,7 +37202,7 @@ var ServerTimestampFieldValueImpl = /** @class */ (function (_super) {
     return ServerTimestampFieldValueImpl;
 }(FieldValueImpl));
 var ArrayUnionFieldValueImpl = /** @class */ (function (_super) {
-    tslib_1.__extends(ArrayUnionFieldValueImpl, _super);
+    tslib.__extends(ArrayUnionFieldValueImpl, _super);
     function ArrayUnionFieldValueImpl(_elements) {
         var _this = _super.call(this, 'FieldValue.arrayUnion') || this;
         _this._elements = _elements;
@@ -36797,7 +37211,7 @@ var ArrayUnionFieldValueImpl = /** @class */ (function (_super) {
     return ArrayUnionFieldValueImpl;
 }(FieldValueImpl));
 var ArrayRemoveFieldValueImpl = /** @class */ (function (_super) {
-    tslib_1.__extends(ArrayRemoveFieldValueImpl, _super);
+    tslib.__extends(ArrayRemoveFieldValueImpl, _super);
     function ArrayRemoveFieldValueImpl(_elements) {
         var _this = _super.call(this, 'FieldValue.arrayRemove') || this;
         _this._elements = _elements;
@@ -36806,7 +37220,7 @@ var ArrayRemoveFieldValueImpl = /** @class */ (function (_super) {
     return ArrayRemoveFieldValueImpl;
 }(FieldValueImpl));
 var NumericIncrementFieldValueImpl = /** @class */ (function (_super) {
-    tslib_1.__extends(NumericIncrementFieldValueImpl, _super);
+    tslib.__extends(NumericIncrementFieldValueImpl, _super);
     function NumericIncrementFieldValueImpl(_operand) {
         var _this = _super.call(this, 'FieldValue.increment') || this;
         _this._operand = _operand;
@@ -37511,8 +37925,8 @@ var Firestore = /** @class */ (function () {
         // TODO(mikelehen): Use modularized initialization instead.
         this._queue = new AsyncQueue();
         this.INTERNAL = {
-            delete: function () { return tslib_1.__awaiter(_this, void 0, void 0, function () {
-                return tslib_1.__generator(this, function (_a) {
+            delete: function () { return tslib.__awaiter(_this, void 0, void 0, function () {
+                return tslib.__generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
                             // The client must be initalized to ensure that all subsequent API usage
@@ -37598,9 +38012,9 @@ var Firestore = /** @class */ (function () {
         var _this = this;
         var persistenceKey = IndexedDbPersistence.buildStoragePrefix(this.makeDatabaseInfo());
         var deferred = new Deferred();
-        this._queue.enqueueAndForgetEvenAfterShutdown(function () { return tslib_1.__awaiter(_this, void 0, void 0, function () {
+        this._queue.enqueueAndForgetEvenAfterShutdown(function () { return tslib.__awaiter(_this, void 0, void 0, function () {
             var e_1;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 3]);
@@ -37923,8 +38337,8 @@ var WriteBatch = /** @class */ (function () {
         return this;
     };
     WriteBatch.prototype.commit = function () {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
-            return tslib_1.__generator(this, function (_a) {
+        return tslib.__awaiter(this, void 0, void 0, function () {
+            return tslib.__generator(this, function (_a) {
                 this.verifyNotCommitted();
                 this._committed = true;
                 if (this._mutations.length > 0) {
@@ -38264,7 +38678,7 @@ var DocumentSnapshot = /** @class */ (function () {
     return DocumentSnapshot;
 }());
 var QueryDocumentSnapshot = /** @class */ (function (_super) {
-    tslib_1.__extends(QueryDocumentSnapshot, _super);
+    tslib.__extends(QueryDocumentSnapshot, _super);
     function QueryDocumentSnapshot() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -38823,11 +39237,11 @@ function throwDocChangesMethodError() {
         'method, so usages like "querySnapshot.docChanges" should become ' +
         '"querySnapshot.docChanges()"');
 }
-var docChangesPropertiesToOverride = [
+var docChangesPropertiesToOverride = tslib.__spreadArrays([
     'length',
     'forEach',
     'map'
-].concat((typeof Symbol !== 'undefined' ? [Symbol.iterator] : []));
+], (typeof Symbol !== 'undefined' ? [Symbol.iterator] : []));
 docChangesPropertiesToOverride.forEach(function (property) {
     /**
      * We are (re-)defining properties on QuerySnapshot.prototype.docChanges which
@@ -38844,7 +39258,7 @@ docChangesPropertiesToOverride.forEach(function (property) {
     catch (err) { } // Ignore this failure intentionally
 });
 var CollectionReference = /** @class */ (function (_super) {
-    tslib_1.__extends(CollectionReference, _super);
+    tslib.__extends(CollectionReference, _super);
     function CollectionReference(path, firestore) {
         var _this = _super.call(this, Query.atPath(path), firestore) || this;
         if (path.length % 2 !== 1) {
@@ -39112,7 +39526,9 @@ var LOG_TAG$c = 'ConnectivityMonitor';
 var BrowserConnectivityMonitor = /** @class */ (function () {
     function BrowserConnectivityMonitor() {
         var _this = this;
-        this.networkAvailableListener = function () { return _this.onNetworkAvailable(); };
+        this.networkAvailableListener = function () {
+            return _this.onNetworkAvailable();
+        };
         this.networkUnavailableListener = function () {
             return _this.onNetworkUnavailable();
         };
@@ -39268,7 +39684,8 @@ var WebChannelConnection = /** @class */ (function () {
         var _this = this;
         var url = this.makeUrl(rpcName);
         return new Promise(function (resolve, reject) {
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any, XhrIo doesn't have TS typings.
+            // XhrIo doesn't have TS typings.
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             var xhr = new webchannelWrapper.XhrIo();
             xhr.listenOnce(webchannelWrapper.EventType.COMPLETE, function () {
                 try {
@@ -39322,7 +39739,7 @@ var WebChannelConnection = /** @class */ (function () {
             // The database field is already encoded in URL. Specifying it again in
             // the body is not necessary in production, and will cause duplicate field
             // errors in the Firestore Emulator. Let's remove it.
-            var jsonObj = tslib_1.__assign({}, request);
+            var jsonObj = tslib.__assign({}, request);
             delete jsonObj.database;
             var requestString = JSON.stringify(jsonObj);
             debug(LOG_TAG$d, 'XHR sending: ', url + ' ' + requestString);
@@ -39402,7 +39819,8 @@ var WebChannelConnection = /** @class */ (function () {
         }
         var url = urlParts.join('');
         debug(LOG_TAG$d, 'Creating WebChannel: ' + url + ' ' + request);
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any, Because listen isn't defined on it.
+        // Use any because listen isn't defined on it.
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         var channel = webchannelTransport.createWebChannel(url, request);
         // WebChannel supports sending the first message with the handshake - saving
         // a network round trip. However, it will have to call send in the same
@@ -39476,7 +39894,8 @@ var WebChannelConnection = /** @class */ (function () {
                 // (and only errors) to be wrapped in an extra array. To be forward
                 // compatible with the bug we need to check either condition. The latter
                 // can be removed once the fix has been rolled out.
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any, msgData.error is not typed.
+                // Use any because msgData.error is not typed.
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 var msgDataAsAny = msgData;
                 var error = msgDataAsAny.error || (msgDataAsAny[0] && msgDataAsAny[0].error);
                 if (error) {
@@ -39659,7 +40078,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
 var firebase = _interopDefault(__webpack_require__(/*! @firebase/app */ "./node_modules/@firebase/app/dist/index.cjs.js"));
-var tslib_1 = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+var tslib = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 
 /**
  * @license
@@ -39708,7 +40127,7 @@ var errorCodeMap = {
  * client that called the function.
  */
 var HttpsErrorImpl = /** @class */ (function (_super) {
-    tslib_1.__extends(HttpsErrorImpl, _super);
+    tslib.__extends(HttpsErrorImpl, _super);
     function HttpsErrorImpl(code, message, details) {
         var _this = _super.call(this, message) || this;
         // This is a workaround for a bug in TypeScript when extending Error:
@@ -39760,9 +40179,7 @@ function codeForHTTPStatus(status) {
             return 'unavailable';
         case 504:
             return 'deadline-exceeded';
-        default: // ignore
     }
-    return 'unknown';
 }
 /**
  * Takes an HTTP response and returns the corresponding Error, if any.
@@ -39817,9 +40234,9 @@ var ContextProvider = /** @class */ (function () {
         this.app = app;
     }
     ContextProvider.prototype.getAuthToken = function () {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var token, e_1;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 3]);
@@ -39840,9 +40257,9 @@ var ContextProvider = /** @class */ (function () {
         });
     };
     ContextProvider.prototype.getInstanceIdToken = function () {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var messaging, token, e_2;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 3]);
@@ -39872,9 +40289,9 @@ var ContextProvider = /** @class */ (function () {
         });
     };
     ContextProvider.prototype.getContext = function () {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var authToken, instanceIdToken;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getAuthToken()];
                     case 1:
@@ -40097,9 +40514,9 @@ var Service = /** @class */ (function () {
      * @return A Promise that will succeed when the request finishes.
      */
     Service.prototype.postJSON = function (url, body, headers) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var response, e_1, json, e_2;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         headers.append('Content-Type', 'application/json');
@@ -40150,9 +40567,9 @@ var Service = /** @class */ (function () {
      * @param data The data to pass as params to the function.s
      */
     Service.prototype.call = function (name, data, options) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var url, body, headers, context, timeout, response, error, responseData, decodedData;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         url = this._url(name);
@@ -40271,7 +40688,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var version = "0.2.7";
+var version = "0.3.2";
 
 /**
  * @license
@@ -40702,9 +41119,6 @@ function update(appConfig, updateFn) {
                 case 2:
                     oldValue = _a.sent();
                     newValue = updateFn(oldValue);
-                    if (newValue === oldValue) {
-                        return [2 /*return*/, newValue];
-                    }
                     if (!(newValue === undefined)) return [3 /*break*/, 4];
                     return [4 /*yield*/, store.delete(key)];
                 case 3:
@@ -40773,22 +41187,20 @@ function getInstallationEntry(appConfig) {
         });
     });
 }
+/**
+ * Creates a new Installation Entry if one does not exist.
+ * Also clears timed out pending requests.
+ */
 function updateOrCreateInstallationEntry(oldEntry) {
     var entry = oldEntry || {
         fid: generateFid(),
         registrationStatus: 0 /* NOT_STARTED */
     };
-    if (hasInstallationRequestTimedOut(entry)) {
-        return {
-            fid: entry.fid,
-            registrationStatus: 0 /* NOT_STARTED */
-        };
-    }
-    return entry;
+    return clearTimedOutRequest(entry);
 }
 /**
- * If the Firebase Installation is not registered yet, this will trigger the registration
- * and return an InProgressInstallationEntry.
+ * If the Firebase Installation is not registered yet, this will trigger the
+ * registration and return an InProgressInstallationEntry.
  */
 function triggerRegistrationIfNecessary(appConfig, installationEntry) {
     if (installationEntry.registrationStatus === 0 /* NOT_STARTED */) {
@@ -40901,14 +41313,17 @@ function updateInstallationRequest(appConfig) {
         if (!oldEntry) {
             throw ERROR_FACTORY.create("installation-not-found" /* INSTALLATION_NOT_FOUND */);
         }
-        if (hasInstallationRequestTimedOut(oldEntry)) {
-            return {
-                fid: oldEntry.fid,
-                registrationStatus: 0 /* NOT_STARTED */
-            };
-        }
-        return oldEntry;
+        return clearTimedOutRequest(oldEntry);
     });
+}
+function clearTimedOutRequest(entry) {
+    if (hasInstallationRequestTimedOut(entry)) {
+        return {
+            fid: entry.fid,
+            registrationStatus: 0 /* NOT_STARTED */
+        };
+    }
+    return entry;
 }
 function hasInstallationRequestTimedOut(installationEntry) {
     return (installationEntry.registrationStatus === 1 /* IN_PROGRESS */ &&
@@ -40991,7 +41406,8 @@ function getGenerateAuthTokenEndpoint(appConfig, _a) {
  *
  * Should only be called if the Firebase Installation is registered.
  */
-function refreshAuthToken(appConfig) {
+function refreshAuthToken(appConfig, forceRefresh) {
+    if (forceRefresh === void 0) { forceRefresh = false; }
     return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__awaiter"])(this, void 0, void 0, function () {
         var tokenPromise, entry, authToken, _a;
         return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__generator"])(this, function (_b) {
@@ -41001,7 +41417,7 @@ function refreshAuthToken(appConfig) {
                             throw ERROR_FACTORY.create("not-registered" /* NOT_REGISTERED */);
                         }
                         var oldAuthToken = oldEntry.authToken;
-                        if (isAuthTokenValid(oldAuthToken)) {
+                        if (!forceRefresh && isAuthTokenValid(oldAuthToken)) {
                             // There is a valid token in the DB.
                             return oldEntry;
                         }
@@ -41068,7 +41484,6 @@ function waitUntilAuthTokenRequest(appConfig) {
                     else {
                         return [2 /*return*/, authToken];
                     }
-                    return [2 /*return*/];
             }
         });
     });
@@ -41088,7 +41503,7 @@ function updateAuthTokenRequest(appConfig) {
         }
         var oldAuthToken = oldEntry.authToken;
         if (hasAuthTokenRequestTimedOut(oldAuthToken)) {
-            return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, oldEntry, { authToken: { requestStatus: 0 /* NOT_STARTED */ } });
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, oldEntry), { authToken: { requestStatus: 0 /* NOT_STARTED */ } });
         }
         return oldEntry;
     });
@@ -41103,7 +41518,7 @@ function fetchAuthTokenFromServer(appConfig, installationEntry) {
                     return [4 /*yield*/, generateAuthToken(appConfig, installationEntry)];
                 case 1:
                     authToken = _a.sent();
-                    updatedInstallationEntry = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, installationEntry, { authToken: authToken });
+                    updatedInstallationEntry = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, installationEntry), { authToken: authToken });
                     return [4 /*yield*/, set(appConfig, updatedInstallationEntry)];
                 case 2:
                     _a.sent();
@@ -41120,7 +41535,7 @@ function fetchAuthTokenFromServer(appConfig, installationEntry) {
                     _a.sent();
                     return [3 /*break*/, 7];
                 case 5:
-                    updatedInstallationEntry = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, installationEntry, { authToken: { requestStatus: 0 /* NOT_STARTED */ } });
+                    updatedInstallationEntry = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, installationEntry), { authToken: { requestStatus: 0 /* NOT_STARTED */ } });
                     return [4 /*yield*/, set(appConfig, updatedInstallationEntry)];
                 case 6:
                     _a.sent();
@@ -41150,7 +41565,7 @@ function makeAuthTokenRequestInProgressEntry(oldEntry) {
         requestStatus: 1 /* IN_PROGRESS */,
         requestTime: Date.now()
     };
-    return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, oldEntry, { authToken: inProgressAuthToken });
+    return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, oldEntry), { authToken: inProgressAuthToken });
 }
 function hasAuthTokenRequestTimedOut(authToken) {
     return (authToken.requestStatus === 1 /* IN_PROGRESS */ &&
@@ -41214,7 +41629,8 @@ function getId(app) {
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-function getToken(app) {
+function getToken(app, forceRefresh) {
+    if (forceRefresh === void 0) { forceRefresh = false; }
     return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__awaiter"])(this, void 0, void 0, function () {
         var appConfig;
         return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__generator"])(this, function (_a) {
@@ -41226,7 +41642,7 @@ function getToken(app) {
                     _a.sent();
                     // At this point we either have a Registered Installation in the DB, or we've
                     // already thrown an error.
-                    return [2 /*return*/, refreshAuthToken(appConfig)];
+                    return [2 /*return*/, refreshAuthToken(appConfig, forceRefresh)];
             }
         });
     });
@@ -41379,7 +41795,7 @@ function registerInstallations(instance) {
         return {
             app: app,
             getId: function () { return getId(app); },
-            getToken: function () { return getToken(app); },
+            getToken: function (forceRefresh) { return getToken(app, forceRefresh); },
             delete: function () { return deleteInstallation$1(app); }
         };
     };
@@ -41405,6 +41821,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LogLevel", function() { return LogLevel; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Logger", function() { return Logger; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setLogLevel", function() { return setLogLevel; });
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+
+function __spreadArrays() {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+}
+
 /**
  * @license
  * Copyright 2017 Google Inc.
@@ -41471,19 +41910,19 @@ var defaultLogHandler = function (instance, logType) {
          * logs to the `console.log` function.
          */
         case LogLevel.DEBUG:
-            console.log.apply(console, ["[" + now + "]  " + instance.name + ":"].concat(args));
+            console.log.apply(console, __spreadArrays(["[" + now + "]  " + instance.name + ":"], args));
             break;
         case LogLevel.VERBOSE:
-            console.log.apply(console, ["[" + now + "]  " + instance.name + ":"].concat(args));
+            console.log.apply(console, __spreadArrays(["[" + now + "]  " + instance.name + ":"], args));
             break;
         case LogLevel.INFO:
-            console.info.apply(console, ["[" + now + "]  " + instance.name + ":"].concat(args));
+            console.info.apply(console, __spreadArrays(["[" + now + "]  " + instance.name + ":"], args));
             break;
         case LogLevel.WARN:
-            console.warn.apply(console, ["[" + now + "]  " + instance.name + ":"].concat(args));
+            console.warn.apply(console, __spreadArrays(["[" + now + "]  " + instance.name + ":"], args));
             break;
         case LogLevel.ERROR:
-            console.error.apply(console, ["[" + now + "]  " + instance.name + ":"].concat(args));
+            console.error.apply(console, __spreadArrays(["[" + now + "]  " + instance.name + ":"], args));
             break;
         default:
             throw new Error("Attempted to log a message with an invalid logType (value: " + logType + ")");
@@ -41545,35 +41984,35 @@ var Logger = /** @class */ (function () {
         for (var _i = 0; _i < arguments.length; _i++) {
             args[_i] = arguments[_i];
         }
-        this._logHandler.apply(this, [this, LogLevel.DEBUG].concat(args));
+        this._logHandler.apply(this, __spreadArrays([this, LogLevel.DEBUG], args));
     };
     Logger.prototype.log = function () {
         var args = [];
         for (var _i = 0; _i < arguments.length; _i++) {
             args[_i] = arguments[_i];
         }
-        this._logHandler.apply(this, [this, LogLevel.VERBOSE].concat(args));
+        this._logHandler.apply(this, __spreadArrays([this, LogLevel.VERBOSE], args));
     };
     Logger.prototype.info = function () {
         var args = [];
         for (var _i = 0; _i < arguments.length; _i++) {
             args[_i] = arguments[_i];
         }
-        this._logHandler.apply(this, [this, LogLevel.INFO].concat(args));
+        this._logHandler.apply(this, __spreadArrays([this, LogLevel.INFO], args));
     };
     Logger.prototype.warn = function () {
         var args = [];
         for (var _i = 0; _i < arguments.length; _i++) {
             args[_i] = arguments[_i];
         }
-        this._logHandler.apply(this, [this, LogLevel.WARN].concat(args));
+        this._logHandler.apply(this, __spreadArrays([this, LogLevel.WARN], args));
     };
     Logger.prototype.error = function () {
         var args = [];
         for (var _i = 0; _i < arguments.length; _i++) {
             args[_i] = arguments[_i];
         }
-        this._logHandler.apply(this, [this, LogLevel.ERROR].concat(args));
+        this._logHandler.apply(this, __spreadArrays([this, LogLevel.ERROR], args));
     };
     return Logger;
 }());
@@ -42378,7 +42817,6 @@ var TokenDetailsModel = /** @class */ (function (_super) {
                     }
                 };
             }
-            default: // ignore
         }
     };
     /**
@@ -42706,7 +43144,6 @@ var BaseController = /** @class */ (function () {
                         else {
                             return [2 /*return*/, this.updateToken(swReg, pushSubscription, publicVapidKey, tokenDetails)];
                         }
-                        return [3 /*break*/, 3];
                     case 1: 
                     // If the token is no longer valid (for example if the VAPID details
                     // have changed), delete the existing token from the FCM client and server
@@ -43194,7 +43631,7 @@ var SwController = /** @class */ (function (_super) {
         // notification as being an FCM notification vs a notification from
         // somewhere else (i.e. normal web push or developer generated
         // notification).
-        notificationInformation.data = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, msgPayload.notification.data, (_a = {}, _a[FCM_MSG] = msgPayload, _a));
+        notificationInformation.data = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])(Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({}, msgPayload.notification.data), (_a = {}, _a[FCM_MSG] = msgPayload, _a));
         return notificationInformation;
     };
     /**
@@ -43465,7 +43902,6 @@ var WindowController = /** @class */ (function (_super) {
                         else {
                             throw errorFactory.create("permission-default" /* PERMISSION_DEFAULT */);
                         }
-                        return [2 /*return*/];
                 }
             });
         });
@@ -43768,12 +44204,12 @@ Object.defineProperty(exports, '__esModule', { value: true });
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
 var firebase = _interopDefault(__webpack_require__(/*! @firebase/app */ "./node_modules/@firebase/app/dist/index.cjs.js"));
-var tslib_1 = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+var tslib = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 var util = __webpack_require__(/*! @firebase/util */ "./node_modules/@firebase/util/dist/index.cjs.js");
 __webpack_require__(/*! @firebase/installations */ "./node_modules/@firebase/installations/dist/index.esm.js");
 var logger$1 = __webpack_require__(/*! @firebase/logger */ "./node_modules/@firebase/logger/dist/index.esm.js");
 
-var version = "0.2.19";
+var version = "0.2.22";
 
 /**
  * @license
@@ -44397,7 +44833,7 @@ function processQueue(timeOffset) {
             return processQueue(DEFAULT_SEND_INTERVAL_MS);
         }
         // Capture a snapshot of the queue and empty the "official queue".
-        var staged = queue.slice();
+        var staged = tslib.__spreadArrays(queue);
         queue = [];
         /* eslint-disable camelcase */
         // We will pass the JSON serialized event to the backend.
@@ -44440,7 +44876,7 @@ function processQueue(timeOffset) {
              * If the request fails for some reason, add the events that were attempted
              * back to the primary queue to retry later.
              */
-            queue = staged.concat(queue);
+            queue = tslib.__spreadArrays(staged, queue);
             remainingTries--;
             consoleLogger.info("Tries left: " + remainingTries + ".");
             processQueue(DEFAULT_SEND_INTERVAL_MS);
@@ -44453,7 +44889,7 @@ function addToQueue(evt) {
         throw ERROR_FACTORY.create("invalid cc log" /* INVALID_CC_LOG */);
     }
     // Add the new event to the queue.
-    queue = queue.concat([evt]);
+    queue = tslib.__spreadArrays(queue, [evt]);
 }
 /** Log handler for cc service to send the performance logs to the server. */
 function ccHandler(
@@ -44737,7 +45173,7 @@ var Trace = /** @class */ (function () {
         this.durationUs = Math.floor(duration * 1000);
         this.startTimeUs = Math.floor(startTime * 1000);
         if (options && options.attributes) {
-            this.customAttributes = tslib_1.__assign({}, options.attributes);
+            this.customAttributes = tslib.__assign({}, options.attributes);
         }
         if (options && options.metrics) {
             for (var _i = 0, _a = Object.keys(options.metrics); _i < _a.length; _i++) {
@@ -44824,7 +45260,7 @@ var Trace = /** @class */ (function () {
         delete this.customAttributes[attr];
     };
     Trace.prototype.getAttributes = function () {
-        return tslib_1.__assign({}, this.customAttributes);
+        return tslib.__assign({}, this.customAttributes);
     };
     Trace.prototype.setStartTime = function (startTime) {
         this.startTimeUs = startTime;
@@ -45119,7 +45555,7 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 
 var firebase = _interopDefault(__webpack_require__(/*! @firebase/app */ "./node_modules/@firebase/app/dist/index.cjs.js"));
 __webpack_require__(/*! @firebase/installations */ "./node_modules/@firebase/installations/dist/index.esm.js");
-var tslib_1 = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+var tslib = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 var util = __webpack_require__(/*! @firebase/util */ "./node_modules/@firebase/util/dist/index.cjs.js");
 var logger = __webpack_require__(/*! @firebase/logger */ "./node_modules/@firebase/logger/dist/index.esm.js");
 
@@ -45178,9 +45614,9 @@ var CachingClient = /** @class */ (function () {
         return isCachedDataFresh;
     };
     CachingClient.prototype.fetch = function (request) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var _a, lastSuccessfulFetchTimestampMillis, lastSuccessfulFetchResponse, response, storageOperations;
-            return tslib_1.__generator(this, function (_b) {
+            return tslib.__generator(this, function (_b) {
                 switch (_b.label) {
                     case 0: return [4 /*yield*/, Promise.all([
                             this.storage.getLastSuccessfulFetchTimestampMillis(),
@@ -45337,9 +45773,9 @@ var RestClient = /** @class */ (function () {
      * @throws a {@link ErrorCode.FETCH_STATUS} error if the service returns an HTTP error status.
      */
     RestClient.prototype.fetch = function (request) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var _a, installationId, installationToken, urlBase, url, headers, requestBody, options, fetchPromise, timeoutPromise, response, originalError_1, errorCode, status, responseEtag, config, state, responseBody, originalError_2;
-            return tslib_1.__generator(this, function (_b) {
+            return tslib.__generator(this, function (_b) {
                 switch (_b.label) {
                     case 0: return [4 /*yield*/, Promise.all([
                             this.firebaseInstallations.getId(),
@@ -45611,9 +46047,9 @@ var RemoteConfig = /** @class */ (function () {
         configurable: true
     });
     RemoteConfig.prototype.activate = function () {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var _a, lastSuccessfulFetchResponse, activeConfigEtag;
-            return tslib_1.__generator(this, function (_b) {
+            return tslib.__generator(this, function (_b) {
                 switch (_b.label) {
                     case 0: return [4 /*yield*/, Promise.all([
                             this._storage.getLastSuccessfulFetchResponse(),
@@ -45657,18 +46093,18 @@ var RemoteConfig = /** @class */ (function () {
      * {@link DEFAULT_FETCH_TIMEOUT_SECONDS}.
      */
     RemoteConfig.prototype.fetch = function () {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var _this = this;
-            return tslib_1.__generator(this, function (_a) {
-                return [2 /*return*/, new Promise(function (resolve, reject) { return tslib_1.__awaiter(_this, void 0, void 0, function () {
+            return tslib.__generator(this, function (_a) {
+                return [2 /*return*/, new Promise(function (resolve, reject) { return tslib.__awaiter(_this, void 0, void 0, function () {
                         var abortSignal, e_1, lastFetchStatus;
                         var _this = this;
-                        return tslib_1.__generator(this, function (_a) {
+                        return tslib.__generator(this, function (_a) {
                             switch (_a.label) {
                                 case 0:
                                     abortSignal = new RemoteConfigAbortSignal();
-                                    setTimeout(function () { return tslib_1.__awaiter(_this, void 0, void 0, function () {
-                                        return tslib_1.__generator(this, function (_a) {
+                                    setTimeout(function () { return tslib.__awaiter(_this, void 0, void 0, function () {
+                                        return tslib.__generator(this, function (_a) {
                                             // Note a very low delay, eg < 10ms, can elapse before listeners are initialized.
                                             abortSignal.abort();
                                             return [2 /*return*/];
@@ -45706,8 +46142,8 @@ var RemoteConfig = /** @class */ (function () {
         });
     };
     RemoteConfig.prototype.fetchAndActivate = function () {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
-            return tslib_1.__generator(this, function (_a) {
+        return tslib.__awaiter(this, void 0, void 0, function () {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.fetch()];
                     case 1:
@@ -45757,7 +46193,7 @@ var RemoteConfig = /** @class */ (function () {
 function getAllKeys(obj1, obj2) {
     if (obj1 === void 0) { obj1 = {}; }
     if (obj2 === void 0) { obj2 = {}; }
-    return Object.keys(tslib_1.__assign({}, obj1, obj2));
+    return Object.keys(tslib.__assign(tslib.__assign({}, obj1), obj2));
 }
 
 /**
@@ -45882,10 +46318,10 @@ var Storage = /** @class */ (function () {
         return this.delete('throttle_metadata');
     };
     Storage.prototype.get = function (key) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var db;
             var _this = this;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.openDbPromise];
                     case 1:
@@ -45920,10 +46356,10 @@ var Storage = /** @class */ (function () {
         });
     };
     Storage.prototype.set = function (key, value) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var db;
             var _this = this;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.openDbPromise];
                     case 1:
@@ -45955,10 +46391,10 @@ var Storage = /** @class */ (function () {
         });
     };
     Storage.prototype.delete = function (key) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var db;
             var _this = this;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.openDbPromise];
                     case 1:
@@ -46032,9 +46468,9 @@ var StorageCache = /** @class */ (function () {
      * Read-ahead getter
      */
     StorageCache.prototype.loadFromStorage = function () {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var lastFetchStatusPromise, lastSuccessfulFetchTimestampMillisPromise, activeConfigPromise, lastFetchStatus, lastSuccessfulFetchTimestampMillis, activeConfig;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         lastFetchStatusPromise = this.storage.getLastFetchStatus();
@@ -46215,9 +46651,9 @@ var RetryingClient = /** @class */ (function () {
         this.storage = storage;
     }
     RetryingClient.prototype.fetch = function (request) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var throttleMetadata;
-            return tslib_1.__generator(this, function (_a) {
+            return tslib.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.storage.getThrottleMetadata()];
                     case 1:
@@ -46237,9 +46673,9 @@ var RetryingClient = /** @class */ (function () {
      */
     RetryingClient.prototype.attemptFetch = function (request, _a) {
         var throttleEndTimeMillis = _a.throttleEndTimeMillis, backoffCount = _a.backoffCount;
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
             var response, e_1, throttleMetadata;
-            return tslib_1.__generator(this, function (_b) {
+            return tslib.__generator(this, function (_b) {
                 switch (_b.label) {
                     case 0: 
                     // Starts with a (potentially zero) timeout to support resumption from stored state.
@@ -46663,7 +47099,6 @@ function dataFromString(format, stringData) {
             return new StringData(base64Bytes_(format, stringData));
         case StringFormat.DATA_URL:
             return new StringData(dataURLBytes_(stringData), dataURLContentType_(stringData));
-        default:
         // do nothing
     }
     // assert(false);
@@ -46742,7 +47177,6 @@ function base64Bytes_(format, value) {
             value = value.replace(/-/g, '+').replace(/_/g, '/');
             break;
         }
-        default:
         // do nothing
     }
     var bytes;
@@ -48537,7 +48971,6 @@ var UploadTask = /** @class */ (function () {
                 case InternalTaskState.PAUSING:
                     _this.transition_(InternalTaskState.PAUSED);
                     break;
-                default:
             }
         });
     };
@@ -48717,7 +49150,6 @@ var UploadTask = /** @class */ (function () {
                 this.state_ = state;
                 this.notifyObservers_();
                 break;
-            default: // Ignore
         }
     };
     UploadTask.prototype.completeTransitions_ = function () {
@@ -48730,9 +49162,6 @@ var UploadTask = /** @class */ (function () {
                 break;
             case InternalTaskState.RUNNING:
                 this.start_();
-                break;
-            default:
-                // TODO(andysoto): assert(false);
                 break;
         }
     };
@@ -49486,12 +49915,12 @@ function start(f, callback, timeout) {
             return;
         }
         if (success) {
-            triggerCallback.call.apply(triggerCallback, [null, success].concat(args));
+            triggerCallback.call.apply(triggerCallback, Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__spreadArrays"])([null, success], args));
             return;
         }
         var mustStop = canceled() || hitTimeout;
         if (mustStop) {
-            triggerCallback.call.apply(triggerCallback, [null, success].concat(args));
+            triggerCallback.call.apply(triggerCallback, Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__spreadArrays"])([null, success], args));
             return;
         }
         if (waitSeconds < 64) {
@@ -49946,7 +50375,7 @@ registerStorage(_firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a);
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var tslib_1 = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+var tslib = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 
 /**
  * @license
@@ -50541,7 +50970,7 @@ var ERROR_NAME = 'FirebaseError';
 // Based on code from:
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error#Custom_Error_Types
 var FirebaseError = /** @class */ (function (_super) {
-    tslib_1.__extends(FirebaseError, _super);
+    tslib.__extends(FirebaseError, _super);
     function FirebaseError(code, message) {
         var _this = _super.call(this, message) || this;
         _this.code = code;
@@ -51874,7 +52303,7 @@ module.exports = function (it) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var core = module.exports = { version: '2.6.9' };
+var core = module.exports = { version: '2.6.10' };
 if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
 
@@ -54662,7 +55091,7 @@ function (_Component2) {
 
 /***/ }),
 
-/***/ 1:
+/***/ 4:
 /*!*******************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2FsignUp&absolutePagePath=%2FUsers%2Fyoungjoon%2FDesktop%2FCS407%2FDatApex%2Ffront-end%2Fpages%2FsignUp.js ***!
   \*******************************************************************************************************************************************************/
@@ -54685,5 +55114,5 @@ module.exports = dll_129a35c7ec57967eb265;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[4,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=signUp.js.map

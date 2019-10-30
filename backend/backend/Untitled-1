@@ -1,0 +1,71 @@
+Questions for 8:
+Which of the following is not true about unit testing?
+   a) It is recommended to write unit tests before implementing a module or class
+   b) They are part of white-box testing
+   c) A unit test, tests multiple modules across the application
+   d) It is recommended to write unit tests before implementing a module or class.
+   Answer: c)
+
+Which of the following is true about top-down testing?
+   a) It begins with the modules that do not call other modules
+   b) A module can be tested as soon as all the modules that it calls are tested
+   c) A module can be tested as soon as their calling module is tested
+   d) None of the above
+   Answer: c)
+
+Which of the following is true about bottom-up testing?
+   a) It begins with the modules that do not call other modules
+   b) A module can be tested as soon as all the modules that it calls are tested
+   c) There are usually multiple choices of which module to test next
+   d) All of the above
+   Answer: d)
+
+Which of the following can be possible explanations when a module’s actual results do not match the expected results?
+	i. The module contains an error.
+	ii. The expected result contains an error
+	iii . The calling module contains an error
+   a) i only
+   b) i and ii
+   c) ii and iii
+   d) i and iii
+   Answer: b)
+
+Which of the following must be performed during regression testing?
+   a) Rerun the test cases that revealed a defect.
+   b) Rerun the test cases that are related to a defect.
+   c) Rerun the test cases that might be logically be affected by the changes made to fix a defect.
+   d) All of the above
+   Answer: d)
+Questions for 12: 
+
+Which of the following is not true about agile testing about agile development and testing?
+   a) They do not rely on customer involvement
+   b) They have short, iterative development and testing cycles
+   c) Scrum is an agile development methodology
+   d) None of the above
+   Answer: a)
+
+Which of the following is/are part of agile testing?
+	i. Collaborative testing across different modules and teams.
+ 	ii. Developers run unit tests after every incremental code change that they make
+	iii. Unit tests are made before the code to pass the tests is made
+   a) i and ii
+   b) ii and iii
+   c) i and iii
+   d) i, ii and iii
+   Answer: d)
+
+Which of the following is not a part of Agile acceptance testing?
+   a) A developer and customer create acceptance tests during the design phase.
+   b) Customers conduct the acceptance tests
+   c) After a certain bug is fixed, the programmer reruns the acceptance tests
+   d) It is a form of regression testing
+Answer: c)
+
+Which of the following are considered a part of agile testing?
+   a) Usability tests
+   b) Unit tests
+   c) Component tests
+   d) All of the above
+   Answer: d)
+

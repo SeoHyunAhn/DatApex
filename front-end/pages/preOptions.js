@@ -18,12 +18,12 @@ class PreOptions extends Component {
                         <div className="col-6">
                             <div className="card" style={styleCard}>
                                 <div className="card-header">
-                                    Labsel Encoding
+                                    Label Encoding
                                 </div>
                                 <div className="card-body">
                                     <h5 className="card-title">Explanation: </h5>
                                     <p className="card-text">Converting the labels into numeric form so as to convert it into the machine-readable form</p>
-                                    <Link route='preproc' params={{ path: 'labsel' }}>
+                                    <Link route='preproc' params={{ path: 'label' }}>
                                         <a className="btn btn-primary">Go somewhere</a>
                                     </Link>
                                 </div>

@@ -8,7 +8,6 @@ const styleCard = {
 };
 
 class MlOptions extends Component {
-
     render() {
         return (
             <Layout>
@@ -26,6 +25,7 @@ class MlOptions extends Component {
                                     <p className="card-text">
                                         Probabilistic classifier that makes classifications using the Maximum A Posteriori decision rule in a Bayesian setting
                                     </p>
+                                    
                                     <Link route='mlalgo' params={{ path: 'nba' }}>
                                         <a className="btn btn-primary">Go somewhere</a>
                                     </Link>

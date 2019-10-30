@@ -1,58 +1,85 @@
-import React from 'react'
-
+import React from "react";
+import axios from "axios";
+import {
+  Button,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Form,
+  FormGroup,
+  Input,
+  Label
+} from "reactstrap";
+import UploadCSV from "../components/Modal";
 const posts = [
-    { path: 'nba', title: 'Naive Bayes algorithm' },
-    { path: 'lra', title: 'Logistic Regression algorithm' },
-    { path: 'svm', title: 'Support Vector Machine algorithm' },
-    { path: 'bag', title: 'Bagging algorithm' },
-    { path: 'clus', title: 'Clustering algorithm' },
-]
-import Layout from '../components/layout';
-
+  { path: "nba", title: "Naive Bayes algorithm" },
+  { path: "lra", title: "Logistic Regression algorithm" },
+  { path: "svm", title: "Support Vector Machine algorithm" },
+  { path: "bag", title: "Bagging algorithm" },
+  { path: "clus", title: "Clustering algorithm" }
+];
+import Layout from "../components/layout";
 
 export default class extends React.Component {
-  static async getInitialProps ({ query, res }) {
-    const post = posts.find(post => post.path === query.path)
-
-    if (!post && res) {
-      res.statusCode = 404
-    }
-
-    return { post }
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.fileInput = React.createRef();
+    this.state = { imgSrc: "" };
+    this.path = "";
   }
+  handleSubmit(filename) {
+    console.log("handling submit");
+    var formData = new FormData();
+    // console.log(this.fileInput.current.files[0]);
+    formData.append("file", filename);
+    var div = document.getElementById("image-display");
+    div.innerHTML =
+      "<Spinner animation='border' role='status'> <span className='sr-only'>Loading...</span></Spinner>";
 
-  render () {
-    const { post } = this.props
+    axios
+      .post("http://localhost:8000/upload/csv/", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data"
+        }
+      })
+      .then(e => {
+        console.log(e);
 
-    if (!post) return (
-      <Layout>
-        <h1>Page not found</h1>
-      </Layout>
-    )
+        var div = document.getElementById("image-display");
+        div.innerText = "";
+        var imageOupput = "data:image/png;base64," + e.data;
+        this.setState({ imgSrc: imageOupput });
+      })
+      .catch(err => {
+        console.log(err);
 
+        var div = document.getElementById("image-display");
+        div.innerText = "Please provide a valid csv file";
+      });
+  }
+  render() {
+    // console.log(this.props.url.asPath.substring(8));
+    this.path = this.props.url.asPath.substring(8);
+    if (this.path == "nba") {
+      // List the params of each on of them
+    } else if (this.path == "lra") {
+      // List the params of each on of them
+    } else if (this.path == "svm") {
+      // List the params of each on of them
+    } else if (this.path == "bag") {
+      // List the params of each on of them
+    } else if (this.path == "clus") {
+      // List the params of each on of them
+    }
     return (
       <Layout>
-        <h1>{post.title}</h1>
-        <hr></hr>
-        <div className="input-group">
-          <div className="input-group-prepend">
-            <span className="input-group-text" id="inputGroupFileAddon01">
-              Upload
-            </span>
-          </div>
-          <div className="custom-file">
-            <input
-              type="file"
-              className="custom-file-input"
-              id="inputGroupFile01"
-              aria-describedby="inputGroupFileAddon01"
-            />
-            <label className="custom-file-label" htmlFor="inputGroupFile01">
-              Choose file
-            </label>
-          </div>
-        </div>
+        <main className="content">
+          <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
+          <div id="image-display"></div>
+          <img id="image-output" src={this.state.imgSrc}></img>
+        </main>
       </Layout>
-    )
+    );
   }
 }

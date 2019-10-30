@@ -1,0 +1,24 @@
+Label encoding
+
+Parameter: none
+Input: csv file, output: csv file
+
+
+One-Hot encoding
+
+Parameter: name of column
+Input: csv file, output: csv file
+
+
+Delete Row/Column
+
+Parameter: (# of Row, # of column)
+Input: csv file, output: csv file
+
+
+Replace W
+
+Parameter: (# of Row, # of column)
+Input: csv file, output: csv file
+
+
