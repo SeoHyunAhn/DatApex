@@ -120,13 +120,31 @@ export default class extends React.Component {
               />
               row
             </label>
+            <label>
+              <input
+                type="radio"
+                value="col"
+                checked={this.state.selectedOption === "col"}
+                onChange={this.handleOptionChange}
+              />
+              col
+            </label>
             <br></br>
             <label>
               number of rows:
               <input
                 type="text"
                 name="numRow"
-                pattern="[0-9]*"
+                pattern="[0-9],*"
+                onChange={this.onChange.bind(this)}
+              />
+            </label>
+            <label>
+              number of col:
+              <input
+                type="text"
+                name="numCol"
+                pattern="[0-9],*"
                 onChange={this.onChange.bind(this)}
               />
             </label>
