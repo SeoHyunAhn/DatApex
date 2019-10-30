@@ -16,7 +16,8 @@ const posts = [
   { path: "lra", title: "Logistic Regression algorithm" },
   { path: "svm", title: "Support Vector Machine algorithm" },
   { path: "bag", title: "Bagging algorithm" },
-  { path: "clus", title: "Clustering algorithm" }
+  { path: "clus", title: "Clustering algorithm" },
+  { path: "tree", title: "Decision tree algorithm" }
 ];
 import Layout from "../components/layout";
 

@@ -64364,7 +64364,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 
 
 var styleCard = {
-  marginBottom: '10px'
+  marginBottom: "10px"
 };
 
 var PreOptions =
@@ -64384,100 +64384,112 @@ function (_Component) {
       return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_6__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 13
+          lineNumber: 12
         },
         __self: this
       }, __jsx("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 14
+          lineNumber: 13
         },
         __self: this
       }, "PreOptions"), __jsx("hr", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 15
+          lineNumber: 14
         },
         __self: this
       }), __jsx("div", {
         className: "container-fluid",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 16
+          lineNumber: 15
         },
         __self: this
       }, __jsx("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 17
+          lineNumber: 16
         },
         __self: this
       }, __jsx("div", {
         className: "col-6",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 17
+        },
+        __self: this
+      }, __jsx("div", {
+        className: "card",
+        style: styleCard,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 18
         },
         __self: this
       }, __jsx("div", {
-        className: "card",
-        style: styleCard,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 19
-        },
-        __self: this
-      }, __jsx("div", {
         className: "card-header",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20
+          lineNumber: 19
         },
         __self: this
       }, "Label Encoding"), __jsx("div", {
         className: "card-body",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 23
+          lineNumber: 20
         },
         __self: this
       }, __jsx("h5", {
         className: "card-title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24
+          lineNumber: 21
         },
         __self: this
       }, "Explanation: "), __jsx("p", {
         className: "card-text",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
+          lineNumber: 22
         },
         __self: this
-      }, "Converting the labels into numeric form so as to convert it into the machine-readable form"), __jsx(_routes__WEBPACK_IMPORTED_MODULE_7__["Link"], {
+      }, "In machine learning, we usually deal with datasets which contain multiple labels in one or more than one of the columns. Label Encoding converts the labels into numeric form so as it make them into a machine-readable form. Machine learning algorithms can then decide in a better way on how those labels must be operated. Furthermore, label encoding is easily reversible. ", __jsx("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 29
+        },
+        __self: this
+      }), " ", __jsx("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 29
+        },
+        __self: this
+      }), "Label Encoding converts the data into machine-readable form, but it assigns a unique number to each class of data. This may potentially lead to the generation of a priority issue in training of datasets, i.e. a label with a higher label might be seen as having a higher priority while this may not actually be the case."), __jsx(_routes__WEBPACK_IMPORTED_MODULE_7__["Link"], {
         route: "preproc",
         params: {
-          path: 'label'
+          path: "label"
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26
+          lineNumber: 37
         },
         __self: this
       }, __jsx("a", {
         className: "btn btn-primary",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 38
         },
         __self: this
       }, "Go somewhere"))))), __jsx("div", {
         className: "col-6",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32
+          lineNumber: 43
         },
         __self: this
       }, __jsx("div", {
@@ -64485,84 +64497,33 @@ function (_Component) {
         style: styleCard,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 33
+          lineNumber: 44
         },
         __self: this
       }, __jsx("div", {
         className: "card-header",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 34
+          lineNumber: 45
         },
         __self: this
       }, "One-hot Encoding"), __jsx("div", {
         className: "card-body",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
-        },
-        __self: this
-      }, __jsx("h5", {
-        className: "card-title",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 38
-        },
-        __self: this
-      }, "Explanation: "), __jsx("p", {
-        className: "card-text",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 39
-        },
-        __self: this
-      }, "Converting into a form that could be provided to ML algorithms to do a better job in prediction"), __jsx(_routes__WEBPACK_IMPORTED_MODULE_7__["Link"], {
-        route: "preproc",
-        params: {
-          path: 'one-hot'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 40
-        },
-        __self: this
-      }, __jsx("a", {
-        className: "btn btn-primary",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 41
-        },
-        __self: this
-      }, "Go somewhere"))))), __jsx("div", {
-        className: "col-6",
-        __source: {
-          fileName: _jsxFileName,
           lineNumber: 46
         },
         __self: this
-      }, __jsx("div", {
-        className: "card",
-        style: styleCard,
+      }, __jsx("img", {
+        className: "card-img",
+        variant: "top",
+        src: "../static/one-hot.png",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 47
         },
         __self: this
-      }, __jsx("div", {
-        className: "card-header",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 48
-        },
-        __self: this
-      }, "Delete Row/Column"), __jsx("div", {
-        className: "card-body",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 51
-        },
-        __self: this
-      }, __jsx("h5", {
+      }), __jsx("h5", {
         className: "card-title",
         __source: {
           fileName: _jsxFileName,
@@ -64576,28 +64537,28 @@ function (_Component) {
           lineNumber: 53
         },
         __self: this
-      }, "Remove some information from row/column that is not needed for ML"), __jsx(_routes__WEBPACK_IMPORTED_MODULE_7__["Link"], {
+      }, "For categorical variables where no ordinal relationship exists, label encoding alone falls short because it may assume a natural ordering among the different categories, resulting in poor performance or unexpected results. In such cases, one-hot encoding can be applied to the integer representation: the integer encoded variable is removed & a new binary variable is added for each unique integer value."), __jsx(_routes__WEBPACK_IMPORTED_MODULE_7__["Link"], {
         route: "preproc",
         params: {
-          path: 'delete-rc'
+          path: "one-hot"
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 62
         },
         __self: this
       }, __jsx("a", {
         className: "btn btn-primary",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55
+          lineNumber: 63
         },
         __self: this
       }, "Go somewhere"))))), __jsx("div", {
         className: "col-6",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 60
+          lineNumber: 68
         },
         __self: this
       }, __jsx("div", {
@@ -64605,59 +64566,119 @@ function (_Component) {
         style: styleCard,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61
+          lineNumber: 69
         },
         __self: this
       }, __jsx("div", {
         className: "card-header",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 70
+        },
+        __self: this
+      }, "Delete Row/Column"), __jsx("div", {
+        className: "card-body",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 71
+        },
+        __self: this
+      }, __jsx("h5", {
+        className: "card-title",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 72
+        },
+        __self: this
+      }, "Explanation: "), __jsx("p", {
+        className: "card-text",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 73
+        },
+        __self: this
+      }, "Remove some information from row/column that is not needed for ML"), __jsx(_routes__WEBPACK_IMPORTED_MODULE_7__["Link"], {
+        route: "preproc",
+        params: {
+          path: "delete-rc"
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 77
+        },
+        __self: this
+      }, __jsx("a", {
+        className: "btn btn-primary",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 78
+        },
+        __self: this
+      }, "Go somewhere"))))), __jsx("div", {
+        className: "col-6",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 83
+        },
+        __self: this
+      }, __jsx("div", {
+        className: "card",
+        style: styleCard,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 84
+        },
+        __self: this
+      }, __jsx("div", {
+        className: "card-header",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 85
         },
         __self: this
       }, "Replace W"), __jsx("div", {
         className: "card-body",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65
+          lineNumber: 86
         },
         __self: this
       }, __jsx("h5", {
         className: "card-title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 87
         },
         __self: this
       }, "Explanation: "), __jsx("p", {
         className: "card-text",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 67
+          lineNumber: 88
         },
         __self: this
       }, "Remove white spaces for better processing of ML"), __jsx(_routes__WEBPACK_IMPORTED_MODULE_7__["Link"], {
         route: "preproc",
         params: {
-          path: 'replaceW'
+          path: "replaceW"
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 68
+          lineNumber: 91
         },
         __self: this
       }, __jsx("a", {
         className: "btn btn-primary",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69
+          lineNumber: 92
         },
         __self: this
       }, "Go somewhere"))))), __jsx("div", {
         className: "col-6",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74
+          lineNumber: 97
         },
         __self: this
       }, __jsx("div", {
@@ -64665,52 +64686,52 @@ function (_Component) {
         style: styleCard,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 75
+          lineNumber: 98
         },
         __self: this
       }, __jsx("div", {
         className: "card-header",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 76
+          lineNumber: 99
         },
         __self: this
       }, "Select Certain"), __jsx("div", {
         className: "card-body",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 79
+          lineNumber: 100
         },
         __self: this
       }, __jsx("h5", {
         className: "card-title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 80
+          lineNumber: 101
         },
         __self: this
       }, "Explanation: "), __jsx("p", {
         className: "card-text",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 81
+          lineNumber: 102
         },
         __self: this
       }, "Select some information from the provided data"), __jsx(_routes__WEBPACK_IMPORTED_MODULE_7__["Link"], {
         route: "preproc",
         params: {
-          path: 'certain'
+          path: "certain"
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 82
+          lineNumber: 105
         },
         __self: this
       }, __jsx("a", {
         className: "btn btn-primary",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 83
+          lineNumber: 106
         },
         __self: this
       }, "Go somewhere"))))))));
@@ -64742,7 +64763,7 @@ routes.add('algoOptions', '/algoOptions');
 
 /***/ }),
 
-/***/ 2:
+/***/ 4:
 /*!*******************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2FpreOptions&absolutePagePath=%2FUsers%2Fseohyun%2FdataPex%2Ffront-end%2Fpages%2FpreOptions.js ***!
   \*******************************************************************************************************************************************/
@@ -64765,5 +64786,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[4,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=preOptions.js.map
