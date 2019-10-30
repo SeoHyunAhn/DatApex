@@ -14,6 +14,7 @@ urlpatterns = [
     path('upload/csv/', views.upload_csv, name='upload_csv'),
     # path('preProc/delCol/<int:d_cols>/', views.prePrcoess_DeleteCol),
     path('preProc/delRow/<str:d_rows>', views.prePrcoess_DeleteRow, name='delete_row'),
+    path('preProc/delCol/<str:d_cols>', views.prePrcoess_DeleteCol, name='delete_col'),
 
     # path('dataMining/SVM', views.dataMining_SVM),
     # path('dataMining/NaiveBayes', views.dataMining_NaiveBayes),

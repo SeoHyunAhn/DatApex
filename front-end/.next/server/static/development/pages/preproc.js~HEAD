@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -139,6 +139,112 @@ class User {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (new User());
+
+/***/ }),
+
+/***/ "./components/Modal.js":
+/*!*****************************!*\
+  !*** ./components/Modal.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return UploadCSV; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "reactstrap");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/components/Modal.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+// frontend/src/components/Modal.js
+
+
+class UploadCSV extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(props) {
+    super(props);
+    console.log(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.fileInput = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef(); // this.state = {
+    //   activeItem: this.props.activeItem
+    // };
+  }
+
+  handleSubmit(event) {
+    event.preventDefault(); // e.preventDefault();
+
+    console.log("handling submit2222222");
+    console.log(this.fileInput.current.files); // this.props.fileInput = this.fileInput.current.files[0]
+
+    this.props.onSubmit(this.fileInput.current.files[0]);
+  }
+
+  render() {
+    // const { onSubmit } = this.props;
+    return __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Form"], {
+      encType: "multipart/form-data",
+      onSubmit: this.handleSubmit,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 39
+      },
+      __self: this
+    }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["FormGroup"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 40
+      },
+      __self: this
+    }, __jsx("div", {
+      className: "form-group",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 41
+      },
+      __self: this
+    }, __jsx("label", {
+      htmlFor: "name",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 42
+      },
+      __self: this
+    }, "File:", " "), __jsx("div", {
+      className: "col-md-8",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 47
+      },
+      __self: this
+    }, __jsx("input", {
+      type: "file",
+      name: "csv_file",
+      id: "csv_file",
+      required: "True",
+      className: "form-control",
+      ref: this.fileInput,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 48
+      },
+      __self: this
+    }))), __jsx("input", {
+      type: "submit",
+      value: "Submit",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 58
+      },
+      __self: this
+    })))
+    /* <Button color="success" onClick={() => onSave(this.state.activeItem)}>
+      Save
+    </Button> */
+    ;
+  }
+
+}
 
 /***/ }),
 
@@ -2621,10 +2727,10 @@ class Main extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 /***/ }),
 
-/***/ "./pages/mlOptions.js":
-/*!****************************!*\
-  !*** ./pages/mlOptions.js ***!
-  \****************************/
+/***/ "./pages/preproc.js":
+/*!**************************!*\
+  !*** ./pages/preproc.js ***!
+  \**************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2632,365 +2738,211 @@ class Main extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../routes */ "./routes.js");
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/pages/mlOptions.js";
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! reactstrap */ "reactstrap");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_csv__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-csv */ "react-csv");
+/* harmony import */ var react_csv__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_csv__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_Modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Modal */ "./components/Modal.js");
+/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
+var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/pages/preproc.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
- // import Link from 'next/link';
 
 
-const styleCard = {
-  marginBottom: '10px'
-};
 
-class MlOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+ // import { Components } from "@reactioncommerce/reaction-components";
+
+const posts = [{
+  path: "label",
+  title: "Label Encoding"
+}, {
+  path: "one-hot",
+  title: "One-Hot Encoding"
+}, {
+  path: "delete-rc",
+  title: "Delete Row/Column"
+}, {
+  path: "replaceW",
+  title: "Replace W"
+}, {
+  path: "certain",
+  title: "Select Certain"
+}];
+
+/* harmony default export */ __webpack_exports__["default"] = (class extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleOptionChange = this.handleOptionChange.bind(this); // this.csvLink = React.createRef();
+
+    this.state = {
+      outputCsv: "",
+      selectedOption: "",
+      paramNum: "",
+      showResults: false
+    };
+    this.path = "";
+  }
+
+  handleSubmit(filename) {
+    event.preventDefault();
+    var formData = new FormData(); // console.log(this.fileInput.current.files[0]);
+
+    formData.append("file", filename);
+    var div = document.getElementById("result-display");
+    div.innerHTML = "<Spinner animation='border' role='status'> <span className='sr-only'>Loading...</span></Spinner>";
+    var link = "";
+    console.log(this.state.selectedOption);
+
+    if (this.path == "label") {//  selected params of each on of them
+    } else if (this.path == "one-hot") {// selected  params of each on of them
+    } else if (this.path == "delete-rc") {
+      // selected  params of each on of them
+      link = "preProc/delRow/" + this.state.paramNum;
+    } else if (this.path == "replaceW") {// selected params of each on of them
+    } else if (this.path == "certain") {// selected params of each on of them
+    }
+
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("http://localhost:8000/" + link, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data"
+      }
+    }).then(e => {
+      console.log(e);
+      console.log(e.data);
+      this.setState({
+        outputCsv: e.data,
+        showResults: true
+      });
+      div.innerHTML = "";
+    }).catch(err => {
+      console.log(err);
+      var div = document.getElementById("result-display");
+      div.innerText = "Please provide a valid csv file";
+    });
+  }
+
+  handleOptionChange(changeEvent) {
+    console.log(changeEvent.target);
+    this.setState({
+      selectedOption: changeEvent.target.value
+    });
+  }
+
+  onChange(event) {
+    console.log(event.target);
+    this.setState({
+      paramNum: event.target.value
+    });
+  }
+
   render() {
-    return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    // console.log(this.props.url.asPath.substring(9));
+    this.path = this.props.url.asPath.substring(9);
+    const params = [];
+
+    if (this.path == "label") {// List the params of each on of them
+    } else if (this.path == "one-hot") {// List the params of each on of them
+    } else if (this.path == "delete-rc") {// List the params of each on of them
+    } else if (this.path == "replaceW") {// List the params of each on of them
+    } else if (this.path == "certain") {// List the params of each on of them
+    }
+
+    return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_5__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 13
+        lineNumber: 111
       },
       __self: this
-    }, __jsx("h1", {
+    }, __jsx("main", {
+      className: "content",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 14
+        lineNumber: 112
       },
       __self: this
-    }, "MLOptions"), __jsx("hr", {
+    }, __jsx("div", {
+      className: "radio",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15
+        lineNumber: 113
+      },
+      __self: this
+    }, __jsx("label", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 114
+      },
+      __self: this
+    }, __jsx("input", {
+      type: "radio",
+      value: "row",
+      checked: this.state.selectedOption === "row",
+      onChange: this.handleOptionChange,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 115
+      },
+      __self: this
+    }), "row"), __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 123
+      },
+      __self: this
+    }), __jsx("label", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 124
+      },
+      __self: this
+    }, "number of rows:", __jsx("input", {
+      type: "text",
+      name: "numRow",
+      pattern: "[0-9]*",
+      onChange: this.onChange.bind(this),
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 126
+      },
+      __self: this
+    }))), __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      onSubmit: this.handleSubmit,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 135
       },
       __self: this
     }), __jsx("div", {
-      className: "container-fluid",
+      id: "result-display",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16
+        lineNumber: 136
       },
       __self: this
-    }, __jsx("div", {
-      className: "row",
+    }), this.state.showResults ? __jsx("div", {
+      id: "download-csv",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 138
       },
       __self: this
-    }, __jsx("div", {
-      className: "col-6",
+    }, __jsx(react_csv__WEBPACK_IMPORTED_MODULE_3__["CSVLink"], {
+      data: this.state.outputCsv,
+      filename: "data.csv",
+      className: "hidden",
+      target: "_blank",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18
+        lineNumber: 139
       },
       __self: this
-    }, __jsx("div", {
-      className: "card",
-      style: styleCard,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 19
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "card-header",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 20
-      },
-      __self: this
-    }, "Naive Bayes algorithm"), __jsx("div", {
-      className: "card-body",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 23
-      },
-      __self: this
-    }, __jsx("h5", {
-      className: "card-title",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 24
-      },
-      __self: this
-    }, "Explanation: "), __jsx("p", {
-      className: "card-text",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 25
-      },
-      __self: this
-    }, "Probabilistic classifier that makes classifications using the Maximum A Posteriori decision rule in a Bayesian setting"), __jsx(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-      route: "mlalgo",
-      params: {
-        path: 'nba'
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 29
-      },
-      __self: this
-    }, __jsx("a", {
-      className: "btn btn-primary",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 30
-      },
-      __self: this
-    }, "Go somewhere"))))), __jsx("div", {
-      className: "col-6",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 35
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "card",
-      style: styleCard,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 36
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "card-header",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 37
-      },
-      __self: this
-    }, "Logistic Regression algorithm"), __jsx("div", {
-      className: "card-body",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 40
-      },
-      __self: this
-    }, __jsx("h5", {
-      className: "card-title",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 41
-      },
-      __self: this
-    }, "Explanation: "), __jsx("p", {
-      className: "card-text",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 42
-      },
-      __self: this
-    }, "Predictive analysis algorithm and based on the concept of probability"), __jsx(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-      route: "mlalgo",
-      params: {
-        path: 'lra'
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 43
-      },
-      __self: this
-    }, __jsx("a", {
-      className: "btn btn-primary",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 44
-      },
-      __self: this
-    }, "Go somewhere"))))), __jsx("div", {
-      className: "col-6",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 49
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "card",
-      style: styleCard,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 50
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "card-header",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 51
-      },
-      __self: this
-    }, "Support Vector Machine algorithm"), __jsx("div", {
-      className: "card-body",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 54
-      },
-      __self: this
-    }, __jsx("h5", {
-      className: "card-title",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 55
-      },
-      __self: this
-    }, "Explanation: "), __jsx("p", {
-      className: "card-text",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 56
-      },
-      __self: this
-    }, "Find a hyperplane in an N-dimensional space that distinctly classifies the data points."), __jsx(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-      route: "mlalgo",
-      params: {
-        path: 'svm'
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 57
-      },
-      __self: this
-    }, __jsx("a", {
-      className: "btn btn-primary",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 58
-      },
-      __self: this
-    }, "Go somewhere"))))), __jsx("div", {
-      className: "col-6",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 63
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "card",
-      style: styleCard,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 64
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "card-header",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 65
-      },
-      __self: this
-    }, "Bagging algorithm"), __jsx("div", {
-      className: "card-body",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 68
-      },
-      __self: this
-    }, __jsx("h5", {
-      className: "card-title",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 69
-      },
-      __self: this
-    }, "Explanation: "), __jsx("p", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 70
-      },
-      __self: this
-    }, "aka. Bootstrap aggregating"), __jsx("p", {
-      className: "card-text",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 71
-      },
-      __self: this
-    }, "Improve the stability and accuracy of machine learning algorithms used in statistical classification and regression."), __jsx(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-      route: "mlalgo",
-      params: {
-        path: 'bag'
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 72
-      },
-      __self: this
-    }, __jsx("a", {
-      className: "btn btn-primary",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 73
-      },
-      __self: this
-    }, "Go somewhere"))))), __jsx("div", {
-      className: "col-6",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 78
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "card",
-      style: styleCard,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 79
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "card-header",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 80
-      },
-      __self: this
-    }, "Clustering algorithm"), __jsx("div", {
-      className: "card-body",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 83
-      },
-      __self: this
-    }, __jsx("h5", {
-      className: "card-title",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 84
-      },
-      __self: this
-    }, "Explanation: "), __jsx("p", {
-      className: "card-text",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 85
-      },
-      __self: this
-    }, "Grouping a set of objects in a way that objects in the same group are more similar to each other than to those in other group"), __jsx(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-      route: "mlalgo",
-      params: {
-        path: 'clus'
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 88
-      },
-      __self: this
-    }, __jsx("a", {
-      className: "btn btn-primary",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 89
-      },
-      __self: this
-    }, "Go somewhere"))))))));
+    }, "download me")) : null));
   }
 
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (MlOptions);
+});
 
 /***/ }),
 
@@ -3012,15 +2964,26 @@ routes.add('algoOptions', '/algoOptions');
 
 /***/ }),
 
-/***/ 3:
-/*!**********************************!*\
-  !*** multi ./pages/mlOptions.js ***!
-  \**********************************/
+/***/ 8:
+/*!********************************!*\
+  !*** multi ./pages/preproc.js ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/harsha.valluri/Desktop/cs407/DatApex/front-end/pages/mlOptions.js */"./pages/mlOptions.js");
+module.exports = __webpack_require__(/*! /Users/harsha.valluri/Desktop/cs407/DatApex/front-end/pages/preproc.js */"./pages/preproc.js");
 
+
+/***/ }),
+
+/***/ "axios":
+/*!************************!*\
+  !*** external "axios" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("axios");
 
 /***/ }),
 
@@ -3156,6 +3119,28 @@ module.exports = require("react");
 
 /***/ }),
 
+/***/ "react-csv":
+/*!****************************!*\
+  !*** external "react-csv" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-csv");
+
+/***/ }),
+
+/***/ "reactstrap":
+/*!*****************************!*\
+  !*** external "reactstrap" ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("reactstrap");
+
+/***/ }),
+
 /***/ "url":
 /*!**********************!*\
   !*** external "url" ***!
@@ -3168,4 +3153,4 @@ module.exports = require("url");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=mlOptions.js.map
+//# sourceMappingURL=preproc.js.map

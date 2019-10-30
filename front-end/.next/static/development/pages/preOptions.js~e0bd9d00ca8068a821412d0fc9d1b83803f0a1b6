@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/mlOptions.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/preOptions.js"],{
 
 /***/ "./common/firebase.js":
 /*!****************************!*\
@@ -80,7 +80,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/components/layout.js";
+var _jsxFileName = "/Users/seohyun/dataPex/front-end/components/layout.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
  // import Link from "next/link";
 
@@ -58331,21 +58331,21 @@ var toQuerystring = function toQuerystring(obj) {
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2FmlOptions&absolutePagePath=%2FUsers%2Fharsha.valluri%2FDesktop%2Fcs407%2FDatApex%2Ffront-end%2Fpages%2FmlOptions.js!./":
-/*!**************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2FmlOptions&absolutePagePath=%2FUsers%2Fharsha.valluri%2FDesktop%2Fcs407%2FDatApex%2Ffront-end%2Fpages%2FmlOptions.js ***!
-  \**************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2FpreOptions&absolutePagePath=%2FUsers%2Fseohyun%2FdataPex%2Ffront-end%2Fpages%2FpreOptions.js!./":
+/*!***************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2FpreOptions&absolutePagePath=%2FUsers%2Fseohyun%2FdataPex%2Ffront-end%2Fpages%2FpreOptions.js ***!
+  \***************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    (window.__NEXT_P=window.__NEXT_P||[]).push(["/mlOptions", function() {
-      var mod = __webpack_require__(/*! ./pages/mlOptions.js */ "./pages/mlOptions.js")
+    (window.__NEXT_P=window.__NEXT_P||[]).push(["/preOptions", function() {
+      var mod = __webpack_require__(/*! ./pages/preOptions.js */ "./pages/preOptions.js")
       if(true) {
-        module.hot.accept(/*! ./pages/mlOptions.js */ "./pages/mlOptions.js", function() {
-          if(!next.router.components["/mlOptions"]) return
-          var updatedPage = __webpack_require__(/*! ./pages/mlOptions.js */ "./pages/mlOptions.js")
-          next.router.update("/mlOptions", updatedPage)
+        module.hot.accept(/*! ./pages/preOptions.js */ "./pages/preOptions.js", function() {
+          if(!next.router.components["/preOptions"]) return
+          var updatedPage = __webpack_require__(/*! ./pages/preOptions.js */ "./pages/preOptions.js")
+          next.router.update("/preOptions", updatedPage)
         })
       }
       return mod
@@ -64235,7 +64235,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/pages/main.js";
+var _jsxFileName = "/Users/seohyun/dataPex/front-end/pages/main.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 
 
@@ -64334,10 +64334,10 @@ function (_Component) {
 
 /***/ }),
 
-/***/ "./pages/mlOptions.js":
-/*!****************************!*\
-  !*** ./pages/mlOptions.js ***!
-  \****************************/
+/***/ "./pages/preOptions.js":
+/*!*****************************!*\
+  !*** ./pages/preOptions.js ***!
+  \*****************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -64358,313 +64358,267 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/pages/mlOptions.js";
+var _jsxFileName = "/Users/seohyun/dataPex/front-end/pages/preOptions.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 
- // import Link from 'next/link';
 
 
 var styleCard = {
-  marginBottom: '10px'
+  marginBottom: "10px"
 };
 
-var MlOptions =
+var PreOptions =
 /*#__PURE__*/
 function (_Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(MlOptions, _Component);
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(PreOptions, _Component);
 
-  function MlOptions() {
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, MlOptions);
+  function PreOptions() {
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, PreOptions);
 
-    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(MlOptions).apply(this, arguments));
+    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(PreOptions).apply(this, arguments));
   }
 
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(MlOptions, [{
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(PreOptions, [{
     key: "render",
     value: function render() {
       return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_6__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 13
+          lineNumber: 12
         },
         __self: this
       }, __jsx("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 14
+          lineNumber: 13
         },
         __self: this
-      }, "MLOptions"), __jsx("hr", {
+      }, "PreOptions"), __jsx("hr", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 15
+          lineNumber: 14
         },
         __self: this
       }), __jsx("div", {
         className: "container-fluid",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 16
+          lineNumber: 15
         },
         __self: this
       }, __jsx("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 17
+          lineNumber: 16
         },
         __self: this
       }, __jsx("div", {
         className: "col-6",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 17
+        },
+        __self: this
+      }, __jsx("div", {
+        className: "card",
+        style: styleCard,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 18
         },
         __self: this
       }, __jsx("div", {
-        className: "card",
-        style: styleCard,
+        className: "card-header",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 19
         },
         __self: this
-      }, __jsx("div", {
-        className: "card-header",
+      }, "Label Encoding"), __jsx("div", {
+        className: "card-body",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 20
         },
         __self: this
-      }, "Naive Bayes algorithm"), __jsx("div", {
-        className: "card-body",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 23
-        },
-        __self: this
       }, __jsx("h5", {
         className: "card-title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24
+          lineNumber: 21
         },
         __self: this
       }, "Explanation: "), __jsx("p", {
         className: "card-text",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
+          lineNumber: 22
         },
         __self: this
-      }, "Probabilistic classifier that makes classifications using the Maximum A Posteriori decision rule in a Bayesian setting"), __jsx(_routes__WEBPACK_IMPORTED_MODULE_7__["Link"], {
-        route: "mlalgo",
-        params: {
-          path: 'nba'
-        },
+      }, "In machine learning, we usually deal with datasets which contain multiple labels in one or more than one of the columns. Label Encoding converts the labels into numeric form so as it make them into a machine-readable form. Machine learning algorithms can then decide in a better way on how those labels must be operated. Furthermore, label encoding is easily reversible. ", __jsx("br", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 29
         },
         __self: this
-      }, __jsx("a", {
-        className: "btn btn-primary",
+      }), " ", __jsx("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 30
+          lineNumber: 29
         },
         __self: this
-      }, "Go somewhere"))))), __jsx("div", {
-        className: "col-6",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 35
+      }), "Label Encoding converts the data into machine-readable form, but it assigns a unique number to each class of data. This may potentially lead to the generation of a priority issue in training of datasets, i.e. a label with a higher label might be seen as having a higher priority while this may not actually be the case."), __jsx(_routes__WEBPACK_IMPORTED_MODULE_7__["Link"], {
+        route: "preproc",
+        params: {
+          path: "label"
         },
-        __self: this
-      }, __jsx("div", {
-        className: "card",
-        style: styleCard,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 36
-        },
-        __self: this
-      }, __jsx("div", {
-        className: "card-header",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 37
         },
         __self: this
-      }, "Logistic Regression algorithm"), __jsx("div", {
-        className: "card-body",
+      }, __jsx("a", {
+        className: "btn btn-primary",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40
+          lineNumber: 38
         },
         __self: this
-      }, __jsx("h5", {
-        className: "card-title",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 41
-        },
-        __self: this
-      }, "Explanation: "), __jsx("p", {
-        className: "card-text",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 42
-        },
-        __self: this
-      }, "Predictive analysis algorithm and based on the concept of probability"), __jsx(_routes__WEBPACK_IMPORTED_MODULE_7__["Link"], {
-        route: "mlalgo",
-        params: {
-          path: 'lra'
-        },
+      }, "Go somewhere"))))), __jsx("div", {
+        className: "col-6",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 43
         },
         __self: this
-      }, __jsx("a", {
-        className: "btn btn-primary",
+      }, __jsx("div", {
+        className: "card",
+        style: styleCard,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 44
         },
         __self: this
-      }, "Go somewhere"))))), __jsx("div", {
-        className: "col-6",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 49
-        },
-        __self: this
-      }, __jsx("div", {
-        className: "card",
-        style: styleCard,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 50
-        },
-        __self: this
       }, __jsx("div", {
         className: "card-header",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51
+          lineNumber: 45
         },
         __self: this
-      }, "Support Vector Machine algorithm"), __jsx("div", {
+      }, "One-hot Encoding"), __jsx("div", {
         className: "card-body",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 46
         },
         __self: this
-      }, __jsx("h5", {
+      }, __jsx("img", {
+        className: "card-img",
+        variant: "top",
+        src: "../static/one-hot.png",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 47
+        },
+        __self: this
+      }), __jsx("h5", {
         className: "card-title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55
+          lineNumber: 52
         },
         __self: this
       }, "Explanation: "), __jsx("p", {
         className: "card-text",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 53
         },
         __self: this
-      }, "Find a hyperplane in an N-dimensional space that distinctly classifies the data points."), __jsx(_routes__WEBPACK_IMPORTED_MODULE_7__["Link"], {
-        route: "mlalgo",
+      }, "For categorical variables where no ordinal relationship exists, label encoding alone falls short because it may assume a natural ordering among the different categories, resulting in poor performance or unexpected results. In such cases, one-hot encoding can be applied to the integer representation: the integer encoded variable is removed & a new binary variable is added for each unique integer value."), __jsx(_routes__WEBPACK_IMPORTED_MODULE_7__["Link"], {
+        route: "preproc",
         params: {
-          path: 'svm'
+          path: "one-hot"
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 62
         },
         __self: this
       }, __jsx("a", {
         className: "btn btn-primary",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 58
-        },
-        __self: this
-      }, "Go somewhere"))))), __jsx("div", {
-        className: "col-6",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 63
         },
         __self: this
+      }, "Go somewhere"))))), __jsx("div", {
+        className: "col-6",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 68
+        },
+        __self: this
       }, __jsx("div", {
         className: "card",
         style: styleCard,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 64
+          lineNumber: 69
         },
         __self: this
       }, __jsx("div", {
         className: "card-header",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65
+          lineNumber: 70
         },
         __self: this
-      }, "Bagging algorithm"), __jsx("div", {
+      }, "Delete Row/Column"), __jsx("div", {
         className: "card-body",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 68
+          lineNumber: 71
         },
         __self: this
       }, __jsx("h5", {
         className: "card-title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69
+          lineNumber: 72
         },
         __self: this
       }, "Explanation: "), __jsx("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 70
-        },
-        __self: this
-      }, "aka. Bootstrap aggregating"), __jsx("p", {
         className: "card-text",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 71
+          lineNumber: 73
         },
         __self: this
-      }, "Improve the stability and accuracy of machine learning algorithms used in statistical classification and regression."), __jsx(_routes__WEBPACK_IMPORTED_MODULE_7__["Link"], {
-        route: "mlalgo",
+      }, "Remove some information from row/column that is not needed for ML"), __jsx(_routes__WEBPACK_IMPORTED_MODULE_7__["Link"], {
+        route: "preproc",
         params: {
-          path: 'bag'
+          path: "delete-rc"
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 72
+          lineNumber: 77
         },
         __self: this
       }, __jsx("a", {
         className: "btn btn-primary",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 73
+          lineNumber: 78
         },
         __self: this
       }, "Go somewhere"))))), __jsx("div", {
         className: "col-6",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 78
+          lineNumber: 83
         },
         __self: this
       }, __jsx("div", {
@@ -64672,62 +64626,122 @@ function (_Component) {
         style: styleCard,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 79
+          lineNumber: 84
         },
         __self: this
       }, __jsx("div", {
         className: "card-header",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 80
+          lineNumber: 85
         },
         __self: this
-      }, "Clustering algorithm"), __jsx("div", {
+      }, "Replace W"), __jsx("div", {
         className: "card-body",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 83
+          lineNumber: 86
         },
         __self: this
       }, __jsx("h5", {
         className: "card-title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 84
+          lineNumber: 87
         },
         __self: this
       }, "Explanation: "), __jsx("p", {
         className: "card-text",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 85
+          lineNumber: 88
         },
         __self: this
-      }, "Grouping a set of objects in a way that objects in the same group are more similar to each other than to those in other group"), __jsx(_routes__WEBPACK_IMPORTED_MODULE_7__["Link"], {
-        route: "mlalgo",
+      }, "Remove white spaces for better processing of ML"), __jsx(_routes__WEBPACK_IMPORTED_MODULE_7__["Link"], {
+        route: "preproc",
         params: {
-          path: 'clus'
+          path: "replaceW"
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88
+          lineNumber: 91
         },
         __self: this
       }, __jsx("a", {
         className: "btn btn-primary",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 89
+          lineNumber: 92
+        },
+        __self: this
+      }, "Go somewhere"))))), __jsx("div", {
+        className: "col-6",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 97
+        },
+        __self: this
+      }, __jsx("div", {
+        className: "card",
+        style: styleCard,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 98
+        },
+        __self: this
+      }, __jsx("div", {
+        className: "card-header",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 99
+        },
+        __self: this
+      }, "Select Certain"), __jsx("div", {
+        className: "card-body",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 100
+        },
+        __self: this
+      }, __jsx("h5", {
+        className: "card-title",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 101
+        },
+        __self: this
+      }, "Explanation: "), __jsx("p", {
+        className: "card-text",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 102
+        },
+        __self: this
+      }, "Select some information from the provided data"), __jsx(_routes__WEBPACK_IMPORTED_MODULE_7__["Link"], {
+        route: "preproc",
+        params: {
+          path: "certain"
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 105
+        },
+        __self: this
+      }, __jsx("a", {
+        className: "btn btn-primary",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 106
         },
         __self: this
       }, "Go somewhere"))))))));
     }
   }]);
 
-  return MlOptions;
+  return PreOptions;
 }(react__WEBPACK_IMPORTED_MODULE_5__["Component"]);
 
-/* harmony default export */ __webpack_exports__["default"] = (MlOptions);
+/* harmony default export */ __webpack_exports__["default"] = (PreOptions);
 
 /***/ }),
 
@@ -64749,14 +64763,14 @@ routes.add('algoOptions', '/algoOptions');
 
 /***/ }),
 
-/***/ 1:
-/*!******************************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2FmlOptions&absolutePagePath=%2FUsers%2Fharsha.valluri%2FDesktop%2Fcs407%2FDatApex%2Ffront-end%2Fpages%2FmlOptions.js ***!
-  \******************************************************************************************************************************************************************/
+/***/ 0:
+/*!*******************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2FpreOptions&absolutePagePath=%2FUsers%2Fseohyun%2FdataPex%2Ffront-end%2Fpages%2FpreOptions.js ***!
+  \*******************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2FmlOptions&absolutePagePath=%2FUsers%2Fharsha.valluri%2FDesktop%2Fcs407%2FDatApex%2Ffront-end%2Fpages%2FmlOptions.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2FmlOptions&absolutePagePath=%2FUsers%2Fharsha.valluri%2FDesktop%2Fcs407%2FDatApex%2Ffront-end%2Fpages%2FmlOptions.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2FpreOptions&absolutePagePath=%2FUsers%2Fseohyun%2FdataPex%2Ffront-end%2Fpages%2FpreOptions.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2FpreOptions&absolutePagePath=%2FUsers%2Fseohyun%2FdataPex%2Ffront-end%2Fpages%2FpreOptions.js!./");
 
 
 /***/ }),
@@ -64772,5 +64786,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
-//# sourceMappingURL=mlOptions.js.map
+},[[0,"static/runtime/webpack.js"]]]);
+//# sourceMappingURL=preOptions.js.map
