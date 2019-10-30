@@ -15,9 +15,11 @@ urlpatterns = [
     # path('preProc/delCol/<int:d_cols>/', views.prePrcoess_DeleteCol),
     path('preProc/delRow/<str:d_rows>', views.prePrcoess_DeleteRow, name='delete_row'),
 
-    # path('dataMining/run/SVM', views.dataMining_SVM),
-    # path('dataMining/run/NaiveBayes', views.dataMining_NaiveBayes),
-    # path('dataMining/run/LogisticRegression', views.dataMining_LogisticRegression),
-    # path('dataMining/run/Clustering', views.dataMining_Clustering),
+    # path('dataMining/SVM', views.dataMining_SVM),
+    # path('dataMining/NaiveBayes', views.dataMining_NaiveBayes),
+    # path('dataMining/LogisticRegression', views.dataMining_LogisticRegression),
+    # path('dataMining/Clustering', views.dataMining_Clustering),
+    # path('dataMining/Bagging', views.dataMining_Bagging),
+    # path('dataMining/DecisionTree', views.dataMining_DecisionTree),
     # path('test/', views.test_url),
 ]
