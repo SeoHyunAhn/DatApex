@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets          # add this
 from django.views.decorators.csrf import csrf_exempt
-from . import exploration, Delete_Row, clustering, lr_svm, nbc
+from . import exploration, Delete_Row, clustering, lr_svm, nbc, One_Hot
 import os
 import csv
 from backend.settings import BASE_DIR
@@ -114,6 +114,19 @@ def prePrcoess_DeleteRow(request, d_rows):
 
 # def prePrcoess_LabelEncoding(request):
 
-# def prePrcoess_OneHotEncoding(request):
+# def prePrcoess_OneHotEncoding(request, column_name):
+#     print("inside delete!!!!!!!!!!!!!!!!!!")
+#     if request.method == 'POST' and request.FILES['file']:
+#         myfile = request.FILES['file']
+#         print(column_name)
+#         One_Hot.preProcessing(column_name, myfile)
+    
+#     save_path = os.path.join(BASE_DIR, 'backend/one_hot_result.csv') 
+#     with open(save_path, 'rb') as fh:
+#         response = HttpResponse(fh.read(), content_type="text/csv")
+#         response['Content-Disposition'] = 'inline; filename=' + os.path.basename(save_path)
+#         return response
+        
+#     return Http404
 
 # def preProcess_ReplaceW(request):
