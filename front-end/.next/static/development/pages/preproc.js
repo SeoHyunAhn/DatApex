@@ -75,7 +75,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/youngjoon/Desktop/CS407/DatApex/front-end/components/Modal.js";
+var _jsxFileName = "/Users/seohyun/dataPex/front-end/components/Modal.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 // frontend/src/components/Modal.js
 
@@ -235,7 +235,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/youngjoon/Desktop/CS407/DatApex/front-end/components/layout.js";
+var _jsxFileName = "/Users/seohyun/dataPex/front-end/components/layout.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
  // import Link from "next/link";
 
@@ -60923,17 +60923,10 @@ var toQuerystring = function toQuerystring(obj) {
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fpreproc&absolutePagePath=%2FUsers%2Fyoungjoon%2FDesktop%2FCS407%2FDatApex%2Ffront-end%2Fpages%2Fpreproc.js!./":
-/*!*****************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fpreproc&absolutePagePath=%2FUsers%2Fyoungjoon%2FDesktop%2FCS407%2FDatApex%2Ffront-end%2Fpages%2Fpreproc.js ***!
-  \*****************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
 
 
     (window.__NEXT_P=window.__NEXT_P||[]).push(["/preproc", function() {
       var mod = __webpack_require__(/*! ./pages/preproc.js */ "./pages/preproc.js")
-      if(true) {
         module.hot.accept(/*! ./pages/preproc.js */ "./pages/preproc.js", function() {
           if(!next.router.components["/preproc"]) return
           var updatedPage = __webpack_require__(/*! ./pages/preproc.js */ "./pages/preproc.js")
@@ -63549,12 +63542,12 @@ if (false) {} else {
 
 /***/ "./node_modules/object-assign/index.js":
 /*!***************************************************************************************************!*\
-  !*** delegated ./node_modules/object-assign/index.js from dll-reference dll_129a35c7ec57967eb265 ***!
+  !*** delegated ./node_modules/object-assign/index.js from dll-reference dll_01f9a3fa864a7b7414d8 ***!
   \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_129a35c7ec57967eb265 */ "dll-reference dll_129a35c7ec57967eb265"))("./node_modules/object-assign/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_01f9a3fa864a7b7414d8 */ "dll-reference dll_01f9a3fa864a7b7414d8"))("./node_modules/object-assign/index.js");
 
 /***/ }),
 
@@ -67234,12 +67227,12 @@ module.exports = exports['default'];
 
 /***/ "./node_modules/prop-types/checkPropTypes.js":
 /*!*********************************************************************************************************!*\
-  !*** delegated ./node_modules/prop-types/checkPropTypes.js from dll-reference dll_129a35c7ec57967eb265 ***!
+  !*** delegated ./node_modules/prop-types/checkPropTypes.js from dll-reference dll_01f9a3fa864a7b7414d8 ***!
   \*********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_129a35c7ec57967eb265 */ "dll-reference dll_129a35c7ec57967eb265"))("./node_modules/prop-types/checkPropTypes.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_01f9a3fa864a7b7414d8 */ "dll-reference dll_01f9a3fa864a7b7414d8"))("./node_modules/prop-types/checkPropTypes.js");
 
 /***/ }),
 
@@ -67874,12 +67867,12 @@ if (true) {
 
 /***/ "./node_modules/prop-types/lib/ReactPropTypesSecret.js":
 /*!*******************************************************************************************************************!*\
-  !*** delegated ./node_modules/prop-types/lib/ReactPropTypesSecret.js from dll-reference dll_129a35c7ec57967eb265 ***!
+  !*** delegated ./node_modules/prop-types/lib/ReactPropTypesSecret.js from dll-reference dll_01f9a3fa864a7b7414d8 ***!
   \*******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_129a35c7ec57967eb265 */ "dll-reference dll_129a35c7ec57967eb265"))("./node_modules/prop-types/lib/ReactPropTypesSecret.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_01f9a3fa864a7b7414d8 */ "dll-reference dll_01f9a3fa864a7b7414d8"))("./node_modules/prop-types/lib/ReactPropTypesSecret.js");
 
 /***/ }),
 
@@ -68575,12 +68568,12 @@ var PropsNotForwarded = exports.PropsNotForwarded = ['data', 'headers'];
 
 /***/ "./node_modules/react-dom/index.js":
 /*!***********************************************************************************************!*\
-  !*** delegated ./node_modules/react-dom/index.js from dll-reference dll_129a35c7ec57967eb265 ***!
+  !*** delegated ./node_modules/react-dom/index.js from dll-reference dll_01f9a3fa864a7b7414d8 ***!
   \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_129a35c7ec57967eb265 */ "dll-reference dll_129a35c7ec57967eb265"))("./node_modules/react-dom/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_01f9a3fa864a7b7414d8 */ "dll-reference dll_01f9a3fa864a7b7414d8"))("./node_modules/react-dom/index.js");
 
 /***/ }),
 
@@ -69475,12 +69468,12 @@ var safeInvoke = function safeInvoke(fn) {
 
 /***/ "./node_modules/react/index.js":
 /*!*******************************************************************************************!*\
-  !*** delegated ./node_modules/react/index.js from dll-reference dll_129a35c7ec57967eb265 ***!
+  !*** delegated ./node_modules/react/index.js from dll-reference dll_01f9a3fa864a7b7414d8 ***!
   \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_129a35c7ec57967eb265 */ "dll-reference dll_129a35c7ec57967eb265"))("./node_modules/react/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_01f9a3fa864a7b7414d8 */ "dll-reference dll_01f9a3fa864a7b7414d8"))("./node_modules/react/index.js");
 
 /***/ }),
 
@@ -80830,7 +80823,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/youngjoon/Desktop/CS407/DatApex/front-end/pages/main.js";
+var _jsxFileName = "/Users/seohyun/dataPex/front-end/pages/main.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 
 
@@ -80960,11 +80953,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/youngjoon/Desktop/CS407/DatApex/front-end/pages/preproc.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
-
-
-
 
  // import { Components } from "@reactioncommerce/reaction-components";
 
@@ -81025,18 +81013,11 @@ function (_React$Component) {
       console.log(this.state.selectedOption);
 
       if (this.path == "label") {//  selected params of each on of them
-      } else if (this.path == "one-hot") {// selected  params of each on of them
-      } else if (this.path == "delete-rc") {
-        // selected  params of each on of them
-        link = "preProc/delRow/" + this.state.paramNum;
-      } else if (this.path == "replaceW") {// selected params of each on of them
       } else if (this.path == "certain") {// selected params of each on of them
       }
 
       axios__WEBPACK_IMPORTED_MODULE_7___default.a.post("http://localhost:8000/" + link, formData, {
-        headers: {
           "Content-Type": "multipart/form-data"
-        }
       }).then(function (e) {
         console.log(e);
         console.log(e.data);
@@ -81077,165 +81058,201 @@ function (_React$Component) {
       var params = [];
 
       if (this.path == "label") {// List the params of each on of them
-      } else if (this.path == "one-hot") {// List the params of each on of them
-      } else if (this.path == "delete-rc") {// List the params of each on of them
-      } else if (this.path == "replaceW") {// List the params of each on of them
+      } else if (this.path == "one-hot") {
+        // List the params of each on of them
+        return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_11__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 108
+          },
+          __self: this
+        }, __jsx("main", {
+          className: "content",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 109
+          },
+          __self: this
+        }, __jsx("div", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 110
+          },
+          __self: this
+        }, __jsx("label", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 111
+          },
+          __self: this
+        }, "name of Column:", __jsx("input", {
+          type: "text",
+          name: "numCol",
+          onChange: this.onChange.bind(this),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 113
+          },
+          __self: this
+        }))), __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_10__["default"], {
+          onSubmit: this.handleSubmit,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 121
+          },
+          __self: this
+        }), __jsx("div", {
+          id: "result-display",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 122
+          },
+          __self: this
+        }), this.state.showResults ? __jsx("div", {
+          id: "download-csv",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 124
+          },
+          __self: this
+        }, __jsx(react_csv__WEBPACK_IMPORTED_MODULE_9__["CSVLink"], {
+          data: this.state.outputCsv,
+          filename: "data.csv",
+          className: "hidden",
+          target: "_blank",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 125
+          },
+          __self: this
+        }, "download me")) : null));
+      } else if (this.path == "delete-rc" || this.path == "replaceW") {
+        // List the params of each on of them
+        return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_11__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 141
+          },
+          __self: this
+        }, __jsx("main", {
+          className: "content",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 142
+          },
+          __self: this
+        }, __jsx("div", {
+          className: "radio",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 143
+          },
+          __self: this
+        }, __jsx("label", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 144
+          },
+          __self: this
+        }, __jsx("input", {
+          type: "radio",
+          value: "row",
+          checked: this.state.selectedOption === "row",
+          onChange: this.handleOptionChange,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 145
+          },
+          __self: this
+        }), "row"), __jsx("label", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 153
+          },
+          __self: this
+        }, __jsx("input", {
+          type: "radio",
+          value: "col",
+          checked: this.state.selectedOption === "col",
+          onChange: this.handleOptionChange,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 154
+          },
+          __self: this
+        }), "col"), __jsx("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 162
+          },
+          __self: this
+        }), __jsx("label", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 163
+          },
+          __self: this
+        }, "number of rows:", __jsx("input", {
+          type: "text",
+          name: "numRow",
+          pattern: "[0-9],*",
+          onChange: this.onChange.bind(this),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 165
+          },
+          __self: this
+        })), __jsx("label", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 172
+          },
+          __self: this
+        }, "number of col:", __jsx("input", {
+          type: "text",
+          name: "numCol",
+          pattern: "[0-9],*",
+          onChange: this.onChange.bind(this),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 174
+          },
+          __self: this
+        }))), __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_10__["default"], {
+          onSubmit: this.handleSubmit,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 183
+          },
+          __self: this
+        }), __jsx("div", {
+          id: "result-display",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 184
+          },
+          __self: this
+        }), this.state.showResults ? __jsx("div", {
+          id: "download-csv",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 186
+          },
+          __self: this
+        }, __jsx(react_csv__WEBPACK_IMPORTED_MODULE_9__["CSVLink"], {
+          data: this.state.outputCsv,
+          filename: "data.csv",
+          className: "hidden",
+          target: "_blank",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 187
+          },
+          __self: this
+        }, "download me")) : null)); // } else if (this.path == "replaceW") {
+        // List the params of each on of them
       } else if (this.path == "certain") {// List the params of each on of them
       }
-
-      return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_11__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 111
-        },
-        __self: this
-      }, __jsx("h1", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 112
-        },
-        __self: this
-      }, "Delete Row and Col"), __jsx("hr", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 113
-        },
-        __self: this
-      }), __jsx("div", {
-        className: "row",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 115
-        },
-        __self: this
-      }, __jsx("div", {
-        className: "col-6",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 116
-        },
-        __self: this
-      }, __jsx("form", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 117
-        },
-        __self: this
-      }, __jsx("div", {
-        className: "form-check",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 118
-        },
-        __self: this
-      }, __jsx("label", {
-        className: "form-check-label",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 119
-        },
-        __self: this
-      }, __jsx("input", {
-        className: "form-check-input",
-        type: "radio",
-        value: "row",
-        checked: this.state.selectedOption === "row",
-        onChange: this.handleOptionChange,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 120
-        },
-        __self: this
-      }), "Row")), __jsx("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 130
-        },
-        __self: this
-      }), __jsx("div", {
-        className: "form-group",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 131
-        },
-        __self: this
-      }, __jsx("label", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 132
-        },
-        __self: this
-      }, "Number of Rows:", __jsx("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 134
-        },
-        __self: this
-      }), __jsx("input", {
-        className: "form-control",
-        placeholder: "1,2,3",
-        type: "text",
-        name: "numRow",
-        pattern: "[0-9]*",
-        onChange: this.onChange.bind(this),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 135
-        },
-        __self: this
-      }))), __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_10__["default"], {
-        onSubmit: this.handleSubmit,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 146
-        },
-        __self: this
-      }))), __jsx("div", {
-        className: "col-6",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 149
-        },
-        __self: this
-      }, __jsx("div", {
-        id: "result-display",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 150
-        },
-        __self: this
-      }), this.state.showResults ? __jsx("div", {
-        id: "download-csv",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 152
-        },
-        __self: this
-      }, __jsx(react_csv__WEBPACK_IMPORTED_MODULE_9__["CSVLink"], {
-        data: this.state.outputCsv,
-        filename: "data.csv",
-        className: "hidden",
-        target: "_blank",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 153
-        },
-        __self: this
-      }, __jsx("div", {
-        className: "text-center",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 160
-        },
-        __self: this
-      }, __jsx("button", {
-        className: "btn btn-info btn-lg",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 161
-        },
-        __self: this
-      }, "Download me")))) : null)));
     }
   }]);
 
@@ -81265,25 +81282,25 @@ routes.add('algoOptions', '/algoOptions');
 /***/ }),
 
 /***/ 2:
-/*!*********************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fpreproc&absolutePagePath=%2FUsers%2Fyoungjoon%2FDesktop%2FCS407%2FDatApex%2Ffront-end%2Fpages%2Fpreproc.js ***!
-  \*********************************************************************************************************************************************************/
+/*!*************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fpreproc&absolutePagePath=%2FUsers%2Fseohyun%2FdataPex%2Ffront-end%2Fpages%2Fpreproc.js ***!
+  \*************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fpreproc&absolutePagePath=%2FUsers%2Fyoungjoon%2FDesktop%2FCS407%2FDatApex%2Ffront-end%2Fpages%2Fpreproc.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fpreproc&absolutePagePath=%2FUsers%2Fyoungjoon%2FDesktop%2FCS407%2FDatApex%2Ffront-end%2Fpages%2Fpreproc.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fpreproc&absolutePagePath=%2FUsers%2Fseohyun%2FdataPex%2Ffront-end%2Fpages%2Fpreproc.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fpreproc&absolutePagePath=%2FUsers%2Fseohyun%2FdataPex%2Ffront-end%2Fpages%2Fpreproc.js!./");
 
 
 /***/ }),
 
-/***/ "dll-reference dll_129a35c7ec57967eb265":
+/***/ "dll-reference dll_01f9a3fa864a7b7414d8":
 /*!*******************************************!*\
-  !*** external "dll_129a35c7ec57967eb265" ***!
+  !*** external "dll_01f9a3fa864a7b7414d8" ***!
   \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = dll_129a35c7ec57967eb265;
+module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 

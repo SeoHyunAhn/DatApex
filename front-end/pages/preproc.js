@@ -51,12 +51,16 @@ export default class extends React.Component {
     if (this.path == "label") {
       //  selected params of each on of them
     } else if (this.path == "one-hot") {
-      // selected  params of each on of them
+      link = "preProc/OneHotEncoding/" + this.state.paramNum;
     } else if (this.path == "delete-rc") {
-      // selected  params of each on of them
-      link = "preProc/delRow/" + this.state.paramNum;
+      console.log(this.state.selectedOption)
+      if(this.state.selectedOption=="row"){
+        link = "preProc/delRow/" + this.state.paramNum;
+      }else if(this.state.selectedOption=="col"){
+        link = "preProc/delCol/" + this.state.paramNum;
+      }
     } else if (this.path == "replaceW") {
-      // selected params of each on of them
+      link = "preProc/ReplaceW" + this.state.paramNum;
     } else if (this.path == "certain") {
       // selected params of each on of them
     }
@@ -100,115 +104,105 @@ export default class extends React.Component {
       // List the params of each on of them
     } else if (this.path == "one-hot") {
       // List the params of each on of them
-    } else if (this.path == "delete-rc") {
+      return (
+        <Layout>
+          <main className="content">
+            <div >
+              <label>
+                name of Column:
+                <input
+                  type="text"
+                  name="numCol"
+                  onChange={this.onChange.bind(this)}
+                />
+              </label>
+            </div>
+  
+            <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
+            <div id="result-display"></div>
+            {this.state.showResults ? (
+              <div id="download-csv">
+                <CSVLink
+                  data={this.state.outputCsv}
+                  filename="data.csv"
+                  className="hidden"
+                  target="_blank"
+                >
+                  download me
+                </CSVLink>
+              </div>
+            ) : null}
+          </main>
+        </Layout>
+      );
+    } else if (this.path == "delete-rc" || this.path == "replaceW") {
       // List the params of each on of them
-    } else if (this.path == "replaceW") {
+      return (
+        <Layout>
+          <main className="content">
+            <div className="radio">
+              <label>
+                <input
+                  type="radio"
+                  value="row"
+                  checked={this.state.selectedOption === "row"}
+                  onChange={this.handleOptionChange}
+                />
+                row
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  value="col"
+                  checked={this.state.selectedOption === "col"}
+                  onChange={this.handleOptionChange}
+                />
+                col
+              </label>
+              <br></br>
+              <label>
+                number of rows:
+                <input
+                  type="text"
+                  name="numRow"
+                  pattern="[0-9],*"
+                  onChange={this.onChange.bind(this)}
+                />
+              </label>
+              <label>
+                number of col:
+                <input
+                  type="text"
+                  name="numCol"
+                  pattern="[0-9],*"
+                  onChange={this.onChange.bind(this)}
+                />
+              </label>
+            </div>
+  
+            <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
+            <div id="result-display"></div>
+            {this.state.showResults ? (
+              <div id="download-csv">
+                <CSVLink
+                  data={this.state.outputCsv}
+                  filename="data.csv"
+                  className="hidden"
+                  target="_blank"
+                >
+                  download me
+                </CSVLink>
+              </div>
+            ) : null}
+          </main>
+        </Layout>
+      );
+    // } else if (this.path == "replaceW") {
       // List the params of each on of them
+      
     } else if (this.path == "certain") {
       // List the params of each on of them
     }
-    return (
-      <Layout>
-        <h1>Delete Row and Col</h1>
-        <hr></hr>
-
-        <div className="row">
-          <div className="col-6">
-            <form>
-              <div className="form-check">
-                <label className="form-check-label">
-                  <input
-                    className="form-check-input"
-                    type="radio"
-                    value="row"
-                    checked={this.state.selectedOption === "row"}
-                    onChange={this.handleOptionChange}
-                  />
-                  Row
-                </label>
-              </div>
-              <br />
-              <div className="form-group">
-                <label>
-                  Number of Rows:
-                  <br />
-                  <input
-                    className="form-control"
-                    placeholder="1,2,3"
-                    type="text"
-                    name="numRow"
-                    pattern="[0-9]*"
-                    onChange={this.onChange.bind(this)}
-                  />
-                </label>
-              </div>
-
-              <UploadCSV onSubmit={ this.handleSubmit }></UploadCSV>
-            </form>
-          </div>
-          <div className="col-6">
-            <div id="result-display"></div>
-              { this.state.showResults ? (
-                  <div id="download-csv">
-                    <CSVLink
-                      data={this.state.outputCsv}
-                      filename="data.csv"
-                      className="hidden"
-                      target="_blank"
-                    >
-                    
-                    <div className="text-center">
-                      <button className="btn btn-info btn-lg">
-                        Download me
-                      </button>
-                    </div>
-                    </CSVLink>
-                  </div>
-                ) : null
-              }
-          </div>
-        </div>
-
-{/* 
-        <main className="content">
-          <div className="radio">
-            <label>
-              <input
-                type="radio"
-                value="row"
-                checked={this.state.selectedOption === "row"}
-                onChange={this.handleOptionChange}
-              />
-              row
-            </label>
-            <br></br>
-            <label>
-              number of rows:
-              <input
-                type="text"
-                name="numRow"
-                pattern="[0-9]*"
-                onChange={this.onChange.bind(this)}
-              />
-            </label>
-          </div>
-
-          <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
-          <div id="result-display"></div>
-          {this.state.showResults ? (
-            <div id="download-csv">
-              <CSVLink
-                data={this.state.outputCsv}
-                filename="data.csv"
-                className="hidden"
-                target="_blank"
-              >
-                download me
-              </CSVLink>
-            </div>
-          ) : null}
-        </main> */}
-      </Layout>
-    );
+    
   }
 }
