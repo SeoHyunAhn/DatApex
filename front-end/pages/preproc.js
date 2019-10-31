@@ -101,11 +101,54 @@ export default class extends React.Component {
     this.path = this.props.url.asPath.substring(9);
     if (this.path == "label") {
       // List the params of each on of them
-    } else if (this.path == "one-hot") {
+    } 
+    else if (this.path == "one-hot") {
       // List the params of each on of them
       return (
         <Layout>
-          <main className="content">
+          <h1>{ this.path }</h1>
+          <hr></hr>
+
+          <div className="row">
+            <div className="col-6">
+              <form>
+                <div className="form-group row">
+                  <label className="col-sm-2 col-form-label"> Number of Column: </label>
+                  <div className="col-sm-10">
+                    <input
+                      className="form-control"
+                      placeholder="1,2,3"
+                      type="text"
+                      name="numCol"
+                      onChange={this.onChange.bind(this)}
+                    />
+                  </div>
+                </div>
+                
+                <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
+              </form>
+            </div>
+            <div className="col-6">
+              <div id="result-display"></div>
+              { this.state.showResults ? (
+                <div id="download-csv">
+                  <CSVLink
+                    data={this.state.outputCsv}
+                    filename="data.csv"
+                    className="hidden"
+                    target="_blank"
+                  >
+                    Download me
+                  </CSVLink>
+                </div>
+              ) : null}
+            </div>
+          </div>
+          
+
+
+
+          {/* <main className="content">
             <div >
               <label>
                 name of Column:
@@ -131,23 +174,107 @@ export default class extends React.Component {
                 </CSVLink>
               </div>
             ) : null}
-          </main>
+          </main> */}
         </Layout>
       );
     } else if (this.path == "delete-rc" || this.path == "replaceW") {
       // List the params of each on of them
       return (
         <Layout>
-          <main className="content">
+
+          <h1>{ this.path }</h1>
+          <hr></hr>
+
+          <div className="row">
+            <div className="col-6">
+              <form>
+                <div className="form-check">
+                  <label class="form-check-label">
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      value="row"
+                      checked={this.state.selectedOption === "row"}
+                      onChange={this.handleOptionChange}
+                    />
+                    Row
+                  </label>
+                </div>
+                <div className="form-check">
+                  <label>
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      value="col"
+                      checked={this.state.selectedOption === "col"}
+                      onChange={this.handleOptionChange}
+                    />
+                    Col
+                  </label>
+                </div>
+                <div className="form-group row">
+                  <label className="col-sm-2 col-form-label"> Number of Rows: </label>
+                  <div className="col-sm-10">
+                    <input
+                      className="form-control"
+                      placeholder="1,2,3"
+                      type="text"
+                      name="numRow"
+                      pattern="[0-9],*"
+                      onChange={this.onChange.bind(this)}
+                    />
+                  </div>
+                </div>
+                <div className="form-group row">
+                  <label className="col-sm-2 col-form-label"> Number of Cols: </label>
+                  <div className="col-sm-10">
+                    <input
+                      className="form-control"
+                      placeholder="1,2,3"
+                      type="text"
+                      name="numCol"
+                      pattern="[0-9],*"
+                      onChange={this.onChange.bind(this)}
+                    />
+                  </div>
+                </div>
+                <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
+              </form>
+            </div>
+            <div className="col-6">
+              <div id="result-display"></div>
+              {this.state.showResults ? (
+                <div id="download-csv">
+                  <CSVLink
+                    data={this.state.outputCsv}
+                    filename="data.csv"
+                    className="hidden"
+                    target="_blank"
+                  >
+                    <div className="text-center">
+                      <button className="btn btn-info">
+                        Download me
+                      </button>
+                    </div>
+                  </CSVLink>
+                </div>
+              ) : null}
+            </div>
+          </div>
+          
+
+
+          {/* <main className="content">
             <div className="radio">
-              <label>
+              <label class="form-check-label">
                 <input
+                  className="form-check-input"
                   type="radio"
                   value="row"
                   checked={this.state.selectedOption === "row"}
                   onChange={this.handleOptionChange}
                 />
-                row
+                Row
               </label>
               <label>
                 <input
@@ -156,7 +283,7 @@ export default class extends React.Component {
                   checked={this.state.selectedOption === "col"}
                   onChange={this.handleOptionChange}
                 />
-                col
+                Col
               </label>
               <br></br>
               <label>
@@ -193,7 +320,7 @@ export default class extends React.Component {
                 </CSVLink>
               </div>
             ) : null}
-          </main>
+          </main> */}
         </Layout>
       );
     // } else if (this.path == "replaceW") {

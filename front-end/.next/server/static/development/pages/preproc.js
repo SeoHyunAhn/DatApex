@@ -156,7 +156,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "reactstrap");
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/seohyun/dataPex/front-end/components/Modal.js";
+var _jsxFileName = "/Users/youngjoon/Desktop/CS407/DatApex/front-end/components/Modal.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 // frontend/src/components/Modal.js
 
@@ -182,22 +182,16 @@ class UploadCSV extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
   render() {
     // const { onSubmit } = this.props;
-    return __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Form"], {
+    return __jsx("form", {
       encType: "multipart/form-data",
       onSubmit: this.handleSubmit,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 39
-      },
-      __self: this
-    }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["FormGroup"], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 40
       },
       __self: this
     }, __jsx("div", {
-      className: "form-group",
+      class: "form-group",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 41
@@ -214,7 +208,7 @@ class UploadCSV extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       className: "col-12",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 47
+        lineNumber: 43
       },
       __self: this
     }, __jsx("input", {
@@ -222,30 +216,36 @@ class UploadCSV extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       name: "csv_file",
       id: "csv_file",
       required: "True",
-      className: "form-control",
+      className: "form-control-file",
       ref: this.fileInput,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 48
+        lineNumber: 44
       },
       __self: this
-    }))), __jsx("br", {
+    })), __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 58
+        lineNumber: 53
       },
       __self: this
     }), __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 59
+        lineNumber: 54
+      },
+      __self: this
+    }), __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 55
       },
       __self: this
     }), __jsx("div", {
       className: "text-center",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 60
+        lineNumber: 56
       },
       __self: this
     }, __jsx("input", {
@@ -254,10 +254,36 @@ class UploadCSV extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       value: "Submit",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 61
+        lineNumber: 57
       },
       __self: this
-    }))))
+    })))) // <Form encType="multipart/form-data" onSubmit={this.handleSubmit}>
+    //       <FormGroup>
+    //         <div className="form-group">
+    //           <label
+    //             htmlFor="name"
+    //           >
+    //             File:{" "}
+    //           </label>
+    //           <div className="col-12">
+    //             <input
+    //               type="file"
+    //               name="csv_file"
+    //               id="csv_file"
+    //               required="True"
+    //               className="form-control"
+    //               ref={ this.fileInput }
+    //             />
+    //           </div>
+    //         </div>
+    //         <br />
+    //         <br />
+    //         <div className="text-center">
+    //           <input className="btn btn-success btn-block" type="submit" value="Submit" />
+    //         </div>
+    //       </FormGroup>
+    //     </Form>
+
     /* <Button color="success" onClick={() => onSave(this.state.activeItem)}>
       Save
     </Button> */
@@ -286,7 +312,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../routes */ "./routes.js");
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_5__);
 
-var _jsxFileName = "/Users/seohyun/dataPex/front-end/components/layout.js";
+var _jsxFileName = "/Users/youngjoon/Desktop/CS407/DatApex/front-end/components/layout.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
  // import Link from "next/link";
 
@@ -2662,7 +2688,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/seohyun/dataPex/front-end/pages/main.js";
+var _jsxFileName = "/Users/youngjoon/Desktop/CS407/DatApex/front-end/pages/main.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -2766,7 +2792,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_csv__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_csv__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _components_Modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Modal */ "./components/Modal.js");
 /* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
-var _jsxFileName = "/Users/seohyun/dataPex/front-end/pages/preproc.js";
+var _jsxFileName = "/Users/youngjoon/Desktop/CS407/DatApex/front-end/pages/preproc.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -2847,7 +2873,7 @@ const posts = [{
     }).catch(err => {
       console.log(err);
       var div = document.getElementById("result-display");
-      div.innerText = "Please provide a valid csv file";
+      div.innerText = "Please check your input and parameters";
     });
   }
 
@@ -2868,7 +2894,6 @@ const posts = [{
   render() {
     // console.log(this.props.url.asPath.substring(9));
     this.path = this.props.url.asPath.substring(9);
-    const params = [];
 
     if (this.path == "label") {// List the params of each on of them
     } else if (this.path == "one-hot") {
@@ -2879,53 +2904,96 @@ const posts = [{
           lineNumber: 108
         },
         __self: this
-      }, __jsx("main", {
-        className: "content",
+      }, __jsx("h1", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 109
         },
         __self: this
-      }, __jsx("div", {
+      }, this.path), __jsx("hr", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 110
         },
         __self: this
-      }, __jsx("label", {
+      }), __jsx("div", {
+        className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 111
+          lineNumber: 112
         },
         __self: this
-      }, "name of Column:", __jsx("input", {
+      }, __jsx("div", {
+        className: "col-6",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 113
+        },
+        __self: this
+      }, __jsx("form", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 114
+        },
+        __self: this
+      }, __jsx("div", {
+        className: "form-group row",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 115
+        },
+        __self: this
+      }, __jsx("label", {
+        className: "col-sm-2 col-form-label",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 116
+        },
+        __self: this
+      }, " Number of Column: "), __jsx("div", {
+        className: "col-sm-10",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 117
+        },
+        __self: this
+      }, __jsx("input", {
+        className: "form-control",
+        placeholder: "1,2,3",
         type: "text",
         name: "numCol",
         onChange: this.onChange.bind(this),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 113
+          lineNumber: 118
         },
         __self: this
       }))), __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_4__["default"], {
         onSubmit: this.handleSubmit,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 121
+          lineNumber: 128
         },
         __self: this
-      }), __jsx("div", {
+      }))), __jsx("div", {
+        className: "col-6",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 131
+        },
+        __self: this
+      }, __jsx("div", {
         id: "result-display",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 122
+          lineNumber: 132
         },
         __self: this
       }), this.state.showResults ? __jsx("div", {
         id: "download-csv",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 124
+          lineNumber: 134
         },
         __self: this
       }, __jsx(react_csv__WEBPACK_IMPORTED_MODULE_3__["CSVLink"], {
@@ -2935,121 +3003,191 @@ const posts = [{
         target: "_blank",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 125
+          lineNumber: 135
         },
         __self: this
-      }, "download me")) : null));
+      }, "Download me")) : null)));
     } else if (this.path == "delete-rc" || this.path == "replaceW") {
       // List the params of each on of them
       return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_5__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 141
+          lineNumber: 183
         },
         __self: this
-      }, __jsx("main", {
-        className: "content",
+      }, __jsx("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 142
+          lineNumber: 185
+        },
+        __self: this
+      }, this.path), __jsx("hr", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 186
+        },
+        __self: this
+      }), __jsx("div", {
+        className: "row",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 188
         },
         __self: this
       }, __jsx("div", {
-        className: "radio",
+        className: "col-6",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 143
+          lineNumber: 189
+        },
+        __self: this
+      }, __jsx("form", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 190
+        },
+        __self: this
+      }, __jsx("div", {
+        className: "form-check",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 191
         },
         __self: this
       }, __jsx("label", {
+        class: "form-check-label",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 144
+          lineNumber: 192
         },
         __self: this
       }, __jsx("input", {
+        className: "form-check-input",
         type: "radio",
         value: "row",
         checked: this.state.selectedOption === "row",
         onChange: this.handleOptionChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 145
+          lineNumber: 193
         },
         __self: this
-      }), "row"), __jsx("label", {
+      }), "Row")), __jsx("div", {
+        className: "form-check",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 153
+          lineNumber: 203
+        },
+        __self: this
+      }, __jsx("label", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 204
         },
         __self: this
       }, __jsx("input", {
+        className: "form-check-input",
         type: "radio",
         value: "col",
         checked: this.state.selectedOption === "col",
         onChange: this.handleOptionChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 154
+          lineNumber: 205
         },
         __self: this
-      }), "col"), __jsx("br", {
+      }), "Col")), __jsx("div", {
+        className: "form-group row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 162
+          lineNumber: 215
         },
         __self: this
-      }), __jsx("label", {
+      }, __jsx("label", {
+        className: "col-sm-2 col-form-label",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 163
+          lineNumber: 216
         },
         __self: this
-      }, "number of rows:", __jsx("input", {
+      }, " Number of Rows: "), __jsx("div", {
+        className: "col-sm-10",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 217
+        },
+        __self: this
+      }, __jsx("input", {
+        className: "form-control",
+        placeholder: "1,2,3",
         type: "text",
         name: "numRow",
         pattern: "[0-9],*",
         onChange: this.onChange.bind(this),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 165
+          lineNumber: 218
         },
         __self: this
-      })), __jsx("label", {
+      }))), __jsx("div", {
+        className: "form-group row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 172
+          lineNumber: 228
         },
         __self: this
-      }, "number of col:", __jsx("input", {
+      }, __jsx("label", {
+        className: "col-sm-2 col-form-label",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 229
+        },
+        __self: this
+      }, " Number of Cols: "), __jsx("div", {
+        className: "col-sm-10",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 230
+        },
+        __self: this
+      }, __jsx("input", {
+        className: "form-control",
+        placeholder: "1,2,3",
         type: "text",
         name: "numCol",
         pattern: "[0-9],*",
         onChange: this.onChange.bind(this),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 174
+          lineNumber: 231
         },
         __self: this
       }))), __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_4__["default"], {
         onSubmit: this.handleSubmit,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 183
+          lineNumber: 241
         },
         __self: this
-      }), __jsx("div", {
+      }))), __jsx("div", {
+        className: "col-6",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 244
+        },
+        __self: this
+      }, __jsx("div", {
         id: "result-display",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 184
+          lineNumber: 245
         },
         __self: this
       }), this.state.showResults ? __jsx("div", {
         id: "download-csv",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 186
+          lineNumber: 247
         },
         __self: this
       }, __jsx(react_csv__WEBPACK_IMPORTED_MODULE_3__["CSVLink"], {
@@ -3059,10 +3197,24 @@ const posts = [{
         target: "_blank",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 187
+          lineNumber: 248
         },
         __self: this
-      }, "download me")) : null)); // } else if (this.path == "replaceW") {
+      }, __jsx("div", {
+        className: "text-center",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 254
+        },
+        __self: this
+      }, __jsx("button", {
+        className: "btn btn-info",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 255
+        },
+        __self: this
+      }, "Download me")))) : null))); // } else if (this.path == "replaceW") {
       // List the params of each on of them
     } else if (this.path == "certain") {// List the params of each on of them
     }
@@ -3097,7 +3249,7 @@ routes.add('algoOptions', '/algoOptions');
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/seohyun/dataPex/front-end/pages/preproc.js */"./pages/preproc.js");
+module.exports = __webpack_require__(/*! /Users/youngjoon/Desktop/CS407/DatApex/front-end/pages/preproc.js */"./pages/preproc.js");
 
 
 /***/ }),

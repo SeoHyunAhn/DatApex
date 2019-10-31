@@ -77,11 +77,22 @@ export default class extends React.Component {
     }
     return (
       <Layout>
-        <main className="content">
+        <h1>{ this.path }</h1>
+        <hr></hr>
+        <div className="row">
+          <div className="col-6">
+            <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
+          </div>
+          <div className="col-6">
+            <div id="image-display"></div>
+            <img id="image-output" src={this.state.imgSrc}></img>
+          </div>
+        </div>
+        {/* <main className="content">
           <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
           <div id="image-display"></div>
           <img id="image-output" src={this.state.imgSrc}></img>
-        </main>
+        </main> */}
       </Layout>
     );
   }
