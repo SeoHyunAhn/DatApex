@@ -5555,7 +5555,7 @@ function connect(options) {
       error.name = err.name;
       error.stack = err.stack; // __NEXT_DIST_DIR is provided by webpack
 
-      (0, _sourceMapSupport.rewriteStacktrace)(error, "/Users/youngjoon/Desktop/CS407/DatApex/front-end/.next");
+      (0, _sourceMapSupport.rewriteStacktrace)(error, "/Users/kimmyeongsu/Desktop/fall2019/407/DatApex/front-end/.next");
       return error;
     }
   };
