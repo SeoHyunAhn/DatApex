@@ -45,7 +45,7 @@ export default class extends React.Component {
         }
       })
       .then(e => {
-        console.log(e);
+        // console.log(e);
 
         var div = document.getElementById("image-display");
         div.innerText = "";
@@ -56,7 +56,7 @@ export default class extends React.Component {
         console.log(err);
 
         var div = document.getElementById("image-display");
-        div.innerText = "Please provide a valid csv file";
+        div.innerText = "Please check your input and parameters";
       });
   }
   render() {
@@ -71,6 +71,8 @@ export default class extends React.Component {
     } else if (this.path == "bag") {
       // List the params of each on of them
     } else if (this.path == "clus") {
+      // List the params of each on of them
+    } else if (this.path == "tree") {
       // List the params of each on of them
     }
     return (

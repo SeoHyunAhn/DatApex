@@ -81,7 +81,7 @@ export default class extends React.Component {
         console.log(err);
 
         var div = document.getElementById("result-display");
-        div.innerText = "Please provide a valid csv file";
+        div.innerText = "Please check your input and parameters";
       });
   }
 
@@ -99,7 +99,6 @@ export default class extends React.Component {
   render() {
     // console.log(this.props.url.asPath.substring(9));
     this.path = this.props.url.asPath.substring(9);
-    const params = [];
     if (this.path == "label") {
       // List the params of each on of them
     } else if (this.path == "one-hot") {
