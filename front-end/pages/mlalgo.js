@@ -21,6 +21,9 @@ const posts = [
 ];
 import Layout from "../components/layout";
 
+var backend_url = ""
+
+
 export default class extends React.Component {
   constructor(props) {
     super(props);
@@ -37,7 +40,6 @@ export default class extends React.Component {
     var div = document.getElementById("image-display");
     div.innerHTML =
       "<Spinner animation='border' role='status'> <span className='sr-only'>Loading...</span></Spinner>";
-
     axios
       .post("http://localhost:8000/upload/csv/", formData, {
         headers: {
@@ -63,16 +65,22 @@ export default class extends React.Component {
     // console.log(this.props.url.asPath.substring(8));
     this.path = this.props.url.asPath.substring(8);
     if (this.path == "nba") {
+      backend_url = "http://localhost:8000/dataMining/NaiveBayes/"
       // List the params of each on of them
     } else if (this.path == "lra") {
+      backend_url = "http://localhost:8000/dataMining/LogisticRegression/"
       // List the params of each on of them
     } else if (this.path == "svm") {
+      backend_url = "http://localhost:8000/dataMining/SVM/"
       // List the params of each on of them
     } else if (this.path == "bag") {
+      backend_url = "http://localhost:8000/dataMining/Bagging/"
       // List the params of each on of them
     } else if (this.path == "clus") {
+      backend_url = "http://localhost:8000/dataMining/Clustering/"
       // List the params of each on of them
     } else if (this.path == "tree") {
+      backend_url = "http://localhost:8000/dataMining/decisionTree/"
       // List the params of each on of them
     }
     return (

@@ -132,7 +132,7 @@ def getAnsSVM(list):
     return ans
 
 
-def runSVM(trainingPath, testingPath):
+def runSVM(trainingPath, testingPath, stepSize, lmda, iterMax):
     print("SVM started!")
     
     dataTrain = pd.read_csv(trainingPath)
@@ -148,10 +148,6 @@ def runSVM(trainingPath, testingPath):
     
     del dataTest["Unnamed: 0"]
     del dataTest["decision"]
-    
-    stepSize = 0.5
-    lmda = 0.01
-    iterMax = 500
 
     D = np.matrix(dataTrain).astype(np.float32)
     Dtest = np.matrix(dataTest).astype(np.float32)
@@ -225,7 +221,7 @@ def resultTestingLR(w, D, ans):
 #     print("Accuracy Train: ", float(cntCorrect)/float(len(ans)))    
     return float(cntCorrect)/float(len(ans))
 
-def runLR(trainingPath, testingPath):
+def runLR(trainingPath, testingPath, stepSize, lmda, iterMax):
     print("LR started!")
     
     dataTrain = pd.read_csv(trainingPath)
@@ -245,8 +241,7 @@ def runLR(trainingPath, testingPath):
     testAns = np.array(testAns).astype(np.float32)
 
 
-    w = logistic_regression(dataTrain, trainAns,
-                    iterMax = 500, stepSize = 0.01, lmda = 0.01)
+    w = logistic_regression(dataTrain, trainAns, iterMax, stepSize, lmda)
 
 
     accTrain = round(resultTestingLR(w, dataTrain, trainAns), 2)
