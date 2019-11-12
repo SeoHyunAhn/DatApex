@@ -75,7 +75,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/components/Modal.js";
+var _jsxFileName = "/Users/seohyun/dataPex/front-end/components/Modal.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 // frontend/src/components/Modal.js
 
@@ -261,7 +261,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/components/layout.js";
+var _jsxFileName = "/Users/seohyun/dataPex/front-end/components/layout.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
  // import Link from "next/link";
 
@@ -60949,10 +60949,10 @@ var toQuerystring = function toQuerystring(obj) {
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fmlalgo&absolutePagePath=%2FUsers%2Fharsha.valluri%2FDesktop%2Fcs407%2FDatApex%2Ffront-end%2Fpages%2Fmlalgo.js!./":
-/*!********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fmlalgo&absolutePagePath=%2FUsers%2Fharsha.valluri%2FDesktop%2Fcs407%2FDatApex%2Ffront-end%2Fpages%2Fmlalgo.js ***!
-  \********************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fmlalgo&absolutePagePath=%2FUsers%2Fseohyun%2FdataPex%2Ffront-end%2Fpages%2Fmlalgo.js!./":
+/*!*******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fmlalgo&absolutePagePath=%2FUsers%2Fseohyun%2FdataPex%2Ffront-end%2Fpages%2Fmlalgo.js ***!
+  \*******************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -80375,7 +80375,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/pages/main.js";
+var _jsxFileName = "/Users/seohyun/dataPex/front-end/pages/main.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 
 
@@ -80503,7 +80503,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/pages/mlalgo.js";
+var _jsxFileName = "/Users/seohyun/dataPex/front-end/pages/mlalgo.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
 
@@ -80542,8 +80542,7 @@ function (_React$Component) {
     Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, _default);
 
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(_default).call(this, props));
-    _this.handleSubmit = _this.handleSubmit.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this)); // this.fileInput = React.createRef();
-
+    _this.handleSubmit = _this.handleSubmit.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
     _this.state = {
       imgSrc: ""
     };
@@ -80584,8 +80583,13 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       // console.log(this.props.url.asPath.substring(8));
       this.path = this.props.url.asPath.substring(8);
+      var post = posts.find(function (p) {
+        return p.path == _this3.path;
+      });
 
       if (this.path == "nba") {
         backend_url = "http://localhost:8000/dataMining/NaiveBayes/"; // List the params of each on of them
@@ -80613,7 +80617,7 @@ function (_React$Component) {
           lineNumber: 88
         },
         __self: this
-      }, this.path), __jsx("hr", {
+      }, post.title), __jsx("hr", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 89
@@ -80691,14 +80695,14 @@ routes.add('algoOptions', '/algoOptions');
 
 /***/ }),
 
-/***/ 3:
-/*!************************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fmlalgo&absolutePagePath=%2FUsers%2Fharsha.valluri%2FDesktop%2Fcs407%2FDatApex%2Ffront-end%2Fpages%2Fmlalgo.js ***!
-  \************************************************************************************************************************************************************/
+/***/ 4:
+/*!***********************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fmlalgo&absolutePagePath=%2FUsers%2Fseohyun%2FdataPex%2Ffront-end%2Fpages%2Fmlalgo.js ***!
+  \***********************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fmlalgo&absolutePagePath=%2FUsers%2Fharsha.valluri%2FDesktop%2Fcs407%2FDatApex%2Ffront-end%2Fpages%2Fmlalgo.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fmlalgo&absolutePagePath=%2FUsers%2Fharsha.valluri%2FDesktop%2Fcs407%2FDatApex%2Ffront-end%2Fpages%2Fmlalgo.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fmlalgo&absolutePagePath=%2FUsers%2Fseohyun%2FdataPex%2Ffront-end%2Fpages%2Fmlalgo.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fmlalgo&absolutePagePath=%2FUsers%2Fseohyun%2FdataPex%2Ffront-end%2Fpages%2Fmlalgo.js!./");
 
 
 /***/ }),
@@ -80714,5 +80718,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[4,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=mlalgo.js.map

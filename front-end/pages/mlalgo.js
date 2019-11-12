@@ -28,7 +28,6 @@ export default class extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.fileInput = React.createRef();
     this.state = { imgSrc: "" };
     this.path = "";
   }
@@ -64,6 +63,7 @@ export default class extends React.Component {
   render() {
     // console.log(this.props.url.asPath.substring(8));
     this.path = this.props.url.asPath.substring(8);
+    const post = posts.find(p=> p.path == this.path);
     if (this.path == "nba") {
       backend_url = "http://localhost:8000/dataMining/NaiveBayes/"
       // List the params of each on of them
@@ -85,7 +85,7 @@ export default class extends React.Component {
     }
     return (
       <Layout>
-        <h1>{ this.path }</h1>
+        <h1>{ post.title }</h1>
         <hr></hr>
         <div className="row">
           <div className="col-6">
@@ -96,11 +96,6 @@ export default class extends React.Component {
             <img id="image-output" src={this.state.imgSrc}></img>
           </div>
         </div>
-        {/* <main className="content">
-          <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
-          <div id="image-display"></div>
-          <img id="image-output" src={this.state.imgSrc}></img>
-        </main> */}
       </Layout>
     );
   }

@@ -99,14 +99,44 @@ export default class extends React.Component {
   render() {
     // console.log(this.props.url.asPath.substring(9));
     this.path = this.props.url.asPath.substring(9);
+    const post = posts.find(p=> p.path == this.path);
+    // console.log(post.title);
+
     if (this.path == "label") {
-      // List the params of each on of them
-    } 
-    else if (this.path == "one-hot") {
-      // List the params of each on of them
       return (
         <Layout>
-          <h1>{ this.path }</h1>
+          <h1>{ post.title }</h1>
+          <hr></hr>
+
+          <div className="row">
+            <div className="col-6">
+              <form>
+                <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
+              </form>
+            </div>
+            <div className="col-6">
+              <div id="result-display"></div>
+              { this.state.showResults ? (
+                <div id="download-csv">
+                  <CSVLink
+                    data={this.state.outputCsv}
+                    filename="data.csv"
+                    className="hidden"
+                    target="_blank"
+                  >
+                    Download me
+                  </CSVLink>
+                </div>
+              ) : null}
+            </div>
+          </div>
+        </Layout>
+      );
+    } 
+    else if (this.path == "one-hot") {
+      return (
+        <Layout>
+          <h1>{ post.title }</h1>
           <hr></hr>
 
           <div className="row">
@@ -144,45 +174,13 @@ export default class extends React.Component {
               ) : null}
             </div>
           </div>
-          
-
-
-
-          {/* <main className="content">
-            <div >
-              <label>
-                name of Column:
-                <input
-                  type="text"
-                  name="numCol"
-                  onChange={this.onChange.bind(this)}
-                />
-              </label>
-            </div>
-  
-            <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
-            <div id="result-display"></div>
-            {this.state.showResults ? (
-              <div id="download-csv">
-                <CSVLink
-                  data={this.state.outputCsv}
-                  filename="data.csv"
-                  className="hidden"
-                  target="_blank"
-                >
-                  download me
-                </CSVLink>
-              </div>
-            ) : null}
-          </main> */}
         </Layout>
       );
     } else if (this.path == "delete-rc" || this.path == "replaceW") {
-      // List the params of each on of them
       return (
         <Layout>
 
-          <h1>{ this.path }</h1>
+          <h1>{ post.title }</h1>
           <hr></hr>
 
           <div className="row">
@@ -261,66 +259,6 @@ export default class extends React.Component {
               ) : null}
             </div>
           </div>
-          
-
-
-          {/* <main className="content">
-            <div className="radio">
-              <label class="form-check-label">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  value="row"
-                  checked={this.state.selectedOption === "row"}
-                  onChange={this.handleOptionChange}
-                />
-                Row
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  value="col"
-                  checked={this.state.selectedOption === "col"}
-                  onChange={this.handleOptionChange}
-                />
-                Col
-              </label>
-              <br></br>
-              <label>
-                number of rows:
-                <input
-                  type="text"
-                  name="numRow"
-                  pattern="[0-9],*"
-                  onChange={this.onChange.bind(this)}
-                />
-              </label>
-              <label>
-                number of col:
-                <input
-                  type="text"
-                  name="numCol"
-                  pattern="[0-9],*"
-                  onChange={this.onChange.bind(this)}
-                />
-              </label>
-            </div>
-  
-            <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
-            <div id="result-display"></div>
-            {this.state.showResults ? (
-              <div id="download-csv">
-                <CSVLink
-                  data={this.state.outputCsv}
-                  filename="data.csv"
-                  className="hidden"
-                  target="_blank"
-                >
-                  download me
-                </CSVLink>
-              </div>
-            ) : null}
-          </main> */}
         </Layout>
       );
     // } else if (this.path == "replaceW") {
