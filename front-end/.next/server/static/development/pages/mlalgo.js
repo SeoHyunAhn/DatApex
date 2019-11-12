@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2822,9 +2822,20 @@ var backend_url = "";
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {
-      imgSrc: ""
+      imgSrc: "",
+      sos: "",
+      lambda: "",
+      maxit: ""
     };
     this.path = "";
+  }
+
+  onChange(event) {
+    console.log(event.target.name);
+    var param = event.target.name;
+    this.setState({
+      [event.target.name]: event.target.value
+    });
   }
 
   handleSubmit(filename) {
@@ -2834,7 +2845,26 @@ var backend_url = "";
     formData.append("file", filename);
     var div = document.getElementById("image-display");
     div.innerHTML = "<Spinner animation='border' role='status'> <span className='sr-only'>Loading...</span></Spinner>";
-    axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("http://localhost:8000/upload/csv/", formData, {
+
+    if (this.path == "nba") {
+      backend_url = "http://localhost:8000/dataMining/NaiveBayes/";
+    } else if (this.path == "lra") {
+      backend_url = "http://localhost:8000/dataMining/LogisticRegression/";
+      backend_url = backend_url + this.state.sos + "/" + this.state.lambda + "/" + this.state.maxit;
+      console.log(backend_url);
+    } else if (this.path == "svm") {
+      backend_url = "http://localhost:8000/dataMining/SVM/";
+      backend_url = backend_url + this.state.sos + "/" + this.state.lambda + "/" + this.state.maxit;
+      console.log(backend_url);
+    } else if (this.path == "bag") {
+      backend_url = "http://localhost:8000/dataMining/Bagging/"; // List the params of each on of them
+    } else if (this.path == "clus") {
+      backend_url = "http://localhost:8000/dataMining/Clustering/"; // List the params of each on of them
+    } else if (this.path == "tree") {
+      backend_url = "http://localhost:8000/dataMining/decisionTree/"; // List the params of each on of them
+    }
+
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(backend_url, formData, {
       headers: {
         "Content-Type": "multipart/form-data"
       }
@@ -2859,11 +2889,342 @@ var backend_url = "";
     const post = posts.find(p => p.path == this.path);
 
     if (this.path == "nba") {
-      backend_url = "http://localhost:8000/dataMining/NaiveBayes/"; // List the params of each on of them
+      return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 107
+        },
+        __self: this
+      }, __jsx("h1", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 108
+        },
+        __self: this
+      }, post.title), __jsx("hr", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 109
+        },
+        __self: this
+      }), __jsx("div", {
+        className: "row",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 110
+        },
+        __self: this
+      }, __jsx("div", {
+        className: "col-6",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 111
+        },
+        __self: this
+      }, __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        onSubmit: this.handleSubmit,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 112
+        },
+        __self: this
+      })), __jsx("div", {
+        className: "col-6",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 114
+        },
+        __self: this
+      }, __jsx("div", {
+        id: "image-display",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 115
+        },
+        __self: this
+      }), __jsx("img", {
+        id: "image-output",
+        src: this.state.imgSrc,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 116
+        },
+        __self: this
+      }))));
     } else if (this.path == "lra") {
-      backend_url = "http://localhost:8000/dataMining/LogisticRegression/"; // List the params of each on of them
+      return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 123
+        },
+        __self: this
+      }, __jsx("h1", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 124
+        },
+        __self: this
+      }, post.title), __jsx("hr", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 125
+        },
+        __self: this
+      }), __jsx("form", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 126
+        },
+        __self: this
+      }, __jsx("div", {
+        className: "form-group row",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 127
+        },
+        __self: this
+      }, __jsx("label", {
+        className: "col-sm-2 col-form-label",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 128
+        },
+        __self: this
+      }, " Size of Step: "), __jsx("div", {
+        className: "col-sm-10",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 129
+        },
+        __self: this
+      }, __jsx("input", {
+        className: "form-control",
+        placeholder: "1,2,3",
+        type: "text",
+        name: "sos",
+        onChange: this.onChange.bind(this),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 130
+        },
+        __self: this
+      })), __jsx("label", {
+        className: "col-sm-2 col-form-label",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 138
+        },
+        __self: this
+      }, " Lambda: "), __jsx("div", {
+        className: "col-sm-10",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 139
+        },
+        __self: this
+      }, __jsx("input", {
+        className: "form-control",
+        placeholder: "1,2,3",
+        type: "text",
+        name: "lambda",
+        onChange: this.onChange.bind(this),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 140
+        },
+        __self: this
+      })), __jsx("label", {
+        className: "col-sm-2 col-form-label",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 148
+        },
+        __self: this
+      }, " ", "Number of Max iteration:", " "), __jsx("div", {
+        className: "col-sm-10",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 152
+        },
+        __self: this
+      }, __jsx("input", {
+        className: "form-control",
+        placeholder: "1,2,3",
+        type: "text",
+        name: "maxit",
+        onChange: this.onChange.bind(this),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 153
+        },
+        __self: this
+      }))), __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        onSubmit: this.handleSubmit,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 162
+        },
+        __self: this
+      })), __jsx("div", {
+        className: "col-6",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 164
+        },
+        __self: this
+      }, __jsx("div", {
+        id: "image-display",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 165
+        },
+        __self: this
+      }), __jsx("img", {
+        id: "image-output",
+        src: this.state.imgSrc,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 166
+        },
+        __self: this
+      })));
     } else if (this.path == "svm") {
-      backend_url = "http://localhost:8000/dataMining/SVM/"; // List the params of each on of them
+      return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 172
+        },
+        __self: this
+      }, __jsx("h1", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 173
+        },
+        __self: this
+      }, post.title), __jsx("hr", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 174
+        },
+        __self: this
+      }), __jsx("form", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 175
+        },
+        __self: this
+      }, __jsx("div", {
+        className: "form-group row",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 176
+        },
+        __self: this
+      }, __jsx("label", {
+        className: "col-sm-2 col-form-label",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 177
+        },
+        __self: this
+      }, " Size of Step: "), __jsx("div", {
+        className: "col-sm-10",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 178
+        },
+        __self: this
+      }, __jsx("input", {
+        className: "form-control",
+        placeholder: "1,2,3",
+        type: "text",
+        name: "sos",
+        onChange: this.onChange.bind(this),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 179
+        },
+        __self: this
+      })), __jsx("label", {
+        className: "col-sm-2 col-form-label",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 187
+        },
+        __self: this
+      }, " Lambda: "), __jsx("div", {
+        className: "col-sm-10",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 188
+        },
+        __self: this
+      }, __jsx("input", {
+        className: "form-control",
+        placeholder: "1,2,3",
+        type: "text",
+        name: "lambda",
+        onChange: this.onChange.bind(this),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 189
+        },
+        __self: this
+      })), __jsx("label", {
+        className: "col-sm-2 col-form-label",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 197
+        },
+        __self: this
+      }, " ", "Number of Max iteration:", " "), __jsx("div", {
+        className: "col-sm-10",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 201
+        },
+        __self: this
+      }, __jsx("input", {
+        className: "form-control",
+        placeholder: "1,2,3",
+        type: "text",
+        name: "maxit",
+        onChange: this.onChange.bind(this),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 202
+        },
+        __self: this
+      }))), __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        onSubmit: this.handleSubmit,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 211
+        },
+        __self: this
+      })), __jsx("div", {
+        className: "col-6",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 213
+        },
+        __self: this
+      }, __jsx("div", {
+        id: "image-display",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 214
+        },
+        __self: this
+      }), __jsx("img", {
+        id: "image-output",
+        src: this.state.imgSrc,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 215
+        },
+        __self: this
+      }))); // List the params of each on of them
     } else if (this.path == "bag") {
       backend_url = "http://localhost:8000/dataMining/Bagging/"; // List the params of each on of them
     } else if (this.path == "clus") {
@@ -2875,54 +3236,54 @@ var backend_url = "";
     return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87
+        lineNumber: 231
       },
       __self: this
     }, __jsx("h1", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 88
+        lineNumber: 232
       },
       __self: this
     }, post.title), __jsx("hr", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 89
+        lineNumber: 233
       },
       __self: this
     }), __jsx("div", {
       className: "row",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 90
+        lineNumber: 234
       },
       __self: this
     }, __jsx("div", {
       className: "col-6",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 91
+        lineNumber: 235
       },
       __self: this
     }, __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_3__["default"], {
       onSubmit: this.handleSubmit,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 92
+        lineNumber: 236
       },
       __self: this
     })), __jsx("div", {
       className: "col-6",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 94
+        lineNumber: 238
       },
       __self: this
     }, __jsx("div", {
       id: "image-display",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 95
+        lineNumber: 239
       },
       __self: this
     }), __jsx("img", {
@@ -2930,7 +3291,7 @@ var backend_url = "";
       src: this.state.imgSrc,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 96
+        lineNumber: 240
       },
       __self: this
     }))));
@@ -2958,7 +3319,7 @@ routes.add('algoOptions', '/algoOptions');
 
 /***/ }),
 
-/***/ 7:
+/***/ 6:
 /*!*******************************!*\
   !*** multi ./pages/mlalgo.js ***!
   \*******************************/

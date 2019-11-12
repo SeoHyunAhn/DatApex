@@ -50,10 +50,11 @@ export default class extends React.Component {
     console.log(this.state.selectedOption);
     if (this.path == "label") {
       //  selected params of each on of them
+      link = "preProc/LabelEncoding/";
     } else if (this.path == "one-hot") {
       link = "preProc/OneHotEncoding/" + this.state.paramNum;
     } else if (this.path == "delete-rc") {
-      console.log(this.state.selectedOption)
+      // console.log(this.state.selectedOption)
       if(this.state.selectedOption=="row"){
         link = "preProc/delRow/" + this.state.paramNum;
       }else if(this.state.selectedOption=="col"){

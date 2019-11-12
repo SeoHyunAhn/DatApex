@@ -64995,7 +64995,7 @@ routes.add('algoOptions', '/algoOptions');
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /*!*****************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2FmlOptions&absolutePagePath=%2FUsers%2Fseohyun%2FdataPex%2Ffront-end%2Fpages%2FmlOptions.js ***!
   \*****************************************************************************************************************************************/
@@ -65018,5 +65018,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=mlOptions.js.map
