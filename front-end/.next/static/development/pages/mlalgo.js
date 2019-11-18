@@ -80549,7 +80549,10 @@ function (_React$Component) {
       imgSrc: "",
       sos: "",
       lambda: "",
-      maxit: ""
+      maxit: "",
+      depthlimit: "",
+      exlimit: "",
+      k: ""
     };
     _this.path = "";
     return _this;
@@ -80586,8 +80589,14 @@ function (_React$Component) {
         console.log(backend_url);
       } else if (this.path == "bag") {
         backend_url = "http://localhost:8000/dataMining/Bagging/"; // List the params of each on of them
+
+        backend_url = backend_url + this.state.depthlimit + "/" + this.state.exlimit;
+        console.log(backend_url);
       } else if (this.path == "clus") {
         backend_url = "http://localhost:8000/dataMining/Clustering/"; // List the params of each on of them
+
+        backend_url = backend_url + this.state.k;
+        console.log(backend_url);
       } else if (this.path == "tree") {
         backend_url = "http://localhost:8000/dataMining/decisionTree/"; // List the params of each on of them
       }
@@ -80626,54 +80635,54 @@ function (_React$Component) {
         return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_11__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 107
+            lineNumber: 118
           },
           __self: this
         }, __jsx("h1", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 108
+            lineNumber: 119
           },
           __self: this
         }, post.title), __jsx("hr", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 109
+            lineNumber: 120
           },
           __self: this
         }), __jsx("div", {
           className: "row",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 110
+            lineNumber: 121
           },
           __self: this
         }, __jsx("div", {
           className: "col-6",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 111
+            lineNumber: 122
           },
           __self: this
         }, __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_10__["default"], {
           onSubmit: this.handleSubmit,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 112
+            lineNumber: 123
           },
           __self: this
         })), __jsx("div", {
           className: "col-6",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 114
+            lineNumber: 125
           },
           __self: this
         }, __jsx("div", {
           id: "image-display",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 115
+            lineNumber: 126
           },
           __self: this
         }), __jsx("img", {
@@ -80681,7 +80690,7 @@ function (_React$Component) {
           src: this.state.imgSrc,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 116
+            lineNumber: 127
           },
           __self: this
         }))));
@@ -80689,46 +80698,46 @@ function (_React$Component) {
         return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_11__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 123
+            lineNumber: 134
           },
           __self: this
         }, __jsx("h1", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 124
+            lineNumber: 135
           },
           __self: this
         }, post.title), __jsx("hr", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 125
+            lineNumber: 136
           },
           __self: this
         }), __jsx("form", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 126
+            lineNumber: 137
           },
           __self: this
         }, __jsx("div", {
           className: "form-group row",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 127
+            lineNumber: 138
           },
           __self: this
         }, __jsx("label", {
           className: "col-sm-2 col-form-label",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 128
+            lineNumber: 139
           },
           __self: this
         }, " Size of Step: "), __jsx("div", {
           className: "col-sm-10",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 129
+            lineNumber: 140
           },
           __self: this
         }, __jsx("input", {
@@ -80739,21 +80748,21 @@ function (_React$Component) {
           onChange: this.onChange.bind(this),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 130
+            lineNumber: 141
           },
           __self: this
         })), __jsx("label", {
           className: "col-sm-2 col-form-label",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 138
+            lineNumber: 149
           },
           __self: this
         }, " Lambda: "), __jsx("div", {
           className: "col-sm-10",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 139
+            lineNumber: 150
           },
           __self: this
         }, __jsx("input", {
@@ -80764,21 +80773,21 @@ function (_React$Component) {
           onChange: this.onChange.bind(this),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 140
+            lineNumber: 151
           },
           __self: this
         })), __jsx("label", {
           className: "col-sm-2 col-form-label",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 148
+            lineNumber: 159
           },
           __self: this
         }, " ", "Number of Max iteration:", " "), __jsx("div", {
           className: "col-sm-10",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 152
+            lineNumber: 163
           },
           __self: this
         }, __jsx("input", {
@@ -80789,28 +80798,28 @@ function (_React$Component) {
           onChange: this.onChange.bind(this),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 153
+            lineNumber: 164
           },
           __self: this
         }))), __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_10__["default"], {
           onSubmit: this.handleSubmit,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 162
+            lineNumber: 173
           },
           __self: this
         })), __jsx("div", {
           className: "col-6",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 164
+            lineNumber: 175
           },
           __self: this
         }, __jsx("div", {
           id: "image-display",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 165
+            lineNumber: 176
           },
           __self: this
         }), __jsx("img", {
@@ -80818,7 +80827,7 @@ function (_React$Component) {
           src: this.state.imgSrc,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 166
+            lineNumber: 177
           },
           __self: this
         })));
@@ -80826,46 +80835,46 @@ function (_React$Component) {
         return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_11__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 172
+            lineNumber: 183
           },
           __self: this
         }, __jsx("h1", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 173
+            lineNumber: 184
           },
           __self: this
         }, post.title), __jsx("hr", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 174
+            lineNumber: 185
           },
           __self: this
         }), __jsx("form", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 175
+            lineNumber: 186
           },
           __self: this
         }, __jsx("div", {
           className: "form-group row",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 176
+            lineNumber: 187
           },
           __self: this
         }, __jsx("label", {
           className: "col-sm-2 col-form-label",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 177
+            lineNumber: 188
           },
           __self: this
         }, " Size of Step: "), __jsx("div", {
           className: "col-sm-10",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 178
+            lineNumber: 189
           },
           __self: this
         }, __jsx("input", {
@@ -80876,21 +80885,21 @@ function (_React$Component) {
           onChange: this.onChange.bind(this),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 179
+            lineNumber: 190
           },
           __self: this
         })), __jsx("label", {
           className: "col-sm-2 col-form-label",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 187
+            lineNumber: 198
           },
           __self: this
         }, " Lambda: "), __jsx("div", {
           className: "col-sm-10",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 188
+            lineNumber: 199
           },
           __self: this
         }, __jsx("input", {
@@ -80901,21 +80910,21 @@ function (_React$Component) {
           onChange: this.onChange.bind(this),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 189
+            lineNumber: 200
           },
           __self: this
         })), __jsx("label", {
           className: "col-sm-2 col-form-label",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 197
+            lineNumber: 208
           },
           __self: this
         }, " ", "Number of Max iteration:", " "), __jsx("div", {
           className: "col-sm-10",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 201
+            lineNumber: 212
           },
           __self: this
         }, __jsx("input", {
@@ -80926,28 +80935,28 @@ function (_React$Component) {
           onChange: this.onChange.bind(this),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 202
+            lineNumber: 213
           },
           __self: this
         }))), __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_10__["default"], {
           onSubmit: this.handleSubmit,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 211
+            lineNumber: 222
           },
           __self: this
         })), __jsx("div", {
           className: "col-6",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 213
+            lineNumber: 224
           },
           __self: this
         }, __jsx("div", {
           id: "image-display",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 214
+            lineNumber: 225
           },
           __self: this
         }), __jsx("img", {
@@ -80955,14 +80964,209 @@ function (_React$Component) {
           src: this.state.imgSrc,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 215
+            lineNumber: 226
           },
           __self: this
         }))); // List the params of each on of them
       } else if (this.path == "bag") {
-        backend_url = "http://localhost:8000/dataMining/Bagging/"; // List the params of each on of them
+        return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_11__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 233
+          },
+          __self: this
+        }, __jsx("h1", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 234
+          },
+          __self: this
+        }, post.title), __jsx("hr", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 235
+          },
+          __self: this
+        }), __jsx("form", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 236
+          },
+          __self: this
+        }, __jsx("div", {
+          className: "form-group row",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 237
+          },
+          __self: this
+        }, __jsx("label", {
+          className: "col-sm-2 col-form-label",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 238
+          },
+          __self: this
+        }, " Depth limit: "), __jsx("div", {
+          className: "col-sm-10",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 239
+          },
+          __self: this
+        }, __jsx("input", {
+          className: "form-control",
+          placeholder: "1,2,3",
+          type: "text",
+          name: "depthlimit",
+          onChange: this.onChange.bind(this),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 240
+          },
+          __self: this
+        })), __jsx("label", {
+          className: "col-sm-2 col-form-label",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 248
+          },
+          __self: this
+        }, " Example Limit: "), __jsx("div", {
+          className: "col-sm-10",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 249
+          },
+          __self: this
+        }, __jsx("input", {
+          className: "form-control",
+          placeholder: "1,2,3",
+          type: "text",
+          name: "exlimit",
+          onChange: this.onChange.bind(this),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 250
+          },
+          __self: this
+        }))), __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_10__["default"], {
+          onSubmit: this.handleSubmit,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 259
+          },
+          __self: this
+        })), __jsx("div", {
+          className: "col-6",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 261
+          },
+          __self: this
+        }, __jsx("div", {
+          id: "image-display",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 262
+          },
+          __self: this
+        }), __jsx("img", {
+          id: "image-output",
+          src: this.state.imgSrc,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 263
+          },
+          __self: this
+        })));
       } else if (this.path == "clus") {
-        backend_url = "http://localhost:8000/dataMining/Clustering/"; // List the params of each on of them
+        return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_11__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 269
+          },
+          __self: this
+        }, __jsx("h1", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 270
+          },
+          __self: this
+        }, post.title), __jsx("hr", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 271
+          },
+          __self: this
+        }), __jsx("form", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 272
+          },
+          __self: this
+        }, __jsx("div", {
+          className: "form-group row",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 273
+          },
+          __self: this
+        }, __jsx("label", {
+          className: "col-sm-2 col-form-label",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 274
+          },
+          __self: this
+        }, " Number of Cluster: "), __jsx("div", {
+          className: "col-sm-10",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 275
+          },
+          __self: this
+        }, __jsx("input", {
+          className: "form-control",
+          placeholder: "3",
+          type: "text",
+          name: "k",
+          onChange: this.onChange.bind(this),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 276
+          },
+          __self: this
+        }))), __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_10__["default"], {
+          onSubmit: this.handleSubmit,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 285
+          },
+          __self: this
+        })), __jsx("div", {
+          className: "col-6",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 287
+          },
+          __self: this
+        }, __jsx("div", {
+          id: "image-display",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 288
+          },
+          __self: this
+        }), __jsx("img", {
+          id: "image-output",
+          src: this.state.imgSrc,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 289
+          },
+          __self: this
+        })));
       } else if (this.path == "tree") {
         backend_url = "http://localhost:8000/dataMining/decisionTree/"; // List the params of each on of them
       }
@@ -80970,54 +81174,54 @@ function (_React$Component) {
       return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_11__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 231
+          lineNumber: 298
         },
         __self: this
       }, __jsx("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 232
+          lineNumber: 299
         },
         __self: this
       }, post.title), __jsx("hr", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 233
+          lineNumber: 300
         },
         __self: this
       }), __jsx("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 234
+          lineNumber: 301
         },
         __self: this
       }, __jsx("div", {
         className: "col-6",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 235
+          lineNumber: 302
         },
         __self: this
       }, __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_10__["default"], {
         onSubmit: this.handleSubmit,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 236
+          lineNumber: 303
         },
         __self: this
       })), __jsx("div", {
         className: "col-6",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 238
+          lineNumber: 305
         },
         __self: this
       }, __jsx("div", {
         id: "image-display",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 239
+          lineNumber: 306
         },
         __self: this
       }), __jsx("img", {
@@ -81025,7 +81229,7 @@ function (_React$Component) {
         src: this.state.imgSrc,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 240
+          lineNumber: 307
         },
         __self: this
       }))));
@@ -81057,7 +81261,7 @@ routes.add('algoOptions', '/algoOptions');
 
 /***/ }),
 
-/***/ 3:
+/***/ 1:
 /*!***********************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fmlalgo&absolutePagePath=%2FUsers%2Fseohyun%2FdataPex%2Ffront-end%2Fpages%2Fmlalgo.js ***!
   \***********************************************************************************************************************************/
@@ -81080,5 +81284,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=mlalgo.js.map

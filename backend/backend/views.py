@@ -24,6 +24,8 @@ def upload_csv(request):
 
 @csrf_exempt
 def prePrcoess_DeleteRow(request, d_rows):
+    print("INSIDE VIEWS DELETE ROW")
+
     if request.method == 'POST' and request.FILES['file']:
         myfile = request.FILES['file']
         Delete_Row.deleteRow2(d_rows, myfile)
@@ -36,6 +38,8 @@ def prePrcoess_DeleteRow(request, d_rows):
 
 @csrf_exempt
 def prePrcoess_DeleteCol(request, d_cols):
+    print("INSIDE VIEWS DELETE COL")
+
     if request.method == 'POST' and request.FILES['file']:
         myfile = request.FILES['file']
         Delete_Col.deleteCol(d_cols, myfile)
@@ -48,6 +52,7 @@ def prePrcoess_DeleteCol(request, d_cols):
 
 @csrf_exempt
 def dataMining_SVM(request, step_size, lmda, num_iteration):
+    print("INSIDE VIEWS SVM")
     if request.method == 'POST' and request.FILES['file']:
         training_file = request.FILES['training_file']
         testing_file = request.FILES['testing_file']
@@ -80,6 +85,8 @@ def dataMining_SVM(request, step_size, lmda, num_iteration):
 
 @csrf_exempt
 def dataMining_LogisticRegression(request, step_size, lmda, num_iteration):
+    print("INSIDE VIEWS LOG REGRESSION")
+
     if request.method == 'POST' and request.FILES['file']:
         training_file = request.FILES['training_file']
         testing_file = request.FILES['testing_file']
@@ -94,35 +101,40 @@ def dataMining_LogisticRegression(request, step_size, lmda, num_iteration):
 
     return HttpResponse(str, content_type="image/png")
 
-# @csrf_exempt
-# def dataMining_Clustering(request, num_clusters):
-# if request.method == 'POST' and request.FILES['file']:
-#         myfile = request.FILES['file']
-#         clustering.run(myfile, num_clusters)
+@csrf_exempt
+def dataMining_Clustering(request, num_clusters):
+    print("INSIDE VIEWS CLUSTER")
 
-#     save_path = os.path.join(BASE_DIR, 'backend/clustering_result.png') 
-#     print(save_path)
-#     image_data = open(save_path, "rb").read()
-#     with open(save_path, "rb") as image_data:
-#         str = base64.b64encode(image_data.read())
+    if request.method == 'POST' and request.FILES['file']:
+        myfile = request.FILES['file']
+        clustering.run(myfile, num_clusters)
 
-#     return HttpResponse(str, content_type="image/png")
+    save_path = os.path.join(BASE_DIR, 'backend/clustering_result.png') 
+    print(save_path)
+    image_data = open(save_path, "rb").read()
+    with open(save_path, "rb") as image_data:
+        str = base64.b64encode(image_data.read())
 
-# @csrf_exempt
-# def dataMining_Bagging(request, depth_limit, example_limit, num_trees):
-#     if request.method == 'POST' and request.FILES['file']:
-#         training_file = request.FILES['training_file']
-#         testing_file = request.FILES['testing_file']
+    return HttpResponse(str, content_type="image/png")
 
-#         baggingTree.runBT(training_file, testing_file, depth_limit, example_limi, num_trees)
+@csrf_exempt
+def dataMining_Bagging(request, depth_limit, example_limit):
+    print("INSIDE VIEWS BAG")
+    print("WHY DO I NEED NUM TREE")
+
+    if request.method == 'POST' and request.FILES['file']:
+        training_file = request.FILES['training_file']
+        testing_file = request.FILES['testing_file']
+
+        baggingTree.runBT(training_file, testing_file, depth_limit, example_limi, num_trees)
     
-#     save_path = os.path.join(BASE_DIR, 'backend/baggingTree_result.png') 
+    save_path = os.path.join(BASE_DIR, 'backend/baggingTree_result.png') 
 
-#     image_data = open(save_path, "rb").read()
-#     with open(save_path, "rb") as image_data:
-#         str = base64.b64encode(image_data.read())
+    image_data = open(save_path, "rb").read()
+    with open(save_path, "rb") as image_data:
+        str = base64.b64encode(image_data.read())
 
-#     return HttpResponse(str, content_type="image/png")
+    return HttpResponse(str, content_type="image/png")
 
 # @csrf_exempt
 # def dataMining_DecisionTree(request, depth_limit, example_limit):
@@ -157,6 +169,8 @@ def dataMining_LogisticRegression(request, step_size, lmda, num_iteration):
 #     return HttpResponse(str, content_type="image/png")
 
 def prePrcoess_LabelEncoding(request):
+    print("INSIDE VIEWS LABEL ENCODING. NEED CODE")
+
     return Http404
 
 def prePrcoess_OneHotEncoding(request, column_name):
@@ -175,4 +189,6 @@ def prePrcoess_OneHotEncoding(request, column_name):
     return Http404
 
 def preProcess_ReplaceW(request):
+    print("INSIDE VIEWS REPLACE W. NEED CODE")
+
     return Http404
