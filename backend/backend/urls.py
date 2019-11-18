@@ -16,9 +16,15 @@ urlpatterns = [
     path('dataMining/NaiveBayes/', views.dataMining_NaiveBayes, name='naive_bayes'),
     path('dataMining/SVM/<str:step_size>/<str:lmda>/<str:num_iteration>', views.dataMining_SVM),
     path('dataMining/LogisticRegression/<str:step_size>/<str:lmda>/<str:num_iteration>', views.dataMining_LogisticRegression),
+<<<<<<< HEAD
     path('dataMining/Clustering/', views.dataMining_Clustering),
     # path('dataMining/Bagging/', views.dataMining_Bagging),
     # path('dataMining/DecisionTree/', views.dataMining_DecisionTree),
+=======
+    path('dataMining/Clustering/<str:num_clusters>', views.dataMining_Clustering),
+    path('dataMining/Bagging/<str:depth_limit>/<str:example_limit>', views.dataMining_Bagging),
+    path('dataMining/DecisionTree/<str:depth_limit>/<str:example_limit>', views.dataMining_DecisionTree),
+>>>>>>> 7c96be57062ed110319645e760470332bccd8316
     # path('dataMining/DecisionTree/', views.dataMining_RandomForest),
     path('preProc/LabelEncoding/', views.prePrcoess_LabelEncoding),
     path('preProc/OneHotEncoding/<str:column_name>', views.prePrcoess_OneHotEncoding),
