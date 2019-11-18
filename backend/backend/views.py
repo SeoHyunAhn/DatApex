@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets          # add this
 from django.views.decorators.csrf import csrf_exempt
-from . import exploration, clustering, lr_svm, nbc, decisionTree, baggingTree, randomForest,One_Hot, Delete_Row,Delete_Col
+from . import exploration, clustering, svm, logisticReg, nbc, decisionTree, baggingTree, randomForest,One_Hot, Delete_Row,Delete_Col
 import os
 import csv
 from backend.settings import BASE_DIR
@@ -48,13 +48,13 @@ def prePrcoess_DeleteCol(request, d_cols):
 
 @csrf_exempt
 def dataMining_SVM(request, step_size, lmda, num_iteration):
+    print("IN SVMMMMMMM")
     if request.method == 'POST' and request.FILES['file']:
-        training_file = request.FILES['training_file']
-        testing_file = request.FILES['testing_file']
+        myfile = request.FILES['file']
 
-        lr_svm.runSVM(training_file, testing_file, step_size, lmda, num_iteration)
-    
-    save_path = os.path.join(BASE_DIR, 'backend/svm_result.png') 
+        svm.runSVMAlgo(myfile)
+
+    save_path = os.path.join(BASE_DIR, 'backend/SVMlearningCurve.png') 
 
     image_data = open(save_path, "rb").read()
     with open(save_path, "rb") as image_data:
@@ -62,31 +62,30 @@ def dataMining_SVM(request, step_size, lmda, num_iteration):
 
     return HttpResponse(str, content_type="image/png")
 
-# @csrf_exempt
-# def dataMining_NaiveBayes(request):
-#     if request.method == 'POST' and request.FILES['file']:
-#         myfile = request.FILES['file']
-#         numBins = request.POST['numBins']
-
-#         nbc.discretize(training_file, testing_file)
+@csrf_exempt
+def dataMining_NaiveBayes(request):
+    print("IN NAIVE BAYESSSS !!!!!!!!!!!!!!!")
+    if request.method == 'POST' and request.FILES['file']:
+        myfile = request.FILES['file']
+        nbc.runNBC(myfile)
     
-#     save_path = os.path.join(BASE_DIR, 'backend/nbcResult.png') 
+    save_path = os.path.join(BASE_DIR, 'backend/outNBC.jpeg') 
 
-#     image_data = open(save_path, "rb").read()
-#     with open(save_path, "rb") as image_data:
-#         str = base64.b64encode(image_data.read())
+    image_data = open(save_path, "rb").read()
+    with open(save_path, "rb") as image_data:
+        str = base64.b64encode(image_data.read())
     
-#     return HttpResponse(str, content_type="image/png")
+    return HttpResponse(str, content_type="image/jpeg")
 
 @csrf_exempt
 def dataMining_LogisticRegression(request, step_size, lmda, num_iteration):
+    print("IN LRRRRRRRR")
     if request.method == 'POST' and request.FILES['file']:
-        training_file = request.FILES['training_file']
-        testing_file = request.FILES['testing_file']
+        myfile = request.FILES['file']
 
-        lr_svm.runLR(training_file, testing_file, step_size, lmda, num_iteration)
-    
-    save_path = os.path.join(BASE_DIR, 'backend/lr_result.png') 
+        logisticReg.runLogisticReg(myfile)
+
+    save_path = os.path.join(BASE_DIR, 'backend/LRlearningCurve.png') 
 
     image_data = open(save_path, "rb").read()
     with open(save_path, "rb") as image_data:
@@ -94,19 +93,20 @@ def dataMining_LogisticRegression(request, step_size, lmda, num_iteration):
 
     return HttpResponse(str, content_type="image/png")
 
-# @csrf_exempt
-# def dataMining_Clustering(request, num_clusters):
-# if request.method == 'POST' and request.FILES['file']:
-#         myfile = request.FILES['file']
-#         clustering.run(myfile, num_clusters)
+@csrf_exempt
+def dataMining_Clustering(request):
+    if request.method == 'POST' and request.FILES['file']:
+        myfile = request.FILES['file']
 
-#     save_path = os.path.join(BASE_DIR, 'backend/clustering_result.png') 
-#     print(save_path)
-#     image_data = open(save_path, "rb").read()
-#     with open(save_path, "rb") as image_data:
-#         str = base64.b64encode(image_data.read())
+        clustering.runClustering(myfile, 8)
 
-#     return HttpResponse(str, content_type="image/png")
+    save_path = os.path.join(BASE_DIR, 'backend/clustringResult.png') 
+    print(save_path)
+    image_data = open(save_path, "rb").read()
+    with open(save_path, "rb") as image_data:
+        str = base64.b64encode(image_data.read())
+
+    return HttpResponse(str, content_type="image/png")
 
 # @csrf_exempt
 # def dataMining_Bagging(request, depth_limit, example_limit, num_trees):

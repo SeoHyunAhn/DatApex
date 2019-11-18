@@ -4,6 +4,8 @@ import random
 import sys
 import math
 import matplotlib.pyplot as plt
+import os
+from backend.settings import BASE_DIR
 
 def divParts(iter, dataOrigin, setFrac):
     
@@ -152,8 +154,10 @@ def resultTestingSVM(D, w, b, ans):
             correctCnt += 1
             
 #     print("Accuracy = ", float(correctCnt)/float(len(ans)))
-    return float(correctCnt)/float(len(ans))
-    
+    if ans:
+        return float(correctCnt)/float(len(ans))
+    else:
+        return 0
     
     
 
@@ -223,46 +227,25 @@ def graphLearning(accTrain, accTest, errorTrain, errorTest, cfName):
     plt.ylim(0, 1.1)
     plt.legend()
 #     plt.show()
-    plt.savefig(cfName + "LearningCurve.png")    
+    save_path = os.path.join(BASE_DIR, 'backend/SVMlearningCurve.png') 
+    plt.savefig(save_path)
     plt.clf()
 
-
-
-if __name__ == '__main__':
+def runSVMAlgo(trainingPath):
     
-#     trainingPath = sys.argv[1]
-#     testingPath = sys.argv[2]
-#     inputMode = sys.argv[3] # 0 == Logistic Reg, 1 == SVM
-
-    preProcessNBC.preProcessing("dating-full.csv")
-
-    dataOrigin = pd.read_csv("trainingSet.csv")
-    dataOriginNBC = pd.read_csv("trainingSet_NBC.csv") 
+    dataOrigin = pd.read_csv(trainingPath)
     
     del dataOrigin["Unnamed: 0"]
-    del dataOriginNBC["Unnamed: 0"]
- 
- 
  
     t_frac = [0.025, 0.05, 0.075, 0.1, 0.15, 0.2]
-    
-    trainAccuracyNBC = []
-    testAccuracyNBC = []
     
     trainAccuracySVM = []
     testAccuracySVM = []
     
-    trainAccuracyLR = []
-    testAccuracyLR = []
-    
      
     for i in range(0, len(t_frac)):
-        trainAccuracyNBC.append([])
-        testAccuracyNBC.append([])
         trainAccuracySVM.append([])
         testAccuracySVM.append([])
-        trainAccuracyLR.append([])
-        testAccuracyLR.append([])
     
     for fc in range(0, len(t_frac)):
         
@@ -285,5 +268,16 @@ if __name__ == '__main__':
         std_eSVM2.append(np.std(testAccuracySVM[i])/math.sqrt(10))
 
     graphLearning(trainAccuracySVM_M, testAccuracySVM_M, std_eSVM1, std_eSVM2, "SVM")
+
+
+if __name__ == '__main__':
+    
+    trainingPath = sys.argv[1] #"trainingSet.csv"
+    runSVMAlgo(trainingPath)
+#     testingPath = sys.argv[2]
+#     inputMode = sys.argv[3] # 0 == Logistic Reg, 1 == SVM
+
+
+
     
         

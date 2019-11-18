@@ -156,7 +156,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "reactstrap");
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/seohyun/dataPex/front-end/components/Modal.js";
+var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/components/Modal.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 // frontend/src/components/Modal.js
 
@@ -312,7 +312,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../routes */ "./routes.js");
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_5__);
 
-var _jsxFileName = "/Users/seohyun/dataPex/front-end/components/layout.js";
+var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/components/layout.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
  // import Link from "next/link";
 
@@ -2688,7 +2688,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/seohyun/dataPex/front-end/pages/main.js";
+var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/pages/main.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -2790,7 +2790,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_Modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Modal */ "./components/Modal.js");
 /* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
-var _jsxFileName = "/Users/seohyun/dataPex/front-end/pages/mlalgo.js";
+var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/pages/mlalgo.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -3326,7 +3326,7 @@ routes.add('algoOptions', '/algoOptions');
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/seohyun/dataPex/front-end/pages/mlalgo.js */"./pages/mlalgo.js");
+module.exports = __webpack_require__(/*! /Users/harsha.valluri/Desktop/cs407/DatApex/front-end/pages/mlalgo.js */"./pages/mlalgo.js");
 
 
 /***/ }),

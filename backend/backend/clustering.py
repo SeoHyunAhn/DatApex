@@ -1,18 +1,19 @@
 import pandas as pd
 import numpy as np
 import random
-
-#from scipy.misc import toimage  #for part 1
+import sys
 import matplotlib as mpl        #for part 2
 import matplotlib.pyplot as plt
+import os
+from backend.settings import BASE_DIR
 
 np.random.seed(0)
 
 
 def parseData(lawDigits, keys):
     
-    print("Start Pre Processing Data!")
-    
+#    print("Start Pre Processing Data!")
+
     parsedData = []
     labels = []
     
@@ -25,8 +26,8 @@ def parseData(lawDigits, keys):
         del parsedData[i][0]
         del parsedData[i][0]
     
-    print("Pre Processing Done!")
-    
+#    print("Pre Processing Done!")
+
     return np.array(parsedData), np.array(labels)
 
 
@@ -44,24 +45,7 @@ def getXY(data, label, idxList):
     return X, Y, tag
 
 
-#def prob1(fileName):
-#
-#    digitsLaw = pd.read_csv(fileName)
-#    digitsLaw_Keys = list(digitsLaw.keys())
-#    data, labels = parseData(digitsLaw, digitsLaw_Keys)
-#
-##     print(len(data))
-#    randomIdx = random.randint(0, (len(data) - 1))
-#
-#    target = data[randomIdx]
-#    target = target.reshape(28, 28)
-#
-##     print(target)
-#    im = toimage(target)
-#    im.save("Exploration/Exploration_01.png")
-
-
-def prob2(fileName):
+def runClustering(fileName, numC):
     
     digitsEmb = pd.read_csv(fileName)
     digitsEmb_Keys = list(digitsEmb.keys())
@@ -72,7 +56,7 @@ def prob2(fileName):
     
     data, labels = parseData(digitsEmb, digitsEmb_Keys)
     
-    N = 10
+    N = numC
     fig, ax = plt.subplots(1,1, figsize=(7, 5))
     
     x, y, tag= getXY(data, labels, randomList)
@@ -89,13 +73,15 @@ def prob2(fileName):
     scat = ax.scatter(x,y,c=tag,s=np.random.randint(100,500,N),cmap=cmap, norm=norm)
     cb = plt.colorbar(scat, spacing='proportional',ticks=bounds)
     cb.set_label('Colors of classes')
-    ax.set_title('Exploration_02')
-    plt.savefig("clustringResult.png")  
+    ax.set_title('Clustering result')
+    save_path = os.path.join(BASE_DIR, 'backend/clustringResult.png') 
+    plt.savefig(save_path)
 
 if __name__ == '__main__':
     
 #    prob1("digits-raw.csv")
-    prob2("digits-embedding.csv")
+    numCluster = int(sys.argv[1])
+    runClustering("clusterT.csv", numCluster)
 
 
 

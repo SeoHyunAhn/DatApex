@@ -4,6 +4,8 @@ import random
 import sys
 import math
 import matplotlib.pyplot as plt
+import os
+from backend.settings import BASE_DIR
 
 def divParts(iter, dataOrigin, setFrac):
     
@@ -150,7 +152,11 @@ def resultTestingLR(w, D, ans):
             cntCorrect += 1
     
 #     print("Accuracy Train: ", float(cntCorrect)/float(len(ans)))    
-    return float(cntCorrect)/float(len(ans))
+    if len(ans) > 0:
+        return float(cntCorrect)/float(len(ans))
+    else:
+        return 0
+
 
 def runLR(dataTrain, trainAns, dataTest, testAns, iter):
 #     print((iter + 1),"th Logistic Regression started!")
@@ -197,18 +203,13 @@ def graphLearning(accTrain, accTest, errorTrain, errorTest, cfName):
     plt.ylim(0, 1.1)
     plt.legend()
 #     plt.show()
-    plt.savefig(cfName + "LearningCurve.png")    
+    save_path = os.path.join(BASE_DIR, 'backend/LRlearningCurve.png') 
+    plt.savefig(save_path)
     plt.clf()
 
 
-
-if __name__ == '__main__':
-    
-#     trainingPath = sys.argv[1]
-#     testingPath = sys.argv[2]
-#     inputMode = sys.argv[3] # 0 == Logistic Reg, 1 == SVM
-
-    dataOrigin = pd.read_csv("trainingSet.csv")
+def runLogisticReg(trainingPath):
+    dataOrigin = pd.read_csv(trainingPath)
     del dataOrigin["Unnamed: 0"]
 
 
@@ -233,9 +234,6 @@ if __name__ == '__main__':
             testAccuracyLR[fc].append(accTestLR)
             
 #        print("frac = %s Done." %(str(round(t_frac[fc], 3))))
-
-
-
     
     trainAccuracyLR_M = []
     testAccuracyLR_M = []
@@ -250,5 +248,14 @@ if __name__ == '__main__':
         std_eLR2.append(np.std(testAccuracyLR[i])/math.sqrt(10))
 
     graphLearning(trainAccuracyLR_M, testAccuracyLR_M, std_eLR1, std_eLR2, "LR")
+
+
+if __name__ == '__main__':
+    
+    trainingPath = sys.argv[1] #"trainingSet.csv"
+    runLogisticReg(trainingPath)
+#     testingPath = sys.argv[2]
+
+
     
         
