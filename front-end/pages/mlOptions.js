@@ -10,7 +10,7 @@ const styleCard = {
 class MlOptions extends Component {
   render() {
     return (
-      <Layout>
+      <>
         <h1>MLOptions</h1>
         <hr></hr>
         <div className="container-fluid">
@@ -47,6 +47,10 @@ class MlOptions extends Component {
                   <Link route="mlalgo" params={{ path: "nba" }}>
                     <a className="btn btn-primary">Go somewhere</a>
                   </Link>
+
+                  {/* <Link href={{ pathname: 'mlalgo', query: { path: "nba" }}}>
+                    <a className="btn btn-primary">Go somewhere</a>
+                  </Link> */}
                 </div>
               </div>
             </div>
@@ -243,7 +247,7 @@ class MlOptions extends Component {
             </div>
           </div>
         </div>
-      </Layout>
+      </>
     );
   }
 }

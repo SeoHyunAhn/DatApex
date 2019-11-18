@@ -42,9 +42,7 @@ class Index extends Component {
         <div>
           { this.state.user ? 
             ( <>
-                <Layout user={ this.state.user }> 
-                  <Main />
-                </Layout>
+                <Main />
               </>
             ) : ( <>
                     <Login />

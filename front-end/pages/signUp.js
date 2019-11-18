@@ -22,6 +22,7 @@ class SignUp extends Component {
 
 class SignUpForm extends Component {
     state = {
+        name: '',
         email: '',
         password: '',
         rePassword: '',
@@ -31,7 +32,7 @@ class SignUpForm extends Component {
     onSubmitForm = (e) => {
         e.preventDefault();
         
-        const { id, email, password, rePassword } = this.state;
+        const { name, email, password, rePassword } = this.state;
 
         if(password !== rePassword) {
             alert("Password does not match!!!");
@@ -39,6 +40,12 @@ class SignUpForm extends Component {
         else {
             firebase.auth().createUserWithEmailAndPassword(email, password)
                 .then((user) => {
+                    let updateUser = firebase.auth().currentUser;
+
+                    updateUser.updateProfile({
+                        displayName: name,
+                    })
+                    
                     window.location = "/";
                 })
                 .catch((error) => {
@@ -52,6 +59,12 @@ class SignUpForm extends Component {
 
     onRefInput = (c) => {
         this.input = c;
+    };
+
+    onChangeInputName = (e) => {
+        this.setState({
+            name : e.target.value
+        });
     };
 
     onChangeInputEmail = (e) => {
@@ -77,6 +90,11 @@ class SignUpForm extends Component {
         return (
             <>
                 <form onSubmit={ this.onSubmitForm }>
+                    <div className="form-group">
+                        <label>Name:</label>
+                        <input type="text" className="form-control" id="name" placeholder="Email" ref={ this.onRefInput } value={ this.state.name } onChange={ this.onChangeInputName } />
+                    </div>
+                    
                     <div className="form-group">
                         <label>Email:</label>
                         <input type="text" className="form-control" id="email" placeholder="Email" ref={ this.onRefInput } value={ this.state.email } onChange={ this.onChangeInputEmail } />

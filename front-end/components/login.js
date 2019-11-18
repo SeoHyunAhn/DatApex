@@ -51,35 +51,29 @@ class Login extends Component {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-12 text-center">
-                        {/* <h1>Log In</h1>
-                        <hr></hr> */}
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-
                         <img src="../static/Logo.png" alt="logo" />
                         <br />
-                        
+                    </div>
+                    <div className="col-3 text-center">
+                    </div>
+                    <div className="col-6 text-center">
                         <Link href="/signIn">
-                            <a className="btn btn-primary">Sign In with Personal Account</a>
+                            <a className="btn btn-primary btn-block">Sign In with Personal Account</a>
                         </Link>
 
                         <br />
-                        <br />
 
-                        <button className="btn btn-primary" onClick={ this.loginWithGoogle }>
+                        <button className="btn btn-info btn-block" onClick={ this.loginWithGoogle }>
                             Sign In with Google Account
                         </button>
 
                         <br />
-                        <br />
 
                         <Link href="/signUp">
-                            <a className="btn btn-primary">Sign Up</a>
+                            <a className="btn btn-success btn-block">Sign Up</a>
                         </Link>
-
+                    </div>
+                    <div className="col-3 text-center">
                     </div>
                 </div>
             </div>

@@ -91,6 +91,9 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
 var styleTextWhite = {
   color: 'white'
 };
+var stylePaddingRight = {
+  paddingRight: '10px'
+};
 var styleName = {
   marginRight: '20px'
 };
@@ -105,7 +108,9 @@ function (_React$Component) {
 
     Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Layout);
 
-    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Layout).call(this, props));
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Layout).call(this, props)); // this.state = ({
+    //     user: this.props.user,
+    // });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "user", {});
 
@@ -114,11 +119,9 @@ function (_React$Component) {
       window.location = 'http://localhost:3000/';
     });
 
-    _this.state = {
-      user: _this.props.user
-    };
-    _this.user = _this.state.user;
-    console.log(_this.user);
+    _this.user = _common_user__WEBPACK_IMPORTED_MODULE_8__["default"].user;
+    console.log(_this.user); // console.log(this.state.user)
+
     _this.logout = _this.logout.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
     return _this;
   }
@@ -126,11 +129,12 @@ function (_React$Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Layout, [{
     key: "render",
     value: function render() {
+      // console.log(firebase.auth().currentUser);
       return __jsx(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, __jsx("nav", {
         className: "navbar navbar-expand-lg navbar-dark bg-dark",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 47
         },
         __self: this
       }, __jsx("a", {
@@ -138,7 +142,7 @@ function (_React$Component) {
         href: "/",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44
+          lineNumber: 48
         },
         __self: this
       }, "DatApex"), __jsx("button", {
@@ -151,36 +155,36 @@ function (_React$Component) {
         "aria-label": "Toggle navigation",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47
+          lineNumber: 51
         },
         __self: this
       }, __jsx("span", {
         className: "navbar-toggler-icon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 60
         },
         __self: this
-      })), __jsx("div", {
+      })), _common_firebase__WEBPACK_IMPORTED_MODULE_9__["default"].auth().currentUser !== null && __jsx("div", {
         className: "collapse navbar-collapse",
         id: "navbarSupportedContent",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 59
+          lineNumber: 65
         },
         __self: this
       }, __jsx("ul", {
         className: "navbar-nav mr-auto",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 60
+          lineNumber: 66
         },
         __self: this
       }, __jsx("li", {
         className: "nav-item dropdown",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 68
         },
         __self: this
       }, __jsx("a", {
@@ -193,7 +197,7 @@ function (_React$Component) {
         "aria-expanded": "false",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 63
+          lineNumber: 69
         },
         __self: this
       }, "Pre Process Data"), __jsx("div", {
@@ -201,7 +205,7 @@ function (_React$Component) {
         "aria-labelledby": "navbarDropdown",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 73
+          lineNumber: 79
         },
         __self: this
       }, __jsx(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
@@ -211,14 +215,14 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74
+          lineNumber: 80
         },
         __self: this
       }, __jsx("a", {
         className: "dropdown-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 75
+          lineNumber: 81
         },
         __self: this
       }, "Labsel Encoding")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
@@ -228,14 +232,14 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 77
+          lineNumber: 83
         },
         __self: this
       }, __jsx("a", {
         className: "dropdown-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 78
+          lineNumber: 84
         },
         __self: this
       }, "One-hot Encoding")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
@@ -245,14 +249,14 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 81
+          lineNumber: 87
         },
         __self: this
       }, __jsx("a", {
         className: "dropdown-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 82
+          lineNumber: 88
         },
         __self: this
       }, "Delete Row/Column")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
@@ -262,14 +266,14 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 84
+          lineNumber: 90
         },
         __self: this
       }, __jsx("a", {
         className: "dropdown-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 85
+          lineNumber: 91
         },
         __self: this
       }, "Replace W")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
@@ -279,7 +283,7 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 87
+          lineNumber: 93
         },
         __self: this
       }, __jsx("a", {
@@ -287,14 +291,14 @@ function (_React$Component) {
         href: "#",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88
+          lineNumber: 94
         },
         __self: this
       }, "Select Certain")))), __jsx("li", {
         className: "nav-item dropdown",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 92
+          lineNumber: 98
         },
         __self: this
       }, __jsx("a", {
@@ -307,7 +311,7 @@ function (_React$Component) {
         "aria-expanded": "false",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 93
+          lineNumber: 99
         },
         __self: this
       }, "ML Algorithm"), __jsx("div", {
@@ -315,7 +319,7 @@ function (_React$Component) {
         "aria-labelledby": "navbarDropdown",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 103
+          lineNumber: 109
         },
         __self: this
       }, __jsx(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
@@ -325,14 +329,14 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 104
+          lineNumber: 110
         },
         __self: this
       }, __jsx("a", {
         className: "dropdown-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 105
+          lineNumber: 111
         },
         __self: this
       }, "Naive Bayes algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
@@ -342,54 +346,20 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 107
+          lineNumber: 113
         },
         __self: this
       }, __jsx("a", {
         className: "dropdown-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 108
+          lineNumber: 114
         },
         __self: this
       }, "Logistic Regression algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
         route: "mlalgo",
         params: {
           path: 'svm'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 111
-        },
-        __self: this
-      }, __jsx("a", {
-        className: "dropdown-item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 112
-        },
-        __self: this
-      }, "Support Vector Machine algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
-        route: "mlalgo",
-        params: {
-          path: 'bag'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 114
-        },
-        __self: this
-      }, __jsx("a", {
-        className: "dropdown-item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 115
-        },
-        __self: this
-      }, "Bagging algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
-        route: "mlalgo",
-        params: {
-          path: 'clus'
         },
         __source: {
           fileName: _jsxFileName,
@@ -403,41 +373,163 @@ function (_React$Component) {
           lineNumber: 118
         },
         __self: this
-      }, "Clustering algorithm"))))), __jsx("div", {
-        className: "form-inline my-2 my-lg-0",
-        style: styleTextWhite,
+      }, "Support Vector Machine algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
+        route: "mlalgo",
+        params: {
+          path: 'bag'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 120
+        },
+        __self: this
+      }, __jsx("a", {
+        className: "dropdown-item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 121
+        },
+        __self: this
+      }, "Bagging algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
+        route: "mlalgo",
+        params: {
+          path: 'clus'
+        },
         __source: {
           fileName: _jsxFileName,
           lineNumber: 123
         },
         __self: this
-      }, this.state.user !== null && __jsx(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, __jsx("button", {
+      }, __jsx("a", {
+        className: "dropdown-item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 124
+        },
+        __self: this
+      }, "Clustering algorithm"))))), __jsx("div", {
+        className: "form-inline my-2 my-lg-0",
+        style: styleTextWhite,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 129
+        },
+        __self: this
+      }, __jsx("div", {
+        style: stylePaddingRight,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 130
+        },
+        __self: this
+      }, __jsx("input", {
+        className: "form-control mr-sm-2",
+        type: "search",
+        placeholder: "Search",
+        "aria-label": "Search",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 131
+        },
+        __self: this
+      }), __jsx("button", {
+        className: "btn btn-outline-light my-2 my-sm-0",
+        type: "submit",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 132
+        },
+        __self: this
+      }, "Search")), __jsx("div", {
+        className: "btn-group",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 134
+        },
+        __self: this
+      }, __jsx("button", {
+        type: "button",
         className: "btn btn-secondary",
+        disabled: true,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 135
+        },
+        __self: this
+      }, "Hi ", _common_firebase__WEBPACK_IMPORTED_MODULE_9__["default"].auth().currentUser.displayName, " "), __jsx("button", {
+        type: "button",
+        className: "btn btn-secondary dropdown-toggle dropdown-toggle-split",
+        "data-toggle": "dropdown",
+        "aria-haspopup": "true",
+        "aria-expanded": "false",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 136
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "sr-only",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 137
+        },
+        __self: this
+      }, "Toggle Dropdown")), __jsx("div", {
+        className: "dropdown-menu",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 139
+        },
+        __self: this
+      }, __jsx(_routes__WEBPACK_IMPORTED_MODULE_11__["Link"], {
+        href: "/profile",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 140
+        },
+        __self: this
+      }, __jsx("a", {
+        className: "dropdown-item",
+        href: "#",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 141
+        },
+        __self: this
+      }, "Profile")), __jsx("div", {
+        className: "dropdown-divider",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 145
+        },
+        __self: this
+      }), __jsx("button", {
+        className: "dropdown-item",
         onClick: this.logout,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 127
+          lineNumber: 146
         },
         __self: this
-      }, " Logout "))))), __jsx("div", {
+      }, "Logout")))))), __jsx("div", {
         className: "container mt-4",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 133
+          lineNumber: 154
         },
         __self: this
       }, __jsx("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 134
+          lineNumber: 155
         },
         __self: this
       }, __jsx("div", {
         className: "col-12",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 135
+          lineNumber: 156
         },
         __self: this
       }, this.props.children))));
@@ -564,111 +656,90 @@ function (_Component) {
           lineNumber: 53
         },
         __self: this
-      }, __jsx("br", {
+      }, __jsx("img", {
+        src: "../static/Logo.png",
+        alt: "logo",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 54
         },
         __self: this
       }), __jsx("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 55
+        },
+        __self: this
+      })), __jsx("div", {
+        className: "col-3 text-center",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 57
         },
         __self: this
-      }), __jsx("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 58
-        },
-        __self: this
-      }), __jsx("br", {
+      }), __jsx("div", {
+        className: "col-6 text-center",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 59
         },
         __self: this
-      }), __jsx("br", {
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
+        href: "/signIn",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 60
         },
         __self: this
-      }), __jsx("img", {
-        src: "../static/Logo.png",
-        alt: "logo",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 62
-        },
-        __self: this
-      }), __jsx("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 63
-        },
-        __self: this
-      }), __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-        href: "/signIn",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 65
-        },
-        __self: this
       }, __jsx("a", {
-        className: "btn btn-primary",
+        className: "btn btn-primary btn-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 61
         },
         __self: this
       }, "Sign In with Personal Account")), __jsx("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69
-        },
-        __self: this
-      }), __jsx("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 70
+          lineNumber: 64
         },
         __self: this
       }), __jsx("button", {
-        className: "btn btn-primary",
+        className: "btn btn-info btn-block",
         onClick: this.loginWithGoogle,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 72
+          lineNumber: 66
         },
         __self: this
       }, "Sign In with Google Account"), __jsx("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 76
-        },
-        __self: this
-      }), __jsx("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 77
+          lineNumber: 70
         },
         __self: this
       }), __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
         href: "/signUp",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 79
+          lineNumber: 72
         },
         __self: this
       }, __jsx("a", {
-        className: "btn btn-primary",
+        className: "btn btn-success btn-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 80
+          lineNumber: 73
         },
         __self: this
-      }, "Sign Up")))));
+      }, "Sign Up"))), __jsx("div", {
+        className: "col-3 text-center",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 76
+        },
+        __self: this
+      })));
     }
   }]);
 
@@ -64537,23 +64608,16 @@ function (_Component) {
           lineNumber: 42
         },
         __self: this
-      }, this.state.user ? __jsx(react__WEBPACK_IMPORTED_MODULE_6___default.a.Fragment, null, __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_8__["default"], {
-        user: this.state.user,
+      }, this.state.user ? __jsx(react__WEBPACK_IMPORTED_MODULE_6___default.a.Fragment, null, __jsx(_main__WEBPACK_IMPORTED_MODULE_10__["default"], {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 45
         },
         __self: this
-      }, __jsx(_main__WEBPACK_IMPORTED_MODULE_10__["default"], {
+      })) : __jsx(react__WEBPACK_IMPORTED_MODULE_6___default.a.Fragment, null, __jsx(_components_login__WEBPACK_IMPORTED_MODULE_9__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
-        },
-        __self: this
-      }))) : __jsx(react__WEBPACK_IMPORTED_MODULE_6___default.a.Fragment, null, __jsx(_components_login__WEBPACK_IMPORTED_MODULE_9__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 50
+          lineNumber: 48
         },
         __self: this
       }))));
@@ -64583,9 +64647,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_6__);
 
 
 
@@ -64593,7 +64656,6 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/Users/youngjoon/Desktop/CS407/DatApex/front-end/pages/main.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
-
 
 
 
@@ -64614,38 +64676,59 @@ function (_Component) {
       return __jsx(react__WEBPACK_IMPORTED_MODULE_5___default.a.Fragment, null, __jsx("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 10
+          lineNumber: 9
         },
         __self: this
       }, "What would you like to run?"), __jsx("hr", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 11
+          lineNumber: 10
         },
         __self: this
       }), __jsx("div", {
         className: "container-fluid",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 12
+          lineNumber: 11
         },
         __self: this
       }, __jsx("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 13
+          lineNumber: 12
         },
         __self: this
       }, __jsx("div", {
         className: "col-6",
         __source: {
           fileName: _jsxFileName,
+          lineNumber: 13
+        },
+        __self: this
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
+        href: "/preOptions",
+        __source: {
+          fileName: _jsxFileName,
           lineNumber: 14
         },
         __self: this
-      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
-        href: "/preOptions",
+      }, __jsx("a", {
+        className: "btn btn-primary btn-lg btn-block",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 15
+        },
+        __self: this
+      }, "Pre-processing Algorithms"))), __jsx("div", {
+        className: "col-6",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 18
+        },
+        __self: this
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
+        href: "/mlOptions",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 19
@@ -64656,27 +64739,6 @@ function (_Component) {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 20
-        },
-        __self: this
-      }, "Pre-processing Algorithms"))), __jsx("div", {
-        className: "col-6",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 23
-        },
-        __self: this
-      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
-        href: "/mlOptions",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 28
-        },
-        __self: this
-      }, __jsx("a", {
-        className: "btn btn-primary btn-lg btn-block",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 29
         },
         __self: this
       }, "Machine Learning Algorithms"))))));

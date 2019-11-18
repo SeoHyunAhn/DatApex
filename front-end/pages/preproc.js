@@ -24,6 +24,12 @@ const posts = [
 import Layout from "../components/layout";
 
 export default class extends React.Component {
+  static async getInitialProps({query, res}) {
+    const post = posts.find(post=> post.path == query.path);
+    console.log(post)
+    return {post}
+  }
+  
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -98,14 +104,19 @@ export default class extends React.Component {
 
   render() {
     // console.log(this.props.url.asPath.substring(9));
-    this.path = this.props.url.asPath.substring(9);
+    // this.path = this.props.url.asPath.substring(9);
+    const {post} =this.props
+
+    this.path = post.path;
+    console.log(this.path);
+
     if (this.path == "label") {
       // List the params of each on of them
     } 
     else if (this.path == "one-hot") {
       // List the params of each on of them
       return (
-        <Layout>
+        <>
           <h1>{ this.path }</h1>
           <hr></hr>
 
@@ -175,12 +186,12 @@ export default class extends React.Component {
               </div>
             ) : null}
           </main> */}
-        </Layout>
+        </>
       );
     } else if (this.path == "delete-rc" || this.path == "replaceW") {
       // List the params of each on of them
       return (
-        <Layout>
+        <>
 
           <h1>{ this.path }</h1>
           <hr></hr>
@@ -321,7 +332,7 @@ export default class extends React.Component {
               </div>
             ) : null}
           </main> */}
-        </Layout>
+        </>
       );
     // } else if (this.path == "replaceW") {
       // List the params of each on of them

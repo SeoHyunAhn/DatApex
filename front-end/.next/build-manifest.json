@@ -20,7 +20,23 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/signIn": [
+    "/mlOptions": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/mlalgo": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/next/dist/pages/_error": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/preOptions": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/preproc": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
