@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -303,55 +303,205 @@ class UploadCSV extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _common_user__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../common/user */ "./common/user.js");
-/* harmony import */ var _common_firebase__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../common/firebase */ "./common/firebase.js");
-/* harmony import */ var _pages_main__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pages/main */ "./pages/main.js");
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../routes */ "./routes.js");
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lodash */ "lodash");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _common_user__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../common/user */ "./common/user.js");
+/* harmony import */ var _common_firebase__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../common/firebase */ "./common/firebase.js");
+/* harmony import */ var _pages_main__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../pages/main */ "./pages/main.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../routes */ "./routes.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! semantic-ui-react */ "semantic-ui-react");
+/* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_9__);
+
 
 var _jsxFileName = "/Users/seohyun/dataPex/front-end/components/layout.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
- // import Link from "next/link";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
+
+
+ // import source from './constants';
+// import Link from "next/link";
+
 
 
 
 
 
 const styleTextWhite = {
-  color: 'white'
+  color: "white"
 };
 const styleName = {
-  marginRight: '20px'
+  marginRight: "20px"
 };
+const source = [{
+  path: "nba",
+  title: "Naive Bayes algorithm",
+  from: "mlalgo"
+}, {
+  path: "lra",
+  title: "Logistic Regression algorithm",
+  from: "mlalgo"
+}, {
+  path: "svm",
+  title: "Support Vector Machine algorithm",
+  from: "mlalgo"
+}, {
+  path: "bag",
+  title: "Bagging algorithm",
+  from: "mlalgo"
+}, {
+  path: "clus",
+  title: "Clustering algorithm",
+  from: "mlalgo"
+}, {
+  path: "tree",
+  title: "Decision tree algorithm",
+  from: "mlalgo"
+}, {
+  path: "label",
+  title: "Label Encoding",
+  from: "preproc"
+}, {
+  path: "one-hot",
+  title: "One-Hot Encoding",
+  from: "preproc"
+}, {
+  path: "delete-rc",
+  title: "Delete Row/Column",
+  from: "preproc"
+}, {
+  path: "replaceW",
+  title: "Replace W",
+  from: "preproc"
+}, {
+  path: "certain",
+  title: "Select Certain",
+  from: "preproc"
+}];
 
-class Layout extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
+const resultRenderer = ({
+  title
+}) => __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_9__["Label"], {
+  content: title,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 34
+  },
+  __self: undefined
+});
+
+resultRenderer.propTypes = {
+  title: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string,
+  description: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string
+}; // const initialState = { isLoading: false, results: [], value: "" };
+
+class Layout extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
   constructor(props) {
     super(props);
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "user", {});
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(this, "user", {});
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "logout", () => {
-      _common_firebase__WEBPACK_IMPORTED_MODULE_3__["default"].auth().signOut();
-      window.location = 'http://localhost:3000/';
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(this, "namesList", {});
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(this, "logout", () => {
+      _common_firebase__WEBPACK_IMPORTED_MODULE_6__["default"].auth().signOut();
+      window.location = "http://localhost:3000/";
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(this, "handleResultSelect", (e, {
+      result
+    }) => this.setState({
+      value: result.title
+    }));
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(this, "handleSearchChange", (e, {
+      value
+    }) => {
+      this.setState({
+        isLoading: true,
+        value
+      });
+      setTimeout(() => {
+        if (this.state.value.length < 1) return this.setState({
+          isLoading: false,
+          bool: [],
+          results: [""],
+          value: ""
+        });
+        var t = source.filter(p => p.title.toLowerCase().includes(this.state.value.toLowerCase()));
+        this.setState({
+          isLoading: false,
+          results: t,
+          bool: true
+        });
+        var s = this.state.results.map(function (name) {
+          console.log(name);
+          return __jsx("div", {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 92
+            },
+            __self: this
+          }, __jsx(_routes__WEBPACK_IMPORTED_MODULE_8__["Link"], {
+            route: name.from,
+            params: {
+              path: name.path
+            },
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 93
+            },
+            __self: this
+          }, __jsx("a", {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 94
+            },
+            __self: this
+          }, name.title)), __jsx("br", {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 96
+            },
+            __self: this
+          }));
+        });
+        this.setState({
+          bool: s
+        });
+      }, 300);
     });
 
     this.state = {
-      user: this.props.user
+      user: this.props.user,
+      isLoading: false,
+      results: [""],
+      bool: [],
+      value: ""
     };
     this.user = this.state.user;
+    this.namesList = "";
     console.log(this.user);
     this.logout = this.logout.bind(this);
   }
 
   render() {
-    return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx("nav", {
+    const {
+      isLoading,
+      value,
+      results
+    } = this.state;
+    var namesList = this.namesList;
+    return __jsx(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, __jsx("nav", {
       className: "navbar navbar-expand-lg navbar-dark bg-dark",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43
+        lineNumber: 109
       },
       __self: this
     }, __jsx("a", {
@@ -359,7 +509,7 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       href: "/",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 44
+        lineNumber: 110
       },
       __self: this
     }, "DatApex"), __jsx("button", {
@@ -372,14 +522,14 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       "aria-label": "Toggle navigation",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 47
+        lineNumber: 113
       },
       __self: this
     }, __jsx("span", {
       className: "navbar-toggler-icon",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 56
+        lineNumber: 122
       },
       __self: this
     })), __jsx("div", {
@@ -387,21 +537,21 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       id: "navbarSupportedContent",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 59
+        lineNumber: 125
       },
       __self: this
     }, __jsx("ul", {
       className: "navbar-nav mr-auto",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 60
+        lineNumber: 126
       },
       __self: this
     }, __jsx("li", {
       className: "nav-item dropdown",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 62
+        lineNumber: 127
       },
       __self: this
     }, __jsx("a", {
@@ -414,7 +564,7 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       "aria-expanded": "false",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 63
+        lineNumber: 128
       },
       __self: this
     }, "Pre Process Data"), __jsx("div", {
@@ -422,85 +572,85 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       "aria-labelledby": "navbarDropdown",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73
+        lineNumber: 139
       },
       __self: this
-    }, __jsx(_routes__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+    }, __jsx(_routes__WEBPACK_IMPORTED_MODULE_8__["Link"], {
       route: "preproc",
       params: {
-        path: 'labsel'
+        path: "label"
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 74
+        lineNumber: 140
       },
       __self: this
     }, __jsx("a", {
       className: "dropdown-item",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 75
+        lineNumber: 141
       },
       __self: this
-    }, "Labsel Encoding")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+    }, "Labsel Encoding")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_8__["Link"], {
       route: "preproc",
       params: {
-        path: 'one-hot'
+        path: "one-hot"
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 77
+        lineNumber: 143
       },
       __self: this
     }, __jsx("a", {
       className: "dropdown-item",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 78
+        lineNumber: 144
       },
       __self: this
-    }, "One-hot Encoding")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+    }, "One-hot Encoding")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_8__["Link"], {
       route: "preproc",
       params: {
-        path: 'delete-rc'
+        path: "delete-rc"
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 81
+        lineNumber: 147
       },
       __self: this
     }, __jsx("a", {
       className: "dropdown-item",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 82
+        lineNumber: 148
       },
       __self: this
-    }, "Delete Row/Column")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+    }, "Delete Row/Column")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_8__["Link"], {
       route: "preproc",
       params: {
-        path: 'replaceW'
+        path: "replaceW"
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 84
+        lineNumber: 150
       },
       __self: this
     }, __jsx("a", {
       className: "dropdown-item",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85
+        lineNumber: 151
       },
       __self: this
-    }, "Replace W")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+    }, "Replace W")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_8__["Link"], {
       route: "preproc",
       params: {
-        path: 'certain'
+        path: "certain"
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87
+        lineNumber: 153
       },
       __self: this
     }, __jsx("a", {
@@ -508,14 +658,14 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       href: "#",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 88
+        lineNumber: 154
       },
       __self: this
     }, "Select Certain")))), __jsx("li", {
       className: "nav-item dropdown",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 92
+        lineNumber: 160
       },
       __self: this
     }, __jsx("a", {
@@ -528,7 +678,7 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       "aria-expanded": "false",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 93
+        lineNumber: 161
       },
       __self: this
     }, "ML Algorithm"), __jsx("div", {
@@ -536,129 +686,190 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       "aria-labelledby": "navbarDropdown",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 103
+        lineNumber: 172
       },
       __self: this
-    }, __jsx(_routes__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+    }, __jsx(_routes__WEBPACK_IMPORTED_MODULE_8__["Link"], {
       route: "mlalgo",
       params: {
-        path: 'nba'
+        path: "nba"
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 104
+        lineNumber: 173
       },
       __self: this
     }, __jsx("a", {
       className: "dropdown-item",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 105
+        lineNumber: 174
       },
       __self: this
-    }, "Naive Bayes algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+    }, "Naive Bayes algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_8__["Link"], {
       route: "mlalgo",
       params: {
-        path: 'lra'
+        path: "lra"
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 107
+        lineNumber: 176
       },
       __self: this
     }, __jsx("a", {
       className: "dropdown-item",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 108
+        lineNumber: 177
       },
       __self: this
-    }, "Logistic Regression algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+    }, "Logistic Regression algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_8__["Link"], {
       route: "mlalgo",
       params: {
-        path: 'svm'
+        path: "svm"
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 111
+        lineNumber: 182
       },
       __self: this
     }, __jsx("a", {
       className: "dropdown-item",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 112
+        lineNumber: 183
       },
       __self: this
-    }, "Support Vector Machine algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+    }, "Support Vector Machine algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_8__["Link"], {
       route: "mlalgo",
       params: {
-        path: 'bag'
+        path: "bag"
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 114
+        lineNumber: 187
       },
       __self: this
     }, __jsx("a", {
       className: "dropdown-item",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 115
+        lineNumber: 188
       },
       __self: this
-    }, "Bagging algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+    }, "Bagging algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_8__["Link"], {
       route: "mlalgo",
       params: {
-        path: 'clus'
+        path: "clus"
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 117
+        lineNumber: 190
       },
       __self: this
     }, __jsx("a", {
       className: "dropdown-item",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 118
+        lineNumber: 191
       },
       __self: this
-    }, "Clustering algorithm"))))), __jsx("div", {
+    }, "Clustering algorithm")))), __jsx("li", {
+      className: "nav-item dropdown",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 196
+      },
+      __self: this
+    }, __jsx("a", {
+      className: "nav-link dropdown-toggle",
+      href: "#",
+      id: "navbarDropdown",
+      role: "button",
+      "data-toggle": "dropdown",
+      "aria-haspopup": "true",
+      "aria-expanded": "false",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 197
+      },
+      __self: this
+    }, "Searchs"), __jsx("div", {
+      className: "dropdown-menu",
+      "aria-labelledby": "navbarDropdown",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 208
+      },
+      __self: this
+    }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_9__["Search"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      loading: isLoading,
+      onResultSelect: this.handleResultSelect,
+      onSearchChange: lodash__WEBPACK_IMPORTED_MODULE_4___default.a.debounce(this.handleSearchChange, 500, {
+        leading: true
+      }) //   results={results}
+      ,
+      value: value,
+      resultRenderer: resultRenderer
+    }, this.props, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 209
+      },
+      __self: this
+    })), this.state.bool ? __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 221
+      },
+      __self: this
+    }, __jsx("li", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 222
+      },
+      __self: this
+    }, this.state.bool), __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 223
+      },
+      __self: this
+    })) : null))), __jsx("div", {
       className: "form-inline my-2 my-lg-0",
       style: styleTextWhite,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 123
+        lineNumber: 229
       },
       __self: this
-    }, this.state.user !== null && __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx("button", {
+    }, this.state.user !== null && __jsx(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, __jsx("button", {
       className: "btn btn-secondary",
       onClick: this.logout,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 127
+        lineNumber: 233
       },
       __self: this
-    }, " Logout "))))), __jsx("div", {
+    }, " ", "Logout", " "))))), __jsx("div", {
       className: "container mt-4",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 133
+        lineNumber: 242
       },
       __self: this
     }, __jsx("div", {
       className: "row",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 134
+        lineNumber: 243
       },
       __self: this
     }, __jsx("div", {
       className: "col-12",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 135
+        lineNumber: 244
       },
       __self: this
     }, this.props.children))));
@@ -795,6 +1006,39 @@ function _defineProperty(obj, key, value) {
   }
 
   return obj;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _extends; });
+/* harmony import */ var _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/assign */ "./node_modules/@babel/runtime-corejs2/core-js/object/assign.js");
+/* harmony import */ var _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__);
+
+function _extends() {
+  _extends = _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default.a || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
 }
 
 /***/ }),
@@ -2860,17 +3104,17 @@ var backend_url = "";
       backend_url = backend_url + this.state.sos + "/" + this.state.lambda + "/" + this.state.maxit;
       console.log(backend_url);
     } else if (this.path == "bag") {
-      backend_url = "http://localhost:8000/dataMining/Bagging/"; // List the params of each on of them
-
+      backend_url = "http://localhost:8000/dataMining/Bagging/";
       backend_url = backend_url + this.state.depthlimit + "/" + this.state.exlimit;
       console.log(backend_url);
     } else if (this.path == "clus") {
-      backend_url = "http://localhost:8000/dataMining/Clustering/"; // List the params of each on of them
-
+      backend_url = "http://localhost:8000/dataMining/Clustering/";
       backend_url = backend_url + this.state.k;
       console.log(backend_url);
     } else if (this.path == "tree") {
-      backend_url = "http://localhost:8000/dataMining/decisionTree/"; // List the params of each on of them
+      backend_url = "http://localhost:8000/dataMining/DecisionTree/";
+      backend_url = backend_url + this.state.depthlimit + "/" + this.state.exlimit;
+      console.log(backend_url);
     }
 
     axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(backend_url, formData, {
@@ -2901,54 +3145,54 @@ var backend_url = "";
       return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 118
+          lineNumber: 120
         },
         __self: this
       }, __jsx("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 119
+          lineNumber: 121
         },
         __self: this
       }, post.title), __jsx("hr", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 120
+          lineNumber: 122
         },
         __self: this
       }), __jsx("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 121
+          lineNumber: 123
         },
         __self: this
       }, __jsx("div", {
         className: "col-6",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 122
+          lineNumber: 124
         },
         __self: this
       }, __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_3__["default"], {
         onSubmit: this.handleSubmit,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 123
+          lineNumber: 125
         },
         __self: this
       })), __jsx("div", {
         className: "col-6",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 125
+          lineNumber: 127
         },
         __self: this
       }, __jsx("div", {
         id: "image-display",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 126
+          lineNumber: 128
         },
         __self: this
       }), __jsx("img", {
@@ -2956,7 +3200,7 @@ var backend_url = "";
         src: this.state.imgSrc,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 127
+          lineNumber: 129
         },
         __self: this
       }))));
@@ -2964,128 +3208,128 @@ var backend_url = "";
       return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 134
+          lineNumber: 136
         },
         __self: this
       }, __jsx("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 135
+          lineNumber: 137
         },
         __self: this
       }, post.title), __jsx("hr", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 136
+          lineNumber: 138
         },
         __self: this
       }), __jsx("form", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 137
+          lineNumber: 139
         },
         __self: this
       }, __jsx("div", {
         className: "form-group row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 138
+          lineNumber: 140
         },
         __self: this
       }, __jsx("label", {
         className: "col-sm-2 col-form-label",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 139
+          lineNumber: 141
         },
         __self: this
       }, " Size of Step: "), __jsx("div", {
         className: "col-sm-10",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 140
+          lineNumber: 142
         },
         __self: this
       }, __jsx("input", {
         className: "form-control",
-        placeholder: "1,2,3",
+        placeholder: "4",
         type: "text",
         name: "sos",
         onChange: this.onChange.bind(this),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 141
+          lineNumber: 143
         },
         __self: this
       })), __jsx("label", {
         className: "col-sm-2 col-form-label",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 149
+          lineNumber: 151
         },
         __self: this
       }, " Lambda: "), __jsx("div", {
         className: "col-sm-10",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 150
+          lineNumber: 152
         },
         __self: this
       }, __jsx("input", {
         className: "form-control",
-        placeholder: "1,2,3",
+        placeholder: "2",
         type: "text",
         name: "lambda",
         onChange: this.onChange.bind(this),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 151
+          lineNumber: 153
         },
         __self: this
       })), __jsx("label", {
         className: "col-sm-2 col-form-label",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 159
+          lineNumber: 161
         },
         __self: this
       }, " ", "Number of Max iteration:", " "), __jsx("div", {
         className: "col-sm-10",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 163
+          lineNumber: 165
         },
         __self: this
       }, __jsx("input", {
         className: "form-control",
-        placeholder: "1,2,3",
+        placeholder: "3",
         type: "text",
         name: "maxit",
         onChange: this.onChange.bind(this),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 164
+          lineNumber: 166
         },
         __self: this
       }))), __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_3__["default"], {
         onSubmit: this.handleSubmit,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 173
+          lineNumber: 175
         },
         __self: this
       })), __jsx("div", {
         className: "col-6",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 175
+          lineNumber: 177
         },
         __self: this
       }, __jsx("div", {
         id: "image-display",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 176
+          lineNumber: 178
         },
         __self: this
       }), __jsx("img", {
@@ -3093,7 +3337,7 @@ var backend_url = "";
         src: this.state.imgSrc,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 177
+          lineNumber: 179
         },
         __self: this
       })));
@@ -3101,128 +3345,128 @@ var backend_url = "";
       return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 183
+          lineNumber: 185
         },
         __self: this
       }, __jsx("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 184
+          lineNumber: 186
         },
         __self: this
       }, post.title), __jsx("hr", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 185
+          lineNumber: 187
         },
         __self: this
       }), __jsx("form", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 186
+          lineNumber: 188
         },
         __self: this
       }, __jsx("div", {
         className: "form-group row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 187
+          lineNumber: 189
         },
         __self: this
       }, __jsx("label", {
         className: "col-sm-2 col-form-label",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 188
+          lineNumber: 190
         },
         __self: this
       }, " Size of Step: "), __jsx("div", {
         className: "col-sm-10",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 189
+          lineNumber: 191
         },
         __self: this
       }, __jsx("input", {
         className: "form-control",
-        placeholder: "1,2,3",
+        placeholder: "3",
         type: "text",
         name: "sos",
         onChange: this.onChange.bind(this),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 190
+          lineNumber: 192
         },
         __self: this
       })), __jsx("label", {
         className: "col-sm-2 col-form-label",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 198
+          lineNumber: 200
         },
         __self: this
       }, " Lambda: "), __jsx("div", {
         className: "col-sm-10",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 199
+          lineNumber: 201
         },
         __self: this
       }, __jsx("input", {
         className: "form-control",
-        placeholder: "1,2,3",
+        placeholder: "3",
         type: "text",
         name: "lambda",
         onChange: this.onChange.bind(this),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 200
+          lineNumber: 202
         },
         __self: this
       })), __jsx("label", {
         className: "col-sm-2 col-form-label",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 208
+          lineNumber: 210
         },
         __self: this
       }, " ", "Number of Max iteration:", " "), __jsx("div", {
         className: "col-sm-10",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 212
+          lineNumber: 214
         },
         __self: this
       }, __jsx("input", {
         className: "form-control",
-        placeholder: "1,2,3",
+        placeholder: "3",
         type: "text",
         name: "maxit",
         onChange: this.onChange.bind(this),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 213
+          lineNumber: 215
         },
         __self: this
       }))), __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_3__["default"], {
         onSubmit: this.handleSubmit,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 222
+          lineNumber: 224
         },
         __self: this
       })), __jsx("div", {
         className: "col-6",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 224
+          lineNumber: 226
         },
         __self: this
       }, __jsx("div", {
         id: "image-display",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 225
+          lineNumber: 227
         },
         __self: this
       }), __jsx("img", {
@@ -3230,7 +3474,7 @@ var backend_url = "";
         src: this.state.imgSrc,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 226
+          lineNumber: 228
         },
         __self: this
       }))); // List the params of each on of them
@@ -3238,103 +3482,103 @@ var backend_url = "";
       return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 233
+          lineNumber: 235
         },
         __self: this
       }, __jsx("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 234
+          lineNumber: 236
         },
         __self: this
       }, post.title), __jsx("hr", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 235
+          lineNumber: 237
         },
         __self: this
       }), __jsx("form", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 236
+          lineNumber: 238
         },
         __self: this
       }, __jsx("div", {
         className: "form-group row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 237
+          lineNumber: 239
         },
         __self: this
       }, __jsx("label", {
         className: "col-sm-2 col-form-label",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 238
+          lineNumber: 240
         },
         __self: this
       }, " Depth limit: "), __jsx("div", {
         className: "col-sm-10",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 239
+          lineNumber: 241
         },
         __self: this
       }, __jsx("input", {
         className: "form-control",
-        placeholder: "1,2,3",
+        placeholder: "3",
         type: "text",
         name: "depthlimit",
         onChange: this.onChange.bind(this),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 240
+          lineNumber: 242
         },
         __self: this
       })), __jsx("label", {
         className: "col-sm-2 col-form-label",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 248
+          lineNumber: 250
         },
         __self: this
-      }, " Example Limit: "), __jsx("div", {
+      }, " ", "Example Limit:", " "), __jsx("div", {
         className: "col-sm-10",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 249
+          lineNumber: 254
         },
         __self: this
       }, __jsx("input", {
         className: "form-control",
-        placeholder: "1,2,3",
+        placeholder: "3",
         type: "text",
         name: "exlimit",
         onChange: this.onChange.bind(this),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 250
+          lineNumber: 255
         },
         __self: this
       }))), __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_3__["default"], {
         onSubmit: this.handleSubmit,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 259
+          lineNumber: 264
         },
         __self: this
       })), __jsx("div", {
         className: "col-6",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 261
+          lineNumber: 266
         },
         __self: this
       }, __jsx("div", {
         id: "image-display",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 262
+          lineNumber: 267
         },
         __self: this
       }), __jsx("img", {
@@ -3342,7 +3586,7 @@ var backend_url = "";
         src: this.state.imgSrc,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 263
+          lineNumber: 268
         },
         __self: this
       })));
@@ -3350,46 +3594,46 @@ var backend_url = "";
       return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 269
+          lineNumber: 274
         },
         __self: this
       }, __jsx("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 270
+          lineNumber: 275
         },
         __self: this
       }, post.title), __jsx("hr", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 271
+          lineNumber: 276
         },
         __self: this
       }), __jsx("form", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 272
+          lineNumber: 277
         },
         __self: this
       }, __jsx("div", {
         className: "form-group row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 273
+          lineNumber: 278
         },
         __self: this
       }, __jsx("label", {
         className: "col-sm-2 col-form-label",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 274
+          lineNumber: 279
         },
         __self: this
-      }, " Number of Cluster: "), __jsx("div", {
+      }, " ", "Number of Cluster:", " "), __jsx("div", {
         className: "col-sm-10",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 275
+          lineNumber: 283
         },
         __self: this
       }, __jsx("input", {
@@ -3400,28 +3644,28 @@ var backend_url = "";
         onChange: this.onChange.bind(this),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 276
+          lineNumber: 284
         },
         __self: this
       }))), __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_3__["default"], {
         onSubmit: this.handleSubmit,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 285
+          lineNumber: 293
         },
         __self: this
       })), __jsx("div", {
         className: "col-6",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 287
+          lineNumber: 295
         },
         __self: this
       }, __jsx("div", {
         id: "image-display",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 288
+          lineNumber: 296
         },
         __self: this
       }), __jsx("img", {
@@ -3429,65 +3673,175 @@ var backend_url = "";
         src: this.state.imgSrc,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 289
+          lineNumber: 297
         },
         __self: this
       })));
     } else if (this.path == "tree") {
-      backend_url = "http://localhost:8000/dataMining/decisionTree/"; // List the params of each on of them
+      return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 303
+        },
+        __self: this
+      }, __jsx("h1", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 304
+        },
+        __self: this
+      }, post.title), __jsx("hr", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 305
+        },
+        __self: this
+      }), __jsx("form", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 306
+        },
+        __self: this
+      }, __jsx("div", {
+        className: "form-group row",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 307
+        },
+        __self: this
+      }, __jsx("label", {
+        className: "col-sm-2 col-form-label",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 308
+        },
+        __self: this
+      }, " Depth limit: "), __jsx("div", {
+        className: "col-sm-10",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 309
+        },
+        __self: this
+      }, __jsx("input", {
+        className: "form-control",
+        placeholder: "3",
+        type: "text",
+        name: "depthlimit",
+        onChange: this.onChange.bind(this),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 310
+        },
+        __self: this
+      })), __jsx("label", {
+        className: "col-sm-2 col-form-label",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 318
+        },
+        __self: this
+      }, " ", "Example Limit:", " "), __jsx("div", {
+        className: "col-sm-10",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 322
+        },
+        __self: this
+      }, __jsx("input", {
+        className: "form-control",
+        placeholder: "3",
+        type: "text",
+        name: "exlimit",
+        onChange: this.onChange.bind(this),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 323
+        },
+        __self: this
+      }))), __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        onSubmit: this.handleSubmit,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 332
+        },
+        __self: this
+      })), __jsx("div", {
+        className: "col-6",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 334
+        },
+        __self: this
+      }, __jsx("div", {
+        id: "image-display",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 335
+        },
+        __self: this
+      }), __jsx("img", {
+        id: "image-output",
+        src: this.state.imgSrc,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 336
+        },
+        __self: this
+      })));
     }
 
     return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 298
+        lineNumber: 342
       },
       __self: this
     }, __jsx("h1", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 299
+        lineNumber: 343
       },
       __self: this
     }, post.title), __jsx("hr", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 300
+        lineNumber: 344
       },
       __self: this
     }), __jsx("div", {
       className: "row",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 301
+        lineNumber: 345
       },
       __self: this
     }, __jsx("div", {
       className: "col-6",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 302
+        lineNumber: 346
       },
       __self: this
     }, __jsx(_components_Modal__WEBPACK_IMPORTED_MODULE_3__["default"], {
       onSubmit: this.handleSubmit,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 303
+        lineNumber: 347
       },
       __self: this
     })), __jsx("div", {
       className: "col-6",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 305
+        lineNumber: 349
       },
       __self: this
     }, __jsx("div", {
       id: "image-display",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 306
+        lineNumber: 350
       },
       __self: this
     }), __jsx("img", {
@@ -3495,7 +3849,7 @@ var backend_url = "";
       src: this.state.imgSrc,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 307
+        lineNumber: 351
       },
       __self: this
     }))));
@@ -3523,7 +3877,7 @@ routes.add('algoOptions', '/algoOptions');
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /*!*******************************!*\
   !*** multi ./pages/mlalgo.js ***!
   \*******************************/
@@ -3634,6 +3988,17 @@ module.exports = require("firebase");
 
 /***/ }),
 
+/***/ "lodash":
+/*!*************************!*\
+  !*** external "lodash" ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("lodash");
+
+/***/ }),
+
 /***/ "next-routes":
 /*!******************************!*\
   !*** external "next-routes" ***!
@@ -3686,6 +4051,17 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = require("reactstrap");
+
+/***/ }),
+
+/***/ "semantic-ui-react":
+/*!************************************!*\
+  !*** external "semantic-ui-react" ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("semantic-ui-react");
 
 /***/ }),
 

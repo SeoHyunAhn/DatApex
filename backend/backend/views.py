@@ -24,7 +24,7 @@ def upload_csv(request):
 
 @csrf_exempt
 def prePrcoess_DeleteRow(request, d_rows):
-    print("INSIDE VIEWS DELETE ROW")
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS DELETE ROW")
 
     if request.method == 'POST' and request.FILES['file']:
         myfile = request.FILES['file']
@@ -38,7 +38,7 @@ def prePrcoess_DeleteRow(request, d_rows):
 
 @csrf_exempt
 def prePrcoess_DeleteCol(request, d_cols):
-    print("INSIDE VIEWS DELETE COL")
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS DELETE COL")
 
     if request.method == 'POST' and request.FILES['file']:
         myfile = request.FILES['file']
@@ -52,7 +52,7 @@ def prePrcoess_DeleteCol(request, d_cols):
 
 @csrf_exempt
 def dataMining_SVM(request, step_size, lmda, num_iteration):
-    print("INSIDE VIEWS SVM")
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS SVM")
     if request.method == 'POST' and request.FILES['file']:
         training_file = request.FILES['training_file']
         testing_file = request.FILES['testing_file']
@@ -67,25 +67,27 @@ def dataMining_SVM(request, step_size, lmda, num_iteration):
 
     return HttpResponse(str, content_type="image/png")
 
-# @csrf_exempt
-# def dataMining_NaiveBayes(request):
-#     if request.method == 'POST' and request.FILES['file']:
-#         myfile = request.FILES['file']
-#         numBins = request.POST['numBins']
+@csrf_exempt
+def dataMining_NaiveBayes(request):
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS NBA/NBC")
 
-#         nbc.discretize(training_file, testing_file)
-    
-#     save_path = os.path.join(BASE_DIR, 'backend/nbcResult.png') 
+    if request.method == 'POST' and request.FILES['file']:
+        myfile = request.FILES['file']
+        numBins = request.POST['numBins']
 
-#     image_data = open(save_path, "rb").read()
-#     with open(save_path, "rb") as image_data:
-#         str = base64.b64encode(image_data.read())
+        nbc.discretize(training_file, testing_file)
     
-#     return HttpResponse(str, content_type="image/png")
+    save_path = os.path.join(BASE_DIR, 'backend/nbcResult.png') 
+
+    image_data = open(save_path, "rb").read()
+    with open(save_path, "rb") as image_data:
+        str = base64.b64encode(image_data.read())
+    
+    return HttpResponse(str, content_type="image/png")
 
 @csrf_exempt
 def dataMining_LogisticRegression(request, step_size, lmda, num_iteration):
-    print("INSIDE VIEWS LOG REGRESSION")
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS LOG REGRESSION")
 
     if request.method == 'POST' and request.FILES['file']:
         training_file = request.FILES['training_file']
@@ -103,7 +105,7 @@ def dataMining_LogisticRegression(request, step_size, lmda, num_iteration):
 
 @csrf_exempt
 def dataMining_Clustering(request, num_clusters):
-    print("INSIDE VIEWS CLUSTER")
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS CLUSTER")
 
     if request.method == 'POST' and request.FILES['file']:
         myfile = request.FILES['file']
@@ -119,7 +121,7 @@ def dataMining_Clustering(request, num_clusters):
 
 @csrf_exempt
 def dataMining_Bagging(request, depth_limit, example_limit):
-    print("INSIDE VIEWS BAG")
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS BAG")
     print("WHY DO I NEED NUM TREE")
 
     if request.method == 'POST' and request.FILES['file']:
@@ -136,21 +138,22 @@ def dataMining_Bagging(request, depth_limit, example_limit):
 
     return HttpResponse(str, content_type="image/png")
 
-# @csrf_exempt
-# def dataMining_DecisionTree(request, depth_limit, example_limit):
-#     if request.method == 'POST' and request.FILES['file']:
-#         training_file = request.FILES['training_file']
-#         testing_file = request.FILES['testing_file']
+@csrf_exempt
+def dataMining_DecisionTree(request, depth_limit, example_limit):
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS DECISION TREEEE")
+    if request.method == 'POST' and request.FILES['file']:
+        training_file = request.FILES['training_file']
+        testing_file = request.FILES['testing_file']
 
-#         decisionTree.runDT(training_file, testing_file, depth_limit, example_limit)
+        decisionTree.runDT(training_file, testing_file, depth_limit, example_limit)
     
-#     save_path = os.path.join(BASE_DIR, 'backend/decisionTree_result.png') 
+    save_path = os.path.join(BASE_DIR, 'backend/decisionTree_result.png') 
 
-#     image_data = open(save_path, "rb").read()
-#     with open(save_path, "rb") as image_data:
-#         str = base64.b64encode(image_data.read())
+    image_data = open(save_path, "rb").read()
+    with open(save_path, "rb") as image_data:
+        str = base64.b64encode(image_data.read())
 
-#     return HttpResponse(str, content_type="image/png")
+    return HttpResponse(str, content_type="image/png")
 
 # @csrf_exempt
 # def dataMining_RandomForest(request, depth_limit, example_limit, num_trees):
@@ -169,12 +172,12 @@ def dataMining_Bagging(request, depth_limit, example_limit):
 #     return HttpResponse(str, content_type="image/png")
 
 def prePrcoess_LabelEncoding(request):
-    print("INSIDE VIEWS LABEL ENCODING. NEED CODE")
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS LABEL ENCODING. NEED CODE")
 
     return Http404
 
 def prePrcoess_OneHotEncoding(request, column_name):
-    print("One hot encoding======")
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>One hot encoding")
     if request.method == 'POST' and request.FILES['file']:
         myfile = request.FILES['file']
         print(column_name)
@@ -189,6 +192,6 @@ def prePrcoess_OneHotEncoding(request, column_name):
     return Http404
 
 def preProcess_ReplaceW(request):
-    print("INSIDE VIEWS REPLACE W. NEED CODE")
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS REPLACE W. NEED CODE")
 
     return Http404

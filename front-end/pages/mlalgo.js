@@ -27,7 +27,15 @@ export default class extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.state = { imgSrc: "", sos: "", lambda: "", maxit: "" , depthlimit: "", exlimit:"", k:""};
+    this.state = {
+      imgSrc: "",
+      sos: "",
+      lambda: "",
+      maxit: "",
+      depthlimit: "",
+      exlimit: "",
+      k: ""
+    };
     this.path = "";
   }
 
@@ -69,24 +77,18 @@ export default class extends React.Component {
       console.log(backend_url);
     } else if (this.path == "bag") {
       backend_url = "http://localhost:8000/dataMining/Bagging/";
-      // List the params of each on of them
       backend_url =
-        backend_url +
-        this.state.depthlimit +
-        "/" +
-        this.state.exlimit;
+        backend_url + this.state.depthlimit + "/" + this.state.exlimit;
       console.log(backend_url);
-      
     } else if (this.path == "clus") {
       backend_url = "http://localhost:8000/dataMining/Clustering/";
-      // List the params of each on of them
-      backend_url =
-        backend_url +
-        this.state.k;
+      backend_url = backend_url + this.state.k;
       console.log(backend_url);
     } else if (this.path == "tree") {
-      backend_url = "http://localhost:8000/dataMining/decisionTree/";
-      // List the params of each on of them
+      backend_url = "http://localhost:8000/dataMining/DecisionTree/";
+      backend_url =
+        backend_url + this.state.depthlimit + "/" + this.state.exlimit;
+      console.log(backend_url);
     }
     axios
       .post(backend_url, formData, {
@@ -140,7 +142,7 @@ export default class extends React.Component {
               <div className="col-sm-10">
                 <input
                   className="form-control"
-                  placeholder="1,2,3"
+                  placeholder="4"
                   type="text"
                   name="sos"
                   onChange={this.onChange.bind(this)}
@@ -150,7 +152,7 @@ export default class extends React.Component {
               <div className="col-sm-10">
                 <input
                   className="form-control"
-                  placeholder="1,2,3"
+                  placeholder="2"
                   type="text"
                   name="lambda"
                   onChange={this.onChange.bind(this)}
@@ -163,7 +165,7 @@ export default class extends React.Component {
               <div className="col-sm-10">
                 <input
                   className="form-control"
-                  placeholder="1,2,3"
+                  placeholder="3"
                   type="text"
                   name="maxit"
                   onChange={this.onChange.bind(this)}
@@ -189,7 +191,7 @@ export default class extends React.Component {
               <div className="col-sm-10">
                 <input
                   className="form-control"
-                  placeholder="1,2,3"
+                  placeholder="3"
                   type="text"
                   name="sos"
                   onChange={this.onChange.bind(this)}
@@ -199,7 +201,7 @@ export default class extends React.Component {
               <div className="col-sm-10">
                 <input
                   className="form-control"
-                  placeholder="1,2,3"
+                  placeholder="3"
                   type="text"
                   name="lambda"
                   onChange={this.onChange.bind(this)}
@@ -212,7 +214,7 @@ export default class extends React.Component {
               <div className="col-sm-10">
                 <input
                   className="form-control"
-                  placeholder="1,2,3"
+                  placeholder="3"
                   type="text"
                   name="maxit"
                   onChange={this.onChange.bind(this)}
@@ -239,17 +241,20 @@ export default class extends React.Component {
               <div className="col-sm-10">
                 <input
                   className="form-control"
-                  placeholder="1,2,3"
+                  placeholder="3"
                   type="text"
                   name="depthlimit"
                   onChange={this.onChange.bind(this)}
                 />
               </div>
-              <label className="col-sm-2 col-form-label"> Example Limit: </label>
+              <label className="col-sm-2 col-form-label">
+                {" "}
+                Example Limit:{" "}
+              </label>
               <div className="col-sm-10">
                 <input
                   className="form-control"
-                  placeholder="1,2,3"
+                  placeholder="3"
                   type="text"
                   name="exlimit"
                   onChange={this.onChange.bind(this)}
@@ -271,7 +276,10 @@ export default class extends React.Component {
           <hr></hr>
           <form>
             <div className="form-group row">
-              <label className="col-sm-2 col-form-label"> Number of Cluster: </label>
+              <label className="col-sm-2 col-form-label">
+                {" "}
+                Number of Cluster:{" "}
+              </label>
               <div className="col-sm-10">
                 <input
                   className="form-control"
@@ -291,8 +299,44 @@ export default class extends React.Component {
         </Layout>
       );
     } else if (this.path == "tree") {
-      backend_url = "http://localhost:8000/dataMining/decisionTree/";
-      // List the params of each on of them
+      return (
+        <Layout>
+          <h1>{post.title}</h1>
+          <hr></hr>
+          <form>
+            <div className="form-group row">
+              <label className="col-sm-2 col-form-label"> Depth limit: </label>
+              <div className="col-sm-10">
+                <input
+                  className="form-control"
+                  placeholder="3"
+                  type="text"
+                  name="depthlimit"
+                  onChange={this.onChange.bind(this)}
+                />
+              </div>
+              <label className="col-sm-2 col-form-label">
+                {" "}
+                Example Limit:{" "}
+              </label>
+              <div className="col-sm-10">
+                <input
+                  className="form-control"
+                  placeholder="3"
+                  type="text"
+                  name="exlimit"
+                  onChange={this.onChange.bind(this)}
+                />
+              </div>
+            </div>
+            <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
+          </form>
+          <div className="col-6">
+            <div id="image-display"></div>
+            <img id="image-output" src={this.state.imgSrc}></img>
+          </div>
+        </Layout>
+      );
     }
     return (
       <Layout>
