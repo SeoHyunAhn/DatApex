@@ -1,12 +1,16 @@
 import React from "react";
+import PropTypes from "prop-types";
+import _ from "lodash";
+// import source from './constants';
 // import Link from "next/link";
 import User from "../common/user";
-import firebase from '../common/firebase';
-import Main from '../pages/main';
-import { Link, Router } from '../routes'
+import firebase from "../common/firebase";
+import Main from "../pages/main";
+import { Link, Router } from "../routes";
+import { Search, Grid, Header, Segment, Label } from "semantic-ui-react";
 
 const styleTextWhite = {
-    color: 'white',
+  color: "white"
 };
 
 const stylePaddingRight = {
@@ -15,50 +19,116 @@ const stylePaddingRight = {
 
 
 const styleName = {
-    marginRight: '20px',
-}
+  marginRight: "20px"
+};
+
+const source = [
+  { path: "nba", title: "Naive Bayes algorithm", from: "mlalgo" },
+  { path: "lra", title: "Logistic Regression algorithm", from: "mlalgo" },
+  { path: "svm", title: "Support Vector Machine algorithm", from: "mlalgo" },
+  { path: "bag", title: "Bagging algorithm", from: "mlalgo" },
+  { path: "clus", title: "Clustering algorithm", from: "mlalgo" },
+  { path: "tree", title: "Decision tree algorithm", from: "mlalgo" },
+
+  { path: "label", title: "Label Encoding", from: "preproc" },
+  { path: "one-hot", title: "One-Hot Encoding", from: "preproc" },
+  { path: "delete-rc", title: "Delete Row/Column", from: "preproc" },
+  { path: "replaceW", title: "Replace W", from: "preproc" },
+  { path: "certain", title: "Select Certain", from: "preproc" }
+];
+const resultRenderer = ({ title }) => <Label content={title} />;
+
+resultRenderer.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string
+};
+// const initialState = { isLoading: false, results: [], value: "" };
 
 class Layout extends React.Component {
+  user = {};
+  namesList = {};
+  constructor(props) {
+    super(props);
 
-    user = {};
-
-    constructor(props) {
-        super(props);
-
-        // this.state = ({
-        //     user: this.props.user,
-        // });
-
-        this.user = User.user;
-        console.log(this.user);
-        // console.log(this.state.user)
-        this.logout = this.logout.bind(this);
-    }
-
-    logout = () => {
-        firebase.auth().signOut();
-        window.location = 'http://localhost:3000/';
+    this.state = {
+      user: this.props.user,
+      isLoading: false,
+      results: [""],
+      bool: [],
+      value: ""
     };
 
-    render() {
-        // console.log(firebase.auth().currentUser);
+    this.user = this.state.user;
+    this.namesList = "";
+    console.log(this.user);
+    this.logout = this.logout.bind(this);
+  }
+
+  logout = () => {
+    firebase.auth().signOut();
+    window.location = "http://localhost:3000/";
+  };
+
+  //   state = initialState;
+
+  handleResultSelect = (e, { result }) =>
+    this.setState({ value: result.title });
+
+  handleSearchChange = (e, { value }) => {
+    this.setState({ isLoading: true, value });
+    setTimeout(() => {
+      if (this.state.value.length < 1)
+        return this.setState({
+          isLoading: false,
+          bool: [],
+          results: [""],
+          value: ""
+        });
+      var t = source.filter(p => p.title.toLowerCase().includes(this.state.value.toLowerCase()));
+      this.setState({
+        isLoading: false,
+        results: t,
+        bool: true
+      });
+
+      var s = this.state.results.map(function(name) {
+        console.log(name);
         return (
-            <>
-                <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                    <a className="navbar-brand" href="/">
-                        DatApex
-                    </a>
-                    <button
-                        className="navbar-toggler"
-                        type="button"
-                        data-toggle="collapse"
-                        data-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                    >
-                        <span className="navbar-toggler-icon" />
-                    </button>
+          <div>
+            <Link route={name.from} params={{ path: name.path }}>
+              <a>{name.title}</a>
+            </Link>
+            <br></br>
+          </div>
+        );
+      });
+      this.setState({ bool: s });
+    }, 300);
+  };
+
+  render() {
+    const { isLoading, value, results } = this.state;
+    var namesList = this.namesList;
+    
+    return (
+      <>
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a className="navbar-brand" href="/">
+            DatApex
+          </a>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon" />
+          </button>
+
+          
 
                     { firebase.auth().currentUser !== null &&
                         (
@@ -150,6 +220,7 @@ class Layout extends React.Component {
                             </div>
                         )
                     }
+
                 </nav>
                 <div className="container mt-4">
                     <div className="row">
@@ -158,9 +229,9 @@ class Layout extends React.Component {
                         </div>
                     </div>
                 </div>
-            </>
-        );
-    }
+      </>
+    );
+  }
 }
 
 export default Layout;

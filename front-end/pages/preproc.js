@@ -56,13 +56,14 @@ export default class extends React.Component {
     console.log(this.state.selectedOption);
     if (this.path == "label") {
       //  selected params of each on of them
+      link = "preProc/LabelEncoding/";
     } else if (this.path == "one-hot") {
       link = "preProc/OneHotEncoding/" + this.state.paramNum;
     } else if (this.path == "delete-rc") {
-      console.log(this.state.selectedOption)
-      if(this.state.selectedOption=="row"){
+      // console.log(this.state.selectedOption)
+      if (this.state.selectedOption == "row") {
         link = "preProc/delRow/" + this.state.paramNum;
-      }else if(this.state.selectedOption=="col"){
+      } else if (this.state.selectedOption == "col") {
         link = "preProc/delCol/" + this.state.paramNum;
       }
     } else if (this.path == "replaceW") {
@@ -111,20 +112,49 @@ export default class extends React.Component {
     console.log(this.path);
 
     if (this.path == "label") {
-      // List the params of each on of them
-    } 
-    else if (this.path == "one-hot") {
-      // List the params of each on of them
       return (
         <>
-          <h1>{ this.path }</h1>
+          <h1>{post.title}</h1>
+          <hr></hr>
+
+          <div className="row">
+            <div className="col-6">
+              <form>
+                <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
+              </form>
+            </div>
+            <div className="col-6">
+              <div id="result-display"></div>
+              {this.state.showResults ? (
+                <div id="download-csv">
+                  <CSVLink
+                    data={this.state.outputCsv}
+                    filename="data.csv"
+                    className="hidden"
+                    target="_blank"
+                  >
+                    Download me
+                  </CSVLink>
+                </div>
+              ) : null}
+            </div>
+          </div>
+        </>
+      );
+    } else if (this.path == "one-hot") {
+      return (
+        <>
+          <h1>{post.title}</h1>
           <hr></hr>
 
           <div className="row">
             <div className="col-6">
               <form>
                 <div className="form-group row">
-                  <label className="col-sm-2 col-form-label"> Number of Column: </label>
+                  <label className="col-sm-2 col-form-label">
+                    {" "}
+                    Number of Column:{" "}
+                  </label>
                   <div className="col-sm-10">
                     <input
                       className="form-control"
@@ -135,13 +165,13 @@ export default class extends React.Component {
                     />
                   </div>
                 </div>
-                
+
                 <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
               </form>
             </div>
             <div className="col-6">
               <div id="result-display"></div>
-              { this.state.showResults ? (
+              {this.state.showResults ? (
                 <div id="download-csv">
                   <CSVLink
                     data={this.state.outputCsv}
@@ -189,11 +219,10 @@ export default class extends React.Component {
         </>
       );
     } else if (this.path == "delete-rc" || this.path == "replaceW") {
-      // List the params of each on of them
       return (
         <>
 
-          <h1>{ this.path }</h1>
+          <h1>{ post.title }</h1>
           <hr></hr>
 
           <div className="row">
@@ -224,7 +253,10 @@ export default class extends React.Component {
                   </label>
                 </div>
                 <div className="form-group row">
-                  <label className="col-sm-2 col-form-label"> Number of Rows: </label>
+                  <label className="col-sm-2 col-form-label">
+                    {" "}
+                    Number of Rows:{" "}
+                  </label>
                   <div className="col-sm-10">
                     <input
                       className="form-control"
@@ -237,7 +269,10 @@ export default class extends React.Component {
                   </div>
                 </div>
                 <div className="form-group row">
-                  <label className="col-sm-2 col-form-label"> Number of Cols: </label>
+                  <label className="col-sm-2 col-form-label">
+                    {" "}
+                    Number of Cols:{" "}
+                  </label>
                   <div className="col-sm-10">
                     <input
                       className="form-control"
@@ -263,9 +298,7 @@ export default class extends React.Component {
                     target="_blank"
                   >
                     <div className="text-center">
-                      <button className="btn btn-info">
-                        Download me
-                      </button>
+                      <button className="btn btn-info">Download me</button>
                     </div>
                   </CSVLink>
                 </div>
@@ -334,12 +367,10 @@ export default class extends React.Component {
           </main> */}
         </>
       );
-    // } else if (this.path == "replaceW") {
+      // } else if (this.path == "replaceW") {
       // List the params of each on of them
-      
     } else if (this.path == "certain") {
       // List the params of each on of them
     }
-    
   }
 }

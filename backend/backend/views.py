@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets          # add this
 from django.views.decorators.csrf import csrf_exempt
-from . import exploration, Delete_Row,Delete_Col, clustering, lr_svm, nbc, One_Hot, decisionTree, baggingTree, randomForest
+from . import exploration, clustering, lr_svm, nbc, decisionTree, baggingTree, randomForest,One_Hot, Delete_Row,Delete_Col
 import os
 import csv
 from backend.settings import BASE_DIR
@@ -24,6 +24,8 @@ def upload_csv(request):
 
 @csrf_exempt
 def prePrcoess_DeleteRow(request, d_rows):
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS DELETE ROW")
+
     if request.method == 'POST' and request.FILES['file']:
         myfile = request.FILES['file']
         Delete_Row.deleteRow2(d_rows, myfile)
@@ -36,6 +38,8 @@ def prePrcoess_DeleteRow(request, d_rows):
 
 @csrf_exempt
 def prePrcoess_DeleteCol(request, d_cols):
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS DELETE COL")
+
     if request.method == 'POST' and request.FILES['file']:
         myfile = request.FILES['file']
         Delete_Col.deleteCol(d_cols, myfile)
@@ -46,99 +50,110 @@ def prePrcoess_DeleteCol(request, d_cols):
         return response
     return Http404
 
-# @csrf_exempt
-# def dataMining_SVM(request, step_size, lmda, num_iteration):
-#     if request.method == 'POST' and request.FILES['file']:
-#         training_file = request.FILES['training_file']
-#         testing_file = request.FILES['testing_file']
+@csrf_exempt
+def dataMining_SVM(request, step_size, lmda, num_iteration):
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS SVM")
+    if request.method == 'POST' and request.FILES['file']:
+        training_file = request.FILES['training_file']
+        testing_file = request.FILES['testing_file']
 
-#         lr_svm.runSVM(training_file, testing_file, step_size, lmda, num_iteration)
+        lr_svm.runSVM(training_file, testing_file, step_size, lmda, num_iteration)
     
-#     save_path = os.path.join(BASE_DIR, 'backend/svm_result.png') 
+    save_path = os.path.join(BASE_DIR, 'backend/svm_result.png') 
 
-#     image_data = open(save_path, "rb").read()
-#     with open(save_path, "rb") as image_data:
-#         str = base64.b64encode(image_data.read())
+    image_data = open(save_path, "rb").read()
+    with open(save_path, "rb") as image_data:
+        str = base64.b64encode(image_data.read())
 
-#     return HttpResponse(str, content_type="image/png")
+    return HttpResponse(str, content_type="image/png")
 
-# @csrf_exempt
-# def dataMining_NaiveBayes(request):
-#     if request.method == 'POST' and request.FILES['file']:
-#         myfile = request.FILES['file']
-#         numBins = request.POST['numBins']
+@csrf_exempt
+def dataMining_NaiveBayes(request):
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS NBA/NBC")
 
-#         nbc.discretize(training_file, testing_file)
+    if request.method == 'POST' and request.FILES['file']:
+        myfile = request.FILES['file']
+        numBins = request.POST['numBins']
+
+        nbc.discretize(training_file, testing_file)
     
-#     save_path = os.path.join(BASE_DIR, 'backend/nbcResult.png') 
+    save_path = os.path.join(BASE_DIR, 'backend/nbcResult.png') 
 
-#     image_data = open(save_path, "rb").read()
-#     with open(save_path, "rb") as image_data:
-#         str = base64.b64encode(image_data.read())
+    image_data = open(save_path, "rb").read()
+    with open(save_path, "rb") as image_data:
+        str = base64.b64encode(image_data.read())
     
-#     return HttpResponse(str, content_type="image/png")
+    return HttpResponse(str, content_type="image/png")
 
-# @csrf_exempt
-# def dataMining_LogisticRegression(request, step_size, lmda, num_iteration):
-#     if request.method == 'POST' and request.FILES['file']:
-#         training_file = request.FILES['training_file']
-#         testing_file = request.FILES['testing_file']
+@csrf_exempt
+def dataMining_LogisticRegression(request, step_size, lmda, num_iteration):
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS LOG REGRESSION")
 
-#         lr_svm.runLR(training_file, testing_file, step_size, lmda, num_iteration)
+    if request.method == 'POST' and request.FILES['file']:
+        training_file = request.FILES['training_file']
+        testing_file = request.FILES['testing_file']
+
+        lr_svm.runLR(training_file, testing_file, step_size, lmda, num_iteration)
     
-#     save_path = os.path.join(BASE_DIR, 'backend/lr_result.png') 
+    save_path = os.path.join(BASE_DIR, 'backend/lr_result.png') 
 
-#     image_data = open(save_path, "rb").read()
-#     with open(save_path, "rb") as image_data:
-#         str = base64.b64encode(image_data.read())
+    image_data = open(save_path, "rb").read()
+    with open(save_path, "rb") as image_data:
+        str = base64.b64encode(image_data.read())
 
-#     return HttpResponse(str, content_type="image/png")
+    return HttpResponse(str, content_type="image/png")
 
-# @csrf_exempt
-# def dataMining_Clustering(request, num_clusters):
-# if request.method == 'POST' and request.FILES['file']:
-#         myfile = request.FILES['file']
-#         clustering.run(myfile, num_clusters)
+@csrf_exempt
+def dataMining_Clustering(request, num_clusters):
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS CLUSTER")
 
-#     save_path = os.path.join(BASE_DIR, 'backend/clustering_result.png') 
-#     print(save_path)
-#     image_data = open(save_path, "rb").read()
-#     with open(save_path, "rb") as image_data:
-#         str = base64.b64encode(image_data.read())
+    if request.method == 'POST' and request.FILES['file']:
+        myfile = request.FILES['file']
+        clustering.run(myfile, num_clusters)
 
-#     return HttpResponse(str, content_type="image/png")
+    save_path = os.path.join(BASE_DIR, 'backend/clustering_result.png') 
+    print(save_path)
+    image_data = open(save_path, "rb").read()
+    with open(save_path, "rb") as image_data:
+        str = base64.b64encode(image_data.read())
 
-# @csrf_exempt
-# def dataMining_Bagging(request, depth_limit, example_limit, num_trees):
-#     if request.method == 'POST' and request.FILES['file']:
-#         training_file = request.FILES['training_file']
-#         testing_file = request.FILES['testing_file']
+    return HttpResponse(str, content_type="image/png")
 
-#         baggingTree.runBT(training_file, testing_file, depth_limit, example_limi, num_trees)
+@csrf_exempt
+def dataMining_Bagging(request, depth_limit, example_limit):
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS BAG")
+    print("WHY DO I NEED NUM TREE")
+
+    if request.method == 'POST' and request.FILES['file']:
+        training_file = request.FILES['training_file']
+        testing_file = request.FILES['testing_file']
+
+        baggingTree.runBT(training_file, testing_file, depth_limit, example_limi, num_trees)
     
-#     save_path = os.path.join(BASE_DIR, 'backend/baggingTree_result.png') 
+    save_path = os.path.join(BASE_DIR, 'backend/baggingTree_result.png') 
 
-#     image_data = open(save_path, "rb").read()
-#     with open(save_path, "rb") as image_data:
-#         str = base64.b64encode(image_data.read())
+    image_data = open(save_path, "rb").read()
+    with open(save_path, "rb") as image_data:
+        str = base64.b64encode(image_data.read())
 
-#     return HttpResponse(str, content_type="image/png")
+    return HttpResponse(str, content_type="image/png")
 
-# @csrf_exempt
-# def dataMining_DecisionTree(request, depth_limit, example_limit):
-#     if request.method == 'POST' and request.FILES['file']:
-#         training_file = request.FILES['training_file']
-#         testing_file = request.FILES['testing_file']
+@csrf_exempt
+def dataMining_DecisionTree(request, depth_limit, example_limit):
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS DECISION TREEEE")
+    if request.method == 'POST' and request.FILES['file']:
+        training_file = request.FILES['training_file']
+        testing_file = request.FILES['testing_file']
 
-#         decisionTree.runDT(training_file, testing_file, depth_limit, example_limit)
+        decisionTree.runDT(training_file, testing_file, depth_limit, example_limit)
     
-#     save_path = os.path.join(BASE_DIR, 'backend/decisionTree_result.png') 
+    save_path = os.path.join(BASE_DIR, 'backend/decisionTree_result.png') 
 
-#     image_data = open(save_path, "rb").read()
-#     with open(save_path, "rb") as image_data:
-#         str = base64.b64encode(image_data.read())
+    image_data = open(save_path, "rb").read()
+    with open(save_path, "rb") as image_data:
+        str = base64.b64encode(image_data.read())
 
-#     return HttpResponse(str, content_type="image/png")
+    return HttpResponse(str, content_type="image/png")
 
 # @csrf_exempt
 # def dataMining_RandomForest(request, depth_limit, example_limit, num_trees):
@@ -156,21 +171,27 @@ def prePrcoess_DeleteCol(request, d_cols):
 
 #     return HttpResponse(str, content_type="image/png")
 
-# def prePrcoess_LabelEncoding(request):
+def prePrcoess_LabelEncoding(request):
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS LABEL ENCODING. NEED CODE")
 
-# def prePrcoess_OneHotEncoding(request, column_name):
-#     print("inside delete!!!!!!!!!!!!!!!!!!")
-#     if request.method == 'POST' and request.FILES['file']:
-#         myfile = request.FILES['file']
-#         print(column_name)
-#         One_Hot.preProcessing(column_name, myfile)
+    return Http404
+
+def prePrcoess_OneHotEncoding(request, column_name):
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>One hot encoding")
+    if request.method == 'POST' and request.FILES['file']:
+        myfile = request.FILES['file']
+        print(column_name)
+        One_Hot.preProcessing(column_name, myfile)
     
-#     save_path = os.path.join(BASE_DIR, 'backend/one_hot_result.csv') 
-#     with open(save_path, 'rb') as fh:
-#         response = HttpResponse(fh.read(), content_type="text/csv")
-#         response['Content-Disposition'] = 'inline; filename=' + os.path.basename(save_path)
-#         return response
+    save_path = os.path.join(BASE_DIR, 'backend/one_hot_result.csv') 
+    with open(save_path, 'rb') as fh:
+        response = HttpResponse(fh.read(), content_type="text/csv")
+        response['Content-Disposition'] = 'inline; filename=' + os.path.basename(save_path)
+        return response
         
-#     return Http404
+    return Http404
 
-# def preProcess_ReplaceW(request):
+def preProcess_ReplaceW(request):
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS REPLACE W. NEED CODE")
+
+    return Http404
