@@ -16,11 +16,19 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/history": [
+    "/index": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/index": [
+    "/mlOptions": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/mlalgo": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/next/dist/pages/_error": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

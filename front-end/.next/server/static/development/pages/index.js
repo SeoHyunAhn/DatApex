@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -429,7 +429,7 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
     }, __jsx(_routes__WEBPACK_IMPORTED_MODULE_8__["Link"], {
       route: "preproc",
       params: {
-        path: "labsel"
+        path: "label"
       },
       __source: {
         fileName: _jsxFileName,
@@ -443,7 +443,7 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
         lineNumber: 155
       },
       __self: this
-    }, "Labsel Encoding")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_8__["Link"], {
+    }, "Label Encoding")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_8__["Link"], {
       route: "preproc",
       params: {
         path: "one-hot"
@@ -3250,7 +3250,7 @@ routes.add('algoOptions', '/algoOptions');
 
 /***/ }),
 
-/***/ 7:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
