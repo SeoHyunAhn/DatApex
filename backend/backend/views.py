@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets          # add this
 from django.views.decorators.csrf import csrf_exempt
-from . import exploration, clustering, lr_svm, nbc, decisionTree, baggingTree, randomForest,One_Hot, Delete_Row,Delete_Col
+from . import exploration, clustering, svm, logisticReg, nbc, decisionTree, baggingTree, randomForest,One_Hot, Delete_Row,Delete_Col
 import os
 import csv
 from backend.settings import BASE_DIR
@@ -54,12 +54,11 @@ def prePrcoess_DeleteCol(request, d_cols):
 def dataMining_SVM(request, step_size, lmda, num_iteration):
     print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS SVM")
     if request.method == 'POST' and request.FILES['file']:
-        training_file = request.FILES['training_file']
-        testing_file = request.FILES['testing_file']
+        myfile = request.FILES['file']
 
-        lr_svm.runSVM(training_file, testing_file, step_size, lmda, num_iteration)
-    
-    save_path = os.path.join(BASE_DIR, 'backend/svm_result.png') 
+        svm.runSVMAlgo(myfile)
+
+    save_path = os.path.join(BASE_DIR, 'backend/SVMlearningCurve.png') 
 
     image_data = open(save_path, "rb").read()
     with open(save_path, "rb") as image_data:
@@ -90,12 +89,11 @@ def dataMining_LogisticRegression(request, step_size, lmda, num_iteration):
     print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS LOG REGRESSION")
 
     if request.method == 'POST' and request.FILES['file']:
-        training_file = request.FILES['training_file']
-        testing_file = request.FILES['testing_file']
+        myfile = request.FILES['file']
 
-        lr_svm.runLR(training_file, testing_file, step_size, lmda, num_iteration)
-    
-    save_path = os.path.join(BASE_DIR, 'backend/lr_result.png') 
+        logisticReg.runLogisticReg(myfile)
+
+    save_path = os.path.join(BASE_DIR, 'backend/LRlearningCurve.png') 
 
     image_data = open(save_path, "rb").read()
     with open(save_path, "rb") as image_data:

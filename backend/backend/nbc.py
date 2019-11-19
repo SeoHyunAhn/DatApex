@@ -1,9 +1,10 @@
 # Example of Naive Bayes implemented from Scratch in Python
 import numpy as np
 import pandas as pd
-import sys
 import matplotlib.pyplot as plt
-
+import sys
+import os
+from backend.settings import BASE_DIR
 
 def cmpAnswer(result, answer):
     
@@ -131,17 +132,17 @@ def trainModel(training):
 
 def nbc(t_frac, n):
     
-#    print("Working for f = ", n)
-
-    trainingCVS = pd.read_csv("trainingSet_F" + str(n) + ".csv")
-    testingCVS = pd.read_csv("testSet_F" + str(n) + ".csv" )
+    print("Working for f = ", n)
+    
+    trainingCVS = pd.read_csv("nbc/trainingSet_F" + str(n) + ".csv")
+    testingCVS = pd.read_csv("nbc/testSet_F" + str(n) + ".csv" )
     
     del trainingCVS["Unnamed: 0"]
     del testingCVS["Unnamed: 0"]
     
-#    training = trainingCVS.sample(frac = t_frac, random_state = 47)
+    #    training = trainingCVS.sample(frac = t_frac, random_state = 47)
     training = trainingCVS
-
+    
     model = trainModel(training)
     #     print(model)
     
@@ -151,18 +152,23 @@ def nbc(t_frac, n):
 
 def split(originalPath, f):
     #     print("called!")
+    print("original Parth : ", originalPath)
     processList = pd.read_csv(originalPath)
     del processList["Unnamed: 0"]
     #     df = pd.DataFrame(processList)
     training = processList.sample(frac=f, random_state=47)
     test = processList.loc[~processList.index.isin(training.index), :]
     
-#    print(len(training))
-#    print(len(test))
+    #    print(len(training))
+    #    print(len(test))
     
     #     print(len(processList))
-    training.to_csv("trainingSet_F"+ str(f) + ".csv")
-    test.to_csv("testSet_F" + str(f) + ".csv")
+    
+    save_path = os.path.join(BASE_DIR, 'backend/nbc/trainingSet_F') 
+    save_path2 = os.path.join(BASE_DIR, 'backend/nbc/testSet_F') 
+
+    training.to_csv(save_path+ str(f) + ".csv")
+    test.to_csv(save_path2 + str(f) + ".csv")
 
 
 #def autolabel(rects):
@@ -181,34 +187,48 @@ def graph(F, r, Path):
     plt.savefig(Path)
 #    plt.clf()
 
-
-
-if __name__ == "__main__":
-    
-    filePath = sys.argv[1]
-    
+def runNBC(inputPath):
+    print("Filename in NBC is : ", inputPath)
     F = [0.01,0.1,0.2,0.5,0.6,0.75,0.9,1]
     
     for n in F:
-        split(filePath, n)
-
+        split(inputPath, n)
+    
     result = [[], []]
     for n in F:
         r = nbc(n, n)
         result[0].append(r[0])
         result[1].append(r[1])
-
-
+    
+    
     for i in range(0, len(F)):
         print("F: ",  F[i])
         print("Training Accuracy: ", round(result[0][i], 2))
         print("testing Accuracy: ", round(result[1][i], 2))
+    
+    
+#    with open("outputStatement/5_3Out1.txt", "a") as output:
+#        output.write("-------------------------------------\n")
+#        for i in range(0, len( F)):
+#            output.write("F value: " + str( F[i]) + '\n')
+#            output.write("Training Accuracy: " + str(round(result[0][i], 2)) + '\n')
+#            output.write("testing Accuracy: " +  str(round(result[1][i], 2)) + '\n')
+#            output.write("-------------------------------------\n")
 
 
 #    result = [[5,4,6,4,5,4,5,6], [6,7,6,4,6,5,6,7]]
 
-    graph(F, result[0], "resultNBC.jpeg")
+    save_path = os.path.join(BASE_DIR, 'backend/OutNBC.jpeg') 
+
+    graph(F, result[0], save_path)
     del F[-1]
     del result[1][-1]
-    graph(F, result[1], "resultNBC.jpeg")
+    graph(F, result[1], save_path)
+
+
+
+if __name__ == "__main__":
+    
+    inputPath = sys.argv[1] # "nbc/dating-binned.csv"
+    runNBC(inputPath)
 
