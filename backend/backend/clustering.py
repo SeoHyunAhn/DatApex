@@ -74,7 +74,7 @@ def runClustering(fileName, numC):
     cb = plt.colorbar(scat, spacing='proportional',ticks=bounds)
     cb.set_label('Colors of classes')
     ax.set_title('Clustering result')
-    save_path = os.path.join(BASE_DIR, 'backend/clustringResult.png') 
+    save_path = os.path.join(BASE_DIR, 'backend/clusteringResult.png') 
     plt.savefig(save_path)
 
 if __name__ == '__main__':

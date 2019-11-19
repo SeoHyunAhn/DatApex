@@ -107,9 +107,9 @@ def dataMining_Clustering(request, num_clusters):
 
     if request.method == 'POST' and request.FILES['file']:
         myfile = request.FILES['file']
-        clustering.run(myfile, num_clusters)
+        clustering.runClustering(myfile, int(num_clusters))
 
-    save_path = os.path.join(BASE_DIR, 'backend/clustering_result.png') 
+    save_path = os.path.join(BASE_DIR, 'backend/clusteringResult.png') 
     print(save_path)
     image_data = open(save_path, "rb").read()
     with open(save_path, "rb") as image_data:
