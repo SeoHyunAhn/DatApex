@@ -16,11 +16,11 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/index": [
+    "/history": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/signIn": [
+    "/index": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

@@ -625,11 +625,33 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
         lineNumber: 208
       },
       __self: this
-    }, "Clustering algorithm")))), __jsx("li", {
+    }, "Clustering algorithm"))))), __jsx("div", {
+      className: "form-inline my-2 my-lg-0",
+      style: styleTextWhite,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 249
+      },
+      __self: this
+    }, __jsx("div", {
+      style: stylePaddingRight,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 250
+      },
+      __self: this
+    }, __jsx("ul", {
+      className: "navbar-nav",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 251
+      },
+      __self: this
+    }, __jsx("li", {
       className: "nav-item dropdown",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 212
+        lineNumber: 252
       },
       __self: this
     }, __jsx("a", {
@@ -642,15 +664,22 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
       "aria-expanded": "false",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 213
+        lineNumber: 253
       },
       __self: this
-    }, "Searchs"), __jsx("div", {
+    }, __jsx("i", {
+      className: "fa fa-search",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 262
+      },
+      __self: this
+    })), __jsx("div", {
       className: "dropdown-menu",
       "aria-labelledby": "navbarDropdown",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 224
+        lineNumber: 264
       },
       __self: this
     }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_9__["Search"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -665,40 +694,32 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
     }, this.props, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 228
+        lineNumber: 268
       },
       __self: this
     })), this.state.bool ? __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 240
+        lineNumber: 280
       },
       __self: this
     }, __jsx("li", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 241
+        lineNumber: 281
       },
       __self: this
     }, this.state.bool), __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 242
+        lineNumber: 282
       },
       __self: this
-    })) : null))), __jsx("div", {
-      className: "form-inline my-2 my-lg-0",
-      style: styleTextWhite,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 249
-      },
-      __self: this
-    }, __jsx("div", {
+    })) : null)))), __jsx("div", {
       className: "btn-group",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 254
+        lineNumber: 289
       },
       __self: this
     }, __jsx("button", {
@@ -707,7 +728,7 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
       disabled: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 255
+        lineNumber: 290
       },
       __self: this
     }, "Hi ", _common_firebase__WEBPACK_IMPORTED_MODULE_6__["default"].auth().currentUser.displayName, " "), __jsx("button", {
@@ -718,28 +739,28 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
       "aria-expanded": "false",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 258
+        lineNumber: 293
       },
       __self: this
     }, __jsx("span", {
       className: "sr-only",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 265
+        lineNumber: 300
       },
       __self: this
     }, "Toggle Dropdown")), __jsx("div", {
       className: "dropdown-menu",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 267
+        lineNumber: 302
       },
       __self: this
     }, __jsx(_routes__WEBPACK_IMPORTED_MODULE_8__["Link"], {
       href: "/profile",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 268
+        lineNumber: 303
       },
       __self: this
     }, __jsx("a", {
@@ -747,14 +768,29 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
       href: "#",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 269
+        lineNumber: 304
       },
       __self: this
-    }, "Profile")), __jsx("div", {
+    }, "Profile")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_8__["Link"], {
+      href: "/history",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 308
+      },
+      __self: this
+    }, __jsx("a", {
+      className: "dropdown-item",
+      href: "#",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 309
+      },
+      __self: this
+    }, "History")), __jsx("div", {
       className: "dropdown-divider",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 275
+        lineNumber: 315
       },
       __self: this
     }), __jsx("button", {
@@ -762,28 +798,28 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
       onClick: this.logout,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 276
+        lineNumber: 316
       },
       __self: this
     }, "Logout")))))), __jsx("div", {
       className: "container mt-4",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 285
+        lineNumber: 325
       },
       __self: this
     }, __jsx("div", {
       className: "row",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 286
+        lineNumber: 326
       },
       __self: this
     }, __jsx("div", {
       className: "col-12",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 287
+        lineNumber: 327
       },
       __self: this
     }, this.props.children))));

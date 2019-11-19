@@ -1237,22 +1237,38 @@ class CustomDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.
         lineNumber: 9
       },
       __self: this
-    })), __jsx("body", {
+    }), __jsx("link", {
+      rel: "stylesheet",
+      href: "https://fonts.googleapis.com/icon?family=Material+Icons",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 15
+      },
+      __self: this
+    }), __jsx("link", {
+      rel: "stylesheet",
+      href: "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 16
       },
       __self: this
+    })), __jsx("body", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      },
+      __self: this
     }, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Main"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 19
       },
       __self: this
     }), __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["NextScript"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18
+        lineNumber: 20
       },
       __self: this
     }), __jsx("script", {
@@ -1261,7 +1277,7 @@ class CustomDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.
       crossOrigin: "anonymous",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19
+        lineNumber: 21
       },
       __self: this
     }), __jsx("script", {
@@ -1270,7 +1286,7 @@ class CustomDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.
       crossOrigin: "anonymous",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23
+        lineNumber: 25
       },
       __self: this
     }), __jsx("script", {
@@ -1279,7 +1295,7 @@ class CustomDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.
       crossOrigin: "anonymous",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27
+        lineNumber: 29
       },
       __self: this
     })));

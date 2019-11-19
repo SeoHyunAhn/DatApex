@@ -209,7 +209,7 @@ class Layout extends React.Component {
                     </Link>
                   </div>
                 </li>
-                <li className="nav-item dropdown">
+                {/* <li className="nav-item dropdown">
                   <a
                     className="nav-link dropdown-toggle"
                     href="#"
@@ -243,14 +243,49 @@ class Layout extends React.Component {
                       </div>
                     ) : null}
                   </div>
-                </li>
+                </li> */}
               </ul>
 
               <div className="form-inline my-2 my-lg-0" style={styleTextWhite}>
-                {/* <div style={ stylePaddingRight }>
-                                        <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                                        <button className="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-                                    </div> */}
+                <div style={ stylePaddingRight }>
+                  <ul className="navbar-nav">
+                    <li className="nav-item dropdown">
+                      <a
+                        className="nav-link dropdown-toggle"
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        <i className="fa fa-search"></i>
+                      </a>
+                      <div
+                        className="dropdown-menu"
+                        aria-labelledby="navbarDropdown"
+                      >
+                        <Search
+                          loading={isLoading}
+                          onResultSelect={this.handleResultSelect}
+                          onSearchChange={_.debounce(this.handleSearchChange, 500, {
+                            leading: true
+                          })}
+                          //   results={results}
+                          value={value}
+                          resultRenderer={resultRenderer}
+                          {...this.props}
+                        />
+                        {this.state.bool ? (
+                          <div>
+                            <li>{this.state.bool}</li>
+                            <br></br>
+                          </div>
+                        ) : null}
+                      </div>
+                    </li>
+                  </ul>
+                </div>
                 <div className="btn-group">
                   <button type="button" className="btn btn-secondary" disabled>
                     Hi {firebase.auth().currentUser.displayName}{" "}
@@ -270,6 +305,11 @@ class Layout extends React.Component {
                         Profile
                       </a>
                     </Link>
+                    <Link href="/history">
+                      <a className="dropdown-item" href="#">History</a>
+                    </Link>
+
+
                     {/* <a className="dropdown-item" href="#">Another action</a>
                                             <a className="dropdown-item" href="#">Something else here</a> */}
                     <div className="dropdown-divider"></div>
