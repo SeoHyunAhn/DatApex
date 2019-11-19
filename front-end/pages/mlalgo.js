@@ -32,7 +32,7 @@ export default class extends React.Component {
     this.state = {
       imgSrc: "",
       url: "",
-      // progress: 0,
+      isImageReady: false,
       sos: "",
       lambda: "",
       maxit: "",
@@ -106,7 +106,11 @@ export default class extends React.Component {
         var div = document.getElementById("image-display");
         div.innerText = "";
         var imageOupput = "data:image/png;base64," + e.data;
-        this.setState({ imgSrc: imageOupput });
+        this.setState({ 
+          imgSrc: imageOupput,
+          isImageReady: true,
+        });
+
       })
       .catch(err => {
         console.log(err);
@@ -118,33 +122,25 @@ export default class extends React.Component {
 
   handleUpload = () => {
     const { imgSrc } = this.state;
-    const uploadTask = firebase.storage.ref(`images/${imgSrc.name}`).put(imgSrc);
+    let message = this.state.imgSrc.substring(22);
+
+    // console.log(this.state.imgSrc);
+    // console.log(message);
+
+    const storage = firebase.storage().ref();
     
-    uploadTask.on(
-      "state_changed",
-      snapshot => {
-        // progress function ...
-        // const progress = Math.round(
-        //   (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-        // );
-        // this.setState({ progress });
-      },
-      error => {
-        // Error function ...
-        console.log(error);
-      },
-      () => {
-        // complete function ...
-        storage
-          .ref("images")
-          .child(imgSrc.name)
-          .getDownloadURL()
-          .then(url => {
-            this.setState({ url });
-          });
+
+    const uploadTastk = firebase.storage().ref().child('image.png').putString(message, 'base64', {contentType:'image/png'})
+    uploadTastk.then(
+        ( response ) => {
+            console.log('image upload success')
+        },
+        ( failedReason ) => {
+            console.log('image upload failed')
         }
-      );
-    };
+    )
+
+  };
 
   render() {
     // console.log(this.props.path);
@@ -163,6 +159,16 @@ export default class extends React.Component {
               <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
             </div>
             <div className="col-6">
+              { this.state.isImageReady ? 
+                ( <>
+                    <div className="text-right">
+                      <button className="btn btn-secondary btn-sm" onClick={ this.handleUpload } > Save </button>
+                    </div>
+                  </>
+                ) : ( <>
+                      </> 
+                    )
+              }
               <div id="image-display"></div>
               <img id="image-output" src={this.state.imgSrc}></img>
             </div>
@@ -218,6 +224,16 @@ export default class extends React.Component {
               </form>
             </div>
             <div className="col-6">
+              { this.state.isImageReady ? 
+                ( <>
+                    <div className="text-right">
+                      <button className="btn btn-secondary btn-sm" onClick={ this.handleUpload } > Save </button>
+                    </div>
+                  </>
+                ) : ( <>
+                      </> 
+                    )
+              }
               <div id="image-display"></div>
               <img id="image-output" src={this.state.imgSrc}></img>
             </div>
@@ -273,6 +289,16 @@ export default class extends React.Component {
               </form>
             </div>
             <div className="col-6">
+              { this.state.isImageReady ? 
+                ( <>
+                    <div className="text-right">
+                      <button className="btn btn-secondary btn-sm" onClick={ this.handleUpload } > Save </button>
+                    </div>
+                  </>
+                ) : ( <>
+                      </> 
+                    )
+              }
               <div id="image-display"></div>
               <img id="image-output" src={this.state.imgSrc}></img>
             </div>
@@ -317,6 +343,16 @@ export default class extends React.Component {
               </form>
             </div>
             <div className="col-6">
+              { this.state.isImageReady ? 
+                ( <>
+                    <div className="text-right">
+                      <button className="btn btn-secondary btn-sm" onClick={ this.handleUpload } > Save </button>
+                    </div>
+                  </>
+                ) : ( <>
+                      </> 
+                    )
+              }
               <div id="image-display"></div>
               <img id="image-output" src={this.state.imgSrc}></img>
             </div>
@@ -350,11 +386,18 @@ export default class extends React.Component {
               </form>
             </div>
             <div className="col-6">
+              { this.state.isImageReady ? 
+                ( <>
+                    <div className="text-right">
+                      <button className="btn btn-secondary btn-sm" onClick={ this.handleUpload } > Save </button>
+                    </div>
+                  </>
+                ) : ( <>
+                      </> 
+                    )
+              }
               <div id="image-display"></div>
               <img id="image-output" src={this.state.imgSrc}></img>
-              <div>
-                <button className="btn btn-primary" onClick={ this.handleUpload } > Save </button>
-              </div>
             </div>
           </div>
         </>
@@ -396,6 +439,16 @@ export default class extends React.Component {
               </form>
             </div>
             <div className="col-6">
+              { this.state.isImageReady ? 
+                ( <>
+                    <div className="text-right">
+                      <button className="btn btn-secondary btn-sm" onClick={ this.handleUpload } > Save </button>
+                    </div>
+                  </>
+                ) : ( <>
+                      </> 
+                    )
+              }
               <div id="image-display"></div>
               <img id="image-output" src={this.state.imgSrc}></img>
             </div>
@@ -412,6 +465,16 @@ export default class extends React.Component {
             <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
           </div>
           <div className="col-6">
+            { this.state.isImageReady ? 
+              ( <>
+                  <div className="text-right">
+                    <button className="btn btn-secondary btn-sm" onClick={ this.handleUpload } > Save </button>
+                  </div>
+                </>
+              ) : ( <>
+                    </> 
+                  )
+            }
             <div id="image-display"></div>
             <img id="image-output" src={this.state.imgSrc}></img>
           </div>
