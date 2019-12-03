@@ -30,7 +30,7 @@ class Profile extends Component {
                     <div className="col-12">
                         <h1>Profile</h1>
                         <hr></hr>
-                        <h5>* Please make sure that you use public account, Not Google Account</h5>
+                        <h5>* Please make sure that you log in with the public account, Not Google Account</h5>
                         <br />
 
                         <div>

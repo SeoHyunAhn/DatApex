@@ -151,8 +151,8 @@ class Layout extends React.Component {
                     className="dropdown-menu"
                     aria-labelledby="navbarDropdown"
                   >
-                    <Link route="preproc" params={{ path: "labsel" }}>
-                      <a className="dropdown-item">Labsel Encoding</a>
+                    <Link route="preproc" params={{ path: "label" }}>
+                      <a className="dropdown-item">Label Encoding</a>
                     </Link>
                     <Link route="preproc" params={{ path: "one-hot" }}>
                       <a className="dropdown-item">One-hot Encoding</a>

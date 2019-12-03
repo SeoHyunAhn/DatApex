@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import UploadCSV from "../components/Modal";
+import firebase from "../common/firebase";
 
 const posts = [
   { path: "nba", title: "Naive Bayes algorithm" },
@@ -30,6 +31,8 @@ export default class extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {
       imgSrc: "",
+      url: "",
+      isImageReady: false,
       sos: "",
       lambda: "",
       maxit: "",
@@ -103,7 +106,11 @@ export default class extends React.Component {
         var div = document.getElementById("image-display");
         div.innerText = "";
         var imageOupput = "data:image/png;base64," + e.data;
-        this.setState({ imgSrc: imageOupput });
+        this.setState({ 
+          imgSrc: imageOupput,
+          isImageReady: true,
+        });
+
       })
       .catch(err => {
         console.log(err);
@@ -112,6 +119,29 @@ export default class extends React.Component {
         div.innerText = "Please check your input and parameters";
       });
   }
+
+  handleUpload = () => {
+    const { imgSrc } = this.state;
+    let message = this.state.imgSrc.substring(22);
+
+    // console.log(this.state.imgSrc);
+    // console.log(message);
+
+    const storage = firebase.storage().ref();
+    
+
+    const uploadTastk = firebase.storage().ref().child('image.png').putString(message, 'base64', {contentType:'image/png'})
+    uploadTastk.then(
+        ( response ) => {
+            console.log('image upload success')
+        },
+        ( failedReason ) => {
+            console.log('image upload failed')
+        }
+    )
+
+  };
+
   render() {
     // console.log(this.props.path);
     // this.path = this.props.url.asPath.substring(8);
@@ -129,6 +159,16 @@ export default class extends React.Component {
               <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
             </div>
             <div className="col-6">
+              { this.state.isImageReady ? 
+                ( <>
+                    <div className="text-right">
+                      <button className="btn btn-secondary btn-sm" onClick={ this.handleUpload } > Save </button>
+                    </div>
+                  </>
+                ) : ( <>
+                      </> 
+                    )
+              }
               <div id="image-display"></div>
               <img id="image-output" src={this.state.imgSrc}></img>
             </div>
@@ -140,47 +180,63 @@ export default class extends React.Component {
         <>
           <h1>{post.title}</h1>
           <hr></hr>
-          <form>
-            <div className="form-group row">
-              <label className="col-sm-2 col-form-label"> Size of Step: </label>
-              <div className="col-sm-10">
-                <input
-                  className="form-control"
-                  placeholder="1,2,3"
-                  type="text"
-                  name="sos"
-                  onChange={this.onChange.bind(this)}
-                />
-              </div>
-              <label className="col-sm-2 col-form-label"> Lambda: </label>
-              <div className="col-sm-10">
-                <input
-                  className="form-control"
-                  placeholder="1,2,3"
-                  type="text"
-                  name="lambda"
-                  onChange={this.onChange.bind(this)}
-                />
-              </div>
-              <label className="col-sm-2 col-form-label">
-                {" "}
-                Number of Max iteration:{" "}
-              </label>
-              <div className="col-sm-10">
-                <input
-                  className="form-control"
-                  placeholder="1,2,3"
-                  type="text"
-                  name="maxit"
-                  onChange={this.onChange.bind(this)}
-                />
-              </div>
+          <div className="row">
+            <div className="col-6">
+              <form>
+                <div className="form-group row">
+                  <label className="col-sm-2 col-form-label"> Size of Step: </label>
+                  <div className="col-sm-10">
+                    <input
+                      className="form-control"
+                      placeholder="1,2,3"
+                      type="text"
+                      name="sos"
+                      onChange={this.onChange.bind(this)}
+                    />
+                  </div>
+                  <label className="col-sm-2 col-form-label"> Lambda: </label>
+                  <div className="col-sm-10">
+                    <input
+                      className="form-control"
+                      placeholder="1,2,3"
+                      type="text"
+                      name="lambda"
+                      onChange={this.onChange.bind(this)}
+                    />
+                  </div>
+                  <br />
+                  <br />
+                  <label className="col-sm-2 col-form-label">
+                    {" "}
+                    Number of Max iteration:{" "}
+                  </label>
+                  <div className="col-sm-10">
+                    <input
+                      className="form-control"
+                      placeholder="1,2,3"
+                      type="text"
+                      name="maxit"
+                      onChange={this.onChange.bind(this)}
+                    />
+                  </div>
+                </div>
+                <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
+              </form>
             </div>
-            <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
-          </form>
-          <div className="col-6">
-            <div id="image-display"></div>
-            <img id="image-output" src={this.state.imgSrc}></img>
+            <div className="col-6">
+              { this.state.isImageReady ? 
+                ( <>
+                    <div className="text-right">
+                      <button className="btn btn-secondary btn-sm" onClick={ this.handleUpload } > Save </button>
+                    </div>
+                  </>
+                ) : ( <>
+                      </> 
+                    )
+              }
+              <div id="image-display"></div>
+              <img id="image-output" src={this.state.imgSrc}></img>
+            </div>
           </div>
         </>
       );
@@ -189,47 +245,63 @@ export default class extends React.Component {
         <>
           <h1>{post.title}</h1>
           <hr></hr>
-          <form>
-            <div className="form-group row">
-              <label className="col-sm-2 col-form-label"> Size of Step: </label>
-              <div className="col-sm-10">
-                <input
-                  className="form-control"
-                  placeholder="1,2,3"
-                  type="text"
-                  name="sos"
-                  onChange={this.onChange.bind(this)}
-                />
-              </div>
-              <label className="col-sm-2 col-form-label"> Lambda: </label>
-              <div className="col-sm-10">
-                <input
-                  className="form-control"
-                  placeholder="1,2,3"
-                  type="text"
-                  name="lambda"
-                  onChange={this.onChange.bind(this)}
-                />
-              </div>
-              <label className="col-sm-2 col-form-label">
-                {" "}
-                Number of Max iteration:{" "}
-              </label>
-              <div className="col-sm-10">
-                <input
-                  className="form-control"
-                  placeholder="1,2,3"
-                  type="text"
-                  name="maxit"
-                  onChange={this.onChange.bind(this)}
-                />
-              </div>
+          <div className="row">
+            <div className="col-6">
+              <form>
+                <div className="form-group row">
+                  <label className="col-sm-2 col-form-label"> Size of Step: </label>
+                  <div className="col-sm-10">
+                    <input
+                      className="form-control"
+                      placeholder="1,2,3"
+                      type="text"
+                      name="sos"
+                      onChange={this.onChange.bind(this)}
+                    />
+                  </div>
+                  <label className="col-sm-2 col-form-label"> Lambda: </label>
+                  <div className="col-sm-10">
+                    <input
+                      className="form-control"
+                      placeholder="1,2,3"
+                      type="text"
+                      name="lambda"
+                      onChange={this.onChange.bind(this)}
+                    />
+                  </div>
+                  <br />
+                  <br />
+                  <label className="col-sm-2 col-form-label">
+                    {" "}
+                    Number of Max iteration:{" "}
+                  </label>
+                  <div className="col-sm-10">
+                    <input
+                      className="form-control"
+                      placeholder="1,2,3"
+                      type="text"
+                      name="maxit"
+                      onChange={this.onChange.bind(this)}
+                    />
+                  </div>
+                </div>
+                <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
+              </form>
             </div>
-            <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
-          </form>
-          <div className="col-6">
-            <div id="image-display"></div>
-            <img id="image-output" src={this.state.imgSrc}></img>
+            <div className="col-6">
+              { this.state.isImageReady ? 
+                ( <>
+                    <div className="text-right">
+                      <button className="btn btn-secondary btn-sm" onClick={ this.handleUpload } > Save </button>
+                    </div>
+                  </>
+                ) : ( <>
+                      </> 
+                    )
+              }
+              <div id="image-display"></div>
+              <img id="image-output" src={this.state.imgSrc}></img>
+            </div>
           </div>
         </>
       );
@@ -239,37 +311,51 @@ export default class extends React.Component {
         <>
           <h1>{post.title}</h1>
           <hr></hr>
-          <form>
-            <div className="form-group row">
-              <label className="col-sm-2 col-form-label"> Depth limit: </label>
-              <div className="col-sm-10">
-                <input
-                  className="form-control"
-                  placeholder="3"
-                  type="text"
-                  name="depthlimit"
-                  onChange={this.onChange.bind(this)}
-                />
-              </div>
-              <label className="col-sm-2 col-form-label">
-                {" "}
-                Example Limit:{" "}
-              </label>
-              <div className="col-sm-10">
-                <input
-                  className="form-control"
-                  placeholder="3"
-                  type="text"
-                  name="exlimit"
-                  onChange={this.onChange.bind(this)}
-                />
-              </div>
+          <div className="row">
+            <div className="col-6">
+              <form>
+                <div className="form-group row">
+                  <label className="col-sm-2 col-form-label"> Depth limit: </label>
+                  <div className="col-sm-10">
+                    <input
+                      className="form-control"
+                      placeholder="3"
+                      type="text"
+                      name="depthlimit"
+                      onChange={this.onChange.bind(this)}
+                    />
+                  </div>
+                  <label className="col-sm-2 col-form-label">
+                    {" "}
+                    Example Limit:{" "}
+                  </label>
+                  <div className="col-sm-10">
+                    <input
+                      className="form-control"
+                      placeholder="3"
+                      type="text"
+                      name="exlimit"
+                      onChange={this.onChange.bind(this)}
+                    />
+                  </div>
+                </div>
+                <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
+              </form>
             </div>
-            <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
-          </form>
-          <div className="col-6">
-            <div id="image-display"></div>
-            <img id="image-output" src={this.state.imgSrc}></img>
+            <div className="col-6">
+              { this.state.isImageReady ? 
+                ( <>
+                    <div className="text-right">
+                      <button className="btn btn-secondary btn-sm" onClick={ this.handleUpload } > Save </button>
+                    </div>
+                  </>
+                ) : ( <>
+                      </> 
+                    )
+              }
+              <div id="image-display"></div>
+              <img id="image-output" src={this.state.imgSrc}></img>
+            </div>
           </div>
         </>
       );
@@ -278,27 +364,41 @@ export default class extends React.Component {
         <>
           <h1>{post.title}</h1>
           <hr></hr>
-          <form>
-            <div className="form-group row">
-              <label className="col-sm-2 col-form-label">
-                {" "}
-                Number of Cluster:{" "}
-              </label>
-              <div className="col-sm-10">
-                <input
-                  className="form-control"
-                  placeholder="3"
-                  type="text"
-                  name="k"
-                  onChange={this.onChange.bind(this)}
-                />
-              </div>
+          <div className="row">
+            <div className="col-6">
+              <form>
+                <div className="form-group row">
+                  <label className="col-sm-2 col-form-label">
+                    {" "}
+                    Number of Cluster:{" "}
+                  </label>
+                  <div className="col-sm-10">
+                    <input
+                      className="form-control"
+                      placeholder="3"
+                      type="text"
+                      name="k"
+                      onChange={this.onChange.bind(this)}
+                    />
+                  </div>
+                </div>
+                <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
+              </form>
             </div>
-            <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
-          </form>
-          <div className="col-6">
-            <div id="image-display"></div>
-            <img id="image-output" src={this.state.imgSrc}></img>
+            <div className="col-6">
+              { this.state.isImageReady ? 
+                ( <>
+                    <div className="text-right">
+                      <button className="btn btn-secondary btn-sm" onClick={ this.handleUpload } > Save </button>
+                    </div>
+                  </>
+                ) : ( <>
+                      </> 
+                    )
+              }
+              <div id="image-display"></div>
+              <img id="image-output" src={this.state.imgSrc}></img>
+            </div>
           </div>
         </>
       );
@@ -307,37 +407,51 @@ export default class extends React.Component {
         <>
           <h1>{post.title}</h1>
           <hr></hr>
-          <form>
-            <div className="form-group row">
-              <label className="col-sm-2 col-form-label"> Depth limit: </label>
-              <div className="col-sm-10">
-                <input
-                  className="form-control"
-                  placeholder="3"
-                  type="text"
-                  name="depthlimit"
-                  onChange={this.onChange.bind(this)}
-                />
-              </div>
-              <label className="col-sm-2 col-form-label">
-                {" "}
-                Example Limit:{" "}
-              </label>
-              <div className="col-sm-10">
-                <input
-                  className="form-control"
-                  placeholder="3"
-                  type="text"
-                  name="exlimit"
-                  onChange={this.onChange.bind(this)}
-                />
-              </div>
+          <div className="row">
+            <div className="col-6">
+              <form>
+                <div className="form-group row">
+                  <label className="col-sm-2 col-form-label"> Depth limit: </label>
+                  <div className="col-sm-10">
+                    <input
+                      className="form-control"
+                      placeholder="3"
+                      type="text"
+                      name="depthlimit"
+                      onChange={this.onChange.bind(this)}
+                    />
+                  </div>
+                  <label className="col-sm-2 col-form-label">
+                    {" "}
+                    Example Limit:{" "}
+                  </label>
+                  <div className="col-sm-10">
+                    <input
+                      className="form-control"
+                      placeholder="3"
+                      type="text"
+                      name="exlimit"
+                      onChange={this.onChange.bind(this)}
+                    />
+                  </div>
+                </div>
+                <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
+              </form>
             </div>
-            <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
-          </form>
-          <div className="col-6">
-            <div id="image-display"></div>
-            <img id="image-output" src={this.state.imgSrc}></img>
+            <div className="col-6">
+              { this.state.isImageReady ? 
+                ( <>
+                    <div className="text-right">
+                      <button className="btn btn-secondary btn-sm" onClick={ this.handleUpload } > Save </button>
+                    </div>
+                  </>
+                ) : ( <>
+                      </> 
+                    )
+              }
+              <div id="image-display"></div>
+              <img id="image-output" src={this.state.imgSrc}></img>
+            </div>
           </div>
         </>
       );
@@ -351,6 +465,16 @@ export default class extends React.Component {
             <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
           </div>
           <div className="col-6">
+            { this.state.isImageReady ? 
+              ( <>
+                  <div className="text-right">
+                    <button className="btn btn-secondary btn-sm" onClick={ this.handleUpload } > Save </button>
+                  </div>
+                </>
+              ) : ( <>
+                    </> 
+                  )
+            }
             <div id="image-display"></div>
             <img id="image-output" src={this.state.imgSrc}></img>
           </div>

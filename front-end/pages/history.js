@@ -14,26 +14,32 @@ class History extends Component {
                             <table className="table">
                                 <thead className="thead-light">
                                     <tr>
-                                        <th scope="col">#</th>
                                         <th scope="col">Date</th>
+                                        <th scope="col">Type</th>
                                         <th scope="col">File Result</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>@mdo</td>
+                                        <th scope="row">1/1/2019</th>
+                                        <td>ML</td>
+                                        <td> 
+                                            <button className="btn btn-primary">Download</button>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>@fat</td>
+                                        <th scope="row">1/1/2019</th>
+                                        <td>PRE</td>
+                                        <td> 
+                                            <button className="btn btn-primary">Download</button>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry</td>
-                                        <td>@twitter</td>
+                                        <th scope="row">1/1/2019</th>
+                                        <td>ML</td>
+                                        <td> 
+                                            <button className="btn btn-primary">Download</button>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
