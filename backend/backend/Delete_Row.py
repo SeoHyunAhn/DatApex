@@ -19,42 +19,53 @@ def makeList(d_rows):
     return deleteList
 
 def deleteRow(d_rows, inputPath, outputPath):
+    print("Start deleting rows!")
+    
+    deleteList = makeList(d_rows)
+    originalCVS = pd.read_csv(inputPath)
+    
+    temp = {}
+
+    for key in originalCVS:
+        temp.update({key:[]})
+
+
+    for key in originalCVS:
+        for i in range(0, len(originalCVS[key])):
+            if(i not in deleteList):
+                temp[key].append(originalCVS[key][i])
+    
+    
+    temp1 = pd.DataFrame(temp)
+    temp1.to_csv(outputPath)
+            
+    print("Deletion Done!")
+
+def deleteRow2(d_rows, inputPath):
     
     print("Start deleting rows!")
     
     deleteList = makeList(d_rows)
     originalCVS = pd.read_csv(inputPath)
     
+    temp = {}
+
     for key in originalCVS:
-        for d in deleteList:
-            del originalCVS[key][d]
-    
-    save_path = os.path.join(BASE_DIR, 'backend/result_testing.csv') 
-
-    
-    originalCVS.to_csv(save_path)
-            
-    print("Deletion Done!");
+        temp.update({key:[]})
 
 
-def deleteRow2(d_rows, inputPath):
-    
-    print("222222Start deleting rows!")
-    print(d_rows)
-    
-    deleteList = makeList(d_rows)
-    originalCVS = pd.read_csv(inputPath)
-    
     for key in originalCVS:
-        for d in deleteList:
-            del originalCVS[key][d]
+        for i in range(0, len(originalCVS[key])):
+            if(i not in deleteList):
+                temp[key].append(originalCVS[key][i])
     
-    save_path = os.path.join(BASE_DIR, 'backend/result_testing.csv') 
+    
+    save_path = os.path.join(BASE_DIR, 'backend/deleteRow_result.csv') 
 
-    
-    originalCVS.to_csv(save_path)
+    temp1 = pd.DataFrame(temp)
+    temp1.to_csv(save_path)
             
-    print("22222Deletion Done!");
+    print("Deletion Done!")
 
 if __name__ == '__main__':
     

@@ -134,8 +134,11 @@ def nbc(t_frac, n):
     
     print("Working for f = ", n)
     
-    trainingCVS = pd.read_csv("nbc/trainingSet_F" + str(n) + ".csv")
-    testingCVS = pd.read_csv("nbc/testSet_F" + str(n) + ".csv" )
+    save_path = os.path.join(BASE_DIR, 'backend/nbc/trainingSet_F') 
+    save_path2 = os.path.join(BASE_DIR, 'backend/nbc/testSet_F') 
+
+    trainingCVS = pd.read_csv(save_path + str(n) + ".csv")
+    testingCVS = pd.read_csv(save_path + str(n) + ".csv" )
     
     del trainingCVS["Unnamed: 0"]
     del testingCVS["Unnamed: 0"]
@@ -206,21 +209,10 @@ def runNBC(inputPath):
         print("Training Accuracy: ", round(result[0][i], 2))
         print("testing Accuracy: ", round(result[1][i], 2))
     
-    
-#    with open("outputStatement/5_3Out1.txt", "a") as output:
-#        output.write("-------------------------------------\n")
-#        for i in range(0, len( F)):
-#            output.write("F value: " + str( F[i]) + '\n')
-#            output.write("Training Accuracy: " + str(round(result[0][i], 2)) + '\n')
-#            output.write("testing Accuracy: " +  str(round(result[1][i], 2)) + '\n')
-#            output.write("-------------------------------------\n")
 
+    save_path = os.path.join(BASE_DIR, 'backend/OutNBC.png') 
 
-#    result = [[5,4,6,4,5,4,5,6], [6,7,6,4,6,5,6,7]]
-
-    save_path = os.path.join(BASE_DIR, 'backend/OutNBC.jpeg') 
-
-    graph(F, result[0], save_path)
+    # graph(F, result[0], save_path)
     del F[-1]
     del result[1][-1]
     graph(F, result[1], save_path)

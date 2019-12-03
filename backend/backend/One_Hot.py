@@ -6,6 +6,8 @@ Created on Oct 24, 2019
 
 import pandas as pd
 import sys
+import os
+from backend.settings import BASE_DIR
     
 def makeList(encList):
     encodeList = []
@@ -42,8 +44,6 @@ def doEncoding(data, processAttr):
     
 
 def preProcessing(encList, inputPath, outputPath):
-    
-    
     print("Start one-hot encoding!")
     
     encodeList = makeList(encList)
@@ -55,7 +55,7 @@ def preProcessing(encList, inputPath, outputPath):
     for key in temp:
         data.update({key:temp[key]})
         keys.append(key)
-    temp = None;
+    temp = None
     
     
     processList = []
@@ -72,7 +72,6 @@ def preProcessing(encList, inputPath, outputPath):
             data.update({(procAtt+'_'+key):getNewAtt[key]})
 
 
-#     print(keys)
     for k in keys:
         del data[k]
 
@@ -82,6 +81,45 @@ def preProcessing(encList, inputPath, outputPath):
     
     print("Encoding done!")
     
+
+def preProcessing2(encList, inputPath):
+    print("Start one-hot encoding!")
+    
+    encodeList = makeList(encList)
+    temp = pd.read_csv(inputPath)
+    
+    
+    data = {}
+    keys = []
+    for key in temp:
+        data.update({key:temp[key]})
+        keys.append(key)
+    temp = None
+    
+    
+    processList = []
+    for e in encodeList:
+        processList.append(keys[e])
+#     print(processList)
+
+
+    for procAtt in processList:
+#         print(procAtt)
+        getNewAtt = doEncoding(data, procAtt)
+#         del data[procAtt]
+        for key in getNewAtt:
+            data.update({(procAtt+'_'+key):getNewAtt[key]})
+
+
+    for k in keys:
+        del data[k]
+
+    save_path = os.path.join(BASE_DIR, 'backend/oneHot_result.csv') 
+
+    data = pd.DataFrame(data)
+    data.to_csv(save_path)
+    
+    print("Encoding done!")
     
 
 if __name__ == '__main__':
@@ -91,8 +129,8 @@ if __name__ == '__main__':
 #     outputPath = sys.argv[3]
     
     encList = "1,3,7"
-    inputPath = "/Users/kimmyeongsu/Desktop/qwe/Prep/SalesJan2009.csv"
-    outputPath = "/Users/kimmyeongsu/Desktop/qwe/Prep/oneHot.csv"
+    inputPath = "SalesJan2009.csv"
+    outputPath = "oneHot.csv"
     
     preProcessing(encList, inputPath, outputPath)
     

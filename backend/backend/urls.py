@@ -22,6 +22,6 @@ urlpatterns = [
     # path('dataMining/DecisionTree/', views.dataMining_RandomForest),
     path('preProc/LabelEncoding/', views.prePrcoess_LabelEncoding),
     path('preProc/OneHotEncoding/<str:column_name>', views.prePrcoess_OneHotEncoding),
-    # path('preProc/ReplaceW', views.prePrcoess_ReplaceW),
+    path('preProc/ReplaceW/<str:replace_rows>/<str:from_word>/<str:to_word>', views.prePrcoess_ReplaceW),
     # path('test/', views.test_url),
 ]
