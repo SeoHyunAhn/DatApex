@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets          # add this
 from django.views.decorators.csrf import csrf_exempt
-from . import exploration, clustering, svm, logisticReg, nbc, decisionTree, baggingTree, randomForest,One_Hot, Delete_Row,Delete_Col
+from . import exploration, clustering, svm, logisticReg, nbc, decisionTree, baggingTree, randomForest,One_Hot, Delete_Row,Delete_Col, labelEncod, replaceW
 import os
 import csv
 from backend.settings import BASE_DIR
@@ -21,34 +21,6 @@ def upload_csv(request):
         str = base64.b64encode(image_data.read())
 
     return HttpResponse(str, content_type="image/png")
-
-@csrf_exempt
-def prePrcoess_DeleteRow(request, d_rows):
-    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS DELETE ROW")
-
-    if request.method == 'POST' and request.FILES['file']:
-        myfile = request.FILES['file']
-        Delete_Row.deleteRow2(d_rows, myfile)
-    save_path = os.path.join(BASE_DIR, 'backend/result_testing.csv') 
-    with open(save_path, 'rb') as fh:
-        response = HttpResponse(fh.read(), content_type="text/csv")
-        response['Content-Disposition'] = 'inline; filename=' + os.path.basename(save_path)
-        return response
-    return Http404
-
-@csrf_exempt
-def prePrcoess_DeleteCol(request, d_cols):
-    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS DELETE COL")
-
-    if request.method == 'POST' and request.FILES['file']:
-        myfile = request.FILES['file']
-        Delete_Col.deleteCol(d_cols, myfile)
-    save_path = os.path.join(BASE_DIR, 'backend/result_testing.csv') 
-    with open(save_path, 'rb') as fh:
-        response = HttpResponse(fh.read(), content_type="text/csv")
-        response['Content-Disposition'] = 'inline; filename=' + os.path.basename(save_path)
-        return response
-    return Http404
 
 @csrf_exempt
 def dataMining_SVM(request, step_size, lmda, num_iteration):
@@ -72,11 +44,10 @@ def dataMining_NaiveBayes(request):
 
     if request.method == 'POST' and request.FILES['file']:
         myfile = request.FILES['file']
-        numBins = request.POST['numBins']
 
-        nbc.discretize(training_file, testing_file)
+        nbc.runNBC(myfile)
     
-    save_path = os.path.join(BASE_DIR, 'backend/nbcResult.png') 
+    save_path = os.path.join(BASE_DIR, 'backend/outNBC.png') 
 
     image_data = open(save_path, "rb").read()
     with open(save_path, "rb") as image_data:
@@ -171,7 +142,14 @@ def dataMining_DecisionTree(request, depth_limit, example_limit):
 
 def prePrcoess_LabelEncoding(request):
     print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS LABEL ENCODING. NEED CODE")
-
+    if request.method == 'POST' and request.FILES['file']:
+        myfile = request.FILES['file']
+        labelEncod.encode2(myfile)
+    save_path = os.path.join(BASE_DIR, 'backend/labelEncoding_result.csv') 
+    with open(save_path, 'rb') as fh:
+        response = HttpResponse(fh.read(), content_type="text/csv")
+        response['Content-Disposition'] = 'inline; filename=' + os.path.basename(save_path)
+        return response
     return Http404
 
 def prePrcoess_OneHotEncoding(request, column_name):
@@ -179,9 +157,9 @@ def prePrcoess_OneHotEncoding(request, column_name):
     if request.method == 'POST' and request.FILES['file']:
         myfile = request.FILES['file']
         print(column_name)
-        One_Hot.preProcessing(column_name, myfile)
+        One_Hot.preProcessing2(column_name, myfile)
     
-    save_path = os.path.join(BASE_DIR, 'backend/one_hot_result.csv') 
+    save_path = os.path.join(BASE_DIR, 'backend/oneHot_result.csv') 
     with open(save_path, 'rb') as fh:
         response = HttpResponse(fh.read(), content_type="text/csv")
         response['Content-Disposition'] = 'inline; filename=' + os.path.basename(save_path)
@@ -189,7 +167,47 @@ def prePrcoess_OneHotEncoding(request, column_name):
         
     return Http404
 
-def preProcess_ReplaceW(request):
-    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS REPLACE W. NEED CODE")
+def prePrcoess_ReplaceW(request, replace_rows, from_word, to_word):
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS REPLACE W")
+    if request.method == 'POST' and request.FILES['file']:
+        myfile = request.FILES['file']
+        print(column_name)
+        replaceW.replaceWord2(myfile, replace_rows, from_word, to_word)
+    
+    save_path = os.path.join(BASE_DIR, 'backend/replaceW_result.csv') 
+    with open(save_path, 'rb') as fh:
+        response = HttpResponse(fh.read(), content_type="text/csv")
+        response['Content-Disposition'] = 'inline; filename=' + os.path.basename(save_path)
+        return response
+        
+    return Http404
 
+
+
+@csrf_exempt
+def prePrcoess_DeleteRow(request, d_rows):
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS DELETE ROW")
+
+    if request.method == 'POST' and request.FILES['file']:
+        myfile = request.FILES['file']
+        Delete_Row.deleteRow2(d_rows, myfile)
+    save_path = os.path.join(BASE_DIR, 'backend/deleteRow_result.csv') 
+    with open(save_path, 'rb') as fh:
+        response = HttpResponse(fh.read(), content_type="text/csv")
+        response['Content-Disposition'] = 'inline; filename=' + os.path.basename(save_path)
+        return response
+    return Http404
+
+@csrf_exempt
+def prePrcoess_DeleteCol(request, d_cols):
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS DELETE COL")
+
+    if request.method == 'POST' and request.FILES['file']:
+        myfile = request.FILES['file']
+        Delete_Col.deleteCol2(d_cols, myfile)
+    save_path = os.path.join(BASE_DIR, 'backend/deleteCol_result.csv') 
+    with open(save_path, 'rb') as fh:
+        response = HttpResponse(fh.read(), content_type="text/csv")
+        response['Content-Disposition'] = 'inline; filename=' + os.path.basename(save_path)
+        return response
     return Http404

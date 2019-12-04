@@ -1,5 +1,7 @@
 import React from "react";
 import axios from "axios";
+import firebase from "../common/firebase";
+
 import {
   Button,
   ModalHeader,
@@ -103,6 +105,43 @@ export default class extends React.Component {
     this.setState({ paramNum: event.target.value });
   }
 
+
+  handleUpload = () => {
+    let message = this.state.outputCsv;
+
+    // console.log(this.state.imgSrc);
+    // console.log(message);
+
+    const storage = firebase.storage().ref();
+    const user = firebase.auth().currentUser.uid;
+    var tempDate = new Date();
+    var date =
+      tempDate.getFullYear() +
+      " " +
+      (tempDate.getMonth() + 1) +
+      " " +
+      tempDate.getDate() +
+      " " +
+      tempDate.getHours() +
+      ":" +
+      tempDate.getMinutes() +
+      ":" +
+      tempDate.getSeconds();
+
+    var fileName = user + "/" + date + "_Preporcess_data.csv";
+    const uploadTastk = storage
+      .child(fileName)
+      .putString(message);
+    uploadTastk.then(
+      response => {
+        console.log("file upload success");
+      },
+      failedReason => {
+        console.log("file upload failed");
+      }
+    );
+  };
+
   render() {
     const { post } = this.props;
 
@@ -133,7 +172,16 @@ export default class extends React.Component {
                   >
                     Download me
                   </CSVLink>
+                  <div className="text-right">
+                    <button
+                      className="btn btn-secondary btn-sm"
+                      onClick={this.handleUpload}
+                    >
+                      {" "}
+                      Save{" "}
+                    </button>
                 </div>
+              </div>
               ) : null}
             </div>
           </div>
@@ -179,6 +227,15 @@ export default class extends React.Component {
                   >
                     Download me
                   </CSVLink>
+                  <div className="text-right">
+                    <button
+                      className="btn btn-secondary btn-sm"
+                      onClick={this.handleUpload}
+                    >
+                      {" "}
+                      Save{" "}
+                    </button>
+                </div>
                 </div>
               ) : null}
             </div>
@@ -267,6 +324,15 @@ export default class extends React.Component {
                       <button className="btn btn-info">Download me</button>
                     </div>
                   </CSVLink>
+                  <div className="text-right">
+                    <button
+                      className="btn btn-secondary btn-sm"
+                      onClick={this.handleUpload}
+                    >
+                      {" "}
+                      Save{" "}
+                    </button>
+                </div>
                 </div>
               ) : null}
             </div>

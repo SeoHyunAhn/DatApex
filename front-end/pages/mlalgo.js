@@ -129,9 +129,9 @@ export default class extends React.Component {
     var tempDate = new Date();
     var date =
       tempDate.getFullYear() +
-      "-" +
+      " " +
       (tempDate.getMonth() + 1) +
-      "-" +
+      " " +
       tempDate.getDate() +
       " " +
       tempDate.getHours() +
@@ -140,7 +140,7 @@ export default class extends React.Component {
       ":" +
       tempDate.getSeconds();
 
-    var imgName = user + "_" + date + "_image.png";
+    var imgName = user + "/" + date + "_ML_image.png";
     const uploadTastk = firebase
       .storage()
       .ref()
