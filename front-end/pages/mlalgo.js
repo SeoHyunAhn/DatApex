@@ -122,14 +122,10 @@ export default class extends React.Component {
 
   handleUpload = () => {
     const { imgSrc } = this.state;
+    
     let message = this.state.imgSrc.substring(22);
-
-    // console.log(this.state.imgSrc);
-    // console.log(message);
-
     const storage = firebase.storage().ref();
     
-
     const uploadTastk = firebase.storage().ref().child('image.png').putString(message, 'base64', {contentType:'image/png'})
     uploadTastk.then(
         ( response ) => {
