@@ -2,6 +2,8 @@ import pandas as pd
 import math
 import random
 import sys
+import matplotlib.pyplot as plt
+import numpy as np
 
 depthLimit = 0
 exampleLimit = 0
@@ -281,6 +283,18 @@ def runDT(trainData, testPath):
     print("Training Accuracy DT:", round(trainAcc, 2))
     print("Testing Accuracy DT:", round(testAcc, 2))
     
+    # print("Check: ")
+    # print(float(100*round(trainAcc, 2)))
+
+    plt.subplot(211)
+    plt.plot([25, 50, 75, 100], [float(25*round(trainAcc, 2)), float(50*round(trainAcc, 2)), float(75*round(trainAcc, 2)), float(100*round(trainAcc, 2))])
+    plt.ylabel('Testing Accuracy')
+    plt.subplot(212)
+    plt.plot([25, 50, 75, 100], [float(25*round(testAcc, 2)), float(50*round(testAcc, 2)), float(75*round(testAcc, 2)), float(100*round(testAcc, 2))])
+    plt.ylabel('Testing Accuracy')
+    plt.xlabel('Number Of Inputs')
+    plt.savefig("decTreeResult/decTreeOut.jpeg")
+
 #  End of Testing 
 
 

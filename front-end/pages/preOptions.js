@@ -3,14 +3,16 @@ import Layout from "../components/layout";
 import { Link, Router } from "../routes";
 
 const styleCard = {
-  marginBottom: "10px"
+  marginBottom: "10px",
+  width: 525,
+  height: 450
 };
 
 class PreOptions extends Component {
   render() {
     return (
       <>
-        <h1>PreOptions</h1>
+        <h1>Preprocessing Options</h1>
         <hr></hr>
         <div className="container-fluid">
           <div className="row">
@@ -71,8 +73,8 @@ class PreOptions extends Component {
                 <div className="card-body">
                   <h5 className="card-title">Explanation: </h5>
                   <p className="card-text">
-                    Remove some information from row/column that is not needed
-                    for ML
+                    Delete the specified rows & columns from the dataset.
+                    Use this for deleting rows & columns which are irrelevant for your purposes.
                   </p>
                   <Link route="preproc" params={{ path: "delete-rc" }}>
                     <a className="btn btn-primary">Go somewhere</a>
@@ -86,7 +88,8 @@ class PreOptions extends Component {
                 <div className="card-body">
                   <h5 className="card-title">Explanation: </h5>
                   <p className="card-text">
-                    Remove white spaces for better processing of ML
+                    Replace the specified word with another word, wherever the former occurs in the dataset.
+                    This is especially helpful for removing words that are not readable to the ML algorithms.
                   </p>
                   <Link route="preproc" params={{ path: "replaceW" }}>
                     <a className="btn btn-primary">Go somewhere</a>

@@ -145,7 +145,7 @@ class Layout extends React.Component {
                     aria-haspopup="true"
                     aria-expanded="false"
                   >
-                    Pre Process Data
+                    Preprocessing
                   </a>
                   <div
                     className="dropdown-menu"
@@ -181,7 +181,7 @@ class Layout extends React.Component {
                     aria-haspopup="true"
                     aria-expanded="false"
                   >
-                    ML Algorithm
+                    Machine Learning
                   </a>
                   <div
                     className="dropdown-menu"
