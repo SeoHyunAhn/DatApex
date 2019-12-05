@@ -3,7 +3,7 @@ import Layout from "../components/layout";
 import { Link, Router } from "../routes";
 
 const styleCard = {
-  marginBottom: "10px", width: 525, height: 550
+  marginBottom: "10px"
 };
 
 class PreOptions extends Component {
