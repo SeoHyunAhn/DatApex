@@ -140,11 +140,12 @@ def dataMining_DecisionTree(request, depth_limit, example_limit):
 
 #     return HttpResponse(str, content_type="image/png")
 
+@csrf_exempt
 def prePrcoess_LabelEncoding(request, encList):
     print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS LABEL ENCODING. NEED CODE")
     if request.method == 'POST' and request.FILES['file']:
         myfile = request.FILES['file']
-        labelEncod.encode2(myfile, encList)
+        labelEncod.encode2(encList,myfile)
     save_path = os.path.join(BASE_DIR, 'backend/labelEncoding_result.csv') 
     with open(save_path, 'rb') as fh:
         response = HttpResponse(fh.read(), content_type="text/csv")
@@ -152,6 +153,7 @@ def prePrcoess_LabelEncoding(request, encList):
         return response
     return Http404
 
+@csrf_exempt
 def prePrcoess_OneHotEncoding(request, column_name):
     print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>One hot encoding")
     if request.method == 'POST' and request.FILES['file']:
@@ -167,6 +169,7 @@ def prePrcoess_OneHotEncoding(request, column_name):
         
     return Http404
 
+@csrf_exempt
 def prePrcoess_ReplaceW(request, replace_rows, from_word, to_word):
     print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS REPLACE W")
     if request.method == 'POST' and request.FILES['file']:

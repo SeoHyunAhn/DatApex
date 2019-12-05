@@ -12,11 +12,7 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/preOptions": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/preproc": [
+    "/next/dist/pages/_error": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
