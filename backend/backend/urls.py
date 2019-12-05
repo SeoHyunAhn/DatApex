@@ -23,6 +23,6 @@ urlpatterns = [
     path('preProc/ReplaceW/<str:replace_rows>/<str:from_word>/<str:to_word>', views.prePrcoess_ReplaceW),
     path('preProc/delRow/<str:d_rows>', views.prePrcoess_DeleteRow, name='delete_row'),
     path('preProc/delCol/<str:d_cols>', views.prePrcoess_DeleteCol, name='delete_col'),
-    path('preProc/SelectCertain/<str:col_names>', views.prePrcoess_Certain),
+    path('preProc/SelectCertain/<str:col_names>', views.prePrcoess_selectCertain),
     # path('test/', views.test_url),
 ]
