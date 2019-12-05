@@ -12,11 +12,7 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/mlOptions": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/mlalgo": [
+    "/next/dist/pages/_error": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
