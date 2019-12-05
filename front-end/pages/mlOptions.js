@@ -132,13 +132,13 @@ class MlOptions extends Component {
                     An ensemble method is one that combines predictions from
                     multiple machine learning algorithms together to make more
                     accurate predictions than any individual method.
-                    <br />
+                    {/* <br /> */}
                     This method is especially helpful in reducing the variance
                     for algorithms which tend to have really high variance.
                     Bagging involves applying the Bootstrapping procedure to a
                     high-variance machine learning algorithm (typically decision
                     trees).
-                    <br />
+                    {/* <br />
                     <br />
                     Let’s assume we have a sample dataset of 1000 instances & we
                     are using the CART algorithm. Bagging would work as follows:
@@ -148,7 +148,7 @@ class MlOptions extends Component {
                     <br />- Given a new dataset, calculate the average
                     prediction from each model.
                     <br />
-                    <br />
+                    <br /> */}
                     Bagging may be used for either classification or regression
                     problems.
                   </p>
@@ -240,6 +240,25 @@ class MlOptions extends Component {
                     node and each level.
                   </p>
                   <Link route="mlalgo" params={{ path: "tree" }}>
+                    <a className="btn btn-primary">Go somewhere</a>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="col-6">
+              <div className="card" style={{marginBottom: "10px", width: 525, height: 850}}>
+                <div className="card-header">Radom Forest algorithm</div>
+                <div className="card-body">
+                  <img
+                    className="card-img"
+                    variant="top"
+                    src="../static/tree.png"
+                  />
+                  <h5 className="card-title">Explanation: </h5>
+                  <p className="card-text">
+
+                  </p>
+                  <Link route="mlalgo" params={{ path: "forest" }}>
                     <a className="btn btn-primary">Go somewhere</a>
                   </Link>
                 </div>

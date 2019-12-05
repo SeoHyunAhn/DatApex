@@ -9,7 +9,9 @@ const posts = [
   { path: "svm", title: "Support Vector Machine algorithm" },
   { path: "bag", title: "Bagging algorithm" },
   { path: "clus", title: "Clustering algorithm" },
-  { path: "tree", title: "Decision tree algorithm" }
+  { path: "tree", title: "Decision tree algorithm" },
+  { path: "forest", title: "Random Forest algorithm" }
+  
 ];
 import Layout from "../components/layout";
 
@@ -36,7 +38,8 @@ export default class extends React.Component {
       maxit: "",
       depthlimit: "",
       exlimit: "",
-      k: ""
+      k: "", 
+      numTree: ""
     };
     this.path = "";
   }
@@ -90,6 +93,11 @@ export default class extends React.Component {
       backend_url = "http://localhost:8000/dataMining/DecisionTree/";
       backend_url =
         backend_url + this.state.depthlimit + "/" + this.state.exlimit;
+      console.log(backend_url);
+    }else if (this.path == "forest") {
+      backend_url = "http://localhost:8000/dataMining/RandomForest/";
+      backend_url =
+        backend_url + this.state.depthlimit + "/" + this.state.exlimit+"/"+this.state.numTree;
       console.log(backend_url);
     }
     axios
@@ -516,37 +524,112 @@ export default class extends React.Component {
           </div>
         </>
       );
-    }
-    return (
-      <>
-        <h1>{post.title}</h1>
-        <hr></hr>
-        <div className="row">
-          <div className="col-6">
-            <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
-          </div>
-          <div className="col-6">
-            {this.state.isImageReady ? (
-              <>
-                <div className="text-right">
-                  <button
-                    id="save-button"
-                    className="btn btn-secondary btn-sm"
-                    onClick={this.handleUpload}
-                  >
+    } else if (this.path == "forest") {
+      return (
+        <>
+          <h1>{post.title}</h1>
+          <hr></hr>
+          <div className="row">
+            <div className="col-6">
+              <form>
+                <div className="form-group row">
+                  <label className="col-sm-2 col-form-label">
                     {" "}
-                    Save{" "}
-                  </button>
+                    Depth limit:{" "}
+                  </label>
+                  <div className="col-sm-10">
+                    <input
+                      className="form-control"
+                      placeholder="3"
+                      type="text"
+                      name="depthlimit"
+                      onChange={this.onChange.bind(this)}
+                    />
+                  </div>
+                  <label className="col-sm-2 col-form-label">
+                    {" "}
+                    Example Limit:{" "}
+                  </label>
+                  <div className="col-sm-10">
+                    <input
+                      className="form-control"
+                      placeholder="3"
+                      type="text"
+                      name="exlimit"
+                      onChange={this.onChange.bind(this)}
+                    />
+                  </div>
+                  <label className="col-sm-2 col-form-label">
+                    {" "}
+                    Number of Tree:{" "}
+                  </label>
+                  <div className="col-sm-10">
+                    <input
+                      className="form-control"
+                      placeholder="3"
+                      type="text"
+                      name="numTree"
+                      onChange={this.onChange.bind(this)}
+                    />
+                  </div>
                 </div>
-              </>
-            ) : (
-              <></>
-            )}
-            <div id="image-display"></div>
-            <img id="image-output" src={this.state.imgSrc}></img>
+                <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
+              </form>
+            </div>
+            <div className="col-6">
+              {this.state.isImageReady ? (
+                <>
+                  <div className="text-right">
+                    <button
+                      id="save-button"
+                      className="btn btn-secondary btn-sm"
+                      onClick={this.handleUpload}
+                    >
+                      {" "}
+                      Save{" "}
+                    </button>
+                  </div>
+                </>
+              ) : (
+                <></>
+              )}
+              <div id="image-display"></div>
+              <img id="image-output" src={this.state.imgSrc}></img>
+            </div>
           </div>
-        </div>
-      </>
-    );
+        </>
+      );
+    }
+    // return (
+    //   <>
+    //     <h1>{post.title}</h1>
+    //     <hr></hr>
+    //     <div className="row">
+    //       <div className="col-6">
+    //         <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
+    //       </div>
+    //       <div className="col-6">
+    //         {this.state.isImageReady ? (
+    //           <>
+    //             <div className="text-right">
+    //               <button
+    //                 id="save-button"
+    //                 className="btn btn-secondary btn-sm"
+    //                 onClick={this.handleUpload}
+    //               >
+    //                 {" "}
+    //                 Save{" "}
+    //               </button>
+    //             </div>
+    //           </>
+    //         ) : (
+    //           <></>
+    //         )}
+    //         <div id="image-display"></div>
+    //         <img id="image-output" src={this.state.imgSrc}></img>
+    //       </div>
+    //     </div>
+    //   </>
+    // );
   }
 }
