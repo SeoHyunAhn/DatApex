@@ -213,13 +213,13 @@ def prePrcoess_DeleteCol(request, d_cols):
     return Http404
 
 @csrf_exempt
-def prePrcoess_Certain(request, col_names):
+def prePrcoess_selectCertain(request, col_names):
     print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS SELECT CERTAIN")
 
     if request.method == 'POST' and request.FILES['file']:
         myfile = request.FILES['file']
-        selectCertain.deleteCertain(d_cols, myfile)
-    save_path = os.path.join(BASE_DIR, 'backend/deleteCol_result.csv') 
+        selectCertain.deleteCertain2(col_names, myfile)
+    save_path = os.path.join(BASE_DIR, 'backend/selectCertain_result.csv') 
     with open(save_path, 'rb') as fh:
         response = HttpResponse(fh.read(), content_type="text/csv")
         response['Content-Disposition'] = 'inline; filename=' + os.path.basename(save_path)
