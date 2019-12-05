@@ -17,6 +17,7 @@ urlpatterns = [
     path('dataMining/Clustering/<str:num_clusters>', views.dataMining_Clustering),
     path('dataMining/Bagging/<str:depth_limit>/<str:example_limit>', views.dataMining_Bagging),
     path('dataMining/DecisionTree/<str:depth_limit>/<str:example_limit>', views.dataMining_DecisionTree),
+    path('dataMining/RandomForest/<str:depth_limit>/<str:example_limit>/<str:num_tree>', views.dataMining_RandomForest),
     # path('dataMining/DecisionTree/', views.dataMining_RandomForest),
     path('preProc/LabelEncoding/<str:encList>', views.prePrcoess_LabelEncoding),#!!!!!!!
     path('preProc/OneHotEncoding/<str:column_name>', views.prePrcoess_OneHotEncoding),

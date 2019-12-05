@@ -174,7 +174,6 @@ def prePrcoess_ReplaceW(request, replace_rows, from_word, to_word):
     print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS REPLACE W")
     if request.method == 'POST' and request.FILES['file']:
         myfile = request.FILES['file']
-        print(column_name)
         replaceW.replaceWord2(myfile, replace_rows, from_word, to_word)
     
     save_path = os.path.join(BASE_DIR, 'backend/replaceW_result.csv') 
