@@ -63820,23 +63820,22 @@ function (_Component) {
           },
           __self: this
         }, __jsx("td", {
-          scope: "row",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 60
+            lineNumber: 61
           },
           __self: this
         }, this.state.dateOfFile[i]), __jsx("td", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 61
+            lineNumber: 62
           },
           __self: this
         }, this.state.type[i]), __jsx("td", {
           className: "w-25 text-center",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 62
+            lineNumber: 63
           },
           __self: this
         }, this.state.type[i] !== "ML" ? __jsx("a", {
@@ -63892,14 +63891,14 @@ function (_Component) {
         },
         __self: this
       }, __jsx("div", {
-        className: "col-12",
+        className: "col-12 table-responsive",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 86
         },
         __self: this
       }, __jsx("table", {
-        className: "table",
+        className: "table table-bordered table-hover",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 87
@@ -63922,27 +63921,27 @@ function (_Component) {
         scope: "col",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90
+          lineNumber: 91
         },
         __self: this
       }, "Date"), __jsx("th", {
         scope: "col",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 91
+          lineNumber: 92
         },
         __self: this
       }, "Type"), __jsx("th", {
         scope: "col",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 92
+          lineNumber: 93
         },
         __self: this
       }, "File Result"))), __jsx("tbody", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 95
+          lineNumber: 96
         },
         __self: this
       }, items))))));
