@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets          # add this
 from django.views.decorators.csrf import csrf_exempt
-from . import exploration, clustering, svm, logisticReg, nbc, decisionTree, baggingTree, randomForest,One_Hot, Delete_Row,Delete_Col, labelEncod, replaceW
+from . import exploration,selectCertain, clustering, svm, logisticReg, nbc, decisionTree, baggingTree, randomForest,One_Hot, Delete_Row,Delete_Col, labelEncod, replaceW
 import os
 import csv
 from backend.settings import BASE_DIR
@@ -205,6 +205,20 @@ def prePrcoess_DeleteCol(request, d_cols):
     if request.method == 'POST' and request.FILES['file']:
         myfile = request.FILES['file']
         Delete_Col.deleteCol2(d_cols, myfile)
+    save_path = os.path.join(BASE_DIR, 'backend/deleteCol_result.csv') 
+    with open(save_path, 'rb') as fh:
+        response = HttpResponse(fh.read(), content_type="text/csv")
+        response['Content-Disposition'] = 'inline; filename=' + os.path.basename(save_path)
+        return response
+    return Http404
+
+@csrf_exempt
+def prePrcoess_Certain(request, col_names):
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS SELECT CERTAIN")
+
+    if request.method == 'POST' and request.FILES['file']:
+        myfile = request.FILES['file']
+        selectCertain.deleteCertain(d_cols, myfile)
     save_path = os.path.join(BASE_DIR, 'backend/deleteCol_result.csv') 
     with open(save_path, 'rb') as fh:
         response = HttpResponse(fh.read(), content_type="text/csv")

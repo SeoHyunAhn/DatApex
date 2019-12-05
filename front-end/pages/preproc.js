@@ -73,6 +73,7 @@ export default class extends React.Component {
     } else if (this.path == "replaceW") {
       link =
         "preProc/ReplaceW" +
+        "/" +
         this.state.paramNum +
         "/" +
         this.state.changeWord +
@@ -80,6 +81,7 @@ export default class extends React.Component {
         this.state.toWord;
     } else if (this.path == "certain") {
       // selected params of each on of them
+        link = "preProc/SelectCertain/" + this.state.paramNum;
     }
 
     axios
@@ -459,6 +461,61 @@ export default class extends React.Component {
       // List the params of each on of them
     } else if (this.path == "certain") {
       // List the params of each on of them
+      return (
+        <>
+          <h1>{post.title}</h1>
+          <hr></hr>
+
+          <div className="row">
+            <div className="col-6">
+              <form>
+                <div className="form-group row">
+                  <label className="col-sm-2 col-form-label">
+                    {" "}
+                    Name of the Column:{" "}
+                  </label>
+                  <div className="col-sm-10">
+                    <input
+                      className="form-control"
+                      placeholder="City, State"
+                      type="text"
+                      name="numRow"
+                      onChange={this.onChange.bind(this)}
+                    />
+                  </div>
+                </div>
+                <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
+              </form>
+            </div>
+            <div className="col-6">
+              <div id="result-display"></div>
+              {this.state.showResults ? (
+                <div id="download-csv">
+                  <CSVLink
+                    data={this.state.outputCsv}
+                    filename="data.csv"
+                    className="hidden"
+                    target="_blank"
+                  >
+                    <div className="text-center">
+                      <button className="btn btn-info">Download me</button>
+                    </div>
+                  </CSVLink>
+                  <div className="text-right">
+                    <button
+                      className="btn btn-secondary btn-sm"
+                      onClick={this.handleUpload}
+                    >
+                      {" "}
+                      Save{" "}
+                    </button>
+                  </div>
+                </div>
+              ) : null}
+            </div>
+          </div>
+        </>
+      );
     }
   }
 }
