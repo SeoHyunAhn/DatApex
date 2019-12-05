@@ -11,8 +11,6 @@ router = routers.DefaultRouter()                      # add this
 
 urlpatterns = [
     path('upload/csv/', views.upload_csv, name='upload_csv'),
-    path('preProc/delRow/<str:d_rows>', views.prePrcoess_DeleteRow, name='delete_row'),
-    path('preProc/delCol/<str:d_cols>', views.prePrcoess_DeleteCol, name='delete_col'),
     path('dataMining/NaiveBayes/', views.dataMining_NaiveBayes, name='naive_bayes'),
     path('dataMining/SVM/<str:step_size>/<str:lmda>/<str:num_iteration>', views.dataMining_SVM),
     path('dataMining/LogisticRegression/<str:step_size>/<str:lmda>/<str:num_iteration>', views.dataMining_LogisticRegression),
@@ -23,5 +21,8 @@ urlpatterns = [
     path('preProc/LabelEncoding/<str:encList>', views.prePrcoess_LabelEncoding),#!!!!!!!
     path('preProc/OneHotEncoding/<str:column_name>', views.prePrcoess_OneHotEncoding),
     path('preProc/ReplaceW/<str:replace_rows>/<str:from_word>/<str:to_word>', views.prePrcoess_ReplaceW),
+    path('preProc/delRow/<str:d_rows>', views.prePrcoess_DeleteRow, name='delete_row'),
+    path('preProc/delCol/<str:d_cols>', views.prePrcoess_DeleteCol, name='delete_col'),
+    path('preProc/SelectCertain/<str:col_names>', views.prePrcoess_Certain),
     # path('test/', views.test_url),
 ]

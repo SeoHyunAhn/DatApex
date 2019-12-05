@@ -16,7 +16,7 @@ class MlOptions extends Component {
         <div className="container-fluid">
           <div className="row">
             <div className="col-6">
-              <div className="card" style={{marginBottom: "10px", width: 525, height: 700}}>
+              <div className="card" style={{styleCard}}>
                 <div className="card-header">Naive Bayes algorithm</div>
                 <div className="card-body">
                   <img
@@ -55,7 +55,7 @@ class MlOptions extends Component {
               </div>
             </div>
             <div className="col-6">
-              <div className="card" style={{marginBottom: "10px", width: 525, height: 700}}>
+              <div className="card" style={{styleCard}}>
                 <div className="card-header">Logistic Regression algorithm</div>
                 <div className="card-body">
                   <img
@@ -85,7 +85,7 @@ class MlOptions extends Component {
               </div>
             </div>
             <div className="col-6">
-              <div className="card" style={{marginBottom: "10px", width: 525, height: 980}}>
+              <div className="card" style={{styleCard}}>
                 <div className="card-header">
                   Support Vector Machine algorithm
                 </div>
@@ -118,7 +118,7 @@ class MlOptions extends Component {
               </div>
             </div>
             <div className="col-6">
-              <div className="card" style={{marginBottom: "10px", width: 525, height: 980}}>
+              <div className="card" style={{styleCard}}>
                 <div className="card-header">Bagging algorithm</div>
                 <div className="card-body">
                   <img
@@ -159,7 +159,7 @@ class MlOptions extends Component {
               </div>
             </div>
             <div className="col-6">
-              <div className="card" style={{marginBottom: "10px", width: 525, height: 850}}>
+              <div className="card" style={{styleCard}}>
                 <div className="card-header">K-means Clustering algorithm</div>
                 <div className="card-body">
                   <img
@@ -201,7 +201,7 @@ class MlOptions extends Component {
               </div>
             </div>
             <div className="col-6">
-              <div className="card" style={{marginBottom: "10px", width: 525, height: 850}}>
+              <div className="card" style={{styleCard}}>
                 <div className="card-header">Decision Tree algorithm</div>
                 <div className="card-body">
                   <img
