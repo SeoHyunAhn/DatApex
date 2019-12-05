@@ -140,11 +140,11 @@ def dataMining_DecisionTree(request, depth_limit, example_limit):
 
 #     return HttpResponse(str, content_type="image/png")
 
-def prePrcoess_LabelEncoding(request):
+def prePrcoess_LabelEncoding(request, encList):
     print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS LABEL ENCODING. NEED CODE")
     if request.method == 'POST' and request.FILES['file']:
         myfile = request.FILES['file']
-        labelEncod.encode2(myfile)
+        labelEncod.encode2(myfile, encList)
     save_path = os.path.join(BASE_DIR, 'backend/labelEncoding_result.csv') 
     with open(save_path, 'rb') as fh:
         response = HttpResponse(fh.read(), content_type="text/csv")

@@ -41,7 +41,9 @@ export default class extends React.Component {
       outputCsv: "",
       selectedOption: "",
       paramNum: "",
-      showResults: false
+      showResults: false,
+      changeWord: "",
+      toWord: ""
     };
     this.path = "";
   }
@@ -58,7 +60,7 @@ export default class extends React.Component {
     console.log(this.state.selectedOption);
     if (this.path == "label") {
       //  selected params of each on of them
-      link = "preProc/LabelEncoding/";
+      link = "preProc/LabelEncoding/" + this.state.paramNum;
     } else if (this.path == "one-hot") {
       link = "preProc/OneHotEncoding/" + this.state.paramNum;
     } else if (this.path == "delete-rc") {
@@ -69,7 +71,13 @@ export default class extends React.Component {
         link = "preProc/delCol/" + this.state.paramNum;
       }
     } else if (this.path == "replaceW") {
-      link = "preProc/ReplaceW" + this.state.paramNum;
+      link =
+        "preProc/ReplaceW" +
+        this.state.paramNum +
+        "/" +
+        this.state.changeWord +
+        "/" +
+        this.state.toWord;
     } else if (this.path == "certain") {
       // selected params of each on of them
     }
@@ -102,9 +110,14 @@ export default class extends React.Component {
   }
   onChange(event) {
     console.log(event.target);
-    this.setState({ paramNum: event.target.value });
+    console.log(event.target.name);
+    var param = event.target.name;
+    if (param == "toWord" || param == "changeWord") {
+      this.setState({ [event.target.name]: event.target.value });
+    } else {
+      this.setState({ paramNum: event.target.value });
+    }
   }
-
 
   handleUpload = () => {
     let message = this.state.outputCsv;
@@ -117,9 +130,9 @@ export default class extends React.Component {
     var tempDate = new Date();
     var date =
       tempDate.getFullYear() +
-      " " +
+      "-" +
       (tempDate.getMonth() + 1) +
-      " " +
+      "-" +
       tempDate.getDate() +
       " " +
       tempDate.getHours() +
@@ -129,9 +142,7 @@ export default class extends React.Component {
       tempDate.getSeconds();
 
     var fileName = user + "/" + date + "_Preporcess_data.csv";
-    const uploadTastk = storage
-      .child(fileName)
-      .putString(message);
+    const uploadTastk = storage.child(fileName).putString(message);
     uploadTastk.then(
       response => {
         console.log("file upload success");
@@ -157,6 +168,22 @@ export default class extends React.Component {
           <div className="row">
             <div className="col-6">
               <form>
+              <div className="form-group row">
+                  <label className="col-sm-2 col-form-label">
+                    {" "}
+                    Encoding list:{" "}
+                  </label>
+                  <div className="col-sm-10">
+                    <input
+                      className="form-control"
+                      placeholder="1,2,3"
+                      type="text"
+                      name="numCol"
+                      onChange={this.onChange.bind(this)}
+                    />
+                  </div>
+                </div>
+
                 <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
               </form>
             </div>
@@ -180,8 +207,8 @@ export default class extends React.Component {
                       {" "}
                       Save{" "}
                     </button>
+                  </div>
                 </div>
-              </div>
               ) : null}
             </div>
           </div>
@@ -235,14 +262,103 @@ export default class extends React.Component {
                       {" "}
                       Save{" "}
                     </button>
-                </div>
+                  </div>
                 </div>
               ) : null}
             </div>
           </div>
         </>
       );
-    } else if (this.path == "delete-rc" || this.path == "replaceW") {
+    } else if (this.path == "replaceW") {
+      return (
+        <>
+          <h1>{post.title}</h1>
+          <hr></hr>
+
+          <div className="row">
+            <div className="col-6">
+              <form>
+                <div className="form-group row">
+                  <label className="col-sm-2 col-form-label">
+                    {" "}
+                    Number of Cols:{" "}
+                  </label>
+                  <div className="col-sm-10">
+                    <input
+                      className="form-control"
+                      placeholder="3"
+                      type="text"
+                      name="numCol"
+                      pattern="[0-9],*"
+                      onChange={this.onChange.bind(this)}
+                    />
+                  </div>
+                </div>
+                <div className="form-group row">
+                  <label className="col-sm-2 col-form-label">
+                    {" "}
+                    Change from Word:{" "}
+                  </label>
+                  <div className="col-sm-10">
+                    <input
+                      className="form-control"
+                      placeholder="Sample word"
+                      type="text"
+                      name="changeWord"
+                      pattern="[0-9],*"
+                      onChange={this.onChange.bind(this)}
+                    />
+                  </div>
+                  <div className="form-group row">
+                    <label className="col-sm-2 col-form-label">
+                      {" "}
+                      Change To Word:{" "}
+                    </label>
+                    <div className="col-sm-10">
+                      <input
+                        className="form-control"
+                        placeholder="Change to word"
+                        type="text"
+                        name="toWord"
+                        pattern="[0-9],*"
+                        onChange={this.onChange.bind(this)}
+                      />
+                    </div>
+                  </div>
+                </div>
+                <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
+              </form>
+            </div>
+            <div className="col-6">
+              <div id="result-display"></div>
+              {this.state.showResults ? (
+                <div id="download-csv">
+                  <CSVLink
+                    data={this.state.outputCsv}
+                    filename="data.csv"
+                    className="hidden"
+                    target="_blank"
+                  >
+                    <div className="text-center">
+                      <button className="btn btn-info">Download me</button>
+                    </div>
+                  </CSVLink>
+                  <div className="text-right">
+                    <button
+                      className="btn btn-secondary btn-sm"
+                      onClick={this.handleUpload}
+                    >
+                      {" "}
+                      Save{" "}
+                    </button>
+                  </div>
+                </div>
+              ) : null}
+            </div>
+          </div>
+        </>
+      );
+    } else if (this.path == "delete-rc") {
       return (
         <>
           <h1>{post.title}</h1>
@@ -332,7 +448,7 @@ export default class extends React.Component {
                       {" "}
                       Save{" "}
                     </button>
-                </div>
+                  </div>
                 </div>
               ) : null}
             </div>

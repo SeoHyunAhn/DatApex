@@ -129,9 +129,9 @@ export default class extends React.Component {
     var tempDate = new Date();
     var date =
       tempDate.getFullYear() +
-      " " +
+      "-" +
       (tempDate.getMonth() + 1) +
-      " " +
+      "-" +
       tempDate.getDate() +
       " " +
       tempDate.getHours() +
@@ -149,6 +149,8 @@ export default class extends React.Component {
     uploadTastk.then(
       response => {
         console.log("image upload success");
+        var saveButton = document.getElementById("save-button");
+        saveButton.innerText = "ALL SAVED!";
       },
       failedReason => {
         console.log("image upload failed");
@@ -177,6 +179,7 @@ export default class extends React.Component {
                 <>
                   <div className="text-right">
                     <button
+                      id="save-button"
                       className="btn btn-secondary btn-sm"
                       onClick={this.handleUpload}
                     >
@@ -250,6 +253,7 @@ export default class extends React.Component {
                 <>
                   <div className="text-right">
                     <button
+                      id="save-button"
                       className="btn btn-secondary btn-sm"
                       onClick={this.handleUpload}
                     >
@@ -323,6 +327,7 @@ export default class extends React.Component {
                 <>
                   <div className="text-right">
                     <button
+                      id="save-button"
                       className="btn btn-secondary btn-sm"
                       onClick={this.handleUpload}
                     >
@@ -385,6 +390,7 @@ export default class extends React.Component {
                 <>
                   <div className="text-right">
                     <button
+                      id="save-button"
                       className="btn btn-secondary btn-sm"
                       onClick={this.handleUpload}
                     >
@@ -433,6 +439,7 @@ export default class extends React.Component {
                 <>
                   <div className="text-right">
                     <button
+                      id="save-button"
                       className="btn btn-secondary btn-sm"
                       onClick={this.handleUpload}
                     >
@@ -494,6 +501,7 @@ export default class extends React.Component {
                 <>
                   <div className="text-right">
                     <button
+                      id="save-button"
                       className="btn btn-secondary btn-sm"
                       onClick={this.handleUpload}
                     >
@@ -525,6 +533,7 @@ export default class extends React.Component {
               <>
                 <div className="text-right">
                   <button
+                    id="save-button"
                     className="btn btn-secondary btn-sm"
                     onClick={this.handleUpload}
                   >

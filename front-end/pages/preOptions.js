@@ -73,8 +73,8 @@ class PreOptions extends Component {
                 <div className="card-body">
                   <h5 className="card-title">Explanation: </h5>
                   <p className="card-text">
-                    Delete the specified rows & columns from the dataset.
-                    Use this for deleting rows & columns which are irrelevant for your purposes.
+                  Delete Row algorithm deletes the row with the specified index from the dataset table.<br></br>
+                  Delete Column algorithm deletes the column with the specified index from the dataset table.
                   </p>
                   <Link route="preproc" params={{ path: "delete-rc" }}>
                     <a className="btn btn-primary">Go somewhere</a>
@@ -88,8 +88,7 @@ class PreOptions extends Component {
                 <div className="card-body">
                   <h5 className="card-title">Explanation: </h5>
                   <p className="card-text">
-                    Replace the specified word with another word, wherever the former occurs in the dataset.
-                    This is especially helpful for removing words that are not readable to the ML algorithms.
+                  The Replace W algorithm replaces a word with another specified word.
                   </p>
                   <Link route="preproc" params={{ path: "replaceW" }}>
                     <a className="btn btn-primary">Go somewhere</a>
