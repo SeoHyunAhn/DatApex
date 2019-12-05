@@ -119,11 +119,8 @@ export default class extends React.Component {
 
   handleUpload = () => {
     const { imgSrc } = this.state;
+    
     let message = this.state.imgSrc.substring(22);
-
-    // console.log(this.state.imgSrc);
-    // console.log(message);
-
     const storage = firebase.storage().ref();
     const user = firebase.auth().currentUser.uid;
     var tempDate = new Date();
