@@ -20,7 +20,7 @@ urlpatterns = [
     # path('dataMining/DecisionTree/', views.dataMining_RandomForest),
     path('preProc/LabelEncoding/<str:encList>', views.prePrcoess_LabelEncoding),#!!!!!!!
     path('preProc/OneHotEncoding/<str:column_name>', views.prePrcoess_OneHotEncoding),
-    path('preProc/ReplaceW/<str:replace_rows>/<str:from_word>/<str:to_word>', views.prePrcoess_ReplaceW),
+    path('preProc/ReplaceW/<str:column_name>/<str:from_word>/<str:to_word>', views.prePrcoess_ReplaceW),
     path('preProc/delRow/<str:d_rows>', views.prePrcoess_DeleteRow, name='delete_row'),
     path('preProc/delCol/<str:d_cols>', views.prePrcoess_DeleteCol, name='delete_col'),
     path('preProc/SelectCertain/<str:col_names>', views.prePrcoess_selectCertain),

@@ -94,10 +94,12 @@ def dataMining_Bagging(request, depth_limit, example_limit):
     print("WHY DO I NEED NUM TREE")
 
     if request.method == 'POST' and request.FILES['file']:
-        training_file = request.FILES['training_file']
-        testing_file = request.FILES['testing_file']
+        myfile = request.FILES['file']
 
-        baggingTree.runBT(training_file, testing_file, depth_limit, example_limi, num_trees)
+        save_path1 = os.path.join(BASE_DIR, 'backend/trainingSetT.csv') 
+        save_path2 = os.path.join(BASE_DIR, 'backend/testSetT.csv') 
+
+        baggingTree.runBT(save_path1, save_path2)
     
     save_path = os.path.join(BASE_DIR, 'backend/baggingTree_result.png') 
 
@@ -111,10 +113,12 @@ def dataMining_Bagging(request, depth_limit, example_limit):
 def dataMining_DecisionTree(request, depth_limit, example_limit):
     print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS DECISION TREEEE")
     if request.method == 'POST' and request.FILES['file']:
-        training_file = request.FILES['training_file']
-        testing_file = request.FILES['testing_file']
+        myfile = request.FILES['file']
 
-        decisionTree.runDT(training_file, testing_file, depth_limit, example_limit)
+        save_path1 = os.path.join(BASE_DIR, 'backend/trainingSetT.csv') 
+        save_path2 = os.path.join(BASE_DIR, 'backend/testSetT.csv') 
+        
+        decisionTree.runDT(save_path1, save_path2)
     
     save_path = os.path.join(BASE_DIR, 'backend/decisionTree_result.png') 
 
@@ -170,13 +174,13 @@ def prePrcoess_OneHotEncoding(request, column_name):
     return Http404
 
 @csrf_exempt
-def prePrcoess_ReplaceW(request, replace_rows, from_word, to_word):
+def prePrcoess_ReplaceW(request, column_name, from_word, to_word):
     print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS REPLACE W")
     if request.method == 'POST' and request.FILES['file']:
         myfile = request.FILES['file']
         print(column_name)
-        replaceW.replaceWord2(myfile, replace_rows, from_word, to_word)
-    
+        replaceW.replaceWord2(myfile, column_name, from_word, to_word)
+        
     save_path = os.path.join(BASE_DIR, 'backend/replaceW_result.csv') 
     with open(save_path, 'rb') as fh:
         response = HttpResponse(fh.read(), content_type="text/csv")
@@ -184,7 +188,6 @@ def prePrcoess_ReplaceW(request, replace_rows, from_word, to_word):
         return response
         
     return Http404
-
 
 
 @csrf_exempt

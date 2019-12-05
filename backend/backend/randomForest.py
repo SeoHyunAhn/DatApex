@@ -2,6 +2,10 @@ import pandas as pd
 import math
 import random
 import sys
+import matplotlib.pyplot as plt
+import numpy as np
+import os
+from backend.settings import BASE_DIR
 
 depthLimit = 0
 exampleLimit = 0
@@ -471,18 +475,26 @@ def runRF(trainData, testPath):
     print("Training Accuracy RF:", round(trainAcc, 2))
     print("Testing Accuracy DT:", round(testAcc, 2))
 
-
+    plt.subplot(211)
+    plt.plot([25, 50, 75, 100], [float(25*round(trainAcc, 2)), float(50*round(trainAcc, 2)), float(75*round(trainAcc, 2)), float(100*round(trainAcc, 2))])
+    plt.ylabel('Testing Accuracy')
+    plt.subplot(212)
+    plt.plot([25, 50, 75, 100], [float(25*round(testAcc, 2)), float(50*round(testAcc, 2)), float(75*round(testAcc, 2)), float(100*round(testAcc, 2))])
+    plt.ylabel('Testing Accuracy')
+    plt.xlabel('Number Of Inputs')
+    save_path = os.path.join(BASE_DIR, 'backend/randomForest_result.png') 
+    plt.savefig(save_path)
 
 
 if __name__ == '__main__':
     
     
-#     trainingDataFilename = "trainingSet.csv"
-#     testDataFilename = "testSet.csv"
-#     modelIdx = 3
+    trainingDataFilename = "trainingSetT.csv"
+    testDataFilename = "testSetT.csv"
+    modelIdx = 3
 
-    trainingDataFilename = sys.argv[1]
-    testDataFilename = sys.argv[2]
-    modelIdx = int(sys.argv[3])
-    
+#    trainingDataFilename = sys.argv[1]
+#    testDataFilename = sys.argv[2]
+#    modelIdx = int(sys.argv[3])
+
     runRF(trainingDataFilename, testDataFilename)

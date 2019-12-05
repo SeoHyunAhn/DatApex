@@ -2,6 +2,10 @@ import pandas as pd
 import math
 import random
 import sys
+import matplotlib.pyplot as plt
+import numpy as np
+import os
+from backend.settings import BASE_DIR
 
 depthLimit = 0
 exampleLimit = 0
@@ -281,21 +285,36 @@ def runDT(trainData, testPath):
     print("Training Accuracy DT:", round(trainAcc, 2))
     print("Testing Accuracy DT:", round(testAcc, 2))
     
+    # print("Check: ")
+    # print(float(100*round(trainAcc, 2)))
+
+    plt.subplot(211)
+    plt.plot([25, 50, 75, 100], [float(25*round(trainAcc, 2)), float(50*round(trainAcc, 2)), float(75*round(trainAcc, 2)), float(100*round(trainAcc, 2))])
+    plt.ylabel('Testing Accuracy')
+    plt.subplot(212)
+    plt.plot([25, 50, 75, 100], [float(25*round(testAcc, 2)), float(50*round(testAcc, 2)), float(75*round(testAcc, 2)), float(100*round(testAcc, 2))])
+    plt.ylabel('Testing Accuracy')
+    plt.xlabel('Number Of Inputs')
+    save_path = os.path.join(BASE_DIR, 'backend/decisionTree_result.png') 
+    plt.savefig(save_path)
+
 #  End of Testing 
 
 
 
 if __name__ == '__main__':
     
-    
-#     trainingDataFilename = "trainingSet.csv"
-#     testDataFilename = "testSet.csv"
-#     modelIdx = 3
+    save_path1 = os.path.join(BASE_DIR, 'backend/Algorithm_new/trainingSetT.png') 
+    save_path2 = os.path.join(BASE_DIR, 'backend/Algorithm_new/testSetT.csv') 
 
-    trainingDataFilename = sys.argv[1]
-    testDataFilename = sys.argv[2]
-    runDT(trainingDataFilename, testDataFilename)
-    
+    trainingDataFilename = "trainingSetT.csv"
+    testDataFilename = "testSetT.csv"
+    modelIdx = 3
+
+#    trainingDataFilename = sys.argv[1]
+#    testDataFilename = sys.argv[2]
+    runDT(save_path1, save_path2)
+
 #     print(trainingDataFilename)
 #     print(testDataFilename)
 #     print(modelIdx)
