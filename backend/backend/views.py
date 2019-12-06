@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets          # add this
 from django.views.decorators.csrf import csrf_exempt
-from . import exploration,selectCertain, clustering, svm, logisticReg, nbc, decisionTree, baggingTree, randomForest,One_Hot, Delete_Row,Delete_Col, labelEncod, replaceW
+from . import exploration,selectCertain, randomForest, clustering, svm, logisticReg, nbc, decisionTree, baggingTree, randomForest,One_Hot, Delete_Row,Delete_Col, labelEncod, replaceW
 import os
 import csv
 from backend.settings import BASE_DIR
@@ -227,3 +227,22 @@ def prePrcoess_selectCertain(request, col_names):
         response['Content-Disposition'] = 'inline; filename=' + os.path.basename(save_path)
         return response
     return Http404
+
+@csrf_exempt
+def dataMining_RandomForest(request, depth_limit, example_limit, num_tree):
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS RANDOM FOREST")
+    # print(request.FILES)
+    if request.method == 'POST' and request.FILES['file']:
+        # myfile = request.FILES['file']
+        # print(request.FILES.getlist('file')) 
+        files = request.FILES.getlist('file')
+        print("file1 ", files[0])
+        print("file2 ",files[1])
+        randomForest.runRF(files[0], files[1])
+    save_path = os.path.join(BASE_DIR, 'backend/selectCertain_result.csv') 
+    with open(save_path, 'rb') as fh:
+        response = HttpResponse(fh.read(), content_type="text/csv")
+        response['Content-Disposition'] = 'inline; filename=' + os.path.basename(save_path)
+        return response
+    return Http404
+    
