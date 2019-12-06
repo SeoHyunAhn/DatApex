@@ -156,28 +156,41 @@ def nbc(t_frac, n):
 def split(originalPath, f):
     #     print("called!")
     print("original Parth : ", originalPath)
-    print("@@@@@@")
     processList = pd.read_csv(originalPath)
-    print("part A")
+
+    # for key in processList:
+    #     print(key)
+    
     del processList["Unnamed: 0"]
-    print("part B")
     #     df = pd.DataFrame(processList)
     training = processList.sample(frac=f, random_state=47)
-    print("part C")
     test = processList.loc[~processList.index.isin(training.index), :]
-    print("part D")
-    #    print(len(training))
-    #    print(len(test))
-    #     print(len(processList))
-
     save_path = os.path.join(BASE_DIR, 'backend/nbc/trainingSet_F') 
-    print("part E")
     save_path2 = os.path.join(BASE_DIR, 'backend/nbc/testSet_F') 
-    print("part F")
+
     training.to_csv(save_path+ str(f) + ".csv")
-    print("part G")
     test.to_csv(save_path2 + str(f) + ".csv")
-    print("part H")
+
+
+def split2(originalPath, F):
+    #     print("called!")
+    print("original Parth : ", originalPath)
+    processList = pd.read_csv(originalPath)
+
+    # for key in processList:
+    #     print(key)
+
+    del processList["Unnamed: 0"]
+    #     df = pd.DataFrame(processList)
+    for f in F:
+        training = processList.sample(frac=f, random_state=47)
+        test = processList.loc[~processList.index.isin(training.index), :]
+        save_path = os.path.join(BASE_DIR, 'backend/nbc/trainingSet_F') 
+        save_path2 = os.path.join(BASE_DIR, 'backend/nbc/testSet_F') 
+
+        training.to_csv(save_path+ str(f) + ".csv")
+        test.to_csv(save_path2 + str(f) + ".csv")
+
 
 #def autolabel(rects):
 #    for rect in rects:
@@ -198,17 +211,19 @@ def graph(F, r, Path):
 def runNBC(inputPath):
     print("Filename in NBC is : ", inputPath)
     F = [0.01,0.1,0.2,0.5,0.6,0.75,0.9,1]
-    print("part1");
-    for n in F:
-        split(inputPath, n)
+    # print("part1");
+    # for n in F:
+    #     split(inputPath, n)
+
+    split2(inputPath, F)
     
-    print("part2");
+    # print("part2");
     result = [[], []]
     for n in F:
         r = nbc(n, n)
         result[0].append(r[0])
         result[1].append(r[1])
-    print("part3");
+    # print("part3");
     
     for i in range(0, len(F)):
         print("F: ",  F[i])

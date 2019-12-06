@@ -57,10 +57,10 @@ class History extends Component {
     for (var i = 0; i < this.state.dateOfFile.length; i++) {
       items.push(
         <tr>
-          <td scope="row">{this.state.dateOfFile[i]}</td>
+          {/* <td scope="row">{ i+1 }</td> */}
+          <td>{this.state.dateOfFile[i]}</td>
           <td>{this.state.type[i]}</td>
           <td className="w-25 text-center">
-
             { this.state.type[i] !== "ML" ?
               (
                 <a href={this.state.downloadURL[i]} download>
@@ -83,10 +83,11 @@ class History extends Component {
         <hr></hr>
         <div className="container-fluid">
           <div className="row">
-            <div className="col-12">
-              <table className="table">
+            <div className="col-12 table-responsive">
+              <table className="table table-bordered table-hover">
                 <thead className="thead-light">
                   <tr>
+                    {/* <th scope="col">#</th> */}
                     <th scope="col">Date</th>
                     <th scope="col">Type</th>
                     <th scope="col">File Result</th>

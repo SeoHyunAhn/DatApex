@@ -3,7 +3,7 @@ import Layout from "../components/layout";
 import { Link, Router } from "../routes";
 
 const styleCard = {
-  marginBottom: "10px", width: 525, height: 450
+  marginBottom: "10px", width: 525, height: 550
 };
 
 class PreOptions extends Component {
@@ -15,7 +15,7 @@ class PreOptions extends Component {
         <div className="container-fluid">
           <div className="row">
             <div className="col-6">
-              <div className="card" style={styleCard}>
+              <div className="card" style={{styleCard}}>
                 <div className="card-header">Label Encoding</div>
                 <div className="card-body">
                   <h5 className="card-title">Explanation: </h5>
@@ -41,7 +41,7 @@ class PreOptions extends Component {
               </div>
             </div>
             <div className="col-6">
-              <div className="card" style={styleCard}>
+              <div className="card" style={{styleCard}}>
                 <div className="card-header">One-hot Encoding</div>
                 <div className="card-body">
                   <img
@@ -66,7 +66,7 @@ class PreOptions extends Component {
               </div>
             </div>
             <div className="col-6">
-              <div className="card" style={{marginBottom: "10px", width: 525, height: 230}}>
+              <div className="card" style={{styleCard}}>
                 <div className="card-header">Delete Row/Column</div>
                 <div className="card-body">
                   <h5 className="card-title">Explanation: </h5>
@@ -81,7 +81,7 @@ class PreOptions extends Component {
               </div>
             </div>
             <div className="col-6">
-              <div className="card" style={{marginBottom: "10px", width: 525, height: 230}}>
+              <div className="card" style={{styleCard}}>
                 <div className="card-header">Replace W</div>
                 <div className="card-body">
                   <h5 className="card-title">Explanation: </h5>
@@ -95,7 +95,7 @@ class PreOptions extends Component {
               </div>
             </div>
             <div className="col-6">
-              <div className="card" style={{marginBottom: "10px", width: 525, height: 185}}>
+              <div className="card" style={{styleCard}}>
                 <div className="card-header">Select Certain</div>
                 <div className="card-body">
                   <h5 className="card-title">Explanation: </h5>

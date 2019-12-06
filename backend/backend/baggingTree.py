@@ -289,10 +289,10 @@ def runDT(trainData, testPath):
 
 
 
-def runBT(trainData, testPath):
+def runBT(trainData, testPath, depthLim, exampleLim):
     
-    depthL = 8
-    exampleL = 50
+    depthL = depthLim #8
+    exampleL = exampleLim #50
     numTree = 30
 
     global depthLimit

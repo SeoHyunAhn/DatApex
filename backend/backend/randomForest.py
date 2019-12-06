@@ -414,11 +414,11 @@ def runBT(trainData, testPath):
     print("Testing Accuracy DT:", round(testAcc, 2))
 
 
-def runRF(trainData, testPath):
+def runRF(trainData, testPath, depthLim, exampleLim, nTree):
     
-    depthL = 8
-    exampleL = 50
-    numTree = 30
+    depthL = depthLim #8
+    exampleL = exampleLim #50
+    numTree = nTree #30
     
     
     global depthLimit

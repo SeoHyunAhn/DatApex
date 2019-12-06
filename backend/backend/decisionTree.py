@@ -241,10 +241,10 @@ def getAcc(dataSet, trees):
     return float(correct)/float(len(ans))
 
 
-def runDT(trainData, testPath):
+def runDT(trainData, testPath, depthLim, exampleLim):
     
-    depthL = 8
-    exampleL = 50
+    depthL = depthLim #8
+    exampleL = exampleLim #50
     
     
     global depthLimit

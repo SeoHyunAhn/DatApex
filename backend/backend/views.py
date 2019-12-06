@@ -99,7 +99,7 @@ def dataMining_Bagging(request, depth_limit, example_limit):
         save_path1 = os.path.join(BASE_DIR, 'backend/trainingSetT.csv') 
         save_path2 = os.path.join(BASE_DIR, 'backend/testSetT.csv') 
 
-        baggingTree.runBT(save_path1, save_path2)
+        baggingTree.runBT(save_path1, myfile, int(depth_limit), int(example_limit))
     
     save_path = os.path.join(BASE_DIR, 'backend/baggingTree_result.png') 
 
@@ -118,7 +118,7 @@ def dataMining_DecisionTree(request, depth_limit, example_limit):
         save_path1 = os.path.join(BASE_DIR, 'backend/trainingSetT.csv') 
         save_path2 = os.path.join(BASE_DIR, 'backend/testSetT.csv') 
         
-        decisionTree.runDT(save_path1, save_path2)
+        decisionTree.runDT(save_path1, myfile, int(depth_limit), int(example_limit))
     
     save_path = os.path.join(BASE_DIR, 'backend/decisionTree_result.png') 
 
@@ -128,21 +128,23 @@ def dataMining_DecisionTree(request, depth_limit, example_limit):
 
     return HttpResponse(str, content_type="image/png")
 
-# @csrf_exempt
-# def dataMining_RandomForest(request, depth_limit, example_limit, num_trees):
-#     if request.method == 'POST' and request.FILES['file']:
-#         training_file = request.FILES['training_file']
-#         testing_file = request.FILES['testing_file']
+@csrf_exempt
+def dataMining_RandomForest(request, depth_limit, example_limit, num_trees):
+    if request.method == 'POST' and request.FILES['file']:
+        myfile = request.FILES['file']
 
-#         randomForest.runRF(training_file, testing_file, depth_limit, example_limit, num_trees)
+        save_path1 = os.path.join(BASE_DIR, 'backend/trainingSetT.csv') 
+        save_path2 = os.path.join(BASE_DIR, 'backend/testSetT.csv') 
+
+        randomForest.runRF(save_path1, myfile, int(depth_limit), int(example_limit), int(num_trees))
     
-#     save_path = os.path.join(BASE_DIR, 'backend/randomForest_result.png') 
+    save_path = os.path.join(BASE_DIR, 'backend/randomForest_result.png') 
 
-#     image_data = open(save_path, "rb").read()
-#     with open(save_path, "rb") as image_data:
-#         str = base64.b64encode(image_data.read())
+    image_data = open(save_path, "rb").read()
+    with open(save_path, "rb") as image_data:
+        str = base64.b64encode(image_data.read())
 
-#     return HttpResponse(str, content_type="image/png")
+    return HttpResponse(str, content_type="image/png")
 
 @csrf_exempt
 def prePrcoess_LabelEncoding(request, encList):
