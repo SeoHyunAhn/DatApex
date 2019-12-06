@@ -188,24 +188,27 @@ class Layout extends React.Component {
                     aria-labelledby="navbarDropdown"
                   >
                     <Link route="mlalgo" params={{ path: "nba" }}>
-                      <a className="dropdown-item">Naive Bayes algorithm</a>
+                      <a className="dropdown-item">Naive Bayes Algorithm</a>
                     </Link>
                     <Link route="mlalgo" params={{ path: "lra" }}>
                       <a className="dropdown-item">
-                        Logistic Regression algorithm
+                        Logistic Regression Algorithm
                       </a>
                     </Link>
                     {/* <div className="dropdown-divider"></div> */}
                     <Link route="mlalgo" params={{ path: "svm" }}>
                       <a className="dropdown-item">
-                        Support Vector Machine algorithm
+                        Support Vector Machine Algorithm
                       </a>
                     </Link>
                     <Link route="mlalgo" params={{ path: "bag" }}>
-                      <a className="dropdown-item">Bagging algorithm</a>
+                      <a className="dropdown-item">Bagging Algorithm</a>
                     </Link>
                     <Link route="mlalgo" params={{ path: "clus" }}>
-                      <a className="dropdown-item">Clustering algorithm</a>
+                      <a className="dropdown-item">Clustering Algorithm</a>
+                    </Link>
+                    <Link route="mlalgo" params={{ path: "clus" }}>
+                      <a className="dropdown-item">Random Forest Algorithm</a>
                     </Link>
                   </div>
                 </li>

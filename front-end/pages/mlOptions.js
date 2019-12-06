@@ -4,7 +4,7 @@ import Layout from "../components/layout";
 import { Link, Router } from "../routes";
 
 const styleCard = {
-  marginBottom: "10px", width: 525, height: 1000
+  marginBottom: "10px"
 };
 
 class MlOptions extends Component {
@@ -17,7 +17,7 @@ class MlOptions extends Component {
           <div className="row">
             <div className="col-6">
               <div className="card" style={{styleCard}}>
-                <div className="card-header">Naive Bayes algorithm</div>
+                <div className="card-header">Naive Bayes Algorithm</div>
                 <div className="card-body">
                   <img
                     className="card-img"
@@ -56,7 +56,7 @@ class MlOptions extends Component {
             </div>
             <div className="col-6">
               <div className="card" style={{styleCard}}>
-                <div className="card-header">Logistic Regression algorithm</div>
+                <div className="card-header">Logistic Regression Algorithm</div>
                 <div className="card-body">
                   <img
                     className="card-img"
@@ -87,7 +87,7 @@ class MlOptions extends Component {
             <div className="col-6">
               <div className="card" style={{styleCard}}>
                 <div className="card-header">
-                  Support Vector Machine algorithm
+                  Support Vector Machine Algorithm
                 </div>
                 <div className="card-body">
                   <img
@@ -119,7 +119,7 @@ class MlOptions extends Component {
             </div>
             <div className="col-6">
               <div className="card" style={{styleCard}}>
-                <div className="card-header">Bagging algorithm</div>
+                <div className="card-header">Bagging Algorithm</div>
                 <div className="card-body">
                   <img
                     className="card-img"
@@ -160,7 +160,7 @@ class MlOptions extends Component {
             </div>
             <div className="col-6">
               <div className="card" style={{styleCard}}>
-                <div className="card-header">K-means Clustering algorithm</div>
+                <div className="card-header">K-means Clustering Algorithm</div>
                 <div className="card-body">
                   <img
                     className="card-img"
@@ -202,7 +202,7 @@ class MlOptions extends Component {
             </div>
             <div className="col-6">
               <div className="card" style={{styleCard}}>
-                <div className="card-header">Decision Tree algorithm</div>
+                <div className="card-header">Decision Tree Algorithm</div>
                 <div className="card-body">
                   <img
                     className="card-img"
@@ -246,8 +246,8 @@ class MlOptions extends Component {
               </div>
             </div>
             <div className="col-6">
-              <div className="card" style={{marginBottom: "10px", width: 525, height: 850}}>
-                <div className="card-header">Radom Forest algorithm</div>
+              <div className="card" style={{styleCard}}>
+                <div className="card-header">Radom Forest Algorithm</div>
                 <div className="card-body">
                   <img
                     className="card-img"
@@ -256,7 +256,7 @@ class MlOptions extends Component {
                   />
                   <h5 className="card-title">Explanation: </h5>
                   <p className="card-text">
-
+                    @Piyush needs to send and copy here 
                   </p>
                   <Link route="mlalgo" params={{ path: "forest" }}>
                     <a className="btn btn-primary">Go somewhere</a>

@@ -171,7 +171,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var semantic_ui_react__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_react__WEBPACK_IMPORTED_MODULE_9__);
 
 
+<<<<<<< HEAD
 var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/components/layout.js";
+=======
+var _jsxFileName = "/Users/youngjoon/Desktop/CS407/DatApex/front-end/components/layout.js";
+>>>>>>> 3ac061fa1278771b8affb4ff1a2f8de638adfeac
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
@@ -560,7 +564,11 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
         lineNumber: 191
       },
       __self: this
+<<<<<<< HEAD
     }, "Naive Bayes algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_8__["Link"], {
+=======
+    }, "Naive Bayes Algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_8__["Link"], {
+>>>>>>> 3ac061fa1278771b8affb4ff1a2f8de638adfeac
       route: "mlalgo",
       params: {
         path: "lra"
@@ -577,7 +585,11 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
         lineNumber: 194
       },
       __self: this
+<<<<<<< HEAD
     }, "Logistic Regression algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_8__["Link"], {
+=======
+    }, "Logistic Regression Algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_8__["Link"], {
+>>>>>>> 3ac061fa1278771b8affb4ff1a2f8de638adfeac
       route: "mlalgo",
       params: {
         path: "svm"
@@ -594,7 +606,11 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
         lineNumber: 200
       },
       __self: this
+<<<<<<< HEAD
     }, "Support Vector Machine algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_8__["Link"], {
+=======
+    }, "Support Vector Machine Algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_8__["Link"], {
+>>>>>>> 3ac061fa1278771b8affb4ff1a2f8de638adfeac
       route: "mlalgo",
       params: {
         path: "bag"
@@ -611,7 +627,11 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
         lineNumber: 205
       },
       __self: this
+<<<<<<< HEAD
     }, "Bagging algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_8__["Link"], {
+=======
+    }, "Bagging Algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_8__["Link"], {
+>>>>>>> 3ac061fa1278771b8affb4ff1a2f8de638adfeac
       route: "mlalgo",
       params: {
         path: "clus"
@@ -628,33 +648,70 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
         lineNumber: 208
       },
       __self: this
+<<<<<<< HEAD
     }, "Clustering algorithm"))))), __jsx("div", {
+=======
+    }, "Clustering Algorithm")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_8__["Link"], {
+      route: "mlalgo",
+      params: {
+        path: "clus"
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 210
+      },
+      __self: this
+    }, __jsx("a", {
+      className: "dropdown-item",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 211
+      },
+      __self: this
+    }, "Random Forest Algorithm"))))), __jsx("div", {
+>>>>>>> 3ac061fa1278771b8affb4ff1a2f8de638adfeac
       className: "form-inline my-2 my-lg-0",
       style: styleTextWhite,
       __source: {
         fileName: _jsxFileName,
+<<<<<<< HEAD
         lineNumber: 249
+=======
+        lineNumber: 252
+>>>>>>> 3ac061fa1278771b8affb4ff1a2f8de638adfeac
       },
       __self: this
     }, __jsx("div", {
       style: stylePaddingRight,
       __source: {
         fileName: _jsxFileName,
+<<<<<<< HEAD
         lineNumber: 250
+=======
+        lineNumber: 253
+>>>>>>> 3ac061fa1278771b8affb4ff1a2f8de638adfeac
       },
       __self: this
     }, __jsx("ul", {
       className: "navbar-nav",
       __source: {
         fileName: _jsxFileName,
+<<<<<<< HEAD
         lineNumber: 251
+=======
+        lineNumber: 254
+>>>>>>> 3ac061fa1278771b8affb4ff1a2f8de638adfeac
       },
       __self: this
     }, __jsx("li", {
       className: "nav-item dropdown",
       __source: {
         fileName: _jsxFileName,
+<<<<<<< HEAD
         lineNumber: 252
+=======
+        lineNumber: 255
+>>>>>>> 3ac061fa1278771b8affb4ff1a2f8de638adfeac
       },
       __self: this
     }, __jsx("a", {
@@ -667,14 +724,22 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
       "aria-expanded": "false",
       __source: {
         fileName: _jsxFileName,
+<<<<<<< HEAD
         lineNumber: 253
+=======
+        lineNumber: 256
+>>>>>>> 3ac061fa1278771b8affb4ff1a2f8de638adfeac
       },
       __self: this
     }, __jsx("i", {
       className: "fa fa-search",
       __source: {
         fileName: _jsxFileName,
+<<<<<<< HEAD
         lineNumber: 262
+=======
+        lineNumber: 265
+>>>>>>> 3ac061fa1278771b8affb4ff1a2f8de638adfeac
       },
       __self: this
     })), __jsx("div", {
@@ -682,7 +747,11 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
       "aria-labelledby": "navbarDropdown",
       __source: {
         fileName: _jsxFileName,
+<<<<<<< HEAD
         lineNumber: 264
+=======
+        lineNumber: 267
+>>>>>>> 3ac061fa1278771b8affb4ff1a2f8de638adfeac
       },
       __self: this
     }, __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_9__["Search"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -697,32 +766,52 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
     }, this.props, {
       __source: {
         fileName: _jsxFileName,
+<<<<<<< HEAD
         lineNumber: 268
+=======
+        lineNumber: 271
+>>>>>>> 3ac061fa1278771b8affb4ff1a2f8de638adfeac
       },
       __self: this
     })), this.state.bool ? __jsx("div", {
       __source: {
         fileName: _jsxFileName,
+<<<<<<< HEAD
         lineNumber: 280
+=======
+        lineNumber: 283
+>>>>>>> 3ac061fa1278771b8affb4ff1a2f8de638adfeac
       },
       __self: this
     }, __jsx("li", {
       __source: {
         fileName: _jsxFileName,
+<<<<<<< HEAD
         lineNumber: 281
+=======
+        lineNumber: 284
+>>>>>>> 3ac061fa1278771b8affb4ff1a2f8de638adfeac
       },
       __self: this
     }, this.state.bool), __jsx("br", {
       __source: {
         fileName: _jsxFileName,
+<<<<<<< HEAD
         lineNumber: 282
+=======
+        lineNumber: 285
+>>>>>>> 3ac061fa1278771b8affb4ff1a2f8de638adfeac
       },
       __self: this
     })) : null)))), __jsx("div", {
       className: "btn-group",
       __source: {
         fileName: _jsxFileName,
+<<<<<<< HEAD
         lineNumber: 289
+=======
+        lineNumber: 292
+>>>>>>> 3ac061fa1278771b8affb4ff1a2f8de638adfeac
       },
       __self: this
     }, __jsx("button", {
@@ -731,7 +820,11 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
       disabled: true,
       __source: {
         fileName: _jsxFileName,
+<<<<<<< HEAD
         lineNumber: 290
+=======
+        lineNumber: 293
+>>>>>>> 3ac061fa1278771b8affb4ff1a2f8de638adfeac
       },
       __self: this
     }, "Hi ", _common_firebase__WEBPACK_IMPORTED_MODULE_6__["default"].auth().currentUser.displayName, " "), __jsx("button", {
@@ -742,28 +835,44 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
       "aria-expanded": "false",
       __source: {
         fileName: _jsxFileName,
+<<<<<<< HEAD
         lineNumber: 293
+=======
+        lineNumber: 296
+>>>>>>> 3ac061fa1278771b8affb4ff1a2f8de638adfeac
       },
       __self: this
     }, __jsx("span", {
       className: "sr-only",
       __source: {
         fileName: _jsxFileName,
+<<<<<<< HEAD
         lineNumber: 300
+=======
+        lineNumber: 303
+>>>>>>> 3ac061fa1278771b8affb4ff1a2f8de638adfeac
       },
       __self: this
     }, "Toggle Dropdown")), __jsx("div", {
       className: "dropdown-menu",
       __source: {
         fileName: _jsxFileName,
+<<<<<<< HEAD
         lineNumber: 302
+=======
+        lineNumber: 305
+>>>>>>> 3ac061fa1278771b8affb4ff1a2f8de638adfeac
       },
       __self: this
     }, __jsx(_routes__WEBPACK_IMPORTED_MODULE_8__["Link"], {
       href: "/profile",
       __source: {
         fileName: _jsxFileName,
+<<<<<<< HEAD
         lineNumber: 303
+=======
+        lineNumber: 306
+>>>>>>> 3ac061fa1278771b8affb4ff1a2f8de638adfeac
       },
       __self: this
     }, __jsx("a", {
@@ -771,14 +880,22 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
       href: "#",
       __source: {
         fileName: _jsxFileName,
+<<<<<<< HEAD
         lineNumber: 304
+=======
+        lineNumber: 307
+>>>>>>> 3ac061fa1278771b8affb4ff1a2f8de638adfeac
       },
       __self: this
     }, "Profile")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_8__["Link"], {
       href: "/history",
       __source: {
         fileName: _jsxFileName,
+<<<<<<< HEAD
         lineNumber: 308
+=======
+        lineNumber: 311
+>>>>>>> 3ac061fa1278771b8affb4ff1a2f8de638adfeac
       },
       __self: this
     }, __jsx("a", {
@@ -786,14 +903,22 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
       href: "#",
       __source: {
         fileName: _jsxFileName,
+<<<<<<< HEAD
         lineNumber: 309
+=======
+        lineNumber: 312
+>>>>>>> 3ac061fa1278771b8affb4ff1a2f8de638adfeac
       },
       __self: this
     }, "History")), __jsx("div", {
       className: "dropdown-divider",
       __source: {
         fileName: _jsxFileName,
+<<<<<<< HEAD
         lineNumber: 315
+=======
+        lineNumber: 318
+>>>>>>> 3ac061fa1278771b8affb4ff1a2f8de638adfeac
       },
       __self: this
     }), __jsx("button", {
@@ -801,28 +926,44 @@ class Layout extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
       onClick: this.logout,
       __source: {
         fileName: _jsxFileName,
+<<<<<<< HEAD
         lineNumber: 316
+=======
+        lineNumber: 319
+>>>>>>> 3ac061fa1278771b8affb4ff1a2f8de638adfeac
       },
       __self: this
     }, "Logout")))))), __jsx("div", {
       className: "container mt-4",
       __source: {
         fileName: _jsxFileName,
+<<<<<<< HEAD
         lineNumber: 325
+=======
+        lineNumber: 328
+>>>>>>> 3ac061fa1278771b8affb4ff1a2f8de638adfeac
       },
       __self: this
     }, __jsx("div", {
       className: "row",
       __source: {
         fileName: _jsxFileName,
+<<<<<<< HEAD
         lineNumber: 326
+=======
+        lineNumber: 329
+>>>>>>> 3ac061fa1278771b8affb4ff1a2f8de638adfeac
       },
       __self: this
     }, __jsx("div", {
       className: "col-12",
       __source: {
         fileName: _jsxFileName,
+<<<<<<< HEAD
         lineNumber: 327
+=======
+        lineNumber: 330
+>>>>>>> 3ac061fa1278771b8affb4ff1a2f8de638adfeac
       },
       __self: this
     }, this.props.children))));
@@ -3107,7 +3248,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
 /* harmony import */ var _common_firebase__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../common/firebase */ "./common/firebase.js");
 
+<<<<<<< HEAD
 var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/pages/_app.js";
+=======
+var _jsxFileName = "/Users/youngjoon/Desktop/CS407/DatApex/front-end/pages/_app.js";
+>>>>>>> 3ac061fa1278771b8affb4ff1a2f8de638adfeac
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
@@ -3181,7 +3326,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+<<<<<<< HEAD
 var _jsxFileName = "/Users/harsha.valluri/Desktop/cs407/DatApex/front-end/pages/main.js";
+=======
+var _jsxFileName = "/Users/youngjoon/Desktop/CS407/DatApex/front-end/pages/main.js";
+>>>>>>> 3ac061fa1278771b8affb4ff1a2f8de638adfeac
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
