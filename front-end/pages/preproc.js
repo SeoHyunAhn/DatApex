@@ -283,7 +283,7 @@ export default class extends React.Component {
                 <div className="form-group row">
                   <label className="col-sm-2 col-form-label">
                     {" "}
-                    Number of Cols:{" "}
+                    Column number:{" "}
                   </label>
                   <div className="col-sm-10">
                     <input
