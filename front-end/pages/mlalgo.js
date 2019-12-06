@@ -42,6 +42,7 @@ export default class extends React.Component {
       numTree: ""
     };
     this.path = "";
+    this.fileInput = React.createRef();
   }
 
   onChange(event) {
@@ -53,6 +54,9 @@ export default class extends React.Component {
   handleSubmit(filename) {
     console.log("handling submit");
     var formData = new FormData();
+    // console.log(this.fileInput.current.files);
+    // this.props.fileInput = this.fileInput.current.files[0]
+    // this.props.onSubmit(this.fileInput.current.files[0]);
     // console.log(this.fileInput.current.files[0]);
     formData.append("file", filename);
     var div = document.getElementById("image-display");
@@ -99,6 +103,8 @@ export default class extends React.Component {
       backend_url =
         backend_url + this.state.depthlimit + "/" + this.state.exlimit+"/"+this.state.numTree;
       console.log(backend_url);
+      formData.append("file", this.fileInput.current.files[0]);
+      console.log(this.fileInput.current.files[0]);
     }
     axios
       .post(backend_url, formData, {
@@ -573,6 +579,19 @@ export default class extends React.Component {
                     />
                   </div>
                 </div>
+                <div class="form-group">
+          <label htmlFor="name">Training File:{" "}</label>
+          <div className="col-12">
+            <input
+              type="file"
+              name="csv_file"
+              id="csv_file"
+              required="True"
+              className="form-control-file"
+              ref={ this.fileInput }
+            />
+          </div>
+          </div>
                 <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
               </form>
             </div>
