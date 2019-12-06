@@ -94,10 +94,10 @@ def dataMining_Bagging(request, depth_limit, example_limit):
     print("WHY DO I NEED NUM TREE")
 
     if request.method == 'POST' and request.FILES['file']:
-        training_file = request.FILES['training_file']
-        testing_file = request.FILES['testing_file']
-
-        baggingTree.runBT(training_file, testing_file, depth_limit, example_limi, num_trees)
+        files = request.FILES.getlist('file')
+        print("file1 ", files[0])
+        print("file2 ",files[1])
+        baggingTree.runBT(files[0], files[1], int(depth_limit), int(example_limit))
     
     save_path = os.path.join(BASE_DIR, 'backend/baggingTree_result.png') 
 
@@ -111,10 +111,10 @@ def dataMining_Bagging(request, depth_limit, example_limit):
 def dataMining_DecisionTree(request, depth_limit, example_limit):
     print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INSIDE VIEWS DECISION TREEEE")
     if request.method == 'POST' and request.FILES['file']:
-        training_file = request.FILES['training_file']
-        testing_file = request.FILES['testing_file']
-
-        decisionTree.runDT(training_file, testing_file, depth_limit, example_limit)
+        files = request.FILES.getlist('file')
+        print("file1 ", files[0])
+        print("file2 ",files[1])
+        decisionTree.runDT(files[0], files[1], int(depth_limit), int(example_limit))
     
     save_path = os.path.join(BASE_DIR, 'backend/decisionTree_result.png') 
 
@@ -238,11 +238,12 @@ def dataMining_RandomForest(request, depth_limit, example_limit, num_tree):
         files = request.FILES.getlist('file')
         print("file1 ", files[0])
         print("file2 ",files[1])
-        randomForest.runRF(files[0], files[1])
-    save_path = os.path.join(BASE_DIR, 'backend/selectCertain_result.csv') 
-    with open(save_path, 'rb') as fh:
-        response = HttpResponse(fh.read(), content_type="text/csv")
-        response['Content-Disposition'] = 'inline; filename=' + os.path.basename(save_path)
-        return response
-    return Http404
+        randomForest.runRF(files[0], files[1], int(depth_limit), int(example_limit), int(num_tree))
     
+    save_path = os.path.join(BASE_DIR, 'backend/randomForest_result.png') 
+
+    image_data = open(save_path, "rb").read()
+    with open(save_path, "rb") as image_data:
+        str = base64.b64encode(image_data.read())
+
+    return HttpResponse(str, content_type="image/png")
