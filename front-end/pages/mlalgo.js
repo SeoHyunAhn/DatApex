@@ -88,6 +88,8 @@ export default class extends React.Component {
       backend_url = "http://localhost:8000/dataMining/Bagging/";
       backend_url =
         backend_url + this.state.depthlimit + "/" + this.state.exlimit;
+        
+      formData.append("file", this.fileInput.current.files[0]);
       console.log(backend_url);
     } else if (this.path == "clus") {
       backend_url = "http://localhost:8000/dataMining/Clustering/";
@@ -97,6 +99,8 @@ export default class extends React.Component {
       backend_url = "http://localhost:8000/dataMining/DecisionTree/";
       backend_url =
         backend_url + this.state.depthlimit + "/" + this.state.exlimit;
+      
+      formData.append("file", this.fileInput.current.files[0]);
       console.log(backend_url);
     }else if (this.path == "forest") {
       backend_url = "http://localhost:8000/dataMining/RandomForest/";
@@ -393,6 +397,19 @@ export default class extends React.Component {
                     />
                   </div>
                 </div>
+                <div class="form-group">
+          <label htmlFor="name">Training File:{" "}</label>
+          <div className="col-12">
+            <input
+              type="file"
+              name="csv_file"
+              id="csv_file"
+              required="True"
+              className="form-control-file"
+              ref={ this.fileInput }
+            />
+          </div>
+          </div>
                 <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
               </form>
             </div>
@@ -504,6 +521,19 @@ export default class extends React.Component {
                     />
                   </div>
                 </div>
+                <div class="form-group">
+          <label htmlFor="name">Training File:{" "}</label>
+          <div className="col-12">
+            <input
+              type="file"
+              name="csv_file"
+              id="csv_file"
+              required="True"
+              className="form-control-file"
+              ref={ this.fileInput }
+            />
+          </div>
+          </div>
                 <UploadCSV onSubmit={this.handleSubmit}></UploadCSV>
               </form>
             </div>
