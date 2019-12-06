@@ -43,14 +43,9 @@ class MlOptions extends Component {
                     prediction. This algorithm is typically used in text
                     classification & with problems having multiple classes.
                   </p>
-
                   <Link route="mlalgo" params={{ path: "nba" }}>
-                    <a className="btn btn-primary">Go somewhere</a>
+                    <a className="btn btn-primary">Try Now</a>
                   </Link>
-
-                  {/* <Link href={{ pathname: 'mlalgo', query: { path: "nba" }}}>
-                    <a className="btn btn-primary">Go somewhere</a>
-                  </Link> */}
                 </div>
               </div>
             </div>
@@ -79,11 +74,14 @@ class MlOptions extends Component {
                     value between 0 & 1.
                   </p>
                   <Link route="mlalgo" params={{ path: "lra" }}>
-                    <a className="btn btn-primary">Go somewhere</a>
+                    <a className="btn btn-primary">Try Now</a>
                   </Link>
                 </div>
               </div>
             </div>
+          </div>
+          <hr className="w-100" />
+          <div className="row">
             <div className="col-6">
               <div className="card" style={{styleCard}}>
                 <div className="card-header">
@@ -112,7 +110,7 @@ class MlOptions extends Component {
                     segregates the two classes.
                   </p>
                   <Link route="mlalgo" params={{ path: "svm" }}>
-                    <a className="btn btn-primary">Go somewhere</a>
+                    <a className="btn btn-primary">Try Now</a>
                   </Link>
                 </div>
               </div>
@@ -138,7 +136,7 @@ class MlOptions extends Component {
                     Bagging involves applying the Bootstrapping procedure to a
                     high-variance machine learning algorithm (typically decision
                     trees).
-                    {/* <br />
+                    <br />
                     <br />
                     Let’s assume we have a sample dataset of 1000 instances & we
                     are using the CART algorithm. Bagging would work as follows:
@@ -148,16 +146,19 @@ class MlOptions extends Component {
                     <br />- Given a new dataset, calculate the average
                     prediction from each model.
                     <br />
-                    <br /> */}
+                    <br />
                     Bagging may be used for either classification or regression
                     problems.
                   </p>
                   <Link route="mlalgo" params={{ path: "bag" }}>
-                    <a className="btn btn-primary">Go somewhere</a>
+                    <a className="btn btn-primary">Try Now</a>
                   </Link>
                 </div>
               </div>
             </div>
+          </div>
+          <hr className="w-100" />
+          <div className="row">
             <div className="col-6">
               <div className="card" style={{styleCard}}>
                 <div className="card-header">K-means Clustering Algorithm</div>
@@ -195,7 +196,7 @@ class MlOptions extends Component {
                     <br />- The defined number of iterations has been reached.
                   </p>
                   <Link route="mlalgo" params={{ path: "clus" }}>
-                    <a className="btn btn-primary">Go somewhere</a>
+                    <a className="btn btn-primary">Try Now</a>
                   </Link>
                 </div>
               </div>
@@ -240,26 +241,30 @@ class MlOptions extends Component {
                     node and each level.
                   </p>
                   <Link route="mlalgo" params={{ path: "tree" }}>
-                    <a className="btn btn-primary">Go somewhere</a>
+                    <a className="btn btn-primary">Try Now</a>
                   </Link>
                 </div>
               </div>
             </div>
+          </div>
+          <hr className="w-100" />
+          <div className="row">
             <div className="col-6">
               <div className="card" style={{styleCard}}>
                 <div className="card-header">Radom Forest Algorithm</div>
                 <div className="card-body">
-                  <img
+                  {/* <img
                     className="card-img"
                     variant="top"
                     src="../static/tree.png"
-                  />
+                  /> */}
                   <h5 className="card-title">Explanation: </h5>
                   <p className="card-text">
-                    @Piyush needs to send and copy here 
+                    The random forest is a model made up of many decision trees. Rather than just simply averaging the prediction of trees (which we could call a “forest”), this model uses two key concepts that gives it the name random:
+  Random sampling of training data points when building trees Random subsets of features considered when splitting nodes
                   </p>
                   <Link route="mlalgo" params={{ path: "forest" }}>
-                    <a className="btn btn-primary">Go somewhere</a>
+                    <a className="btn btn-primary">Try Now</a>
                   </Link>
                 </div>
               </div>

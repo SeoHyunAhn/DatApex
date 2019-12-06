@@ -35,7 +35,7 @@ class PreOptions extends Component {
                     actually be the case.
                   </p>
                   <Link route="preproc" params={{ path: "label" }}>
-                    <a className="btn btn-primary">Go somewhere</a>
+                    <a className="btn btn-primary">Try Now</a>
                   </Link>
                 </div>
               </div>
@@ -60,11 +60,14 @@ class PreOptions extends Component {
                     new binary variable is added for each unique integer value.
                   </p>
                   <Link route="preproc" params={{ path: "one-hot" }}>
-                    <a className="btn btn-primary">Go somewhere</a>
+                    <a className="btn btn-primary">Try Now</a>
                   </Link>
                 </div>
               </div>
             </div>
+          </div>
+          <hr className="w-100" />
+          <div className="row">
             <div className="col-6">
               <div className="card" style={{styleCard}}>
                 <div className="card-header">Delete Row/Column</div>
@@ -75,7 +78,7 @@ class PreOptions extends Component {
                   Delete Column algorithm deletes the column with the specified index from the dataset table.
                   </p>
                   <Link route="preproc" params={{ path: "delete-rc" }}>
-                    <a className="btn btn-primary">Go somewhere</a>
+                    <a className="btn btn-primary">Try Now</a>
                   </Link>
                 </div>
               </div>
@@ -89,11 +92,14 @@ class PreOptions extends Component {
                   The Replace W algorithm replaces a word with another specified word.
                   </p>
                   <Link route="preproc" params={{ path: "replaceW" }}>
-                    <a className="btn btn-primary">Go somewhere</a>
+                    <a className="btn btn-primary">Try Now</a>
                   </Link>
                 </div>
               </div>
             </div>
+          </div>
+          <hr className="w-100" />
+          <div className="row">
             <div className="col-6">
               <div className="card" style={{styleCard}}>
                 <div className="card-header">Select Certain</div>
@@ -103,7 +109,7 @@ class PreOptions extends Component {
                     Select some information from the provided data
                   </p>
                   <Link route="preproc" params={{ path: "certain" }}>
-                    <a className="btn btn-primary">Go somewhere</a>
+                    <a className="btn btn-primary">Try Now</a>
                   </Link>
                 </div>
               </div>

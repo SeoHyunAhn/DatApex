@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -3104,21 +3104,21 @@ class MlOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 47
+        lineNumber: 46
       },
       __self: this
     }, __jsx("a", {
       className: "btn btn-primary",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 48
+        lineNumber: 47
       },
       __self: this
-    }, "Go somewhere"))))), __jsx("div", {
+    }, "Try Now"))))), __jsx("div", {
       className: "col-6",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57
+        lineNumber: 52
       },
       __self: this
     }, __jsx("div", {
@@ -3128,21 +3128,21 @@ class MlOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 58
+        lineNumber: 53
       },
       __self: this
     }, __jsx("div", {
       className: "card-header",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 59
+        lineNumber: 54
       },
       __self: this
     }, "Logistic Regression Algorithm"), __jsx("div", {
       className: "card-body",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 60
+        lineNumber: 55
       },
       __self: this
     }, __jsx("img", {
@@ -3151,27 +3151,27 @@ class MlOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       src: "../static/lra.png",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 61
+        lineNumber: 56
       },
       __self: this
     }), __jsx("h5", {
       className: "card-title",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 66
+        lineNumber: 61
       },
       __self: this
     }, "Explanation: "), __jsx("p", {
       className: "card-text",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 67
+        lineNumber: 62
       },
       __self: this
     }, "Logistic Regression is a classification machine-learning algorithm used to assign observations to a discrete set of classes (binary or multiple classes). Logistic regression transforms its output using the logistic sigmoid function to return a probability value. Logistic Regression is a predictive analysis algorithm as it is based on the concepts of probability. It uses a more complex cost function than linear regression (the logistic or sigmoid function).", __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 76
+        lineNumber: 71
       },
       __self: this
     }), "In order to map predicted values to probabilities, we use the Sigmoid function which maps any real value into another value between 0 & 1."), __jsx(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
@@ -3181,21 +3181,35 @@ class MlOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 81
+        lineNumber: 76
       },
       __self: this
     }, __jsx("a", {
       className: "btn btn-primary",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 82
+        lineNumber: 77
       },
       __self: this
-    }, "Go somewhere"))))), __jsx("div", {
+    }, "Try Now")))))), __jsx("hr", {
+      className: "w-100",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 83
+      },
+      __self: this
+    }), __jsx("div", {
+      className: "row",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 84
+      },
+      __self: this
+    }, __jsx("div", {
       className: "col-6",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87
+        lineNumber: 85
       },
       __self: this
     }, __jsx("div", {
@@ -3205,21 +3219,21 @@ class MlOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 88
+        lineNumber: 86
       },
       __self: this
     }, __jsx("div", {
       className: "card-header",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 89
+        lineNumber: 87
       },
       __self: this
     }, "Support Vector Machine Algorithm"), __jsx("div", {
       className: "card-body",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 92
+        lineNumber: 90
       },
       __self: this
     }, __jsx("img", {
@@ -3228,27 +3242,27 @@ class MlOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       src: "../static/svm.png",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 93
+        lineNumber: 91
       },
       __self: this
     }), __jsx("h5", {
       className: "card-title",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 98
+        lineNumber: 96
       },
       __self: this
     }, "Explanation: "), __jsx("p", {
       className: "card-text",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 99
+        lineNumber: 97
       },
       __self: this
     }, "SVM is a supervised machine learning algorithm which may be used for either classification or regression problems. However, in general, it is used predominantly for classification problems. In this algorithm, we plot each data item as a point in n-dimensional space (n being the number of features) with the value of each feature being the value of a particular coordinate. Subsequently, classification is performed by finding the hyperplane (the equivalent of a line in a 2-dimensional space) that differentiates the two classes well. ", __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 109
+        lineNumber: 107
       },
       __self: this
     }), "Above image shows, Support Vectors are simply the co-ordinates of individual observations. SVM is a frontier which best segregates the two classes."), __jsx(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
@@ -3258,21 +3272,21 @@ class MlOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 114
+        lineNumber: 112
       },
       __self: this
     }, __jsx("a", {
       className: "btn btn-primary",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 115
+        lineNumber: 113
       },
       __self: this
-    }, "Go somewhere"))))), __jsx("div", {
+    }, "Try Now"))))), __jsx("div", {
       className: "col-6",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 120
+        lineNumber: 118
       },
       __self: this
     }, __jsx("div", {
@@ -3282,21 +3296,21 @@ class MlOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 121
+        lineNumber: 119
       },
       __self: this
     }, __jsx("div", {
       className: "card-header",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 122
+        lineNumber: 120
       },
       __self: this
     }, "Bagging Algorithm"), __jsx("div", {
       className: "card-body",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 123
+        lineNumber: 121
       },
       __self: this
     }, __jsx("img", {
@@ -3305,45 +3319,101 @@ class MlOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       src: "../static/bag.png",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 124
+        lineNumber: 122
       },
       __self: this
     }), __jsx("h5", {
       className: "card-title",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 129
+        lineNumber: 127
       },
       __self: this
     }, "Explanation: "), __jsx("p", {
       className: "card-text",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 130
+        lineNumber: 128
       },
       __self: this
-    }, "Bagging algorithm is a simple yet powerful ensemble method. An ensemble method is one that combines predictions from multiple machine learning algorithms together to make more accurate predictions than any individual method.", "This method is especially helpful in reducing the variance for algorithms which tend to have really high variance. Bagging involves applying the Bootstrapping procedure to a high-variance machine learning algorithm (typically decision trees).", "Bagging may be used for either classification or regression problems."), __jsx(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    }, "Bagging algorithm is a simple yet powerful ensemble method. An ensemble method is one that combines predictions from multiple machine learning algorithms together to make more accurate predictions than any individual method.", "This method is especially helpful in reducing the variance for algorithms which tend to have really high variance. Bagging involves applying the Bootstrapping procedure to a high-variance machine learning algorithm (typically decision trees).", __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 139
+      },
+      __self: this
+    }), __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 140
+      },
+      __self: this
+    }), "Let\u2019s assume we have a sample dataset of 1000 instances & we are using the CART algorithm. Bagging would work as follows:", __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 143
+      },
+      __self: this
+    }), "- Create several (e.g. 100) random sub-samples of the dataset with replacement.", __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 145
+      },
+      __self: this
+    }), "- Train a CART model on each sample.", __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 146
+      },
+      __self: this
+    }), "- Given a new dataset, calculate the average prediction from each model.", __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 148
+      },
+      __self: this
+    }), __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 149
+      },
+      __self: this
+    }), "Bagging may be used for either classification or regression problems."), __jsx(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
       route: "mlalgo",
       params: {
         path: "bag"
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 155
+        lineNumber: 153
       },
       __self: this
     }, __jsx("a", {
       className: "btn btn-primary",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 156
+        lineNumber: 154
       },
       __self: this
-    }, "Go somewhere"))))), __jsx("div", {
-      className: "col-6",
+    }, "Try Now")))))), __jsx("hr", {
+      className: "w-100",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 160
+      },
+      __self: this
+    }), __jsx("div", {
+      className: "row",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 161
+      },
+      __self: this
+    }, __jsx("div", {
+      className: "col-6",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 162
       },
       __self: this
     }, __jsx("div", {
@@ -3353,21 +3423,21 @@ class MlOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 162
+        lineNumber: 163
       },
       __self: this
     }, __jsx("div", {
       className: "card-header",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 163
+        lineNumber: 164
       },
       __self: this
     }, "K-means Clustering Algorithm"), __jsx("div", {
       className: "card-body",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 164
+        lineNumber: 165
       },
       __self: this
     }, __jsx("img", {
@@ -3376,51 +3446,51 @@ class MlOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       src: "../static/clus.png",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 165
+        lineNumber: 166
       },
       __self: this
     }), __jsx("h5", {
       className: "card-title",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 170
+        lineNumber: 171
       },
       __self: this
     }, "Explanation: "), __jsx("p", {
       className: "card-text",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 171
+        lineNumber: 172
       },
       __self: this
     }, "K-means Clustering is one of the simplest and most popular unsupervised machine learning algorithms. Typically, unsupervised machine learning algorithms make inferences from datasets using only input vectors without referring to known/labelled outcomes.", __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 177
+        lineNumber: 178
       },
       __self: this
     }), "A cluster, simply put, refers to a collection of data points aggregated together because of certain similarities. The \u2018k\u2019 from the name refers to the number of centroids needed in the dataset, and is defined by us. A centroid is the imaginary or real location representing the center of the cluster. The \u2018means\u2019 in the K-Means refers to the averaging of data (i.e. finding the centroid).", __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 185
+        lineNumber: 186
       },
       __self: this
     }), __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 186
+        lineNumber: 187
       },
       __self: this
     }), "The algorithm starts with a first group of randomly selected centroids that are used as beginning points for every cluster, and then performs iterative calculations to optimize the positions of the centroids. It stops creating or optimizing clusters when:", __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 192
+        lineNumber: 193
       },
       __self: this
     }), "- The centroids have stabilized, i.e. there is no change in their values because the clustering has been successful;", __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 195
+        lineNumber: 196
       },
       __self: this
     }), "- The defined number of iterations has been reached."), __jsx(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
@@ -3430,21 +3500,21 @@ class MlOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 197
+        lineNumber: 198
       },
       __self: this
     }, __jsx("a", {
       className: "btn btn-primary",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 198
+        lineNumber: 199
       },
       __self: this
-    }, "Go somewhere"))))), __jsx("div", {
+    }, "Try Now"))))), __jsx("div", {
       className: "col-6",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 203
+        lineNumber: 204
       },
       __self: this
     }, __jsx("div", {
@@ -3454,21 +3524,21 @@ class MlOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 204
+        lineNumber: 205
       },
       __self: this
     }, __jsx("div", {
       className: "card-header",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 205
+        lineNumber: 206
       },
       __self: this
     }, "Decision Tree Algorithm"), __jsx("div", {
       className: "card-body",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 206
+        lineNumber: 207
       },
       __self: this
     }, __jsx("img", {
@@ -3477,63 +3547,63 @@ class MlOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       src: "../static/tree.png",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 207
+        lineNumber: 208
       },
       __self: this
     }), __jsx("h5", {
       className: "card-title",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 212
+        lineNumber: 213
       },
       __self: this
     }, "Explanation: "), __jsx("p", {
       className: "card-text",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 213
+        lineNumber: 214
       },
       __self: this
     }, "Decision Tree algorithm belongs to the family of supervised machine learning algorithms. Unlike other supervised learning algorithms, this algorithm can be used for solving regression & classification problems too. The general model of Decision Trees algorithm is to create a training model which can be used to predict the class or value of target variables by learning decision rules inferred from the training data.", __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 222
+        lineNumber: 223
       },
       __self: this
     }), __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 223
+        lineNumber: 224
       },
       __self: this
     }), "As the name insinuates, this algorithm uses a tree representation to solve the problem, wherein each internal node corresponds to an attribute while each leaf node corresponds to a class label. A rough outline of the algorithm is as follows:", __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 229
+        lineNumber: 230
       },
       __self: this
     }), "- Place the best attribute of the dataset at the root of the tree.", __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 231
+        lineNumber: 232
       },
       __self: this
     }), "- Split the training set into subsets in such a way that each subset contains data with the same value for an attribute.", __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 234
+        lineNumber: 235
       },
       __self: this
     }), "- Repeat the previous two steps on each subset until leaf nodes are found in all branches of the tree.", __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 236
+        lineNumber: 237
       },
       __self: this
     }), __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 237
+        lineNumber: 238
       },
       __self: this
     }), "With decision trees, one of the biggest challenges is to identify which attributes need to be considered as the root node and each level."), __jsx(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
@@ -3543,21 +3613,35 @@ class MlOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 242
+        lineNumber: 243
       },
       __self: this
     }, __jsx("a", {
       className: "btn btn-primary",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 243
+        lineNumber: 244
       },
       __self: this
-    }, "Go somewhere"))))), __jsx("div", {
+    }, "Try Now")))))), __jsx("hr", {
+      className: "w-100",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 250
+      },
+      __self: this
+    }), __jsx("div", {
+      className: "row",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 251
+      },
+      __self: this
+    }, __jsx("div", {
       className: "col-6",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 248
+        lineNumber: 252
       },
       __self: this
     }, __jsx("div", {
@@ -3567,64 +3651,55 @@ class MlOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 249
+        lineNumber: 253
       },
       __self: this
     }, __jsx("div", {
       className: "card-header",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 250
+        lineNumber: 254
       },
       __self: this
     }, "Radom Forest Algorithm"), __jsx("div", {
       className: "card-body",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 251
+        lineNumber: 255
       },
       __self: this
-    }, __jsx("img", {
-      className: "card-img",
-      variant: "top",
-      src: "../static/tree.png",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 252
-      },
-      __self: this
-    }), __jsx("h5", {
+    }, __jsx("h5", {
       className: "card-title",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 257
+        lineNumber: 261
       },
       __self: this
     }, "Explanation: "), __jsx("p", {
       className: "card-text",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 258
+        lineNumber: 262
       },
       __self: this
-    }, "@Piyush needs to send and copy here"), __jsx(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    }, "The random forest is a model made up of many decision trees. Rather than just simply averaging the prediction of trees (which we could call a \u201Cforest\u201D), this model uses two key concepts that gives it the name random: Random sampling of training data points when building trees Random subsets of features considered when splitting nodes"), __jsx(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
       route: "mlalgo",
       params: {
         path: "forest"
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 261
+        lineNumber: 266
       },
       __self: this
     }, __jsx("a", {
       className: "btn btn-primary",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 262
+        lineNumber: 267
       },
       __self: this
-    }, "Go somewhere"))))))));
+    }, "Try Now"))))))));
   }
 
 }
@@ -3651,7 +3726,7 @@ routes.add('algoOptions', '/algoOptions');
 
 /***/ }),
 
-/***/ 3:
+/***/ 5:
 /*!**********************************!*\
   !*** multi ./pages/mlOptions.js ***!
   \**********************************/

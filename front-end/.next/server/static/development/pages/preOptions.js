@@ -3110,7 +3110,7 @@ class PreOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         lineNumber: 38
       },
       __self: this
-    }, "Go somewhere"))))), __jsx("div", {
+    }, "Try Now"))))), __jsx("div", {
       className: "col-6",
       __source: {
         fileName: _jsxFileName,
@@ -3181,11 +3181,25 @@ class PreOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         lineNumber: 63
       },
       __self: this
-    }, "Go somewhere"))))), __jsx("div", {
+    }, "Try Now")))))), __jsx("hr", {
+      className: "w-100",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 69
+      },
+      __self: this
+    }), __jsx("div", {
+      className: "row",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 70
+      },
+      __self: this
+    }, __jsx("div", {
       className: "col-6",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 68
+        lineNumber: 71
       },
       __self: this
     }, __jsx("div", {
@@ -3195,41 +3209,41 @@ class PreOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 69
+        lineNumber: 72
       },
       __self: this
     }, __jsx("div", {
       className: "card-header",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 70
+        lineNumber: 73
       },
       __self: this
     }, "Delete Row/Column"), __jsx("div", {
       className: "card-body",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 71
+        lineNumber: 74
       },
       __self: this
     }, __jsx("h5", {
       className: "card-title",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 72
+        lineNumber: 75
       },
       __self: this
     }, "Explanation: "), __jsx("p", {
       className: "card-text",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73
+        lineNumber: 76
       },
       __self: this
     }, "Delete Row algorithm deletes the row with the specified index from the dataset table.", __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 74
+        lineNumber: 77
       },
       __self: this
     }), "Delete Column algorithm deletes the column with the specified index from the dataset table."), __jsx(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
@@ -3239,21 +3253,21 @@ class PreOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 77
+        lineNumber: 80
       },
       __self: this
     }, __jsx("a", {
       className: "btn btn-primary",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 78
+        lineNumber: 81
       },
       __self: this
-    }, "Go somewhere"))))), __jsx("div", {
+    }, "Try Now"))))), __jsx("div", {
       className: "col-6",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 83
+        lineNumber: 86
       },
       __self: this
     }, __jsx("div", {
@@ -3263,35 +3277,35 @@ class PreOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 84
+        lineNumber: 87
       },
       __self: this
     }, __jsx("div", {
       className: "card-header",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85
+        lineNumber: 88
       },
       __self: this
     }, "Replace W"), __jsx("div", {
       className: "card-body",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 86
+        lineNumber: 89
       },
       __self: this
     }, __jsx("h5", {
       className: "card-title",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87
+        lineNumber: 90
       },
       __self: this
     }, "Explanation: "), __jsx("p", {
       className: "card-text",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 88
+        lineNumber: 91
       },
       __self: this
     }, "The Replace W algorithm replaces a word with another specified word."), __jsx(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
@@ -3301,21 +3315,35 @@ class PreOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 91
+        lineNumber: 94
       },
       __self: this
     }, __jsx("a", {
       className: "btn btn-primary",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 92
+        lineNumber: 95
       },
       __self: this
-    }, "Go somewhere"))))), __jsx("div", {
+    }, "Try Now")))))), __jsx("hr", {
+      className: "w-100",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 101
+      },
+      __self: this
+    }), __jsx("div", {
+      className: "row",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 102
+      },
+      __self: this
+    }, __jsx("div", {
       className: "col-6",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 97
+        lineNumber: 103
       },
       __self: this
     }, __jsx("div", {
@@ -3325,35 +3353,35 @@ class PreOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 98
+        lineNumber: 104
       },
       __self: this
     }, __jsx("div", {
       className: "card-header",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 99
+        lineNumber: 105
       },
       __self: this
     }, "Select Certain"), __jsx("div", {
       className: "card-body",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 100
+        lineNumber: 106
       },
       __self: this
     }, __jsx("h5", {
       className: "card-title",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 101
+        lineNumber: 107
       },
       __self: this
     }, "Explanation: "), __jsx("p", {
       className: "card-text",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 102
+        lineNumber: 108
       },
       __self: this
     }, "Select some information from the provided data"), __jsx(_routes__WEBPACK_IMPORTED_MODULE_2__["Link"], {
@@ -3363,17 +3391,17 @@ class PreOptions extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 105
+        lineNumber: 111
       },
       __self: this
     }, __jsx("a", {
       className: "btn btn-primary",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 106
+        lineNumber: 112
       },
       __self: this
-    }, "Go somewhere"))))))));
+    }, "Try Now"))))))));
   }
 
 }
